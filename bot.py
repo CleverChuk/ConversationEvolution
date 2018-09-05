@@ -7,30 +7,37 @@ client_secret = os.environ["CLIENT_SECRET"]
 client_id = os.environ["CLIENT_ID"]
 password = os.environ["PASSWORD"]
 username = os.environ["USERNAME"]
+user_agent = "python:evolutionconvo:v1.0.0 (by /u/cleverchuk)"
+
 
 
 class CustomeEncoder(json.JSONEncoder):
     """
         Custom encoder for comment class
     """
-    def default(self, o): 
-         return {o.__class__.__name__: o.__dict__}
 
-    def decode_object(self, o):  
+    def default(self, o):
+        return  o.__dict__
+
+    def decode_object(self, o):
         pass
+
 class Submission:
-    def __init__(self, submission):
+    def __init__(self, id, submission):
+        self.id = id
         self.comments = [Comment(comment) for comment in submission.comments]
+
 
 class Comment:
     """
         Encapsulates all comments
     """
+
     def __init__(self, comment):
         self.id = comment.id
         self.body = comment.body
         self.replies = [Comment(c) for c in comment.replies]
-        
+
 
 class RedditBot:
     def __init__(self, subreddit):
@@ -65,8 +72,12 @@ class RedditBot:
         submission = self.reddit.submission(id=submission_id)
         submission.comments.replace_more(limit=None)
         with open(filename, "w") as fp:
-            sub = Submission(submission)
-            json.dump(sub, fp, separators=(',',':'), cls=CustomeEncoder, sort_keys=True, indent=4)
+            sub = Submission(submission_id, submission)
+            json.dump(sub, fp, separators=(',', ':'),
+                      cls=CustomeEncoder, sort_keys=True, indent=4)
+
+    def __repr__(self):
+        return "RedditBot"
 
 
 if __name__ == "__main__":
@@ -74,4 +85,4 @@ if __name__ == "__main__":
     filename = "data.json"
     submission_id = "9bdwe3"
     bot = RedditBot(subreddit)
-    bot.dump_submission_comments(submission_id,filename)
+    bot.dump_submission_comments(submission_id, filename)
