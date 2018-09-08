@@ -1,21 +1,79 @@
-import praw
+
 import os
 import json
+import nltk
+from statistics import mean
+import re
+import praw
+UPPER_BOUND = 0.05
+LOWER_BOUND = -0.05
 
-
-client_secret = os.environ["CLIENT_SECRET"]
-client_id = os.environ["CLIENT_ID"]
-password = os.environ["PASSWORD"]
-username = os.environ["USERNAME"]
-
+client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
+client_id = "n-EWVSgG6cMnRQ"
+username = input("Enter username:")
+password = input("Enter password(Not hidden so make sure no one is looking):") 
 user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
+
+def find_sentence(text):
+    """
+        extract the sentences from the text
+    """
+    text = text.replace('\n','')
+    pattern = re.compile(r'([A-Z][^\.!?]*[\.!?])', re.M)
+    result = pattern.findall(text)
+    result = result if len(result) > 0 else text
+    return result 
+
+def convert_score(score):
+    """
+        convert the score to a word
+        Positive for scores >= 0.05
+        Negative for scores <= -0.05
+        Neutral for scores that fall in between
+    """
+    if score is None:
+        return None
+    elif score >= UPPER_BOUND:
+        return "Positive"
+    elif score <= LOWER_BOUND:
+        return "Negative"
+    else:
+        return "Neutral"
+
+def add_sentiment(comment):
+    """
+        returns the mean score for all the sentences in 
+        a comment.
+    """
+    sentences = find_sentence(comment.body)
+    scores = [sentiment(sentence) for sentence in sentences]
+
+    return round(mean(scores),4) if len(scores) > 0 else None
+    
+def sentiment(sentence):
+    """
+        returns a dictionary of the form
+        {
+            'neg': 0.0,
+            'neu': 0.725,
+            'pos': 0.275,
+            'compound': 0.6908
+        }
+        this is a dictionary of sentiment scores
+        we're interested in the compound score
+    """
+    from nltk.sentiment.vader import SentimentIntensityAnalyzer    
+    nltk_sentiment = SentimentIntensityAnalyzer()    
+    score = nltk_sentiment.polarity_scores(sentence)['compound'] 
+    
+    return score
+
 
 
 class CustomeEncoder(json.JSONEncoder):
     """
         Custom encoder for comment class
     """
-
     def default(self, o):
         return o.__dict__
 
@@ -49,7 +107,7 @@ class Comment:
         self.created = comment.created
         self.id = comment.id
         self.body = comment.body
-        self.sentiment = None # todo: update with sentiment analysis
+        self.sentiment = convert_score(add_sentiment(comment))
         self.replies = [Comment(c) for c in comment.replies]
 
 
@@ -100,6 +158,3 @@ if __name__ == "__main__":
     submission_id = "9bdwe3"
     bot = RedditBot(subreddit)
     bot.dump_submission_comments(submission_id, filename)
-    # for c in bot.get_submissions():
-    #     print(c)
-    # print(len(bot.get_submissions()))
