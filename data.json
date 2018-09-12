@@ -4,40 +4,44 @@
     "title":"Do You Program By Proof?",
     "view_count":null,
     "upvote_ratio":0.95,
-    "ups":109,
+    "ups":111,
     "downs":0,
     "comments":[
         {
             "author":"shuerpiola",
-            "score":39,
-            "created":1535625500.0,
+            "score":38,
+            "timestamp":1535625500.0,
             "id":"e52pma1",
             "body":"This is standard practice in critical safety systems, such as insulin pumps or pacemakers.\n\nEdit: The *entire system* is has to be axiomatized, down to its circuits. This is far too costly to do for ordinary applications.",
+            "sentiment_score":0.0084,
             "sentiment":"Neutral",
             "replies":[]
         },
         {
             "author":"PetrosPapapa",
-            "score":34,
-            "created":1535650240.0,
+            "score":36,
+            "timestamp":1535650240.0,
             "id":"e535aac",
             "body":"Programming by proof is a big part of my job/research. This is a whole field, so I'll try to keep it short, but please feel free to AMA.\n\n# Formal Verification\n\nGenerally speaking, there are 2 types of formal verification: theorem proving (logic reasoning) and model checking.\n\n* Theorem proving has to do with specifying your software/hardware in terms of mathematical logic. You can then prove things about it (Does it terminate? Does it actually calculate what you want it to calculate? Can you ever get a null exception? Can you ever get an uncaught exception? etc).\n* Model checking typically has to do with a state-based representation of a system and you can verify quantifiable properties or properties about relative time (Do I always get this result if I give this input? Is it possible to get money out without ever entering your PIN? etc.)\n\nBoth of these are complex and time consuming. Although tools for both have vastly improved in the recent years, the complexity of the verification is very high, especially given how large and complex modern systems are.\n\n# Program By Proof\n\nThe \"Program By Proof\" paradigm has to do with constructive type theory and the Curry-Howard correspondence where you mathematically define a type system and perform mathematical proofs of various properties which then automatically translate to executable code. Coq is the most developed system that actually focuses on this. The main issue with it is that the generated code is typically very inefficient.\n\nAnother approach is one where you implement algorithms in a functional way directly on the logic of a theorem prover and prove properties about it. The proof system can then translate your algorithms from mathematics to code. This can be quite effective, but as with everything else, it doesn't scale to large systems.\n\n# Successes\n\nIn contrast, formal verification has been very successfully used in the development of modern programming languages, especially functional ones. Haskell and F# (among others) have very strong links to formal type theory and they start from there to develop new features.\n\nFormal verification is also adopted to deal with safety-critical software. NASA, for example, uses it a lot and so do companies that develop UAVs and Air Traffic Controller software etc.\n\nBoth Intel and AMD have saved themselves millions by catching hardware errors in their processors early, in some cases just before sending mass produced faulty processors to the world.\n\n# Verification vs. Testing\n\nFormal verification is the ultimate way of ensuring the correctness of your algorithms. It gives you absolute, mathematical guarantees for anything that you are able to prove. However, to accomplish that you have to build a model of your system, which means some parts need to be abstracted from the real world. Dealing with unknown unknowns is always a problem.\n\nMoreover, you also need to describe the properties you want to prove using logic. It is quite possible to create and prove a specification of a property, but that doesn't fully describe your system. As a silly example, a system may adhere to the property that it always terminates, but maybe that's because you forgot a \"return\" statement in the 2nd line and your algorithm doesn't really do anything!\n\nThis is the main reason why verification is not enough on its own and you need to complement it with testing. Testing on its own isn't enough either, because you can only test for specific inputs, whereas verification gives you properties for any possible input.",
+            "sentiment_score":0.0959,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"tulip_bro",
                     "score":4,
-                    "created":1535663238.0,
+                    "timestamp":1535663238.0,
                     "id":"e53dq5m",
                     "body":"To add to your list of entities using formal methods at least in the past, there are a few papers on Amazon using TLA+ to formally specify some of their distributed systems and catching a few potentially expensive bugs.\n\nedit: my I request how or what you do as a researcher/ practitioner of formal verification? I discovered this field last year and it really made programming and math (logic) really click for me. Since then I've taken a course on program analysis, researched lightweight formal methods to see if any use cases are applicable to my job, etc. ",
+                    "sentiment_score":0.0445,
                     "sentiment":"Neutral",
                     "replies":[
                         {
                             "author":"PetrosPapapa",
                             "score":2,
-                            "created":1535724287.0,
+                            "timestamp":1535724287.0,
                             "id":"e554gqa",
                             "body":"Amazon using TLA+ is interesting! I need to read more about it, thanks!\n\nI'm looking into ways of using formal verification to enable trusted collaboration between people. For example, I'm developing a framework for correct-by-construction workflow models. This means I'm using logic inference (a variance of type theory) to construct software that has guaranteed correctness properties from the get-go. I've used this in healthcare quite a lot, to model patient pathways in a hospital (what should happen from admission to discharge) and formal contracts for data sharing.\n\nI work mostly with theorem provers, particularly HOL Light and Isabelle.",
+                            "sentiment_score":0.2863,
                             "sentiment":"Positive",
                             "replies":[]
                         }
@@ -46,26 +50,29 @@
                 {
                     "author":"crocodilem8",
                     "score":2,
-                    "created":1535696318.0,
+                    "timestamp":1535696318.0,
                     "id":"e54eu0u",
                     "body":"Well you must enjoy your job, sounds great. Do you work with people who are also good with hardware/low level code to get a fully optimized result? Or have compilers come a long enough way for it not to be a concern? Also does this mean languages with algebraic types are always strongly static typed?",
+                    "sentiment_score":0.4658,
                     "sentiment":"Positive",
                     "replies":[
                         {
                             "author":"Anonymous",
                             "score":3,
-                            "created":1535735080.0,
+                            "timestamp":1535735080.0,
                             "id":"e55a54f",
                             "body":"> Also does this mean languages with algebraic types are always strongly static typed?\n\nI don't see a reason why this should be the case. I assume it is for historic reasons: Many languages that have algebraic types and are used also have roots in ML.\n\nI have not yet a deep understanding of the use cases of ADTs, but I have a feeling that dynamic languages solve the same use cases differently. Clojure for example does many things with combining maps together and so making up new \"types\" as needed. I do not think there would be much benefit for a Clojurist to state that new \"type\" before using it.",
+                            "sentiment_score":0.2465,
                             "sentiment":"Positive",
                             "replies":[]
                         },
                         {
                             "author":"PetrosPapapa",
                             "score":1,
-                            "created":1535725951.0,
+                            "timestamp":1535725951.0,
                             "id":"e555gvp",
                             "body":"It has its pros and cons like any job, but I'm really passionate about it!\n\nI don't generally work on low level code, because I personally don't enjoy it that much. I prefer high level applications with real world cases and trying to make things accessible to non-experts. There are plenty of groups (worldwide) working on verification of compilers and hardware independently. \n\nAFAIK there are ways to do dynamic type checking for algebraic types, though I can't think of languages that do that off the top of my head. Doesn't it usually go the other way around? You use algebraic types because you *want* static type checking.",
+                            "sentiment_score":0.1066,
                             "sentiment":"Positive",
                             "replies":[]
                         }
@@ -74,33 +81,37 @@
                 {
                     "author":"metawhimsy",
                     "score":1,
-                    "created":1535688931.0,
+                    "timestamp":1535688931.0,
                     "id":"e5483xx",
                     "body":"> You can then prove things about it (Does it terminate? [...])\n\nIs the Halting Theorem just a pathological case in practice?",
+                    "sentiment_score":0.0,
                     "sentiment":"Neutral",
                     "replies":[
                         {
                             "author":"PetrosPapapa",
                             "score":2,
-                            "created":1535725161.0,
+                            "timestamp":1535725161.0,
                             "id":"e554zzl",
                             "body":"It is! It is not only undecidable, but also can be quite hard even for simple algorithms. As an example, [invariant](https://en.wikipedia.org/wiki/Invariant_(computer_science)) detection is a whole research field.\n\nThough for things like this, I like quoting [Byron Cook](http://www0.cs.ucl.ac.uk/staff/b.cook/) (who has done a lot of work on termination with Microsoft and beyond): \"*If you are not working on an undecidable problem, you are boring!*\"",
+                            "sentiment_score":-0.0491,
                             "sentiment":"Neutral",
                             "replies":[
                                 {
                                     "author":"metawhimsy",
                                     "score":3,
-                                    "created":1535730119.0,
+                                    "timestamp":1535730119.0,
                                     "id":"e557r3b",
                                     "body":"Ah, by \"pathological case,\" I meant to speculate that, in practice, while the _general_ case is undecideable, most cases may be fairly easy to decide - kind of like the notion of SAT solvers. NP, but as it turns out still fairly tractable in a lot of cases, particularly if you're satisfied with non-optimal-but-very-close solutions.\n\nWhat I'm inferring from your reply, though, is that this is still a big challenge even for relatively straightforward cases. \n\nI wonder - what strategies are used here, broadly? The first thing that comes to my mind is perhaps coming up with sorts of \"building blocks\" whose termination logic you've solved and then composing them into larger structures.",
+                                    "sentiment_score":0.3115,
                                     "sentiment":"Positive",
                                     "replies":[
                                         {
                                             "author":"PetrosPapapa",
                                             "score":2,
-                                            "created":1535736459.0,
+                                            "timestamp":1535736459.0,
                                             "id":"e55askm",
                                             "body":"Ah sorry then. I think Cook's quote was about exactly that. Although the problem is undecidable, he (and others) have accomplished so much. He had many applications of this to find driver bugs in Windows, which were (are?) the most common reason for OS crashes. (I just realised this was 10 years ago and briefly freaked out as to how fast time flies...). I think concurrency is a much more popular challenge these days, perhaps as termination used to be in the past.\n\nI think verification has 2 issues:\n\n1. Scalability, especially with regards to efficiency. Sure you can have terminating building blocks and build more complex stuff, but that limits what you can actually build and (more importantly) how efficiently it will run in a modern production environment vs. freeform code.\n2. Cost vs. motivation. It is very hard to motivate anyone to pay experts, adopt complicated tools, and spend time verifying a complex system only to end up realising it was working fine and only had minor bugs all along. This is more and more true with agile deployment and continuous integration techniques which are so fast in comparison. Safety critical systems are the natural exceptions.",
+                                            "sentiment_score":0.1908,
                                             "sentiment":"Positive",
                                             "replies":[]
                                         }
@@ -114,34 +125,38 @@
         },
         {
             "author":"jacksonmills",
-            "score":35,
-            "created":1535611057.0,
+            "score":37,
+            "timestamp":1535611057.0,
             "id":"e52b0dk",
             "body":"I'm not sure they will replace unit tests. Maybe they will be a complement, but there are a lot of things in a practical application that aren't necessarily \\*provable\\* per se, they are just desired. Permutations of conditions in the application may not necessarily also have continuous, provable, or \"logical\" desired output. So in some sense, especially around very fluid and abstract business logic, it might be a hard case to see.\n\nAlso, I think a good set of unit tests kind of reads like a proof anyway. It's more like saying \"when I do this, I expect that\". Really good sets of tests read like a paragraph, such that you sort of understand what the object is claiming to do, and them passing is proof that it can at least do that.\n\nI think testing tools can improve a lot though, and there's probably more that can be done from an automated side on that end. I'm just not sure it's proofs or proof-based languages.",
+            "sentiment_score":0.2545,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"crocodilem8",
-                    "score":3,
-                    "created":1535611806.0,
+                    "score":4,
+                    "timestamp":1535611806.0,
                     "id":"e52bt1w",
                     "body":"Yes, I understand that sometimes it will come down to an engineering decision, and at then end of the day going to one extreme is not productive. However intuitively it seems the overhead lost by trying to compose some type of proof is gained back faster than creating unit tests, especially when creating a testing environment is not exactly feasible. I also remember reading somewhere that computer science is the automation of abstraction, so in the business case maybe sometimes there is more information to abstract away, while it would be harder to make a unit test?\n",
+                    "sentiment_score":0.3246,
                     "sentiment":"Positive",
                     "replies":[
                         {
                             "author":"MjrK",
                             "score":1,
-                            "created":1535662228.0,
+                            "timestamp":1535662228.0,
                             "id":"e53ctbv",
                             "body":">I also remember reading somewhere that computer science is the automation of abstraction\n\nDo you remember where you might have read this?\n\nJust seems misguided to me, for someone to describe CS as \"the automation of abstraction\". AI, perhaps, could be described as \"the automation of abstraction\"; but even then, that's only a small subset of what CS is concerned with.",
+                            "sentiment_score":0.0,
                             "sentiment":"Neutral",
                             "replies":[
                                 {
                                     "author":"crocodilem8",
                                     "score":1,
-                                    "created":1535695368.0,
+                                    "timestamp":1535695368.0,
                                     "id":"e54e47r",
                                     "body":"I\u2019m pretty sure its in the introduction of \"Foundations of Computer Science\"",
+                                    "sentiment_score":0.0,
                                     "sentiment":"Neutral",
                                     "replies":[]
                                 }
@@ -152,25 +167,28 @@
                 {
                     "author":"NicolasGuacamole",
                     "score":6,
-                    "created":1535618069.0,
+                    "timestamp":1535618069.0,
                     "id":"e52i7hm",
                     "body":"Sorry to be this guy, but it\u2019s \u2018per se\u2019. It\u2019s Latin for \u2018in and of itself\u2019.",
+                    "sentiment_score":-0.0193,
                     "sentiment":"Neutral",
                     "replies":[
                         {
                             "author":"experts_never_lie",
-                            "score":15,
-                            "created":1535638565.0,
+                            "score":16,
+                            "timestamp":1535638565.0,
                             "id":"e52zm8g",
                             "body":"It's also \"complement\", not \"compliment\", but I'm guessing there just wasn't enough coverage for those cases in the unit tests.\n ",
+                            "sentiment_score":0.0,
                             "sentiment":"Neutral",
                             "replies":[
                                 {
                                     "author":"NicolasGuacamole",
                                     "score":2,
-                                    "created":1535644881.0,
+                                    "timestamp":1535644881.0,
                                     "id":"e532usq",
                                     "body":"Thanks",
+                                    "sentiment_score":0.0,
                                     "sentiment":"Neutral",
                                     "replies":[]
                                 }
@@ -183,33 +201,37 @@
         {
             "author":"mazesc_",
             "score":10,
-            "created":1535611663.0,
+            "timestamp":1535611663.0,
             "id":"e52bnii",
             "body":"Not sure which paradigm in terms of formal correctness you mean exactly, but yes there are absolutely applications where unit tests are not sufficient and serious effort is put into proving properties of the program. One example is https://project-everest.github.io/",
+            "sentiment_score":0.2636,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"crocodilem8",
-                    "score":2,
-                    "created":1535612650.0,
+                    "score":3,
+                    "timestamp":1535612650.0,
                     "id":"e52cp0f",
                     "body":"This is nice too see, have you ever used `F*`? It seems like a prototype language? I wonder why not add those features to the Ocaml compiler",
+                    "sentiment_score":0.3913,
                     "sentiment":"Positive",
                     "replies":[
                         {
                             "author":"mazesc_",
                             "score":5,
-                            "created":1535614041.0,
+                            "timestamp":1535614041.0,
                             "id":"e52e4nz",
                             "body":"Ad OCaml: F* has dependent types. Type checking for dependent types is undecidable as they correspond to first-order logic. https://en.wikipedia.org/wiki/Dependent_type\n\nThis is something you wouldn't want in a general purpose language.\n\nDependent types would allow you to have an output value of a type that reads something like \"for all inputs Y there exists an output x such that the specification evaluated on Y equals x\". So you would get a correctness proof encoded into the type.\nThis is again Curry-Howard: programs ~ types ~ proofs.",
+                            "sentiment_score":0.1072,
                             "sentiment":"Positive",
                             "replies":[
                                 {
                                     "author":"bdtddt",
                                     "score":3,
-                                    "created":1535658732.0,
+                                    "timestamp":1535658732.0,
                                     "id":"e53a027",
                                     "body":"Programs ~ proofs\n\nTypes ~ propositions",
+                                    "sentiment_score":0.0,
                                     "sentiment":"Neutral",
                                     "replies":[]
                                 }
@@ -217,26 +239,29 @@
                         },
                         {
                             "author":"bremby",
-                            "score":5,
-                            "created":1535655379.0,
+                            "score":4,
+                            "timestamp":1535655379.0,
                             "id":"e537ul2",
                             "body":"I have just defended my thesis where we tried using Vale language, which is related to Project Everest. Sadly, from our experience, Vale may have a huge potential, but it comes at a cost of difficulty. It's not mature, it's hard, maybe almost impossible to learn and difficult to use at all.",
+                            "sentiment_score":-0.3555,
                             "sentiment":"Negative",
                             "replies":[
                                 {
                                     "author":"_georgesim_",
                                     "score":1,
-                                    "created":1535685144.0,
+                                    "timestamp":1535685144.0,
                                     "id":"e543kw1",
                                     "body":"Bachelor or MS?",
+                                    "sentiment_score":0.0,
                                     "sentiment":"Neutral",
                                     "replies":[
                                         {
                                             "author":"bremby",
                                             "score":2,
-                                            "created":1535685761.0,
+                                            "timestamp":1535685761.0,
                                             "id":"e544bpz",
                                             "body":"MSc.",
+                                            "sentiment_score":0.0,
                                             "sentiment":"Neutral",
                                             "replies":[]
                                         }
@@ -245,17 +270,19 @@
                                 {
                                     "author":"PetrosPapapa",
                                     "score":1,
-                                    "created":1535726117.0,
+                                    "timestamp":1535726117.0,
                                     "id":"e555kdf",
                                     "body":"Congrats! Sounds interesting!",
+                                    "sentiment_score":0.5141,
                                     "sentiment":"Positive",
                                     "replies":[
                                         {
                                             "author":"bremby",
                                             "score":2,
-                                            "created":1535726314.0,
+                                            "timestamp":1535726314.0,
                                             "id":"e555of6",
                                             "body":"Thanks! The main topic was way more interesting, check out Janus, the time-reversible language. :-)",
+                                            "sentiment_score":0.4751,
                                             "sentiment":"Positive",
                                             "replies":[]
                                         }
@@ -266,18 +293,20 @@
                         {
                             "author":"tulip_bro",
                             "score":2,
-                            "created":1535613337.0,
+                            "timestamp":1535613337.0,
                             "id":"e52del4",
                             "body":"> It seems like a prototype language? I wonder why not add those features to the Ocaml compiler\n\nOCaml is a general purpose language, most likely it's language specifications are maintained by a committee. If it doesn't make sense to integrate a domain specific feature (such as provability) that won't be used or in demand by the general user base of the language, then it won't be implemented. \n\nThis same argument can be made for any problem specific programming language feature.\n\n",
+                            "sentiment_score":-0.1009,
                             "sentiment":"Negative",
                             "replies":[]
                         },
                         {
                             "author":"mazesc_",
                             "score":1,
-                            "created":1535613280.0,
+                            "timestamp":1535613280.0,
                             "id":"e52dch9",
                             "body":"I have not seriously used it. It is a dependently typed programming language. It is quite new, coming out of research, and has a particular purpose. Namely to write formally correct programs by making use of a powerful type system. F* programs, as far as I'm aware cannot be executed, but programs can be extracted into an executable language such as F# after one has proven the F* program correct.",
+                            "sentiment_score":0.1108,
                             "sentiment":"Positive",
                             "replies":[]
                         }
@@ -287,42 +316,47 @@
         },
         {
             "author":"SrPeixinho",
-            "score":36,
-            "created":1535610335.0,
+            "score":33,
+            "timestamp":1535610335.0,
             "id":"e52a8gc",
             "body":"I, perhaps coincidently, have just written a post on how formal proofs will be used to replace tests in a browser being developed for Ethereum, where bugs can real money losses. [Here it is](https://medium.com/@maiavictor/updates-on-ethereums-moon-project-535f8c0497ef).",
+            "sentiment_score":-0.2009,
             "sentiment":"Negative",
             "replies":[
                 {
                     "author":"crocodilem8",
                     "score":2,
-                    "created":1535611140.0,
+                    "timestamp":1535611140.0,
                     "id":"e52b3ip",
                     "body":"Interesting post, although a bit of it is lost on me since I have not kept up on crypto jargon. What is your process like for this project itself? If you do this project in a proof based style what language do you use, and does it have an effect on how easy it is to transition from a proof to a program? Also how did you get these numbers:\n>Technically, formal proofs reduce the human work required to audit a program of size N to O(1), allowing users to \u201caudit it themselves\u201d without reading and analyzing every state in a huge codebase (that\u2019s what the proof does!).",
+                    "sentiment_score":0.3211,
                     "sentiment":"Positive",
                     "replies":[
                         {
                             "author":"SrPeixinho",
                             "score":5,
-                            "created":1535613171.0,
+                            "timestamp":1535613171.0,
                             "id":"e52d8i9",
                             "body":"A proof is actually a program, are you familiar with Agda and  the like, and the curry-howard correspondence? \n\nThe number comes from the fact that you can check a property about an arbitrarily long program by reading a single, small sentence. Think of a MMORPG, for example. You could have a property such as \"no matter what happens, this game will never have a state where a player crosses certain wall\". Once someone has proven that claim, all you need to do to verify it is read the property (it could be a small one line type) and press \"check\". For you, that was much less work than verifying the entire program to be sure no state can lead to a player crossing that wall. Moreover, the game can be further updated with new movement options such as teleporting spells and the like. That means the developer must now update the proof to cover all the new cases. Yet, once all that work is done, you, the player, can still be convinced that the property holds by merely pressing \"check\" again. The work to verify a property about arbitrarily long behaviors and interactions is constant, or `O(1)`.",
+                            "sentiment_score":0.1303,
                             "sentiment":"Positive",
                             "replies":[
                                 {
                                     "author":"bdtddt",
                                     "score":4,
-                                    "created":1535658188.0,
+                                    "timestamp":1535658188.0,
                                     "id":"e539lze",
                                     "body":"I think this is only partly correct. To understand that high-level specification, you need to drill down and look at what it is defined in terms of. You may agree that it says \u2018no player ever crosses a certain wall\u2019, but disagree with the notion of what a wall is, for example.\n\nI do agree that simply checking specifications is massively easier than auditing code, but presenting it as an O(1) operation involving reading a single sentence doesn\u2019t make sense to me. To be sure of that specification you need to dive into it, and this will take longer the bigger your program is.",
+                                    "sentiment_score":0.1043,
                                     "sentiment":"Positive",
                                     "replies":[
                                         {
                                             "author":"SrPeixinho",
                                             "score":1,
-                                            "created":1535658774.0,
+                                            "timestamp":1535658774.0,
                                             "id":"e53a16z",
                                             "body":"I don't agree it will take longer the bigger your program is, it will take longer the bigger the specification itself is. Again on the MMO example, no matter how huge and complex the game is, the specification that certain player or certain tile has certain state in given conditions will always be small. Now, if you want to prove that elliptic curves over complex fields are shaped like a teddy bear when rendered in a polar coordinate system then yea, your specification may be quite daunting...",
+                                            "sentiment_score":0.2722,
                                             "sentiment":"Positive",
                                             "replies":[]
                                         }
@@ -331,9 +365,10 @@
                                 {
                                     "author":"crocodilem8",
                                     "score":1,
-                                    "created":1535614161.0,
+                                    "timestamp":1535614161.0,
                                     "id":"e52e93z",
                                     "body":"yeah this makes sense, to be pedantic I thought you had pegged the readers at linear time, but I just read it wrong.",
+                                    "sentiment_score":-0.631,
                                     "sentiment":"Negative",
                                     "replies":[]
                                 }
@@ -345,43 +380,48 @@
         },
         {
             "author":"swimmer91",
-            "score":13,
-            "created":1535611726.0,
+            "score":12,
+            "timestamp":1535611726.0,
             "id":"e52bpy8",
             "body":"This is a topic I'm particularly interested in, but still learning about.\n\nTo start, [proofs are programs and programs are proofs](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence).  When the type system of a language is sufficiently powerful (containing more types corresponding to useful mathematical objects), [we can create theorem provers for functions defined in the language](https://en.wikipedia.org/wiki/Coq).  We can then guide these theorem provers to useful lemmas.  Then we get code which is proven correct and unit tests are obsolete.\n\nThis is an active area of research.  Researchers are working to expand the capabilities of theorem provers as well as [to make these more powerful languages more approachable](https://www.idris-lang.org/).\n\nLike I said, I'm still learning about this stuff.  If I've said anything misleading or incorrect, I would appreciate someone cluing me in!",
+            "sentiment_score":0.2448,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"crocodilem8",
                     "score":3,
-                    "created":1535612222.0,
+                    "timestamp":1535612222.0,
                     "id":"e52c8w5",
                     "body":"I will read the Curry-Howard Correspondence some day, seems like a nice read. Does this hold even for assembly? I am also speaking to the approach to programming as well, by creating a proof and then programming it.",
+                    "sentiment_score":0.3864,
                     "sentiment":"Positive",
                     "replies":[
                         {
                             "author":"mazesc_",
-                            "score":6,
-                            "created":1535614479.0,
+                            "score":7,
+                            "timestamp":1535614479.0,
                             "id":"e52ekmp",
                             "body":"I found this a gentle introduction: https://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf",
+                            "sentiment_score":0.4404,
                             "sentiment":"Positive",
                             "replies":[
                                 {
                                     "author":"crocodilem8",
                                     "score":1,
-                                    "created":1535614825.0,
+                                    "timestamp":1535614825.0,
                                     "id":"e52exeg",
                                     "body":"Thanks",
+                                    "sentiment_score":0.0,
                                     "sentiment":"Neutral",
                                     "replies":[]
                                 },
                                 {
                                     "author":"nath1as",
                                     "score":1,
-                                    "created":1535659751.0,
+                                    "timestamp":1535659751.0,
                                     "id":"e53arjd",
                                     "body":"thank you, I've been searching for something like that ",
+                                    "sentiment_score":0.0,
                                     "sentiment":"Neutral",
                                     "replies":[]
                                 }
@@ -390,41 +430,46 @@
                         {
                             "author":"swimmer91",
                             "score":2,
-                            "created":1535622192.0,
+                            "timestamp":1535622192.0,
                             "id":"e52mdl9",
                             "body":"Yep, it holds for assembly.  The correspondence deals with programs in the abstract, not necessarily bound to any specific programming language.\n\nThat said, just because there _is_ a correspondence doesn't mean that it's easy to take an arbitrary program and generate a corresponding proof or vice versa.  This is where more powerful languages come in.  They provide types which more directly reflect constructs commonly used to create proofs.  Because of this, the program will more closely resemble a proof, leaving less of a gap to overcome.\n\nSo it is certainly possible to do with assembly what is being done with Coq, Idris, and other dependently-typed functional languages. It would just be really hard. Perhaps someday the work that is being done on automated theorem provers will reach a point where we can extend their functionality to languages like c and Python.  After that, they could perhaps be extended to work with assembly.",
+                            "sentiment_score":0.2214,
                             "sentiment":"Positive",
                             "replies":[
                                 {
                                     "author":"bdtddt",
-                                    "score":3,
-                                    "created":1535658562.0,
+                                    "score":1,
+                                    "timestamp":1535658562.0,
                                     "id":"e539vpo",
                                     "body":"Assembly has no type system so CH absolutely does not apply.",
+                                    "sentiment_score":-0.296,
                                     "sentiment":"Negative",
                                     "replies":[
                                         {
                                             "author":"swimmer91",
                                             "score":1,
-                                            "created":1535670661.0,
+                                            "timestamp":1535670661.0,
                                             "id":"e53lpd9",
                                             "body":"Hmm yeah now that I think about it more, I may have been a little quick to say yes there.\n\nMy thinking was that you still have the Curry-Howard correspondence, you just have very rudimentary logic constructs to work with on the proof side.\n\nI can't say for sure whether that is true.  Like I said earlier, I'm still learning this stuff myself.  I definitely shouldn't have just said \"yes\" based on my own assumptions though.\n\nLooking into it a bit more, I found [a paper](https://link.springer.com/chapter/10.1007/10705424_20) which seems to suggest the correspondence holds for machine code.  I don't have time right now to look at it too closely though.",
+                                            "sentiment_score":0.2249,
                                             "sentiment":"Positive",
                                             "replies":[
                                                 {
                                                     "author":"bdtddt",
                                                     "score":2,
-                                                    "created":1535673712.0,
+                                                    "timestamp":1535673712.0,
                                                     "id":"e53pdt8",
                                                     "body":"CH is just the syntactic correspondence between types and propositions, as well as the inhabitants of those types (i.e. programs) and proofs. If there are no types, as is the case with assembly, then there can be no such correspondence. \n\nThat paper seems to be conflating the general connection between computation and logic (which is far older and deeper) with CH.",
+                                                    "sentiment_score":-0.0845,
                                                     "sentiment":"Negative",
                                                     "replies":[
                                                         {
                                                             "author":"Anonymous",
                                                             "score":2,
-                                                            "created":1535735335.0,
+                                                            "timestamp":1535735335.0,
                                                             "id":"e55a9dk",
                                                             "body":"Is there such a thing as internal typing? I assume you can regard assembly as have only one type. Say \"Natural numbers\". But then we could create new types from subsets of this one type, for example booleans. We could apply CH to these newly formed internal/subtypes.",
+                                                            "sentiment_score":0.1269,
                                                             "sentiment":"Positive",
                                                             "replies":[]
                                                         }
@@ -441,26 +486,29 @@
                 {
                     "author":"McPhage",
                     "score":5,
-                    "created":1535622272.0,
+                    "timestamp":1535622272.0,
                     "id":"e52mgfx",
                     "body":"Proofs are programs, and programs are proofs\u2014but proofs aren\u2019t useful programs, and programs aren\u2019t useful proofs.",
+                    "sentiment_score":0.7003,
                     "sentiment":"Positive",
                     "replies":[
                         {
                             "author":"bdtddt",
-                            "score":8,
-                            "created":1535658448.0,
+                            "score":6,
+                            "timestamp":1535658448.0,
                             "id":"e539sr6",
                             "body":"Totally wrong. Take the composition function for example, with type `(a -> b) * (b -> c) -> a -> c`. Massively useful as both a programmatic function and as a logical theorem, and that\u2019s just a trivial example.\n\nObviously not all programs are useful proofs and vice-versa, but plenty are.",
+                            "sentiment_score":0.0335,
                             "sentiment":"Neutral",
                             "replies":[]
                         },
                         {
                             "author":"agrif",
                             "score":3,
-                            "created":1535646322.0,
+                            "timestamp":1535646322.0,
                             "id":"e533iur",
                             "body":"[That's not always true.](http://blog.sigfpe.com/2006/11/from-l-theorem-to-spreadsheet.html)",
+                            "sentiment_score":-0.3252,
                             "sentiment":"Negative",
                             "replies":[]
                         }
@@ -471,25 +519,28 @@
         {
             "author":"tulip_bro",
             "score":11,
-            "created":1535611899.0,
+            "timestamp":1535611899.0,
             "id":"e52bwhl",
             "body":"Commenting to elaborate further, but for now, I will say that if you accept the Curry-Howard-Correspondence, in that programs are equivalent to proofs, then all coders program by proofs, by default.\n\nAdditionally, it's hard to compare unit testing with formal verification. Unit testing is largely a black box testing technique with a regression suite being a side effect. At a high level, unit testing is saying \"I can prove an absence of this particular bug occurring for the program, but that's it.\"\n\nWhereas verification/ proving is more general, powerful, and expensive, paraphrasing that \"I can prove an absence of all bugs for this program, in all runs.\"\n\n\u200b\n\n**Edit 2:** IIRC, one of the biggest issues with formal verification is at what point do we stop to _prove_ a program formally? E.g., great, I've formally proved a program does _x_. But what about it's compiler? Do I need to formally verify the compiler? And then the operating system?",
+            "sentiment_score":0.0546,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"mazesc_",
                     "score":7,
-                    "created":1535612133.0,
+                    "timestamp":1535612133.0,
                     "id":"e52c5in",
                     "body":"Yes, but if you don't know what you're proving, correctness means nothing, so you better have a specification. So yes, while every program corresponds to some proof, it might not be the proof you want.",
+                    "sentiment_score":0.0671,
                     "sentiment":"Positive",
                     "replies":[
                         {
                             "author":"tulip_bro",
                             "score":2,
-                            "created":1535612612.0,
+                            "timestamp":1535612612.0,
                             "id":"e52cnjt",
                             "body":"Agreed. In fact, there's multiple levels of formal methods/ software proving according to the wikipedia on the subject. Level 0 is as you've mentioned, formal specification.",
+                            "sentiment_score":0.0911,
                             "sentiment":"Positive",
                             "replies":[]
                         }
@@ -497,34 +548,38 @@
                 },
                 {
                     "author":"bdtddt",
-                    "score":3,
-                    "created":1535658591.0,
+                    "score":5,
+                    "timestamp":1535658591.0,
                     "id":"e539wg8",
                     "body":"The Curry-Howard isomorphism isn\u2019t up for accepting, it is trivially true.\n\nAnd your second edit is not a serious problem for anyone actually knowledgable about the field, it was resolved decades ago.",
+                    "sentiment_score":0.5954,
                     "sentiment":"Positive",
                     "replies":[
                         {
                             "author":"tulip_bro",
                             "score":1,
-                            "created":1535659180.0,
+                            "timestamp":1535659180.0,
                             "id":"e53ac35",
                             "body":"Would appreciate any resources / papers on your last point!",
+                            "sentiment_score":0.4574,
                             "sentiment":"Positive",
                             "replies":[
                                 {
                                     "author":"bdtddt",
                                     "score":2,
-                                    "created":1535664350.0,
+                                    "timestamp":1535664350.0,
                                     "id":"e53esi0",
                                     "body":"De Bruin\u2019s criterion resolves software questions, and hardware is not really a serious issue, besides the fact most chips are formally verified themselves.",
+                                    "sentiment_score":0.2821,
                                     "sentiment":"Positive",
                                     "replies":[
                                         {
                                             "author":"tulip_bro",
                                             "score":3,
-                                            "created":1535665352.0,
+                                            "timestamp":1535665352.0,
                                             "id":"e53fspo",
                                             "body":"For those, if any, interested in the question of _how do we formally verify a verifier_, I found this [math-overflow question with responses on De Bruijn criterion,](https://mathoverflow.net/questions/18421/how-do-they-verify-a-verifier-of-formalized-proofs) a great intro. Thanks /u/bdtddt",
+                                            "sentiment_score":0.4019,
                                             "sentiment":"Positive",
                                             "replies":[]
                                         }
@@ -538,18 +593,20 @@
         },
         {
             "author":"FUZxxl",
-            "score":5,
-            "created":1535657648.0,
+            "score":4,
+            "timestamp":1535657648.0,
             "id":"e5398iy",
             "body":"I used to prove the correctness of C programs with proof assistants using [Frama C](http://frama-c.com).  Oh boy was that hard.  The easiest things were just impossible to prove.",
+            "sentiment_score":0.1063,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"trichotillofobia",
                     "score":1,
-                    "created":1535948271.0,
+                    "timestamp":1535948271.0,
                     "id":"e5a7oge",
                     "body":"Did you ever take a look at [wuffs](https://github.com/google/wuffs)? At a first glance, it looks quite interesting.",
+                    "sentiment_score":0.2288,
                     "sentiment":"Positive",
                     "replies":[]
                 }
@@ -558,17 +615,19 @@
         {
             "author":"remy_porter",
             "score":11,
-            "created":1535622654.0,
+            "timestamp":1535622654.0,
             "id":"e52mu5t",
             "body":"Unit tests are a low-key attempt at imitating proofs- they're \"proof by doing it a bunch of times with mildly varying conditions\". From a mathematical perspective, that's not anything like a proof.\n\nBut from a *practical* perspective, it's arguably better than a proof. Here's the thing: I don't actually care if my code is \"correct\" or not. What I care about is this: given the planned execution of my code, does it behave the way I expect it to behave?\n\nIt's a cost/benefit problem. While unit tests are *tedious*, they're also quick and easy. I can take a set of expected inputs, their matching outputs, and whip up a plausible unit test in less time than it takes to implement the code.\n\nWriting unit-testable code is more complicated than simply writing code. Writing proveable code is at least as complicated as writing unit-testable code, and usually will be much *more* complicated.",
+            "sentiment_score":0.0096,
             "sentiment":"Neutral",
             "replies":[
                 {
                     "author":"skulgnome",
-                    "score":3,
-                    "created":1535623793.0,
+                    "score":2,
+                    "timestamp":1535623793.0,
                     "id":"e52nym4",
                     "body":"Hey, unit tests need not be written willy-nilly cargo cult style. That's just a waste of time.",
+                    "sentiment_score":-0.2107,
                     "sentiment":"Negative",
                     "replies":[]
                 }
@@ -577,17 +636,19 @@
         {
             "author":"ccundcf",
             "score":3,
-            "created":1535613471.0,
+            "timestamp":1535613471.0,
             "id":"e52djh4",
             "body":"Cardano use proofs in their work. This is a good video about their approach - https://www.youtube.com/watch?v=TZGVgNsJSnA . Oxford Uni comlab used to believe in the utility of formal proof in general industry but one of the main drivers of that (Prof. Hoare) reversed that stance a while ago. It is still a very mathematically driven comp. sci department however. https://www.cs.ox.ac.uk/people/tony.hoare/ . \n",
+            "sentiment_score":0.0734,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"crocodilem8",
                     "score":2,
-                    "created":1535624464.0,
+                    "timestamp":1535624464.0,
                     "id":"e52omgj",
                     "body":"I finished the video and I recommend it, gives a good explanation and goes over the pros and cons, also nice diagram. This is more along the lines of what I was thinking",
+                    "sentiment_score":0.802,
                     "sentiment":"Positive",
                     "replies":[]
                 }
@@ -595,36 +656,40 @@
         },
         {
             "author":"acroback",
-            "score":5,
-            "created":1535626907.0,
+            "score":4,
+            "timestamp":1535626907.0,
             "id":"e52qysn",
             "body":"I find that a lot of programmers have never heard of state machines and k maps to manage complexity.\n\nSome decently complex system can be coded as a state machine or it's variant.  Helps a lot IMO.",
+            "sentiment_score":0.1273,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"NerdAtTheTerminal",
             "score":2,
-            "created":1535725649.0,
+            "timestamp":1535725649.0,
             "id":"e555af4",
             "body":"Proofs cannot eliminate need of debugging or errors during implementation: They just verify the algorithm works properly for all possible test cases i.e inputs. \n\nOtherwise, you cannot test the algorithm for all possible test cases;\n\nSay for example: I need to write a very simple program to compute sums of powers of a natural number (input, say `n`) from power 0 to nth power;\ni.e 1+x+x\u00b2+....+x\u207f\n\nInstead of computing the `n`th power of x in every iteration, we can multiply the sum up to previous iteration by `x` then adding one in each step, i.e:\n\nsum = (sum*x) + 1\n\nI don't elaborate on complete algorithm here -- Just took this example because it is fairly simple, and removes the computational overhead due to the most obvious method;\n\nactually, this method is fairly simple and won't need a proof, still if you are in doubt, you can verify by mathematical induction..\n\nHowever, it becomes significant for more complicated, real world algorithms to verify that the algorithm behaves the way expected for all input (Possibly non mathematical ones as well), and testing all cases is not practical. Mathematics provides an easy way for verification...",
+            "sentiment_score":0.0605,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"agumonkey",
             "score":1,
-            "created":1535628421.0,
+            "timestamp":1535628421.0,
             "id":"e52sc5n",
             "body":"there are research fields about program synthesis, I think they do so.",
+            "sentiment_score":0.0,
             "sentiment":"Neutral",
             "replies":[
                 {
                     "author":"mazesc_",
                     "score":3,
-                    "created":1535644013.0,
+                    "timestamp":1535644013.0,
                     "id":"e532g5n",
                     "body":"While program synthesis makes use of formal methods, synthesized programs are not necessarily correct on all inputs. There are different types of synthesis which are popular, scalability is often achieved by bounding the program or limiting the scope to e.g. programs without loops.\nPeople of course sometimes invest extra effort to achieve full correctness though.\n\nI should add that there are use cases where full correctness is not necessary. A popular example is FlashFill.",
+                    "sentiment_score":0.1686,
                     "sentiment":"Positive",
                     "replies":[]
                 }
@@ -633,34 +698,38 @@
         {
             "author":"eigenman",
             "score":1,
-            "created":1535631237.0,
+            "timestamp":1535631237.0,
             "id":"e52uq1f",
             "body":"Sort of off topic but I rant.  Regarding unit tests.  Aside from test driven design concepts and more in practical terms, unit tests are certainly overdone in many cases and underdone in many cases but at the core, I like that when I build the code it runs some of it.  Such that you get a sort of runtime error check.  It does occasionally catch things that are not obvious on a build and occasionally it informs you of a better way to program something. On the other side having many useless tests mean you have to modify twice as much code for each function modification.   Thus doubling dev time for no extra gain.   If some tests are pure redundancy like prove this function takes some arguments of some type that's literally defined in the function definition then remove it.   Those tests are actually slowing you down for zero gain.",
+            "sentiment_score":0.0513,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"experts_never_lie",
             "score":1,
-            "created":1535639086.0,
+            "timestamp":1535639086.0,
             "id":"e52zwuc",
             "body":"I do, sometimes, for particularly important or unusual sections, but many of the things we would prove are handled by the programming constructs we use.\n\nFor example, one big requirement in proofs is loop termination, but it's handled for us in a \"for (Element element : collection) { \u2026 }\" or \"collection.stream().forEach(\u2026);\" syntax so we don't need to prove it.  Similarly, while a standard for loop (\"for (int i=0; i<n; ++i) { \u2026 }\") does demand a proof, that's trivial by inspection (variant is n-i; termination condition is n-i\u22640; progress is guaranteed by the increment, unless someone is mucking with i within the loop).  I do prove loop termination if I have some complicated variant, because otherwise it's too easy to miss a case that you don't see.  And if you don't see it you're less likely to cover it in unit tests\u2026\n\nProving invariants isn't unusual, but those tend to be documented, and partially enforced, as codified assertions.\n\nIt comes down to \"sure, when needed\".  It also depends on the culture around you.\n",
+            "sentiment_score":0.0942,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"crocodilem8",
                     "score":1,
-                    "created":1535696438.0,
+                    "timestamp":1535696438.0,
                     "id":"e54ex3l",
                     "body":"I think this is reasonable. When you work, do they define the invariant from the spec for you, or do you have to do it yourself?",
+                    "sentiment_score":0.0,
                     "sentiment":"Neutral",
                     "replies":[
                         {
                             "author":"experts_never_lie",
                             "score":1,
-                            "created":1535698492.0,
+                            "timestamp":1535698492.0,
                             "id":"e54gm5m",
                             "body":"No, this is just me using what techniques I have available.  I will sometimes point them out to others, but this is mostly a solo practice here.",
+                            "sentiment_score":-0.148,
                             "sentiment":"Negative",
                             "replies":[]
                         }
@@ -671,17 +740,19 @@
         {
             "author":"gabriel-et-al",
             "score":1,
-            "created":1535663083.0,
+            "timestamp":1535663083.0,
             "id":"e53dl1f",
             "body":"Quality [in software] is closely related to trustability. A software is high quality when the user highly trusts in it. \nMost users don't need to trust in their software to the point of making mathematical correctness a must, so it's understandable that this technique is not common in industry.\n\nHowever there are users that do need to trust that much, such as users of [this bad guy](https://en.wikipedia.org/wiki/Medical_ventilator).",
+            "sentiment_score":0.1097,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"WikiTextBot",
                     "score":1,
-                    "created":1535663091.0,
+                    "timestamp":1535663091.0,
                     "id":"e53dlax",
                     "body":"**Medical ventilator**\n\nA medical ventilator (or simply ventilator in context) is a mechanical ventilator, a machine designed to move breathable air into and out of the lungs, to provide breathing for a patient who is physically unable to breathe, or breathing insufficiently.\n\nWhile modern ventilators are computerized machines, patients can be ventilated with a simple, hand-operated bag valve mask.\n\nVentilators are chiefly used in intensive care medicine, home care, and emergency medicine (as standalone units) and in anesthesia (as a component of an anesthesia machine).\n\nMedical ventilators are sometimes colloquially called \"respirators\", a term stemming from commonly used devices in the 1950s (particularly the \"Bird Respirator\").\n\n***\n\n^[ [^PM](https://www.reddit.com/message/compose?to=kittens_from_space) ^| [^Exclude ^me](https://reddit.com/message/compose?to=WikiTextBot&message=Excludeme&subject=Excludeme) ^| [^Exclude ^from ^subreddit](https://np.reddit.com/r/compsci/about/banned) ^| [^FAQ ^/ ^Information](https://np.reddit.com/r/WikiTextBot/wiki/index) ^| [^Source](https://github.com/kittenswolf/WikiTextBot)   ^]\n^Downvote ^to ^remove ^| ^v0.28",
+                    "sentiment_score":0.036,
                     "sentiment":"Neutral",
                     "replies":[]
                 }
@@ -690,44 +761,49 @@
         {
             "author":"Farsyte",
             "score":1,
-            "created":1535669863.0,
+            "timestamp":1535669863.0,
             "id":"e53krqw",
             "body":"Formal proofs of the design of a code module are a fantastic way of improving your confidence that you have the correct solution. They are a very useful tool for your toolbox -- but like a really fantastic hammer, they do not replace the screwdriver; you have the very real risk that you have proven your algorithm solves almost but not quite exactly the problem you intended to solve.\n\nAdditionally, if your prover does not start from the source code you are maintaining, then you still have the question of whether or not your code as written actually implements the algorithm you presented to the prover. Fortunately, it does not take many simple test cases to gain confidence that your code conforms to the model.\n\nAnd nothing raises confidence in a working program than actually seeing it work; and in a robust fault tolerant service, by observing it continue to work as your chaos monkey kills nodes. Proof is a great place to start, but if you stop there, you are leaving a huge value on the table.",
+            "sentiment_score":0.3882,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"TopIdler",
             "score":1,
-            "created":1535678084.0,
+            "timestamp":1535678084.0,
             "id":"e53uvl4",
             "body":"I really liked this talk, it talks about using proofs for machine learning implementations.\n\n\u200b\n\n[https://www.youtube.com/watch?v=-A1tVNTHUFw](https://www.youtube.com/watch?v=-A1tVNTHUFw)",
+            "sentiment_score":0.2377,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"chaotic_david",
             "score":1,
-            "created":1535689278.0,
+            "timestamp":1535689278.0,
             "id":"e548ixn",
             "body":"I got taught to do this, and use other methods to verify code, while attending university. But most work done in code is for prototyping, non-safety-critical areas, or projects without the funding and time to verify properly. Proofing code is for the really important, really well funded stuff. Medical devices, aeronautics and space exploration, and military applications.",
+            "sentiment_score":0.2013,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"solinent",
             "score":1,
-            "created":1535708526.0,
+            "timestamp":1535708526.0,
             "id":"e54qvx3",
             "body":"After reading that Lockheed did this for the space shuttle software, as well as learing this practice formally in school (given a C-like language with simple semantics), I've personally always used preconditions & postconditions and briefly informally prove to myself that the postconditions will be met given the preconditions.\n\nI don't do anything formally on paper, but I've found I can write extremely high quality code quite quickly almost without bugs in this manner, since there's so little time actually discovering bugs required after implementation. I take much longer in the writing code stage as I just construct simple proofs in my head, though if I get in the flow it can be almost as fast. Since the preconditions and postconditions can be explicitly included you can quickly find the source of the error if there is one still using testing or even automated testing depending on the language.\n\nUnit tests help you find problems with your code that you already knew could exist, so hopefully you've designed against them. I usually just keep whatever testing examples I use when constructing the code as unit tests though by no means do I exclusively use tests to drive my development.\n\nI can't find the exact spec I read some years ago.\n\nObviously this only works if you don't have rapidly changing requirements: I only do it for software which needs to essentially never fail or there could be expensive consequences.",
+            "sentiment_score":0.0684,
             "sentiment":"Positive",
             "replies":[
                 {
                     "author":"crocodilem8",
                     "score":1,
-                    "created":1535710502.0,
+                    "timestamp":1535710502.0,
                     "id":"e54syax",
                     "body":"This seems like a reasonable compromise. I have seen the pre and post style but never gave much thought to it, glad to hear someone's experience.",
+                    "sentiment_score":0.4868,
                     "sentiment":"Positive",
                     "replies":[]
                 }
@@ -736,54 +812,60 @@
         {
             "author":"Blue_Q",
             "score":1,
-            "created":1535761611.0,
+            "timestamp":1535761611.0,
             "id":"e55wtia",
             "body":"Most of the important aspects have been mentioned already, so just for completeness, there is an ongoing effort to transform any informal mathematical proof into a formal proof written in a Hilbert style axiomatic system; http://us.metamath.org/index.html\n",
+            "sentiment_score":0.2648,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"jonathancast",
             "score":1,
-            "created":1535614145.0,
+            "timestamp":1535614145.0,
             "id":"e52e8ip",
             "body":"> Unit tests seem appealing to me if you a doing a contract style project that you are aware of all the requirements beforehand, otherwise it's super tedious.\n\nIf you don't know all the requirements up front, write your program a bit at a time, and get the requirements for each bit before you write it.  Then show it to the customer and, if they don't like it, negotiate new requirements and then change your program to fit.  With practice, you can get adept at writing tests to the current requirements and adjusting them as the requirements change.\n\n> Can making formal/informal proofs reduce the need for testing in software (which doesn't really seem to be taught)?\n\nInformal proofs probably won't replace tests; too much potential for mistakes (most math proofs have small mistakes in them, and quite a few significant proofs have major holes; for math theorems that's usually ok (since the theorem is probably correct), but for programs (that probably aren't correct) small holes in the proof are the same as having no proof).  A unit test is a kind of formally-checkable (decidable, even) correctness statement, and as such it's much more useful than an informal proof.\n\nFormal proofs are more valuable than tests, because they prove much more than a test can (infinite properties / exhaustive correctness vs. just a few special cases), but fwics they seem to be much harder to write than unit tests.  They're not used to reduce the burden on the programmer, but rather to increase the value of the final result.",
+            "sentiment_score":0.1966,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"skulgnome",
             "score":1,
-            "created":1535619024.0,
+            "timestamp":1535619024.0,
             "id":"e52j6h8",
             "body":"I'd love to, but who has time for pedantry? Or a maths toolkit for C types?",
+            "sentiment_score":0.1909,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"sobeita",
             "score":1,
-            "created":1535623677.0,
+            "timestamp":1535623677.0,
             "id":"e52nupv",
             "body":"Disclaimer: not a pro and dropped out of college. Take with grains of salt to taste.\n\nI'm getting there with template metaprogramming. If you create types with certain traits, you can create aggregates of these that have the same traits, you can compose them to combine traits, etc. Due to strong typing, using types without some traits in a context that requires them will cause a compilation error. If your guarantees are not met, there is no program, and conversely, if there is a program, its existence is proof of your guarantees.\n\nSadly this breaks down at least where your code meets third party. If I try to prove my program is leak free by using resources only in RAII types and their aggregates, I'm at least relying on the functions I call to clean up to actually do their jobs. I aim for guarantees with explicitly stated predicates so that those predicates are the first place to look if/when something misbehaves. That can make for a tremendous reduction of testing, especially for new permutations of proven components.\n\nYour comment about changing requirements is certainly valid. I would say that an added requirement could be integrated through the same kind of composition, but new requirements could conflict with the old ones, potentially invalidating a lot of code that relied on the old guarantees. All I can really say is that it isn't always the right tool, and even when it is, it's essentially never the only tool you'll need. From what I've learned, it seems best suited for long-term development and maintenance, especially things like support libraries. YMMV.",
+            "sentiment_score":0.0946,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"gruehunter",
             "score":1,
-            "created":1535625313.0,
+            "timestamp":1535625313.0,
             "id":"e52pfz0",
             "body":"One of the cardinal rules of professional programming is to keep things simple.  But sometimes you have to break that rule.  When those times come, declaring some invariants and showing how those invariants are met can give you confidence that you didn't screw it up well above and beyond what you can gain through testing.",
+            "sentiment_score":0.2814,
             "sentiment":"Positive",
             "replies":[]
         },
         {
             "author":"Vityou",
             "score":0,
-            "created":1535615482.0,
+            "timestamp":1535615482.0,
             "id":"e52flf9",
             "body":"Unit tests also help with readability of code.  If an internal function isn't documented, unit tests can help clarify it's meaning.",
+            "sentiment_score":0.4019,
             "sentiment":"Positive",
             "replies":[]
         }
