@@ -1,0 +1,1718 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="name" attr.type="string" for="node" id="d13" />
+  <key attr.name="sentiment" attr.type="string" for="node" id="d12" />
+  <key attr.name="sentiment_score" attr.type="double" for="node" id="d11" />
+  <key attr.name="body" attr.type="string" for="node" id="d10" />
+  <key attr.name="timestamp" attr.type="double" for="node" id="d9" />
+  <key attr.name="score" attr.type="long" for="node" id="d8" />
+  <key attr.name="parent_id" attr.type="string" for="node" id="d7" />
+  <key attr.name="author" attr.type="string" for="node" id="d6" />
+  <key attr.name="downs" attr.type="long" for="node" id="d5" />
+  <key attr.name="ups" attr.type="long" for="node" id="d4" />
+  <key attr.name="upvote_ratio" attr.type="double" for="node" id="d3" />
+  <key attr.name="view_count" attr.type="long" for="node" id="d2" />
+  <key attr.name="title" attr.type="string" for="node" id="d1" />
+  <key attr.name="id" attr.type="string" for="node" id="d0" />
+  <graph edgedefault="undirected">
+    <node id="9bdwe3">
+      <data key="d0">9bdwe3</data>
+      <data key="d1">Do You Program By Proof?</data>
+      <data key="d2">0</data>
+      <data key="d3">0.95</data>
+      <data key="d4">109</data>
+      <data key="d5">0</data>
+    </node>
+    <node id="e52pma1" />
+    <node id="e535aac">
+      <data key="d6">PetrosPapapa</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">38</data>
+      <data key="d9">1535650240.0</data>
+      <data key="d0">e535aac</data>
+      <data key="d10">Programming by proof is a big part of my job/research. This is a whole field, so I'll try to keep it short, but please feel free to AMA.
+
+# Formal Verification
+
+Generally speaking, there are 2 types of formal verification: theorem proving (logic reasoning) and model checking.
+
+* Theorem proving has to do with specifying your software/hardware in terms of mathematical logic. You can then prove things about it (Does it terminate? Does it actually calculate what you want it to calculate? Can you ever get a null exception? Can you ever get an uncaught exception? etc).
+* Model checking typically has to do with a state-based representation of a system and you can verify quantifiable properties or properties about relative time (Do I always get this result if I give this input? Is it possible to get money out without ever entering your PIN? etc.)
+
+Both of these are complex and time consuming. Although tools for both have vastly improved in the recent years, the complexity of the verification is very high, especially given how large and complex modern systems are.
+
+# Program By Proof
+
+The "Program By Proof" paradigm has to do with constructive type theory and the Curry-Howard correspondence where you mathematically define a type system and perform mathematical proofs of various properties which then automatically translate to executable code. Coq is the most developed system that actually focuses on this. The main issue with it is that the generated code is typically very inefficient.
+
+Another approach is one where you implement algorithms in a functional way directly on the logic of a theorem prover and prove properties about it. The proof system can then translate your algorithms from mathematics to code. This can be quite effective, but as with everything else, it doesn't scale to large systems.
+
+# Successes
+
+In contrast, formal verification has been very successfully used in the development of modern programming languages, especially functional ones. Haskell and F# (among others) have very strong links to formal type theory and they start from there to develop new features.
+
+Formal verification is also adopted to deal with safety-critical software. NASA, for example, uses it a lot and so do companies that develop UAVs and Air Traffic Controller software etc.
+
+Both Intel and AMD have saved themselves millions by catching hardware errors in their processors early, in some cases just before sending mass produced faulty processors to the world.
+
+# Verification vs. Testing
+
+Formal verification is the ultimate way of ensuring the correctness of your algorithms. It gives you absolute, mathematical guarantees for anything that you are able to prove. However, to accomplish that you have to build a model of your system, which means some parts need to be abstracted from the real world. Dealing with unknown unknowns is always a problem.
+
+Moreover, you also need to describe the properties you want to prove using logic. It is quite possible to create and prove a specification of a property, but that doesn't fully describe your system. As a silly example, a system may adhere to the property that it always terminates, but maybe that's because you forgot a "return" statement in the 2nd line and your algorithm doesn't really do anything!
+
+This is the main reason why verification is not enough on its own and you need to complement it with testing. Testing on its own isn't enough either, because you can only test for specific inputs, whereas verification gives you properties for any possible input.</data>
+      <data key="d11">0.0959</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52b0dk">
+      <data key="d6">jacksonmills</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">35</data>
+      <data key="d9">1535611057.0</data>
+      <data key="d0">e52b0dk</data>
+      <data key="d10">I'm not sure they will replace unit tests. Maybe they will be a complement, but there are a lot of things in a practical application that aren't necessarily \*provable\* per se, they are just desired. Permutations of conditions in the application may not necessarily also have continuous, provable, or "logical" desired output. So in some sense, especially around very fluid and abstract business logic, it might be a hard case to see.
+
+Also, I think a good set of unit tests kind of reads like a proof anyway. It's more like saying "when I do this, I expect that". Really good sets of tests read like a paragraph, such that you sort of understand what the object is claiming to do, and them passing is proof that it can at least do that.
+
+I think testing tools can improve a lot though, and there's probably more that can be done from an automated side on that end. I'm just not sure it's proofs or proof-based languages.</data>
+      <data key="d11">0.2545</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52bnii">
+      <data key="d6">mazesc_</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">9</data>
+      <data key="d9">1535611663.0</data>
+      <data key="d0">e52bnii</data>
+      <data key="d10">Not sure which paradigm in terms of formal correctness you mean exactly, but yes there are absolutely applications where unit tests are not sufficient and serious effort is put into proving properties of the program. One example is https://project-everest.github.io/</data>
+      <data key="d11">0.2636</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52a8gc">
+      <data key="d6">SrPeixinho</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">38</data>
+      <data key="d9">1535610335.0</data>
+      <data key="d0">e52a8gc</data>
+      <data key="d10">I, perhaps coincidently, have just written a post on how formal proofs will be used to replace tests in a browser being developed for Ethereum, where bugs can real money losses. [Here it is](https://medium.com/@maiavictor/updates-on-ethereums-moon-project-535f8c0497ef).</data>
+      <data key="d11">-0.2009</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e52bpy8">
+      <data key="d6">swimmer91</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">12</data>
+      <data key="d9">1535611726.0</data>
+      <data key="d0">e52bpy8</data>
+      <data key="d10">This is a topic I'm particularly interested in, but still learning about.
+
+To start, [proofs are programs and programs are proofs](https://en.wikipedia.org/wiki/Curry%E2%80%93Howard_correspondence).  When the type system of a language is sufficiently powerful (containing more types corresponding to useful mathematical objects), [we can create theorem provers for functions defined in the language](https://en.wikipedia.org/wiki/Coq).  We can then guide these theorem provers to useful lemmas.  Then we get code which is proven correct and unit tests are obsolete.
+
+This is an active area of research.  Researchers are working to expand the capabilities of theorem provers as well as [to make these more powerful languages more approachable](https://www.idris-lang.org/).
+
+Like I said, I'm still learning about this stuff.  If I've said anything misleading or incorrect, I would appreciate someone cluing me in!</data>
+      <data key="d11">0.2448</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52bwhl">
+      <data key="d6">tulip_bro</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">11</data>
+      <data key="d9">1535611899.0</data>
+      <data key="d0">e52bwhl</data>
+      <data key="d10">Commenting to elaborate further, but for now, I will say that if you accept the Curry-Howard-Correspondence, in that programs are equivalent to proofs, then all coders program by proofs, by default.
+
+Additionally, it's hard to compare unit testing with formal verification. Unit testing is largely a black box testing technique with a regression suite being a side effect. At a high level, unit testing is saying "I can prove an absence of this particular bug occurring for the program, but that's it."
+
+Whereas verification/ proving is more general, powerful, and expensive, paraphrasing that "I can prove an absence of all bugs for this program, in all runs."
+
+​
+
+**Edit 2:** IIRC, one of the biggest issues with formal verification is at what point do we stop to _prove_ a program formally? E.g., great, I've formally proved a program does _x_. But what about it's compiler? Do I need to formally verify the compiler? And then the operating system?</data>
+      <data key="d11">0.0546</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e5398iy">
+      <data key="d6">FUZxxl</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">5</data>
+      <data key="d9">1535657648.0</data>
+      <data key="d0">e5398iy</data>
+      <data key="d10">I used to prove the correctness of C programs with proof assistants using [Frama C](http://frama-c.com).  Oh boy was that hard.  The easiest things were just impossible to prove.</data>
+      <data key="d11">0.1063</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52mu5t">
+      <data key="d6">remy_porter</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">10</data>
+      <data key="d9">1535622654.0</data>
+      <data key="d0">e52mu5t</data>
+      <data key="d10">Unit tests are a low-key attempt at imitating proofs- they're "proof by doing it a bunch of times with mildly varying conditions". From a mathematical perspective, that's not anything like a proof.
+
+But from a *practical* perspective, it's arguably better than a proof. Here's the thing: I don't actually care if my code is "correct" or not. What I care about is this: given the planned execution of my code, does it behave the way I expect it to behave?
+
+It's a cost/benefit problem. While unit tests are *tedious*, they're also quick and easy. I can take a set of expected inputs, their matching outputs, and whip up a plausible unit test in less time than it takes to implement the code.
+
+Writing unit-testable code is more complicated than simply writing code. Writing proveable code is at least as complicated as writing unit-testable code, and usually will be much *more* complicated.</data>
+      <data key="d11">0.0096</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e52djh4">
+      <data key="d6">ccundcf</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">3</data>
+      <data key="d9">1535613471.0</data>
+      <data key="d0">e52djh4</data>
+      <data key="d10">Cardano use proofs in their work. This is a good video about their approach - https://www.youtube.com/watch?v=TZGVgNsJSnA . Oxford Uni comlab used to believe in the utility of formal proof in general industry but one of the main drivers of that (Prof. Hoare) reversed that stance a while ago. It is still a very mathematically driven comp. sci department however. https://www.cs.ox.ac.uk/people/tony.hoare/ . 
+</data>
+      <data key="d11">0.0734</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52qysn" />
+    <node id="e555af4" />
+    <node id="e52sc5n">
+      <data key="d6">agumonkey</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">1</data>
+      <data key="d9">1535628421.0</data>
+      <data key="d0">e52sc5n</data>
+      <data key="d10">there are research fields about program synthesis, I think they do so.</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e52uq1f" />
+    <node id="e52zwuc">
+      <data key="d6">experts_never_lie</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">1</data>
+      <data key="d9">1535639086.0</data>
+      <data key="d0">e52zwuc</data>
+      <data key="d10">I do, sometimes, for particularly important or unusual sections, but many of the things we would prove are handled by the programming constructs we use.
+
+For example, one big requirement in proofs is loop termination, but it's handled for us in a "for (Element element : collection) { … }" or "collection.stream().forEach(…);" syntax so we don't need to prove it.  Similarly, while a standard for loop ("for (int i=0; i&lt;n; ++i) { … }") does demand a proof, that's trivial by inspection (variant is n-i; termination condition is n-i≤0; progress is guaranteed by the increment, unless someone is mucking with i within the loop).  I do prove loop termination if I have some complicated variant, because otherwise it's too easy to miss a case that you don't see.  And if you don't see it you're less likely to cover it in unit tests…
+
+Proving invariants isn't unusual, but those tend to be documented, and partially enforced, as codified assertions.
+
+It comes down to "sure, when needed".  It also depends on the culture around you.
+</data>
+      <data key="d11">0.0942</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e53dl1f">
+      <data key="d6">gabriel-et-al</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">1</data>
+      <data key="d9">1535663083.0</data>
+      <data key="d0">e53dl1f</data>
+      <data key="d10">Quality [in software] is closely related to trustability. A software is high quality when the user highly trusts in it. 
+Most users don't need to trust in their software to the point of making mathematical correctness a must, so it's understandable that this technique is not common in industry.
+
+However there are users that do need to trust that much, such as users of [this bad guy](https://en.wikipedia.org/wiki/Medical_ventilator).</data>
+      <data key="d11">0.1097</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e53krqw" />
+    <node id="e53uvl4" />
+    <node id="e548ixn" />
+    <node id="e54qvx3">
+      <data key="d6">solinent</data>
+      <data key="d7">9bdwe3</data>
+      <data key="d8">1</data>
+      <data key="d9">1535708526.0</data>
+      <data key="d0">e54qvx3</data>
+      <data key="d10">After reading that Lockheed did this for the space shuttle software, as well as learing this practice formally in school (given a C-like language with simple semantics), I've personally always used preconditions &amp; postconditions and briefly informally prove to myself that the postconditions will be met given the preconditions.
+
+I don't do anything formally on paper, but I've found I can write extremely high quality code quite quickly almost without bugs in this manner, since there's so little time actually discovering bugs required after implementation. I take much longer in the writing code stage as I just construct simple proofs in my head, though if I get in the flow it can be almost as fast. Since the preconditions and postconditions can be explicitly included you can quickly find the source of the error if there is one still using testing or even automated testing depending on the language.
+
+Unit tests help you find problems with your code that you already knew could exist, so hopefully you've designed against them. I usually just keep whatever testing examples I use when constructing the code as unit tests though by no means do I exclusively use tests to drive my development.
+
+I can't find the exact spec I read some years ago.
+
+Obviously this only works if you don't have rapidly changing requirements: I only do it for software which needs to essentially never fail or there could be expensive consequences.</data>
+      <data key="d11">0.0684</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e55wtia" />
+    <node id="e52e8ip" />
+    <node id="e52j6h8" />
+    <node id="e52nupv" />
+    <node id="e52pfz0" />
+    <node id="e52flf9" />
+    <node id="e53dq5m">
+      <data key="d6">tulip_bro</data>
+      <data key="d7">e535aac</data>
+      <data key="d8">5</data>
+      <data key="d9">1535663238.0</data>
+      <data key="d0">e53dq5m</data>
+      <data key="d10">To add to your list of entities using formal methods at least in the past, there are a few papers on Amazon using TLA+ to formally specify some of their distributed systems and catching a few potentially expensive bugs.
+
+edit: my I request how or what you do as a researcher/ practitioner of formal verification? I discovered this field last year and it really made programming and math (logic) really click for me. Since then I've taken a course on program analysis, researched lightweight formal methods to see if any use cases are applicable to my job, etc. </data>
+      <data key="d11">0.0445</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e54eu0u">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e535aac</data>
+      <data key="d8">2</data>
+      <data key="d9">1535696318.0</data>
+      <data key="d0">e54eu0u</data>
+      <data key="d10">Well you must enjoy your job, sounds great. Do you work with people who are also good with hardware/low level code to get a fully optimized result? Or have compilers come a long enough way for it not to be a concern? Also does this mean languages with algebraic types are always strongly static typed?</data>
+      <data key="d11">0.4658</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e5483xx">
+      <data key="d6">metawhimsy</data>
+      <data key="d7">e535aac</data>
+      <data key="d8">1</data>
+      <data key="d9">1535688931.0</data>
+      <data key="d0">e5483xx</data>
+      <data key="d10">&gt; You can then prove things about it (Does it terminate? [...])
+
+Is the Halting Theorem just a pathological case in practice?</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e52bt1w">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e52b0dk</data>
+      <data key="d8">5</data>
+      <data key="d9">1535611806.0</data>
+      <data key="d0">e52bt1w</data>
+      <data key="d10">Yes, I understand that sometimes it will come down to an engineering decision, and at then end of the day going to one extreme is not productive. However intuitively it seems the overhead lost by trying to compose some type of proof is gained back faster than creating unit tests, especially when creating a testing environment is not exactly feasible. I also remember reading somewhere that computer science is the automation of abstraction, so in the business case maybe sometimes there is more information to abstract away, while it would be harder to make a unit test?
+</data>
+      <data key="d11">0.3246</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52i7hm">
+      <data key="d6">NicolasGuacamole</data>
+      <data key="d7">e52b0dk</data>
+      <data key="d8">5</data>
+      <data key="d9">1535618069.0</data>
+      <data key="d0">e52i7hm</data>
+      <data key="d10">Sorry to be this guy, but it’s ‘per se’. It’s Latin for ‘in and of itself’.</data>
+      <data key="d11">-0.0193</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e52cp0f">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e52bnii</data>
+      <data key="d8">2</data>
+      <data key="d9">1535612650.0</data>
+      <data key="d0">e52cp0f</data>
+      <data key="d10">This is nice too see, have you ever used `F*`? It seems like a prototype language? I wonder why not add those features to the Ocaml compiler</data>
+      <data key="d11">0.3913</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52b3ip">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e52a8gc</data>
+      <data key="d8">2</data>
+      <data key="d9">1535611140.0</data>
+      <data key="d0">e52b3ip</data>
+      <data key="d10">Interesting post, although a bit of it is lost on me since I have not kept up on crypto jargon. What is your process like for this project itself? If you do this project in a proof based style what language do you use, and does it have an effect on how easy it is to transition from a proof to a program? Also how did you get these numbers:
+&gt;Technically, formal proofs reduce the human work required to audit a program of size N to O(1), allowing users to “audit it themselves” without reading and analyzing every state in a huge codebase (that’s what the proof does!).</data>
+      <data key="d11">0.3211</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52c8w5">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e52bpy8</data>
+      <data key="d8">3</data>
+      <data key="d9">1535612222.0</data>
+      <data key="d0">e52c8w5</data>
+      <data key="d10">I will read the Curry-Howard Correspondence some day, seems like a nice read. Does this hold even for assembly? I am also speaking to the approach to programming as well, by creating a proof and then programming it.</data>
+      <data key="d11">0.3864</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52mgfx">
+      <data key="d6">McPhage</data>
+      <data key="d7">e52bpy8</data>
+      <data key="d8">4</data>
+      <data key="d9">1535622272.0</data>
+      <data key="d0">e52mgfx</data>
+      <data key="d10">Proofs are programs, and programs are proofs—but proofs aren’t useful programs, and programs aren’t useful proofs.</data>
+      <data key="d11">0.7003</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52c5in">
+      <data key="d6">mazesc_</data>
+      <data key="d7">e52bwhl</data>
+      <data key="d8">7</data>
+      <data key="d9">1535612133.0</data>
+      <data key="d0">e52c5in</data>
+      <data key="d10">Yes, but if you don't know what you're proving, correctness means nothing, so you better have a specification. So yes, while every program corresponds to some proof, it might not be the proof you want.</data>
+      <data key="d11">0.0671</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e539wg8">
+      <data key="d6">bdtddt</data>
+      <data key="d7">e52bwhl</data>
+      <data key="d8">4</data>
+      <data key="d9">1535658591.0</data>
+      <data key="d0">e539wg8</data>
+      <data key="d10">The Curry-Howard isomorphism isn’t up for accepting, it is trivially true.
+
+And your second edit is not a serious problem for anyone actually knowledgable about the field, it was resolved decades ago.</data>
+      <data key="d11">0.5954</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e5a7oge">
+      <data key="d6">trichotillofobia</data>
+      <data key="d7">e5398iy</data>
+      <data key="d8">1</data>
+      <data key="d9">1535948271.0</data>
+      <data key="d0">e5a7oge</data>
+      <data key="d10">Did you ever take a look at [wuffs](https://github.com/google/wuffs)? At a first glance, it looks quite interesting.</data>
+      <data key="d11">0.2288</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52nym4">
+      <data key="d6">skulgnome</data>
+      <data key="d7">e52mu5t</data>
+      <data key="d8">2</data>
+      <data key="d9">1535623793.0</data>
+      <data key="d0">e52nym4</data>
+      <data key="d10">Hey, unit tests need not be written willy-nilly cargo cult style. That's just a waste of time.</data>
+      <data key="d11">-0.2107</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e52omgj">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e52djh4</data>
+      <data key="d8">2</data>
+      <data key="d9">1535624464.0</data>
+      <data key="d0">e52omgj</data>
+      <data key="d10">I finished the video and I recommend it, gives a good explanation and goes over the pros and cons, also nice diagram. This is more along the lines of what I was thinking</data>
+      <data key="d11">0.802</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e532g5n">
+      <data key="d6">mazesc_</data>
+      <data key="d7">e52sc5n</data>
+      <data key="d8">3</data>
+      <data key="d9">1535644013.0</data>
+      <data key="d0">e532g5n</data>
+      <data key="d10">While program synthesis makes use of formal methods, synthesized programs are not necessarily correct on all inputs. There are different types of synthesis which are popular, scalability is often achieved by bounding the program or limiting the scope to e.g. programs without loops.
+People of course sometimes invest extra effort to achieve full correctness though.
+
+I should add that there are use cases where full correctness is not necessary. A popular example is FlashFill.</data>
+      <data key="d11">0.1686</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e54ex3l">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e52zwuc</data>
+      <data key="d8">1</data>
+      <data key="d9">1535696438.0</data>
+      <data key="d0">e54ex3l</data>
+      <data key="d10">I think this is reasonable. When you work, do they define the invariant from the spec for you, or do you have to do it yourself?</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e53dlax">
+      <data key="d6">WikiTextBot</data>
+      <data key="d7">e53dl1f</data>
+      <data key="d8">1</data>
+      <data key="d9">1535663091.0</data>
+      <data key="d0">e53dlax</data>
+      <data key="d10">**Medical ventilator**
+
+A medical ventilator (or simply ventilator in context) is a mechanical ventilator, a machine designed to move breathable air into and out of the lungs, to provide breathing for a patient who is physically unable to breathe, or breathing insufficiently.
+
+While modern ventilators are computerized machines, patients can be ventilated with a simple, hand-operated bag valve mask.
+
+Ventilators are chiefly used in intensive care medicine, home care, and emergency medicine (as standalone units) and in anesthesia (as a component of an anesthesia machine).
+
+Medical ventilators are sometimes colloquially called "respirators", a term stemming from commonly used devices in the 1950s (particularly the "Bird Respirator").
+
+***
+
+^[ [^PM](https://www.reddit.com/message/compose?to=kittens_from_space) ^| [^Exclude ^me](https://reddit.com/message/compose?to=WikiTextBot&amp;message=Excludeme&amp;subject=Excludeme) ^| [^Exclude ^from ^subreddit](https://np.reddit.com/r/compsci/about/banned) ^| [^FAQ ^/ ^Information](https://np.reddit.com/r/WikiTextBot/wiki/index) ^| [^Source](https://github.com/kittenswolf/WikiTextBot)   ^]
+^Downvote ^to ^remove ^| ^v0.28</data>
+      <data key="d11">0.036</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e54syax">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e54qvx3</data>
+      <data key="d8">1</data>
+      <data key="d9">1535710502.0</data>
+      <data key="d0">e54syax</data>
+      <data key="d10">This seems like a reasonable compromise. I have seen the pre and post style but never gave much thought to it, glad to hear someone's experience.</data>
+      <data key="d11">0.4868</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e554gqa">
+      <data key="d6">PetrosPapapa</data>
+      <data key="d7">e53dq5m</data>
+      <data key="d8">2</data>
+      <data key="d9">1535724287.0</data>
+      <data key="d0">e554gqa</data>
+      <data key="d10">Amazon using TLA+ is interesting! I need to read more about it, thanks!
+
+I'm looking into ways of using formal verification to enable trusted collaboration between people. For example, I'm developing a framework for correct-by-construction workflow models. This means I'm using logic inference (a variance of type theory) to construct software that has guaranteed correctness properties from the get-go. I've used this in healthcare quite a lot, to model patient pathways in a hospital (what should happen from admission to discharge) and formal contracts for data sharing.
+
+I work mostly with theorem provers, particularly HOL Light and Isabelle.</data>
+      <data key="d11">0.2863</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e55a54f">
+      <data key="d6">Anonymous</data>
+      <data key="d7">e54eu0u</data>
+      <data key="d8">3</data>
+      <data key="d9">1535735080.0</data>
+      <data key="d0">e55a54f</data>
+      <data key="d10">&gt; Also does this mean languages with algebraic types are always strongly static typed?
+
+I don't see a reason why this should be the case. I assume it is for historic reasons: Many languages that have algebraic types and are used also have roots in ML.
+
+I have not yet a deep understanding of the use cases of ADTs, but I have a feeling that dynamic languages solve the same use cases differently. Clojure for example does many things with combining maps together and so making up new "types" as needed. I do not think there would be much benefit for a Clojurist to state that new "type" before using it.</data>
+      <data key="d11">0.2465</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e555gvp">
+      <data key="d6">PetrosPapapa</data>
+      <data key="d7">e54eu0u</data>
+      <data key="d8">1</data>
+      <data key="d9">1535725951.0</data>
+      <data key="d0">e555gvp</data>
+      <data key="d10">It has its pros and cons like any job, but I'm really passionate about it!
+
+I don't generally work on low level code, because I personally don't enjoy it that much. I prefer high level applications with real world cases and trying to make things accessible to non-experts. There are plenty of groups (worldwide) working on verification of compilers and hardware independently. 
+
+AFAIK there are ways to do dynamic type checking for algebraic types, though I can't think of languages that do that off the top of my head. Doesn't it usually go the other way around? You use algebraic types because you *want* static type checking.</data>
+      <data key="d11">0.1066</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e554zzl">
+      <data key="d6">PetrosPapapa</data>
+      <data key="d7">e5483xx</data>
+      <data key="d8">2</data>
+      <data key="d9">1535725161.0</data>
+      <data key="d0">e554zzl</data>
+      <data key="d10">It is! It is not only undecidable, but also can be quite hard even for simple algorithms. As an example, [invariant](https://en.wikipedia.org/wiki/Invariant_(computer_science)) detection is a whole research field.
+
+Though for things like this, I like quoting [Byron Cook](http://www0.cs.ucl.ac.uk/staff/b.cook/) (who has done a lot of work on termination with Microsoft and beyond): "*If you are not working on an undecidable problem, you are boring!*"</data>
+      <data key="d11">-0.0491</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e53ctbv">
+      <data key="d6">MjrK</data>
+      <data key="d7">e52bt1w</data>
+      <data key="d8">1</data>
+      <data key="d9">1535662228.0</data>
+      <data key="d0">e53ctbv</data>
+      <data key="d10">&gt;I also remember reading somewhere that computer science is the automation of abstraction
+
+Do you remember where you might have read this?
+
+Just seems misguided to me, for someone to describe CS as "the automation of abstraction". AI, perhaps, could be described as "the automation of abstraction"; but even then, that's only a small subset of what CS is concerned with.</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e52zm8g">
+      <data key="d6">experts_never_lie</data>
+      <data key="d7">e52i7hm</data>
+      <data key="d8">15</data>
+      <data key="d9">1535638565.0</data>
+      <data key="d0">e52zm8g</data>
+      <data key="d10">It's also "complement", not "compliment", but I'm guessing there just wasn't enough coverage for those cases in the unit tests.
+ </data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e52e4nz">
+      <data key="d6">mazesc_</data>
+      <data key="d7">e52cp0f</data>
+      <data key="d8">4</data>
+      <data key="d9">1535614041.0</data>
+      <data key="d0">e52e4nz</data>
+      <data key="d10">Ad OCaml: F* has dependent types. Type checking for dependent types is undecidable as they correspond to first-order logic. https://en.wikipedia.org/wiki/Dependent_type
+
+This is something you wouldn't want in a general purpose language.
+
+Dependent types would allow you to have an output value of a type that reads something like "for all inputs Y there exists an output x such that the specification evaluated on Y equals x". So you would get a correctness proof encoded into the type.
+This is again Curry-Howard: programs ~ types ~ proofs.</data>
+      <data key="d11">0.1072</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e537ul2">
+      <data key="d6">bremby</data>
+      <data key="d7">e52cp0f</data>
+      <data key="d8">4</data>
+      <data key="d9">1535655379.0</data>
+      <data key="d0">e537ul2</data>
+      <data key="d10">I have just defended my thesis where we tried using Vale language, which is related to Project Everest. Sadly, from our experience, Vale may have a huge potential, but it comes at a cost of difficulty. It's not mature, it's hard, maybe almost impossible to learn and difficult to use at all.</data>
+      <data key="d11">-0.3555</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e52del4">
+      <data key="d6">tulip_bro</data>
+      <data key="d7">e52cp0f</data>
+      <data key="d8">2</data>
+      <data key="d9">1535613337.0</data>
+      <data key="d0">e52del4</data>
+      <data key="d10">&gt; It seems like a prototype language? I wonder why not add those features to the Ocaml compiler
+
+OCaml is a general purpose language, most likely it's language specifications are maintained by a committee. If it doesn't make sense to integrate a domain specific feature (such as provability) that won't be used or in demand by the general user base of the language, then it won't be implemented. 
+
+This same argument can be made for any problem specific programming language feature.
+
+</data>
+      <data key="d11">-0.1009</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e52dch9">
+      <data key="d6">mazesc_</data>
+      <data key="d7">e52cp0f</data>
+      <data key="d8">1</data>
+      <data key="d9">1535613280.0</data>
+      <data key="d0">e52dch9</data>
+      <data key="d10">I have not seriously used it. It is a dependently typed programming language. It is quite new, coming out of research, and has a particular purpose. Namely to write formally correct programs by making use of a powerful type system. F* programs, as far as I'm aware cannot be executed, but programs can be extracted into an executable language such as F# after one has proven the F* program correct.</data>
+      <data key="d11">0.1108</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52d8i9">
+      <data key="d6">SrPeixinho</data>
+      <data key="d7">e52b3ip</data>
+      <data key="d8">6</data>
+      <data key="d9">1535613171.0</data>
+      <data key="d0">e52d8i9</data>
+      <data key="d10">A proof is actually a program, are you familiar with Agda and  the like, and the curry-howard correspondence? 
+
+The number comes from the fact that you can check a property about an arbitrarily long program by reading a single, small sentence. Think of a MMORPG, for example. You could have a property such as "no matter what happens, this game will never have a state where a player crosses certain wall". Once someone has proven that claim, all you need to do to verify it is read the property (it could be a small one line type) and press "check". For you, that was much less work than verifying the entire program to be sure no state can lead to a player crossing that wall. Moreover, the game can be further updated with new movement options such as teleporting spells and the like. That means the developer must now update the proof to cover all the new cases. Yet, once all that work is done, you, the player, can still be convinced that the property holds by merely pressing "check" again. The work to verify a property about arbitrarily long behaviors and interactions is constant, or `O(1)`.</data>
+      <data key="d11">0.1303</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52ekmp">
+      <data key="d6">mazesc_</data>
+      <data key="d7">e52c8w5</data>
+      <data key="d8">7</data>
+      <data key="d9">1535614479.0</data>
+      <data key="d0">e52ekmp</data>
+      <data key="d10">I found this a gentle introduction: https://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf</data>
+      <data key="d11">0.4404</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52mdl9">
+      <data key="d6">swimmer91</data>
+      <data key="d7">e52c8w5</data>
+      <data key="d8">2</data>
+      <data key="d9">1535622192.0</data>
+      <data key="d0">e52mdl9</data>
+      <data key="d10">Yep, it holds for assembly.  The correspondence deals with programs in the abstract, not necessarily bound to any specific programming language.
+
+That said, just because there _is_ a correspondence doesn't mean that it's easy to take an arbitrary program and generate a corresponding proof or vice versa.  This is where more powerful languages come in.  They provide types which more directly reflect constructs commonly used to create proofs.  Because of this, the program will more closely resemble a proof, leaving less of a gap to overcome.
+
+So it is certainly possible to do with assembly what is being done with Coq, Idris, and other dependently-typed functional languages. It would just be really hard. Perhaps someday the work that is being done on automated theorem provers will reach a point where we can extend their functionality to languages like c and Python.  After that, they could perhaps be extended to work with assembly.</data>
+      <data key="d11">0.2214</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e539sr6">
+      <data key="d6">bdtddt</data>
+      <data key="d7">e52mgfx</data>
+      <data key="d8">6</data>
+      <data key="d9">1535658448.0</data>
+      <data key="d0">e539sr6</data>
+      <data key="d10">Totally wrong. Take the composition function for example, with type `(a -&gt; b) * (b -&gt; c) -&gt; a -&gt; c`. Massively useful as both a programmatic function and as a logical theorem, and that’s just a trivial example.
+
+Obviously not all programs are useful proofs and vice-versa, but plenty are.</data>
+      <data key="d11">0.0335</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e533iur">
+      <data key="d6">agrif</data>
+      <data key="d7">e52mgfx</data>
+      <data key="d8">3</data>
+      <data key="d9">1535646322.0</data>
+      <data key="d0">e533iur</data>
+      <data key="d10">[That's not always true.](http://blog.sigfpe.com/2006/11/from-l-theorem-to-spreadsheet.html)</data>
+      <data key="d11">-0.3252</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e52cnjt">
+      <data key="d6">tulip_bro</data>
+      <data key="d7">e52c5in</data>
+      <data key="d8">2</data>
+      <data key="d9">1535612612.0</data>
+      <data key="d0">e52cnjt</data>
+      <data key="d10">Agreed. In fact, there's multiple levels of formal methods/ software proving according to the wikipedia on the subject. Level 0 is as you've mentioned, formal specification.</data>
+      <data key="d11">0.0911</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e53ac35">
+      <data key="d6">tulip_bro</data>
+      <data key="d7">e539wg8</data>
+      <data key="d8">1</data>
+      <data key="d9">1535659180.0</data>
+      <data key="d0">e53ac35</data>
+      <data key="d10">Would appreciate any resources / papers on your last point!</data>
+      <data key="d11">0.4574</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e54gm5m">
+      <data key="d6">experts_never_lie</data>
+      <data key="d7">e54ex3l</data>
+      <data key="d8">1</data>
+      <data key="d9">1535698492.0</data>
+      <data key="d0">e54gm5m</data>
+      <data key="d10">No, this is just me using what techniques I have available.  I will sometimes point them out to others, but this is mostly a solo practice here.</data>
+      <data key="d11">-0.148</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e557r3b">
+      <data key="d6">metawhimsy</data>
+      <data key="d7">e554zzl</data>
+      <data key="d8">3</data>
+      <data key="d9">1535730119.0</data>
+      <data key="d0">e557r3b</data>
+      <data key="d10">Ah, by "pathological case," I meant to speculate that, in practice, while the _general_ case is undecideable, most cases may be fairly easy to decide - kind of like the notion of SAT solvers. NP, but as it turns out still fairly tractable in a lot of cases, particularly if you're satisfied with non-optimal-but-very-close solutions.
+
+What I'm inferring from your reply, though, is that this is still a big challenge even for relatively straightforward cases. 
+
+I wonder - what strategies are used here, broadly? The first thing that comes to my mind is perhaps coming up with sorts of "building blocks" whose termination logic you've solved and then composing them into larger structures.</data>
+      <data key="d11">0.3115</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e54e47r">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e53ctbv</data>
+      <data key="d8">1</data>
+      <data key="d9">1535695368.0</data>
+      <data key="d0">e54e47r</data>
+      <data key="d10">I’m pretty sure its in the introduction of "Foundations of Computer Science"</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e532usq">
+      <data key="d6">NicolasGuacamole</data>
+      <data key="d7">e52zm8g</data>
+      <data key="d8">2</data>
+      <data key="d9">1535644881.0</data>
+      <data key="d0">e532usq</data>
+      <data key="d10">Thanks</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e53a027">
+      <data key="d6">bdtddt</data>
+      <data key="d7">e52e4nz</data>
+      <data key="d8">3</data>
+      <data key="d9">1535658732.0</data>
+      <data key="d0">e53a027</data>
+      <data key="d10">Programs ~ proofs
+
+Types ~ propositions</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e543kw1">
+      <data key="d6">_georgesim_</data>
+      <data key="d7">e537ul2</data>
+      <data key="d8">1</data>
+      <data key="d9">1535685144.0</data>
+      <data key="d0">e543kw1</data>
+      <data key="d10">Bachelor or MS?</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e555kdf">
+      <data key="d6">PetrosPapapa</data>
+      <data key="d7">e537ul2</data>
+      <data key="d8">1</data>
+      <data key="d9">1535726117.0</data>
+      <data key="d0">e555kdf</data>
+      <data key="d10">Congrats! Sounds interesting!</data>
+      <data key="d11">0.5141</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e539lze">
+      <data key="d6">bdtddt</data>
+      <data key="d7">e52d8i9</data>
+      <data key="d8">5</data>
+      <data key="d9">1535658188.0</data>
+      <data key="d0">e539lze</data>
+      <data key="d10">I think this is only partly correct. To understand that high-level specification, you need to drill down and look at what it is defined in terms of. You may agree that it says ‘no player ever crosses a certain wall’, but disagree with the notion of what a wall is, for example.
+
+I do agree that simply checking specifications is massively easier than auditing code, but presenting it as an O(1) operation involving reading a single sentence doesn’t make sense to me. To be sure of that specification you need to dive into it, and this will take longer the bigger your program is.</data>
+      <data key="d11">0.1043</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e52e93z">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e52d8i9</data>
+      <data key="d8">1</data>
+      <data key="d9">1535614161.0</data>
+      <data key="d0">e52e93z</data>
+      <data key="d10">yeah this makes sense, to be pedantic I thought you had pegged the readers at linear time, but I just read it wrong.</data>
+      <data key="d11">-0.631</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e52exeg">
+      <data key="d6">crocodilem8</data>
+      <data key="d7">e52ekmp</data>
+      <data key="d8">1</data>
+      <data key="d9">1535614825.0</data>
+      <data key="d0">e52exeg</data>
+      <data key="d10">Thanks</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e53arjd">
+      <data key="d6">nath1as</data>
+      <data key="d7">e52ekmp</data>
+      <data key="d8">1</data>
+      <data key="d9">1535659751.0</data>
+      <data key="d0">e53arjd</data>
+      <data key="d10">thank you, I've been searching for something like that </data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e539vpo">
+      <data key="d6">bdtddt</data>
+      <data key="d7">e52mdl9</data>
+      <data key="d8">3</data>
+      <data key="d9">1535658562.0</data>
+      <data key="d0">e539vpo</data>
+      <data key="d10">Assembly has no type system so CH absolutely does not apply.</data>
+      <data key="d11">-0.296</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e53esi0">
+      <data key="d6">bdtddt</data>
+      <data key="d7">e53ac35</data>
+      <data key="d8">2</data>
+      <data key="d9">1535664350.0</data>
+      <data key="d0">e53esi0</data>
+      <data key="d10">De Bruin’s criterion resolves software questions, and hardware is not really a serious issue, besides the fact most chips are formally verified themselves.</data>
+      <data key="d11">0.2821</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e55askm">
+      <data key="d6">PetrosPapapa</data>
+      <data key="d7">e557r3b</data>
+      <data key="d8">2</data>
+      <data key="d9">1535736459.0</data>
+      <data key="d0">e55askm</data>
+      <data key="d10">Ah sorry then. I think Cook's quote was about exactly that. Although the problem is undecidable, he (and others) have accomplished so much. He had many applications of this to find driver bugs in Windows, which were (are?) the most common reason for OS crashes. (I just realised this was 10 years ago and briefly freaked out as to how fast time flies...). I think concurrency is a much more popular challenge these days, perhaps as termination used to be in the past.
+
+I think verification has 2 issues:
+
+1. Scalability, especially with regards to efficiency. Sure you can have terminating building blocks and build more complex stuff, but that limits what you can actually build and (more importantly) how efficiently it will run in a modern production environment vs. freeform code.
+2. Cost vs. motivation. It is very hard to motivate anyone to pay experts, adopt complicated tools, and spend time verifying a complex system only to end up realising it was working fine and only had minor bugs all along. This is more and more true with agile deployment and continuous integration techniques which are so fast in comparison. Safety critical systems are the natural exceptions.</data>
+      <data key="d11">0.1908</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e544bpz">
+      <data key="d6">bremby</data>
+      <data key="d7">e543kw1</data>
+      <data key="d8">2</data>
+      <data key="d9">1535685761.0</data>
+      <data key="d0">e544bpz</data>
+      <data key="d10">MSc.</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+    </node>
+    <node id="e555of6">
+      <data key="d6">bremby</data>
+      <data key="d7">e555kdf</data>
+      <data key="d8">2</data>
+      <data key="d9">1535726314.0</data>
+      <data key="d0">e555of6</data>
+      <data key="d10">Thanks! The main topic was way more interesting, check out Janus, the time-reversible language. :-)</data>
+      <data key="d11">0.4751</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e53a16z">
+      <data key="d6">SrPeixinho</data>
+      <data key="d7">e539lze</data>
+      <data key="d8">1</data>
+      <data key="d9">1535658774.0</data>
+      <data key="d0">e53a16z</data>
+      <data key="d10">I don't agree it will take longer the bigger your program is, it will take longer the bigger the specification itself is. Again on the MMO example, no matter how huge and complex the game is, the specification that certain player or certain tile has certain state in given conditions will always be small. Now, if you want to prove that elliptic curves over complex fields are shaped like a teddy bear when rendered in a polar coordinate system then yea, your specification may be quite daunting...</data>
+      <data key="d11">0.2722</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e53lpd9">
+      <data key="d6">swimmer91</data>
+      <data key="d7">e539vpo</data>
+      <data key="d8">1</data>
+      <data key="d9">1535670661.0</data>
+      <data key="d0">e53lpd9</data>
+      <data key="d10">Hmm yeah now that I think about it more, I may have been a little quick to say yes there.
+
+My thinking was that you still have the Curry-Howard correspondence, you just have very rudimentary logic constructs to work with on the proof side.
+
+I can't say for sure whether that is true.  Like I said earlier, I'm still learning this stuff myself.  I definitely shouldn't have just said "yes" based on my own assumptions though.
+
+Looking into it a bit more, I found [a paper](https://link.springer.com/chapter/10.1007/10705424_20) which seems to suggest the correspondence holds for machine code.  I don't have time right now to look at it too closely though.</data>
+      <data key="d11">0.2249</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e53fspo">
+      <data key="d6">tulip_bro</data>
+      <data key="d7">e53esi0</data>
+      <data key="d8">3</data>
+      <data key="d9">1535665352.0</data>
+      <data key="d0">e53fspo</data>
+      <data key="d10">For those, if any, interested in the question of _how do we formally verify a verifier_, I found this [math-overflow question with responses on De Bruijn criterion,](https://mathoverflow.net/questions/18421/how-do-they-verify-a-verifier-of-formalized-proofs) a great intro. Thanks /u/bdtddt</data>
+      <data key="d11">0.4019</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="e53pdt8">
+      <data key="d6">bdtddt</data>
+      <data key="d7">e53lpd9</data>
+      <data key="d8">2</data>
+      <data key="d9">1535673712.0</data>
+      <data key="d0">e53pdt8</data>
+      <data key="d10">CH is just the syntactic correspondence between types and propositions, as well as the inhabitants of those types (i.e. programs) and proofs. If there are no types, as is the case with assembly, then there can be no such correspondence. 
+
+That paper seems to be conflating the general connection between computation and logic (which is far older and deeper) with CH.</data>
+      <data key="d11">-0.0845</data>
+      <data key="d12">Negative</data>
+    </node>
+    <node id="e55a9dk">
+      <data key="d6">Anonymous</data>
+      <data key="d7">e53pdt8</data>
+      <data key="d8">2</data>
+      <data key="d9">1535735335.0</data>
+      <data key="d0">e55a9dk</data>
+      <data key="d10">Is there such a thing as internal typing? I assume you can regard assembly as have only one type. Say "Natural numbers". But then we could create new types from subsets of this one type, for example booleans. We could apply CH to these newly formed internal/subtypes.</data>
+      <data key="d11">0.1269</data>
+      <data key="d12">Positive</data>
+    </node>
+    <node id="swimmer91">
+      <data key="d13">swimmer91</data>
+    </node>
+    <node id="PetrosPapapa">
+      <data key="d13">PetrosPapapa</data>
+    </node>
+    <node id="ccundcf">
+      <data key="d13">ccundcf</data>
+    </node>
+    <node id="tulip_bro">
+      <data key="d13">tulip_bro</data>
+    </node>
+    <node id="FUZxxl">
+      <data key="d13">FUZxxl</data>
+    </node>
+    <node id="eigenman">
+      <data key="d13">eigenman</data>
+    </node>
+    <node id="acroback">
+      <data key="d13">acroback</data>
+    </node>
+    <node id="mazesc_">
+      <data key="d13">mazesc_</data>
+    </node>
+    <node id="agumonkey">
+      <data key="d13">agumonkey</data>
+    </node>
+    <node id="NerdAtTheTerminal">
+      <data key="d13">NerdAtTheTerminal</data>
+    </node>
+    <node id="SrPeixinho">
+      <data key="d13">SrPeixinho</data>
+    </node>
+    <node id="remy_porter">
+      <data key="d13">remy_porter</data>
+    </node>
+    <node id="jacksonmills">
+      <data key="d13">jacksonmills</data>
+    </node>
+    <node id="experts_never_lie">
+      <data key="d13">experts_never_lie</data>
+    </node>
+    <node id="gabriel-et-al">
+      <data key="d13">gabriel-et-al</data>
+    </node>
+    <node id="Farsyte">
+      <data key="d13">Farsyte</data>
+    </node>
+    <node id="TopIdler">
+      <data key="d13">TopIdler</data>
+    </node>
+    <node id="chaotic_david">
+      <data key="d13">chaotic_david</data>
+    </node>
+    <node id="solinent">
+      <data key="d13">solinent</data>
+    </node>
+    <node id="Blue_Q">
+      <data key="d13">Blue_Q</data>
+    </node>
+    <node id="jonathancast">
+      <data key="d13">jonathancast</data>
+    </node>
+    <node id="skulgnome">
+      <data key="d13">skulgnome</data>
+    </node>
+    <node id="sobeita">
+      <data key="d13">sobeita</data>
+    </node>
+    <node id="gruehunter">
+      <data key="d13">gruehunter</data>
+    </node>
+    <node id="Vityou">
+      <data key="d13">Vityou</data>
+    </node>
+    <node id="tulip_bro">
+      <data key="d13">tulip_bro</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="metawhimsy">
+      <data key="d13">metawhimsy</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="NicolasGuacamole">
+      <data key="d13">NicolasGuacamole</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="McPhage">
+      <data key="d13">McPhage</data>
+    </node>
+    <node id="mazesc_">
+      <data key="d13">mazesc_</data>
+    </node>
+    <node id="bdtddt">
+      <data key="d13">bdtddt</data>
+    </node>
+    <node id="trichotillofobia">
+      <data key="d13">trichotillofobia</data>
+    </node>
+    <node id="skulgnome">
+      <data key="d13">skulgnome</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="mazesc_">
+      <data key="d13">mazesc_</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="WikiTextBot">
+      <data key="d13">WikiTextBot</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="PetrosPapapa">
+      <data key="d13">PetrosPapapa</data>
+    </node>
+    <node id="Anonymous">
+      <data key="d13">Anonymous</data>
+    </node>
+    <node id="PetrosPapapa">
+      <data key="d13">PetrosPapapa</data>
+    </node>
+    <node id="PetrosPapapa">
+      <data key="d13">PetrosPapapa</data>
+    </node>
+    <node id="MjrK">
+      <data key="d13">MjrK</data>
+    </node>
+    <node id="experts_never_lie">
+      <data key="d13">experts_never_lie</data>
+    </node>
+    <node id="mazesc_">
+      <data key="d13">mazesc_</data>
+    </node>
+    <node id="bremby">
+      <data key="d13">bremby</data>
+    </node>
+    <node id="tulip_bro">
+      <data key="d13">tulip_bro</data>
+    </node>
+    <node id="mazesc_">
+      <data key="d13">mazesc_</data>
+    </node>
+    <node id="SrPeixinho">
+      <data key="d13">SrPeixinho</data>
+    </node>
+    <node id="mazesc_">
+      <data key="d13">mazesc_</data>
+    </node>
+    <node id="swimmer91">
+      <data key="d13">swimmer91</data>
+    </node>
+    <node id="bdtddt">
+      <data key="d13">bdtddt</data>
+    </node>
+    <node id="agrif">
+      <data key="d13">agrif</data>
+    </node>
+    <node id="tulip_bro">
+      <data key="d13">tulip_bro</data>
+    </node>
+    <node id="tulip_bro">
+      <data key="d13">tulip_bro</data>
+    </node>
+    <node id="experts_never_lie">
+      <data key="d13">experts_never_lie</data>
+    </node>
+    <node id="metawhimsy">
+      <data key="d13">metawhimsy</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="NicolasGuacamole">
+      <data key="d13">NicolasGuacamole</data>
+    </node>
+    <node id="bdtddt">
+      <data key="d13">bdtddt</data>
+    </node>
+    <node id="_georgesim_">
+      <data key="d13">_georgesim_</data>
+    </node>
+    <node id="PetrosPapapa">
+      <data key="d13">PetrosPapapa</data>
+    </node>
+    <node id="bdtddt">
+      <data key="d13">bdtddt</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="crocodilem8">
+      <data key="d13">crocodilem8</data>
+    </node>
+    <node id="nath1as">
+      <data key="d13">nath1as</data>
+    </node>
+    <node id="bdtddt">
+      <data key="d13">bdtddt</data>
+    </node>
+    <node id="bdtddt">
+      <data key="d13">bdtddt</data>
+    </node>
+    <node id="PetrosPapapa">
+      <data key="d13">PetrosPapapa</data>
+    </node>
+    <node id="bremby">
+      <data key="d13">bremby</data>
+    </node>
+    <node id="bremby">
+      <data key="d13">bremby</data>
+    </node>
+    <node id="SrPeixinho">
+      <data key="d13">SrPeixinho</data>
+    </node>
+    <node id="swimmer91">
+      <data key="d13">swimmer91</data>
+    </node>
+    <node id="tulip_bro">
+      <data key="d13">tulip_bro</data>
+    </node>
+    <node id="bdtddt">
+      <data key="d13">bdtddt</data>
+    </node>
+    <node id="Anonymous">
+      <data key="d13">Anonymous</data>
+    </node>
+    <node id="shuerpiola">
+      <data key="d13">shuerpiola</data>
+    </node>
+    <node id="Neutral">
+      <data key="d13">Neutral</data>
+    </node>
+    <node id="Positive">
+      <data key="d13">Positive</data>
+    </node>
+    <node id="Negative">
+      <data key="d13">Negative</data>
+    </node>
+    <edge source="9bdwe3" target="e52pma1" />
+    <edge source="9bdwe3" target="e535aac" />
+    <edge source="9bdwe3" target="e52b0dk" />
+    <edge source="9bdwe3" target="e52bnii" />
+    <edge source="9bdwe3" target="e52a8gc" />
+    <edge source="9bdwe3" target="e52bpy8" />
+    <edge source="9bdwe3" target="e52bwhl" />
+    <edge source="9bdwe3" target="e5398iy" />
+    <edge source="9bdwe3" target="e52mu5t" />
+    <edge source="9bdwe3" target="e52djh4" />
+    <edge source="9bdwe3" target="e52qysn" />
+    <edge source="9bdwe3" target="e555af4" />
+    <edge source="9bdwe3" target="e52sc5n" />
+    <edge source="9bdwe3" target="e52uq1f" />
+    <edge source="9bdwe3" target="e52zwuc" />
+    <edge source="9bdwe3" target="e53dl1f" />
+    <edge source="9bdwe3" target="e53krqw" />
+    <edge source="9bdwe3" target="e53uvl4" />
+    <edge source="9bdwe3" target="e548ixn" />
+    <edge source="9bdwe3" target="e54qvx3" />
+    <edge source="9bdwe3" target="e55wtia" />
+    <edge source="9bdwe3" target="e52e8ip" />
+    <edge source="9bdwe3" target="e52j6h8" />
+    <edge source="9bdwe3" target="e52nupv" />
+    <edge source="9bdwe3" target="e52pfz0" />
+    <edge source="9bdwe3" target="e52flf9" />
+    <edge source="9bdwe3" target="e53dq5m" />
+    <edge source="9bdwe3" target="e54eu0u" />
+    <edge source="9bdwe3" target="e5483xx" />
+    <edge source="9bdwe3" target="e52bt1w" />
+    <edge source="9bdwe3" target="e52i7hm" />
+    <edge source="9bdwe3" target="e52cp0f" />
+    <edge source="9bdwe3" target="e52b3ip" />
+    <edge source="9bdwe3" target="e52c8w5" />
+    <edge source="9bdwe3" target="e52mgfx" />
+    <edge source="9bdwe3" target="e52c5in" />
+    <edge source="9bdwe3" target="e539wg8" />
+    <edge source="9bdwe3" target="e5a7oge" />
+    <edge source="9bdwe3" target="e52nym4" />
+    <edge source="9bdwe3" target="e52omgj" />
+    <edge source="9bdwe3" target="e532g5n" />
+    <edge source="9bdwe3" target="e54ex3l" />
+    <edge source="9bdwe3" target="e53dlax" />
+    <edge source="9bdwe3" target="e54syax" />
+    <edge source="9bdwe3" target="e554gqa" />
+    <edge source="9bdwe3" target="e55a54f" />
+    <edge source="9bdwe3" target="e555gvp" />
+    <edge source="9bdwe3" target="e554zzl" />
+    <edge source="9bdwe3" target="e53ctbv" />
+    <edge source="9bdwe3" target="e52zm8g" />
+    <edge source="9bdwe3" target="e52e4nz" />
+    <edge source="9bdwe3" target="e537ul2" />
+    <edge source="9bdwe3" target="e52del4" />
+    <edge source="9bdwe3" target="e52dch9" />
+    <edge source="9bdwe3" target="e52d8i9" />
+    <edge source="9bdwe3" target="e52ekmp" />
+    <edge source="9bdwe3" target="e52mdl9" />
+    <edge source="9bdwe3" target="e539sr6" />
+    <edge source="9bdwe3" target="e533iur" />
+    <edge source="9bdwe3" target="e52cnjt" />
+    <edge source="9bdwe3" target="e53ac35" />
+    <edge source="9bdwe3" target="e54gm5m" />
+    <edge source="9bdwe3" target="e557r3b" />
+    <edge source="9bdwe3" target="e54e47r" />
+    <edge source="9bdwe3" target="e532usq" />
+    <edge source="9bdwe3" target="e53a027" />
+    <edge source="9bdwe3" target="e543kw1" />
+    <edge source="9bdwe3" target="e555kdf" />
+    <edge source="9bdwe3" target="e539lze" />
+    <edge source="9bdwe3" target="e52e93z" />
+    <edge source="9bdwe3" target="e52exeg" />
+    <edge source="9bdwe3" target="e53arjd" />
+    <edge source="9bdwe3" target="e539vpo" />
+    <edge source="9bdwe3" target="e53esi0" />
+    <edge source="9bdwe3" target="e55askm" />
+    <edge source="9bdwe3" target="e544bpz" />
+    <edge source="9bdwe3" target="e555of6" />
+    <edge source="9bdwe3" target="e53a16z" />
+    <edge source="9bdwe3" target="e53lpd9" />
+    <edge source="9bdwe3" target="e53fspo" />
+    <edge source="9bdwe3" target="e53pdt8" />
+    <edge source="9bdwe3" target="e55a9dk" />
+    <edge source="e52pma1" target="shuerpiola" />
+    <edge source="e52pma1" target="Neutral" />
+    <edge source="e535aac" target="PetrosPapapa" />
+    <edge source="e535aac" target="PetrosPapapa" />
+    <edge source="e535aac" target="PetrosPapapa" />
+    <edge source="e535aac" target="PetrosPapapa" />
+    <edge source="e535aac" target="PetrosPapapa" />
+    <edge source="e535aac" target="PetrosPapapa" />
+    <edge source="e535aac" target="e53dq5m" />
+    <edge source="e535aac" target="e54eu0u" />
+    <edge source="e535aac" target="e5483xx" />
+    <edge source="e535aac" target="Positive" />
+    <edge source="e52b0dk" target="jacksonmills" />
+    <edge source="e52b0dk" target="e52bt1w" />
+    <edge source="e52b0dk" target="e52i7hm" />
+    <edge source="e52b0dk" target="Positive" />
+    <edge source="e52bnii" target="mazesc_" />
+    <edge source="e52bnii" target="mazesc_" />
+    <edge source="e52bnii" target="mazesc_" />
+    <edge source="e52bnii" target="mazesc_" />
+    <edge source="e52bnii" target="mazesc_" />
+    <edge source="e52bnii" target="mazesc_" />
+    <edge source="e52bnii" target="e52cp0f" />
+    <edge source="e52bnii" target="Positive" />
+    <edge source="e52a8gc" target="SrPeixinho" />
+    <edge source="e52a8gc" target="SrPeixinho" />
+    <edge source="e52a8gc" target="SrPeixinho" />
+    <edge source="e52a8gc" target="e52b3ip" />
+    <edge source="e52a8gc" target="Negative" />
+    <edge source="e52bpy8" target="swimmer91" />
+    <edge source="e52bpy8" target="swimmer91" />
+    <edge source="e52bpy8" target="swimmer91" />
+    <edge source="e52bpy8" target="e52c8w5" />
+    <edge source="e52bpy8" target="e52mgfx" />
+    <edge source="e52bpy8" target="Positive" />
+    <edge source="e52bwhl" target="tulip_bro" />
+    <edge source="e52bwhl" target="tulip_bro" />
+    <edge source="e52bwhl" target="tulip_bro" />
+    <edge source="e52bwhl" target="tulip_bro" />
+    <edge source="e52bwhl" target="tulip_bro" />
+    <edge source="e52bwhl" target="tulip_bro" />
+    <edge source="e52bwhl" target="e52c5in" />
+    <edge source="e52bwhl" target="e539wg8" />
+    <edge source="e52bwhl" target="Positive" />
+    <edge source="e5398iy" target="FUZxxl" />
+    <edge source="e5398iy" target="e5a7oge" />
+    <edge source="e5398iy" target="Positive" />
+    <edge source="e52mu5t" target="remy_porter" />
+    <edge source="e52mu5t" target="e52nym4" />
+    <edge source="e52mu5t" target="Neutral" />
+    <edge source="e52djh4" target="ccundcf" />
+    <edge source="e52djh4" target="e52omgj" />
+    <edge source="e52djh4" target="Positive" />
+    <edge source="e52qysn" target="acroback" />
+    <edge source="e52qysn" target="Positive" />
+    <edge source="e555af4" target="NerdAtTheTerminal" />
+    <edge source="e555af4" target="Positive" />
+    <edge source="e52sc5n" target="agumonkey" />
+    <edge source="e52sc5n" target="e532g5n" />
+    <edge source="e52sc5n" target="Neutral" />
+    <edge source="e52uq1f" target="eigenman" />
+    <edge source="e52uq1f" target="Positive" />
+    <edge source="e52zwuc" target="experts_never_lie" />
+    <edge source="e52zwuc" target="experts_never_lie" />
+    <edge source="e52zwuc" target="experts_never_lie" />
+    <edge source="e52zwuc" target="e54ex3l" />
+    <edge source="e52zwuc" target="Positive" />
+    <edge source="e53dl1f" target="gabriel-et-al" />
+    <edge source="e53dl1f" target="e53dlax" />
+    <edge source="e53dl1f" target="Positive" />
+    <edge source="e53krqw" target="Farsyte" />
+    <edge source="e53krqw" target="Positive" />
+    <edge source="e53uvl4" target="TopIdler" />
+    <edge source="e53uvl4" target="Positive" />
+    <edge source="e548ixn" target="chaotic_david" />
+    <edge source="e548ixn" target="Positive" />
+    <edge source="e54qvx3" target="solinent" />
+    <edge source="e54qvx3" target="e54syax" />
+    <edge source="e54qvx3" target="Positive" />
+    <edge source="e55wtia" target="Blue_Q" />
+    <edge source="e55wtia" target="Positive" />
+    <edge source="e52e8ip" target="jonathancast" />
+    <edge source="e52e8ip" target="Positive" />
+    <edge source="e52j6h8" target="skulgnome" />
+    <edge source="e52j6h8" target="skulgnome" />
+    <edge source="e52j6h8" target="Positive" />
+    <edge source="e52nupv" target="sobeita" />
+    <edge source="e52nupv" target="Positive" />
+    <edge source="e52pfz0" target="gruehunter" />
+    <edge source="e52pfz0" target="Positive" />
+    <edge source="e52flf9" target="Vityou" />
+    <edge source="e52flf9" target="Positive" />
+    <edge source="e53dq5m" target="tulip_bro" />
+    <edge source="e53dq5m" target="tulip_bro" />
+    <edge source="e53dq5m" target="tulip_bro" />
+    <edge source="e53dq5m" target="tulip_bro" />
+    <edge source="e53dq5m" target="tulip_bro" />
+    <edge source="e53dq5m" target="tulip_bro" />
+    <edge source="e53dq5m" target="e554gqa" />
+    <edge source="e53dq5m" target="Neutral" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="crocodilem8" />
+    <edge source="e54eu0u" target="e55a54f" />
+    <edge source="e54eu0u" target="e555gvp" />
+    <edge source="e54eu0u" target="Positive" />
+    <edge source="e5483xx" target="metawhimsy" />
+    <edge source="e5483xx" target="metawhimsy" />
+    <edge source="e5483xx" target="e554zzl" />
+    <edge source="e5483xx" target="Neutral" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="crocodilem8" />
+    <edge source="e52bt1w" target="e53ctbv" />
+    <edge source="e52bt1w" target="Positive" />
+    <edge source="e52i7hm" target="NicolasGuacamole" />
+    <edge source="e52i7hm" target="NicolasGuacamole" />
+    <edge source="e52i7hm" target="e52zm8g" />
+    <edge source="e52i7hm" target="Neutral" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="crocodilem8" />
+    <edge source="e52cp0f" target="e52e4nz" />
+    <edge source="e52cp0f" target="e537ul2" />
+    <edge source="e52cp0f" target="e52del4" />
+    <edge source="e52cp0f" target="e52dch9" />
+    <edge source="e52cp0f" target="Positive" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="crocodilem8" />
+    <edge source="e52b3ip" target="e52d8i9" />
+    <edge source="e52b3ip" target="Positive" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="crocodilem8" />
+    <edge source="e52c8w5" target="e52ekmp" />
+    <edge source="e52c8w5" target="e52mdl9" />
+    <edge source="e52c8w5" target="Positive" />
+    <edge source="e52mgfx" target="McPhage" />
+    <edge source="e52mgfx" target="e539sr6" />
+    <edge source="e52mgfx" target="e533iur" />
+    <edge source="e52mgfx" target="Positive" />
+    <edge source="e52c5in" target="mazesc_" />
+    <edge source="e52c5in" target="mazesc_" />
+    <edge source="e52c5in" target="mazesc_" />
+    <edge source="e52c5in" target="mazesc_" />
+    <edge source="e52c5in" target="mazesc_" />
+    <edge source="e52c5in" target="mazesc_" />
+    <edge source="e52c5in" target="e52cnjt" />
+    <edge source="e52c5in" target="Positive" />
+    <edge source="e539wg8" target="bdtddt" />
+    <edge source="e539wg8" target="bdtddt" />
+    <edge source="e539wg8" target="bdtddt" />
+    <edge source="e539wg8" target="bdtddt" />
+    <edge source="e539wg8" target="bdtddt" />
+    <edge source="e539wg8" target="bdtddt" />
+    <edge source="e539wg8" target="bdtddt" />
+    <edge source="e539wg8" target="e53ac35" />
+    <edge source="e539wg8" target="Positive" />
+    <edge source="e5a7oge" target="trichotillofobia" />
+    <edge source="e5a7oge" target="Positive" />
+    <edge source="e52nym4" target="skulgnome" />
+    <edge source="e52nym4" target="skulgnome" />
+    <edge source="e52nym4" target="Negative" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="crocodilem8" />
+    <edge source="e52omgj" target="Positive" />
+    <edge source="e532g5n" target="mazesc_" />
+    <edge source="e532g5n" target="mazesc_" />
+    <edge source="e532g5n" target="mazesc_" />
+    <edge source="e532g5n" target="mazesc_" />
+    <edge source="e532g5n" target="mazesc_" />
+    <edge source="e532g5n" target="mazesc_" />
+    <edge source="e532g5n" target="Positive" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="crocodilem8" />
+    <edge source="e54ex3l" target="e54gm5m" />
+    <edge source="e54ex3l" target="Neutral" />
+    <edge source="e53dlax" target="WikiTextBot" />
+    <edge source="e53dlax" target="Neutral" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="crocodilem8" />
+    <edge source="e54syax" target="Positive" />
+    <edge source="e554gqa" target="PetrosPapapa" />
+    <edge source="e554gqa" target="PetrosPapapa" />
+    <edge source="e554gqa" target="PetrosPapapa" />
+    <edge source="e554gqa" target="PetrosPapapa" />
+    <edge source="e554gqa" target="PetrosPapapa" />
+    <edge source="e554gqa" target="PetrosPapapa" />
+    <edge source="e554gqa" target="Positive" />
+    <edge source="e55a54f" target="Anonymous" />
+    <edge source="e55a54f" target="Anonymous" />
+    <edge source="e55a54f" target="Positive" />
+    <edge source="e555gvp" target="PetrosPapapa" />
+    <edge source="e555gvp" target="PetrosPapapa" />
+    <edge source="e555gvp" target="PetrosPapapa" />
+    <edge source="e555gvp" target="PetrosPapapa" />
+    <edge source="e555gvp" target="PetrosPapapa" />
+    <edge source="e555gvp" target="PetrosPapapa" />
+    <edge source="e555gvp" target="Positive" />
+    <edge source="e554zzl" target="PetrosPapapa" />
+    <edge source="e554zzl" target="PetrosPapapa" />
+    <edge source="e554zzl" target="PetrosPapapa" />
+    <edge source="e554zzl" target="PetrosPapapa" />
+    <edge source="e554zzl" target="PetrosPapapa" />
+    <edge source="e554zzl" target="PetrosPapapa" />
+    <edge source="e554zzl" target="e557r3b" />
+    <edge source="e554zzl" target="Neutral" />
+    <edge source="e53ctbv" target="MjrK" />
+    <edge source="e53ctbv" target="e54e47r" />
+    <edge source="e53ctbv" target="Neutral" />
+    <edge source="e52zm8g" target="experts_never_lie" />
+    <edge source="e52zm8g" target="experts_never_lie" />
+    <edge source="e52zm8g" target="experts_never_lie" />
+    <edge source="e52zm8g" target="e532usq" />
+    <edge source="e52zm8g" target="Neutral" />
+    <edge source="e52e4nz" target="mazesc_" />
+    <edge source="e52e4nz" target="mazesc_" />
+    <edge source="e52e4nz" target="mazesc_" />
+    <edge source="e52e4nz" target="mazesc_" />
+    <edge source="e52e4nz" target="mazesc_" />
+    <edge source="e52e4nz" target="mazesc_" />
+    <edge source="e52e4nz" target="e53a027" />
+    <edge source="e52e4nz" target="Positive" />
+    <edge source="e537ul2" target="bremby" />
+    <edge source="e537ul2" target="bremby" />
+    <edge source="e537ul2" target="bremby" />
+    <edge source="e537ul2" target="e543kw1" />
+    <edge source="e537ul2" target="e555kdf" />
+    <edge source="e537ul2" target="Negative" />
+    <edge source="e52del4" target="tulip_bro" />
+    <edge source="e52del4" target="tulip_bro" />
+    <edge source="e52del4" target="tulip_bro" />
+    <edge source="e52del4" target="tulip_bro" />
+    <edge source="e52del4" target="tulip_bro" />
+    <edge source="e52del4" target="tulip_bro" />
+    <edge source="e52del4" target="Negative" />
+    <edge source="e52dch9" target="mazesc_" />
+    <edge source="e52dch9" target="mazesc_" />
+    <edge source="e52dch9" target="mazesc_" />
+    <edge source="e52dch9" target="mazesc_" />
+    <edge source="e52dch9" target="mazesc_" />
+    <edge source="e52dch9" target="mazesc_" />
+    <edge source="e52dch9" target="Positive" />
+    <edge source="e52d8i9" target="SrPeixinho" />
+    <edge source="e52d8i9" target="SrPeixinho" />
+    <edge source="e52d8i9" target="SrPeixinho" />
+    <edge source="e52d8i9" target="e539lze" />
+    <edge source="e52d8i9" target="e52e93z" />
+    <edge source="e52d8i9" target="Positive" />
+    <edge source="e52ekmp" target="mazesc_" />
+    <edge source="e52ekmp" target="mazesc_" />
+    <edge source="e52ekmp" target="mazesc_" />
+    <edge source="e52ekmp" target="mazesc_" />
+    <edge source="e52ekmp" target="mazesc_" />
+    <edge source="e52ekmp" target="mazesc_" />
+    <edge source="e52ekmp" target="e52exeg" />
+    <edge source="e52ekmp" target="e53arjd" />
+    <edge source="e52ekmp" target="Positive" />
+    <edge source="e52mdl9" target="swimmer91" />
+    <edge source="e52mdl9" target="swimmer91" />
+    <edge source="e52mdl9" target="swimmer91" />
+    <edge source="e52mdl9" target="e539vpo" />
+    <edge source="e52mdl9" target="Positive" />
+    <edge source="e539sr6" target="bdtddt" />
+    <edge source="e539sr6" target="bdtddt" />
+    <edge source="e539sr6" target="bdtddt" />
+    <edge source="e539sr6" target="bdtddt" />
+    <edge source="e539sr6" target="bdtddt" />
+    <edge source="e539sr6" target="bdtddt" />
+    <edge source="e539sr6" target="bdtddt" />
+    <edge source="e539sr6" target="Neutral" />
+    <edge source="e533iur" target="agrif" />
+    <edge source="e533iur" target="Negative" />
+    <edge source="e52cnjt" target="tulip_bro" />
+    <edge source="e52cnjt" target="tulip_bro" />
+    <edge source="e52cnjt" target="tulip_bro" />
+    <edge source="e52cnjt" target="tulip_bro" />
+    <edge source="e52cnjt" target="tulip_bro" />
+    <edge source="e52cnjt" target="tulip_bro" />
+    <edge source="e52cnjt" target="Positive" />
+    <edge source="e53ac35" target="tulip_bro" />
+    <edge source="e53ac35" target="tulip_bro" />
+    <edge source="e53ac35" target="tulip_bro" />
+    <edge source="e53ac35" target="tulip_bro" />
+    <edge source="e53ac35" target="tulip_bro" />
+    <edge source="e53ac35" target="tulip_bro" />
+    <edge source="e53ac35" target="e53esi0" />
+    <edge source="e53ac35" target="Positive" />
+    <edge source="e54gm5m" target="experts_never_lie" />
+    <edge source="e54gm5m" target="experts_never_lie" />
+    <edge source="e54gm5m" target="experts_never_lie" />
+    <edge source="e54gm5m" target="Negative" />
+    <edge source="e557r3b" target="metawhimsy" />
+    <edge source="e557r3b" target="metawhimsy" />
+    <edge source="e557r3b" target="e55askm" />
+    <edge source="e557r3b" target="Positive" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="crocodilem8" />
+    <edge source="e54e47r" target="Neutral" />
+    <edge source="e532usq" target="NicolasGuacamole" />
+    <edge source="e532usq" target="NicolasGuacamole" />
+    <edge source="e532usq" target="Neutral" />
+    <edge source="e53a027" target="bdtddt" />
+    <edge source="e53a027" target="bdtddt" />
+    <edge source="e53a027" target="bdtddt" />
+    <edge source="e53a027" target="bdtddt" />
+    <edge source="e53a027" target="bdtddt" />
+    <edge source="e53a027" target="bdtddt" />
+    <edge source="e53a027" target="bdtddt" />
+    <edge source="e53a027" target="Neutral" />
+    <edge source="e543kw1" target="_georgesim_" />
+    <edge source="e543kw1" target="e544bpz" />
+    <edge source="e543kw1" target="Neutral" />
+    <edge source="e555kdf" target="PetrosPapapa" />
+    <edge source="e555kdf" target="PetrosPapapa" />
+    <edge source="e555kdf" target="PetrosPapapa" />
+    <edge source="e555kdf" target="PetrosPapapa" />
+    <edge source="e555kdf" target="PetrosPapapa" />
+    <edge source="e555kdf" target="PetrosPapapa" />
+    <edge source="e555kdf" target="e555of6" />
+    <edge source="e555kdf" target="Positive" />
+    <edge source="e539lze" target="bdtddt" />
+    <edge source="e539lze" target="bdtddt" />
+    <edge source="e539lze" target="bdtddt" />
+    <edge source="e539lze" target="bdtddt" />
+    <edge source="e539lze" target="bdtddt" />
+    <edge source="e539lze" target="bdtddt" />
+    <edge source="e539lze" target="bdtddt" />
+    <edge source="e539lze" target="e53a16z" />
+    <edge source="e539lze" target="Positive" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="crocodilem8" />
+    <edge source="e52e93z" target="Negative" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="crocodilem8" />
+    <edge source="e52exeg" target="Neutral" />
+    <edge source="e53arjd" target="nath1as" />
+    <edge source="e53arjd" target="Neutral" />
+    <edge source="e539vpo" target="bdtddt" />
+    <edge source="e539vpo" target="bdtddt" />
+    <edge source="e539vpo" target="bdtddt" />
+    <edge source="e539vpo" target="bdtddt" />
+    <edge source="e539vpo" target="bdtddt" />
+    <edge source="e539vpo" target="bdtddt" />
+    <edge source="e539vpo" target="bdtddt" />
+    <edge source="e539vpo" target="e53lpd9" />
+    <edge source="e539vpo" target="Negative" />
+    <edge source="e53esi0" target="bdtddt" />
+    <edge source="e53esi0" target="bdtddt" />
+    <edge source="e53esi0" target="bdtddt" />
+    <edge source="e53esi0" target="bdtddt" />
+    <edge source="e53esi0" target="bdtddt" />
+    <edge source="e53esi0" target="bdtddt" />
+    <edge source="e53esi0" target="bdtddt" />
+    <edge source="e53esi0" target="e53fspo" />
+    <edge source="e53esi0" target="Positive" />
+    <edge source="e55askm" target="PetrosPapapa" />
+    <edge source="e55askm" target="PetrosPapapa" />
+    <edge source="e55askm" target="PetrosPapapa" />
+    <edge source="e55askm" target="PetrosPapapa" />
+    <edge source="e55askm" target="PetrosPapapa" />
+    <edge source="e55askm" target="PetrosPapapa" />
+    <edge source="e55askm" target="Positive" />
+    <edge source="e544bpz" target="bremby" />
+    <edge source="e544bpz" target="bremby" />
+    <edge source="e544bpz" target="bremby" />
+    <edge source="e544bpz" target="Neutral" />
+    <edge source="e555of6" target="bremby" />
+    <edge source="e555of6" target="bremby" />
+    <edge source="e555of6" target="bremby" />
+    <edge source="e555of6" target="Positive" />
+    <edge source="e53a16z" target="SrPeixinho" />
+    <edge source="e53a16z" target="SrPeixinho" />
+    <edge source="e53a16z" target="SrPeixinho" />
+    <edge source="e53a16z" target="Positive" />
+    <edge source="e53lpd9" target="swimmer91" />
+    <edge source="e53lpd9" target="swimmer91" />
+    <edge source="e53lpd9" target="swimmer91" />
+    <edge source="e53lpd9" target="e53pdt8" />
+    <edge source="e53lpd9" target="Positive" />
+    <edge source="e53fspo" target="tulip_bro" />
+    <edge source="e53fspo" target="tulip_bro" />
+    <edge source="e53fspo" target="tulip_bro" />
+    <edge source="e53fspo" target="tulip_bro" />
+    <edge source="e53fspo" target="tulip_bro" />
+    <edge source="e53fspo" target="tulip_bro" />
+    <edge source="e53fspo" target="Positive" />
+    <edge source="e53pdt8" target="bdtddt" />
+    <edge source="e53pdt8" target="bdtddt" />
+    <edge source="e53pdt8" target="bdtddt" />
+    <edge source="e53pdt8" target="bdtddt" />
+    <edge source="e53pdt8" target="bdtddt" />
+    <edge source="e53pdt8" target="bdtddt" />
+    <edge source="e53pdt8" target="bdtddt" />
+    <edge source="e53pdt8" target="e55a9dk" />
+    <edge source="e53pdt8" target="Negative" />
+    <edge source="e55a9dk" target="Anonymous" />
+    <edge source="e55a9dk" target="Anonymous" />
+    <edge source="e55a9dk" target="Positive" />
+  </graph>
+</graphml>

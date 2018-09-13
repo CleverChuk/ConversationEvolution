@@ -5,32 +5,33 @@ import nltk
 from statistics import mean
 import re
 import praw
-import networkx as nx
 
 UPPER_BOUND = 0.05
 LOWER_BOUND = -0.05
 
 client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
 client_id = "n-EWVSgG6cMnRQ"
-username = "Cleverchuk" #input("Enter username:")
-password = "BwO9pJdzGaVj2pyhZ4kJ" #input("Enter password(Not hidden, so make sure no one is looking):") 
+username = "Cleverchuk"  # input("Enter username:")
+password = "BwO9pJdzGaVj2pyhZ4kJ" # input("Enter password(Not hidden, so make sure no one is looking):")
 user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
+
 
 class SentimentAnalysis:
     def __init__(self):
         pass
-    
+
+    @staticmethod
     def find_sentence(text):
         """
             extract the sentences from the text
         """
-        text = text.replace('\n','')
+        text = text.replace('\n', '')
         pattern = re.compile(r'([A-Z][^\.!?]*[\.!?])', re.M)
         result = pattern.findall(text)
         result = result if len(result) > 0 else text
-        return result 
-    
-    
+        return result
+   
+    @staticmethod
     def convert_score(score):
         """
             convert the score to a word
@@ -47,18 +48,19 @@ class SentimentAnalysis:
         else:
             return "Neutral"
 
-    
+    @staticmethod
     def add_sentiment(comment):
         """
             returns the mean score for all the sentences in 
             a comment.
         """
         sentences = SentimentAnalysis.find_sentence(comment.body)
-        scores = [SentimentAnalysis.sentiment(sentence) for sentence in sentences]
+        scores = [SentimentAnalysis.sentiment(
+            sentence) for sentence in sentences]
 
-        return round(mean(scores),4) if len(scores) > 0 else None
-        
+        return round(mean(scores), 4) if len(scores) > 0 else None
 
+    @staticmethod
     def sentiment(sentence):
         """
             returns a dictionary of the form
@@ -71,16 +73,18 @@ class SentimentAnalysis:
             this is a dictionary of sentiment scores
             we're interested in the compound score
         """
-        from nltk.sentiment.vader import SentimentIntensityAnalyzer    
-        nltk_sentiment = SentimentIntensityAnalyzer()    
-        score = nltk_sentiment.polarity_scores(sentence)['compound'] 
-        
+        from nltk.sentiment.vader import SentimentIntensityAnalyzer
+        nltk_sentiment = SentimentIntensityAnalyzer()
+        score = nltk_sentiment.polarity_scores(sentence)['compound']
+
         return score
+
 
 class CustomeEncoder(json.JSONEncoder):
     """
         Custom encoder for comment class
     """
+
     def default(self, o):
         return o.__dict__
 
@@ -92,7 +96,8 @@ class Submission:
     """
         submission object
     """
-    def __init__(self,submission):
+
+    def __init__(self, submission):
         self.author_fullname = submission.author_fullname
         self.id = submission.id
         self.title = submission.title
@@ -115,7 +120,7 @@ class Comment:
         self.id = comment.id
         self.body = comment.body
         self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
-        self.sentiment = convert_score(self.sentiment_score)
+        self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
         self.replies = [Comment(c) for c in comment.replies]
 
 
@@ -130,10 +135,9 @@ class RedditBot:
 
     def get_submissions(self):
         """
-            get all comments in subreddit.
+            get all submission ids in a subreddit.
         """
-        return set(comment.submission for comment in self.subreddit.comments())
-        
+        return list(set(comment.submission.id for comment in self.subreddit.comments()))
 
     def get_hot_submissions(self, limit=10):
         """
@@ -170,4 +174,3 @@ if __name__ == "__main__":
     submission_id = "9bdwe3"
     bot = RedditBot(subreddit)
     # bot.dump_submission_comments(submission_id, filename)
-

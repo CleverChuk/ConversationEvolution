@@ -2,6 +2,7 @@ from bot import SentimentAnalysis, RedditBot
 import praw
 import networkx as nx
 
+
 class MetaNode(type):
     """
         a metaclass for specifying the node type
@@ -20,6 +21,7 @@ class Node:
     """
         base class for all nodes
     """
+
     def __init__(self, name):
         self.name = name
 
@@ -43,6 +45,7 @@ class CommentNode(metaclass=MetaNode, Type="Comment"):
 
     def __init__(self, comment):
         self.author = "Anonymous" if comment.author == None else comment.author.name
+        self.parent_id = comment.parent().id
         self.score = comment.score
         self.timestamp = comment.created
         self.id = comment.id
@@ -54,6 +57,11 @@ class CommentNode(metaclass=MetaNode, Type="Comment"):
         return self.id
 
 
+class SentimentNode(Node, metaclass=MetaNode, Type="Sentiment"):
+    def __init__(self, value):
+        super().__init__(value)
+
+
 class ArticleNode(metaclass=MetaNode, Type="Article"):
     """
         base class for all nodes
@@ -62,7 +70,7 @@ class ArticleNode(metaclass=MetaNode, Type="Article"):
     def __init__(self, submission):
         self.id = submission.id
         self.title = submission.title
-        self.view_count = submission.view_count
+        self.view_count = submission.view_count if submission.view_count != None else 0
         self.upvote_ratio = submission.upvote_ratio
         self.ups = submission.ups
         self.downs = submission.downs
@@ -131,57 +139,108 @@ class Graph(Digraph):
         subclass of Digraph
     """
 
-
-
     def addEdge(self, edge):
         Digraph.addEdge(self, edge)
         rev = Edge(edge.dest, edge.src)
         Digraph.addEdge(self, rev)
 
+
 class GraphBot(RedditBot):
     """
         builds graph
     """
-    def __init__(self, subreddit,username="Cleverchuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
+
+    def __init__(self, subreddit, username="Cleverchuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
         self.client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
         self.client_id = "n-EWVSgG6cMnRQ"
         self.user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
-        
-        self.reddit = praw.Reddit(client_id=self.client_id, client_secret=self.client_secret, 
-                                password=password, user_agent=self.user_agent, username=username)
+
+        self.reddit = praw.Reddit(client_id=self.client_id, client_secret=self.client_secret,
+                                  password=password, user_agent=self.user_agent, username=username)
         self.subreddit = self.reddit.subreddit(subreddit)
 
-    def getGraph(self, submission_id):
+    def getGraph(self, *ids):
+        """"
+            builds graph from article with submission id
+        """
+        sentiment = {"Positive": SentimentNode("Positive"), "Negative": SentimentNode(
+            "Negative"), "Neutral": SentimentNode("Neutral")}
         graph = nx.Graph()
-        submission = self.get_submission(submission_id)
-        submission.comments.replace_more(limit=None)
+        ac_edges = []  # article/comment edge
+        authc_edges = []  # author/comment edges
+        cc_edges = []  # comment/comment edges
+        sc_edges = []  # sentiment/comment edges
+        nodes = []
 
-        article_node = ArticleNode(submission)
+        for id in ids:
+            try:
+                submission = self.get_submission(id)
+                submission.comments.replace_more(limit=None)
+                article_node = ArticleNode(submission)
 
-        ac_edges = [(article_node, CommentNode(comment)) for comment in submission.comments.list()]
-        authors = set([AuthorNode(comment.author) for a,comment in ac_edges]) # remove dups
-        authc_edges = []
-        
+                # populate article/comment edge list
+                for comment in submission.comments.list():
+                    ac_edges.append((article_node, CommentNode(comment)))
+            except Exception as pe:
+                print(pe)
+
+        authors = set([AuthorNode(comment.author)
+                       for a, comment in ac_edges])  # remove dups
+
+        # populate sentiment/comment  and comment/comment edge list
+        for author, comment in ac_edges:
+            sc_edges.append((comment, sentiment[comment.sentiment]))
+            for a, c in ac_edges:
+                if c.parent_id == comment.id:
+                    cc_edges.append((comment, c))
+
+        # populate author/comment edge list
         for author in authors:
             for a, comment in ac_edges:
                 if author.name == comment.author:
-                    authc_edges.append((author,comment))
-        
+                    authc_edges.append((author, comment))
+
         graph.add_edges_from(ac_edges)
         graph.add_edges_from(authc_edges)
+        graph.add_edges_from(cc_edges)
+        graph.add_edges_from(sc_edges)
 
-        return graph 
+        # add nodes and node attributes
+        for a, c in ac_edges:
+            nodes.append((a, a.__dict__))
 
+        for author, c in authc_edges:
+            nodes.append((author, author.__dict__))
+
+        for pc, cc in cc_edges:
+            nodes.append((pc, pc.__dict__))
+            nodes.append((cc, cc.__dict__))
+
+        for k, v in sentiment.items():
+            nodes.append((v, v.__dict__))
+
+        graph.add_nodes_from(nodes)
+
+        return graph
+
+def checkNone(o):
+    print(o.__dict__)
+    return o.__dict__ is None
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
-
+    # "9bdwe3","9f3vyq","9f4lcs"
     subreddit = "compsci"
-    submission_id = "9bdwe3"
+    filename = "data.json"
     bot = GraphBot(subreddit)
-    graph = bot.getGraph(submission_id)
-    
-    # plt.subplot(121)
-    nx.draw(graph,with_labels=True, font_weight='bold')
+
+    ids= bot.get_submissions()
+    graph=bot.getGraph(*ids)
+    nx.write_graphml(graph, "reddit_graph.graphml")
+
+    nx.draw(graph, with_labels=False, font_weight='bold')
     plt.show()
     # bot.dump_submission_comments(submission_id, filename)
+
+    # G = nx.karate_club_graph()
+    # nx.write_graphml(G, "test.graphml")
