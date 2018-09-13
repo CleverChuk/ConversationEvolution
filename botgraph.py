@@ -150,7 +150,7 @@ class GraphBot(RedditBot):
         builds graph
     """
 
-    def __init__(self, subreddit, username="Cleverchuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
+    def __init__(self, subreddit, username, password):
         self.client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
         self.client_id = "n-EWVSgG6cMnRQ"
         self.user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
@@ -223,19 +223,23 @@ class GraphBot(RedditBot):
 
         return graph
 
+
 def checkNone(o):
     print(o.__dict__)
     return o.__dict__ is None
+
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
     # "9bdwe3","9f3vyq","9f4lcs"
     subreddit = "compsci"
     filename = "data.json"
-    bot = GraphBot(subreddit)
+    username = input("Enter username:")
+    password = input("Enter password(Not hidden, so make sure no one is looking):")
 
-    ids= bot.get_submissions()
-    graph=bot.getGraph(*ids)
+    bot = GraphBot(subreddit)
+    ids = bot.get_submissions()
+    graph = bot.getGraph(*ids)
     nx.write_graphml(graph, "reddit_graph.graphml")
 
     nx.draw(graph, with_labels=False, font_weight='bold')

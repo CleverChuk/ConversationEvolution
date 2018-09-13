@@ -11,8 +11,8 @@ LOWER_BOUND = -0.05
 
 client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
 client_id = "n-EWVSgG6cMnRQ"
-username = "Cleverchuk"  # input("Enter username:")
-password = "BwO9pJdzGaVj2pyhZ4kJ" # input("Enter password(Not hidden, so make sure no one is looking):")
+username =  input("Enter username:")
+password =  input("Enter password(Not hidden, so make sure no one is looking):")
 user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
 
 
