@@ -293,7 +293,7 @@ class GraphBot(RedditBot):
             nodes.append((pc, pc.__dict__))
             nodes.append((cc, cc.__dict__))
 
-        for _, v in sentiment.items():
+        for _ , v in sentiment.items():
             nodes.append((v, v.__dict__))
 
         graph.add_nodes_from(nodes)
