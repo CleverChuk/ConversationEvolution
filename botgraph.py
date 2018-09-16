@@ -1,7 +1,21 @@
 from bot import SentimentAnalysis, RedditBot
 import praw
+from nltk.tokenize import TweetTokenizer
 import networkx as nx
 
+
+"""
+On second thought, some of the other argument-related annotators I'm working on
+(such as the level of formality, level of charitability, etc.) might be overkill for this first paper.
+ Some features that should be relatively easy to implement and add into the graph are:
+> Length of the comment
+> average word length
+> Number of quoted text per comment length:
+> Flesch-kincaid reading level (there is a python library called "textstat" that implements this)
+> If there is time, it would be interesting to encode how similar two comments are as
+a relationship between them, or perhaps annotating each comment with a value representing
+how similar it is to the root comment of its thread. The easiest way to do this is by using doc2vec from the genSim library.
+"""
 
 class MetaNode(type):
     """
@@ -15,6 +29,64 @@ class MetaNode(type):
         for k, v in kwargs.items():
             namespace.setdefault(k, v)
         return type.__new__(metaclass, name, bases, namespace)
+
+
+class CommentMetaAnalysis:
+    def __init__(self, comment):
+        self._body = comment.body
+        self._length = None
+        self._count_quoted_text = None
+        self._average_word_length = None
+        self._reading_level = None
+
+    @property
+    def length(self):
+        if self._length == None:
+            self._length = len(self._body)
+        return self._length
+
+    @property
+    def countQuoted(self):
+        stack = list()
+        if self._count_quoted_text == None:
+            for char in self._body:
+                if char == '\"':
+                    stack.append(char)
+
+        self._count_quoted_text = len(stack)//2
+
+        return self._count_quoted_text
+
+    @property
+    def averageWordLength(self):
+
+        if self._average_word_length == None:
+            import string
+            from statistics import mean
+            from collections import defaultdict
+            
+            tokenDict = defaultdict(int)
+            tweetTokenizer = TweetTokenizer()
+            tokens  = tweetTokenizer.tokenize(self._body)
+            
+            for token in tokens:
+                if token in string.punctuation:
+                    continue
+                tokenDict[token] += len(token)
+
+            self._average_word_length = mean(tokenDict.values())
+        
+        return self._average_word_length
+    
+    @property
+    def readingLevel(self):
+        if self._reading_level == None:
+            from textstat.textstat import textstat
+            self._reading_level = textstat.flesch_kincaid_grade(self._body)
+        
+        return self._reading_level
+        
+
 
 
 class Node:
@@ -44,12 +116,17 @@ class CommentNode(metaclass=MetaNode, Type="Comment"):
     """
 
     def __init__(self, comment):
+        metaAnalysis = CommentMetaAnalysis(comment)
         self.author = "Anonymous" if comment.author == None else comment.author.name
         self.parent_id = comment.parent().id
         self.score = comment.score
         self.timestamp = comment.created
         self.id = comment.id
         self.body = comment.body
+        self.length = metaAnalysis.length
+        self.averageWordLength = metaAnalysis.averageWordLength
+        self.countQuotedText = metaAnalysis.countQuoted
+        self.readingLevel = metaAnalysis.readingLevel
         self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
 
@@ -150,7 +227,7 @@ class GraphBot(RedditBot):
         builds graph
     """
 
-    def __init__(self, subreddit, username, password):
+    def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
         self.client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
         self.client_id = "n-EWVSgG6cMnRQ"
         self.user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
@@ -234,8 +311,8 @@ if __name__ == "__main__":
     # "9bdwe3","9f3vyq","9f4lcs"
     subreddit = "compsci"
     filename = "data.json"
-    username = input("Enter username:")
-    password = input("Enter password(Not hidden, so make sure no one is looking):")
+    # username = input("Enter username:")
+    # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
     bot = GraphBot(subreddit)
     ids = bot.get_submissions()

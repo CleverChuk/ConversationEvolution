@@ -11,8 +11,8 @@ LOWER_BOUND = -0.05
 
 client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
 client_id = "n-EWVSgG6cMnRQ"
-username =  input("Enter username:")
-password =  input("Enter password(Not hidden, so make sure no one is looking):")
+username = "CleverChuk" #input("Enter username:")
+password = "BwO9pJdzGaVj2pyhZ4kJ" #input("Enter password(Not hidden, so make sure no one is looking):")
 user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
 
 
@@ -114,11 +114,18 @@ class Comment:
     """
 
     def __init__(self, comment):
+        from botgraph import CommentMetaAnalysis
+        metaAnalysis = CommentMetaAnalysis(comment)
         self.author = "Anonymous" if comment.author == None else comment.author.name
+        self.parent_id = comment.parent().id
         self.score = comment.score
         self.timestamp = comment.created
         self.id = comment.id
         self.body = comment.body
+        self.length = metaAnalysis.length
+        self.averageWordLength = metaAnalysis.averageWordLength
+        self.countQuotedText = metaAnalysis.countQuoted
+        self.readingLevel = metaAnalysis.readingLevel
         self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
         self.replies = [Comment(c) for c in comment.replies]
@@ -173,4 +180,4 @@ if __name__ == "__main__":
     filename = "data.json"
     submission_id = "9bdwe3"
     bot = RedditBot(subreddit)
-    # bot.dump_submission_comments(submission_id, filename)
+    bot.dump_submission_comments(submission_id, filename)
