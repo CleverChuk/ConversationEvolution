@@ -63,9 +63,7 @@ class CommentMetaAnalysis:
                     startCounting = False
                     del stack[:]
 
-               
-
-        self.quoted_text_per_length = round(count/self._length, 4) * 100
+        self.quoted_text_per_length = round(count/self._length, 4)
 
         return self.quoted_text_per_length
 
