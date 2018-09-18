@@ -17,6 +17,7 @@ a relationship between them, or perhaps annotating each comment with a value rep
 how similar it is to the root comment of its thread. The easiest way to do this is by using doc2vec from the genSim library.
 """
 
+
 class MetaNode(type):
     """
         a metaclass for specifying the node type
@@ -46,12 +47,18 @@ class CommentMetaAnalysis:
         return self._length
 
     @property
-    def countQuoted(self):
+    def quotedTextPerLength(self):
+        # incorrect
         stack = list()
+        count = 0
+        startCounting = False
         if self._count_quoted_text == None:
             for char in self._body:
                 if char == '\"':
                     stack.append(char)
+
+                if(startCounting):
+                    count +=1
 
         self._count_quoted_text = len(stack)//2
 
@@ -64,29 +71,27 @@ class CommentMetaAnalysis:
             import string
             from statistics import mean
             from collections import defaultdict
-            
+
             tokenDict = defaultdict(int)
             tweetTokenizer = TweetTokenizer()
-            tokens  = tweetTokenizer.tokenize(self._body)
-            
+            tokens = tweetTokenizer.tokenize(self._body)
+
             for token in tokens:
                 if token in string.punctuation:
                     continue
                 tokenDict[token] += len(token)
 
             self._average_word_length = mean(tokenDict.values())
-        
-        return self._average_word_length
-    
+
+        return round(self._average_word_length,3)
+
     @property
     def readingLevel(self):
         if self._reading_level == None:
             from textstat.textstat import textstat
             self._reading_level = textstat.flesch_kincaid_grade(self._body)
-        
-        return self._reading_level
-        
 
+        return self._reading_level
 
 
 class Node:
@@ -115,18 +120,17 @@ class CommentNode(metaclass=MetaNode, Type="Comment"):
         base class for all nodes
     """
 
-    def __init__(self, comment):
-        metaAnalysis = CommentMetaAnalysis(comment)
-        self.author = "Anonymous" if comment.author == None else comment.author.name
+    def __init__(self, comment, meta):
         self.parent_id = comment.parent().id
+        self.id = comment.id
+        self.author = "Anonymous" if comment.author == None else comment.author.name
         self.score = comment.score
         self.timestamp = comment.created
-        self.id = comment.id
         self.body = comment.body
-        self.length = metaAnalysis.length
-        self.averageWordLength = metaAnalysis.averageWordLength
-        self.countQuotedText = metaAnalysis.countQuoted
-        self.readingLevel = metaAnalysis.readingLevel
+        self.length = meta.length
+        self.averageWordLength = meta.averageWordLength
+        self.quotedTextPerLength = meta.quotedTextPerLength
+        self.readingLevel = meta.readingLevel
         self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
 
@@ -257,7 +261,8 @@ class GraphBot(RedditBot):
 
                 # populate article/comment edge list
                 for comment in submission.comments.list():
-                    ac_edges.append((article_node, CommentNode(comment)))
+                    ac_edges.append((article_node, CommentNode(
+                        comment, CommentMetaAnalysis(comment))))
             except Exception as pe:
                 print(pe)
 
@@ -293,7 +298,7 @@ class GraphBot(RedditBot):
             nodes.append((pc, pc.__dict__))
             nodes.append((cc, cc.__dict__))
 
-        for _ , v in sentiment.items():
+        for _, v in sentiment.items():
             nodes.append((v, v.__dict__))
 
         graph.add_nodes_from(nodes)
@@ -319,9 +324,6 @@ if __name__ == "__main__":
     graph = bot.getGraph(*ids)
     nx.write_graphml(graph, "reddit_graph.graphml")
 
-    nx.draw(graph, with_labels=False, font_weight='bold')
-    plt.show()
+    # nx.draw(graph, with_labels=False, font_weight='bold')
+    # plt.show()
     # bot.dump_submission_comments(submission_id, filename)
-
-    # G = nx.karate_club_graph()
-    # nx.write_graphml(G, "test.graphml")
