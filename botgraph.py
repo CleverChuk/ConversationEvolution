@@ -31,12 +31,11 @@ class MetaNode(type):
             namespace.setdefault(k, v)
         return type.__new__(metaclass, name, bases, namespace)
 
-
 class CommentMetaAnalysis:
     def __init__(self, comment):
         self._body = comment.body
         self._length = None
-        self._count_quoted_text = None
+        self.quoted_text_per_length = None
         self._average_word_length = None
         self._reading_level = None
 
@@ -48,21 +47,27 @@ class CommentMetaAnalysis:
 
     @property
     def quotedTextPerLength(self):
-        # incorrect
         stack = list()
         count = 0
         startCounting = False
-        if self._count_quoted_text == None:
-            for char in self._body:
-                if char == '\"':
-                    stack.append(char)
-
+        if self.quoted_text_per_length == None:
+            for c in self._body:
                 if(startCounting):
-                    count +=1
+                    count += 1
 
-        self._count_quoted_text = len(stack)//2
+                if c == '\"':
+                    stack.append(c)
+                    startCounting = True
 
-        return self._count_quoted_text
+                if(len(stack) == 2):
+                    startCounting = False
+                    del stack[:]
+
+               
+
+        self.quoted_text_per_length = round(count/self._length, 4) * 100
+
+        return self.quoted_text_per_length
 
     @property
     def averageWordLength(self):
@@ -83,7 +88,7 @@ class CommentMetaAnalysis:
 
             self._average_word_length = mean(tokenDict.values())
 
-        return round(self._average_word_length,3)
+        return round(self._average_word_length, 3)
 
     @property
     def readingLevel(self):
