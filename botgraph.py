@@ -31,7 +31,12 @@ class MetaNode(type):
             namespace.setdefault(k, v)
         return type.__new__(metaclass, name, bases, namespace)
 
+
 class CommentMetaAnalysis:
+    """
+        this class is used to calculate comment features
+    """
+
     def __init__(self, comment):
         self._body = comment.body
         self._length = None
@@ -97,6 +102,30 @@ class CommentMetaAnalysis:
         return self._reading_level
 
 
+class ID:
+    """
+        class use to generate Ids for the comment
+        to reduce text density on the graph
+    """
+    id = -1
+    id_alpha = 97
+    limit = 1000000
+
+    @classmethod
+    def getId(cls):
+
+        if cls.id is int and cls.id >= cls.limit:
+            cls.id = str(cls.id) + chr(cls.id_alpha)
+            cls.id += 1
+
+        if cls.id is str:
+            cls.id += chr(cls.id_alpha)
+            cls.id_alpha
+
+        cls.id += 1
+        return str(cls.id)
+
+
 class Node:
     """
         base class for all nodes
@@ -104,12 +133,20 @@ class Node:
 
     def __init__(self, name):
         self.name = name
+        self.id_0 = ""
 
     def __repr__(self):
-        return self.name
+        if self.id_0:
+            return self.id_0
+
+        self.id_0 = str(ID.getId())
+        return self.id_0
+
+    def __len__(self):
+        return len(self.__dict__)
 
 
-class AuthorNode(Node, metaclass=MetaNode, Type="Author"):
+class AuthorNode(Node, metaclass=MetaNode, Type="a"):
     """
         base class for all nodes
     """
@@ -117,13 +154,17 @@ class AuthorNode(Node, metaclass=MetaNode, Type="Author"):
     def __init__(self, name):
         super().__init__(name)
 
+    def __repr__(self):
+        return self.name
 
-class CommentNode(metaclass=MetaNode, Type="Comment"):
+
+class CommentNode(Node, metaclass=MetaNode, Type="c"):
     """
         base class for all nodes
     """
 
     def __init__(self, comment, meta):
+        super().__init__("")
         self.parent_id = comment.parent().id
         self.id = comment.id
         self.author = "Anonymous" if comment.author == None else comment.author.name
@@ -138,95 +179,35 @@ class CommentNode(metaclass=MetaNode, Type="Comment"):
         self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
 
     def __repr__(self):
-        return self.id
+        super().__repr__()
+        return self.Type + self.id_0
 
 
-class SentimentNode(Node, metaclass=MetaNode, Type="Sentiment"):
+class SentimentNode(Node, metaclass=MetaNode, Type="s"):
     def __init__(self, value):
         super().__init__(value)
 
+    def __repr__(self):
+        return self.name
 
-class ArticleNode(metaclass=MetaNode, Type="Article"):
+
+class ArticleNode(Node, metaclass=MetaNode, Type="ar"):
     """
         base class for all nodes
     """
 
     def __init__(self, submission):
+        super().__init__("")
         self.id = submission.id
         self.title = submission.title
         self.view_count = submission.view_count if submission.view_count != None else 0
-        self.upvote_ratio = submission.upvote_ratio
-        self.ups = submission.ups
-        self.downs = submission.downs
+        # self.upvote_ratio = submission.upvote_ratio
+        # self.ups = submission.ups
+        # self.downs = submission.downs
 
     def __repr__(self):
-        return self.id
-
-
-class Edge:
-    """
-        base class for relationship between nodes
-    """
-
-    def __init__(self, src, dest):
-        self._src = src
-        self._dest = dest
-
-    @property
-    def src(self):
-        return self._src
-
-    @property
-    def dest(self):
-        return self._dest
-
-    def __repr__(self):
-        return self._src + "->" + self._dest
-
-
-class Digraph:
-    """
-        Directed graph abstraction
-    """
-
-    def __init__(self):
-        self._edges = {}
-
-    def addNode(self, node):
-        if node not in self._edges:
-            self._edges[node] = []
-
-    def addEdge(self, edge):
-        src = edge.src
-        dest = edge.dest
-
-        if src in self._edges:
-            self._edges[src].append(dest)
-        else:
-            self._edges[src] = [dest]
-
-    def childrenOf(self, node):
-        return self._edges[node]
-
-    def hasNode(self, node):
-        return node in self._edges
-
-    def getNode(self, name):
-        for n in self._edges:
-            if n.name == name:
-                return n
-        raise NameError(name)
-
-
-class Graph(Digraph):
-    """
-        subclass of Digraph
-    """
-
-    def addEdge(self, edge):
-        Digraph.addEdge(self, edge)
-        rev = Edge(edge.dest, edge.src)
-        Digraph.addEdge(self, rev)
+        super().__repr__()
+        return self.Type + self.id_0
 
 
 class GraphBot(RedditBot):
@@ -243,18 +224,54 @@ class GraphBot(RedditBot):
                                   password=password, user_agent=self.user_agent, username=username)
         self.subreddit = self.reddit.subreddit(subreddit)
 
+        self._main_graph = None
+        self._comment_graph = None
+
+    @property
+    def main_graph(self):
+        if self._main_graph == None:
+            raise Exception("You have to call getGrahp(...) first")
+
+        return self.main_graph
+
+    @property
+    def comment_graph(self):
+        if self._main_graph == None:
+            raise Exception("You have to call getGrahp(...) first")
+
+        return self._comment_graph
+
+    @main_graph.setter
+    def main_graph_setter(self,value):
+        self._main_graph = value
+
+    @comment_graph.setter
+    def comment_graph_setter(self,value):
+        self._comment_graph = value
+        
+
+    def stream(self, subreddit):
+        """
+            streams comments from the given subreddit 
+        """
+        stream = self.reddit.subreddit(subreddit).stream
+        for c in stream.submissions():
+            graph = self.getGraph(c.id)
+            print(nx.clustering(graph))
+
+    
     def getGraph(self, *ids):
         """"
             builds graph from article with submission id
         """
         sentiment = {"Positive": SentimentNode("Positive"), "Negative": SentimentNode(
             "Negative"), "Neutral": SentimentNode("Neutral")}
-        graph = nx.Graph()
         ac_edges = []  # article/comment edge
-        authc_edges = []  # author/comment edges
-        cc_edges = []  # comment/comment edges
+        cc_edges = []  # undirected comment/comment edges
         sc_edges = []  # sentiment/comment edges
         nodes = []
+        # create a digraph for comment/comment edges
+        diGraph = nx.DiGraph()
 
         for id in ids:
             try:
@@ -264,40 +281,43 @@ class GraphBot(RedditBot):
 
                 # populate article/comment edge list
                 for comment in submission.comments.list():
-                    ac_edges.append((article_node, CommentNode(
-                        comment, CommentMetaAnalysis(comment))))
+                    ac_edges.append((
+                        article_node, CommentNode(
+                            comment, CommentMetaAnalysis(comment)), {"type":"article-comment"}
+                    ))
             except Exception as pe:
                 print(pe)
 
-        authors = set([AuthorNode(comment.author)
-                       for a, comment in ac_edges])  # remove dups
-
         # populate sentiment/comment  and comment/comment edge list
-        for author, comment in ac_edges:
-            sc_edges.append((comment, sentiment[comment.sentiment]))
-            for a, c in ac_edges:
+        for _, comment, *_ in ac_edges:
+            sc_edges.append((comment, sentiment[comment.sentiment], {
+                            "score": comment.sentiment_score,"type":"sentiment-comment"}))
+            
+            for _, c ,*_ in ac_edges:
                 if c.parent_id == comment.id:
-                    cc_edges.append((comment, c))
+                    cc_edges.append((comment, c,  {"type":"parent-child"}))
 
-        # populate author/comment edge list
-        for author in authors:
-            for a, comment in ac_edges:
-                if author.name == comment.author:
-                    authc_edges.append((author, comment))
+       # directed graph for comments
+        diGraph.add_edges_from(cc_edges) 
+        diGraph.add_edges_from(ac_edges)
 
-        graph.add_edges_from(ac_edges)
-        graph.add_edges_from(authc_edges)
+        # creat a graph for all other edges
+        graph = nx.Graph()
         graph.add_edges_from(cc_edges)
+        graph.add_edges_from(ac_edges)
         graph.add_edges_from(sc_edges)
 
+        author_comments_edges = []
+        for _, comment, *_ in ac_edges:
+            author_comments_edges.append((AuthorNode(comment.author), comment, {"type":"author-comment"}))
+
+        diGraph.add_edges_from(author_comments_edges)
+        graph.add_edges_from(author_comments_edges)
         # add nodes and node attributes
-        for a, c in ac_edges:
+        for a, *c in ac_edges:
             nodes.append((a, a.__dict__))
 
-        for author, c in authc_edges:
-            nodes.append((author, author.__dict__))
-
-        for pc, cc in cc_edges:
+        for pc, cc, *_ in cc_edges:
             nodes.append((pc, pc.__dict__))
             nodes.append((cc, cc.__dict__))
 
@@ -305,7 +325,11 @@ class GraphBot(RedditBot):
             nodes.append((v, v.__dict__))
 
         graph.add_nodes_from(nodes)
+        graph.add_nodes_from(diGraph)
 
+        self._comment_graph  = diGraph
+        self._main_graph = graph
+        
         return graph
 
 
@@ -326,6 +350,7 @@ if __name__ == "__main__":
     ids = bot.get_submissions()
     graph = bot.getGraph(*ids)
     nx.write_graphml(graph, "reddit_graph.graphml")
+    nx.write_graphml(bot.comment_graph,"comment_graph.graphml")
 
     # nx.draw(graph, with_labels=False, font_weight='bold')
     # plt.show()
