@@ -2,7 +2,8 @@ from bot import SentimentAnalysis, RedditBot
 import praw
 from nltk.tokenize import TweetTokenizer
 import networkx as nx
-
+from gensim import corpora
+from string import punctuation
 
 """
 On second thought, some of the other argument-related annotators I'm working on
@@ -32,6 +33,32 @@ class MetaNode(type):
         return type.__new__(metaclass, name, bases, namespace)
 
 
+class Doc2Vec(corpora.Dictionary):
+    """
+        a subclass of Dictonary to generate document corpus vector
+    """
+
+    def __init__(self, reference_doc):
+        self._ref = reference_doc
+        # self._copra = {} # dictionary to hold generated copra; key: comment_id, value: corpus
+        self.__process_ref_doc()
+        super().__init__(self._ref)
+
+    def __process_ref_doc(self):
+        self._ref = self._ref.split("\n")  # splits at new lines
+        self._ref = [[word for word in line.split() if len(word) > 3]  # get only words greater than 3 letters
+                     for line in self._ref if len(line) > 3]  # get only lines with more than 3 words
+        temp = []
+        self._ref = [temp + doc for doc in self._ref]
+
+    def getCorpus(self, doc):
+        if isinstance(doc, list):
+            return super().doc2bow(doc)
+
+        doc = doc.split()
+        return super().doc2bow(doc)
+
+
 class CommentMetaAnalysis:
     """
         this class is used to calculate comment features
@@ -40,7 +67,7 @@ class CommentMetaAnalysis:
     def __init__(self, comment):
         self._body = comment.body
         self._length = None
-        self.quoted_text_per_length = None
+        self._quoted_text_per_length = None
         self._average_word_length = None
         self._reading_level = None
 
@@ -55,7 +82,7 @@ class CommentMetaAnalysis:
         stack = list()
         count = 0
         startCounting = False
-        if self.quoted_text_per_length == None:
+        if self._quoted_text_per_length == None:
             for c in self._body:
                 if(startCounting):
                     count += 1
@@ -68,9 +95,9 @@ class CommentMetaAnalysis:
                     startCounting = False
                     del stack[:]
 
-        self.quoted_text_per_length = round(count/self._length, 4)
+            self._quoted_text_per_length = round(count/self._length, 4)
 
-        return self.quoted_text_per_length
+        return self._quoted_text_per_length
 
     @property
     def averageWordLength(self):
@@ -151,8 +178,10 @@ class AuthorNode(Node, metaclass=MetaNode, Type="a"):
         base class for all nodes
     """
 
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, author):
+        # self.account_created = author.created_utc
+
+        super().__init__(author)
 
     def __repr__(self):
         return self.name
@@ -160,7 +189,7 @@ class AuthorNode(Node, metaclass=MetaNode, Type="a"):
 
 class CommentNode(Node, metaclass=MetaNode, Type="c"):
     """
-        base class for all nodes
+        base class for commemnt nodes
     """
 
     def __init__(self, comment, meta):
@@ -177,6 +206,7 @@ class CommentNode(Node, metaclass=MetaNode, Type="c"):
         self.readingLevel = meta.readingLevel
         self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
+        self.corpus = None
 
     def __repr__(self):
         super().__repr__()
@@ -201,9 +231,11 @@ class ArticleNode(Node, metaclass=MetaNode, Type="ar"):
         self.id = submission.id
         self.title = submission.title
         self.view_count = submission.view_count if submission.view_count != None else 0
-        # self.upvote_ratio = submission.upvote_ratio
-        # self.ups = submission.ups
-        # self.downs = submission.downs
+        self.timestamp = submission.created_utc
+        self.edited = submission.edited
+        self.is_video = submission.is_video
+        self.upvote_ratio = submission.upvote_ratio
+        # self.over18 = submission.over18
 
     def __repr__(self):
         super().__repr__()
@@ -216,6 +248,7 @@ class GraphBot(RedditBot):
     """
 
     def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
+        self._ids = None
         self.client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
         self.client_id = "n-EWVSgG6cMnRQ"
         self.user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
@@ -242,28 +275,44 @@ class GraphBot(RedditBot):
         return self._comment_graph
 
     @main_graph.setter
-    def main_graph_setter(self,value):
+    def main_graph_setter(self, value):
         self._main_graph = value
 
     @comment_graph.setter
-    def comment_graph_setter(self,value):
+    def comment_graph_setter(self, value):
         self._comment_graph = value
-        
 
     def stream(self, subreddit):
         """
-            streams comments from the given subreddit 
+            streams graphs from the given subreddit 
         """
         stream = self.reddit.subreddit(subreddit).stream
         for c in stream.submissions():
-            graph = self.getGraph(c.id)
-            print(nx.clustering(graph))
+            yield self.getGraph(c.id)
 
-    
+    def commentGraph(self):
+        """
+            load a subgraph of comment to comment
+        """
+        pass
+
+    def articleGraph(self):
+        """"
+            load a subgraph of article to comment
+        """
+        pass
+
+    def sentimentGraph(self):
+        """
+            load a subgraph of sentiment to comment
+        """
+        pass
+
     def getGraph(self, *ids):
         """"
             builds graph from article with submission id
         """
+        self._ids = ids  # save the ids for future queries
         sentiment = {"Positive": SentimentNode("Positive"), "Negative": SentimentNode(
             "Negative"), "Neutral": SentimentNode("Neutral")}
         ac_edges = []  # article/comment edge
@@ -283,7 +332,8 @@ class GraphBot(RedditBot):
                 for comment in submission.comments.list():
                     ac_edges.append((
                         article_node, CommentNode(
-                            comment, CommentMetaAnalysis(comment)), {"type":"article-comment"}
+                            comment, CommentMetaAnalysis(comment)),
+                        {"type": "article-comment"}
                     ))
             except Exception as pe:
                 print(pe)
@@ -291,14 +341,16 @@ class GraphBot(RedditBot):
         # populate sentiment/comment  and comment/comment edge list
         for _, comment, *_ in ac_edges:
             sc_edges.append((comment, sentiment[comment.sentiment], {
-                            "score": comment.sentiment_score,"type":"sentiment-comment"}))
-            
-            for _, c ,*_ in ac_edges:
+                            "score": comment.sentiment_score, "type": "sentiment-comment"}))
+            doc2vec = Doc2Vec(comment.body)
+            comment.corpus = str(doc2vec.getCorpus(comment.body))
+            for _, c, *_ in ac_edges:
                 if c.parent_id == comment.id:
-                    cc_edges.append((comment, c,  {"type":"parent-child"}))
+                    c.corpus = str(doc2vec.getCorpus(c.body))
+                    cc_edges.append((comment, c,  {"type": "parent-child"}))
 
        # directed graph for comments
-        diGraph.add_edges_from(cc_edges) 
+        diGraph.add_edges_from(cc_edges)
         diGraph.add_edges_from(ac_edges)
 
         # creat a graph for all other edges
@@ -309,10 +361,9 @@ class GraphBot(RedditBot):
 
         author_comments_edges = []
         for _, comment, *_ in ac_edges:
-            author_comments_edges.append((AuthorNode(comment.author), comment, {"type":"author-comment"}))
+            author_comments_edges.append(
+                (AuthorNode(comment.author), comment, {"type": "author-comment"}))
 
-        diGraph.add_edges_from(author_comments_edges)
-        graph.add_edges_from(author_comments_edges)
         # add nodes and node attributes
         for a, *c in ac_edges:
             nodes.append((a, a.__dict__))
@@ -324,25 +375,21 @@ class GraphBot(RedditBot):
         for _, v in sentiment.items():
             nodes.append((v, v.__dict__))
 
-        graph.add_nodes_from(nodes)
+        diGraph.add_edges_from(author_comments_edges)
         graph.add_nodes_from(diGraph)
+        graph.add_nodes_from(nodes)
 
-        self._comment_graph  = diGraph
+        self._comment_graph = diGraph
         self._main_graph = graph
-        
+
         return graph
-
-
-def checkNone(o):
-    print(o.__dict__)
-    return o.__dict__ is None
 
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
     # "9bdwe3","9f3vyq","9f4lcs"
     subreddit = "compsci"
-    filename = "data.json"
+    filename = "../raw/data.json"
     # username = input("Enter username:")
     # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
@@ -350,8 +397,9 @@ if __name__ == "__main__":
     ids = bot.get_submissions()
     graph = bot.getGraph(*ids)
     nx.write_graphml(graph, "reddit_graph.graphml")
-    nx.write_graphml(bot.comment_graph,"comment_graph.graphml")
-
+    nx.write_graphml(bot.comment_graph, "comment_graph.graphml")
+    # for g in bot.stream(subreddit):
+    #     print(nx.clustering(g))
     # nx.draw(graph, with_labels=False, font_weight='bold')
     # plt.show()
     # bot.dump_submission_comments(submission_id, filename)

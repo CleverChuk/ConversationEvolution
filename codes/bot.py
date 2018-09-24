@@ -124,7 +124,7 @@ class Comment:
         self.body = comment.body
         self.length = metaAnalysis.length
         self.averageWordLength = metaAnalysis.averageWordLength
-        self.countQuotedText = metaAnalysis.countQuoted
+        self.quotedTextPerLength = metaAnalysis.quotedTextPerLength
         self.readingLevel = metaAnalysis.readingLevel
         self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
@@ -177,7 +177,7 @@ class RedditBot:
 
 if __name__ == "__main__":
     subreddit = "compsci"
-    filename = "data.json"
+    filename = "../raw/data.json"
     submission_id = "9bdwe3"
     bot = RedditBot(subreddit)
     bot.dump_submission_comments(submission_id, filename)
