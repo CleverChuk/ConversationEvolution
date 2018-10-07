@@ -86,7 +86,6 @@ class GraphBot(RedditBot):
 
                 # populate article/comment edge list
                 for comment in submission.comments.list():
-                    print(comment.parent())
                     article_comment_edges.append((
                          CommentNode(comment, CommentMetaAnalysis(comment)), article_node,
                         {"type": "article-comment"}
@@ -151,8 +150,8 @@ if __name__ == "__main__":
     bot = GraphBot(subreddit)
     ids = bot.get_submissions()
     graph = bot.getGraph(*ids)
-    # nx.write_graphml(graph, "reddit_graph.graphml")
-    # nx.write_graphml(bot.comment_graph, "comment_graph.graphml")
+    nx.write_graphml(graph, "./graphML/reddit_graph.graphml")
+    nx.write_graphml(bot.comment_graph, "./graphML/comment_graph.graphml")
     # for g in bot.stream(subreddit):
     #     print(nx.clustering(g))
     # nx.draw(graph, with_labels=False, font_weight='bold')
