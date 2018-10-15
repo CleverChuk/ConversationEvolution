@@ -3,6 +3,17 @@ from analyzers import CommentMetaAnalysis
 from textsim import cosine_sim
 from models import CommentNode, AuthorNode, Node, ArticleNode, SentimentNode
 from base import RedditBot
+import mapper_functions as mp
+import neonx
+
+def load_graph(filepath, type):
+    """
+        :type filepath: str
+        :rtype Graph
+    """
+    return nx.read_graphml(filepath, node_type=type)
+
+
 
 class GraphBot(RedditBot):
     """
@@ -24,11 +35,11 @@ class GraphBot(RedditBot):
         return self._comment_graph
 
     @main_graph.setter
-    def main_graph_setter(self, value):
+    def main_graph(self, value):
         self._main_graph = value
 
     @comment_graph.setter
-    def comment_graph_setter(self, value):
+    def comment_graph(self, value):
         self._comment_graph = value
 
     def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
@@ -37,6 +48,7 @@ class GraphBot(RedditBot):
 
         self._main_graph = None
         self._comment_graph = None
+        self.group_graph = None
 
     def stream(self, subreddit):
         """
@@ -77,6 +89,9 @@ class GraphBot(RedditBot):
         nodes = []
         # create a digraph for comment/comment edges
         diGraph = nx.DiGraph()
+        
+        # create a graph object
+        graph = nx.Graph()
 
         for id in ids:
             try:
@@ -101,17 +116,8 @@ class GraphBot(RedditBot):
             for c_comment, _,  *_ in article_comment_edges:
                 if c_comment.parent_id == p_comment.id:
                     c_comment.similarity = round(float(cosine_sim(p_comment.body,c_comment.body)),4) # nx does not support numpy float
-                    comment_comment_edges.append((c_comment, p_comment, {"type": "parent-child"}))
-
-       # directed graph for comments
-        diGraph.add_edges_from(comment_comment_edges)
-        diGraph.add_edges_from(article_comment_edges)
-
-        # creat a graph for all other edges
-        graph = nx.Graph()
-        graph.add_edges_from(comment_comment_edges)
-        graph.add_edges_from(article_comment_edges)
-        graph.add_edges_from(sentiment_comment_edges)
+                    comment_comment_edges.append((c_comment, p_comment,
+                     {"type": "parent-child","similarity":c_comment.similarity}))
 
         author_comments_edges = []
         for  comment, _, *_ in article_comment_edges:
@@ -129,20 +135,38 @@ class GraphBot(RedditBot):
         for _, v in sentiment.items():
             nodes.append((v, v.__dict__))
 
+        for item in author_comments_edges:
+            author, *_ = item
+            nodes.append((author, author.__dict__))
+
+        
+
+        diGraph.add_edges_from(comment_comment_edges)
+        diGraph.add_edges_from(article_comment_edges)
         diGraph.add_edges_from(author_comments_edges)
+  
         graph.add_edges_from(author_comments_edges)
+        graph.add_edges_from(comment_comment_edges)
+        graph.add_edges_from(article_comment_edges)
+        graph.add_edges_from(sentiment_comment_edges)
         graph.add_nodes_from(nodes)
 
+        # full graphs
         self._comment_graph = diGraph
         self._main_graph = graph
+
+        # high level graphs
+        groups = mp.reading_level(2,[c[0] for c in article_comment_edges])
+        self.group_graph = mp.graphFromGroup(groups)
 
         return graph
 
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
+    from models import CustomEncoder
     # "9bdwe3","9f3vyq","9f4lcs"
-    subreddit = "compsci"
+    subreddit = "legaladvice"
     filename = "../raw/data.json"
     # username = input("Enter username:")
     # password = input("Enter password(Not hidden, so make sure no one is looking):")
@@ -150,8 +174,14 @@ if __name__ == "__main__":
     bot = GraphBot(subreddit)
     ids = bot.get_submissions()
     graph = bot.getGraph(*ids)
-    nx.write_graphml(graph, "./graphML/reddit_graph.graphml")
-    nx.write_graphml(bot.comment_graph, "./graphML/comment_graph.graphml")
+    
+    # nx.write_graphml(graph, "./graphML/reddit_graph.graphml")
+    nx.write_graphml(bot.comment_graph, "./graphML/comment_graph_legal.graphml")
+    # nx.write_graphml(bot.group_graph, "./graphML/group_test.graphml")
+
+    # data = neonx.get_geoff(graph, "LINKS_TO", CustomEncoder())
+    # nx.write_gexf(graph,"./graphML/neo.gexf")
+    # neonx.write_to_neo("http://localhost:7687",graph,"LINKS_TO", encoder=CustomEncoder())
     # for g in bot.stream(subreddit):
     #     print(nx.clustering(g))
     # nx.draw(graph, with_labels=False, font_weight='bold')

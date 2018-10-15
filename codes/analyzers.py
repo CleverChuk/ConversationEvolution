@@ -107,7 +107,7 @@ class CommentMetaAnalysis:
                     startCounting = False
                     del stack[:]
 
-            self._quoted_text_per_length = round(count/self._length, 4)
+            self._quoted_text_per_length = float(round(count/self._length, 4))
 
         return self._quoted_text_per_length
 
@@ -125,15 +125,15 @@ class CommentMetaAnalysis:
             for token in tokens:
                 tokenDict[token] += len(token)
 
-            self._average_word_length = mean(tokenDict.values())
+            self._average_word_length = float(round(mean(tokenDict.values()),3))
 
-        return round(self._average_word_length, 3)
+        return self._average_word_length
 
     @property
     def readingLevel(self):
         if self._reading_level == None:
             from textstat.textstat import textstat
-            self._reading_level = textstat.flesch_kincaid_grade(self._body)
+            self._reading_level = float(textstat.flesch_kincaid_grade(self._body))
 
         return self._reading_level
 

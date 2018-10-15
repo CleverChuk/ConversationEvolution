@@ -1,7 +1,7 @@
 
 import os
 import json
-from models import Submission, CustomeEncoder
+from models import Submission, CustomEncoder
 import praw
 
 
@@ -48,7 +48,7 @@ class RedditBot:
         with open(filename, "w") as fp:
             sub = Submission(submission)
             json.dump(sub, fp, separators=(',', ':'),
-                      cls=CustomeEncoder, sort_keys=False, indent=4)
+                      cls=CustomEncoder, sort_keys=False, indent=4)
 
     def __repr__(self):
         return "RedditBot"

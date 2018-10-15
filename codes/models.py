@@ -1,4 +1,3 @@
-
 from analyzers import  SentimentAnalysis
 from json import JSONEncoder
 """
@@ -13,7 +12,7 @@ On second thought, some of the other argument-related annotators I'm working on
 a relationship between them, or perhaps annotating each comment with a value representing
 how similar it is to the root comment of its thread. The easiest way to do this is by using doc2vec from the genSim library.
 """
-class CustomeEncoder(JSONEncoder):
+class CustomEncoder(JSONEncoder):
     """
         Custom encoder for comment class
     """
@@ -121,6 +120,7 @@ class Node:
     def __init__(self, name):
         self.name = name
         self.id_0 = ""
+        self.timestamp = 0
 
     def __repr__(self):
         if self.id_0:
@@ -158,7 +158,7 @@ class CommentNode(Node, metaclass=MetaNode, Type="c"):
         self.id = comment.id
         self.author = "Anonymous" if comment.author == None else comment.author.name
         self.score = comment.score
-        self.timestamp = comment.created
+        self.timestamp = int(comment.created)
         self.body = comment.body
         self.length = meta.length
         self.averageWordLength = meta.averageWordLength
@@ -192,10 +192,8 @@ class ArticleNode(Node, metaclass=MetaNode, Type="ar"):
         self.title = submission.title
         self.view_count = submission.view_count if submission.view_count != None else 0
         self.timestamp = submission.created_utc
-        self.edited = submission.edited
         self.is_video = submission.is_video
         self.upvote_ratio = submission.upvote_ratio
-        # self.over18 = submission.over18
 
     def __repr__(self):
         super().__repr__()
