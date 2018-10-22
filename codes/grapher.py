@@ -156,8 +156,7 @@ class GraphBot(RedditBot):
         self._main_graph = graph
 
         # high level graphs
-        groups = mp.reading_level(2,[c[0] for c in article_comment_edges])
-        self.group_graph = mp.graphFromGroup(groups)
+        self.group_graph = mp.clusterOnReadingLevel(20,comment_comment_edges)
 
         return graph
 
@@ -167,17 +166,18 @@ if __name__ == "__main__":
     from models import CustomEncoder
     # "9bdwe3","9f3vyq","9f4lcs"
     subreddit = "legaladvice"
-    filename = "../raw/data.json"
+    filename = "./raw/%s.json" % subreddit
     # username = input("Enter username:")
     # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
     bot = GraphBot(subreddit)
     ids = bot.get_submissions()
     graph = bot.getGraph(*ids)
-    
+        
+    # bot.dump(filename,ids)
     # nx.write_graphml(graph, "./graphML/reddit_graph.graphml")
-    nx.write_graphml(bot.comment_graph, "./graphML/comment_graph_legal.graphml")
-    # nx.write_graphml(bot.group_graph, "./graphML/group_test.graphml")
+    # nx.write_graphml(bot.comment_graph, "./graphML/comment_graph_legal.graphml")
+    nx.write_graphml(bot.group_graph, "./graphML/group_test.graphml")
 
     # data = neonx.get_geoff(graph, "LINKS_TO", CustomEncoder())
     # nx.write_gexf(graph,"./graphML/neo.gexf")

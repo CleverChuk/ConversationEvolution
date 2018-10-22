@@ -13,10 +13,9 @@ class SentimentAnalysis:
     def find_sentence(text):
         """
             extract the sentences from the text
+
+            :rtype str
         """
-        # text = text.replace('\n', '')
-        # pattern = re.compile(r'([A-Z][^\.!?]*[\.!?])', re.M)
-        # result = pattern.findall(text)
         text = text.lower()
         result = nltk.sent_tokenize(text)
         result = result if len(result) > 0 else text
@@ -42,8 +41,10 @@ class SentimentAnalysis:
     @staticmethod
     def add_sentiment(comment):
         """
-            returns the mean score for all the sentences in 
+            calculates the mean score for all the sentences in 
             a comment.
+
+            :rtype float
         """
         sentences = SentimentAnalysis.find_sentence(comment.body)
         scores = [SentimentAnalysis.sentiment(
@@ -85,12 +86,22 @@ class CommentMetaAnalysis:
 
     @property
     def length(self):
+        """
+            gets the norm of the comment vector
+
+            :rtype int
+        """
         if self._length == None:
             self._length = len(self._body)
         return self._length
 
     @property
     def quotedTextPerLength(self):
+        """
+            calculates the amount of quoted text per length of comment
+
+            :rtype float
+        """
         stack = list()
         count = 0
         startCounting = False
@@ -113,6 +124,10 @@ class CommentMetaAnalysis:
 
     @property
     def averageWordLength(self):
+        """
+            calculates the average word length of a comment
+            :rtype float
+        """
 
         if self._average_word_length == None:
             from statistics import mean
@@ -131,9 +146,13 @@ class CommentMetaAnalysis:
 
     @property
     def readingLevel(self):
+        """
+            calculates the reading ea
+            :rtype float
+        """
         if self._reading_level == None:
             from textstat.textstat import textstat
-            self._reading_level = float(textstat.flesch_kincaid_grade(self._body))
+            self._reading_level = round(float(textstat.flesch_reading_ease(self._body)),4)
 
         return self._reading_level
 

@@ -124,13 +124,16 @@ class Node:
 
     def __repr__(self):
         if self.id_0:
-            return self.id_0
+            return "{0}{1}".format(self.name,self.id_0)
 
-        self.id_0 = str(ID.getId())
-        return self.id_0
+        self.id_0 = ID.getId()
+        return "{0}{1}".format(self.name,self.id_0)
 
     def __len__(self):
         return len(self.__dict__)
+
+    def __str__(self):
+        return "{0}{1}".format(self.name,self.id_0)
 
 
 class AuthorNode(Node, metaclass=MetaNode, Type="a"):

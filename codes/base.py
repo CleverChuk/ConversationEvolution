@@ -22,33 +22,42 @@ class RedditBot:
     def get_submissions(self):
         """
             get all submission ids in a subreddit.
+
+            :rtype List
         """
         return list(set(comment.submission.id for comment in self.subreddit.comments()))
 
     def get_hot_submissions(self, limit=10):
         """
-            @param: limit number of submissions to get
-            return a list of tuple of title and score.
+            :type int:limit number of submissions to get
+
+            :rtype List: of tuple (title, score).
         """
         return [(submission.title, submission.score) for submission in self.subreddit.hot(limit=limit)]
 
     def get_submission(self, id):
+        """
+            rtype: Reddit.Submission
+        """
         return self.reddit.submission(id=id)
 
-    def dump_submission_comments(self, submission_id, filename):
+    def dump(self, filename, ids):
         """
             @param submission_id
+
             @param filename
+            
             write the comments in the submission with the given id
             to filename.
         """
-        submission = self.get_submission(submission_id)
-        submission.comments.replace_more(limit=None)
-
         with open(filename, "w") as fp:
-            sub = Submission(submission)
-            json.dump(sub, fp, separators=(',', ':'),
-                      cls=CustomEncoder, sort_keys=False, indent=4)
+            for id in ids:
+                submission = self.get_submission(id)
+                submission.comments.replace_more(limit=None)
+
+                sub = Submission(submission)
+                json.dump(sub, fp, separators=(',', ':'),
+                        cls=CustomEncoder, sort_keys=False, indent=4)
 
     def __repr__(self):
         return "RedditBot"
@@ -59,4 +68,4 @@ class RedditBot:
 #     filename = "../raw/data.json"
 #     submission_id = "9bdwe3"
 #     bot = RedditBot(subreddit)
-#     bot.dump_submission_comments(submission_id, filename)
+#     bot.dump(submission_id, filename)
