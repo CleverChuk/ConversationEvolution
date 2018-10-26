@@ -6,13 +6,13 @@ from base import RedditBot
 import mapper_functions as mp
 import neonx
 
+
 def load_graph(filepath, type):
     """
         :type filepath: str
         :rtype Graph
     """
     return nx.read_graphml(filepath, node_type=type)
-
 
 
 class GraphBot(RedditBot):
@@ -44,7 +44,7 @@ class GraphBot(RedditBot):
 
     def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
         self._ids = None
-        super().__init__(subreddit,username,password)
+        super().__init__(subreddit, username, password)
 
         self._main_graph = None
         self._comment_graph = None
@@ -57,24 +57,6 @@ class GraphBot(RedditBot):
         stream = self.reddit.subreddit(subreddit).stream
         for submission in stream.submissions():
             yield self.getGraph(submission.id)
-
-    def commentGraph(self):
-        """
-            load a subgraph of comment to comment
-        """
-        pass
-
-    def articleGraph(self):
-        """"
-            load a subgraph of article to comment
-        """
-        pass
-
-    def sentimentGraph(self):
-        """
-            load a subgraph of sentiment to comment
-        """
-        pass
 
     def getGraph(self, *ids):
         """"
@@ -89,7 +71,7 @@ class GraphBot(RedditBot):
         nodes = []
         # create a digraph for comment/comment edges
         diGraph = nx.DiGraph()
-        
+
         # create a graph object
         graph = nx.Graph()
 
@@ -102,35 +84,40 @@ class GraphBot(RedditBot):
                 # populate article/comment edge list
                 for comment in submission.comments.list():
                     article_comment_edges.append((
-                         CommentNode(comment, CommentMetaAnalysis(comment)), article_node,
+                        CommentNode(comment, CommentMetaAnalysis(
+                            comment)), article_node,
                         {"type": "article-comment"}
                     ))
             except Exception as pe:
                 print(pe)
 
         # populate sentiment/comment  and comment/comment edge list
-        for p_comment, _ ,  *_ in article_comment_edges:
-            sentiment_comment_edges.append((sentiment[p_comment.sentiment],p_comment, {
-                            "score": p_comment.sentiment_score, "type": "sentiment-comment"}))
+        for p_comment, _,  *_ in article_comment_edges:
+            sentiment_comment_edges.append((sentiment[p_comment.sentiment], p_comment, {
+                "score": p_comment.sentiment_score, "type": "sentiment-comment"}))
 
             for c_comment, _,  *_ in article_comment_edges:
                 if c_comment.parent_id == p_comment.id:
-                    c_comment.similarity = round(float(cosine_sim(p_comment.body,c_comment.body)),4) # nx does not support numpy float
+                    # nx does not support numpy float
+                    c_comment.similarity = round(
+                        float(cosine_sim(p_comment.body, c_comment.body)), 4)
                     comment_comment_edges.append((c_comment, p_comment,
-                     {"type": "parent-child","similarity":c_comment.similarity}))
+                                                  {"type": "parent-child", "similarity": c_comment.similarity}))
 
         author_comments_edges = []
-        for  comment, _, *_ in article_comment_edges:
+        for comment, _, *_ in article_comment_edges:
             author_comments_edges.append(
                 (AuthorNode(comment.author), comment, {"type": "author-comment"}))
 
         # add nodes and node attributes
-        for _, a, *_  in article_comment_edges:
-            nodes.append((a, a.__dict__))
-
-        for  cc, pc, *_ in comment_comment_edges:
+        for cc, pc, *_ in comment_comment_edges:
             nodes.append((pc, pc.__dict__))
             nodes.append((cc, cc.__dict__))
+
+        diGraph.add_nodes_from(nodes)
+
+        for _, a, *_ in article_comment_edges:
+            nodes.append((a, a.__dict__))
 
         for _, v in sentiment.items():
             nodes.append((v, v.__dict__))
@@ -139,12 +126,8 @@ class GraphBot(RedditBot):
             author, *_ = item
             nodes.append((author, author.__dict__))
 
-        
-
         diGraph.add_edges_from(comment_comment_edges)
-        diGraph.add_edges_from(article_comment_edges)
-        diGraph.add_edges_from(author_comments_edges)
-  
+
         graph.add_edges_from(author_comments_edges)
         graph.add_edges_from(comment_comment_edges)
         graph.add_edges_from(article_comment_edges)
@@ -156,7 +139,7 @@ class GraphBot(RedditBot):
         self._main_graph = graph
 
         # high level graphs
-        self.group_graph = mp.clusterOnReadingLevel(20,comment_comment_edges)
+        self.group_graph = mp.clusterOnNumericProperty(20, comment_comment_edges,prop="timestamp")
 
         return graph
 
@@ -171,13 +154,14 @@ if __name__ == "__main__":
     # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
     bot = GraphBot(subreddit)
-    ids = bot.get_submissions()
+    ids = list(bot.get_hot_submissions(1))
     graph = bot.getGraph(*ids)
-        
-    # bot.dump(filename,ids)
-    # nx.write_graphml(graph, "./graphML/reddit_graph.graphml")
-    # nx.write_graphml(bot.comment_graph, "./graphML/comment_graph_legal.graphml")
-    nx.write_graphml(bot.group_graph, "./graphML/group_test.graphml")
+
+    bot.dump(filename, ids)
+    nx.write_graphml(graph, "./graphML/reddit_graph_%s.graphml" % subreddit)
+    nx.write_graphml(bot.comment_graph,
+                     "./graphML/comment_graph_%s.graphml" % subreddit)
+    nx.write_graphml(bot.group_graph, "./graphML/interval_graph.graphml")
 
     # data = neonx.get_geoff(graph, "LINKS_TO", CustomEncoder())
     # nx.write_gexf(graph,"./graphML/neo.gexf")

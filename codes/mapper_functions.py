@@ -39,12 +39,11 @@ def time(g, edges):
     return result
 
 
-def clusterOnReadingLevel(shift, edges):
-    groups = numeric_interval(shift, edges,"readingLevel")
-
+def clusterOnNumericProperty(shift, edges, prop="readingLevel"):
+    groups = numeric_interval(shift, edges,prop)
     cluster = clusterInterval(groups)
 
-    return graphFromCluster(cluster)
+    return graphFromCluster(cluster,prop)
 
 
 def numeric_interval(shift, edges, prop):
@@ -62,8 +61,7 @@ def numeric_interval(shift, edges, prop):
     n = len(edges)
     median = getAverage(edges[n//2], prop) if n % 2 == 1 else (getAverage(
         edges[n//2], prop) + getAverage(edges[n//2+1], prop))/2
-    
-    median = 3
+
     fi = (getAverage(edges[0], prop), median) # first interval
     si = (median, getAverage(edges[-1], prop))  # second interval
     ti = (median-shift, median+shift)  # third interval
@@ -75,7 +73,7 @@ def numeric_interval(shift, edges, prop):
             avg = getAverage(edge, prop)
             if pair[0] <= avg and avg <= pair[1]:
                 groups[pair].append(edge)
-    
+  
     return groups
 
 
@@ -88,21 +86,12 @@ def clusterInterval(groups):
         :rtype clusters: dict
     """
     clusters = defaultdict(list)
-    inCluster = defaultdict(int)
-    cur_cluster = 0
     cluster = 0
 
     for e_List in groups.values():
-        for i in range(len(e_List)):            
-            cur_cluster = cluster
-
-            if e_List[i][0] not in inCluster and e_List[i][1] not in inCluster:
-                inCluster[e_List[i][0]] = cluster 
-                inCluster[e_List[i][1]] = cluster                     
-                clusters[cluster].append(e_List[i][0])
-                clusters[cluster].append(e_List[i][1])
-            else:
-                cluster = inCluster[e_List[i][0]]
+        for i in range(len(e_List)):                              
+            clusters[cluster].append(e_List[i][0])
+            clusters[cluster].append(e_List[i][1])
 
             for edge in e_List:
                 if edge[0] in clusters[cluster] and edge[1] not in clusters[cluster]:
@@ -111,12 +100,26 @@ def clusterInterval(groups):
                 elif edge[1] in clusters[cluster] and edge[0] not in clusters[cluster]:
                     clusters[cluster].append(edge[0])
 
-            cluster = cur_cluster
             cluster += 1
+
+    n = len(clusters)
+    indices = []
+    # find the index duplicate clusters
+    for i in range(n):
+        s1 = set(clusters[i])
+        for j in range(i+1,n):
+            s2 = set(clusters[j])
+            s3 = s1.intersection(s2)
+            if len(s3) == len(s1):
+                indices.append(j)
     
+    # remove duplicate clusters
+    for i in indices:
+        clusters.pop(i,"d")
+
     return clusters
 
-def graphFromCluster(clusters):
+def graphFromCluster(clusters,prop):
     """
         this functions creates a graph from the interval
         clusters.
@@ -139,7 +142,7 @@ def graphFromCluster(clusters):
 
                 if node in c:
                     g.add_edge(newNodes[name], newNodes[n],
-                               name="READING LEVEL")
+                               name=prop.upper())
     
     for node in newNodes.values():
         g.add_nodes_from([(node, node.__dict__)])
@@ -171,7 +174,7 @@ def clusterAverage(name, cluster, props):
         :rtype Node
     """
     if not isinstance(cluster, list) and not isinstance(props, list):
-        raise Exception("cluster and props must be iterable")
+        raise Exception("cluster and props must be lists")
 
     rsum = 0
     n = len(cluster)

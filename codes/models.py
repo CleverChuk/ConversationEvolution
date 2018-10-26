@@ -16,7 +16,6 @@ class CustomEncoder(JSONEncoder):
     """
         Custom encoder for comment class
     """
-
     def default(self, o):
         return o.__dict__
 
@@ -26,11 +25,10 @@ class CustomEncoder(JSONEncoder):
 
 class Submission:
     """
-        submission object
+        submission object use to write to json
     """
-
     def __init__(self, submission):
-        self.author_fullname = submission.author_fullname
+        self.author_fullname = submission.author_fullname if hasattr(submission,"author_fullname") else "Anonymous"
         self.id = submission.id
         self.title = submission.title
         self.view_count = submission.view_count
@@ -38,13 +36,15 @@ class Submission:
         self.ups = submission.ups
         self.downs = submission.downs
         self.comments = [Comment(comment) for comment in submission.comments]
+    
+    def __repr__(self):
+        return self.title
 
 
 class Comment:
     """
-        comment object
+        comment object used to write to json
     """
-
     def __init__(self, comment):
         from analyzers import CommentMetaAnalysis
         metaAnalysis = CommentMetaAnalysis(comment)
@@ -61,14 +61,46 @@ class Comment:
         self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
         self.replies = [Comment(c) for c in comment.replies]
+    def __repr__(self):
+        return self.body
 
+class DecodeSubmission:
+    def __init__(self,obj):
+        self.author_fullname = obj["author_fullname"]
+        self.id = obj["id"]
+        self.title = obj["title"]
+        self.view_count = obj["view_count"]
+        self.upvote_ratio = obj["upvote_ratio"]
+        self.ups = obj["ups"]
+        self.downs = obj["downs"]
+        self.comments = [DecodeComment(comment) for comment in obj["comments"]]
 
+    def __repr__(self):
+        return self.title
+
+class DecodeComment:
+    def __init__(self, obj):
+        self.author =  obj["author"]
+        self.parent_id = obj["parent_id"]
+        self.score =  obj["score"]
+        self.timestamp =  obj["timestamp"]
+        self.id =  obj["id"]
+        self.body =  obj["body"]
+        self.length =  obj["length"]
+        self.averageWordLength =  obj["averageWordLength"]
+        self.quotedTextPerLength =  obj["quotedTextPerLength"]
+        self.readingLevel =  obj["readingLevel"]
+        self.sentiment_score =  obj["sentiment_score"]
+        self.sentiment =  obj["sentiment"]
+        self.replies = [DecodeComment(c) for c in  obj["replies"]]
+
+    def __repr__(self):
+        return self.body
 
 class MetaNode(type):
     """
         a metaclass for specifying the node type
     """
-
     def __init__(metaclass, name, bases, namespace, **kwargs):
         type.__init__(metaclass, name, bases, namespace)
 
@@ -116,7 +148,6 @@ class Node:
     """
         base class for all nodes
     """
-
     def __init__(self, name):
         self.name = name
         self.id_0 = ""
@@ -132,31 +163,26 @@ class Node:
     def __len__(self):
         return len(self.__dict__)
 
-    def __str__(self):
-        return "{0}{1}".format(self.name,self.id_0)
 
-
-class AuthorNode(Node, metaclass=MetaNode, Type="a"):
+class AuthorNode(Node):
     """
         Author node
     """
-
     def __init__(self, author):
         # self.account_created = author.created_utc
-
         super().__init__(author)
 
     def __repr__(self):
         return self.name
 
 
-class CommentNode(Node, metaclass=MetaNode, Type="c"):
+class CommentNode(Node):
     """
         comment nodes
     """
 
     def __init__(self, comment, meta):
-        super().__init__("")
+        super().__init__("c")
         self.parent_id = comment.parent().id
         self.id = comment.id
         self.author = "Anonymous" if comment.author == None else comment.author.name
@@ -172,11 +198,14 @@ class CommentNode(Node, metaclass=MetaNode, Type="c"):
         self.similarity = 1.0
 
     def __repr__(self):
+        if(self.id_0):
+            return "{0}{1}".format(self.name , self.id_0)
+
         super().__repr__()
-        return self.Type + self.id_0
+        return self.name + self.id_0
 
 
-class SentimentNode(Node, metaclass=MetaNode, Type="s"):
+class SentimentNode(Node):
     def __init__(self, value):
         super().__init__(value)
 
@@ -184,13 +213,13 @@ class SentimentNode(Node, metaclass=MetaNode, Type="s"):
         return self.name
 
 
-class ArticleNode(Node, metaclass=MetaNode, Type="ar"):
+class ArticleNode(Node):
     """
         Article node
     """
 
     def __init__(self, submission):
-        super().__init__("")
+        super().__init__("ar")
         self.id = submission.id
         self.title = submission.title
         self.view_count = submission.view_count if submission.view_count != None else 0
@@ -199,8 +228,10 @@ class ArticleNode(Node, metaclass=MetaNode, Type="ar"):
         self.upvote_ratio = submission.upvote_ratio
 
     def __repr__(self):
+        if(self.id):
+            return "{0}{1}".format(self.name , self.id_0)
         super().__repr__()
-        return self.Type + self.id_0
+        return self.name + self.id_0
 
 
 

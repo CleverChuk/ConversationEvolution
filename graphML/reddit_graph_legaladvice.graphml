@@ -1,0 +1,488 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="score" attr.type="double" for="edge" id="d22" />
+  <key attr.name="similarity" attr.type="double" for="edge" id="d21" />
+  <key attr.name="type" attr.type="string" for="edge" id="d20" />
+  <key attr.name="upvote_ratio" attr.type="double" for="node" id="d19" />
+  <key attr.name="is_video" attr.type="boolean" for="node" id="d18" />
+  <key attr.name="view_count" attr.type="long" for="node" id="d17" />
+  <key attr.name="title" attr.type="string" for="node" id="d16" />
+  <key attr.name="timestamp" attr.type="double" for="node" id="d15" />
+  <key attr.name="similarity" attr.type="double" for="node" id="d14" />
+  <key attr.name="sentiment" attr.type="string" for="node" id="d13" />
+  <key attr.name="sentiment_score" attr.type="double" for="node" id="d12" />
+  <key attr.name="readingLevel" attr.type="double" for="node" id="d11" />
+  <key attr.name="quotedTextPerLength" attr.type="double" for="node" id="d10" />
+  <key attr.name="averageWordLength" attr.type="double" for="node" id="d9" />
+  <key attr.name="length" attr.type="long" for="node" id="d8" />
+  <key attr.name="body" attr.type="string" for="node" id="d7" />
+  <key attr.name="score" attr.type="long" for="node" id="d6" />
+  <key attr.name="author" attr.type="string" for="node" id="d5" />
+  <key attr.name="id" attr.type="string" for="node" id="d4" />
+  <key attr.name="parent_id" attr.type="string" for="node" id="d3" />
+  <key attr.name="timestamp" attr.type="long" for="node" id="d2" />
+  <key attr.name="id_0" attr.type="string" for="node" id="d1" />
+  <key attr.name="name" attr.type="string" for="node" id="d0" />
+  <graph edgedefault="undirected">
+    <node id="ceramic_octopus">
+      <data key="d0">ceramic_octopus</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c0">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539324115</data>
+      <data key="d3">9mzxz7</data>
+      <data key="d4">e7lnaiy</data>
+      <data key="d5">ceramic_octopus</data>
+      <data key="d6">21</data>
+      <data key="d7">Hey good to see you pop up again with useful info u/bug-hunter.  May I remind those cleaning up after hurricanes/flooding bleach does not kill mold.  Vinegar does.  Also 50% rubbing alcohol with seal not removed but pin punctured 3-4 times makes a great spray to dry out water and kill mold also.  God Bless and Good Recovery to All affected.  Beer and books may help too. 
+ </data>
+      <data key="d8">375</data>
+      <data key="d9">5.491</data>
+      <data key="d10">0.0</data>
+      <data key="d11">75.0</data>
+      <data key="d12">0.3647</data>
+      <data key="d13">Positive</data>
+      <data key="d14">1.0</data>
+    </node>
+    <node id="MommyOfMayhem">
+      <data key="d0">MommyOfMayhem</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c1">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539601866</data>
+      <data key="d3">9mzxz7</data>
+      <data key="d4">e7sd0ms</data>
+      <data key="d5">MommyOfMayhem</data>
+      <data key="d6">8</data>
+      <data key="d7">Military families are under direct orders to not come within 50 miles of Tyndall AFB. Will not being able to prevent loss mitigation void our home owners insurance? It could be weeks before we are allowed back in the area.</data>
+      <data key="d8">222</data>
+      <data key="d9">4.865</data>
+      <data key="d10">0.0</data>
+      <data key="d11">66.44</data>
+      <data key="d12">-0.0987</data>
+      <data key="d13">Negative</data>
+      <data key="d14">1.0</data>
+    </node>
+    <node id="HerbivorousFox">
+      <data key="d0">HerbivorousFox</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c2" />
+    <node id="Verothian">
+      <data key="d0">Verothian</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c3" />
+    <node id="Anonymous">
+      <data key="d0">Anonymous</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c4">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539931889</data>
+      <data key="d3">9mzxz7</data>
+      <data key="d4">e811fzi</data>
+      <data key="d5">Anonymous</data>
+      <data key="d6">1</data>
+      <data key="d7">[removed]</data>
+      <data key="d8">9</data>
+      <data key="d9">7.0</data>
+      <data key="d10">0.0</data>
+      <data key="d11">36.62</data>
+      <data key="d12">0.0</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">1.0</data>
+    </node>
+    <node id="tedsheads">
+      <data key="d0">tedsheads</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c5" />
+    <node id="Lior-clean">
+      <data key="d0">Lior-clean</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c6" />
+    <node id="mturner1025">
+      <data key="d0">mturner1025</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c7">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539384113</data>
+      <data key="d3">e7lnaiy</data>
+      <data key="d4">e7mzamg</data>
+      <data key="d5">mturner1025</data>
+      <data key="d6">11</data>
+      <data key="d7">Also wear a mask. and gloves.</data>
+      <data key="d8">29</data>
+      <data key="d9">3.667</data>
+      <data key="d10">0.0</data>
+      <data key="d11">99.23</data>
+      <data key="d12">0.0</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.0</data>
+    </node>
+    <node id="beathedealer">
+      <data key="d0">beathedealer</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c8">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539998788</data>
+      <data key="d3">e7lnaiy</data>
+      <data key="d4">e82mxfh</data>
+      <data key="d5">beathedealer</data>
+      <data key="d6">6</data>
+      <data key="d7">This isn’t great advice. Source: Me, IICRC Certified Master Water Restorer
+
+Use an EPA approved anti-microbial as bacteria is a much larger concern considering the contaminants present in a wind-driven rain event.  You also need to properly and effectively dry the structure itself with dehumidification and air movement in order to ensure dry rot doesn’t form. 
+
+People shouldn’t believe they can just spray vinegar and alcohol all over their house and it’s fine. That’s a fast track to a massive mold claim that likely will be subject to low policy limits and jeopardize what’s likely their single largest asset. 
+
+Awesome resource; iicrc.org Check out the s500 standard </data>
+      <data key="d8">673</data>
+      <data key="d9">5.903</data>
+      <data key="d10">0.0</data>
+      <data key="d11">55.95</data>
+      <data key="d12">0.4411</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.0718</data>
+    </node>
+    <node id="bug-hunter">
+      <data key="d0">bug-hunter</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c9">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539601936</data>
+      <data key="d3">e7sd0ms</data>
+      <data key="d4">e7sd3a4</data>
+      <data key="d5">bug-hunter</data>
+      <data key="d6">3</data>
+      <data key="d7">If you are with USAA, they are almost certainly aware of how this works. If you are not, contact your base legal services office and see if they can help you here.</data>
+      <data key="d8">163</data>
+      <data key="d9">5.12</data>
+      <data key="d10">0.0</data>
+      <data key="d11">80.62</data>
+      <data key="d12">0.3843</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.0</data>
+    </node>
+    <node id="beathedealer">
+      <data key="d0">beathedealer</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c10">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539998843</data>
+      <data key="d3">e7sd0ms</data>
+      <data key="d4">e82mzwt</data>
+      <data key="d5">beathedealer</data>
+      <data key="d6">1</data>
+      <data key="d7">No, if there’s circumstance preventing you from taking timely action the carrier will still extend coverage. Especially USAA or UPC. </data>
+      <data key="d8">133</data>
+      <data key="d9">5.0</data>
+      <data key="d10">0.0</data>
+      <data key="d11">35.95</data>
+      <data key="d12">-0.0766</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.033</data>
+    </node>
+    <node id="Napalmenator">
+      <data key="d0">Napalmenator</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c11">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539933565</data>
+      <data key="d3">e811fzi</data>
+      <data key="d4">e81360o</data>
+      <data key="d5">Napalmenator</data>
+      <data key="d6">1</data>
+      <data key="d7">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful** and/or **Off Topic**
+
+* Your comment has been removed for one or more of the following reasons:
+
+* It was generally unhelpful or in poor taste.
+* It was confusing or badly written.
+* It failed to add to the discussion.
+* It was not primarily asking or discussing legal questions
+* It was primarily a personal anecdote with little or no legal relevance.
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you feel this was in error, [message the moderators](http://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).* 
+
+*Do not reply to this message as a comment.*</data>
+      <data key="d8">725</data>
+      <data key="d9">8.871</data>
+      <data key="d10">0.0</data>
+      <data key="d11">32.19</data>
+      <data key="d12">-0.2477</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.146</data>
+    </node>
+    <node id="ceramic_octopus">
+      <data key="d0">ceramic_octopus</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c12">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1539386169</data>
+      <data key="d3">e7mzamg</data>
+      <data key="d4">e7n1ntd</data>
+      <data key="d5">ceramic_octopus</data>
+      <data key="d6">15</data>
+      <data key="d7">Don't toss out older clumped together family photos, they can be resubmerged in water, gently slipped  apart and then dried on mirrors, glass windows, refrigerator/stove surfaces</data>
+      <data key="d8">178</data>
+      <data key="d9">5.615</data>
+      <data key="d10">0.0</data>
+      <data key="d11">36.63</data>
+      <data key="d12">0.4588</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.0</data>
+    </node>
+    <node id="ceramic_octopus">
+      <data key="d0">ceramic_octopus</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="c13">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">1540005564</data>
+      <data key="d3">e82mxfh</data>
+      <data key="d4">e82v639</data>
+      <data key="d5">ceramic_octopus</data>
+      <data key="d6">2</data>
+      <data key="d7">OK helped me alot after Hurricane Harvey but I'm sure there is better </data>
+      <data key="d8">70</data>
+      <data key="d9">4.308</data>
+      <data key="d10">0.0</data>
+      <data key="d11">66.74</data>
+      <data key="d12">0.8126</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.0</data>
+    </node>
+    <node id="ar">
+      <data key="d0">ar</data>
+      <data key="d1" />
+      <data key="d15">1539181698.0</data>
+      <data key="d4">9mzxz7</data>
+      <data key="d16">Hurricane Michael- Legal Resources</data>
+      <data key="d17">0</data>
+      <data key="d18">False</data>
+      <data key="d19">0.98</data>
+    </node>
+    <node id="Positive">
+      <data key="d0">Positive</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="Negative">
+      <data key="d0">Negative</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <node id="Neutral">
+      <data key="d0">Neutral</data>
+      <data key="d1" />
+      <data key="d2">0</data>
+    </node>
+    <edge source="ceramic_octopus" target="c0">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c0" target="c7">
+      <data key="d20">parent-child</data>
+      <data key="d21">0.0</data>
+    </edge>
+    <edge source="c0" target="c8">
+      <data key="d20">parent-child</data>
+      <data key="d21">0.0718</data>
+    </edge>
+    <edge source="c0" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c0" target="Positive">
+      <data key="d22">0.3647</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="MommyOfMayhem" target="c1">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c1" target="c9">
+      <data key="d20">parent-child</data>
+      <data key="d21">0.0</data>
+    </edge>
+    <edge source="c1" target="c10">
+      <data key="d20">parent-child</data>
+      <data key="d21">0.033</data>
+    </edge>
+    <edge source="c1" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c1" target="Negative">
+      <data key="d22">-0.0987</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="HerbivorousFox" target="c2">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c2" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c2" target="Positive">
+      <data key="d22">0.1609</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="Verothian" target="c3">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c3" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c3" target="Negative">
+      <data key="d22">-0.6414</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="Anonymous" target="c4">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c4" target="c11">
+      <data key="d20">parent-child</data>
+      <data key="d21">0.146</data>
+    </edge>
+    <edge source="c4" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c4" target="Neutral">
+      <data key="d22">0.0</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="tedsheads" target="c5">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c5" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c5" target="Neutral">
+      <data key="d22">0.0</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="Lior-clean" target="c6">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c6" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c6" target="Positive">
+      <data key="d22">0.6486</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="mturner1025" target="c7">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c7" target="c12">
+      <data key="d20">parent-child</data>
+      <data key="d21">0.0</data>
+    </edge>
+    <edge source="c7" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c7" target="Neutral">
+      <data key="d22">0.0</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="beathedealer" target="c8">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c8" target="c13">
+      <data key="d20">parent-child</data>
+      <data key="d21">0.0</data>
+    </edge>
+    <edge source="c8" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c8" target="Positive">
+      <data key="d22">0.4411</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="bug-hunter" target="c9">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c9" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c9" target="Positive">
+      <data key="d22">0.3843</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="beathedealer" target="c10">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c10" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c10" target="Negative">
+      <data key="d22">-0.0766</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="Napalmenator" target="c11">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c11" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c11" target="Negative">
+      <data key="d22">-0.2477</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="ceramic_octopus" target="c12">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c12" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c12" target="Positive">
+      <data key="d22">0.4588</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+    <edge source="ceramic_octopus" target="c13">
+      <data key="d20">author-comment</data>
+    </edge>
+    <edge source="c13" target="ar">
+      <data key="d20">article-comment</data>
+    </edge>
+    <edge source="c13" target="Positive">
+      <data key="d22">0.8126</data>
+      <data key="d20">sentiment-comment</data>
+    </edge>
+  </graph>
+</graphml>

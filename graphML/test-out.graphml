@@ -6,31 +6,76 @@
   <key attr.name="id_0" attr.type="double" for="node" id="d1" />
   <key attr.name="name" attr.type="long" for="node" id="d0" />
   <graph edgedefault="directed">
-    <node id="01.5">
+    <node id="05.2">
       <data key="d0">0</data>
-      <data key="d1">1.5</data>
+      <data key="d1">5.2</data>
       <data key="d2">0</data>
-      <data key="d3">1.5</data>
+      <data key="d3">45.01484092199608</data>
     </node>
-    <node id="34.333333333333333">
-      <data key="d0">3</data>
-      <data key="d1">4.333333333333333</data>
-      <data key="d2">0</data>
-      <data key="d3">4.333333333333333</data>
-    </node>
-    <node id="44.5">
+    <node id="46.666666666666667">
       <data key="d0">4</data>
-      <data key="d1">4.5</data>
+      <data key="d1">6.666666666666667</data>
       <data key="d2">0</data>
-      <data key="d3">4.5</data>
+      <data key="d3">43.963191463345005</data>
     </node>
-    <edge source="01.5" target="34.333333333333333">
+    <node id="23.6666666666666665">
+      <data key="d0">2</data>
+      <data key="d1">3.6666666666666665</data>
+      <data key="d2">0</data>
+      <data key="d3">44.55934798832893</data>
+    </node>
+    <node id="81.0">
+      <data key="d0">8</data>
+      <data key="d1">1.0</data>
+      <data key="d2">0</data>
+      <data key="d3">67.4315945098732</data>
+    </node>
+    <node id="57.0">
+      <data key="d0">5</data>
+      <data key="d1">7.0</data>
+      <data key="d2">0</data>
+      <data key="d3">52.375123832533184</data>
+    </node>
+    <node id="108.5">
+      <data key="d0">10</data>
+      <data key="d1">8.5</data>
+      <data key="d2">0</data>
+      <data key="d3">52.99894968036935</data>
+    </node>
+    <node id="66.5">
+      <data key="d0">6</data>
+      <data key="d1">6.5</data>
+      <data key="d2">0</data>
+      <data key="d3">54.355565755685</data>
+    </node>
+    <edge source="05.2" target="46.666666666666667">
       <data key="d4">READING LEVEL</data>
     </edge>
-    <edge source="01.5" target="44.5">
+    <edge source="05.2" target="23.6666666666666665">
       <data key="d4">READING LEVEL</data>
     </edge>
-    <edge source="34.333333333333333" target="44.5">
+    <edge source="05.2" target="81.0">
+      <data key="d4">READING LEVEL</data>
+    </edge>
+    <edge source="05.2" target="57.0">
+      <data key="d4">READING LEVEL</data>
+    </edge>
+    <edge source="05.2" target="108.5">
+      <data key="d4">READING LEVEL</data>
+    </edge>
+    <edge source="46.666666666666667" target="57.0">
+      <data key="d4">READING LEVEL</data>
+    </edge>
+    <edge source="46.666666666666667" target="108.5">
+      <data key="d4">READING LEVEL</data>
+    </edge>
+    <edge source="23.6666666666666665" target="57.0">
+      <data key="d4">READING LEVEL</data>
+    </edge>
+    <edge source="23.6666666666666665" target="81.0">
+      <data key="d4">READING LEVEL</data>
+    </edge>
+    <edge source="57.0" target="108.5">
       <data key="d4">READING LEVEL</data>
     </edge>
   </graph>

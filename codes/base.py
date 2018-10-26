@@ -33,7 +33,8 @@ class RedditBot:
 
             :rtype List: of tuple (title, score).
         """
-        return [(submission.title, submission.score) for submission in self.subreddit.hot(limit=limit)]
+        for submission in self.subreddit.hot(limit=limit):
+             yield submission
 
     def get_submission(self, id):
         """
@@ -51,13 +52,15 @@ class RedditBot:
             to filename.
         """
         with open(filename, "w") as fp:
+            data = []
             for id in ids:
                 submission = self.get_submission(id)
                 submission.comments.replace_more(limit=None)
 
-                sub = Submission(submission)
-                json.dump(sub, fp, separators=(',', ':'),
-                        cls=CustomEncoder, sort_keys=False, indent=4)
+                data.append(Submission(submission))
+
+            json.dump(data, fp, separators=(',', ':'),
+                    cls=CustomEncoder, sort_keys=False, indent=4)
 
     def __repr__(self):
         return "RedditBot"

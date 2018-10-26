@@ -1,37 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
-  <key attr.name="name" attr.type="string" for="edge" id="d4" />
-  <key attr.name="readingLevel" attr.type="double" for="node" id="d3" />
-  <key attr.name="timestamp" attr.type="long" for="node" id="d2" />
-  <key attr.name="id_0" attr.type="double" for="node" id="d1" />
-  <key attr.name="name" attr.type="long" for="node" id="d0" />
-  <graph edgedefault="directed">
-    <node id="01.5">
-      <data key="d0">0</data>
-      <data key="d1">1.5</data>
-      <data key="d2">0</data>
-      <data key="d3">1.5</data>
-    </node>
-    <node id="34.333333333333333">
-      <data key="d0">3</data>
-      <data key="d1">4.333333333333333</data>
-      <data key="d2">0</data>
-      <data key="d3">4.333333333333333</data>
-    </node>
-    <node id="44.5">
-      <data key="d0">4</data>
-      <data key="d1">4.5</data>
-      <data key="d2">0</data>
-      <data key="d3">4.5</data>
-    </node>
-    <edge source="01.5" target="34.333333333333333">
-      <data key="d4">READING LEVEL</data>
-    </edge>
-    <edge source="01.5" target="44.5">
-      <data key="d4">READING LEVEL</data>
-    </edge>
-    <edge source="34.333333333333333" target="44.5">
-      <data key="d4">READING LEVEL</data>
-    </edge>
+  <graph edgedefault="undirected">
+    <node id="a0" />
+    <node id="b1" />
+    <node id="d3" />
+    <node id="i8" />
+    <node id="c2" />
+    <node id="e4" />
+    <node id="f5" />
+    <node id="g6" />
+    <node id="h7" />
+    <node id="j9" />
+    <edge source="a0" target="b1" />
+    <edge source="b1" target="c2" />
+    <edge source="d3" target="i8" />
+    <edge source="d3" target="c2" />
+    <edge source="i8" target="j9" />
+    <edge source="c2" target="e4" />
+    <edge source="e4" target="f5" />
+    <edge source="e4" target="j9" />
+    <edge source="g6" target="h7" />
   </graph>
 </graphml>

@@ -1,6 +1,7 @@
 import mapper_functions as mf
 import networkx as nx
 from models import Node
+import random as rand
 
 def createNodes(n):
     c = 97
@@ -11,8 +12,9 @@ def createNodes(n):
     return nodes
 
 def addProperty(prop, nodes):
+    rand.seed(0)
     for i, node in enumerate(nodes):
-        node.__dict__[prop] = i
+        node.__dict__[prop] = rand.random()*100
     
     for node in nodes:
         node.id_0 = ord(node.name)%97
@@ -33,14 +35,25 @@ def buildGraph(nodes):
     g.add_edge(nodes[4],nodes[6])
 
     return g
-        
+
+def buildStudyGraph(nodes):
+    g = nx.Graph()
+    n = len(nodes)//2
+    i = 0
+    for _ in range(n):
+        g.add_edge(nodes[i],nodes[i+1])   
+        g.add_edge(nodes[rand.randint(0,n*2)],nodes[rand.randint(0,n*2)])      
+        i += 2
+
+    return g
+
 
 if __name__ == "__main__":
-    nodes = createNodes(7)
+    nodes = createNodes(10)
     prop = "readingLevel"
     nodes = addProperty(prop,nodes)
-    g = buildGraph(nodes)
-    
-    g = mf.clusterOnReadingLevel(1,g.edges())
+    # g = buildGraph(nodes)   
+    g = buildStudyGraph(nodes) 
     nx.write_graphml(g, "./graphML/test.graphml")
+    g = mf.clusterOnReadingLevel(0,g.edges())
     nx.write_graphml(g, "./graphML/test-out.graphml")
