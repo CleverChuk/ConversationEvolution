@@ -65,73 +65,78 @@ class GraphBot(RedditBot):
         self._ids = ids  # save the ids for future queries
         sentiment = {"Positive": SentimentNode("Positive"), "Negative": SentimentNode(
             "Negative"), "Neutral": SentimentNode("Neutral")}
-        article_comment_edges = []  # article/comment edge
-        comment_comment_edges = []  # undirected comment/comment edges
-        sentiment_comment_edges = []  # sentiment/comment edges
+        articleCommentEdges = []  # article/comment edge
+        commentCommentEdges = []  # undirected comment/comment edges
+
+        sentimentCommentEdges = []  # sentiment/comment edges
+        authorCommentsEdges = []  # author/comment edges
         nodes = []
+
         # create a digraph for comment/comment edges
         diGraph = nx.DiGraph()
-
         # create a graph object
         graph = nx.Graph()
+
+        # add the sentiment nodes to the node list
+        for _, v in sentiment.items():
+            nodes.append((v, v.__dict__))
 
         for id in ids:
             try:
                 submission = self.get_submission(id)
                 submission.comments.replace_more(limit=None)
-                article_node = ArticleNode(submission)
+                articleNode = ArticleNode(submission)
+                nodes.append((articleNode, articleNode.__dict__))
+
 
                 # populate article/comment edge list
                 for comment in submission.comments.list():
-                    article_comment_edges.append((
-                        CommentNode(comment, CommentMetaAnalysis(
-                            comment)), article_node,
-                        {"type": "article-comment"}
-                    ))
+                    commentNode = CommentNode(
+                        comment, CommentMetaAnalysis(comment))
+                    articleCommentEdges.append(
+                        (commentNode, articleNode, {"type": "article-comment"}))
+
+                    authorNode = AuthorNode(commentNode.author)
+                    authorCommentsEdges.append(
+                        (authorNode, commentNode, {"type": "author-comment"}))
+
+                    nodes.append((authorNode, authorNode.__dict__))
+                    nodes.append((commentNode, commentNode.__dict__))
+                    diGraph.add_nodes_from([(commentNode, commentNode.__dict__)])
+
+                
             except Exception as pe:
                 print(pe)
 
         # populate sentiment/comment  and comment/comment edge list
-        for p_comment, _,  *_ in article_comment_edges:
-            sentiment_comment_edges.append((sentiment[p_comment.sentiment], p_comment, {
-                "score": p_comment.sentiment_score, "type": "sentiment-comment"}))
+        for p_comment, _,  *_ in articleCommentEdges:
+            sentimentCommentEdges.append((sentiment[p_comment.sentiment], p_comment, {
+                "score": p_comment.sentimentScore, "type": "SENTIMENT"}))
 
-            for c_comment, _,  *_ in article_comment_edges:
+            for c_comment, _,  *_ in articleCommentEdges:
                 if c_comment.parent_id == p_comment.id:
                     # nx does not support numpy float
                     c_comment.similarity = round(
                         float(cosine_sim(p_comment.body, c_comment.body)), 4)
-                    comment_comment_edges.append((c_comment, p_comment,
-                                                  {"type": "parent-child", "similarity": c_comment.similarity}))
+                    commentCommentEdges.append(
+                        (c_comment, p_comment, {"type": "SIMILARITY", "similarity": c_comment.similarity}))
 
-        author_comments_edges = []
-        for comment, _, *_ in article_comment_edges:
-            author_comments_edges.append(
-                (AuthorNode(comment.author), comment, {"type": "author-comment"}))
+        # add nodes for subgraph
+        _nodes = []
+        for cc, pc, *_ in commentCommentEdges:
+            _nodes.append(cc)
+            _nodes.append(pc)
 
-        # add nodes and node attributes
-        for cc, pc, *_ in comment_comment_edges:
-            nodes.append((pc, pc.__dict__))
-            nodes.append((cc, cc.__dict__))
+        # high level graphs
+        self.group_graph = mp.clusterOnNumericPropertyNodes(
+            2, _nodes, commentCommentEdges)
 
-        diGraph.add_nodes_from(nodes)
+        diGraph.add_edges_from(commentCommentEdges)
+        graph.add_edges_from(authorCommentsEdges)
+        graph.add_edges_from(commentCommentEdges)
 
-        for _, a, *_ in article_comment_edges:
-            nodes.append((a, a.__dict__))
-
-        for _, v in sentiment.items():
-            nodes.append((v, v.__dict__))
-
-        for item in author_comments_edges:
-            author, *_ = item
-            nodes.append((author, author.__dict__))
-
-        diGraph.add_edges_from(comment_comment_edges)
-
-        graph.add_edges_from(author_comments_edges)
-        graph.add_edges_from(comment_comment_edges)
-        graph.add_edges_from(article_comment_edges)
-        graph.add_edges_from(sentiment_comment_edges)
+        graph.add_edges_from(articleCommentEdges)
+        graph.add_edges_from(sentimentCommentEdges)
         graph.add_nodes_from(nodes)
 
         # full graphs
@@ -139,7 +144,7 @@ class GraphBot(RedditBot):
         self._main_graph = graph
 
         # high level graphs
-        self.group_graph = mp.clusterOnNumericProperty(20, comment_comment_edges,prop="timestamp")
+        # self.group_graph = mp.clusterOnNumericProperty(2, commentCommentEdges)
 
         return graph
 
@@ -154,7 +159,7 @@ if __name__ == "__main__":
     # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
     bot = GraphBot(subreddit)
-    ids = list(bot.get_hot_submissions(1))
+    ids = list(bot.get_hot_submissions_id(20))
     graph = bot.getGraph(*ids)
 
     bot.dump(filename, ids)

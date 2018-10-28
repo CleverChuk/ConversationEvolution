@@ -27,14 +27,14 @@ class RedditBot:
         """
         return list(set(comment.submission.id for comment in self.subreddit.comments()))
 
-    def get_hot_submissions(self, limit=10):
+    def get_hot_submissions_id(self, limit=10):
         """
             :type int:limit number of submissions to get
 
             :rtype List: of tuple (title, score).
         """
         for submission in self.subreddit.hot(limit=limit):
-             yield submission
+             yield submission.id
 
     def get_submission(self, id):
         """

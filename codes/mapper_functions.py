@@ -40,13 +40,20 @@ def time(g, edges):
 
 
 def clusterOnNumericProperty(shift, edges, prop="readingLevel"):
-    groups = numeric_interval(shift, edges,prop)
+    groups = numericInterval(shift, edges, prop)
     cluster = clusterInterval(groups)
 
-    return graphFromCluster(cluster,prop)
+    return graphFromCluster(cluster, prop)
 
 
-def numeric_interval(shift, edges, prop):
+def clusterOnNumericPropertyNodes(shift, nodes, edges, prop="readingLevel"):
+    groups = numericIntervalNodes(shift, nodes, prop)
+    cluster = clusterIntervalNodes(groups, edges)
+    
+    return graphFromCluster(cluster, prop)
+
+
+def numericInterval(shift, edges, prop):
     """
         splits the edges into 3 intervals based on reading level property
 
@@ -62,7 +69,7 @@ def numeric_interval(shift, edges, prop):
     median = getAverage(edges[n//2], prop) if n % 2 == 1 else (getAverage(
         edges[n//2], prop) + getAverage(edges[n//2+1], prop))/2
 
-    fi = (getAverage(edges[0], prop), median) # first interval
+    fi = (getAverage(edges[0], prop), median)  # first interval
     si = (median, getAverage(edges[-1], prop))  # second interval
     ti = (median-shift, median+shift)  # third interval
 
@@ -73,7 +80,36 @@ def numeric_interval(shift, edges, prop):
             avg = getAverage(edge, prop)
             if pair[0] <= avg and avg <= pair[1]:
                 groups[pair].append(edge)
-  
+
+    return groups
+
+
+def numericIntervalNodes(shift, nodes, prop):
+    """
+        splits the edges into 3 intervals based on reading level property
+
+        :type shift: int
+
+        :type edges: List[edge]
+
+        :rtype: dict 
+    """
+    nodes = sorted(nodes, key=lambda n: n.__dict__[prop])
+    n = len(nodes)
+    median = nodes[n//2].__dict__[prop] if n % 2 == 1 else getAverage(
+        [nodes[n//2], nodes[n//2+1]], prop)
+
+    fi = (nodes[0].__dict__[prop], median)  # first interval
+    si = (median, nodes[-1].__dict__[prop])  # second interval
+    ti = (median-shift, median+shift)  # third interval
+
+    groups = defaultdict(list)  # map to hold groups
+
+    for pair in (fi, si, ti):
+        for node in nodes:
+            if pair[0] <= node.__dict__[prop] and node.__dict__[prop] <= pair[1]:
+                groups[pair].append(node)
+
     return groups
 
 
@@ -86,40 +122,80 @@ def clusterInterval(groups):
         :rtype clusters: dict
     """
     clusters = defaultdict(list)
-    cluster = 0
+    clusterId = 0
 
     for e_List in groups.values():
-        for i in range(len(e_List)):                              
-            clusters[cluster].append(e_List[i][0])
-            clusters[cluster].append(e_List[i][1])
+        for i in range(len(e_List)):
+            clusters[clusterId].append(e_List[i][0])
+            clusters[clusterId].append(e_List[i][1])
 
             for edge in e_List:
-                if edge[0] in clusters[cluster] and edge[1] not in clusters[cluster]:
-                    clusters[cluster].append(edge[1])
+                if edge[0] in clusters[clusterId] and edge[1] not in clusters[clusterId]:
+                    clusters[clusterId].append(edge[1])
 
-                elif edge[1] in clusters[cluster] and edge[0] not in clusters[cluster]:
-                    clusters[cluster].append(edge[0])
+                elif edge[1] in clusters[clusterId] and edge[0] not in clusters[clusterId]:
+                    clusters[clusterId].append(edge[0])
 
-            cluster += 1
+            clusterId += 1
 
     n = len(clusters)
     indices = []
     # find the index duplicate clusters
     for i in range(n):
         s1 = set(clusters[i])
-        for j in range(i+1,n):
+        for j in range(i+1, n):
             s2 = set(clusters[j])
-            s3 = s1.intersection(s2)
-            if len(s3) == len(s1):
+            if s2 == s1:
                 indices.append(j)
-    
+
     # remove duplicate clusters
     for i in indices:
-        clusters.pop(i,"d")
+        clusters.pop(i, "d")
 
     return clusters
 
-def graphFromCluster(clusters,prop):
+
+def clusterIntervalNodes(groups, edges):
+    """
+        cluster nodes base on there connection with each other
+
+        :type groups: dict
+
+        :rtype clusters: dict
+    """
+    clusters = defaultdict(list)
+    clusterId = 0
+    
+    for _, group in groups.items():
+        for node in group:
+            clusters[clusterId].append(node)
+            for edge in edges:
+                if edge[0].name == node.name:                  
+                    clusters[clusterId].append(edge[1])
+
+                elif edge[1].name == node.name:                    
+                    clusters[clusterId].append(edge[0])
+            
+            clusterId += 1
+    
+    n = len(clusters)
+    indices = []
+    # find the index duplicate clusters
+    for i in range(n):
+        s1 = set(clusters[i])
+        for j in range(i+1, n):
+            s2 = set(clusters[j])
+            if s2 == s1:
+                indices.append(j)
+
+    # remove duplicate clusters
+    for i in indices:
+        clusters.pop(i, "d")
+
+    return clusters
+
+
+def graphFromCluster(clusters, prop):
     """
         this functions creates a graph from the interval
         clusters.
@@ -132,8 +208,9 @@ def graphFromCluster(clusters,prop):
     newNodes = {}
 
     for name, cluster in clusters.items():
-        newNodes[name] = clusterAverage(name, cluster, getProperties(cluster[0]))
-  
+        newNodes[name] = clusterAverage(
+            name, cluster, getProperties(cluster[0]))
+
     for name, cluster in clusters.items():
         for node in cluster:
             for n, c in clusters.items():
@@ -143,11 +220,13 @@ def graphFromCluster(clusters,prop):
                 if node in c:
                     g.add_edge(newNodes[name], newNodes[n],
                                name=prop.upper())
-    
+
     for node in newNodes.values():
         g.add_nodes_from([(node, node.__dict__)])
 
+    
     return g
+
 
 def getProperties(obj):
     """
@@ -195,39 +274,6 @@ def clusterAverage(name, cluster, props):
     return clusterNode
 
 
-def getNodes(groups):
-    """
-        creates a node from average properties of an 
-        edge
-
-        returns a list of generated nodes
-
-        :type groups: dict
-
-        :rtype List: Node
-    """
-
-    item = groups.popitem()
-    groups[item[0]] = item[1]
-
-    edges = item[1]
-    node = edges[0][0]
-    nodes = []
-
-    node_props = node.__dict__.keys()
-
-    for k, v in groups.items():
-        for edge in v:
-            for n in edge:
-                if isinstance(n, Node):
-                    newNode = Node(k)
-                    for prop in node_props:
-                        newNode.__dict__[prop] = getAverage(edge, prop)
-                    nodes.append(newNode)
-
-    return nodes
-
-
 def getAverage(edge, prop):
     """
         calculates the average property of a given edge
@@ -238,7 +284,7 @@ def getAverage(edge, prop):
         :rtype mean(prop)
     """
 
-    if len(edge) < 2:
+    if len(edge) < 2 or not hasattr(edge, "__iter__"):
         raise Exception("edge must have at least two nodes")
 
     p1 = edge[0].__dict__[prop]
@@ -246,7 +292,8 @@ def getAverage(edge, prop):
 
     # print("Edge:%s val:%d|Edge:%s val:%d"%(edge[0],p1,edge[1],p2))
 
-    return round((p1+p2)/2,2)
+    return round((p1+p2)/2, 2)
+
 
 def time_string(t):
     """

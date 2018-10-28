@@ -58,8 +58,8 @@ class Comment:
         self.averageWordLength = metaAnalysis.averageWordLength
         self.quotedTextPerLength = metaAnalysis.quotedTextPerLength
         self.readingLevel = metaAnalysis.readingLevel
-        self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
-        self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
+        self.sentimentScore = SentimentAnalysis.add_sentiment(comment)
+        self.sentiment = SentimentAnalysis.convert_score(self.sentimentScore)
         self.replies = [Comment(c) for c in comment.replies]
     def __repr__(self):
         return self.body
@@ -90,7 +90,7 @@ class DecodeComment:
         self.averageWordLength =  obj["averageWordLength"]
         self.quotedTextPerLength =  obj["quotedTextPerLength"]
         self.readingLevel =  obj["readingLevel"]
-        self.sentiment_score =  obj["sentiment_score"]
+        self.sentimentScore =  obj["sentimentScore"]
         self.sentiment =  obj["sentiment"]
         self.replies = [DecodeComment(c) for c in  obj["replies"]]
 
@@ -153,15 +153,22 @@ class Node:
         self.id_0 = ""
         self.timestamp = 0
 
-    def __repr__(self):
+    def __len__(self):
+        return len(self.__dict__)
+
+    def __str__(self):
         if self.id_0:
             return "{0}{1}".format(self.name,self.id_0)
 
         self.id_0 = ID.getId()
         return "{0}{1}".format(self.name,self.id_0)
 
-    def __len__(self):
-        return len(self.__dict__)
+    def __repr__(self):
+        if self.id_0:
+            return "{0}{1}".format(self.name,self.id_0)
+
+        self.id_0 = ID.getId()
+        return "{0}{1}".format(self.name,self.id_0)
 
 
 class AuthorNode(Node):
@@ -193,16 +200,9 @@ class CommentNode(Node):
         self.averageWordLength = meta.averageWordLength
         self.quotedTextPerLength = meta.quotedTextPerLength
         self.readingLevel = meta.readingLevel
-        self.sentiment_score = SentimentAnalysis.add_sentiment(comment)
-        self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
+        self.sentimentScore = SentimentAnalysis.add_sentiment(comment)
+        self.sentiment = SentimentAnalysis.convert_score(self.sentimentScore)
         self.similarity = 1.0
-
-    def __repr__(self):
-        if(self.id_0):
-            return "{0}{1}".format(self.name , self.id_0)
-
-        super().__repr__()
-        return self.name + self.id_0
 
 
 class SentimentNode(Node):
@@ -224,14 +224,9 @@ class ArticleNode(Node):
         self.title = submission.title
         self.view_count = submission.view_count if submission.view_count != None else 0
         self.timestamp = submission.created_utc
-        self.is_video = submission.is_video
+        self.isVideo = submission.is_video
         self.upvote_ratio = submission.upvote_ratio
 
-    def __repr__(self):
-        if(self.id):
-            return "{0}{1}".format(self.name , self.id_0)
-        super().__repr__()
-        return self.name + self.id_0
 
 
 
