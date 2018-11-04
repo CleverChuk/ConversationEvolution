@@ -23,14 +23,14 @@ class GraphBot(RedditBot):
     @property
     def main_graph(self):
         if self._main_graph == None:
-            raise Exception("You have to call getGraph(...) first")
+            raise Exception("You have to call getGraph(*ids) first")
 
         return self.main_graph
 
     @property
     def comment_graph(self):
         if self._main_graph == None:
-            raise Exception("You have to call getGraph(...) first")
+            raise Exception("You have to call getGraph(*ids) first")
 
         return self._comment_graph
 
@@ -48,7 +48,6 @@ class GraphBot(RedditBot):
 
         self._main_graph = None
         self._comment_graph = None
-        self.group_graph = None
 
     def stream(self, subreddit):
         """
@@ -88,7 +87,6 @@ class GraphBot(RedditBot):
                 articleNode = ArticleNode(submission)
                 nodes.append((articleNode, articleNode.__dict__))
 
-
                 # populate article/comment edge list
                 for comment in submission.comments.list():
                     commentNode = CommentNode(
@@ -126,10 +124,7 @@ class GraphBot(RedditBot):
         for cc, pc, *_ in commentCommentEdges:
             _nodes.append(cc)
             _nodes.append(pc)
-
-        # high level graphs
-        self.group_graph = mp.clusterOnNumericPropertyNodes(
-            2, _nodes, commentCommentEdges)
+        _nodes = list(set(_nodes)) #remove duplicates
 
         diGraph.add_edges_from(commentCommentEdges)
         graph.add_edges_from(authorCommentsEdges)
@@ -143,30 +138,30 @@ class GraphBot(RedditBot):
         self._comment_graph = diGraph
         self._main_graph = graph
 
-        # high level graphs
-        # self.group_graph = mp.clusterOnNumericProperty(2, commentCommentEdges)
-
+       # high level graphs
+        self.group_graph_nodes = mp.clusterOnNumericPropertyNodes(2, _nodes, commentCommentEdges, num_internals=10)
+        self.group_graph_edges = mp.clusterOnNumericProperty(2, commentCommentEdges, num_internals=10)
+        
         return graph
 
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
     from models import CustomEncoder
-    # "9bdwe3","9f3vyq","9f4lcs"
     subreddit = "legaladvice"
     filename = "./raw/%s.json" % subreddit
     # username = input("Enter username:")
     # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
     bot = GraphBot(subreddit)
-    ids = list(bot.get_hot_submissions_id(20))
+    ids = list(bot.get_hot_submissions_id(2))
     graph = bot.getGraph(*ids)
 
     bot.dump(filename, ids)
     nx.write_graphml(graph, "./graphML/reddit_graph_%s.graphml" % subreddit)
-    nx.write_graphml(bot.comment_graph,
-                     "./graphML/comment_graph_%s.graphml" % subreddit)
-    nx.write_graphml(bot.group_graph, "./graphML/interval_graph.graphml")
+    nx.write_graphml(bot.comment_graph,"./graphML/comment_graph_%s.graphml" % subreddit)
+    nx.write_graphml(bot.group_graph_nodes, "./graphML/interval_graph_nodes.graphml")
+    nx.write_graphml(bot.group_graph_edges, "./graphML/interval_graph_edges.graphml")
 
     # data = neonx.get_geoff(graph, "LINKS_TO", CustomEncoder())
     # nx.write_gexf(graph,"./graphML/neo.gexf")

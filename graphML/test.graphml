@@ -1,24 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
-  <graph edgedefault="undirected">
+  <graph edgedefault="directed">
+    <node id="c2" />
     <node id="a0" />
     <node id="b1" />
     <node id="d3" />
-    <node id="i8" />
-    <node id="c2" />
+    <node id="g6" />
     <node id="e4" />
     <node id="f5" />
-    <node id="g6" />
-    <node id="h7" />
-    <node id="j9" />
-    <edge source="a0" target="b1" />
-    <edge source="b1" target="c2" />
-    <edge source="d3" target="i8" />
-    <edge source="d3" target="c2" />
-    <edge source="i8" target="j9" />
-    <edge source="c2" target="e4" />
+    <edge source="c2" target="a0" />
+    <edge source="c2" target="b1" />
+    <edge source="c2" target="d3" />
+    <edge source="d3" target="g6" />
     <edge source="e4" target="f5" />
-    <edge source="e4" target="j9" />
-    <edge source="g6" target="h7" />
+    <edge source="e4" target="g6" />
   </graph>
 </graphml>

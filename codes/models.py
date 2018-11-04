@@ -151,6 +151,7 @@ class Node:
     def __init__(self, name):
         self.name = name
         self.id_0 = ""
+        self.id = 0
         self.timestamp = 0
 
     def __len__(self):
@@ -208,6 +209,7 @@ class CommentNode(Node):
 class SentimentNode(Node):
     def __init__(self, value):
         super().__init__(value)
+        self.sentiment = value
 
     def __repr__(self):
         return self.name
@@ -217,7 +219,6 @@ class ArticleNode(Node):
     """
         Article node
     """
-
     def __init__(self, submission):
         super().__init__("ar")
         self.id = submission.id

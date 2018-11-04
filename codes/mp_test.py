@@ -52,8 +52,9 @@ if __name__ == "__main__":
     nodes = createNodes(10)
     prop = "readingLevel"
     nodes = addProperty(prop,nodes)
-    # g = buildGraph(nodes)   
-    g = buildStudyGraph(nodes) 
+    g = buildGraph(nodes)   
+    # g = buildStudyGraph(nodes) 
     nx.write_graphml(g, "./graphML/test.graphml")
-    g = mf.clusterOnReadingLevel(0,g.edges())
+    g = mf.clusterOnNumericPropertyNodes(0.5,g.nodes(),g.edges())
+    #g = mf.clusterOnNumericProperty(0.5,g.edges())
     nx.write_graphml(g, "./graphML/test-out.graphml")

@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 from models import Comment, Node
 import networkx as nx
 import random
@@ -16,20 +16,20 @@ def time(g, edges):
     edges = sorted(edges, key=lambda n: n.timestamp)
     iw = g * edges[0].timestamp  # calculate the interval width
     h = edges[-1].timestamp  # get upperbound
-    l = edges[0].timestamp  # get lowerbound
+    intervals = edges[0].timestamp  # get lowerbound
 
     groups = defaultdict(list)  # map to hold groups
-    end = l+iw
+    end = intervals+iw
 
-    while l < (h+iw):
-        pair = (time_string(l), time_string(end))
-        pair = (l, end)
+    while intervals < (h+iw):
+        pair = (time_string(intervals), time_string(end))
+        pair = (intervals, end)
 
         for edge in edges:
-            if l <= edge.timestamp and edge.timestamp <= end:
+            if intervals <= edge.timestamp and edge.timestamp <= end:
                 groups[pair].append(edge)
 
-        l = end
+        intervals = end
         end += iw
 
     result = list()
@@ -39,76 +39,109 @@ def time(g, edges):
     return result
 
 
-def clusterOnNumericProperty(shift, edges, prop="readingLevel"):
-    groups = numericInterval(shift, edges, prop)
+def clusterOnNumericProperty(epsilon, edges, prop="readingLevel", num_internals = 3):
+    groups = numericInterval(epsilon, edges, prop,num_internals)
     cluster = clusterInterval(groups)
 
     return graphFromCluster(cluster, prop)
 
 
-def clusterOnNumericPropertyNodes(shift, nodes, edges, prop="readingLevel"):
-    groups = numericIntervalNodes(shift, nodes, prop)
+def clusterOnNumericPropertyNodes(epsilon, nodes, edges, prop="readingLevel", num_internals = 3):
+    groups = numericIntervalNodes(epsilon, nodes, prop, num_internals)
     cluster = clusterIntervalNodes(groups, edges)
-    
+
     return graphFromCluster(cluster, prop)
 
 
-def numericInterval(shift, edges, prop):
+def numericInterval(epsilon, edges, prop, num_intervals=3):
     """
         splits the edges into 3 intervals based on reading level property
 
-        :type shift: int
+        :type epsilon: float
 
         :type edges: List[edge]
 
+        :type prop: List[str]
+
+        :type num_intervals: int
+
         :rtype: dict 
     """
+    n = len(edges)
+    intervals = []
+    incr_size = ceil(n/num_intervals)
+    
+    if incr_size == 0:
+        incr_size = 1
     edges = sorted(edges, key=lambda e: (
         e[0].__dict__[prop] + e[1].__dict__[prop])/2)
-    n = len(edges)
-    median = getAverage(edges[n//2], prop) if n % 2 == 1 else (getAverage(
-        edges[n//2], prop) + getAverage(edges[n//2+1], prop))/2
 
-    fi = (getAverage(edges[0], prop), median)  # first interval
-    si = (median, getAverage(edges[-1], prop))  # second interval
-    ti = (median-shift, median+shift)  # third interval
+    # create the intervals using prop value to mark the range bounds
+    for i in range(0, n, incr_size):
+        e = edges[i:i+incr_size]
+        intervals.append(e)
 
     groups = defaultdict(list)  # map to hold groups
+    length = len(intervals)
+    for i in range(length-1):
+        minimum = getAverage(intervals[i][0], prop) - epsilon
+        maximum = getAverage(intervals[i][-1], prop) + epsilon
 
-    for pair in (fi, si, ti):
-        for edge in edges:
-            avg = getAverage(edge, prop)
-            if pair[0] <= avg and avg <= pair[1]:
-                groups[pair].append(edge)
+        for e in intervals[i+1]:
+            if getAverage(e, prop) <= maximum:
+                intervals[i].append(e)
+
+        groups[(minimum, maximum)] = intervals[i]
+
+        if(i+1 == length-1):
+            minimum = getAverage(intervals[i+1][0], prop) - epsilon
+            maximum = getAverage(intervals[i+1][-1], prop) + epsilon
+            groups[(minimum,maximum)]= intervals[i+1]
 
     return groups
 
 
-def numericIntervalNodes(shift, nodes, prop):
+def numericIntervalNodes(epsilon, nodes, prop, num_intervals=3):
     """
         splits the edges into 3 intervals based on reading level property
 
-        :type shift: int
+        :type epsilon: float
 
-        :type edges: List[edge]
+        :type nodes: List[node]
+
+        :type prop: List[str]
+
+        :type num_intervals: int
 
         :rtype: dict 
     """
-    nodes = sorted(nodes, key=lambda n: n.__dict__[prop])
     n = len(nodes)
-    median = nodes[n//2].__dict__[prop] if n % 2 == 1 else getAverage(
-        [nodes[n//2], nodes[n//2+1]], prop)
-
-    fi = (nodes[0].__dict__[prop], median)  # first interval
-    si = (median, nodes[-1].__dict__[prop])  # second interval
-    ti = (median-shift, median+shift)  # third interval
+    incr_size = ceil(n/num_intervals)
+    if incr_size == 0:
+        incr_size = 1
+    
+    intervals = []
+    nodes = sorted(nodes, key=lambda n: n.__dict__[prop])
+    # create the intervals using prop value to mark the range bounds
+    for i in range(0, n, incr_size):
+        n = nodes[i:i+incr_size]
+        intervals.append(n)
 
     groups = defaultdict(list)  # map to hold groups
+    length = len(intervals)
+    for i in range(length-1):
+        minimum = intervals[i][0].__dict__[prop] - epsilon
+        maximum = intervals[i][-1].__dict__[prop] + epsilon
 
-    for pair in (fi, si, ti):
-        for node in nodes:
-            if pair[0] <= node.__dict__[prop] and node.__dict__[prop] <= pair[1]:
-                groups[pair].append(node)
+        for n in intervals[i+1]:
+            if n.__dict__[prop] <= maximum:
+                intervals[i].append(n)
+        groups[(minimum, maximum)] = intervals[i]
+
+        if(i+1 == length-1):
+            minimum = intervals[i+1][0].__dict__[prop] - epsilon
+            maximum = intervals[i+1][-1].__dict__[prop] + epsilon
+            groups[(minimum,maximum)]= intervals[i+1]
 
     return groups
 
@@ -121,11 +154,14 @@ def clusterInterval(groups):
 
         :rtype clusters: dict
     """
-    clusters = defaultdict(list)
+    clusters = OrderedDict()
     clusterId = 0
 
     for e_List in groups.values():
         for i in range(len(e_List)):
+            if clusterId not in clusters:
+                clusters[clusterId] = []
+
             clusters[clusterId].append(e_List[i][0])
             clusters[clusterId].append(e_List[i][1])
 
@@ -163,21 +199,24 @@ def clusterIntervalNodes(groups, edges):
 
         :rtype clusters: dict
     """
-    clusters = defaultdict(list)
+    clusters = OrderedDict()
     clusterId = 0
-    
+
     for _, group in groups.items():
         for node in group:
+            if clusterId not in clusters:
+                clusters[clusterId] = []
+
             clusters[clusterId].append(node)
             for edge in edges:
-                if edge[0].name == node.name:                  
+                if edge[0].id == node.id and edge[1] in group:
                     clusters[clusterId].append(edge[1])
 
-                elif edge[1].name == node.name:                    
+                elif edge[1].id == node.id and edge[0] in group:
                     clusters[clusterId].append(edge[0])
-            
+
             clusterId += 1
-    
+
     n = len(clusters)
     indices = []
     # find the index duplicate clusters
@@ -207,24 +246,26 @@ def graphFromCluster(clusters, prop):
     g = nx.DiGraph()
     newNodes = {}
 
+    # create cluster node
     for name, cluster in clusters.items():
         newNodes[name] = clusterAverage(
             name, cluster, getProperties(cluster[0]))
 
-    for name, cluster in clusters.items():
-        for node in cluster:
-            for n, c in clusters.items():
-                if g.has_edge(newNodes[n], newNodes[name]) or name == n:
-                    continue
+    #connect clusters base on node overlap
+    names = list(clusters.keys())
+    clusters = list(clusters.values())
+    n = len(names)
 
-                if node in c:
-                    g.add_edge(newNodes[name], newNodes[n],
-                               name=prop.upper())
+    for i in range(n):
+        cluster = set(clusters[i])
+        for j in range(i+1,n):
+            nextCluster = set(clusters[j])
+            if not cluster.isdisjoint(nextCluster):
+                g.add_edge(newNodes[names[i]], newNodes[names[j]], name=prop.upper())
 
     for node in newNodes.values():
         g.add_nodes_from([(node, node.__dict__)])
 
-    
     return g
 
 
@@ -258,18 +299,28 @@ def clusterAverage(name, cluster, props):
     rsum = 0
     n = len(cluster)
     clusterNode = Node(name)
+    cat_var = defaultdict(int)
+    mode_value = 0
+    mode_var = None
 
     for prop in props:
         for node in cluster:
             tp = node.__dict__[prop]
             if isinstance(tp, str):
-                break
-
-            rsum += tp
+                cat_var[tp] += 1
+                if cat_var[tp] > mode_value:
+                    mode_value = cat_var[tp]
+                    mode_var = tp
+            else:
+                rsum += tp
 
         if rsum != 0:
             clusterNode.__dict__[prop] = rsum/n
             rsum = 0
+        else:
+            clusterNode.__dict__[prop] = mode_var
+            mode_value = 0
+            cat_var.clear()
 
     return clusterNode
 

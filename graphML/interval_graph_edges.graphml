@@ -1,0 +1,942 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="name" attr.type="string" for="edge" id="d17" />
+  <key attr.name="sentimentScore" attr.type="string" for="node" id="d16" />
+  <key attr.name="similarity" attr.type="string" for="node" id="d15" />
+  <key attr.name="similarity" attr.type="double" for="node" id="d14" />
+  <key attr.name="sentiment" attr.type="string" for="node" id="d13" />
+  <key attr.name="sentimentScore" attr.type="double" for="node" id="d12" />
+  <key attr.name="readingLevel" attr.type="double" for="node" id="d11" />
+  <key attr.name="quotedTextPerLength" attr.type="string" for="node" id="d10" />
+  <key attr.name="averageWordLength" attr.type="double" for="node" id="d9" />
+  <key attr.name="length" attr.type="double" for="node" id="d8" />
+  <key attr.name="body" attr.type="string" for="node" id="d7" />
+  <key attr.name="score" attr.type="double" for="node" id="d6" />
+  <key attr.name="author" attr.type="string" for="node" id="d5" />
+  <key attr.name="parent_id" attr.type="string" for="node" id="d4" />
+  <key attr.name="timestamp" attr.type="double" for="node" id="d3" />
+  <key attr.name="id" attr.type="string" for="node" id="d2" />
+  <key attr.name="id_0" attr.type="string" for="node" id="d1" />
+  <key attr.name="name" attr.type="string" for="node" id="d0" />
+  <graph edgedefault="directed">
+    <node id="c211">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91gnea</data>
+      <data key="d3">1541374397.0</data>
+      <data key="d4">e91cq32</data>
+      <data key="d5">Jeriyka</data>
+      <data key="d6">13.0</data>
+      <data key="d7">Both actresses you named were given a horrifying threat that carried practically no weight behind it in the large scheme of continuing to work. This is a perfect example of people being afraid of their jobs by narcissistic entities to keep them in control. An IMDB Search of both women will show you that they were clearly not blackballed from the industry. Yes, the industry is toxic. Yes, the industry is actually too big for one man to control your entire career.
+
+But we are currently off the topic of how the manager is offering an empty threat to a minor. The minor can get a new manager. </data>
+      <data key="d8">430.6666666666667</data>
+      <data key="d9">33.474333333333334</data>
+      <data key="d10">Both actresses you named were given a horrifying threat that carried practically no weight behind it in the large scheme of continuing to work. This is a perfect example of people being afraid of their jobs by narcissistic entities to keep them in control. An IMDB Search of both women will show you that they were clearly not blackballed from the industry. Yes, the industry is toxic. Yes, the industry is actually too big for one man to control your entire career.
+
+But we are currently off the topic of how the manager is offering an empty threat to a minor. The minor can get a new manager. </data>
+      <data key="d11">-423.92</data>
+      <data key="d12">-0.06416666666666666</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.13153333333333334</data>
+    </node>
+    <node id="c212">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e917pn2</data>
+      <data key="d3">1541371226.0</data>
+      <data key="d4">e91760s</data>
+      <data key="d5">thepatman</data>
+      <data key="d6">0.5</data>
+      <data key="d7">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful, Off-Topic or In Poor Taste**
+
+Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
+
+* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
+
+* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
+
+* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
+
+* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
+
+* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
+
+* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
+
+* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d8">955.5</data>
+      <data key="d9">14.7075</data>
+      <data key="d10">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful, Off-Topic or In Poor Taste**
+
+Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
+
+* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
+
+* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
+
+* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
+
+* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
+
+* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
+
+* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
+
+* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d11">-30.59</data>
+      <data key="d12">-0.02995</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.54155</data>
+    </node>
+    <node id="c213">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e914bcd</data>
+      <data key="d3">1541367096.0</data>
+      <data key="d4">e9135z2</data>
+      <data key="d5">thepatman</data>
+      <data key="d6">-0.5</data>
+      <data key="d7">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful, Off-Topic or In Poor Taste**
+
+Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
+
+* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
+
+* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
+
+* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
+
+* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
+
+* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
+
+* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
+
+* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d8">955.5</data>
+      <data key="d9">14.7075</data>
+      <data key="d10">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful, Off-Topic or In Poor Taste**
+
+Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
+
+* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
+
+* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
+
+* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
+
+* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
+
+* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
+
+* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
+
+* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d11">-30.59</data>
+      <data key="d12">-0.02995</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.54155</data>
+    </node>
+    <node id="c214">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e90wixj</data>
+      <data key="d3">1541354342.5</data>
+      <data key="d4">e90wgnq</data>
+      <data key="d5">thepatman</data>
+      <data key="d6">-4.5</data>
+      <data key="d7">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful, Off-Topic or In Poor Taste**
+
+Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
+
+* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
+
+* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
+
+* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
+
+* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
+
+* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
+
+* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
+
+* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d8">955.5</data>
+      <data key="d9">14.7075</data>
+      <data key="d10">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful, Off-Topic or In Poor Taste**
+
+Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
+
+* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
+
+* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
+
+* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
+
+* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
+
+* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
+
+* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
+
+* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d11">-30.59</data>
+      <data key="d12">-0.02995</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.04155</data>
+    </node>
+    <node id="c215">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e90wixj</data>
+      <data key="d3">1541351730.3333333</data>
+      <data key="d4">e90wgnq</data>
+      <data key="d5">thepatman</data>
+      <data key="d6">251.0</data>
+      <data key="d7">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful, Off-Topic or In Poor Taste**
+
+Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
+
+* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
+
+* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
+
+* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
+
+* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
+
+* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
+
+* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
+
+* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d8">766.3333333333334</data>
+      <data key="d9">12.309</data>
+      <data key="d10">*Your post has been removed for the following reason(s):*
+
+**Generally Unhelpful, Off-Topic or In Poor Taste**
+
+Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
+
+* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
+
+* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
+
+* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
+
+* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
+
+* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
+
+* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
+
+* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d11">-7.62</data>
+      <data key="d12">0.07933333333333333</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.3610333333333333</data>
+    </node>
+    <node id="c216">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e90t0eb</data>
+      <data key="d3">1541344288.3333333</data>
+      <data key="d4">e90rj94</data>
+      <data key="d5">UnIdntfdFlyngRddtr</data>
+      <data key="d6">4.666666666666667</data>
+      <data key="d7">There are laws about this exact issue. Talk to a new lawyer, your own.
+https://www.sagaftra.org/membership-benefits/young-performers/coogan-law </data>
+      <data key="d8">59.333333333333336</data>
+      <data key="d9">6.389</data>
+      <data key="d10">There are laws about this exact issue. Talk to a new lawyer, your own.
+https://www.sagaftra.org/membership-benefits/young-performers/coogan-law </data>
+      <data key="d11">39.04666666666666</data>
+      <data key="d12">-0.08233333333333333</data>
+      <data key="d13">Neutral</data>
+      <data key="d15">Neutral</data>
+    </node>
+    <node id="c217">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e9163wk</data>
+      <data key="d3">1541366558.5</data>
+      <data key="d4">e910wy5</data>
+      <data key="d5">believemeimadr</data>
+      <data key="d6">54.5</data>
+      <data key="d7">If you contractually can...</data>
+      <data key="d8">31.5</data>
+      <data key="d9">5.125</data>
+      <data key="d10">If you contractually can...</data>
+      <data key="d11">53.714999999999996</data>
+      <data key="d16">If you contractually can...</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.5</data>
+    </node>
+    <node id="c218">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e916l4d</data>
+      <data key="d3">1541360142.0</data>
+      <data key="d4">e90ukmq</data>
+      <data key="d5">Jeriyka</data>
+      <data key="d6">989.5</data>
+      <data key="d7">If OP is currently on a job, there is a SAG rep specifically assigned to the show. If I was OP’s 2nd AD (often the point of contact for actors on a job), I would be more than happy to share the SAG reps name and number.
+
+Also, the minor in California has a tutor assigned to them that are supposed to act as constant reps for them on set as well, and has quick access to SAG and the contract. As long as this person isn’t in your parent’s pocket, the tutor would be the first person I might turn to, to be lead in the correct direction.
+
+Edit: IANAL but I’m a 2nd Assistant Director. I’m responding because your legal advice is the most direct and responsible comment out of everything here. I’m adding ways to get in contact with SAG if the minor is currently on set as there are people already on set supposed to be watching out for their welfare.</data>
+      <data key="d8">749.0</data>
+      <data key="d9">7.0915</data>
+      <data key="d10">If OP is currently on a job, there is a SAG rep specifically assigned to the show. If I was OP’s 2nd AD (often the point of contact for actors on a job), I would be more than happy to share the SAG reps name and number.
+
+Also, the minor in California has a tutor assigned to them that are supposed to act as constant reps for them on set as well, and has quick access to SAG and the contract. As long as this person isn’t in your parent’s pocket, the tutor would be the first person I might turn to, to be lead in the correct direction.
+
+Edit: IANAL but I’m a 2nd Assistant Director. I’m responding because your legal advice is the most direct and responsible comment out of everything here. I’m adding ways to get in contact with SAG if the minor is currently on set as there are people already on set supposed to be watching out for their welfare.</data>
+      <data key="d11">61.325</data>
+      <data key="d12">0.2229</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.5640000000000001</data>
+    </node>
+    <node id="c219">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91bcr2</data>
+      <data key="d3">1541358841.0</data>
+      <data key="d4">e90rc0r</data>
+      <data key="d5">TaneCorbinYall</data>
+      <data key="d6">76.0</data>
+      <data key="d7">Seek out a lawyer who has experience with this. An entertainment lawyer or one who does estates and trusts will probably be a good bet. Go through SAG first if you can, they'll be able to hook you up with someone who does exactly this kind of thing. The lawyer will be happy to work for some of the money that you'll be getting back from your father so it's ok that you don't have any money now.
+
+After you get the money back, you should look into emancipation. Then your parents will have no rights to any of your new accounts, records, property, etc. It shouldn't be that hard as long as you're making enough to support yourself. If you don't make a ton, getting a side gig for when you're not working would be a good idea too.
+
+Finally, put some of your money in a trust that pays it out to your steadily over a long period of time, or that you can't touch for a long time. You have no idea if you'll still be acting at 26 and you might want to go to college or something. Also real estate in CA is nuts expensive, it's nice to be able to afford a house especially when you want kids and need the room, maybe around age 36. What I'm saying is 16 year olds don't have as many expensive needs as older people so saving the majority of your money (after your basic living expenses) is the smart move. Or at the very least, a trust that pays you out steadily will prevent you from going broke if you're between jobs for too long or have unexpected expenses.</data>
+      <data key="d8">747.0</data>
+      <data key="d9">6.0445</data>
+      <data key="d10">Seek out a lawyer who has experience with this. An entertainment lawyer or one who does estates and trusts will probably be a good bet. Go through SAG first if you can, they'll be able to hook you up with someone who does exactly this kind of thing. The lawyer will be happy to work for some of the money that you'll be getting back from your father so it's ok that you don't have any money now.
+
+After you get the money back, you should look into emancipation. Then your parents will have no rights to any of your new accounts, records, property, etc. It shouldn't be that hard as long as you're making enough to support yourself. If you don't make a ton, getting a side gig for when you're not working would be a good idea too.
+
+Finally, put some of your money in a trust that pays it out to your steadily over a long period of time, or that you can't touch for a long time. You have no idea if you'll still be acting at 26 and you might want to go to college or something. Also real estate in CA is nuts expensive, it's nice to be able to afford a house especially when you want kids and need the room, maybe around age 36. What I'm saying is 16 year olds don't have as many expensive needs as older people so saving the majority of your money (after your basic living expenses) is the smart move. Or at the very least, a trust that pays you out steadily will prevent you from going broke if you're between jobs for too long or have unexpected expenses.</data>
+      <data key="d11">61.6</data>
+      <data key="d12">0.1356</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.07365</data>
+    </node>
+    <node id="c220">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91i0kw</data>
+      <data key="d3">1541378114.0</data>
+      <data key="d4">e91caje</data>
+      <data key="d5">mn_sunny</data>
+      <data key="d6">23.333333333333332</data>
+      <data key="d7">I'd bet they're a youtube celeb because a musician/actor would likely already have legitimate resources available to them.</data>
+      <data key="d8">117.66666666666667</data>
+      <data key="d9">5.554666666666667</data>
+      <data key="d10">I'd bet they're a youtube celeb because a musician/actor would likely already have legitimate resources available to them.</data>
+      <data key="d11">57.73</data>
+      <data key="d12">0.04256666666666667</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.04036666666666667</data>
+    </node>
+    <node id="c221">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e90riay</data>
+      <data key="d3">1541343195.6666667</data>
+      <data key="d4">e90rgep</data>
+      <data key="d5">Anonymous</data>
+      <data key="d6">2.0</data>
+      <data key="d7">[removed]</data>
+      <data key="d8">16.0</data>
+      <data key="d9">5.7620000000000005</data>
+      <data key="d10">[removed]</data>
+      <data key="d11">54.330000000000005</data>
+      <data key="d12">0.12726666666666667</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.3333333333333333</data>
+    </node>
+    <node id="c222">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91fy6h</data>
+      <data key="d3">1541368014.3333333</data>
+      <data key="d4">e91caje</data>
+      <data key="d5">Furt77</data>
+      <data key="d6">524.6666666666666</data>
+      <data key="d7">I'd start looking for another manager.</data>
+      <data key="d8">293.3333333333333</data>
+      <data key="d9">5.961666666666666</data>
+      <data key="d10">I'd start looking for another manager.</data>
+      <data key="d11">59.39666666666667</data>
+      <data key="d12">0.11973333333333334</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.36146666666666666</data>
+    </node>
+    <node id="c223">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91a7m0</data>
+      <data key="d3">1541366423.6666667</data>
+      <data key="d4">e90ukmq</data>
+      <data key="d5">thesweetestpunch</data>
+      <data key="d6">552.3333333333334</data>
+      <data key="d7">California takes care of its child actors. Good laws!</data>
+      <data key="d8">298.3333333333333</data>
+      <data key="d9">5.832</data>
+      <data key="d10">California takes care of its child actors. Good laws!</data>
+      <data key="d11">69.66</data>
+      <data key="d12">0.28413333333333335</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.4099333333333333</data>
+    </node>
+    <node id="c224">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e90rc0r</data>
+      <data key="d3">1541345468.6666667</data>
+      <data key="d4">e90rabu</data>
+      <data key="d5">SeekingAdvice43562</data>
+      <data key="d6">114.0</data>
+      <data key="d7">Edited with state - California. I'm 16</data>
+      <data key="d8">63.666666666666664</data>
+      <data key="d9">4.8373333333333335</data>
+      <data key="d10">Edited with state - California. I'm 16</data>
+      <data key="d11">70.46666666666667</data>
+      <data key="d12">0.20179999999999998</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.39976666666666666</data>
+    </node>
+    <node id="c225">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91caje</data>
+      <data key="d3">1541369461.0</data>
+      <data key="d4">e90ukmq</data>
+      <data key="d5">highpriestesstea</data>
+      <data key="d6">417.5</data>
+      <data key="d7">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
+
+Are there other resources OP could use to find an attorney?
+
+ETA grammar...</data>
+      <data key="d8">233.25</data>
+      <data key="d9">5.665749999999999</data>
+      <data key="d10">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
+
+Are there other resources OP could use to find an attorney?
+
+ETA grammar...</data>
+      <data key="d11">64.3625</data>
+      <data key="d12">0.2131</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.322125</data>
+    </node>
+    <node id="c226">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91caje</data>
+      <data key="d3">1541362735.0</data>
+      <data key="d4">e90ukmq</data>
+      <data key="d5">highpriestesstea</data>
+      <data key="d6">780.5</data>
+      <data key="d7">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
+
+Are there other resources OP could use to find an attorney?
+
+ETA grammar...</data>
+      <data key="d8">421.0</data>
+      <data key="d9">6.359</data>
+      <data key="d10">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
+
+Are there other resources OP could use to find an attorney?
+
+ETA grammar...</data>
+      <data key="d11">64.86</data>
+      <data key="d12">0.1796</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.51285</data>
+    </node>
+    <node id="c227">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e914jsy</data>
+      <data key="d3">1541367447.5</data>
+      <data key="d4">e913hdd</data>
+      <data key="d5">Jeriyka</data>
+      <data key="d6">24.5</data>
+      <data key="d7">Getting blackballed in Hollywood is the ever present myth that’s simply not true. There are too many jobs, agencies, casting directors, cities to work in, and studios. Anyone who threatens being blackballed isn’t looking at the larger picture and it’s used as a psychological tool to keep people afraid for their jobs, but it’s unrealistic. OP- please do not add this worry onto your shoulders, it’s not true.
+
+Edit: I forgot the casting directors. You can’t forget about them. </data>
+      <data key="d8">635.0</data>
+      <data key="d9">5.8235</data>
+      <data key="d10">Getting blackballed in Hollywood is the ever present myth that’s simply not true. There are too many jobs, agencies, casting directors, cities to work in, and studios. Anyone who threatens being blackballed isn’t looking at the larger picture and it’s used as a psychological tool to keep people afraid for their jobs, but it’s unrealistic. OP- please do not add this worry onto your shoulders, it’s not true.
+
+Edit: I forgot the casting directors. You can’t forget about them. </data>
+      <data key="d11">67.775</data>
+      <data key="d12">-0.03580000000000001</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.6973</data>
+    </node>
+    <node id="c228">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91hpui</data>
+      <data key="d3">1541364921.5</data>
+      <data key="d4">e90ukmq</data>
+      <data key="d5">Insectshelf3</data>
+      <data key="d6">753.0</data>
+      <data key="d7">Oh man you’re right. He couldn’t be in a better state to fight this. </data>
+      <data key="d8">359.0</data>
+      <data key="d9">5.14</data>
+      <data key="d10">Oh man you’re right. He couldn’t be in a better state to fight this. </data>
+      <data key="d11">73.97999999999999</data>
+      <data key="d12">0.13505</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.53255</data>
+    </node>
+    <node id="c229">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91btud</data>
+      <data key="d3">1541374334.0</data>
+      <data key="d4">e919u5s</data>
+      <data key="d5">AllyGLovesYou</data>
+      <data key="d6">31.0</data>
+      <data key="d7">I second this. A lot of Child Stars either lash out or become sexualized to separate themselves from their child star personas. Lindsey Lohan, Drew Barrymore, and Miley Cyrus come to mind immediately. Also (I've never seen Saved by the Bell so idk who she plays) one of the actress from that show did Showgirls right off the bat and it flopped miserably. If you play your cards right and make sure your head stays screwed on you could become a good if not great adult actor. Maybe if you do Plan B, you could find a hobby to do in between jobs that will still benefit you financially (only thing coming to mind is Dylan Sprouse and his brewery)</data>
+      <data key="d8">716.0</data>
+      <data key="d9">5.6385000000000005</data>
+      <data key="d10">I second this. A lot of Child Stars either lash out or become sexualized to separate themselves from their child star personas. Lindsey Lohan, Drew Barrymore, and Miley Cyrus come to mind immediately. Also (I've never seen Saved by the Bell so idk who she plays) one of the actress from that show did Showgirls right off the bat and it flopped miserably. If you play your cards right and make sure your head stays screwed on you could become a good if not great adult actor. Maybe if you do Plan B, you could find a hobby to do in between jobs that will still benefit you financially (only thing coming to mind is Dylan Sprouse and his brewery)</data>
+      <data key="d11">75.93</data>
+      <data key="d12">0.03045</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.53635</data>
+    </node>
+    <node id="c230">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91fkbc</data>
+      <data key="d3">1541378138.3333333</data>
+      <data key="d4">e91ef2v</data>
+      <data key="d5">Thompson_S_Sweetback</data>
+      <data key="d6">11.666666666666666</data>
+      <data key="d7">I’m sorry, I don’t understand your response and maybe that’s because IANAL.
+
+I know when I hire a minor on my set, it is illegal for me to hire that child without a Coogan Bank account on file with our accounting department.
+
+Edit: we literally can’t hire a child without it.</data>
+      <data key="d8">158.66666666666666</data>
+      <data key="d9">4.636666666666666</data>
+      <data key="d10">I’m sorry, I don’t understand your response and maybe that’s because IANAL.
+
+I know when I hire a minor on my set, it is illegal for me to hire that child without a Coogan Bank account on file with our accounting department.
+
+Edit: we literally can’t hire a child without it.</data>
+      <data key="d11">79.99666666666667</data>
+      <data key="d12">0.11256666666666669</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.017133333333333334</data>
+    </node>
+    <node id="c231">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e915lm5</data>
+      <data key="d3">1541361973.5</data>
+      <data key="d4">e90wlzh</data>
+      <data key="d5">Thompson_S_Sweetback</data>
+      <data key="d6">98.5</data>
+      <data key="d7">Coogans law makes it illegal, but it can't protect you once the money is already gone. It's important for OP to get his own lawyer asap.</data>
+      <data key="d8">118.5</data>
+      <data key="d9">5.495</data>
+      <data key="d10">Coogans law makes it illegal, but it can't protect you once the money is already gone. It's important for OP to get his own lawyer asap.</data>
+      <data key="d11">78.245</data>
+      <data key="d12">-0.00605</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.57355</data>
+    </node>
+    <node id="c232">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91h5i1</data>
+      <data key="d3">1541376658.5</data>
+      <data key="d4">e91a7m0</data>
+      <data key="d5">DailyCloserToDeath</data>
+      <data key="d6">50.0</data>
+      <data key="d7">On the one hand, yes.
+
+On the other hand....
+
+(Commentary on the observation.)</data>
+      <data key="d8">65.5</data>
+      <data key="d9">5.826499999999999</data>
+      <data key="d10">On the one hand, yes.
+
+On the other hand....
+
+(Commentary on the observation.)</data>
+      <data key="d11">81.64500000000001</data>
+      <data key="d12">0.42400000000000004</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.10205</data>
+    </node>
+    <node id="c233">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e9133ay</data>
+      <data key="d3">1541361809.5</data>
+      <data key="d4">e90xuet</data>
+      <data key="d5">LadyEmry</data>
+      <data key="d6">34.0</data>
+      <data key="d7">Adding onto this, once you've made a new account see if you can change your old payment details so your future pay is put into the right account. I know your Manager isn't being helpful right now, but perhaps you can talk to them about changing this and they may help?</data>
+      <data key="d8">231.0</data>
+      <data key="d9">4.9425</data>
+      <data key="d10">Adding onto this, once you've made a new account see if you can change your old payment details so your future pay is put into the right account. I know your Manager isn't being helpful right now, but perhaps you can talk to them about changing this and they may help?</data>
+      <data key="d11">81.695</data>
+      <data key="d12">0.17725000000000002</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.5257000000000001</data>
+    </node>
+    <node id="c234">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91c286</data>
+      <data key="d3">1541374515.0</data>
+      <data key="d4">e91a0xl</data>
+      <data key="d5">AllyGLovesYou</data>
+      <data key="d6">2.5</data>
+      <data key="d7">There are laws specifically for child actors. They have a certain length of time a day that they can work. They must have a tutor so that they can have an education and more. Because of these laws you get stars like the Olsen Twins and the Sprouse twins. It's cheaper and easier to hire identical twins to play one character for when one kid's time runs out they have the second one to take over and continue filming. </data>
+      <data key="d8">446.0</data>
+      <data key="d9">5.9455</data>
+      <data key="d10">There are laws specifically for child actors. They have a certain length of time a day that they can work. They must have a tutor so that they can have an education and more. Because of these laws you get stars like the Olsen Twins and the Sprouse twins. It's cheaper and easier to hire identical twins to play one character for when one kid's time runs out they have the second one to take over and continue filming. </data>
+      <data key="d11">83.35499999999999</data>
+      <data key="d12">0.18710000000000002</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.5238</data>
+    </node>
+    <node id="c235">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91hx1q</data>
+      <data key="d3">1541379224.5</data>
+      <data key="d4">e91fn1d</data>
+      <data key="d5">amazonallie</data>
+      <data key="d6">8.5</data>
+      <data key="d7">I was wondering who would bring up the Coogan Act.
+
+This seems to be a direct violation of this.</data>
+      <data key="d8">379.5</data>
+      <data key="d9">5.192</data>
+      <data key="d10">I was wondering who would bring up the Coogan Act.
+
+This seems to be a direct violation of this.</data>
+      <data key="d11">84.37</data>
+      <data key="d12">-0.028450000000000003</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.58385</data>
+    </node>
+    <node id="c236">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91751s</data>
+      <data key="d3">1541372544.6666667</data>
+      <data key="d4">e915lm5</data>
+      <data key="d5">Thompson_S_Sweetback</data>
+      <data key="d6">40.666666666666664</data>
+      <data key="d7">Coogans law makes the guardian open a trust for the minor and 15% of the earnings gets stashed away. This money can not be touched or moved into other accounts until the minor is 18 (it can be moved to “like” accounts though).
+
+It sounds like the 15% of the earnings are not the earnings that are at risk here. It’s the 85% of the rest of the paycheck. </data>
+      <data key="d8">208.66666666666666</data>
+      <data key="d9">4.881333333333333</data>
+      <data key="d10">Coogans law makes the guardian open a trust for the minor and 15% of the earnings gets stashed away. This money can not be touched or moved into other accounts until the minor is 18 (it can be moved to “like” accounts though).
+
+It sounds like the 15% of the earnings are not the earnings that are at risk here. It’s the 85% of the rest of the paycheck. </data>
+      <data key="d11">85.19666666666667</data>
+      <data key="d12">-0.005966666666666664</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.07836666666666667</data>
+    </node>
+    <node id="c237">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e90yuae</data>
+      <data key="d3">1541359398.0</data>
+      <data key="d4">e90ysfk</data>
+      <data key="d5">kcihtred2</data>
+      <data key="d6">24.5</data>
+      <data key="d7">If he hasn't. Also good idea with future money.
+Also best to grab statements of its closed most banks will give you 30-90 days to get statements after closing</data>
+      <data key="d8">111.5</data>
+      <data key="d9">4.8774999999999995</data>
+      <data key="d10">If he hasn't. Also good idea with future money.
+Also best to grab statements of its closed most banks will give you 30-90 days to get statements after closing</data>
+      <data key="d11">86.35</data>
+      <data key="d12">0.17955</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.07925</data>
+    </node>
+    <node id="c238">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91fz9a</data>
+      <data key="d3">1541376198.5</data>
+      <data key="d4">e91a7m0</data>
+      <data key="d5">vivaenmiriana</data>
+      <data key="d6">57.5</data>
+      <data key="d7">thanks jackie coogan!</data>
+      <data key="d8">37.0</data>
+      <data key="d9">5.388999999999999</data>
+      <data key="d10">thanks jackie coogan!</data>
+      <data key="d11">86.535</data>
+      <data key="d12">0.4929</data>
+      <data key="d13">Positive</data>
+      <data key="d14">0.10205</data>
+    </node>
+    <node id="c239">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e90ysfk</data>
+      <data key="d3">1541358350.0</data>
+      <data key="d4">e90xuet</data>
+      <data key="d5">Sutaru</data>
+      <data key="d6">40.0</data>
+      <data key="d7">It sounds like their dad already drained and closed that account </data>
+      <data key="d8">129.5</data>
+      <data key="d9">4.9879999999999995</data>
+      <data key="d10">It sounds like their dad already drained and closed that account </data>
+      <data key="d11">89.055</data>
+      <data key="d12">0.1101</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.52805</data>
+    </node>
+    <node id="c240">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e919t5y</data>
+      <data key="d3">1541373189.0</data>
+      <data key="d4">e919740</data>
+      <data key="d5">andycohens</data>
+      <data key="d6">-6.5</data>
+      <data key="d7">Sounds like the parents would put a stop to the career. Op probably knows this esp if they are this nasty. </data>
+      <data key="d8">350.0</data>
+      <data key="d9">5.0275</data>
+      <data key="d10">Sounds like the parents would put a stop to the career. Op probably knows this esp if they are this nasty. </data>
+      <data key="d11">91.50999999999999</data>
+      <data key="d12">-0.03409999999999999</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.57735</data>
+    </node>
+    <node id="c241">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91hy02</data>
+      <data key="d3">1541373455.5</data>
+      <data key="d4">e913hdd</data>
+      <data key="d5">amazonallie</data>
+      <data key="d6">9.5</data>
+      <data key="d7">Coogan Act.</data>
+      <data key="d8">401.5</data>
+      <data key="d9">5.25</data>
+      <data key="d10">Coogan Act.</data>
+      <data key="d11">94.61</data>
+      <data key="d12">0.071</data>
+      <data key="d13">Neutral</data>
+      <data key="d14">0.5</data>
+    </node>
+    <node id="c242">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">e91hhrv</data>
+      <data key="d3">1541379568.0</data>
+      <data key="d4">e91gy2k</data>
+      <data key="d5">wilmabeest</data>
+      <data key="d6">-2.5</data>
+      <data key="d7">stop trying to groom her you weirdo</data>
+      <data key="d8">57.5</data>
+      <data key="d9">4.4559999999999995</data>
+      <data key="d10">stop trying to groom her you weirdo</data>
+      <data key="d11">97.955</data>
+      <data key="d12">-0.13860000000000003</data>
+      <data key="d13">Negative</data>
+      <data key="d14">0.5</data>
+    </node>
+    <edge source="c211" target="c227">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c214" target="c215">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c216" target="c221">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c218" target="c222">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c218" target="c223">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c218" target="c225">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c218" target="c226">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c218" target="c228">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c219" target="c224">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c220" target="c222">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c220" target="c223">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c220" target="c225">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c220" target="c226">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c222" target="c223">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c222" target="c225">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c222" target="c226">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c222" target="c228">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c223" target="c225">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c223" target="c226">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c223" target="c228">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c223" target="c232">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c223" target="c238">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c225" target="c226">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c225" target="c228">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c225" target="c232">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c225" target="c238">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c226" target="c228">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c227" target="c241">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c230" target="c236">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c231" target="c236">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c232" target="c238">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c233" target="c239">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+    <edge source="c237" target="c239">
+      <data key="d17">READINGLEVEL</data>
+    </edge>
+  </graph>
+</graphml>
