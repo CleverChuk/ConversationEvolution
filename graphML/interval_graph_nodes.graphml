@@ -1,1192 +1,1372 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
-  <key attr.name="name" attr.type="string" for="edge" id="d18" />
-  <key attr.name="similarity" attr.type="double" for="node" id="d17" />
-  <key attr.name="sentimentScore" attr.type="double" for="node" id="d16" />
-  <key attr.name="score" attr.type="string" for="node" id="d15" />
-  <key attr.name="similarity" attr.type="string" for="node" id="d14" />
-  <key attr.name="sentiment" attr.type="string" for="node" id="d13" />
-  <key attr.name="sentimentScore" attr.type="string" for="node" id="d12" />
-  <key attr.name="readingLevel" attr.type="double" for="node" id="d11" />
-  <key attr.name="quotedTextPerLength" attr.type="string" for="node" id="d10" />
-  <key attr.name="averageWordLength" attr.type="double" for="node" id="d9" />
-  <key attr.name="length" attr.type="double" for="node" id="d8" />
-  <key attr.name="body" attr.type="string" for="node" id="d7" />
+  <key attr.name="name" attr.type="string" for="edge" id="d16" />
+  <key attr.name="similarity" attr.type="double" for="node" id="d15" />
+  <key attr.name="sentiment" attr.type="string" for="node" id="d14" />
+  <key attr.name="sentimentScore" attr.type="double" for="node" id="d13" />
+  <key attr.name="readingLevel" attr.type="double" for="node" id="d12" />
+  <key attr.name="quotedTextPerLength" attr.type="double" for="node" id="d11" />
+  <key attr.name="averageWordLength" attr.type="double" for="node" id="d10" />
+  <key attr.name="length" attr.type="double" for="node" id="d9" />
+  <key attr.name="body" attr.type="string" for="node" id="d8" />
+  <key attr.name="timestamp" attr.type="double" for="node" id="d7" />
   <key attr.name="score" attr.type="double" for="node" id="d6" />
   <key attr.name="author" attr.type="string" for="node" id="d5" />
-  <key attr.name="parent_id" attr.type="string" for="node" id="d4" />
-  <key attr.name="timestamp" attr.type="double" for="node" id="d3" />
-  <key attr.name="id" attr.type="string" for="node" id="d2" />
+  <key attr.name="id" attr.type="string" for="node" id="d4" />
+  <key attr.name="parent_id" attr.type="string" for="node" id="d3" />
+  <key attr.name="article_id" attr.type="string" for="node" id="d2" />
   <key attr.name="id_0" attr.type="string" for="node" id="d1" />
   <key attr.name="name" attr.type="string" for="node" id="d0" />
-  <graph edgedefault="directed">
-    <node id="c159">
+  <graph edgedefault="undirected">
+    <node id="c245">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91cq32</data>
-      <data key="d3">1541375944.0</data>
-      <data key="d4">e914jsy</data>
-      <data key="d5">highpriestesstea</data>
-      <data key="d6">5.0</data>
-      <data key="d7">Mira Sorvino...[https://www.theguardian.com/film/2017/dec/15/peter-jackson-harvey-weinstein-ashley-judd-mira-sorvino](https://www.theguardian.com/film/2017/dec/15/peter-jackson-harvey-weinstein-ashley-judd-mira-sorvino)</data>
-      <data key="d8">219.0</data>
-      <data key="d9">88.5</data>
-      <data key="d10">Mira Sorvino...[https://www.theguardian.com/film/2017/dec/15/peter-jackson-harvey-weinstein-ashley-judd-mira-sorvino](https://www.theguardian.com/film/2017/dec/15/peter-jackson-harvey-weinstein-ashley-judd-mira-sorvino)</data>
-      <data key="d11">-1402.6</data>
-      <data key="d12">Mira Sorvino...[https://www.theguardian.com/film/2017/dec/15/peter-jackson-harvey-weinstein-ashley-judd-mira-sorvino](https://www.theguardian.com/film/2017/dec/15/peter-jackson-harvey-weinstein-ashley-judd-mira-sorvino)</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">Neutral</data>
-    </node>
-    <node id="c160">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e917pn2</data>
-      <data key="d3">1541371488.0</data>
-      <data key="d4">e91760s</data>
-      <data key="d5">thepatman</data>
-      <data key="d15">thepatman</data>
-      <data key="d7">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d8">1902.0</data>
-      <data key="d9">22.415</data>
-      <data key="d10">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d11">-97.8</data>
-      <data key="d16">-0.0599</data>
-      <data key="d13">Negative</data>
-      <data key="d17">0.0831</data>
-    </node>
-    <node id="c161">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e914bcd</data>
-      <data key="d3">1541367827.0</data>
-      <data key="d4">e9135z2</data>
-      <data key="d5">thepatman</data>
-      <data key="d15">thepatman</data>
-      <data key="d7">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d8">1902.0</data>
-      <data key="d9">22.415</data>
-      <data key="d10">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d11">-97.8</data>
-      <data key="d16">-0.0599</data>
-      <data key="d13">Negative</data>
-      <data key="d17">0.0831</data>
-    </node>
-    <node id="c162">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90wixj</data>
-      <data key="d3">1541354422.0</data>
-      <data key="d4">e90wgnq</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">-9.0</data>
-      <data key="d7">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d8">1902.0</data>
-      <data key="d9">22.415</data>
-      <data key="d10">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d11">-97.8</data>
-      <data key="d16">-0.0599</data>
-      <data key="d13">Negative</data>
-      <data key="d17">0.0831</data>
-    </node>
-    <node id="c163">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90t0eb</data>
-      <data key="d3">1541346348.0</data>
-      <data key="d4">e90rj94</data>
-      <data key="d5">UnIdntfdFlyngRddtr</data>
-      <data key="d6">6.0</data>
-      <data key="d7">There are laws about this exact issue. Talk to a new lawyer, your own.
-https://www.sagaftra.org/membership-benefits/young-performers/coogan-law </data>
-      <data key="d8">144.0</data>
-      <data key="d9">7.667</data>
-      <data key="d10">There are laws about this exact issue. Talk to a new lawyer, your own.
-https://www.sagaftra.org/membership-benefits/young-performers/coogan-law </data>
-      <data key="d11">30.02</data>
-      <data key="d12">There are laws about this exact issue. Talk to a new lawyer, your own.
-https://www.sagaftra.org/membership-benefits/young-performers/coogan-law </data>
-      <data key="d13">Neutral</data>
-      <data key="d14">Neutral</data>
-    </node>
-    <node id="c164">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e9163wk</data>
-      <data key="d3">1541369891.0</data>
-      <data key="d4">e910wy5</data>
-      <data key="d5">believemeimadr</data>
-      <data key="d6">26.0</data>
-      <data key="d7">If you contractually can...</data>
-      <data key="d8">27.0</data>
-      <data key="d9">5.25</data>
-      <data key="d10">If you contractually can...</data>
-      <data key="d11">33.58</data>
-      <data key="d12">If you contractually can...</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">Neutral</data>
-    </node>
-    <node id="c165">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90rgep</data>
-      <data key="d3">1541343122.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">-11.0</data>
-      <data key="d7">[removed]</data>
-      <data key="d8">9.0</data>
-      <data key="d9">7.0</data>
-      <data key="d10">[removed]</data>
-      <data key="d11">36.62</data>
-      <data key="d12">[removed]</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c166">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90wgnq</data>
-      <data key="d3">1541350384.5</data>
-      <data key="d4">e90t38k</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">381.0</data>
-      <data key="d7">[removed]</data>
-      <data key="d8">198.5</data>
-      <data key="d9">7.256</data>
-      <data key="d10">[removed]</data>
-      <data key="d11">37.47</data>
-      <data key="d16">0.14895</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">0.5</data>
-    </node>
-    <node id="c167">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91760s</data>
-      <data key="d3">1541370964.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">1.0</data>
-      <data key="d7">[removed]</data>
-      <data key="d8">9.0</data>
-      <data key="d9">7.0</data>
-      <data key="d10">[removed]</data>
-      <data key="d11">36.62</data>
-      <data key="d12">[removed]</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c168">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e9135z2</data>
-      <data key="d3">1541366365.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">-1.0</data>
-      <data key="d7">[removed]</data>
-      <data key="d8">9.0</data>
-      <data key="d9">7.0</data>
-      <data key="d10">[removed]</data>
-      <data key="d11">36.62</data>
-      <data key="d12">[removed]</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c169">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90riko</data>
-      <data key="d3">1541343240.0</data>
-      <data key="d4">e90riay</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">-2.0</data>
-      <data key="d7">[removed]</data>
-      <data key="d8">9.0</data>
-      <data key="d9">7.0</data>
-      <data key="d10">[removed]</data>
-      <data key="d11">36.62</data>
-      <data key="d12">[removed]</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">Neutral</data>
-    </node>
-    <node id="c170">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91i0kw</data>
-      <data key="d3">1541380192.0</data>
-      <data key="d4">e91caje</data>
-      <data key="d5">mn_sunny</data>
-      <data key="d6">1.0</data>
-      <data key="d7">I'd bet they're a youtube celeb because a musician/actor would likely already have legitimate resources available to them.</data>
-      <data key="d8">122.0</data>
-      <data key="d9">5.941</data>
-      <data key="d10">I'd bet they're a youtube celeb because a musician/actor would likely already have legitimate resources available to them.</data>
-      <data key="d11">44.75</data>
-      <data key="d12">I'd bet they're a youtube celeb because a musician/actor would likely already have legitimate resources available to them.</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">0.0367</data>
-    </node>
-    <node id="c171">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90rc0r</data>
-      <data key="d3">1541342896.0</data>
-      <data key="d4">e90rabu</data>
-      <data key="d5">SeekingAdvice43562</data>
-      <data key="d6">123.0</data>
-      <data key="d7">Edited with state - California. I'm 16</data>
-      <data key="d8">38.0</data>
-      <data key="d9">4.833</data>
-      <data key="d10">Edited with state - California. I'm 16</data>
-      <data key="d11">48.47</data>
-      <data key="d12">Edited with state - California. I'm 16</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">0.1123</data>
-    </node>
-    <node id="c172">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91fy6h</data>
-      <data key="d3">1541378573.0</data>
-      <data key="d4">e91caje</data>
-      <data key="d5">Furt77</data>
-      <data key="d6">13.0</data>
-      <data key="d7">I'd start looking for another manager.</data>
-      <data key="d8">38.0</data>
-      <data key="d9">5.167</data>
-      <data key="d10">I'd start looking for another manager.</data>
-      <data key="d11">48.47</data>
-      <data key="d12">I'd start looking for another manager.</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">0.0587</data>
-    </node>
-    <node id="c173">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90ukmq</data>
-      <data key="d3">1541349893.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">Hendursag</data>
-      <data key="d6">1505.0</data>
-      <data key="d7">You are in the right state.  Because of a history of child stars being exploited by their parents, California law makes clear that earnings by minors in the entertainment industry are the property of the minor, not their parents. Since a minor cannot legally control their own money, California Law governs their earnings and creates a fiduciary relationship between the parent and the child. California law also requires that 15% of all minors’ earnings must be set aside in a blocked trust account commonly known as a Coogan Account.
-
-Please contact SAG-AFTRA Young Performers Committee or your agent, and they should hook you up with an attorney.</data>
-      <data key="d8">649.0</data>
-      <data key="d9">7.162</data>
-      <data key="d10">You are in the right state.  Because of a history of child stars being exploited by their parents, California law makes clear that earnings by minors in the entertainment industry are the property of the minor, not their parents. Since a minor cannot legally control their own money, California Law governs their earnings and creates a fiduciary relationship between the parent and the child. California law also requires that 15% of all minors’ earnings must be set aside in a blocked trust account commonly known as a Coogan Account.
-
-Please contact SAG-AFTRA Young Performers Committee or your agent, and they should hook you up with an attorney.</data>
-      <data key="d11">49.75</data>
-      <data key="d16">0.2315</data>
-      <data key="d13">Positive</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c174">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90rj94</data>
-      <data key="d3">1541343277.0</data>
-      <data key="d4">e90riko</data>
-      <data key="d5">SeekingAdvice43562</data>
-      <data key="d6">10.0</data>
-      <data key="d7">Ah. Sorry for snapping :(</data>
-      <data key="d8">25.0</data>
-      <data key="d9">4.5</data>
-      <data key="d10">Ah. Sorry for snapping :(</data>
-      <data key="d11">50.5</data>
-      <data key="d16">-0.247</data>
-      <data key="d13">Negative</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9hugzy</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1020.7778</data>
+      <data key="d7">1541961460.0556</data>
+      <data key="d8" />
+      <data key="d9">296.2778</data>
+      <data key="d10">5.6162</data>
+      <data key="d11">0.0159</data>
+      <data key="d12">62.9531</data>
+      <data key="d13">-0.0724</data>
       <data key="d14">Negative</data>
+      <data key="d15">0.3827</data>
     </node>
-    <node id="c175">
+    <node id="c246">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91gnea</data>
-      <data key="d3">1541379129.0</data>
-      <data key="d4">e91cq32</data>
-      <data key="d5">Jeriyka</data>
-      <data key="d6">3.0</data>
-      <data key="d7">Both actresses you named were given a horrifying threat that carried practically no weight behind it in the large scheme of continuing to work. This is a perfect example of people being afraid of their jobs by narcissistic entities to keep them in control. An IMDB Search of both women will show you that they were clearly not blackballed from the industry. Yes, the industry is toxic. Yes, the industry is actually too big for one man to control your entire career.
-
-But we are currently off the topic of how the manager is offering an empty threat to a minor. The minor can get a new manager. </data>
-      <data key="d8">595.0</data>
-      <data key="d9">6.276</data>
-      <data key="d10">Both actresses you named were given a horrifying threat that carried practically no weight behind it in the large scheme of continuing to work. This is a perfect example of people being afraid of their jobs by narcissistic entities to keep them in control. An IMDB Search of both women will show you that they were clearly not blackballed from the industry. Yes, the industry is toxic. Yes, the industry is actually too big for one man to control your entire career.
-
-But we are currently off the topic of how the manager is offering an empty threat to a minor. The minor can get a new manager. </data>
-      <data key="d11">64.3</data>
-      <data key="d16">0.0211</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">Neutral</data>
-    </node>
-    <node id="c176">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e914jsy</data>
-      <data key="d3">1541367447.5</data>
-      <data key="d4">e913hdd</data>
-      <data key="d5">Jeriyka</data>
-      <data key="d6">24.5</data>
-      <data key="d7">Getting blackballed in Hollywood is the ever present myth that’s simply not true. There are too many jobs, agencies, casting directors, cities to work in, and studios. Anyone who threatens being blackballed isn’t looking at the larger picture and it’s used as a psychological tool to keep people afraid for their jobs, but it’s unrealistic. OP- please do not add this worry onto your shoulders, it’s not true.
-
-Edit: I forgot the casting directors. You can’t forget about them. </data>
-      <data key="d8">635.0</data>
-      <data key="d9">5.8235</data>
-      <data key="d10">Getting blackballed in Hollywood is the ever present myth that’s simply not true. There are too many jobs, agencies, casting directors, cities to work in, and studios. Anyone who threatens being blackballed isn’t looking at the larger picture and it’s used as a psychological tool to keep people afraid for their jobs, but it’s unrealistic. OP- please do not add this worry onto your shoulders, it’s not true.
-
-Edit: I forgot the casting directors. You can’t forget about them. </data>
-      <data key="d11">67.775</data>
-      <data key="d16">-0.03580000000000001</data>
-      <data key="d13">Negative</data>
-      <data key="d17">0.6973</data>
-    </node>
-    <node id="c177">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e9133ay</data>
-      <data key="d3">1541366267.0</data>
-      <data key="d4">e90xuet</data>
-      <data key="d5">LadyEmry</data>
-      <data key="d6">13.0</data>
-      <data key="d7">Adding onto this, once you've made a new account see if you can change your old payment details so your future pay is put into the right account. I know your Manager isn't being helpful right now, but perhaps you can talk to them about changing this and they may help?</data>
-      <data key="d8">268.0</data>
-      <data key="d9">4.818</data>
-      <data key="d10">Adding onto this, once you've made a new account see if you can change your old payment details so your future pay is put into the right account. I know your Manager isn't being helpful right now, but perhaps you can talk to them about changing this and they may help?</data>
-      <data key="d11">70.97</data>
-      <data key="d16">0.1343</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.0514</data>
-    </node>
-    <node id="c178">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91fkbc</data>
-      <data key="d3">1541378277.0</data>
-      <data key="d4">e91ef2v</data>
-      <data key="d5">Jeriyka</data>
-      <data key="d6">17.0</data>
-      <data key="d7">I’m sorry, I don’t understand your response and maybe that’s because IANAL.
-
-I know when I hire a minor on my set, it is illegal for me to hire that child without a Coogan Bank account on file with our accounting department.
-
-Edit: we literally can’t hire a child without it.</data>
-      <data key="d8">275.0</data>
-      <data key="d9">5.047</data>
-      <data key="d10">I’m sorry, I don’t understand your response and maybe that’s because IANAL.
-
-I know when I hire a minor on my set, it is illegal for me to hire that child without a Coogan Bank account on file with our accounting department.
-
-Edit: we literally can’t hire a child without it.</data>
-      <data key="d11">71.14</data>
-      <data key="d16">-0.2115</data>
-      <data key="d13">Negative</data>
-      <data key="d17">0.0248</data>
-    </node>
-    <node id="c179">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90wlzh</data>
-      <data key="d3">1541354600.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">seagoingcook</data>
-      <data key="d6">137.0</data>
-      <data key="d7">Coogans Law protects you from this. You might want to check this out;  http://aminorconsideration.org</data>
-      <data key="d8">101.0</data>
-      <data key="d9">6.75</data>
-      <data key="d10">Coogans Law protects you from this. You might want to check this out;  http://aminorconsideration.org</data>
-      <data key="d11">72.83</data>
-      <data key="d16">0.1977</data>
-      <data key="d13">Positive</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c180">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e916l4d</data>
-      <data key="d3">1541370391.0</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">Jeriyka</data>
-      <data key="d6">474.0</data>
-      <data key="d7">If OP is currently on a job, there is a SAG rep specifically assigned to the show. If I was OP’s 2nd AD (often the point of contact for actors on a job), I would be more than happy to share the SAG reps name and number.
-
-Also, the minor in California has a tutor assigned to them that are supposed to act as constant reps for them on set as well, and has quick access to SAG and the contract. As long as this person isn’t in your parent’s pocket, the tutor would be the first person I might turn to, to be lead in the correct direction.
-
-Edit: IANAL but I’m a 2nd Assistant Director. I’m responding because your legal advice is the most direct and responsible comment out of everything here. I’m adding ways to get in contact with SAG if the minor is currently on set as there are people already on set supposed to be watching out for their welfare.</data>
-      <data key="d8">849.0</data>
-      <data key="d9">7.021</data>
-      <data key="d10">If OP is currently on a job, there is a SAG rep specifically assigned to the show. If I was OP’s 2nd AD (often the point of contact for actors on a job), I would be more than happy to share the SAG reps name and number.
-
-Also, the minor in California has a tutor assigned to them that are supposed to act as constant reps for them on set as well, and has quick access to SAG and the contract. As long as this person isn’t in your parent’s pocket, the tutor would be the first person I might turn to, to be lead in the correct direction.
-
-Edit: IANAL but I’m a 2nd Assistant Director. I’m responding because your legal advice is the most direct and responsible comment out of everything here. I’m adding ways to get in contact with SAG if the minor is currently on set as there are people already on set supposed to be watching out for their welfare.</data>
-      <data key="d11">72.9</data>
-      <data key="d16">0.2143</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.128</data>
-    </node>
-    <node id="c181">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e910wy5</data>
-      <data key="d3">1541363226.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">afraid_of_toasters87</data>
-      <data key="d6">83.0</data>
-      <data key="d7">You should also change your manager.</data>
-      <data key="d8">36.0</data>
-      <data key="d9">5.0</data>
-      <data key="d10">You should also change your manager.</data>
-      <data key="d11">73.85</data>
-      <data key="d12">You should also change your manager.</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c182">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91bcr2</data>
-      <data key="d3">1541374786.0</data>
-      <data key="d4">e90rc0r</data>
-      <data key="d5">TaneCorbinYall</data>
-      <data key="d6">29.0</data>
-      <data key="d7">Seek out a lawyer who has experience with this. An entertainment lawyer or one who does estates and trusts will probably be a good bet. Go through SAG first if you can, they'll be able to hook you up with someone who does exactly this kind of thing. The lawyer will be happy to work for some of the money that you'll be getting back from your father so it's ok that you don't have any money now.
-
-After you get the money back, you should look into emancipation. Then your parents will have no rights to any of your new accounts, records, property, etc. It shouldn't be that hard as long as you're making enough to support yourself. If you don't make a ton, getting a side gig for when you're not working would be a good idea too.
-
-Finally, put some of your money in a trust that pays it out to your steadily over a long period of time, or that you can't touch for a long time. You have no idea if you'll still be acting at 26 and you might want to go to college or something. Also real estate in CA is nuts expensive, it's nice to be able to afford a house especially when you want kids and need the room, maybe around age 36. What I'm saying is 16 year olds don't have as many expensive needs as older people so saving the majority of your money (after your basic living expenses) is the smart move. Or at the very least, a trust that pays you out steadily will prevent you from going broke if you're between jobs for too long or have unexpected expenses.</data>
-      <data key="d8">1456.0</data>
-      <data key="d9">7.256</data>
-      <data key="d10">Seek out a lawyer who has experience with this. An entertainment lawyer or one who does estates and trusts will probably be a good bet. Go through SAG first if you can, they'll be able to hook you up with someone who does exactly this kind of thing. The lawyer will be happy to work for some of the money that you'll be getting back from your father so it's ok that you don't have any money now.
-
-After you get the money back, you should look into emancipation. Then your parents will have no rights to any of your new accounts, records, property, etc. It shouldn't be that hard as long as you're making enough to support yourself. If you don't make a ton, getting a side gig for when you're not working would be a good idea too.
-
-Finally, put some of your money in a trust that pays it out to your steadily over a long period of time, or that you can't touch for a long time. You have no idea if you'll still be acting at 26 and you might want to go to college or something. Also real estate in CA is nuts expensive, it's nice to be able to afford a house especially when you want kids and need the room, maybe around age 36. What I'm saying is 16 year olds don't have as many expensive needs as older people so saving the majority of your money (after your basic living expenses) is the smart move. Or at the very least, a trust that pays you out steadily will prevent you from going broke if you're between jobs for too long or have unexpected expenses.</data>
-      <data key="d11">74.73</data>
-      <data key="d16">0.2712</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.035</data>
-    </node>
-    <node id="c183">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e919u5s</data>
-      <data key="d3">1541374334.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">Cyberyukon</data>
-      <data key="d6">31.0</data>
-      <data key="d7">Definitely contact the SAG-AFTRA reps mentioned above. You can look at options. Don’t commit to anything until you have evaluated all of your options. Find someone else in the industry who you can confide to and can give you advice. 
-
-When you can, down the road, consider putting your money into the markets. Resist the temptation to buy toys. Okay—some toys. Here’s to a long career of Meisner-loving success, but also come up with a “Plan B,” or, as I call it, college. The transition from child star to adult star is notoriously difficult.
-
-And also remember: the rest of the world doesn’t run the way Hollywood does. Happy to read this and get the sense that you have both feet on the ground. Please don’t let the lure of the Hollywood sign push you off balance. At 17. 18. 20. Etc. </data>
-      <data key="d8">716.0</data>
-      <data key="d9">5.6385000000000005</data>
-      <data key="d10">Definitely contact the SAG-AFTRA reps mentioned above. You can look at options. Don’t commit to anything until you have evaluated all of your options. Find someone else in the industry who you can confide to and can give you advice. 
-
-When you can, down the road, consider putting your money into the markets. Resist the temptation to buy toys. Okay—some toys. Here’s to a long career of Meisner-loving success, but also come up with a “Plan B,” or, as I call it, college. The transition from child star to adult star is notoriously difficult.
-
-And also remember: the rest of the world doesn’t run the way Hollywood does. Happy to read this and get the sense that you have both feet on the ground. Please don’t let the lure of the Hollywood sign push you off balance. At 17. 18. 20. Etc. </data>
-      <data key="d11">75.93</data>
-      <data key="d16">0.03045</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.53635</data>
-    </node>
-    <node id="c184">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91a7m0</data>
-      <data key="d3">1541373801.0</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">thesweetestpunch</data>
-      <data key="d6">96.0</data>
-      <data key="d7">California takes care of its child actors. Good laws!</data>
-      <data key="d8">53.0</data>
-      <data key="d9">4.778</data>
-      <data key="d10">California takes care of its child actors. Good laws!</data>
-      <data key="d11">79.26</data>
-      <data key="d16">0.4932</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.2041</data>
-    </node>
-    <node id="c185">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91caje</data>
-      <data key="d3">1541375577.0</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">highpriestesstea</data>
-      <data key="d6">56.0</data>
-      <data key="d7">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
-
-Are there other resources OP could use to find an attorney?
-
-ETA grammar...</data>
-      <data key="d8">193.0</data>
-      <data key="d9">5.556</data>
-      <data key="d10">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
-
-Are there other resources OP could use to find an attorney?
-
-ETA grammar...</data>
-      <data key="d11">79.97</data>
-      <data key="d16">0.1277</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.0257</data>
-    </node>
-    <node id="c186">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90rabu</data>
-      <data key="d3">1541342816.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">Dirtyzest</data>
-      <data key="d6">90.0</data>
-      <data key="d7">Sorry but these are quite important, how old are you and which state are you in? </data>
-      <data key="d8">81.0</data>
-      <data key="d9">4.846</data>
-      <data key="d10">Sorry but these are quite important, how old are you and which state are you in? </data>
-      <data key="d11">80.62</data>
-      <data key="d16">0.359</data>
-      <data key="d13">Positive</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c187">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91c286</data>
-      <data key="d3">1541375385.0</data>
-      <data key="d4">e91a0xl</data>
-      <data key="d5">AllyGLovesYou</data>
-      <data key="d6">3.0</data>
-      <data key="d7">There are laws specifically for child actors. They have a certain length of time a day that they can work. They must have a tutor so that they can have an education and more. Because of these laws you get stars like the Olsen Twins and the Sprouse twins. It's cheaper and easier to hire identical twins to play one character for when one kid's time runs out they have the second one to take over and continue filming. </data>
-      <data key="d8">418.0</data>
-      <data key="d9">6.264</data>
-      <data key="d10">There are laws specifically for child actors. They have a certain length of time a day that they can work. They must have a tutor so that they can have an education and more. Because of these laws you get stars like the Olsen Twins and the Sprouse twins. It's cheaper and easier to hire identical twins to play one character for when one kid's time runs out they have the second one to take over and continue filming. </data>
-      <data key="d11">80.82</data>
-      <data key="d16">0.2543</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.0476</data>
-    </node>
-    <node id="c188">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91fn1d</data>
-      <data key="d3">1541378337.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">RinellaWasHere</data>
-      <data key="d6">15.0</data>
-      <data key="d7">Hey man, I'm not a lawyer but I'm in the industry too. Whatever project you're on right now is gonna have a special SAG representative, and they need to be your first phone call. Your directors should have the number if you don't. They can help with your current income, and likely help you contact a lawyer for income from past projects.
-
-Ask them about the Coogan Act. It's a California law specifically designed for this, since this is far from the first time it's happened. Your best bet here is being informed– your father, if he knows about this, is likely riding on the assumption that you *don't* and won't have the tools to fight back.
-
-Break a leg, kid.</data>
-      <data key="d8">663.0</data>
-      <data key="d9">6.217</data>
-      <data key="d10">Hey man, I'm not a lawyer but I'm in the industry too. Whatever project you're on right now is gonna have a special SAG representative, and they need to be your first phone call. Your directors should have the number if you don't. They can help with your current income, and likely help you contact a lawyer for income from past projects.
-
-Ask them about the Coogan Act. It's a California law specifically designed for this, since this is far from the first time it's happened. Your best bet here is being informed– your father, if he knows about this, is likely riding on the assumption that you *don't* and won't have the tools to fight back.
-
-Break a leg, kid.</data>
-      <data key="d11">81.53</data>
-      <data key="d16">0.1901</data>
-      <data key="d13">Positive</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c189">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91c286</data>
-      <data key="d3">1541374515.0</data>
-      <data key="d4">e91a0xl</data>
-      <data key="d5">AllyGLovesYou</data>
-      <data key="d6">2.5</data>
-      <data key="d7">There are laws specifically for child actors. They have a certain length of time a day that they can work. They must have a tutor so that they can have an education and more. Because of these laws you get stars like the Olsen Twins and the Sprouse twins. It's cheaper and easier to hire identical twins to play one character for when one kid's time runs out they have the second one to take over and continue filming. </data>
-      <data key="d8">446.0</data>
-      <data key="d9">5.9455</data>
-      <data key="d10">There are laws specifically for child actors. They have a certain length of time a day that they can work. They must have a tutor so that they can have an education and more. Because of these laws you get stars like the Olsen Twins and the Sprouse twins. It's cheaper and easier to hire identical twins to play one character for when one kid's time runs out they have the second one to take over and continue filming. </data>
-      <data key="d11">83.35499999999999</data>
-      <data key="d16">0.18710000000000002</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.5238</data>
-    </node>
-    <node id="c190">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90uwh5</data>
-      <data key="d3">1541350694.0</data>
-      <data key="d4">e90rc0r</data>
-      <data key="d5">MrBison123</data>
-      <data key="d6">129.0</data>
-      <data key="d7">California has really good laws against this.
-
-Get your own lawyer ASAP.</data>
-      <data key="d8">72.0</data>
-      <data key="d9">4.833</data>
-      <data key="d10">California has really good laws against this.
-
-Get your own lawyer ASAP.</data>
-      <data key="d11">82.31</data>
-      <data key="d16">0.2464</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.087</data>
-    </node>
-    <node id="c191">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e915lm5</data>
-      <data key="d3">1541369347.0</data>
-      <data key="d4">e90wlzh</data>
-      <data key="d5">Thompson_S_Sweetback</data>
-      <data key="d6">60.0</data>
-      <data key="d7">Coogans law makes it illegal, but it can't protect you once the money is already gone. It's important for OP to get his own lawyer asap.</data>
-      <data key="d8">136.0</data>
-      <data key="d9">4.24</data>
-      <data key="d10">Coogans law makes it illegal, but it can't protect you once the money is already gone. It's important for OP to get his own lawyer asap.</data>
-      <data key="d11">83.66</data>
-      <data key="d16">-0.2098</data>
-      <data key="d13">Negative</data>
-      <data key="d17">0.1471</data>
-    </node>
-    <node id="c192">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91h5i1</data>
-      <data key="d3">1541379516.0</data>
-      <data key="d4">e91a7m0</data>
-      <data key="d5">DailyCloserToDeath</data>
-      <data key="d6">4.0</data>
-      <data key="d7">On the one hand, yes.
-
-On the other hand....
-
-(Commentary on the observation.)</data>
-      <data key="d8">78.0</data>
-      <data key="d9">6.875</data>
-      <data key="d10">On the one hand, yes.
-
-On the other hand....
-
-(Commentary on the observation.)</data>
-      <data key="d11">84.03</data>
-      <data key="d16">0.3548</data>
-      <data key="d13">Positive</data>
-      <data key="d14">Positive</data>
-    </node>
-    <node id="c193">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91ef2v</data>
-      <data key="d3">1541377351.0</data>
-      <data key="d4">e91751s</data>
-      <data key="d5">Thompson_S_Sweetback</data>
-      <data key="d6">18.0</data>
-      <data key="d7">That's assuming it's being complied with. There's a number of reasons why it could not be that a lawyer who specializes in it would know.</data>
-      <data key="d8">137.0</data>
-      <data key="d9">4.696</data>
-      <data key="d10">That's assuming it's being complied with. There's a number of reasons why it could not be that a lawyer who specializes in it would know.</data>
-      <data key="d11">84.17</data>
-      <data key="d16">0.0386</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">Neutral</data>
-    </node>
-    <node id="c194">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91g7y1</data>
-      <data key="d3">1541378787.0</data>
-      <data key="d4">e91fkbc</data>
-      <data key="d5">Thompson_S_Sweetback</data>
-      <data key="d15">Thompson_S_Sweetback</data>
-      <data key="d7">Oh, OK. I thought maybe it only triggered over a certain amount.</data>
-      <data key="d8">64.0</data>
-      <data key="d9">4.167</data>
-      <data key="d10">Oh, OK. I thought maybe it only triggered over a certain amount.</data>
-      <data key="d11">84.68</data>
-      <data key="d16">0.5106</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.0266</data>
-    </node>
-    <node id="c195">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90ysfk</data>
-      <data key="d3">1541359348.0</data>
-      <data key="d4">e90xuet</data>
-      <data key="d5">Sutaru</data>
-      <data key="d6">25.0</data>
-      <data key="d7">It sounds like their dad already drained and closed that account </data>
-      <data key="d8">65.0</data>
-      <data key="d9">4.909</data>
-      <data key="d10">It sounds like their dad already drained and closed that account </data>
-      <data key="d11">85.69</data>
-      <data key="d12">It sounds like their dad already drained and closed that account </data>
-      <data key="d13">Neutral</data>
-      <data key="d17">0.0561</data>
-    </node>
-    <node id="c196">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91ef2v</data>
-      <data key="d3">1541374143.5</data>
-      <data key="d4">e91751s</data>
-      <data key="d5">Thompson_S_Sweetback</data>
-      <data key="d6">31.0</data>
-      <data key="d7">That's assuming it's being complied with. There's a number of reasons why it could not be that a lawyer who specializes in it would know.</data>
-      <data key="d8">245.0</data>
-      <data key="d9">5.202</data>
-      <data key="d10">That's assuming it's being complied with. There's a number of reasons why it could not be that a lawyer who specializes in it would know.</data>
-      <data key="d11">85.965</data>
-      <data key="d16">0.09595</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">0.044</data>
-    </node>
-    <node id="c197">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90ysfk</data>
-      <data key="d3">1541359398.0</data>
-      <data key="d4">e90xuet</data>
-      <data key="d5">Sutaru</data>
-      <data key="d6">24.5</data>
-      <data key="d7">It sounds like their dad already drained and closed that account </data>
-      <data key="d8">111.5</data>
-      <data key="d9">4.8774999999999995</data>
-      <data key="d10">It sounds like their dad already drained and closed that account </data>
-      <data key="d11">86.35</data>
-      <data key="d16">0.17955</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">0.07925</data>
-    </node>
-    <node id="c198">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91a0xl</data>
-      <data key="d3">1541373645.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">blandnormality</data>
-      <data key="d6">2.0</data>
-      <data key="d7">This is child labor. Imo, why the us govt is one of two countries that have not signed the UN Declaration on the Rights of a Child. The entertainment industry is horrible. Sorry you are dealing with this. You're already grown up faster than you should but now you're really growing up quickly. Good luck finding a great lawyer. And maybe a former child actor can help guide you a bit, while understanding that things need to be quiet. Many have sadly dealt with same issues.</data>
-      <data key="d8">474.0</data>
-      <data key="d9">5.627</data>
-      <data key="d10">This is child labor. Imo, why the us govt is one of two countries that have not signed the UN Declaration on the Rights of a Child. The entertainment industry is horrible. Sorry you are dealing with this. You're already grown up faster than you should but now you're really growing up quickly. Good luck finding a great lawyer. And maybe a former child actor can help guide you a bit, while understanding that things need to be quiet. Many have sadly dealt with same issues.</data>
-      <data key="d11">85.89</data>
-      <data key="d16">0.1199</data>
-      <data key="d13">Positive</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c199">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91hx1q</data>
-      <data key="d3">1541380112.0</data>
-      <data key="d4">e91fn1d</data>
-      <data key="d5">amazonallie</data>
-      <data key="d6">2.0</data>
-      <data key="d7">I was wondering who would bring up the Coogan Act.
-
-This seems to be a direct violation of this.</data>
-      <data key="d8">96.0</data>
-      <data key="d9">4.167</data>
-      <data key="d10">I was wondering who would bring up the Coogan Act.
-
-This seems to be a direct violation of this.</data>
-      <data key="d11">87.21</data>
-      <data key="d16">-0.247</data>
-      <data key="d13">Negative</data>
-      <data key="d17">0.1677</data>
-    </node>
-    <node id="c200">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e919740</data>
-      <data key="d3">1541372920.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">_momentumisyourvenom</data>
-      <data key="d6">-16.0</data>
-      <data key="d7">Worst case scenario, your parents spend/control your money until you turn 18. I hope you find success in getting all of this sorted out but what may be best for your career and your home life is to just go with the flow until you turn 18.
-If your parents are smart, they won't bite the hand that will eventually feed them.
-
-Sorry for the less than helpful advice. Best of luck.
-
-Edit: I should say I agree with everyone else that you should talk to a lawyer and not take this lying down. If it turns out that its gonna be a nast legal battle and put your career at risk, THEN go with the flow.</data>
-      <data key="d8">593.0</data>
-      <data key="d9">5.634</data>
-      <data key="d10">Worst case scenario, your parents spend/control your money until you turn 18. I hope you find success in getting all of this sorted out but what may be best for your career and your home life is to just go with the flow until you turn 18.
-If your parents are smart, they won't bite the hand that will eventually feed them.
-
-Sorry for the less than helpful advice. Best of luck.
-
-Edit: I should say I agree with everyone else that you should talk to a lawyer and not take this lying down. If it turns out that its gonna be a nast legal battle and put your career at risk, THEN go with the flow.</data>
-      <data key="d11">88.36</data>
-      <data key="d16">0.2146</data>
-      <data key="d13">Positive</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c201">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91751s</data>
-      <data key="d3">1541370936.0</data>
-      <data key="d4">e915lm5</data>
-      <data key="d5">Jeriyka</data>
-      <data key="d6">44.0</data>
-      <data key="d7">Coogans law makes the guardian open a trust for the minor and 15% of the earnings gets stashed away. This money can not be touched or moved into other accounts until the minor is 18 (it can be moved to “like” accounts though).
-
-It sounds like the 15% of the earnings are not the earnings that are at risk here. It’s the 85% of the rest of the paycheck. </data>
-      <data key="d8">353.0</data>
-      <data key="d9">5.708</data>
-      <data key="d10">Coogans law makes the guardian open a trust for the minor and 15% of the earnings gets stashed away. This money can not be touched or moved into other accounts until the minor is 18 (it can be moved to “like” accounts though).
-
-It sounds like the 15% of the earnings are not the earnings that are at risk here. It’s the 85% of the rest of the paycheck. </data>
-      <data key="d11">87.76</data>
-      <data key="d16">0.1533</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.088</data>
-    </node>
-    <node id="c202">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e919740</data>
-      <data key="d3">1541373189.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">_momentumisyourvenom</data>
-      <data key="d6">-6.5</data>
-      <data key="d7">Worst case scenario, your parents spend/control your money until you turn 18. I hope you find success in getting all of this sorted out but what may be best for your career and your home life is to just go with the flow until you turn 18.
-If your parents are smart, they won't bite the hand that will eventually feed them.
-
-Sorry for the less than helpful advice. Best of luck.
-
-Edit: I should say I agree with everyone else that you should talk to a lawyer and not take this lying down. If it turns out that its gonna be a nast legal battle and put your career at risk, THEN go with the flow.</data>
-      <data key="d8">350.0</data>
-      <data key="d9">5.0275</data>
-      <data key="d10">Worst case scenario, your parents spend/control your money until you turn 18. I hope you find success in getting all of this sorted out but what may be best for your career and your home life is to just go with the flow until you turn 18.
-If your parents are smart, they won't bite the hand that will eventually feed them.
-
-Sorry for the less than helpful advice. Best of luck.
-
-Edit: I should say I agree with everyone else that you should talk to a lawyer and not take this lying down. If it turns out that its gonna be a nast legal battle and put your career at risk, THEN go with the flow.</data>
-      <data key="d11">91.50999999999999</data>
-      <data key="d16">-0.03409999999999999</data>
-      <data key="d13">Positive</data>
-      <data key="d17">0.57735</data>
-    </node>
-    <node id="c203">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91gy2k</data>
-      <data key="d3">1541379361.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">BreakinLiberty</data>
-      <data key="d6">-8.0</data>
-      <data key="d7">What shows have you starred in? Interested in checking out lol
-Or do you sing? 
-</data>
-      <data key="d8">80.0</data>
-      <data key="d9">4.769</data>
-      <data key="d10">What shows have you starred in? Interested in checking out lol
-Or do you sing? 
-</data>
-      <data key="d11">89.24</data>
-      <data key="d16">0.3352</data>
-      <data key="d13">Positive</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c204">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90riay</data>
-      <data key="d3">1541343225.0</data>
-      <data key="d4">e90rgep</data>
-      <data key="d5">SeekingAdvice43562</data>
-      <data key="d6">19.0</data>
-      <data key="d7">I'm sorry this is funny to you</data>
-      <data key="d8">30.0</data>
-      <data key="d9">3.286</data>
-      <data key="d10">I'm sorry this is funny to you</data>
-      <data key="d11">89.75</data>
-      <data key="d16">0.3818</data>
-      <data key="d13">Positive</data>
-      <data key="d14">Positive</data>
-    </node>
-    <node id="c205">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90xuet</data>
-      <data key="d3">1541357352.0</data>
-      <data key="d4">9u1i15</data>
-      <data key="d5">kcihtred2</data>
-      <data key="d6">55.0</data>
-      <data key="d7">In addition to the other good advice about child actor laws and lawyers... Get your own account without his name on it. Pull any money from the one with your parents name in it over to your own.</data>
-      <data key="d8">194.0</data>
-      <data key="d9">5.067</data>
-      <data key="d10">In addition to the other good advice about child actor laws and lawyers... Get your own account without his name on it. Pull any money from the one with your parents name in it over to your own.</data>
-      <data key="d11">92.42</data>
-      <data key="d16">0.2202</data>
-      <data key="d13">Positive</data>
-      <data key="d17">1.0</data>
-    </node>
-    <node id="c206">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91fz9a</data>
-      <data key="d3">1541378596.0</data>
-      <data key="d4">e91a7m0</data>
-      <data key="d5">vivaenmiriana</data>
-      <data key="d6">19.0</data>
-      <data key="d7">thanks jackie coogan!</data>
-      <data key="d8">21.0</data>
-      <data key="d9">6.0</data>
-      <data key="d10">thanks jackie coogan!</data>
-      <data key="d11">93.81</data>
-      <data key="d16">0.4926</data>
-      <data key="d13">Positive</data>
-      <data key="d14">Positive</data>
-    </node>
-    <node id="c207">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e919t5y</data>
-      <data key="d3">1541373458.0</data>
-      <data key="d4">e919740</data>
-      <data key="d5">andycohens</data>
-      <data key="d6">3.0</data>
-      <data key="d7">Sounds like the parents would put a stop to the career. Op probably knows this esp if they are this nasty. </data>
-      <data key="d8">107.0</data>
-      <data key="d9">4.421</data>
-      <data key="d10">Sounds like the parents would put a stop to the career. Op probably knows this esp if they are this nasty. </data>
-      <data key="d11">94.66</data>
-      <data key="d16">-0.2828</data>
-      <data key="d13">Negative</data>
-      <data key="d17">0.1547</data>
-    </node>
-    <node id="c208">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91hpui</data>
-      <data key="d3">1541379950.0</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">Insectshelf3</data>
-      <data key="d6">1.0</data>
-      <data key="d7">Oh man you’re right. He couldn’t be in a better state to fight this. </data>
-      <data key="d8">69.0</data>
-      <data key="d9">3.118</data>
-      <data key="d10">Oh man you’re right. He couldn’t be in a better state to fight this. </data>
-      <data key="d11">98.21</data>
-      <data key="d16">0.0386</data>
-      <data key="d13">Neutral</data>
-      <data key="d17">0.0651</data>
-    </node>
-    <node id="c209">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91hhrv</data>
-      <data key="d3">1541379775.0</data>
-      <data key="d4">e91gy2k</data>
-      <data key="d5">wilmabeest</data>
-      <data key="d6">3.0</data>
-      <data key="d7">stop trying to groom her you weirdo</data>
-      <data key="d8">35.0</data>
-      <data key="d9">4.143</data>
-      <data key="d10">stop trying to groom her you weirdo</data>
-      <data key="d11">106.67</data>
-      <data key="d16">-0.6124</data>
-      <data key="d13">Negative</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9hlq4f</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1015.4727</data>
+      <data key="d7">1541961907.7273</data>
+      <data key="d8" />
+      <data key="d9">291.2364</data>
+      <data key="d10">5.6111</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">62.4375</data>
+      <data key="d13">-0.0711</data>
       <data key="d14">Negative</data>
+      <data key="d15">0.3758</data>
     </node>
-    <node id="c210">
+    <node id="c247">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91hy02</data>
-      <data key="d3">1541380134.0</data>
-      <data key="d4">e913hdd</data>
-      <data key="d5">amazonallie</data>
-      <data key="d6">1.0</data>
-      <data key="d7">Coogan Act.</data>
-      <data key="d8">11.0</data>
-      <data key="d9">4.5</data>
-      <data key="d10">Coogan Act.</data>
-      <data key="d11">120.21</data>
-      <data key="d12">Coogan Act.</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">Neutral</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gp421</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1109.4545</data>
+      <data key="d7">1541961050.9818</data>
+      <data key="d8" />
+      <data key="d9">293.1273</data>
+      <data key="d10">5.5963</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.4927</data>
+      <data key="d13">-0.0729</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3791</data>
     </node>
-    <edge source="c187" target="c189">
-      <data key="d18">READINGLEVEL</data>
+    <node id="c248">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9ghc7l</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1002.3818</data>
+      <data key="d7">1541960892.1091</data>
+      <data key="d8" />
+      <data key="d9">292.0182</data>
+      <data key="d10">5.605</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.0775</data>
+      <data key="d13">-0.077</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3758</data>
+    </node>
+    <node id="c249">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gnn4j</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1000.9273</data>
+      <data key="d7">1541961023.8727</data>
+      <data key="d8" />
+      <data key="d9">321.0182</data>
+      <data key="d10">5.6465</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.1353</data>
+      <data key="d13">-0.074</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3774</data>
+    </node>
+    <node id="c250">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gqc3b</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1003.2182</data>
+      <data key="d7">1541961096.2364</data>
+      <data key="d8" />
+      <data key="d9">291.9636</data>
+      <data key="d10">5.6014</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">62.9236</data>
+      <data key="d13">-0.0642</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3768</data>
+    </node>
+    <node id="c251">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9hizuo</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1020.8545</data>
+      <data key="d7">1541961931.2182</data>
+      <data key="d8" />
+      <data key="d9">292.9455</data>
+      <data key="d10">5.5959</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.3175</data>
+      <data key="d13">-0.0765</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3758</data>
+    </node>
+    <node id="c252">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gstwz</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1002.8182</data>
+      <data key="d7">1541961111.8</data>
+      <data key="d8" />
+      <data key="d9">293.3273</data>
+      <data key="d10">5.6184</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.0589</data>
+      <data key="d13">-0.0655</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3802</data>
+    </node>
+    <node id="c253">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gkmsw</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1013.2364</data>
+      <data key="d7">1541961104.2727</data>
+      <data key="d8" />
+      <data key="d9">292.9455</data>
+      <data key="d10">5.6164</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.2313</data>
+      <data key="d13">-0.0711</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.377</data>
+    </node>
+    <node id="c254">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9go6c2</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1001.0545</data>
+      <data key="d7">1541961016.0182</data>
+      <data key="d8" />
+      <data key="d9">298.5818</data>
+      <data key="d10">5.6196</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.0558</data>
+      <data key="d13">-0.0705</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3797</data>
+    </node>
+    <node id="c255">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9grt4j</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1004.4727</data>
+      <data key="d7">1541961092.8182</data>
+      <data key="d8" />
+      <data key="d9">292.7818</data>
+      <data key="d10">5.6271</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">62.0807</data>
+      <data key="d13">-0.0678</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3771</data>
+    </node>
+    <node id="c256">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9ghfms</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1049.4</data>
+      <data key="d7">1541960893.8</data>
+      <data key="d8" />
+      <data key="d9">293.3818</data>
+      <data key="d10">5.5974</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.0898</data>
+      <data key="d13">-0.0688</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.379</data>
+    </node>
+    <node id="c257">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9hukgy</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1002.4909</data>
+      <data key="d7">1541961950.3818</data>
+      <data key="d8" />
+      <data key="d9">291.2545</data>
+      <data key="d10">5.5823</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.1882</data>
+      <data key="d13">-0.0711</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3758</data>
+    </node>
+    <node id="c258">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9ht11l</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1002.4545</data>
+      <data key="d7">1541961929.7636</data>
+      <data key="d8" />
+      <data key="d9">294.4182</data>
+      <data key="d10">5.6044</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">62.9389</data>
+      <data key="d13">-0.0665</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3766</data>
+    </node>
+    <node id="c259">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gl3m6</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1009.2727</data>
+      <data key="d7">1541961100.3636</data>
+      <data key="d8" />
+      <data key="d9">298.4909</data>
+      <data key="d10">5.611</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.3358</data>
+      <data key="d13">-0.0672</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3791</data>
+    </node>
+    <node id="c260">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gk9pz</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">1017.3091</data>
+      <data key="d7">1541960978.6</data>
+      <data key="d8" />
+      <data key="d9">293.4727</data>
+      <data key="d10">5.5934</data>
+      <data key="d11">0.0156</data>
+      <data key="d12">63.4089</data>
+      <data key="d13">-0.0735</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3846</data>
+    </node>
+    <node id="c261">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9hqmu8</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">760.9189</data>
+      <data key="d7">1541959431.2432</data>
+      <data key="d8" />
+      <data key="d9">304.2973</data>
+      <data key="d10">5.8627</data>
+      <data key="d11">0.0098</data>
+      <data key="d12">53.7724</data>
+      <data key="d13">-0.0276</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.348</data>
+    </node>
+    <node id="c262">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gex96</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">741.1316</data>
+      <data key="d7">1541958662.6053</data>
+      <data key="d8" />
+      <data key="d9">297.9211</data>
+      <data key="d10">5.84</data>
+      <data key="d11">0.0096</data>
+      <data key="d12">54.1939</data>
+      <data key="d13">-0.0354</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3388</data>
+    </node>
+    <node id="c263">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gs0q6</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">744.1579</data>
+      <data key="d7">1541958953.1053</data>
+      <data key="d8" />
+      <data key="d9">299.0263</data>
+      <data key="d10">5.8719</data>
+      <data key="d11">0.0096</data>
+      <data key="d12">52.7513</data>
+      <data key="d13">-0.0221</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3407</data>
+    </node>
+    <node id="c264">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gs61w</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">742.3421</data>
+      <data key="d7">1541958958.0526</data>
+      <data key="d8" />
+      <data key="d9">297.8421</data>
+      <data key="d10">5.8347</data>
+      <data key="d11">0.0096</data>
+      <data key="d12">53.9713</data>
+      <data key="d13">-0.0168</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3403</data>
+    </node>
+    <node id="c265">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gfdo2</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">809.1842</data>
+      <data key="d7">1541958665.0526</data>
+      <data key="d8" />
+      <data key="d9">299.8947</data>
+      <data key="d10">5.829</data>
+      <data key="d11">0.0096</data>
+      <data key="d12">54.2118</data>
+      <data key="d13">-0.0235</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3434</data>
+    </node>
+    <node id="c266">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9goluz</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">739.0263</data>
+      <data key="d7">1541958853.3158</data>
+      <data key="d8" />
+      <data key="d9">339.8947</data>
+      <data key="d10">5.9001</data>
+      <data key="d11">0.0096</data>
+      <data key="d12">54.2776</data>
+      <data key="d13">-0.0311</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3411</data>
+    </node>
+    <node id="c267">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">9vzjvh</data>
+      <data key="d4">e9gdyeb</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">741.7632</data>
+      <data key="d7">1541958980.5789</data>
+      <data key="d8" />
+      <data key="d9">299.8158</data>
+      <data key="d10">5.8594</data>
+      <data key="d11">0.0096</data>
+      <data key="d12">54.1671</data>
+      <data key="d13">-0.0188</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3452</data>
+    </node>
+    <node id="c268">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hdw69</data>
+      <data key="d4">e9hlv08</data>
+      <data key="d5">Tyko_3</data>
+      <data key="d6">402.1739</data>
+      <data key="d7">1541961199.1304</data>
+      <data key="d8" />
+      <data key="d9">254.0</data>
+      <data key="d10">5.2698</data>
+      <data key="d11">0.0024</data>
+      <data key="d12">64.3883</data>
+      <data key="d13">-0.0371</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.2896</data>
+    </node>
+    <node id="c269">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hdw69</data>
+      <data key="d4">e9gk9pz</data>
+      <data key="d5">Tyko_3</data>
+      <data key="d6">420.0</data>
+      <data key="d7">1541960106.6667</data>
+      <data key="d8" />
+      <data key="d9">249.3333</data>
+      <data key="d10">5.2319</data>
+      <data key="d11">0.0023</data>
+      <data key="d12">65.3729</data>
+      <data key="d13">-0.0411</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.2977</data>
+    </node>
+    <edge source="c245" target="c246">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c189" target="c198">
-      <data key="d18">READINGLEVEL</data>
+    <edge source="c245" target="c247">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c193" target="c196">
-      <data key="d18">READINGLEVEL</data>
+    <edge source="c245" target="c248">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c195" target="c197">
-      <data key="d18">READINGLEVEL</data>
+    <edge source="c245" target="c249">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c196" target="c201">
-      <data key="d18">READINGLEVEL</data>
+    <edge source="c245" target="c250">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c200" target="c202">
-      <data key="d18">READINGLEVEL</data>
+    <edge source="c245" target="c251">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c202" target="c207">
-      <data key="d18">READINGLEVEL</data>
+    <edge source="c245" target="c252">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c253">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c245" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c247">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c248">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c249">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c250">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c251">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c252">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c253">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c246" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c248">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c249">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c250">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c251">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c252">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c253">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c247" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c249">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c250">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c251">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c252">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c253">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c248" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c250">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c251">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c252">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c253">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c249" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c251">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c252">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c253">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c250" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c252">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c253">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c251" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c253">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c252" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c254">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c253" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c255">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c254" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c256">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c255" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c257">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c256" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c258">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c257" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c259">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c258" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c260">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c259" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c261">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c260" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c261" target="c262">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c261" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c261" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c261" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c261" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c261" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c261" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c261" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c262" target="c263">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c262" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c262" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c262" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c262" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c262" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c262" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c263" target="c264">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c263" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c263" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c263" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c263" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c263" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c264" target="c265">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c264" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c264" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c264" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c264" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c265" target="c266">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c265" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c265" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c265" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c266" target="c267">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c266" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c266" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c267" target="c268">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c267" target="c269">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c268" target="c269">
+      <data key="d16">READINGLEVEL</data>
     </edge>
   </graph>
 </graphml>

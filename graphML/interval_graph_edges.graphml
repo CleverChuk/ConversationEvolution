@@ -1,942 +1,826 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
-  <key attr.name="name" attr.type="string" for="edge" id="d17" />
-  <key attr.name="sentimentScore" attr.type="string" for="node" id="d16" />
-  <key attr.name="similarity" attr.type="string" for="node" id="d15" />
-  <key attr.name="similarity" attr.type="double" for="node" id="d14" />
-  <key attr.name="sentiment" attr.type="string" for="node" id="d13" />
-  <key attr.name="sentimentScore" attr.type="double" for="node" id="d12" />
-  <key attr.name="readingLevel" attr.type="double" for="node" id="d11" />
-  <key attr.name="quotedTextPerLength" attr.type="string" for="node" id="d10" />
-  <key attr.name="averageWordLength" attr.type="double" for="node" id="d9" />
-  <key attr.name="length" attr.type="double" for="node" id="d8" />
-  <key attr.name="body" attr.type="string" for="node" id="d7" />
+  <key attr.name="name" attr.type="string" for="edge" id="d16" />
+  <key attr.name="similarity" attr.type="double" for="node" id="d15" />
+  <key attr.name="sentiment" attr.type="string" for="node" id="d14" />
+  <key attr.name="sentimentScore" attr.type="double" for="node" id="d13" />
+  <key attr.name="readingLevel" attr.type="double" for="node" id="d12" />
+  <key attr.name="quotedTextPerLength" attr.type="double" for="node" id="d11" />
+  <key attr.name="averageWordLength" attr.type="double" for="node" id="d10" />
+  <key attr.name="length" attr.type="double" for="node" id="d9" />
+  <key attr.name="body" attr.type="string" for="node" id="d8" />
+  <key attr.name="timestamp" attr.type="double" for="node" id="d7" />
   <key attr.name="score" attr.type="double" for="node" id="d6" />
   <key attr.name="author" attr.type="string" for="node" id="d5" />
-  <key attr.name="parent_id" attr.type="string" for="node" id="d4" />
-  <key attr.name="timestamp" attr.type="double" for="node" id="d3" />
-  <key attr.name="id" attr.type="string" for="node" id="d2" />
+  <key attr.name="id" attr.type="string" for="node" id="d4" />
+  <key attr.name="parent_id" attr.type="string" for="node" id="d3" />
+  <key attr.name="article_id" attr.type="string" for="node" id="d2" />
   <key attr.name="id_0" attr.type="string" for="node" id="d1" />
   <key attr.name="name" attr.type="string" for="node" id="d0" />
-  <graph edgedefault="directed">
-    <node id="c211">
+  <graph edgedefault="undirected">
+    <node id="c270">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91gnea</data>
-      <data key="d3">1541374397.0</data>
-      <data key="d4">e91cq32</data>
-      <data key="d5">Jeriyka</data>
-      <data key="d6">13.0</data>
-      <data key="d7">Both actresses you named were given a horrifying threat that carried practically no weight behind it in the large scheme of continuing to work. This is a perfect example of people being afraid of their jobs by narcissistic entities to keep them in control. An IMDB Search of both women will show you that they were clearly not blackballed from the industry. Yes, the industry is toxic. Yes, the industry is actually too big for one man to control your entire career.
-
-But we are currently off the topic of how the manager is offering an empty threat to a minor. The minor can get a new manager. </data>
-      <data key="d8">430.6666666666667</data>
-      <data key="d9">33.474333333333334</data>
-      <data key="d10">Both actresses you named were given a horrifying threat that carried practically no weight behind it in the large scheme of continuing to work. This is a perfect example of people being afraid of their jobs by narcissistic entities to keep them in control. An IMDB Search of both women will show you that they were clearly not blackballed from the industry. Yes, the industry is toxic. Yes, the industry is actually too big for one man to control your entire career.
-
-But we are currently off the topic of how the manager is offering an empty threat to a minor. The minor can get a new manager. </data>
-      <data key="d11">-423.92</data>
-      <data key="d12">-0.06416666666666666</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">0.13153333333333334</data>
-    </node>
-    <node id="c212">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e917pn2</data>
-      <data key="d3">1541371226.0</data>
-      <data key="d4">e91760s</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">0.5</data>
-      <data key="d7">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d8">955.5</data>
-      <data key="d9">14.7075</data>
-      <data key="d10">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d11">-30.59</data>
-      <data key="d12">-0.02995</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.54155</data>
-    </node>
-    <node id="c213">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e914bcd</data>
-      <data key="d3">1541367096.0</data>
-      <data key="d4">e9135z2</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">-0.5</data>
-      <data key="d7">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d8">955.5</data>
-      <data key="d9">14.7075</data>
-      <data key="d10">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d11">-30.59</data>
-      <data key="d12">-0.02995</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.54155</data>
-    </node>
-    <node id="c214">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90wixj</data>
-      <data key="d3">1541354342.5</data>
-      <data key="d4">e90wgnq</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">-4.5</data>
-      <data key="d7">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d8">955.5</data>
-      <data key="d9">14.7075</data>
-      <data key="d10">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d11">-30.59</data>
-      <data key="d12">-0.02995</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.04155</data>
-    </node>
-    <node id="c215">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90wixj</data>
-      <data key="d3">1541351730.3333333</data>
-      <data key="d4">e90wgnq</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">251.0</data>
-      <data key="d7">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d8">766.3333333333334</data>
-      <data key="d9">12.309</data>
-      <data key="d10">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful, Off-Topic or In Poor Taste**
-
-Your comment has been removed as it is generally unhelpful, off-topic or in poor taste.  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 5](https://www.reddit.com/r/legaladvice/wiki/index#wiki_5.__comments_serving_only_to_berate_others_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d11">-7.62</data>
-      <data key="d12">0.07933333333333333</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.3610333333333333</data>
-    </node>
-    <node id="c216">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90t0eb</data>
-      <data key="d3">1541344288.3333333</data>
-      <data key="d4">e90rj94</data>
-      <data key="d5">UnIdntfdFlyngRddtr</data>
-      <data key="d6">4.666666666666667</data>
-      <data key="d7">There are laws about this exact issue. Talk to a new lawyer, your own.
-https://www.sagaftra.org/membership-benefits/young-performers/coogan-law </data>
-      <data key="d8">59.333333333333336</data>
-      <data key="d9">6.389</data>
-      <data key="d10">There are laws about this exact issue. Talk to a new lawyer, your own.
-https://www.sagaftra.org/membership-benefits/young-performers/coogan-law </data>
-      <data key="d11">39.04666666666666</data>
-      <data key="d12">-0.08233333333333333</data>
-      <data key="d13">Neutral</data>
-      <data key="d15">Neutral</data>
-    </node>
-    <node id="c217">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e9163wk</data>
-      <data key="d3">1541366558.5</data>
-      <data key="d4">e910wy5</data>
-      <data key="d5">believemeimadr</data>
-      <data key="d6">54.5</data>
-      <data key="d7">If you contractually can...</data>
-      <data key="d8">31.5</data>
-      <data key="d9">5.125</data>
-      <data key="d10">If you contractually can...</data>
-      <data key="d11">53.714999999999996</data>
-      <data key="d16">If you contractually can...</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">0.5</data>
-    </node>
-    <node id="c218">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e916l4d</data>
-      <data key="d3">1541360142.0</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">Jeriyka</data>
-      <data key="d6">989.5</data>
-      <data key="d7">If OP is currently on a job, there is a SAG rep specifically assigned to the show. If I was OP’s 2nd AD (often the point of contact for actors on a job), I would be more than happy to share the SAG reps name and number.
-
-Also, the minor in California has a tutor assigned to them that are supposed to act as constant reps for them on set as well, and has quick access to SAG and the contract. As long as this person isn’t in your parent’s pocket, the tutor would be the first person I might turn to, to be lead in the correct direction.
-
-Edit: IANAL but I’m a 2nd Assistant Director. I’m responding because your legal advice is the most direct and responsible comment out of everything here. I’m adding ways to get in contact with SAG if the minor is currently on set as there are people already on set supposed to be watching out for their welfare.</data>
-      <data key="d8">749.0</data>
-      <data key="d9">7.0915</data>
-      <data key="d10">If OP is currently on a job, there is a SAG rep specifically assigned to the show. If I was OP’s 2nd AD (often the point of contact for actors on a job), I would be more than happy to share the SAG reps name and number.
-
-Also, the minor in California has a tutor assigned to them that are supposed to act as constant reps for them on set as well, and has quick access to SAG and the contract. As long as this person isn’t in your parent’s pocket, the tutor would be the first person I might turn to, to be lead in the correct direction.
-
-Edit: IANAL but I’m a 2nd Assistant Director. I’m responding because your legal advice is the most direct and responsible comment out of everything here. I’m adding ways to get in contact with SAG if the minor is currently on set as there are people already on set supposed to be watching out for their welfare.</data>
-      <data key="d11">61.325</data>
-      <data key="d12">0.2229</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.5640000000000001</data>
-    </node>
-    <node id="c219">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91bcr2</data>
-      <data key="d3">1541358841.0</data>
-      <data key="d4">e90rc0r</data>
-      <data key="d5">TaneCorbinYall</data>
-      <data key="d6">76.0</data>
-      <data key="d7">Seek out a lawyer who has experience with this. An entertainment lawyer or one who does estates and trusts will probably be a good bet. Go through SAG first if you can, they'll be able to hook you up with someone who does exactly this kind of thing. The lawyer will be happy to work for some of the money that you'll be getting back from your father so it's ok that you don't have any money now.
-
-After you get the money back, you should look into emancipation. Then your parents will have no rights to any of your new accounts, records, property, etc. It shouldn't be that hard as long as you're making enough to support yourself. If you don't make a ton, getting a side gig for when you're not working would be a good idea too.
-
-Finally, put some of your money in a trust that pays it out to your steadily over a long period of time, or that you can't touch for a long time. You have no idea if you'll still be acting at 26 and you might want to go to college or something. Also real estate in CA is nuts expensive, it's nice to be able to afford a house especially when you want kids and need the room, maybe around age 36. What I'm saying is 16 year olds don't have as many expensive needs as older people so saving the majority of your money (after your basic living expenses) is the smart move. Or at the very least, a trust that pays you out steadily will prevent you from going broke if you're between jobs for too long or have unexpected expenses.</data>
-      <data key="d8">747.0</data>
-      <data key="d9">6.0445</data>
-      <data key="d10">Seek out a lawyer who has experience with this. An entertainment lawyer or one who does estates and trusts will probably be a good bet. Go through SAG first if you can, they'll be able to hook you up with someone who does exactly this kind of thing. The lawyer will be happy to work for some of the money that you'll be getting back from your father so it's ok that you don't have any money now.
-
-After you get the money back, you should look into emancipation. Then your parents will have no rights to any of your new accounts, records, property, etc. It shouldn't be that hard as long as you're making enough to support yourself. If you don't make a ton, getting a side gig for when you're not working would be a good idea too.
-
-Finally, put some of your money in a trust that pays it out to your steadily over a long period of time, or that you can't touch for a long time. You have no idea if you'll still be acting at 26 and you might want to go to college or something. Also real estate in CA is nuts expensive, it's nice to be able to afford a house especially when you want kids and need the room, maybe around age 36. What I'm saying is 16 year olds don't have as many expensive needs as older people so saving the majority of your money (after your basic living expenses) is the smart move. Or at the very least, a trust that pays you out steadily will prevent you from going broke if you're between jobs for too long or have unexpected expenses.</data>
-      <data key="d11">61.6</data>
-      <data key="d12">0.1356</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.07365</data>
-    </node>
-    <node id="c220">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91i0kw</data>
-      <data key="d3">1541378114.0</data>
-      <data key="d4">e91caje</data>
-      <data key="d5">mn_sunny</data>
-      <data key="d6">23.333333333333332</data>
-      <data key="d7">I'd bet they're a youtube celeb because a musician/actor would likely already have legitimate resources available to them.</data>
-      <data key="d8">117.66666666666667</data>
-      <data key="d9">5.554666666666667</data>
-      <data key="d10">I'd bet they're a youtube celeb because a musician/actor would likely already have legitimate resources available to them.</data>
-      <data key="d11">57.73</data>
-      <data key="d12">0.04256666666666667</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">0.04036666666666667</data>
-    </node>
-    <node id="c221">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e90riay</data>
-      <data key="d3">1541343195.6666667</data>
-      <data key="d4">e90rgep</data>
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gex96</data>
+      <data key="d4">e9gg2z6</data>
       <data key="d5">Anonymous</data>
-      <data key="d6">2.0</data>
-      <data key="d7">[removed]</data>
-      <data key="d8">16.0</data>
-      <data key="d9">5.7620000000000005</data>
-      <data key="d10">[removed]</data>
-      <data key="d11">54.330000000000005</data>
-      <data key="d12">0.12726666666666667</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">0.3333333333333333</data>
+      <data key="d6">0.25</data>
+      <data key="d7">1541929095.0</data>
+      <data key="d8" />
+      <data key="d9">22.75</data>
+      <data key="d10">6.75</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-18.54</data>
+      <data key="d13">-0.0813</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.25</data>
     </node>
-    <node id="c222">
+    <node id="c271">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91fy6h</data>
-      <data key="d3">1541368014.3333333</data>
-      <data key="d4">e91caje</data>
-      <data key="d5">Furt77</data>
-      <data key="d6">524.6666666666666</data>
-      <data key="d7">I'd start looking for another manager.</data>
-      <data key="d8">293.3333333333333</data>
-      <data key="d9">5.961666666666666</data>
-      <data key="d10">I'd start looking for another manager.</data>
-      <data key="d11">59.39666666666667</data>
-      <data key="d12">0.11973333333333334</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.36146666666666666</data>
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9ggik6</data>
+      <data key="d4">e9ghc7l</data>
+      <data key="d5">erleichda29</data>
+      <data key="d6">2.6667</data>
+      <data key="d7">1541929528.0</data>
+      <data key="d8" />
+      <data key="d9">27.3333</data>
+      <data key="d10">6.6667</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-36.9267</data>
+      <data key="d13">-0.1084</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0</data>
     </node>
-    <node id="c223">
+    <node id="c272">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91a7m0</data>
-      <data key="d3">1541366423.6666667</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">thesweetestpunch</data>
-      <data key="d6">552.3333333333334</data>
-      <data key="d7">California takes care of its child actors. Good laws!</data>
-      <data key="d8">298.3333333333333</data>
-      <data key="d9">5.832</data>
-      <data key="d10">California takes care of its child actors. Good laws!</data>
-      <data key="d11">69.66</data>
-      <data key="d12">0.28413333333333335</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.4099333333333333</data>
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gnjdd</data>
+      <data key="d4">e9gs03b</data>
+      <data key="d5">thatsnotgneiss</data>
+      <data key="d6">1662.3333</data>
+      <data key="d7">1541939951.0</data>
+      <data key="d8" />
+      <data key="d9">180.3333</data>
+      <data key="d10">5.2357</data>
+      <data key="d11">0.0</data>
+      <data key="d12">54.2233</data>
+      <data key="d13">-0.2373</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.164</data>
     </node>
-    <node id="c224">
+    <node id="c273">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e90rc0r</data>
-      <data key="d3">1541345468.6666667</data>
-      <data key="d4">e90rabu</data>
-      <data key="d5">SeekingAdvice43562</data>
-      <data key="d6">114.0</data>
-      <data key="d7">Edited with state - California. I'm 16</data>
-      <data key="d8">63.666666666666664</data>
-      <data key="d9">4.8373333333333335</data>
-      <data key="d10">Edited with state - California. I'm 16</data>
-      <data key="d11">70.46666666666667</data>
-      <data key="d12">0.20179999999999998</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.39976666666666666</data>
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gdfes</data>
+      <data key="d4">e9gnjdd</data>
+      <data key="d5">PayTreeIt</data>
+      <data key="d6">8727.5</data>
+      <data key="d7">1541934631.25</data>
+      <data key="d8" />
+      <data key="d9">199.25</data>
+      <data key="d10">4.7475</data>
+      <data key="d11">0.0</data>
+      <data key="d12">70.38</data>
+      <data key="d13">-0.193</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.2898</data>
     </node>
-    <node id="c225">
+    <node id="c274">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91caje</data>
-      <data key="d3">1541369461.0</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">highpriestesstea</data>
-      <data key="d6">417.5</data>
-      <data key="d7">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
-
-Are there other resources OP could use to find an attorney?
-
-ETA grammar...</data>
-      <data key="d8">233.25</data>
-      <data key="d9">5.665749999999999</data>
-      <data key="d10">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
-
-Are there other resources OP could use to find an attorney?
-
-ETA grammar...</data>
-      <data key="d11">64.3625</data>
-      <data key="d12">0.2131</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.322125</data>
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gdfes</data>
+      <data key="d4">e9goy7j</data>
+      <data key="d5">WiseMonkeyGoodMonkey</data>
+      <data key="d6">7120.2</data>
+      <data key="d7">1541935951.0</data>
+      <data key="d8" />
+      <data key="d9">175.0</data>
+      <data key="d10">4.8646</data>
+      <data key="d11">0.0</data>
+      <data key="d12">72.766</data>
+      <data key="d13">-0.0821</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.2411</data>
     </node>
-    <node id="c226">
+    <node id="c275">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91caje</data>
-      <data key="d3">1541362735.0</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">highpriestesstea</data>
-      <data key="d6">780.5</data>
-      <data key="d7">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
-
-Are there other resources OP could use to find an attorney?
-
-ETA grammar...</data>
-      <data key="d8">421.0</data>
-      <data key="d9">6.359</data>
-      <data key="d10">OP might not be an actor...they could be a musician. And their manager has said to trust their untrustworthy father.
-
-Are there other resources OP could use to find an attorney?
-
-ETA grammar...</data>
-      <data key="d11">64.86</data>
-      <data key="d12">0.1796</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.51285</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hqmu8</data>
+      <data key="d4">e9hqmu8</data>
+      <data key="d5">westphall</data>
+      <data key="d6">54.75</data>
+      <data key="d7">1541984744.0</data>
+      <data key="d8" />
+      <data key="d9">738.0</data>
+      <data key="d10">6.7247</data>
+      <data key="d11">0.0658</data>
+      <data key="d12">62.7225</data>
+      <data key="d13">0.0874</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.3292</data>
     </node>
-    <node id="c227">
+    <node id="c276">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e914jsy</data>
-      <data key="d3">1541367447.5</data>
-      <data key="d4">e913hdd</data>
-      <data key="d5">Jeriyka</data>
-      <data key="d6">24.5</data>
-      <data key="d7">Getting blackballed in Hollywood is the ever present myth that’s simply not true. There are too many jobs, agencies, casting directors, cities to work in, and studios. Anyone who threatens being blackballed isn’t looking at the larger picture and it’s used as a psychological tool to keep people afraid for their jobs, but it’s unrealistic. OP- please do not add this worry onto your shoulders, it’s not true.
-
-Edit: I forgot the casting directors. You can’t forget about them. </data>
-      <data key="d8">635.0</data>
-      <data key="d9">5.8235</data>
-      <data key="d10">Getting blackballed in Hollywood is the ever present myth that’s simply not true. There are too many jobs, agencies, casting directors, cities to work in, and studios. Anyone who threatens being blackballed isn’t looking at the larger picture and it’s used as a psychological tool to keep people afraid for their jobs, but it’s unrealistic. OP- please do not add this worry onto your shoulders, it’s not true.
-
-Edit: I forgot the casting directors. You can’t forget about them. </data>
-      <data key="d11">67.775</data>
-      <data key="d12">-0.03580000000000001</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.6973</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hhqab</data>
+      <data key="d4">e9hosht</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">84.5</data>
+      <data key="d7">1541982183.0</data>
+      <data key="d8" />
+      <data key="d9">619.5</data>
+      <data key="d10">6.0355</data>
+      <data key="d11">0.1958</data>
+      <data key="d12">68.01</data>
+      <data key="d13">0.0147</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.5445</data>
     </node>
-    <node id="c228">
+    <node id="c277">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91hpui</data>
-      <data key="d3">1541364921.5</data>
-      <data key="d4">e90ukmq</data>
-      <data key="d5">Insectshelf3</data>
-      <data key="d6">753.0</data>
-      <data key="d7">Oh man you’re right. He couldn’t be in a better state to fight this. </data>
-      <data key="d8">359.0</data>
-      <data key="d9">5.14</data>
-      <data key="d10">Oh man you’re right. He couldn’t be in a better state to fight this. </data>
-      <data key="d11">73.97999999999999</data>
-      <data key="d12">0.13505</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">0.53255</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hosht</data>
+      <data key="d4">e9hr5c7</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">37.0</data>
+      <data key="d7">1541986257.6667</data>
+      <data key="d8" />
+      <data key="d9">373.0</data>
+      <data key="d10">5.7903</data>
+      <data key="d11">0.1305</data>
+      <data key="d12">66.4167</data>
+      <data key="d13">0.3093</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0899</data>
     </node>
-    <node id="c229">
+    <node id="c278">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91btud</data>
-      <data key="d3">1541374334.0</data>
-      <data key="d4">e919u5s</data>
-      <data key="d5">AllyGLovesYou</data>
-      <data key="d6">31.0</data>
-      <data key="d7">I second this. A lot of Child Stars either lash out or become sexualized to separate themselves from their child star personas. Lindsey Lohan, Drew Barrymore, and Miley Cyrus come to mind immediately. Also (I've never seen Saved by the Bell so idk who she plays) one of the actress from that show did Showgirls right off the bat and it flopped miserably. If you play your cards right and make sure your head stays screwed on you could become a good if not great adult actor. Maybe if you do Plan B, you could find a hobby to do in between jobs that will still benefit you financially (only thing coming to mind is Dylan Sprouse and his brewery)</data>
-      <data key="d8">716.0</data>
-      <data key="d9">5.6385000000000005</data>
-      <data key="d10">I second this. A lot of Child Stars either lash out or become sexualized to separate themselves from their child star personas. Lindsey Lohan, Drew Barrymore, and Miley Cyrus come to mind immediately. Also (I've never seen Saved by the Bell so idk who she plays) one of the actress from that show did Showgirls right off the bat and it flopped miserably. If you play your cards right and make sure your head stays screwed on you could become a good if not great adult actor. Maybe if you do Plan B, you could find a hobby to do in between jobs that will still benefit you financially (only thing coming to mind is Dylan Sprouse and his brewery)</data>
-      <data key="d11">75.93</data>
-      <data key="d12">0.03045</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">0.53635</data>
-    </node>
-    <node id="c230">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e91fkbc</data>
-      <data key="d3">1541378138.3333333</data>
-      <data key="d4">e91ef2v</data>
-      <data key="d5">Thompson_S_Sweetback</data>
-      <data key="d6">11.666666666666666</data>
-      <data key="d7">I’m sorry, I don’t understand your response and maybe that’s because IANAL.
-
-I know when I hire a minor on my set, it is illegal for me to hire that child without a Coogan Bank account on file with our accounting department.
-
-Edit: we literally can’t hire a child without it.</data>
-      <data key="d8">158.66666666666666</data>
-      <data key="d9">4.636666666666666</data>
-      <data key="d10">I’m sorry, I don’t understand your response and maybe that’s because IANAL.
-
-I know when I hire a minor on my set, it is illegal for me to hire that child without a Coogan Bank account on file with our accounting department.
-
-Edit: we literally can’t hire a child without it.</data>
-      <data key="d11">79.99666666666667</data>
-      <data key="d12">0.11256666666666669</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.017133333333333334</data>
-    </node>
-    <node id="c231">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">e915lm5</data>
-      <data key="d3">1541361973.5</data>
-      <data key="d4">e90wlzh</data>
-      <data key="d5">Thompson_S_Sweetback</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hosht</data>
+      <data key="d4">e9hrrfj</data>
+      <data key="d5">jkseller</data>
       <data key="d6">98.5</data>
-      <data key="d7">Coogans law makes it illegal, but it can't protect you once the money is already gone. It's important for OP to get his own lawyer asap.</data>
-      <data key="d8">118.5</data>
-      <data key="d9">5.495</data>
-      <data key="d10">Coogans law makes it illegal, but it can't protect you once the money is already gone. It's important for OP to get his own lawyer asap.</data>
-      <data key="d11">78.245</data>
-      <data key="d12">-0.00605</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.57355</data>
+      <data key="d7">1541986896.5</data>
+      <data key="d8" />
+      <data key="d9">269.25</data>
+      <data key="d10">4.925</data>
+      <data key="d11">0.1181</data>
+      <data key="d12">84.365</data>
+      <data key="d13">-0.0097</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0841</data>
     </node>
-    <node id="c232">
+    <node id="c279">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91h5i1</data>
-      <data key="d3">1541376658.5</data>
-      <data key="d4">e91a7m0</data>
-      <data key="d5">DailyCloserToDeath</data>
-      <data key="d6">50.0</data>
-      <data key="d7">On the one hand, yes.
-
-On the other hand....
-
-(Commentary on the observation.)</data>
-      <data key="d8">65.5</data>
-      <data key="d9">5.826499999999999</data>
-      <data key="d10">On the one hand, yes.
-
-On the other hand....
-
-(Commentary on the observation.)</data>
-      <data key="d11">81.64500000000001</data>
-      <data key="d12">0.42400000000000004</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.10205</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hr7ez</data>
+      <data key="d4">e9hs7z1</data>
+      <data key="d5">tuckmyjunksofast</data>
+      <data key="d6">87.6667</data>
+      <data key="d7">1541985187.6667</data>
+      <data key="d8" />
+      <data key="d9">123.3333</data>
+      <data key="d10">4.523</data>
+      <data key="d11">0.0</data>
+      <data key="d12">75.3</data>
+      <data key="d13">-0.237</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0939</data>
     </node>
-    <node id="c233">
+    <node id="c280">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e9133ay</data>
-      <data key="d3">1541361809.5</data>
-      <data key="d4">e90xuet</data>
-      <data key="d5">LadyEmry</data>
-      <data key="d6">34.0</data>
-      <data key="d7">Adding onto this, once you've made a new account see if you can change your old payment details so your future pay is put into the right account. I know your Manager isn't being helpful right now, but perhaps you can talk to them about changing this and they may help?</data>
-      <data key="d8">231.0</data>
-      <data key="d9">4.9425</data>
-      <data key="d10">Adding onto this, once you've made a new account see if you can change your old payment details so your future pay is put into the right account. I know your Manager isn't being helpful right now, but perhaps you can talk to them about changing this and they may help?</data>
-      <data key="d11">81.695</data>
-      <data key="d12">0.17725000000000002</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.5257000000000001</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hdw69</data>
+      <data key="d4">e9hlv08</data>
+      <data key="d5">TheRevadin</data>
+      <data key="d6">396.0</data>
+      <data key="d7">1541978674.0</data>
+      <data key="d8" />
+      <data key="d9">221.3333</data>
+      <data key="d10">4.6163</data>
+      <data key="d11">0.0</data>
+      <data key="d12">87.8</data>
+      <data key="d13">-0.0343</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.381</data>
     </node>
-    <node id="c234">
+    <node id="c281">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91c286</data>
-      <data key="d3">1541374515.0</data>
-      <data key="d4">e91a0xl</data>
-      <data key="d5">AllyGLovesYou</data>
-      <data key="d6">2.5</data>
-      <data key="d7">There are laws specifically for child actors. They have a certain length of time a day that they can work. They must have a tutor so that they can have an education and more. Because of these laws you get stars like the Olsen Twins and the Sprouse twins. It's cheaper and easier to hire identical twins to play one character for when one kid's time runs out they have the second one to take over and continue filming. </data>
-      <data key="d8">446.0</data>
-      <data key="d9">5.9455</data>
-      <data key="d10">There are laws specifically for child actors. They have a certain length of time a day that they can work. They must have a tutor so that they can have an education and more. Because of these laws you get stars like the Olsen Twins and the Sprouse twins. It's cheaper and easier to hire identical twins to play one character for when one kid's time runs out they have the second one to take over and continue filming. </data>
-      <data key="d11">83.35499999999999</data>
-      <data key="d12">0.18710000000000002</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.5238</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hdw69</data>
+      <data key="d4">e9he3b0</data>
+      <data key="d5">Cypher_Blue</data>
+      <data key="d6">367.25</data>
+      <data key="d7">1541978223.5</data>
+      <data key="d8" />
+      <data key="d9">267.25</data>
+      <data key="d10">4.948</data>
+      <data key="d11">0.0</data>
+      <data key="d12">86.36</data>
+      <data key="d13">-0.0983</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.353</data>
     </node>
-    <node id="c235">
+    <node id="c282">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91hx1q</data>
-      <data key="d3">1541379224.5</data>
-      <data key="d4">e91fn1d</data>
-      <data key="d5">amazonallie</data>
-      <data key="d6">8.5</data>
-      <data key="d7">I was wondering who would bring up the Coogan Act.
-
-This seems to be a direct violation of this.</data>
-      <data key="d8">379.5</data>
-      <data key="d9">5.192</data>
-      <data key="d10">I was wondering who would bring up the Coogan Act.
-
-This seems to be a direct violation of this.</data>
-      <data key="d11">84.37</data>
-      <data key="d12">-0.028450000000000003</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.58385</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hugzy</data>
+      <data key="d4">e9huprx</data>
+      <data key="d5">Cypher_Blue</data>
+      <data key="d6">13.3333</data>
+      <data key="d7">1541987802.0</data>
+      <data key="d8" />
+      <data key="d9">236.6667</data>
+      <data key="d10">5.3687</data>
+      <data key="d11">0.0</data>
+      <data key="d12">75.37</data>
+      <data key="d13">-0.1907</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.1019</data>
     </node>
-    <node id="c236">
+    <node id="c283">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91751s</data>
-      <data key="d3">1541372544.6666667</data>
-      <data key="d4">e915lm5</data>
-      <data key="d5">Thompson_S_Sweetback</data>
-      <data key="d6">40.666666666666664</data>
-      <data key="d7">Coogans law makes the guardian open a trust for the minor and 15% of the earnings gets stashed away. This money can not be touched or moved into other accounts until the minor is 18 (it can be moved to “like” accounts though).
-
-It sounds like the 15% of the earnings are not the earnings that are at risk here. It’s the 85% of the rest of the paycheck. </data>
-      <data key="d8">208.66666666666666</data>
-      <data key="d9">4.881333333333333</data>
-      <data key="d10">Coogans law makes the guardian open a trust for the minor and 15% of the earnings gets stashed away. This money can not be touched or moved into other accounts until the minor is 18 (it can be moved to “like” accounts though).
-
-It sounds like the 15% of the earnings are not the earnings that are at risk here. It’s the 85% of the rest of the paycheck. </data>
-      <data key="d11">85.19666666666667</data>
-      <data key="d12">-0.005966666666666664</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.07836666666666667</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9ho6r3</data>
+      <data key="d4">e9hrw4a</data>
+      <data key="d5">Cypher_Blue</data>
+      <data key="d6">14.5</data>
+      <data key="d7">1541985377.0</data>
+      <data key="d8" />
+      <data key="d9">216.0</data>
+      <data key="d10">4.8165</data>
+      <data key="d11">0.0</data>
+      <data key="d12">80.765</data>
+      <data key="d13">-0.063</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0797</data>
     </node>
-    <node id="c237">
+    <node id="c284">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e90yuae</data>
-      <data key="d3">1541359398.0</data>
-      <data key="d4">e90ysfk</data>
-      <data key="d5">kcihtred2</data>
-      <data key="d6">24.5</data>
-      <data key="d7">If he hasn't. Also good idea with future money.
-Also best to grab statements of its closed most banks will give you 30-90 days to get statements after closing</data>
-      <data key="d8">111.5</data>
-      <data key="d9">4.8774999999999995</data>
-      <data key="d10">If he hasn't. Also good idea with future money.
-Also best to grab statements of its closed most banks will give you 30-90 days to get statements after closing</data>
-      <data key="d11">86.35</data>
-      <data key="d12">0.17955</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.07925</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hikwd</data>
+      <data key="d4">e9hizuo</data>
+      <data key="d5">Tyko_3</data>
+      <data key="d6">1756.5</data>
+      <data key="d7">1541980546.0</data>
+      <data key="d8" />
+      <data key="d9">158.0</data>
+      <data key="d10">4.6325</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.82</data>
+      <data key="d13">-0.0305</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.5182</data>
     </node>
-    <node id="c238">
+    <node id="c285">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91fz9a</data>
-      <data key="d3">1541376198.5</data>
-      <data key="d4">e91a7m0</data>
-      <data key="d5">vivaenmiriana</data>
-      <data key="d6">57.5</data>
-      <data key="d7">thanks jackie coogan!</data>
-      <data key="d8">37.0</data>
-      <data key="d9">5.388999999999999</data>
-      <data key="d10">thanks jackie coogan!</data>
-      <data key="d11">86.535</data>
-      <data key="d12">0.4929</data>
-      <data key="d13">Positive</data>
-      <data key="d14">0.10205</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hizuo</data>
+      <data key="d4">e9ht545</data>
+      <data key="d5">francis2559</data>
+      <data key="d6">1087.5</data>
+      <data key="d7">1541984036.0</data>
+      <data key="d8" />
+      <data key="d9">153.0</data>
+      <data key="d10">4.277</data>
+      <data key="d11">0.0</data>
+      <data key="d12">84.005</data>
+      <data key="d13">-0.2541</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0182</data>
     </node>
-    <node id="c239">
+    <node id="c286">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e90ysfk</data>
-      <data key="d3">1541358350.0</data>
-      <data key="d4">e90xuet</data>
-      <data key="d5">Sutaru</data>
-      <data key="d6">40.0</data>
-      <data key="d7">It sounds like their dad already drained and closed that account </data>
-      <data key="d8">129.5</data>
-      <data key="d9">4.9879999999999995</data>
-      <data key="d10">It sounds like their dad already drained and closed that account </data>
-      <data key="d11">89.055</data>
-      <data key="d12">0.1101</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">0.52805</data>
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gdfes</data>
+      <data key="d4">e9grzuy</data>
+      <data key="d5">CrappyOrigami</data>
+      <data key="d6">8052.75</data>
+      <data key="d7">1541935836.25</data>
+      <data key="d8" />
+      <data key="d9">158.25</data>
+      <data key="d10">4.7335</data>
+      <data key="d11">0.0</data>
+      <data key="d12">76.175</data>
+      <data key="d13">-0.0136</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.2823</data>
     </node>
-    <node id="c240">
+    <node id="c287">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e919t5y</data>
-      <data key="d3">1541373189.0</data>
-      <data key="d4">e919740</data>
-      <data key="d5">andycohens</data>
-      <data key="d6">-6.5</data>
-      <data key="d7">Sounds like the parents would put a stop to the career. Op probably knows this esp if they are this nasty. </data>
-      <data key="d8">350.0</data>
-      <data key="d9">5.0275</data>
-      <data key="d10">Sounds like the parents would put a stop to the career. Op probably knows this esp if they are this nasty. </data>
-      <data key="d11">91.50999999999999</data>
-      <data key="d12">-0.03409999999999999</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.57735</data>
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gp421</data>
+      <data key="d4">e9gq126</data>
+      <data key="d5">Maevora06</data>
+      <data key="d6">8534.0</data>
+      <data key="d7">1541938481.0</data>
+      <data key="d8" />
+      <data key="d9">210.5</data>
+      <data key="d10">4.517</data>
+      <data key="d11">0.0</data>
+      <data key="d12">81.04</data>
+      <data key="d13">-0.1349</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1089</data>
     </node>
-    <node id="c241">
+    <node id="c288">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91hy02</data>
-      <data key="d3">1541373455.5</data>
-      <data key="d4">e913hdd</data>
-      <data key="d5">amazonallie</data>
-      <data key="d6">9.5</data>
-      <data key="d7">Coogan Act.</data>
-      <data key="d8">401.5</data>
-      <data key="d9">5.25</data>
-      <data key="d10">Coogan Act.</data>
-      <data key="d11">94.61</data>
-      <data key="d12">0.071</data>
-      <data key="d13">Neutral</data>
-      <data key="d14">0.5</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hfjyh</data>
+      <data key="d4">e9ho6r3</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">36.5</data>
+      <data key="d7">1541982607.0</data>
+      <data key="d8" />
+      <data key="d9">354.25</data>
+      <data key="d10">5.374</data>
+      <data key="d11">0.0252</data>
+      <data key="d12">78.485</data>
+      <data key="d13">-0.0965</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3166</data>
     </node>
-    <node id="c242">
+    <node id="c289">
       <data key="d0">c</data>
       <data key="d1" />
-      <data key="d2">e91hhrv</data>
-      <data key="d3">1541379568.0</data>
-      <data key="d4">e91gy2k</data>
-      <data key="d5">wilmabeest</data>
-      <data key="d6">-2.5</data>
-      <data key="d7">stop trying to groom her you weirdo</data>
-      <data key="d8">57.5</data>
-      <data key="d9">4.4559999999999995</data>
-      <data key="d10">stop trying to groom her you weirdo</data>
-      <data key="d11">97.955</data>
-      <data key="d12">-0.13860000000000003</data>
-      <data key="d13">Negative</data>
-      <data key="d14">0.5</data>
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hst4s</data>
+      <data key="d4">e9ht11l</data>
+      <data key="d5">Cypher_Blue</data>
+      <data key="d6">29.0</data>
+      <data key="d7">1541984154.3333</data>
+      <data key="d8" />
+      <data key="d9">263.3333</data>
+      <data key="d10">5.443</data>
+      <data key="d11">0.0305</data>
+      <data key="d12">71.48</data>
+      <data key="d13">0.0389</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.3548</data>
     </node>
-    <edge source="c211" target="c227">
-      <data key="d17">READINGLEVEL</data>
+    <node id="c290">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hfjyh</data>
+      <data key="d4">e9hst4s</data>
+      <data key="d5">Cypher_Blue</data>
+      <data key="d6">31.8</data>
+      <data key="d7">1541983544.4</data>
+      <data key="d8" />
+      <data key="d9">322.2</data>
+      <data key="d10">5.2928</data>
+      <data key="d11">0.0202</data>
+      <data key="d12">75.222</data>
+      <data key="d13">-0.0262</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.2618</data>
+    </node>
+    <node id="c291">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hjh2p</data>
+      <data key="d4">e9hsqcz</data>
+      <data key="d5">Jillaginn</data>
+      <data key="d6">63.0</data>
+      <data key="d7">1541984057.5</data>
+      <data key="d8" />
+      <data key="d9">326.0</data>
+      <data key="d10">4.5205</data>
+      <data key="d11">0.0047</data>
+      <data key="d12">83.985</data>
+      <data key="d13">-0.0653</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.1</data>
+    </node>
+    <node id="c292">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gkmsw</data>
+      <data key="d4">e9gsr23</data>
+      <data key="d5">RidinTheMonster</data>
+      <data key="d6">1315.0</data>
+      <data key="d7">1541937869.0</data>
+      <data key="d8" />
+      <data key="d9">506.0</data>
+      <data key="d10">6.279</data>
+      <data key="d11">0.0</data>
+      <data key="d12">76.385</data>
+      <data key="d13">-0.0675</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.6007</data>
+    </node>
+    <node id="c293">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gkmsw</data>
+      <data key="d4">e9gsif7</data>
+      <data key="d5">ImperialBacon</data>
+      <data key="d6">1929.5</data>
+      <data key="d7">1541937714.0</data>
+      <data key="d8" />
+      <data key="d9">251.0</data>
+      <data key="d10">6.0165</data>
+      <data key="d11">0.0</data>
+      <data key="d12">80.55</data>
+      <data key="d13">-0.1839</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.5322</data>
+    </node>
+    <node id="c294">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9htgxn</data>
+      <data key="d4">e9hukgy</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">36.5</data>
+      <data key="d7">1541988019.5</data>
+      <data key="d8" />
+      <data key="d9">82.5</data>
+      <data key="d10">4.229</data>
+      <data key="d11">0.0</data>
+      <data key="d12">77.405</data>
+      <data key="d13">-0.3982</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0612</data>
+    </node>
+    <node id="c295">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9htgxn</data>
+      <data key="d4">e9hukgy</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">97.5</data>
+      <data key="d7">1541985187.5</data>
+      <data key="d8" />
+      <data key="d9">287.5</data>
+      <data key="d10">4.9253</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.9325</data>
+      <data key="d13">-0.2998</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.2965</data>
+    </node>
+    <node id="c296">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hhvhv</data>
+      <data key="d4">e9hp6b4</data>
+      <data key="d5">jkseller</data>
+      <data key="d6">125.0</data>
+      <data key="d7">1541984107.3333</data>
+      <data key="d8" />
+      <data key="d9">376.6667</data>
+      <data key="d10">5.317</data>
+      <data key="d11">0.0</data>
+      <data key="d12">79.95</data>
+      <data key="d13">-0.3997</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3954</data>
+    </node>
+    <node id="c297">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hucan</data>
+      <data key="d4">e9huep1</data>
+      <data key="d5">Tyko_3</data>
+      <data key="d6">101.6667</data>
+      <data key="d7">1541987662.6667</data>
+      <data key="d8" />
+      <data key="d9">256.0</data>
+      <data key="d10">4.7593</data>
+      <data key="d11">0.027</data>
+      <data key="d12">87.07</data>
+      <data key="d13">-0.0795</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0825</data>
+    </node>
+    <node id="c298">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9he3b0</data>
+      <data key="d4">e9he8e4</data>
+      <data key="d5">Cypher_Blue</data>
+      <data key="d6">446.3333</data>
+      <data key="d7">1541976711.6667</data>
+      <data key="d8" />
+      <data key="d9">314.3333</data>
+      <data key="d10">5.304</data>
+      <data key="d11">0.0</data>
+      <data key="d12">87.26</data>
+      <data key="d13">0.0181</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.4549</data>
+    </node>
+    <node id="c299">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9he8e4</data>
+      <data key="d4">e9heah8</data>
+      <data key="d5">Tyko_3</data>
+      <data key="d6">418.5</data>
+      <data key="d7">1541976900.0</data>
+      <data key="d8" />
+      <data key="d9">223.5</data>
+      <data key="d10">4.5215</data>
+      <data key="d11">0.0</data>
+      <data key="d12">92.325</data>
+      <data key="d13">-0.1452</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.1346</data>
+    </node>
+    <node id="c300">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gqc3b</data>
+      <data key="d4">e9gs61w</data>
+      <data key="d5">-inzo-</data>
+      <data key="d6">-28.0</data>
+      <data key="d7">1541940368.5</data>
+      <data key="d8" />
+      <data key="d9">152.0</data>
+      <data key="d10">6.3</data>
+      <data key="d11">0.0</data>
+      <data key="d12">32.735</data>
+      <data key="d13">0.1257</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.5274</data>
+    </node>
+    <node id="c301">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gdyeb</data>
+      <data key="d4">e9gn24r</data>
+      <data key="d5">cld8</data>
+      <data key="d6">56.0</data>
+      <data key="d7">1541935020.3333</data>
+      <data key="d8" />
+      <data key="d9">118.3333</data>
+      <data key="d10">6.6623</data>
+      <data key="d11">0.0</data>
+      <data key="d12">47.2133</data>
+      <data key="d13">0.1021</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.4146</data>
+    </node>
+    <node id="c302">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9grt4j</data>
+      <data key="d4">e9gs0q6</data>
+      <data key="d5">Purple82Hue</data>
+      <data key="d6">222.0</data>
+      <data key="d7">1541941129.5</data>
+      <data key="d8" />
+      <data key="d9">175.0</data>
+      <data key="d10">6.0335</data>
+      <data key="d11">0.0</data>
+      <data key="d12">37.895</data>
+      <data key="d13">0.0485</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.5349</data>
+    </node>
+    <node id="c303">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gnn4j</data>
+      <data key="d4">e9go1gh</data>
+      <data key="d5">3Up1Down</data>
+      <data key="d6">-14.3333</data>
+      <data key="d7">1541936959.6667</data>
+      <data key="d8" />
+      <data key="d9">740.6667</data>
+      <data key="d10">6.2277</data>
+      <data key="d11">0.0</data>
+      <data key="d12">59.8367</data>
+      <data key="d13">-0.0291</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.3917</data>
+    </node>
+    <node id="c304">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9w49aa</data>
+      <data key="d3">e9hq5yk</data>
+      <data key="d4">e9hr8gc</data>
+      <data key="d5">steelallz</data>
+      <data key="d6">949.0</data>
+      <data key="d7">1541984720.3333</data>
+      <data key="d8" />
+      <data key="d9">208.6667</data>
+      <data key="d10">5.3727</data>
+      <data key="d11">0.0064</data>
+      <data key="d12">49.99</data>
+      <data key="d13">-0.1081</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.3922</data>
+    </node>
+    <node id="c305">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gl3m6</data>
+      <data key="d4">e9gscbg</data>
+      <data key="d5">GraceandSword</data>
+      <data key="d6">1068.5</data>
+      <data key="d7">1541937845.0</data>
+      <data key="d8" />
+      <data key="d9">641.5</data>
+      <data key="d10">6.154</data>
+      <data key="d11">0.0</data>
+      <data key="d12">73.155</data>
+      <data key="d13">0.0135</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.5907</data>
+    </node>
+    <node id="c306">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gh3ka</data>
+      <data key="d4">e9go6c2</data>
+      <data key="d5">PuppleKao</data>
+      <data key="d6">-25.0</data>
+      <data key="d7">1541931851.6667</data>
+      <data key="d8" />
+      <data key="d9">390.0</data>
+      <data key="d10">5.5507</data>
+      <data key="d11">0.0</data>
+      <data key="d12">74.0967</data>
+      <data key="d13">-0.0478</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.4933</data>
+    </node>
+    <node id="c307">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gfdo2</data>
+      <data key="d4">e9ghfms</data>
+      <data key="d5">overcomebyfumes</data>
+      <data key="d6">2314.0</data>
+      <data key="d7">1541933200.6667</data>
+      <data key="d8" />
+      <data key="d9">128.6667</data>
+      <data key="d10">5.0347</data>
+      <data key="d11">0.0</data>
+      <data key="d12">81.3067</data>
+      <data key="d13">0.0427</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.4094</data>
+    </node>
+    <node id="c308">
+      <data key="d0">c</data>
+      <data key="d1" />
+      <data key="d2">9vzjvh</data>
+      <data key="d3">e9gk9pz</data>
+      <data key="d4">e9gplts</data>
+      <data key="d5">dadsmeatwagon</data>
+      <data key="d6">599.6667</data>
+      <data key="d7">1541935551.6667</data>
+      <data key="d8" />
+      <data key="d9">172.0</data>
+      <data key="d10">4.5427</data>
+      <data key="d11">0.0</data>
+      <data key="d12">82.4067</data>
+      <data key="d13">0.0862</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.5071</data>
+    </node>
+    <edge source="c270" target="c271">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c214" target="c215">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c272" target="c273">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c216" target="c221">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c272" target="c274">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c218" target="c222">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c273" target="c286">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c218" target="c223">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c273" target="c274">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c218" target="c225">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c273" target="c287">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c218" target="c226">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c274" target="c286">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c218" target="c228">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c274" target="c287">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c219" target="c224">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c275" target="c276">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c220" target="c222">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c276" target="c277">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c220" target="c223">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c276" target="c278">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c220" target="c225">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c277" target="c278">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c220" target="c226">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c278" target="c297">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c222" target="c223">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c279" target="c280">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c222" target="c225">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c279" target="c281">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c222" target="c226">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c280" target="c298">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c222" target="c228">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c280" target="c281">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c223" target="c225">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c281" target="c298">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c223" target="c226">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c281" target="c299">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c223" target="c228">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c282" target="c283">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c223" target="c232">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c283" target="c288">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c223" target="c238">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c283" target="c290">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c225" target="c226">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c284" target="c285">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c225" target="c228">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c286" target="c287">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c225" target="c232">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c288" target="c289">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c225" target="c238">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c288" target="c290">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c226" target="c228">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c288" target="c291">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c227" target="c241">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c289" target="c290">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c230" target="c236">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c290" target="c291">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c231" target="c236">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c292" target="c293">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c232" target="c238">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c294" target="c295">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c233" target="c239">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c294" target="c296">
+      <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c237" target="c239">
-      <data key="d17">READINGLEVEL</data>
+    <edge source="c295" target="c296">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="c298" target="c299">
+      <data key="d16">READINGLEVEL</data>
     </edge>
   </graph>
 </graphml>

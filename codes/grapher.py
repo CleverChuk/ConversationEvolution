@@ -4,7 +4,7 @@ from textsim import cosine_sim
 from models import CommentNode, AuthorNode, Node, ArticleNode, SentimentNode
 from base import RedditBot
 import mapper_functions as mp
-import neonx
+import raw_data as rd
 
 
 def load_graph(filepath, type):
@@ -49,6 +49,9 @@ class GraphBot(RedditBot):
         self._main_graph = None
         self._comment_graph = None
 
+    def isRemoved(self, comment):
+        return comment.body == "[removed]" or "*Your post has been removed for the following reason(s):*" in comment.body
+
     def stream(self, subreddit):
         """
             streams graphs from the given subreddit 
@@ -68,8 +71,13 @@ class GraphBot(RedditBot):
         commentCommentEdges = []  # undirected comment/comment edges
 
         sentimentCommentEdges = []  # sentiment/comment edges
-        authorCommentsEdges = []  # author/comment edges
+        authorCommentEdges = []  # author/comment edges
         nodes = []
+        comment_data = []
+        article_data = []
+        sentiment_data = []
+        author_data = []
+
 
         # create a digraph for comment/comment edges
         diGraph = nx.DiGraph()
@@ -78,6 +86,7 @@ class GraphBot(RedditBot):
 
         # add the sentiment nodes to the node list
         for _, v in sentiment.items():
+            sentiment_data.append(v)
             nodes.append((v, v.__dict__))
 
         for id in ids:
@@ -85,21 +94,26 @@ class GraphBot(RedditBot):
                 submission = self.get_submission(id)
                 submission.comments.replace_more(limit=None)
                 articleNode = ArticleNode(submission)
+
                 nodes.append((articleNode, articleNode.__dict__))
+                article_data.append(articleNode)
 
                 # populate article/comment edge list
                 for comment in submission.comments.list():
-                    commentNode = CommentNode(
-                        comment, CommentMetaAnalysis(comment))
-                    articleCommentEdges.append(
-                        (commentNode, articleNode, {"type": "article-comment"}))
+                    commentNode = CommentNode(articleNode.id, comment, CommentMetaAnalysis(comment))
+                    # filter deleted comments
+                    if self.isRemoved(comment):
+                        continue
 
+                    articleCommentEdges.append((commentNode, articleNode, {"type": "article-comment"}))
                     authorNode = AuthorNode(commentNode.author)
-                    authorCommentsEdges.append(
-                        (authorNode, commentNode, {"type": "author-comment"}))
+                    authorCommentEdges.append((authorNode, commentNode, {"type": "author-comment"}))
 
                     nodes.append((authorNode, authorNode.__dict__))
                     nodes.append((commentNode, commentNode.__dict__))
+                    author_data.append(authorNode)
+
+                    comment_data.append(commentNode)
                     diGraph.add_nodes_from([(commentNode, commentNode.__dict__)])
 
                 
@@ -107,17 +121,15 @@ class GraphBot(RedditBot):
                 print(pe)
 
         # populate sentiment/comment  and comment/comment edge list
-        for p_comment, _,  *_ in articleCommentEdges:
-            sentimentCommentEdges.append((sentiment[p_comment.sentiment], p_comment, {
-                "score": p_comment.sentimentScore, "type": "SENTIMENT"}))
+        for p_comment, *_ in articleCommentEdges:
+            sentimentCommentEdges.append((sentiment[p_comment.sentiment], p_comment, 
+            {"type": "SENTIMENT","score": p_comment.sentimentScore}))
 
-            for c_comment, _,  *_ in articleCommentEdges:
+            for c_comment, *_ in articleCommentEdges:
                 if c_comment.parent_id == p_comment.id:
                     # nx does not support numpy float
-                    c_comment.similarity = round(
-                        float(cosine_sim(p_comment.body, c_comment.body)), 4)
-                    commentCommentEdges.append(
-                        (c_comment, p_comment, {"type": "SIMILARITY", "similarity": c_comment.similarity}))
+                    c_comment.similarity = round(float(cosine_sim(p_comment.body, c_comment.body)), 4)
+                    commentCommentEdges.append((c_comment, p_comment, {"type": "REPLY_TO", "similarity": c_comment.similarity}))
 
         # add nodes for subgraph
         _nodes = []
@@ -127,7 +139,7 @@ class GraphBot(RedditBot):
         _nodes = list(set(_nodes)) #remove duplicates
 
         diGraph.add_edges_from(commentCommentEdges)
-        graph.add_edges_from(authorCommentsEdges)
+        graph.add_edges_from(authorCommentEdges)
         graph.add_edges_from(commentCommentEdges)
 
         graph.add_edges_from(articleCommentEdges)
@@ -139,11 +151,39 @@ class GraphBot(RedditBot):
         self._main_graph = graph
 
        # high level graphs
-        self.group_graph_nodes = mp.clusterOnNumericPropertyNodes(2, _nodes, commentCommentEdges, num_internals=10)
-        self.group_graph_edges = mp.clusterOnNumericProperty(2, commentCommentEdges, num_internals=10)
+        self.group_graph_nodes = mp.clusterOnNumericPropertyNodes(0.50, _nodes, commentCommentEdges, num_internals=3)
+        self.group_graph_edges = mp.clusterOnNumericProperty(0.50, commentCommentEdges, num_internals=3)
         
-        return graph
+        # write comments to csv
+        fname = "./raw/comment_data_temp.csv"
+        f = "./raw/comment_data.csv"
+        with open(fname, "w") as fp:
+            columns = rd.cleanColumns(mp.getProperties(commentCommentEdges[0][0]))
+            rd.writeNodesToCsv(fp,columns, comment_data)
+        rd.cleanCsv(fname, f)
 
+        fname = "./raw/article_data_temp.csv"
+        f = "./raw/article_data.csv"
+        with open(fname, "w") as fp:
+            columns = rd.cleanColumns(mp.getProperties(articleCommentEdges[0][1]))
+            rd.writeNodesToCsv(fp,columns, article_data)
+        rd.cleanCsv(fname, f)
+        
+        fname = "./raw/sentiment_data_temp.csv"
+        f = "./raw/sentiment_data.csv"
+        with open(fname, "w") as fp:
+            columns = rd.cleanColumns(mp.getProperties(sentimentCommentEdges[0][0]))
+            rd.writeNodesToCsv(fp,columns, sentiment_data)
+        rd.cleanCsv(fname, f)
+            
+        fname = "./raw/author_data_temp.csv"
+        f = "./raw/author_data.csv"
+        with open(fname, "w") as fp:
+            columns = rd.cleanColumns(mp.getProperties(authorCommentEdges[0][0]))
+            rd.writeNodesToCsv(fp,columns, author_data)
+        rd.cleanCsv(fname, f)
+
+        return graph
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt

@@ -151,8 +151,6 @@ class Node:
     def __init__(self, name):
         self.name = name
         self.id_0 = ""
-        self.id = 0
-        self.timestamp = 0
 
     def __len__(self):
         return len(self.__dict__)
@@ -188,9 +186,9 @@ class CommentNode(Node):
     """
         comment nodes
     """
-
-    def __init__(self, comment, meta):
+    def __init__(self, aId, comment, meta):
         super().__init__("c")
+        self.article_id = aId
         self.parent_id = comment.parent().id
         self.id = comment.id
         self.author = "Anonymous" if comment.author == None else comment.author.name

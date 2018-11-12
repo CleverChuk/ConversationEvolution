@@ -3,7 +3,7 @@ from models import Comment, Node
 import networkx as nx
 import random
 from math import ceil, floor
-
+from raw_data import writeNodesToCsv, cleanCsv
 
 def time(g, edges):
     """
@@ -42,14 +42,14 @@ def time(g, edges):
 def clusterOnNumericProperty(epsilon, edges, prop="readingLevel", num_internals = 3):
     groups = numericInterval(epsilon, edges, prop,num_internals)
     cluster = clusterInterval(groups)
-
+    
     return graphFromCluster(cluster, prop)
 
 
 def clusterOnNumericPropertyNodes(epsilon, nodes, edges, prop="readingLevel", num_internals = 3):
     groups = numericIntervalNodes(epsilon, nodes, prop, num_internals)
     cluster = clusterIntervalNodes(groups, edges)
-
+    
     return graphFromCluster(cluster, prop)
 
 
@@ -69,18 +69,18 @@ def numericInterval(epsilon, edges, prop, num_intervals=3):
     """
     n = len(edges)
     intervals = []
-    incr_size = ceil(n/num_intervals)
+    incr_size = floor(n/num_intervals)
     
     if incr_size == 0:
         incr_size = 1
-    edges = sorted(edges, key=lambda e: (
-        e[0].__dict__[prop] + e[1].__dict__[prop])/2)
-
+    
+    edges = sorted(edges, key=lambda e: (e[0].__dict__[prop] + e[1].__dict__[prop])/2)
     # create the intervals using prop value to mark the range bounds
     for i in range(0, n, incr_size):
         e = edges[i:i+incr_size]
         intervals.append(e)
 
+    
     groups = defaultdict(list)  # map to hold groups
     length = len(intervals)
     for i in range(length-1):
@@ -88,17 +88,64 @@ def numericInterval(epsilon, edges, prop, num_intervals=3):
         maximum = getAverage(intervals[i][-1], prop) + epsilon
 
         for e in intervals[i+1]:
-            if getAverage(e, prop) <= maximum:
+            if getAverage(e, prop) <= maximum and e not in intervals[i]:
                 intervals[i].append(e)
 
         groups[(minimum, maximum)] = intervals[i]
 
+        # make sure to include the last interval in the group map
         if(i+1 == length-1):
             minimum = getAverage(intervals[i+1][0], prop) - epsilon
             maximum = getAverage(intervals[i+1][-1], prop) + epsilon
             groups[(minimum,maximum)]= intervals[i+1]
 
     return groups
+
+def clusterInterval(groups):
+    """
+        cluster nodes base on there connection with each other
+
+        :type groups: dict
+
+        :rtype clusters: dict
+    """
+
+    clusters = OrderedDict()
+    clusterId = 0
+
+    for e_List in groups.values():
+        for i in range(len(e_List)):
+            if clusterId not in clusters:
+                clusters[clusterId] = []
+
+                clusters[clusterId].append(e_List[i][0])
+                clusters[clusterId].append(e_List[i][1])
+            
+            # add nodes with edges in the same cluster
+            for edge in e_List:
+                if edge[0] in clusters[clusterId] and edge[1] not in clusters[clusterId]:
+                    clusters[clusterId].append(edge[1])
+
+                elif edge[1] in clusters[clusterId] and edge[0] not in clusters[clusterId]:
+                    clusters[clusterId].append(edge[0])
+
+            clusterId += 1
+
+    temp = list(clusters.keys())
+    indices = []
+    # find the index duplicate clusters
+    for i in temp:
+        s1 = set(clusters[i])
+        for j in temp[i+1:]:
+            s2 = set(clusters[j])
+            if s2 == s1:
+                indices.append(j)
+
+    # remove duplicate clusters
+    for i in indices:
+        clusters.pop(i, "d")
+
+    return clusters
 
 
 def numericIntervalNodes(epsilon, nodes, prop, num_intervals=3):
@@ -116,80 +163,40 @@ def numericIntervalNodes(epsilon, nodes, prop, num_intervals=3):
         :rtype: dict 
     """
     n = len(nodes)
-    incr_size = ceil(n/num_intervals)
+    incr_size = floor(n/num_intervals)
     if incr_size == 0:
         incr_size = 1
     
     intervals = []
-    nodes = sorted(nodes, key=lambda n: n.__dict__[prop])
+    # nodes = sorted(nodes, key=lambda n: n.__dict__[prop])
     # create the intervals using prop value to mark the range bounds
     for i in range(0, n, incr_size):
         n = nodes[i:i+incr_size]
         intervals.append(n)
 
+    
     groups = defaultdict(list)  # map to hold groups
     length = len(intervals)
+
     for i in range(length-1):
         minimum = intervals[i][0].__dict__[prop] - epsilon
         maximum = intervals[i][-1].__dict__[prop] + epsilon
+        
+        # find overlaps
+        for j in range(i+1,len(nodes)):
+            if nodes[j].__dict__[prop] <= maximum and nodes[j] not in intervals[i]:
+                intervals[i].append(nodes[j])
 
-        for n in intervals[i+1]:
-            if n.__dict__[prop] <= maximum:
-                intervals[i].append(n)
         groups[(minimum, maximum)] = intervals[i]
-
+        
+        # make sure to include the last interval in the group map
         if(i+1 == length-1):
             minimum = intervals[i+1][0].__dict__[prop] - epsilon
             maximum = intervals[i+1][-1].__dict__[prop] + epsilon
-            groups[(minimum,maximum)]= intervals[i+1]
+            groups[(minimum,maximum)] = intervals[i+1]
+
 
     return groups
-
-
-def clusterInterval(groups):
-    """
-        cluster nodes base on there connection with each other
-
-        :type groups: dict
-
-        :rtype clusters: dict
-    """
-    clusters = OrderedDict()
-    clusterId = 0
-
-    for e_List in groups.values():
-        for i in range(len(e_List)):
-            if clusterId not in clusters:
-                clusters[clusterId] = []
-
-            clusters[clusterId].append(e_List[i][0])
-            clusters[clusterId].append(e_List[i][1])
-
-            for edge in e_List:
-                if edge[0] in clusters[clusterId] and edge[1] not in clusters[clusterId]:
-                    clusters[clusterId].append(edge[1])
-
-                elif edge[1] in clusters[clusterId] and edge[0] not in clusters[clusterId]:
-                    clusters[clusterId].append(edge[0])
-
-            clusterId += 1
-
-    n = len(clusters)
-    indices = []
-    # find the index duplicate clusters
-    for i in range(n):
-        s1 = set(clusters[i])
-        for j in range(i+1, n):
-            s2 = set(clusters[j])
-            if s2 == s1:
-                indices.append(j)
-
-    # remove duplicate clusters
-    for i in indices:
-        clusters.pop(i, "d")
-
-    return clusters
-
 
 def clusterIntervalNodes(groups, edges):
     """
@@ -202,27 +209,28 @@ def clusterIntervalNodes(groups, edges):
     clusters = OrderedDict()
     clusterId = 0
 
-    for _, group in groups.items():
+    for group in groups.values():
         for node in group:
             if clusterId not in clusters:
                 clusters[clusterId] = []
-
-            clusters[clusterId].append(node)
+                clusters[clusterId].append(node)
+            
+            # add nodes with edges in the same cluster
             for edge in edges:
-                if edge[0].id == node.id and edge[1] in group:
+                if edge[0].id_0 == node.id_0 and edge[1] in group and edge[1] not in clusters[clusterId]:
                     clusters[clusterId].append(edge[1])
 
-                elif edge[1].id == node.id and edge[0] in group:
+                elif edge[1].id_0 == node.id_0 and edge[0] in group and edge[0] not in clusters[clusterId]:
                     clusters[clusterId].append(edge[0])
 
             clusterId += 1
 
-    n = len(clusters)
+    temp = list(clusters.keys())
     indices = []
     # find the index duplicate clusters
-    for i in range(n):
+    for i in temp:
         s1 = set(clusters[i])
-        for j in range(i+1, n):
+        for j in temp[i+1:]:
             s2 = set(clusters[j])
             if s2 == s1:
                 indices.append(j)
@@ -231,6 +239,7 @@ def clusterIntervalNodes(groups, edges):
     for i in indices:
         clusters.pop(i, "d")
 
+    # print(clusters)
     return clusters
 
 
@@ -243,9 +252,9 @@ def graphFromCluster(clusters, prop):
 
         :rtype graph
     """
-    g = nx.DiGraph()
+    g = nx.Graph()
     newNodes = {}
-
+    JACCARD_THRESH = 0.1
     # create cluster node
     for name, cluster in clusters.items():
         newNodes[name] = clusterAverage(
@@ -260,7 +269,11 @@ def graphFromCluster(clusters, prop):
         cluster = set(clusters[i])
         for j in range(i+1,n):
             nextCluster = set(clusters[j])
-            if not cluster.isdisjoint(nextCluster):
+            # skip this edge if the Jaccard index is less than 10%
+            if jeccardIndex(cluster,nextCluster) < JACCARD_THRESH:
+                continue
+                
+            if not cluster.isdisjoint(nextCluster) and newNodes[names[i]] != newNodes[names[j]]:
                 g.add_edge(newNodes[names[i]], newNodes[names[j]], name=prop.upper())
 
     for node in newNodes.values():
@@ -268,6 +281,19 @@ def graphFromCluster(clusters, prop):
 
     return g
 
+def jeccardIndex(A,B):
+    """
+        Calculates the Jaccard index of two sets
+
+        :type A : set
+        :type B : set
+    """
+    if not isinstance(A,set) or not isinstance(B, set):
+        raise TypeError("A and B must sets")
+
+    j = len(A.intersection(B)) / len(A.union(B)) 
+
+    return j
 
 def getProperties(obj):
     """
@@ -314,11 +340,11 @@ def clusterAverage(name, cluster, props):
             else:
                 rsum += tp
 
-        if rsum != 0:
-            clusterNode.__dict__[prop] = rsum/n
+        if rsum != 0 or isinstance(tp,float) or isinstance(tp,int) :
+            clusterNode.__dict__[prop] = float(round(rsum/n,4))
             rsum = 0
         else:
-            clusterNode.__dict__[prop] = mode_var
+            clusterNode.__dict__[prop] = str(mode_var)
             mode_value = 0
             cat_var.clear()
 
