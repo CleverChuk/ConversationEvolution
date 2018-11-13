@@ -16,810 +16,3886 @@
   <key attr.name="parent_id" attr.type="string" for="node" id="d3" />
   <key attr.name="article_id" attr.type="string" for="node" id="d2" />
   <key attr.name="id_0" attr.type="string" for="node" id="d1" />
-  <key attr.name="name" attr.type="string" for="node" id="d0" />
+  <key attr.name="type" attr.type="string" for="node" id="d0" />
   <graph edgedefault="undirected">
-    <node id="c270">
-      <data key="d0">c</data>
+    <node id="768">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gex96</data>
-      <data key="d4">e9gg2z6</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">0.25</data>
-      <data key="d7">1541929095.0</data>
-      <data key="d8" />
-      <data key="d9">22.75</data>
-      <data key="d10">6.75</data>
+      <data key="d2">9wf6d4</data>
+      <data key="d3">e9k89mm</data>
+      <data key="d4">e9k8u7e</data>
+      <data key="d5">bug-hunter</data>
+      <data key="d6">9.6667</data>
+      <data key="d7">1542072630.8333</data>
+      <data key="d8">It would depend on the evidence surrounding what started the fire, whether it was intentional, negligent, grossly negligent, accidental, etc. 
+
+It is unlikely any responsible party could actually afford to make everyone whole.</data>
+      <data key="d9">148.0</data>
+      <data key="d10">6.2282</data>
       <data key="d11">0.0</data>
-      <data key="d12">-18.54</data>
-      <data key="d13">-0.0813</data>
+      <data key="d12">40.575</data>
+      <data key="d13">-0.061</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.2052</data>
+    </node>
+    <node id="769">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wf6d4</data>
+      <data key="d3">e9kb2r8</data>
+      <data key="d4">e9kdvzm</data>
+      <data key="d5">DuckTheFuck10</data>
+      <data key="d6">8.3333</data>
+      <data key="d7">1542072500.6667</data>
+      <data key="d8">Treelaw.png</data>
+      <data key="d9">146.0</data>
+      <data key="d10">6.785</data>
+      <data key="d11">0.0</data>
+      <data key="d12">26.9867</data>
+      <data key="d13">-0.1068</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.3442</data>
+    </node>
+    <node id="770">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wf6d4</data>
+      <data key="d3">e9kb828</data>
+      <data key="d4">e9ke5qk</data>
+      <data key="d5">Raven_skies</data>
+      <data key="d6">11.0</data>
+      <data key="d7">1542072761.0</data>
+      <data key="d8">I doubt even Warren Buffet could afford this level of damage. Billions and billions of dollars worth of property, infrastructure, possessions, cars. </data>
+      <data key="d9">150.0</data>
+      <data key="d10">5.6713</data>
+      <data key="d11">0.0</data>
+      <data key="d12">54.1633</data>
+      <data key="d13">-0.0152</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0663</data>
+    </node>
+    <node id="771">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9keejx</data>
+      <data key="d4">e9kuhai</data>
+      <data key="d5">timewaster83</data>
+      <data key="d6">179.0909</data>
+      <data key="d7">1542089275.8182</data>
+      <data key="d8">if they fire the op for reporting threats that is retaliation and highly illegal.
+
+you have to report this person for the safety of everyone involved to corporate and the police
+</data>
+      <data key="d9">337.4545</data>
+      <data key="d10">5.3308</data>
+      <data key="d11">0.0</data>
+      <data key="d12">73.1255</data>
+      <data key="d13">-0.1049</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1624</data>
+    </node>
+    <node id="772">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9keejx</data>
+      <data key="d4">e9l2bn3</data>
+      <data key="d5">EEllis708</data>
+      <data key="d6">211.1429</data>
+      <data key="d7">1542088790.1429</data>
+      <data key="d8">They can fire for anything but being a protected class. They just wouldn't be able to claim it was for cause and thus be liable for unemployment. </data>
+      <data key="d9">465.0</data>
+      <data key="d10">5.528</data>
+      <data key="d11">0.0</data>
+      <data key="d12">79.9943</data>
+      <data key="d13">-0.1325</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.2064</data>
+    </node>
+    <node id="773">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kybtg</data>
+      <data key="d4">e9kz91v</data>
+      <data key="d5">Smegma_Au_Gratin</data>
+      <data key="d6">463.6667</data>
+      <data key="d7">1542085547.0</data>
+      <data key="d8">OP would not be terminated. I'm not sure what that guy was babbling about but I get frustrated in this subreddit when I see people that have no idea what they're talking about try to impart knowledge like they are a reliable source. It's ridiculous. People avoid going to law enforcement after hearing shit like that.</data>
+      <data key="d9">244.0</data>
+      <data key="d10">5.1247</data>
+      <data key="d11">0.0</data>
+      <data key="d12">88.5767</data>
+      <data key="d13">-0.2545</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3802</data>
+    </node>
+    <node id="774">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kuhai</data>
+      <data key="d4">e9l0ziu</data>
+      <data key="d5">dak_181</data>
+      <data key="d6">123.0</data>
+      <data key="d7">1542090125.75</data>
+      <data key="d8">Less hard when you filed a police report immediately prior, OP for sure should do that immediately. </data>
+      <data key="d9">114.25</data>
+      <data key="d10">4.9858</data>
+      <data key="d11">0.0</data>
+      <data key="d12">61.105</data>
+      <data key="d13">-0.0565</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0854</data>
+    </node>
+    <node id="775">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kxres</data>
+      <data key="d4">e9kvvlo</data>
+      <data key="d5">AnewENTity</data>
+      <data key="d6">16.6667</data>
+      <data key="d7">1542089071.6667</data>
+      <data key="d8">I think if after the OP gets space from
+This guy by quitting that shitty job then if they want to report the guy that’s fine but they need to protect themselves first, they have a duty to themselves before anyone else. </data>
+      <data key="d9">335.7778</data>
+      <data key="d10">5.2146</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.8233</data>
+      <data key="d13">-0.0136</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.197</data>
+    </node>
+    <node id="776">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kxres</data>
+      <data key="d4">e9kwolv</data>
+      <data key="d5">AnewENTity</data>
+      <data key="d6">8.375</data>
+      <data key="d7">1542089446.75</data>
+      <data key="d8">Because op needs to quit the job and make sure they are away safe from this person before they can lash out.
+
+How many times have we heard of someone getting a restraining order etc and that pissing the perp
+Off more and causing them to act.
+
+The police aren’t going to protect this kid they are going to react once something bad happens.
+
+Despite protect and serve it’s more like react and file papers </data>
+      <data key="d9">316.0</data>
+      <data key="d10">5.0988</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.2188</data>
+      <data key="d13">-0.0361</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0967</data>
+    </node>
+    <node id="777">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kxres</data>
+      <data key="d4">e9kwuvo</data>
+      <data key="d5">AnewENTity</data>
+      <data key="d6">8.0</data>
+      <data key="d7">1542089593.8571</data>
+      <data key="d8">You are giving this person HORRIBLY DANGEROUS ADVICE. Please stop. 
+
+Go to the police immediately and start the process of investigation, this is what the police are for and this person is advising you to forgo that AND give up your livelihood for the actions of someone else. DO NOT LISTEN TO THIS POSTER!  </data>
+      <data key="d9">329.8571</data>
+      <data key="d10">5.1129</data>
+      <data key="d11">0.0</data>
+      <data key="d12">80.4371</data>
+      <data key="d13">-0.0972</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0921</data>
+    </node>
+    <node id="778">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kxres</data>
+      <data key="d4">e9kx2mt</data>
+      <data key="d5">AnewENTity</data>
+      <data key="d6">6.3333</data>
+      <data key="d7">1542089705.6667</data>
+      <data key="d8">First off, we are talking about an 18 year old kid who
+Works at a fast food restaurant they have their entire lives ahead of them if they don’t get murdered by the psycho flipping burgers next to them or rolling tacos.
+
+Second, I never said don’t contact the police about it.
+I said to get safe and the main step in that is to cut the primary contact with this nut job which is this $7-10 an hour fast food job.
+
+Third take a chill pill and relax. </data>
+      <data key="d9">380.0</data>
+      <data key="d10">5.4095</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.715</data>
+      <data key="d13">-0.0835</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0969</data>
+    </node>
+    <node id="779">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kxres</data>
+      <data key="d4">e9kxres</data>
+      <data key="d5">AnewENTity</data>
+      <data key="d6">6.4</data>
+      <data key="d7">1542089837.2</data>
+      <data key="d8">Why the hell would you quit the job first?  Tell your parents.  Call the cops .  Phone in work and tell the management what happened, record the call, tell them you aren't coming in until the cops take that guy away or he is at least fired.
+
+No reason to quit yet.  He's the one obeying the law, and doing his job, why should he lose his livelihood?</data>
+      <data key="d9">375.4</data>
+      <data key="d10">5.4356</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.904</data>
+      <data key="d13">-0.1084</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1163</data>
+    </node>
+    <node id="780">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kxres</data>
+      <data key="d4">e9kxy5e</data>
+      <data key="d5">AnewENTity</data>
+      <data key="d6">4.75</data>
+      <data key="d7">1542089999.25</data>
+      <data key="d8">You are taking an overly moralistic response to a reality based problem.
+
+Dude will then know where he works and have a pretty good idea who dimed on him.
+
+You think he’s going to jail forever over these threats ? This case could fall apart in 5 seconds flat if the other co worker won’t testify.
+
+Even if the guy pleaded guilty or gets convicted it’s terroristic threats or whatever the state equivalent is where Op is.
+
+Edit: also this is a fast food job people. I’m
+100% sure op can find another job if he continues breathing </data>
+      <data key="d9">392.25</data>
+      <data key="d10">5.1322</data>
+      <data key="d11">0.0</data>
+      <data key="d12">83.2125</data>
+      <data key="d13">-0.1106</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1013</data>
+    </node>
+    <node id="781">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kp92w</data>
+      <data key="d4">e9ku0b1</data>
+      <data key="d5">Anonymous</data>
+      <data key="d6">10.5</data>
+      <data key="d7">1542088012.5</data>
+      <data key="d8">[deleted]</data>
+      <data key="d9">77.0</data>
+      <data key="d10">5.57</data>
+      <data key="d11">0.0</data>
+      <data key="d12">65.5625</data>
+      <data key="d13">0.002</data>
       <data key="d14">Neutral</data>
       <data key="d15">0.25</data>
     </node>
-    <node id="c271">
-      <data key="d0">c</data>
+    <node id="782">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9ggik6</data>
-      <data key="d4">e9ghc7l</data>
-      <data key="d5">erleichda29</data>
-      <data key="d6">2.6667</data>
-      <data key="d7">1541929528.0</data>
-      <data key="d8" />
-      <data key="d9">27.3333</data>
-      <data key="d10">6.6667</data>
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kyzwd</data>
+      <data key="d4">e9kz2pa</data>
+      <data key="d5">AnewENTity</data>
+      <data key="d6">3.3333</data>
+      <data key="d7">1542089618.0</data>
+      <data key="d8">Op? Op said in their post they are 18 </data>
+      <data key="d9">99.6667</data>
+      <data key="d10">5.0933</data>
       <data key="d11">0.0</data>
-      <data key="d12">-36.9267</data>
-      <data key="d13">-0.1084</data>
+      <data key="d12">75.21</data>
+      <data key="d13">0.0026</data>
       <data key="d14">Neutral</data>
       <data key="d15">0.0</data>
     </node>
-    <node id="c272">
-      <data key="d0">c</data>
+    <node id="783">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gnjdd</data>
-      <data key="d4">e9gs03b</data>
-      <data key="d5">thatsnotgneiss</data>
-      <data key="d6">1662.3333</data>
-      <data key="d7">1541939951.0</data>
-      <data key="d8" />
-      <data key="d9">180.3333</data>
-      <data key="d10">5.2357</data>
+      <data key="d2">9we95t</data>
+      <data key="d3">e9k7lnl</data>
+      <data key="d4">e9k7lnl</data>
+      <data key="d5">bestcatmomever</data>
+      <data key="d6">124.125</data>
+      <data key="d7">1542079119.125</data>
+      <data key="d8">The woman I spoke to in the warrants department did say she would flag our residence but wasn’t sure if it would help. Thanks for the advice! </data>
+      <data key="d9">447.75</data>
+      <data key="d10">5.7062</data>
+      <data key="d11">0.0068</data>
+      <data key="d12">64.99</data>
+      <data key="d13">0.1455</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.2061</data>
+    </node>
+    <node id="784">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9we95t</data>
+      <data key="d3">e9kim34</data>
+      <data key="d4">e9kir1l</data>
+      <data key="d5">LocationBot</data>
+      <data key="d6">202.6667</data>
+      <data key="d7">1542073821.6667</data>
+      <data key="d8">A cat usually has about 12 whiskers on each side of its face.
+
+
+---
+LocationBot 4.2836 | GitHub (Coming Soon) | [Statistics](https://locationbot.info) | [Report Issues](https://www.reddit.com/r/locationbot)</data>
+      <data key="d9">384.6667</data>
+      <data key="d10">6.333</data>
+      <data key="d11">0.0136</data>
+      <data key="d12">50.8467</data>
+      <data key="d13">0.0864</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.3775</data>
+    </node>
+    <node id="785">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9we95t</data>
+      <data key="d3">e9kt2ck</data>
+      <data key="d4">e9l38e6</data>
+      <data key="d5">j-dewitt</data>
+      <data key="d6">91.3333</data>
+      <data key="d7">1542083495.6667</data>
+      <data key="d8">&gt; Remember that the police aren't your enemies, the bureaucracy is. You need to connect with a person that can cut through that somehow.
+
+Maybe talk to an elected representative? Perhaps the mayor's office or State representative.</data>
+      <data key="d9">708.0</data>
+      <data key="d10">6.0033</data>
+      <data key="d11">0.0046</data>
+      <data key="d12">70.0667</data>
+      <data key="d13">0.1866</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.1291</data>
+    </node>
+    <node id="786">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9we95t</data>
+      <data key="d3">e9k03vk</data>
+      <data key="d4">e9k0hiw</data>
+      <data key="d5">theryman</data>
+      <data key="d6">66.0</data>
+      <data key="d7">1542067974.0</data>
+      <data key="d8">&gt; So long as the house is as advertised, it could have been the site of a mass suicide and they still wouldn't have had to disclose that.
+
+Florida even SPECIFICALLY ENUMERATES this in law - 
+
+&gt;(b) The fact that a property was, or was at any time suspected to have been, the site of a homicide, suicide, or death is not a material fact that must be disclosed in a real estate transaction.
+</data>
+      <data key="d9">324.0</data>
+      <data key="d10">5.499</data>
       <data key="d11">0.0</data>
-      <data key="d12">54.2233</data>
-      <data key="d13">-0.2373</data>
+      <data key="d12">62.43</data>
+      <data key="d13">-0.3004</data>
       <data key="d14">Negative</data>
-      <data key="d15">0.164</data>
+      <data key="d15">0.3415</data>
     </node>
-    <node id="c273">
-      <data key="d0">c</data>
+    <node id="787">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gdfes</data>
-      <data key="d4">e9gnjdd</data>
-      <data key="d5">PayTreeIt</data>
-      <data key="d6">8727.5</data>
-      <data key="d7">1541934631.25</data>
-      <data key="d8" />
-      <data key="d9">199.25</data>
-      <data key="d10">4.7475</data>
+      <data key="d2">9we95t</data>
+      <data key="d3">e9k7d6v</data>
+      <data key="d4">e9ken1k</data>
+      <data key="d5">dwarf_ewok</data>
+      <data key="d6">45.6667</data>
+      <data key="d7">1542069399.6667</data>
+      <data key="d8">You could contact the police departments that are sending the SWAT teams so they are notified of the current owners and residents, and that it's no longer a halfway house.</data>
+      <data key="d9">302.6667</data>
+      <data key="d10">5.3453</data>
       <data key="d11">0.0</data>
-      <data key="d12">70.38</data>
-      <data key="d13">-0.193</data>
+      <data key="d12">65.9533</data>
+      <data key="d13">-0.1415</data>
       <data key="d14">Negative</data>
-      <data key="d15">0.2898</data>
+      <data key="d15">0.3923</data>
     </node>
-    <node id="c274">
-      <data key="d0">c</data>
+    <node id="788">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gdfes</data>
-      <data key="d4">e9goy7j</data>
-      <data key="d5">WiseMonkeyGoodMonkey</data>
-      <data key="d6">7120.2</data>
-      <data key="d7">1541935951.0</data>
-      <data key="d8" />
-      <data key="d9">175.0</data>
-      <data key="d10">4.8646</data>
+      <data key="d2">9we95t</data>
+      <data key="d3">e9kbwsk</data>
+      <data key="d4">e9kcd8e</data>
+      <data key="d5">redheadjosh23</data>
+      <data key="d6">22.375</data>
+      <data key="d7">1542077203.25</data>
+      <data key="d8">SWAT definitely knocks for lower risk warrants. Low risk warrants don't even get a SWAT team. High risk warrants get early morning no knock warrants though. </data>
+      <data key="d9">217.625</data>
+      <data key="d10">5.2797</data>
       <data key="d11">0.0</data>
-      <data key="d12">72.766</data>
-      <data key="d13">-0.0821</data>
+      <data key="d12">72.6163</data>
+      <data key="d13">-0.0718</data>
       <data key="d14">Negative</data>
-      <data key="d15">0.2411</data>
+      <data key="d15">0.2359</data>
     </node>
-    <node id="c275">
-      <data key="d0">c</data>
+    <node id="789">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hqmu8</data>
-      <data key="d4">e9hqmu8</data>
-      <data key="d5">westphall</data>
-      <data key="d6">54.75</data>
-      <data key="d7">1541984744.0</data>
-      <data key="d8" />
-      <data key="d9">738.0</data>
-      <data key="d10">6.7247</data>
-      <data key="d11">0.0658</data>
-      <data key="d12">62.7225</data>
-      <data key="d13">0.0874</data>
+      <data key="d2">9we95t</data>
+      <data key="d3">e9kbwsk</data>
+      <data key="d4">e9kggyo</data>
+      <data key="d5">redheadjosh23</data>
+      <data key="d6">17.5714</data>
+      <data key="d7">1542077726.4286</data>
+      <data key="d8">Or on this case where it’s assumed to be a halfway house, with a half dozen people who may or may not sketchy pasts, it’s probably deemed safer to knock for everyone there.  </data>
+      <data key="d9">226.2857</data>
+      <data key="d10">5.0791</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.6243</data>
+      <data key="d13">-0.0269</data>
       <data key="d14">Positive</data>
-      <data key="d15">0.3292</data>
+      <data key="d15">0.2458</data>
     </node>
-    <node id="c276">
-      <data key="d0">c</data>
+    <node id="790">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hhqab</data>
-      <data key="d4">e9hosht</data>
-      <data key="d5">jkseller</data>
-      <data key="d6">84.5</data>
-      <data key="d7">1541982183.0</data>
-      <data key="d8" />
-      <data key="d9">619.5</data>
-      <data key="d10">6.0355</data>
-      <data key="d11">0.1958</data>
-      <data key="d12">68.01</data>
-      <data key="d13">0.0147</data>
+      <data key="d2">9we95t</data>
+      <data key="d3">e9khten</data>
+      <data key="d4">e9kiwa6</data>
+      <data key="d5">realistic_meat</data>
+      <data key="d6">19.5</data>
+      <data key="d7">1542078475.75</data>
+      <data key="d8">It will help if you ask them to identify themselves, what department/jurisdiction they're from, who they're looking for, and how to remove your address from their list. Write it all down so you don't forget.
+
+They should be willing to help you out because it's wasting their time showing up there.</data>
+      <data key="d9">238.5</data>
+      <data key="d10">5.343</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.36</data>
+      <data key="d13">0.0725</data>
       <data key="d14">Positive</data>
-      <data key="d15">0.5445</data>
+      <data key="d15">0.2672</data>
     </node>
-    <node id="c277">
-      <data key="d0">c</data>
+    <node id="791">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hosht</data>
-      <data key="d4">e9hr5c7</data>
-      <data key="d5">jkseller</data>
-      <data key="d6">37.0</data>
-      <data key="d7">1541986257.6667</data>
-      <data key="d8" />
-      <data key="d9">373.0</data>
-      <data key="d10">5.7903</data>
-      <data key="d11">0.1305</data>
-      <data key="d12">66.4167</data>
-      <data key="d13">0.3093</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.0899</data>
-    </node>
-    <node id="c278">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hosht</data>
-      <data key="d4">e9hrrfj</data>
-      <data key="d5">jkseller</data>
-      <data key="d6">98.5</data>
-      <data key="d7">1541986896.5</data>
-      <data key="d8" />
-      <data key="d9">269.25</data>
-      <data key="d10">4.925</data>
-      <data key="d11">0.1181</data>
-      <data key="d12">84.365</data>
-      <data key="d13">-0.0097</data>
+      <data key="d2">9we95t</data>
+      <data key="d3">e9kggyo</data>
+      <data key="d4">e9khhlu</data>
+      <data key="d5">redheadjosh23</data>
+      <data key="d6">15.0</data>
+      <data key="d7">1542076727.3333</data>
+      <data key="d8">Halfway houses usually aren’t some dangerous places full of guns. Most likely what has happened is the previous tenants skipped bail or their probation and now have a warrant for their arrest. It doesn’t mean they are dangerous though, hence why there wasn’t a no knock warrant.  </data>
+      <data key="d9">210.0</data>
+      <data key="d10">4.7273</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.9767</data>
+      <data key="d13">-0.1594</data>
       <data key="d14">Negative</data>
+      <data key="d15">0.2173</data>
+    </node>
+    <node id="792">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9jzqzq</data>
+      <data key="d4">e9k455p</data>
+      <data key="d5">Blackstar1401</data>
+      <data key="d6">214.4286</data>
+      <data key="d7">1542071301.0</data>
+      <data key="d8">Be careful with a financial advisor.  You will want to do your due diligence.  Research several and consider taking some financial classes yourself.  
+
+I also second the credit reports.  Your parents could have taken credit cards in your name.  Your sister can also lock her credit.  Make sure you do it with all three credit agencies.  If you do only one then sometimes it can still be used.</data>
+      <data key="d9">672.0</data>
+      <data key="d10">6.0981</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.7671</data>
+      <data key="d13">0.3005</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.2379</data>
+    </node>
+    <node id="793">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9k6ogb</data>
+      <data key="d4">e9k737u</data>
+      <data key="d5">techiejames</data>
+      <data key="d6">18.3333</data>
+      <data key="d7">1542070922.3333</data>
+      <data key="d8">Because he's a legal adult, she's a minor, and she will need a lawyer that can be considered a 3rd party. Kind of like Guardian Ad Litem. The point of the lawyer would be solely in the interest of the child. The parents would have less of a chance keeping her from the lawyer than if it was his. Also, I'm sure differing laws will take place since he is now 18 and moving out and she is not. </data>
+      <data key="d9">166.0</data>
+      <data key="d10">4.6717</data>
+      <data key="d11">0.0</data>
+      <data key="d12">95.5733</data>
+      <data key="d13">0.1199</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1173</data>
+    </node>
+    <node id="794">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kbg1h</data>
+      <data key="d4">e9krot0</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">45.0</data>
+      <data key="d7">1542079444.6667</data>
+      <data key="d8">I’ve always wondered, is he able to get ALL the money back? Like what if his parents don’t have any way to pay it back? How does that work?</data>
+      <data key="d9">551.6667</data>
+      <data key="d10">5.1557</data>
+      <data key="d11">0.0</data>
+      <data key="d12">82.9167</data>
+      <data key="d13">0.0839</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.3809</data>
+    </node>
+    <node id="795">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kljrw</data>
+      <data key="d4">e9km0vx</data>
+      <data key="d5">schneidmaster</data>
+      <data key="d6">16.75</data>
+      <data key="d7">1542083198.125</data>
+      <data key="d8">&gt;To give you an example of how much money we are talking. I bought a new car cash and that was not even a dent.
+
+&amp;#x200B;</data>
+      <data key="d9">248.875</data>
+      <data key="d10">4.9879</data>
+      <data key="d11">0.0</data>
+      <data key="d12">68.7287</data>
+      <data key="d13">-0.0554</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0263</data>
+    </node>
+    <node id="796">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kljrw</data>
+      <data key="d4">e9kqo6p</data>
+      <data key="d5">azdustkicker</data>
+      <data key="d6">10.0</data>
+      <data key="d7">1542084573.2</data>
+      <data key="d8">It's still acting against the will, and technically theft. Even if it's not outright illegal, it's still astoundingly unethical. </data>
+      <data key="d9">328.0</data>
+      <data key="d10">5.6294</data>
+      <data key="d11">0.0</data>
+      <data key="d12">59.6</data>
+      <data key="d13">-0.0386</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0273</data>
+    </node>
+    <node id="797">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kqo6p</data>
+      <data key="d4">e9kuhsq</data>
+      <data key="d5">lotte914</data>
+      <data key="d6">9.5</data>
+      <data key="d7">1542085808.5</data>
+      <data key="d8">I think u/ugottahvbluhair was simply indicating the size of the inheritance (interest money alone has been enough to live that lavishly), not minimizing the theft. </data>
+      <data key="d9">146.5</data>
+      <data key="d10">6.132</data>
+      <data key="d11">0.0</data>
+      <data key="d12">45.505</data>
+      <data key="d13">-0.0233</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.027</data>
+    </node>
+    <node id="798">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kqo6p</data>
+      <data key="d4">e9kuhsq</data>
+      <data key="d5">lotte914</data>
+      <data key="d6">13.0</data>
+      <data key="d7">1542084859.3333</data>
+      <data key="d8">I think u/ugottahvbluhair was simply indicating the size of the inheritance (interest money alone has been enough to live that lavishly), not minimizing the theft. </data>
+      <data key="d9">148.3333</data>
+      <data key="d10">5.6747</data>
+      <data key="d11">0.0</data>
+      <data key="d12">54.9533</data>
+      <data key="d13">-0.1066</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0298</data>
+    </node>
+    <node id="799">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9ksyob</data>
+      <data key="d4">e9ktn00</data>
+      <data key="d5">StillUnderTheStars</data>
+      <data key="d6">5.6667</data>
+      <data key="d7">1542086976.3333</data>
+      <data key="d8">So essentially while he may not get it ALL, he can take most assets, take excess money from paycheques, and they can never really own expensive assets like cars and houses again?</data>
+      <data key="d9">428.0</data>
+      <data key="d10">5.7663</data>
+      <data key="d11">0.0069</data>
+      <data key="d12">60.1233</data>
+      <data key="d13">0.1586</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0574</data>
+    </node>
+    <node id="800">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9krv4q</data>
+      <data key="d4">e9krv4q</data>
+      <data key="d5">StillUnderTheStars</data>
+      <data key="d6">4.0526</data>
+      <data key="d7">1542088749.1579</data>
+      <data key="d8">If his parents are unable to repay, he will not be able to collect. </data>
+      <data key="d9">262.8947</data>
+      <data key="d10">5.0256</data>
+      <data key="d11">0.0048</data>
+      <data key="d12">77.8237</data>
+      <data key="d13">0.132</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1485</data>
+    </node>
+    <node id="801">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9krv4q</data>
+      <data key="d4">e9kvj0z</data>
+      <data key="d5">StillUnderTheStars</data>
+      <data key="d6">4.1111</data>
+      <data key="d7">1542088951.5</data>
+      <data key="d8">Maybe. Three of many potential considerations would be:
+
+1. Typically, primary residences are protected from debt collection action under the "homestead" exemption, which may protect the home from being seized. TX does have a homestead exemption. However, it has to be affirmatively designated. 
+
+2. Depending on what legal path OP takes, it may be possible to disregard typical restrictions on collections by getting anything they bought with OP's inheritance designated as proceeds of a criminal enterprise. If that's possible and done, then all such proceeds would be subject to immediate forfeiture. 
+
+3. Any collections action against the home assumes that there is equity value in the home. ~~Not sure whether that's a good bet here.~~ *Which is a pretty good bet since OP said it's paid off... so disregard this one.*
+
+etc etc.</data>
+      <data key="d9">269.7778</data>
+      <data key="d10">5.1066</data>
+      <data key="d11">0.005</data>
+      <data key="d12">76.3733</data>
+      <data key="d13">0.1343</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.1501</data>
+    </node>
+    <node id="802">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9krv4q</data>
+      <data key="d4">e9ksyob</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">3.4286</data>
+      <data key="d7">1542089128.0714</data>
+      <data key="d8">Well, "without consequence" is putting the cart well in front of the horse. Although not fully laid out above, there are a number of potential penalizing outcomes here for the parents up to and including criminal action. However, we simply don't have enough information to get into this with any certainty. 
+
+As for the specific question of debt collection, and acknowledging that such a discussion assumes that a court finds that a debt is owed by OP's parents to OP, OP has the same remedies and limitations that any other debt collector would have. He could seize their assets and accounts, garnish their wages and other income, and do anything else that any other collector can do. And further, unlike most debts, it's unlikely that this particular debt would be dischargeable in bankruptcy proceedings. 
+
+But still, while it is possible for a debt like this to be a cloud over the parents' heads for the rest of their lives, they can't pay money that they don't have. </data>
+      <data key="d9">233.3571</data>
+      <data key="d10">5.0146</data>
+      <data key="d11">0.0056</data>
+      <data key="d12">75.2621</data>
+      <data key="d13">0.1757</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1627</data>
+    </node>
+    <node id="803">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kx5xo</data>
+      <data key="d4">e9ktn00</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">3.1818</data>
+      <data key="d7">1542089107.1818</data>
+      <data key="d8">So essentially while he may not get it ALL, he can take most assets, take excess money from paycheques, and they can never really own expensive assets like cars and houses again?</data>
+      <data key="d9">265.3636</data>
+      <data key="d10">5.1511</data>
+      <data key="d11">0.0072</data>
+      <data key="d12">75.2318</data>
+      <data key="d13">0.1809</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1132</data>
+    </node>
+    <node id="804">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kx5xo</data>
+      <data key="d4">e9kvkot</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">3.3</data>
+      <data key="d7">1542089487.5</data>
+      <data key="d8">That would be my guess. 
+
+Of course, actual outcome is impossible to know at this stage and given the limited information available. </data>
+      <data key="d9">272.6</data>
+      <data key="d10">5.2056</data>
+      <data key="d11">0.0079</data>
+      <data key="d12">74.318</data>
+      <data key="d13">0.1964</data>
+      <data key="d14">Positive</data>
       <data key="d15">0.0841</data>
     </node>
-    <node id="c279">
-      <data key="d0">c</data>
+    <node id="805">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hr7ez</data>
-      <data key="d4">e9hs7z1</data>
-      <data key="d5">tuckmyjunksofast</data>
-      <data key="d6">87.6667</data>
-      <data key="d7">1541985187.6667</data>
-      <data key="d8" />
-      <data key="d9">123.3333</data>
-      <data key="d10">4.523</data>
-      <data key="d11">0.0</data>
-      <data key="d12">75.3</data>
-      <data key="d13">-0.237</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0939</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kx5xo</data>
+      <data key="d4">e9kx5xo</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">2.6667</data>
+      <data key="d7">1542089862.7778</data>
+      <data key="d8">Lmfao wow that sounds like that one fuck up will fuck up the rest of your life.</data>
+      <data key="d9">194.7778</data>
+      <data key="d10">4.9857</data>
+      <data key="d11">0.0065</data>
+      <data key="d12">75.4489</data>
+      <data key="d13">0.2271</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0806</data>
     </node>
-    <node id="c280">
-      <data key="d0">c</data>
+    <node id="806">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hdw69</data>
-      <data key="d4">e9hlv08</data>
-      <data key="d5">TheRevadin</data>
-      <data key="d6">396.0</data>
-      <data key="d7">1541978674.0</data>
-      <data key="d8" />
-      <data key="d9">221.3333</data>
-      <data key="d10">4.6163</data>
-      <data key="d11">0.0</data>
-      <data key="d12">87.8</data>
-      <data key="d13">-0.0343</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.381</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kx5xo</data>
+      <data key="d4">e9ky22l</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">2.375</data>
+      <data key="d7">1542090265.875</data>
+      <data key="d8">Yeah, and I'm ok with that. There are some fuck ups that I think *should* fuck up the rest of your life. Stealing from your children makes that list for me. Pretty easily, actually. </data>
+      <data key="d9">196.875</data>
+      <data key="d10">4.9469</data>
+      <data key="d11">0.0073</data>
+      <data key="d12">77.89</data>
+      <data key="d13">0.1719</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0836</data>
     </node>
-    <node id="c281">
-      <data key="d0">c</data>
+    <node id="807">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hdw69</data>
-      <data key="d4">e9he3b0</data>
-      <data key="d5">Cypher_Blue</data>
-      <data key="d6">367.25</data>
-      <data key="d7">1541978223.5</data>
-      <data key="d8" />
-      <data key="d9">267.25</data>
-      <data key="d10">4.948</data>
-      <data key="d11">0.0</data>
-      <data key="d12">86.36</data>
-      <data key="d13">-0.0983</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j2frb</data>
+      <data key="d4">e9jqwpw</data>
+      <data key="d5">recurringicarus</data>
+      <data key="d6">1217.6667</data>
+      <data key="d7">1542041420.0</data>
+      <data key="d8">From that link, starting at section 12, it does say they’re required to notify parents and give a reason for the arrest. 
+
+* In addition, the law requires a prompt notification to a parent or guardian under §52.02. Failure to notify a child’s parent or guardian at all clearly violates the requirement; waiting several hours before officers have even attempted to notify them can also violate the statute. Neither is acceptable. While it is not always possible to reach a juvenile’s parent or guardian, officers must make prompt attempts after a juvenile’s arrest. </data>
+      <data key="d9">324.6667</data>
+      <data key="d10">6.661</data>
+      <data key="d11">0.1694</data>
+      <data key="d12">41.7933</data>
+      <data key="d13">-0.1973</data>
       <data key="d14">Negative</data>
-      <data key="d15">0.353</data>
+      <data key="d15">0.424</data>
     </node>
-    <node id="c282">
-      <data key="d0">c</data>
+    <node id="808">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hugzy</data>
-      <data key="d4">e9huprx</data>
-      <data key="d5">Cypher_Blue</data>
-      <data key="d6">13.3333</data>
-      <data key="d7">1541987802.0</data>
-      <data key="d8" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j2frb</data>
+      <data key="d4">e9jqwpw</data>
+      <data key="d5">recurringicarus</data>
+      <data key="d6">988.25</data>
+      <data key="d7">1542044719.0</data>
+      <data key="d8">From that link, starting at section 12, it does say they’re required to notify parents and give a reason for the arrest. 
+
+* In addition, the law requires a prompt notification to a parent or guardian under §52.02. Failure to notify a child’s parent or guardian at all clearly violates the requirement; waiting several hours before officers have even attempted to notify them can also violate the statute. Neither is acceptable. While it is not always possible to reach a juvenile’s parent or guardian, officers must make prompt attempts after a juvenile’s arrest. </data>
+      <data key="d9">392.5</data>
+      <data key="d10">6.6173</data>
+      <data key="d11">0.127</data>
+      <data key="d12">50.0275</data>
+      <data key="d13">-0.1693</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3222</data>
+    </node>
+    <node id="809">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jrb2w</data>
+      <data key="d4">e9js7ap</data>
+      <data key="d5">bubblegum_tatem</data>
+      <data key="d6">441.3333</data>
+      <data key="d7">1542053584.0</data>
+      <data key="d8">It's so crazy that I have to say this, but this is why it's important to teach your kids their rights in America. Not just police, but school officials will try and screw over innocent children simply because they don't like the kid.
+
+If you're going to let your kids have a phone and various accounts that need a password, then teach them that they don't have to give login info to *anyone*. If a parent doesn't like that because their access to their kids' accounts is also restricted, then your kids aren't ready for it yet. It's part of the territory when you allow them access to technology.</data>
+      <data key="d9">427.6667</data>
+      <data key="d10">6.6377</data>
+      <data key="d11">0.1694</data>
+      <data key="d12">52.4633</data>
+      <data key="d13">-0.1727</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0963</data>
+    </node>
+    <node id="810">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jrb2w</data>
+      <data key="d4">e9js7ap</data>
+      <data key="d5">bubblegum_tatem</data>
+      <data key="d6">324.0</data>
+      <data key="d7">1542053998.0</data>
+      <data key="d8">It's so crazy that I have to say this, but this is why it's important to teach your kids their rights in America. Not just police, but school officials will try and screw over innocent children simply because they don't like the kid.
+
+If you're going to let your kids have a phone and various accounts that need a password, then teach them that they don't have to give login info to *anyone*. If a parent doesn't like that because their access to their kids' accounts is also restricted, then your kids aren't ready for it yet. It's part of the territory when you allow them access to technology.</data>
+      <data key="d9">359.0</data>
+      <data key="d10">6.589</data>
+      <data key="d11">0.2541</data>
+      <data key="d12">52.295</data>
+      <data key="d13">-0.0896</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1285</data>
+    </node>
+    <node id="811">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j1lon</data>
+      <data key="d4">e9jes5g</data>
+      <data key="d5">elMaderas94</data>
+      <data key="d6">470.5</data>
+      <data key="d7">1542038673.25</data>
+      <data key="d8">Look up the public safety exception to Miranda. 
+https://leb.fbi.gov/articles/legal-digest/legal-digest-the-public-safety-exception-to-miranda
+
+However, I’m guessing it’d be applied similarly to juveniles. </data>
+      <data key="d9">703.5</data>
+      <data key="d10">7.7855</data>
+      <data key="d11">0.0</data>
+      <data key="d12">36.3225</data>
+      <data key="d13">0.1559</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.3086</data>
+    </node>
+    <node id="812">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j1lon</data>
+      <data key="d4">e9jes5g</data>
+      <data key="d5">elMaderas94</data>
+      <data key="d6">300.5714</data>
+      <data key="d7">1542045543.4286</data>
+      <data key="d8">Look up the public safety exception to Miranda. 
+https://leb.fbi.gov/articles/legal-digest/legal-digest-the-public-safety-exception-to-miranda
+
+However, I’m guessing it’d be applied similarly to juveniles. </data>
+      <data key="d9">491.8571</data>
+      <data key="d10">6.7133</data>
+      <data key="d11">0.0</data>
+      <data key="d12">50.0643</data>
+      <data key="d13">0.1811</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.2263</data>
+    </node>
+    <node id="813">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jpws7</data>
+      <data key="d4">e9jqxpm</data>
+      <data key="d5">DawnMM1976</data>
+      <data key="d6">394.25</data>
+      <data key="d7">1542044161.0</data>
+      <data key="d8">Totally agree. I wasn’t sure why the OP called a friend who was a social worker.  I’m not sure what they thought a social worker was going to do in this case.  This kid needed a lawyer.  </data>
+      <data key="d9">706.75</data>
+      <data key="d10">6.6835</data>
+      <data key="d11">0.0</data>
+      <data key="d12">64.0825</data>
+      <data key="d13">0.1067</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.3231</data>
+    </node>
+    <node id="814">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jsfvg</data>
+      <data key="d4">e9jt956</data>
+      <data key="d5">fables_of_faubus</data>
+      <data key="d6">175.6667</data>
+      <data key="d7">1542047386.6667</data>
+      <data key="d8">They could likely argue that they believed conspiracy was already in progress and that there could be others actively working on a shooting. A stretch maybe, but it could fit the public safety exeption. </data>
+      <data key="d9">205.3333</data>
+      <data key="d10">6.753</data>
+      <data key="d11">0.0</data>
+      <data key="d12">31.3733</data>
+      <data key="d13">0.2803</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0971</data>
+    </node>
+    <node id="815">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqxpm</data>
+      <data key="d4">e9jspy0</data>
+      <data key="d5">bulletv1</data>
+      <data key="d6">75.6667</data>
+      <data key="d7">1542053108.3333</data>
+      <data key="d8">A social worker would generally know who the parents should get in touch with to get the issue resolved, and has possibly dealt with similar situations. While not as good as a lawyer they could help get you pointed in the right direction. </data>
+      <data key="d9">535.6667</data>
+      <data key="d10">5.7597</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.07</data>
+      <data key="d13">0.1031</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0975</data>
+    </node>
+    <node id="816">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jsfvg</data>
+      <data key="d4">e9jt956</data>
+      <data key="d5">fables_of_faubus</data>
+      <data key="d6">141.5</data>
+      <data key="d7">1542055473.5</data>
+      <data key="d8">They could likely argue that they believed conspiracy was already in progress and that there could be others actively working on a shooting. A stretch maybe, but it could fit the public safety exeption. </data>
+      <data key="d9">205.0</data>
+      <data key="d10">5.9545</data>
+      <data key="d11">0.0</data>
+      <data key="d12">62.425</data>
+      <data key="d13">0.3152</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1195</data>
+    </node>
+    <node id="817">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jd68y</data>
+      <data key="d4">e9js77s</data>
+      <data key="d5">petit_cochon</data>
+      <data key="d6">828.3333</data>
+      <data key="d7">1542046327.3333</data>
+      <data key="d8">Once a suspect CLEARLY invokes his or her right for an attorney, however, questioning cannot continue without an attorney present. 
+
+</data>
       <data key="d9">236.6667</data>
-      <data key="d10">5.3687</data>
+      <data key="d10">5.7307</data>
       <data key="d11">0.0</data>
-      <data key="d12">75.37</data>
-      <data key="d13">-0.1907</data>
+      <data key="d12">49.98</data>
+      <data key="d13">-0.2099</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0454</data>
+    </node>
+    <node id="818">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jd68y</data>
+      <data key="d4">e9jd68y</data>
+      <data key="d5">god__of__reddit</data>
+      <data key="d6">684.9474</data>
+      <data key="d7">1542048261.6316</data>
+      <data key="d8">I hate to tell you this, but they CAN. One of the most infuriating parts of criminal procedure is that courts have upheld instances where cops have failed to inform people under interrogation that their lawyer has asked to see them. What's worse is that the lawyer can be waiting for hours to see their client just like these parents were. The only way around it is for the individual to request their lawyer. This is something that needs to be taught to children and adults. </data>
+      <data key="d9">263.3158</data>
+      <data key="d10">5.2282</data>
+      <data key="d11">0.0</data>
+      <data key="d12">62.8595</data>
+      <data key="d13">-0.1591</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1195</data>
+    </node>
+    <node id="819">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jd68y</data>
+      <data key="d4">e9jpmph</data>
+      <data key="d5">Blacksheepfab</data>
+      <data key="d6">288.0625</data>
+      <data key="d7">1542049048.3125</data>
+      <data key="d8">IANOL but obviously as others have stated contact a lawyer immediately...I will say in response to your comment that what OP is describing would definitely be a Miranda violation, that is, if they didn't read the kid his rights. See JDB v. North Carolina 546 US _ (2011)</data>
+      <data key="d9">274.6875</data>
+      <data key="d10">5.2868</data>
+      <data key="d11">0.0</data>
+      <data key="d12">62.0569</data>
+      <data key="d13">-0.1835</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0751</data>
+    </node>
+    <node id="820">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqsq8</data>
+      <data key="d4">e9jr11c</data>
+      <data key="d5">Twizted_Sizter</data>
+      <data key="d6">99.6667</data>
+      <data key="d7">1542052916.3333</data>
+      <data key="d8">Police can force you to fingerprint unlock your phone.  See this article: [https://www.theatlantic.com/technology/archive/2016/05/iphone-fingerprint-search-warrant/480861/](https://www.theatlantic.com/technology/archive/2016/05/iphone-fingerprint-search-warrant/480861/)</data>
+      <data key="d9">212.3333</data>
+      <data key="d10">10.7627</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-10.36</data>
+      <data key="d13">-0.018</data>
       <data key="d14">Neutral</data>
-      <data key="d15">0.1019</data>
+      <data key="d15">0.0789</data>
     </node>
-    <node id="c283">
-      <data key="d0">c</data>
+    <node id="821">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9ho6r3</data>
-      <data key="d4">e9hrw4a</data>
-      <data key="d5">Cypher_Blue</data>
-      <data key="d6">14.5</data>
-      <data key="d7">1541985377.0</data>
-      <data key="d8" />
-      <data key="d9">216.0</data>
-      <data key="d10">4.8165</data>
-      <data key="d11">0.0</data>
-      <data key="d12">80.765</data>
-      <data key="d13">-0.063</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqsq8</data>
+      <data key="d4">e9jri5n</data>
+      <data key="d5">beanboy4life</data>
+      <data key="d6">735.25</data>
+      <data key="d7">1542050925.0625</data>
+      <data key="d8">Not OP. I did this. My child said these words. Texas. They ignored it and continued an interrogation. </data>
+      <data key="d9">192.6875</data>
+      <data key="d10">6.2313</data>
+      <data key="d11">0.0566</data>
+      <data key="d12">61.8875</data>
+      <data key="d13">0.0468</data>
       <data key="d14">Neutral</data>
-      <data key="d15">0.0797</data>
+      <data key="d15">0.1002</data>
     </node>
-    <node id="c284">
-      <data key="d0">c</data>
+    <node id="822">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hikwd</data>
-      <data key="d4">e9hizuo</data>
-      <data key="d5">Tyko_3</data>
-      <data key="d6">1756.5</data>
-      <data key="d7">1541980546.0</data>
-      <data key="d8" />
-      <data key="d9">158.0</data>
-      <data key="d10">4.6325</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqsq8</data>
+      <data key="d4">e9jqlhe</data>
+      <data key="d5">fibrocyte-etycorbif</data>
+      <data key="d6">532.5833</data>
+      <data key="d7">1542049679.1667</data>
+      <data key="d8">Why?</data>
+      <data key="d9">185.25</data>
+      <data key="d10">6.4872</data>
+      <data key="d11">0.0549</data>
+      <data key="d12">56.4225</data>
+      <data key="d13">0.0402</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.1273</data>
+    </node>
+    <node id="823">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqsq8</data>
+      <data key="d4">e9jqx84</data>
+      <data key="d5">lamamaloca</data>
+      <data key="d6">624.3</data>
+      <data key="d7">1542049546.9</data>
+      <data key="d8">Courts have ruled police can compel opening a fingerprint lock.</data>
+      <data key="d9">216.8</data>
+      <data key="d10">6.9596</data>
+      <data key="d11">0.0658</data>
+      <data key="d12">47.659</data>
+      <data key="d13">0.0211</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.1409</data>
+    </node>
+    <node id="824">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqsq8</data>
+      <data key="d4">e9jsevo</data>
+      <data key="d5">HiWhoJoined</data>
+      <data key="d6">90.5556</data>
+      <data key="d7">1542053694.4444</data>
+      <data key="d8">Current caselaw would indicate that they can compel you to open it, however they must tell you which finger they would like to try.  There is no current caselaw binding on all circuits and is slim even in the circuits it is binding.  Generally, they cannot ask you to pick the finger, as that is communicative in nature, Schmerber v. California (1966), but telling you "use your right index finger" is not communicative and is a physical trait.  In re Boucher clarified that if the police had knowledge of what was on the phone, "we know there are pictures of the plan, they are photos 100 and 101" then the foregone conclusion doctrine applies, and the password and fingerprint may be compelled in either instance including the person identifying which finger unlocks the phone.</data>
+      <data key="d9">202.8889</data>
+      <data key="d10">6.9522</data>
+      <data key="d11">0.0137</data>
+      <data key="d12">44.7111</data>
+      <data key="d13">0.0171</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0455</data>
+    </node>
+    <node id="825">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqsq8</data>
+      <data key="d4">e9jr807</data>
+      <data key="d5">borkthegee</data>
+      <data key="d6">55.0</data>
+      <data key="d7">1542052967.0</data>
+      <data key="d8">A finger print reader can be operated against your will by overpowering you and using your finger </data>
+      <data key="d9">119.3333</data>
+      <data key="d10">4.6933</data>
       <data key="d11">0.0</data>
-      <data key="d12">71.82</data>
-      <data key="d13">-0.0305</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.5182</data>
+      <data key="d12">70.69</data>
+      <data key="d13">0.0074</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0313</data>
     </node>
-    <node id="c285">
-      <data key="d0">c</data>
+    <node id="826">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hizuo</data>
-      <data key="d4">e9ht545</data>
-      <data key="d5">francis2559</data>
-      <data key="d6">1087.5</data>
-      <data key="d7">1541984036.0</data>
-      <data key="d8" />
-      <data key="d9">153.0</data>
-      <data key="d10">4.277</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kza1p</data>
+      <data key="d4">e9kzbp8</data>
+      <data key="d5">StillUnderTheStars</data>
+      <data key="d6">4.3333</data>
+      <data key="d7">1542089204.6667</data>
+      <data key="d8">Sounds like the equity value of their house won't cover the full amount. 
+
+See also my other comment in this thread above potential issues with collecting home equity value.</data>
+      <data key="d9">116.0</data>
+      <data key="d10">4.5143</data>
       <data key="d11">0.0</data>
-      <data key="d12">84.005</data>
-      <data key="d13">-0.2541</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0182</data>
+      <data key="d12">75.3733</data>
+      <data key="d13">0.1566</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.3442</data>
     </node>
-    <node id="c286">
-      <data key="d0">c</data>
+    <node id="827">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gdfes</data>
-      <data key="d4">e9grzuy</data>
-      <data key="d5">CrappyOrigami</data>
-      <data key="d6">8052.75</data>
-      <data key="d7">1541935836.25</data>
-      <data key="d8" />
-      <data key="d9">158.25</data>
-      <data key="d10">4.7335</data>
-      <data key="d11">0.0</data>
-      <data key="d12">76.175</data>
-      <data key="d13">-0.0136</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.2823</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kvj0z</data>
+      <data key="d4">e9kwx7o</data>
+      <data key="d5">StillUnderTheStars</data>
+      <data key="d6">6.5</data>
+      <data key="d7">1542088333.5</data>
+      <data key="d8">&gt; Any collections action against the home assumes that there is equity value in the home. Not sure whether that's a good bet here. 
+
+The OP mentioned they used his money to pay off the house. Could the house be considered 'proceeds from a criminal enterprise'?</data>
+      <data key="d9">397.25</data>
+      <data key="d10">5.4285</data>
+      <data key="d11">0.003</data>
+      <data key="d12">80.2625</data>
+      <data key="d13">-0.0107</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.1062</data>
     </node>
-    <node id="c287">
-      <data key="d0">c</data>
+    <node id="828">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gp421</data>
-      <data key="d4">e9gq126</data>
-      <data key="d5">Maevora06</data>
-      <data key="d6">8534.0</data>
-      <data key="d7">1541938481.0</data>
-      <data key="d8" />
-      <data key="d9">210.5</data>
-      <data key="d10">4.517</data>
-      <data key="d11">0.0</data>
-      <data key="d12">81.04</data>
-      <data key="d13">-0.1349</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kwx7o</data>
+      <data key="d4">e9kxzmm</data>
+      <data key="d5">StillUnderTheStars</data>
+      <data key="d6">6.0</data>
+      <data key="d7">1542089164.3333</data>
+      <data key="d8">Good point, re it being paid off. 
+
+However, that doesn't really impact the criminal enterprise analysis. That analysis turns on whether the parents are found guilty of a crime in connection with their handling of OP's inheritance. I can definitely see that happening. And if this was a crim law final, I could write up at least 2000 words issue spotting the situation (as a start: theft, conversion, embezzlement, criminal fraud and a few others are all on the table). But who knows!?</data>
+      <data key="d9">526.3333</data>
+      <data key="d10">5.9047</data>
+      <data key="d11">0.004</data>
+      <data key="d12">66.9467</data>
+      <data key="d13">-0.0143</data>
       <data key="d14">Negative</data>
-      <data key="d15">0.1089</data>
+      <data key="d15">0.1415</data>
     </node>
-    <node id="c288">
-      <data key="d0">c</data>
+    <node id="829">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hfjyh</data>
-      <data key="d4">e9ho6r3</data>
-      <data key="d5">jkseller</data>
-      <data key="d6">36.5</data>
-      <data key="d7">1541982607.0</data>
-      <data key="d8" />
-      <data key="d9">354.25</data>
-      <data key="d10">5.374</data>
-      <data key="d11">0.0252</data>
-      <data key="d12">78.485</data>
-      <data key="d13">-0.0965</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.3166</data>
-    </node>
-    <node id="c289">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hst4s</data>
-      <data key="d4">e9ht11l</data>
-      <data key="d5">Cypher_Blue</data>
-      <data key="d6">29.0</data>
-      <data key="d7">1541984154.3333</data>
-      <data key="d8" />
-      <data key="d9">263.3333</data>
-      <data key="d10">5.443</data>
-      <data key="d11">0.0305</data>
-      <data key="d12">71.48</data>
-      <data key="d13">0.0389</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kx5xo</data>
+      <data key="d4">e9kyfwz</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">2.2857</data>
+      <data key="d7">1542090563.7143</data>
+      <data key="d8">I completely agree!</data>
+      <data key="d9">206.0</data>
+      <data key="d10">4.9653</data>
+      <data key="d11">0.0083</data>
+      <data key="d12">80.4014</data>
+      <data key="d13">0.2126</data>
       <data key="d14">Positive</data>
-      <data key="d15">0.3548</data>
+      <data key="d15">0.0956</data>
     </node>
-    <node id="c290">
-      <data key="d0">c</data>
+    <node id="830">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hfjyh</data>
-      <data key="d4">e9hst4s</data>
-      <data key="d5">Cypher_Blue</data>
-      <data key="d6">31.8</data>
-      <data key="d7">1541983544.4</data>
-      <data key="d8" />
-      <data key="d9">322.2</data>
-      <data key="d10">5.2928</data>
-      <data key="d11">0.0202</data>
-      <data key="d12">75.222</data>
-      <data key="d13">-0.0262</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.2618</data>
-    </node>
-    <node id="c291">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hjh2p</data>
-      <data key="d4">e9hsqcz</data>
-      <data key="d5">Jillaginn</data>
-      <data key="d6">63.0</data>
-      <data key="d7">1541984057.5</data>
-      <data key="d8" />
-      <data key="d9">326.0</data>
-      <data key="d10">4.5205</data>
-      <data key="d11">0.0047</data>
-      <data key="d12">83.985</data>
-      <data key="d13">-0.0653</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.1</data>
-    </node>
-    <node id="c292">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gkmsw</data>
-      <data key="d4">e9gsr23</data>
-      <data key="d5">RidinTheMonster</data>
-      <data key="d6">1315.0</data>
-      <data key="d7">1541937869.0</data>
-      <data key="d8" />
-      <data key="d9">506.0</data>
-      <data key="d10">6.279</data>
-      <data key="d11">0.0</data>
-      <data key="d12">76.385</data>
-      <data key="d13">-0.0675</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kypy7</data>
+      <data key="d4">e9kyut5</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">2.2</data>
+      <data key="d7">1542090661.6</data>
+      <data key="d8">I’m not sympathetic at all; I’m very happy they’re going to live  the rest of their life without being able to own any assets, constantly pinched for money, and without relationship with their kids. Kids are picked on way too much in society, are taken advantage of, and they don’t get equal protection by the law in most cases; I’m glad these kids will get justice.</data>
+      <data key="d9">248.2</data>
+      <data key="d10">4.9582</data>
+      <data key="d11">0.0116</data>
+      <data key="d12">82.922</data>
+      <data key="d13">0.2106</data>
       <data key="d14">Positive</data>
-      <data key="d15">0.6007</data>
+      <data key="d15">0.0727</data>
     </node>
-    <node id="c293">
-      <data key="d0">c</data>
+    <node id="831">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gkmsw</data>
-      <data key="d4">e9gsif7</data>
-      <data key="d5">ImperialBacon</data>
-      <data key="d6">1929.5</data>
-      <data key="d7">1541937714.0</data>
-      <data key="d8" />
-      <data key="d9">251.0</data>
-      <data key="d10">6.0165</data>
-      <data key="d11">0.0</data>
-      <data key="d12">80.55</data>
-      <data key="d13">-0.1839</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5322</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kyut5</data>
+      <data key="d4">e9kz9co</data>
+      <data key="d5">cman_yall</data>
+      <data key="d6">2.25</data>
+      <data key="d7">1542090967.75</data>
+      <data key="d8">Cool. It was just the way you phrased it... "that one fuck up" implies to me that you think they've just made one small mistake and maybe the consequences shouldn't be that bad... reading too much into it, I guess (wow, mistaken interpretations of tone on the internet? That never happens!!).</data>
+      <data key="d9">290.5</data>
+      <data key="d10">5.0905</data>
+      <data key="d11">0.0146</data>
+      <data key="d12">79.5225</data>
+      <data key="d13">0.1578</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0909</data>
     </node>
-    <node id="c294">
-      <data key="d0">c</data>
+    <node id="832">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9htgxn</data>
-      <data key="d4">e9hukgy</data>
-      <data key="d5">jkseller</data>
-      <data key="d6">36.5</data>
-      <data key="d7">1541988019.5</data>
-      <data key="d8" />
-      <data key="d9">82.5</data>
-      <data key="d10">4.229</data>
-      <data key="d11">0.0</data>
-      <data key="d12">77.405</data>
-      <data key="d13">-0.3982</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.0612</data>
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kz9co</data>
+      <data key="d4">e9kzbs6</data>
+      <data key="d5">youoldcunt</data>
+      <data key="d6">2.3333</data>
+      <data key="d7">1542091056.0</data>
+      <data key="d8">Lol yah it happens with me a bunch. I promise I do not think they guys are good. Tbh, I think they deserve jail time for this abuse too...</data>
+      <data key="d9">265.3333</data>
+      <data key="d10">4.9377</data>
+      <data key="d11">0.0194</data>
+      <data key="d12">80.8967</data>
+      <data key="d13">0.2103</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0378</data>
     </node>
-    <node id="c295">
-      <data key="d0">c</data>
+    <node id="833">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9htgxn</data>
-      <data key="d4">e9hukgy</data>
-      <data key="d5">jkseller</data>
-      <data key="d6">97.5</data>
-      <data key="d7">1541985187.5</data>
-      <data key="d8" />
-      <data key="d9">287.5</data>
-      <data key="d10">4.9253</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jdzm9</data>
+      <data key="d4">e9jq5xh</data>
+      <data key="d5">MinaBinaXina</data>
+      <data key="d6">181.6</data>
+      <data key="d7">1542050263.7</data>
+      <data key="d8">But if he wasn't under arrest does Miranda come into play? It sounds like they were questioning him but didn't arrest him based on how OP described the events. I know that's a fine legal line, but I imagine the police/a lawyer for the department would argue it.</data>
+      <data key="d9">273.0</data>
+      <data key="d10">5.1755</data>
       <data key="d11">0.0</data>
-      <data key="d12">78.9325</data>
-      <data key="d13">-0.2998</data>
+      <data key="d12">63.97</data>
+      <data key="d13">-0.1575</data>
       <data key="d14">Negative</data>
-      <data key="d15">0.2965</data>
+      <data key="d15">0.0934</data>
     </node>
-    <node id="c296">
-      <data key="d0">c</data>
+    <node id="834">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hhvhv</data>
-      <data key="d4">e9hp6b4</data>
-      <data key="d5">jkseller</data>
-      <data key="d6">125.0</data>
-      <data key="d7">1541984107.3333</data>
-      <data key="d8" />
-      <data key="d9">376.6667</data>
-      <data key="d10">5.317</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jmr99</data>
+      <data key="d4">e9jqibv</data>
+      <data key="d5">wooops</data>
+      <data key="d6">350.0</data>
+      <data key="d7">1542042568.6667</data>
+      <data key="d8">How is it an imminent threat when the individual(s) in question are in custody and can no longer possibly do anything?
+
+</data>
+      <data key="d9">437.3333</data>
+      <data key="d10">5.6163</data>
       <data key="d11">0.0</data>
-      <data key="d12">79.95</data>
-      <data key="d13">-0.3997</data>
+      <data key="d12">56.8267</data>
+      <data key="d13">-0.1775</data>
       <data key="d14">Negative</data>
-      <data key="d15">0.3954</data>
+      <data key="d15">0.0973</data>
     </node>
-    <node id="c297">
-      <data key="d0">c</data>
+    <node id="835">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hucan</data>
-      <data key="d4">e9huep1</data>
-      <data key="d5">Tyko_3</data>
-      <data key="d6">101.6667</data>
-      <data key="d7">1541987662.6667</data>
-      <data key="d8" />
-      <data key="d9">256.0</data>
-      <data key="d10">4.7593</data>
-      <data key="d11">0.027</data>
-      <data key="d12">87.07</data>
-      <data key="d13">-0.0795</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jq5xh</data>
+      <data key="d4">e9jsmtb</data>
+      <data key="d5">Jengarian</data>
+      <data key="d6">119.0</data>
+      <data key="d7">1542053430.8</data>
+      <data key="d8">You don’t have to be arrested to be required to be read your Miranda rights. The requirements are that you’re being questioned and “detained,” which basically means not being free to leave. </data>
+      <data key="d9">217.2</data>
+      <data key="d10">5.1974</data>
+      <data key="d11">0.0</data>
+      <data key="d12">65.626</data>
+      <data key="d13">-0.1958</data>
       <data key="d14">Negative</data>
+      <data key="d15">0.1069</data>
+    </node>
+    <node id="836">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jdzm9</data>
+      <data key="d4">e9jpmph</data>
+      <data key="d5">Blacksheepfab</data>
+      <data key="d6">186.5455</data>
+      <data key="d7">1542050361.0909</data>
+      <data key="d8">IANOL but obviously as others have stated contact a lawyer immediately...I will say in response to your comment that what OP is describing would definitely be a Miranda violation, that is, if they didn't read the kid his rights. See JDB v. North Carolina 546 US _ (2011)</data>
+      <data key="d9">255.3636</data>
+      <data key="d10">5.0573</data>
+      <data key="d11">0.0</data>
+      <data key="d12">67.6982</data>
+      <data key="d13">-0.1432</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1013</data>
+    </node>
+    <node id="837">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqxpm</data>
+      <data key="d4">e9jspy0</data>
+      <data key="d5">bulletv1</data>
+      <data key="d6">76.0</data>
+      <data key="d7">1542054050.5</data>
+      <data key="d8">A social worker would generally know who the parents should get in touch with to get the issue resolved, and has possibly dealt with similar situations. While not as good as a lawyer they could help get you pointed in the right direction. </data>
+      <data key="d9">213.0</data>
+      <data key="d10">5.0635</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.24</data>
+      <data key="d13">0.1696</data>
+      <data key="d14">Positive</data>
       <data key="d15">0.0825</data>
     </node>
-    <node id="c298">
-      <data key="d0">c</data>
+    <node id="838">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9he3b0</data>
-      <data key="d4">e9he8e4</data>
-      <data key="d5">Cypher_Blue</data>
-      <data key="d6">446.3333</data>
-      <data key="d7">1541976711.6667</data>
-      <data key="d8" />
-      <data key="d9">314.3333</data>
-      <data key="d10">5.304</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jsevo</data>
+      <data key="d4">e9jt40b</data>
+      <data key="d5">beanboy4life</data>
+      <data key="d6">139.6667</data>
+      <data key="d7">1542054499.0</data>
+      <data key="d8">Still going to need a warrant for them to be able to force you to do so.
+
+&amp;#x200B;</data>
+      <data key="d9">308.0</data>
+      <data key="d10">5.5187</data>
+      <data key="d11">0.0411</data>
+      <data key="d12">72.6767</data>
+      <data key="d13">0.0097</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0575</data>
+    </node>
+    <node id="839">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9ivf27</data>
+      <data key="d4">e9ivgln</data>
+      <data key="d5">Necessary_Leg</data>
+      <data key="d6">561.25</data>
+      <data key="d7">1542012106.0</data>
+      <data key="d8">This is in Texas sorry forgot to add that</data>
+      <data key="d9">165.75</data>
+      <data key="d10">4.9238</data>
       <data key="d11">0.0</data>
-      <data key="d12">87.26</data>
-      <data key="d13">0.0181</data>
+      <data key="d12">79.4825</data>
+      <data key="d13">-0.1469</data>
       <data key="d14">Negative</data>
-      <data key="d15">0.4549</data>
+      <data key="d15">0.2717</data>
     </node>
-    <node id="c299">
-      <data key="d0">c</data>
+    <node id="840">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9he8e4</data>
-      <data key="d4">e9heah8</data>
-      <data key="d5">Tyko_3</data>
-      <data key="d6">418.5</data>
-      <data key="d7">1541976900.0</data>
-      <data key="d8" />
-      <data key="d9">223.5</data>
-      <data key="d10">4.5215</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9ivriu</data>
+      <data key="d4">e9ivupy</data>
+      <data key="d5">hcpdvice35632</data>
+      <data key="d6">493.0</data>
+      <data key="d7">1542012160.3333</data>
+      <data key="d8">This is crazy, he's 11 and the cops threatened to put him and us in jail if he didn't keep answering all their questions and passwords. They can just do this and we can't do anything?</data>
+      <data key="d9">100.0</data>
+      <data key="d10">4.719</data>
       <data key="d11">0.0</data>
-      <data key="d12">92.325</data>
-      <data key="d13">-0.1452</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.1346</data>
+      <data key="d12">78.36</data>
+      <data key="d13">-0.1357</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.029</data>
     </node>
-    <node id="c300">
-      <data key="d0">c</data>
+    <node id="841">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gqc3b</data>
-      <data key="d4">e9gs61w</data>
-      <data key="d5">-inzo-</data>
-      <data key="d6">-28.0</data>
-      <data key="d7">1541940368.5</data>
-      <data key="d8" />
-      <data key="d9">152.0</data>
-      <data key="d10">6.3</data>
-      <data key="d11">0.0</data>
-      <data key="d12">32.735</data>
-      <data key="d13">0.1257</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9ivriu</data>
+      <data key="d5">hcpdvice35632</data>
+      <data key="d6">138.5385</data>
+      <data key="d7">1542035529.5385</data>
+      <data key="d8">Texas allows police to interview kids without parental notice or permission.</data>
+      <data key="d9">157.8846</data>
+      <data key="d10">4.9551</data>
+      <data key="d11">0.0183</data>
+      <data key="d12">75.3608</data>
+      <data key="d13">0.0469</data>
       <data key="d14">Positive</data>
-      <data key="d15">0.5274</data>
+      <data key="d15">0.0862</data>
     </node>
-    <node id="c301">
-      <data key="d0">c</data>
+    <node id="842">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gdyeb</data>
-      <data key="d4">e9gn24r</data>
-      <data key="d5">cld8</data>
-      <data key="d6">56.0</data>
-      <data key="d7">1541935020.3333</data>
-      <data key="d8" />
-      <data key="d9">118.3333</data>
-      <data key="d10">6.6623</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jd3v6</data>
+      <data key="d4">e9js0hs</data>
+      <data key="d5">AnnabananaIL</data>
+      <data key="d6">72.5</data>
+      <data key="d7">1542041658.0</data>
+      <data key="d8">They don't touch anything with guns.</data>
+      <data key="d9">24.5</data>
+      <data key="d10">4.25</data>
       <data key="d11">0.0</data>
-      <data key="d12">47.2133</data>
-      <data key="d13">0.1021</data>
+      <data key="d12">109.21</data>
+      <data key="d13">0.0</data>
       <data key="d14">Neutral</data>
-      <data key="d15">0.4146</data>
+      <data key="d15">0.5</data>
     </node>
-    <node id="c302">
-      <data key="d0">c</data>
+    <node id="843">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9grt4j</data>
-      <data key="d4">e9gs0q6</data>
-      <data key="d5">Purple82Hue</data>
-      <data key="d6">222.0</data>
-      <data key="d7">1541941129.5</data>
-      <data key="d8" />
-      <data key="d9">175.0</data>
-      <data key="d10">6.0335</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9js0hs</data>
+      <data key="d4">e9jsss4</data>
+      <data key="d5">AnnabananaIL</data>
+      <data key="d6">4.0</data>
+      <data key="d7">1542055172.6667</data>
+      <data key="d8">The issues raised is not about guns. It is about how the kid was handled.</data>
+      <data key="d9">70.6667</data>
+      <data key="d10">4.8817</data>
       <data key="d11">0.0</data>
-      <data key="d12">37.895</data>
-      <data key="d13">0.0485</data>
+      <data key="d12">84.0567</data>
+      <data key="d13">0.0602</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0631</data>
+    </node>
+    <node id="844">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jpsb4</data>
+      <data key="d4">e9jq1ww</data>
+      <data key="d5">0wlgrowl</data>
+      <data key="d6">1.0</data>
+      <data key="d7">1542051236.0</data>
+      <data key="d8">He was probably referencing things like the right to bear arms and things of that nature. There are a lot of things we don't allow on school property, but search and seizure rights are not null and void there.</data>
+      <data key="d9">179.0</data>
+      <data key="d10">5.0095</data>
+      <data key="d11">0.0</data>
+      <data key="d12">74.27</data>
+      <data key="d13">0.2389</data>
       <data key="d14">Positive</data>
-      <data key="d15">0.5349</data>
+      <data key="d15">0.5668</data>
     </node>
-    <node id="c303">
-      <data key="d0">c</data>
+    <node id="845">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gnn4j</data>
-      <data key="d4">e9go1gh</data>
-      <data key="d5">3Up1Down</data>
-      <data key="d6">-14.3333</data>
-      <data key="d7">1541936959.6667</data>
-      <data key="d8" />
-      <data key="d9">740.6667</data>
-      <data key="d10">6.2277</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jq1ww</data>
+      <data key="d4">e9jqbd9</data>
+      <data key="d5">0wlgrowl</data>
+      <data key="d6">5.6667</data>
+      <data key="d7">1542052037.6667</data>
+      <data key="d8">He was referring to things like searching the trunk of your car, or just your stuff. I can not quote the particular case, but you're pretty much out of luck on school premises. </data>
+      <data key="d9">306.3333</data>
+      <data key="d10">5.534</data>
       <data key="d11">0.0</data>
-      <data key="d12">59.8367</data>
-      <data key="d13">-0.0291</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.3917</data>
+      <data key="d12">64.6567</data>
+      <data key="d13">0.3537</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1616</data>
     </node>
-    <node id="c304">
-      <data key="d0">c</data>
+    <node id="846">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9w49aa</data>
-      <data key="d3">e9hq5yk</data>
-      <data key="d4">e9hr8gc</data>
-      <data key="d5">steelallz</data>
-      <data key="d6">949.0</data>
-      <data key="d7">1541984720.3333</data>
-      <data key="d8" />
-      <data key="d9">208.6667</data>
-      <data key="d10">5.3727</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jsss4</data>
+      <data key="d4">e9jt243</data>
+      <data key="d5">AnnabananaIL</data>
+      <data key="d6">40.0</data>
+      <data key="d7">1542055577.0</data>
+      <data key="d8">Agree.  But ACLU is particular on issues/cases they select, and stays away from those involving guns.  </data>
+      <data key="d9">88.0</data>
+      <data key="d10">4.906</data>
+      <data key="d11">0.0</data>
+      <data key="d12">76.47</data>
+      <data key="d13">0.0903</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0946</data>
+    </node>
+    <node id="847">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqbd9</data>
+      <data key="d4">e9jqxl8</data>
+      <data key="d5">0wlgrowl</data>
+      <data key="d6">-1.5</data>
+      <data key="d7">1542052325.0</data>
+      <data key="d8">I vaguely recall something of the nature being lawful (under certain criteria) by school officials, but I don't think that kind of warrantless search is extended to law enforcement officials.
+
+Though I don't guess that really matters because whatever the school officials found would then be turned over to police, and the subsequent investigation would likely be just as lawful (since the original search was done lawfully--if it was done lawfully)
+
+(I'm rusty on the exact wording and legal aspects, just pulling from foggy memory)</data>
+      <data key="d9">355.0</data>
+      <data key="d10">5.6915</data>
+      <data key="d11">0.0</data>
+      <data key="d12">54.225</data>
+      <data key="d13">0.4616</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1756</data>
+    </node>
+    <node id="848">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7158</data>
+      <data key="d4">e9j5jr8</data>
+      <data key="d5">hcpdvice35632</data>
+      <data key="d6">217.3077</data>
+      <data key="d7">1542041606.6154</data>
+      <data key="d8">Schools are paranoid about guns, and the police act in unethical ways. You will not solve this by having your son put himself and other kids in more legal trouble, emotional distress, and possibly even physical danger by calling the cops for petty reasons. Take this as a lesson: the police are not your friends, and you and your child need to learn your rights. If you find any laws were broken, fight them to the best of your ability, but impulsively lashing out at the police will not help you or anyone else.</data>
+      <data key="d9">391.6923</data>
+      <data key="d10">5.4925</data>
       <data key="d11">0.0064</data>
-      <data key="d12">49.99</data>
-      <data key="d13">-0.1081</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.3922</data>
+      <data key="d12">74.6308</data>
+      <data key="d13">-0.0533</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1309</data>
     </node>
-    <node id="c305">
-      <data key="d0">c</data>
+    <node id="849">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gl3m6</data>
-      <data key="d4">e9gscbg</data>
-      <data key="d5">GraceandSword</data>
-      <data key="d6">1068.5</data>
-      <data key="d7">1541937845.0</data>
-      <data key="d8" />
-      <data key="d9">641.5</data>
-      <data key="d10">6.154</data>
-      <data key="d11">0.0</data>
-      <data key="d12">73.155</data>
-      <data key="d13">0.0135</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jbfas</data>
+      <data key="d4">e9jpxdh</data>
+      <data key="d5">IsomDart</data>
+      <data key="d6">245.25</data>
+      <data key="d7">1542036366.5</data>
+      <data key="d8">They heard him talking about shooting guns in a context of hunting, not killing students. It's not illegal for kids to hunt, or shoot guns for fun. That is ridiculous to report a kid to the police for a suspected school shooting just because they are "talking about guns". That's something boys just do.</data>
+      <data key="d9">507.5</data>
+      <data key="d10">5.9595</data>
+      <data key="d11">0.0157</data>
+      <data key="d12">76.7475</data>
+      <data key="d13">0.057</data>
       <data key="d14">Positive</data>
-      <data key="d15">0.5907</data>
+      <data key="d15">0.1841</data>
     </node>
-    <node id="c306">
-      <data key="d0">c</data>
+    <node id="850">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gh3ka</data>
-      <data key="d4">e9go6c2</data>
-      <data key="d5">PuppleKao</data>
-      <data key="d6">-25.0</data>
-      <data key="d7">1541931851.6667</data>
-      <data key="d8" />
-      <data key="d9">390.0</data>
-      <data key="d10">5.5507</data>
-      <data key="d11">0.0</data>
-      <data key="d12">74.0967</data>
-      <data key="d13">-0.0478</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.4933</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7158</data>
+      <data key="d4">e9jlczj</data>
+      <data key="d5">peskyboner1</data>
+      <data key="d6">204.8889</data>
+      <data key="d7">1542043935.5556</data>
+      <data key="d8">You'll feel better about making some other child and parents suffer the way you did? I understand where you're coming from, and honestly I'd be going scorched earth if I were in your shoes, but I hope you can see why this is a bad idea.
+
+If you're going to teach him anything in preparation, teach him his rights. He doesn't have to answer any questions from police, and he doesn't have to share any passwords. It's sad, but he needs to understand that although the police are important to society, they aren't his friends. If his response to "where are the guns" had been to naively tell the police where you keep your guns, that irrelevant answer could've led to life ruining consequences, or at least unimaginable quantities of red tape.
+
+How is your son handing all this? Hopefully he's blissfully ignorant and just happy to have skipped class. But I could certainly see this being very upsetting for him.</data>
+      <data key="d9">340.2222</data>
+      <data key="d10">5.285</data>
+      <data key="d11">0.0023</data>
+      <data key="d12">73.69</data>
+      <data key="d13">-0.1024</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1073</data>
     </node>
-    <node id="c307">
-      <data key="d0">c</data>
+    <node id="851">
+      <data key="d0">comment</data>
       <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gfdo2</data>
-      <data key="d4">e9ghfms</data>
-      <data key="d5">overcomebyfumes</data>
-      <data key="d6">2314.0</data>
-      <data key="d7">1541933200.6667</data>
-      <data key="d8" />
-      <data key="d9">128.6667</data>
-      <data key="d10">5.0347</data>
-      <data key="d11">0.0</data>
-      <data key="d12">81.3067</data>
-      <data key="d13">0.0427</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.4094</data>
-    </node>
-    <node id="c308">
-      <data key="d0">c</data>
-      <data key="d1" />
-      <data key="d2">9vzjvh</data>
-      <data key="d3">e9gk9pz</data>
-      <data key="d4">e9gplts</data>
-      <data key="d5">dadsmeatwagon</data>
-      <data key="d6">599.6667</data>
-      <data key="d7">1541935551.6667</data>
-      <data key="d8" />
-      <data key="d9">172.0</data>
-      <data key="d10">4.5427</data>
-      <data key="d11">0.0</data>
-      <data key="d12">82.4067</data>
-      <data key="d13">0.0862</data>
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jpxdh</data>
+      <data key="d4">e9jq8ht</data>
+      <data key="d5">TheEpicKid000</data>
+      <data key="d6">9.0</data>
+      <data key="d7">1542043325.3333</data>
+      <data key="d8">If my friend gets kicked out of class for talking about airsoft (one of his hobbies) I’m going to tell him a bunch of stuff people have said about this type of crap. It probably won’t happen because the people at my school understand when kids are talking about guns in the conversation way (video games for example). It’d be like if a school gave some kid a suspension for talking about Fortnite.</data>
+      <data key="d9">519.6667</data>
+      <data key="d10">6.208</data>
+      <data key="d11">0.0209</data>
+      <data key="d12">73.5867</data>
+      <data key="d13">0.095</data>
       <data key="d14">Positive</data>
-      <data key="d15">0.5071</data>
+      <data key="d15">0.2455</data>
     </node>
-    <edge source="c270" target="c271">
+    <node id="852">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7158</data>
+      <data key="d4">e9jqc3b</data>
+      <data key="d5">antonivs</data>
+      <data key="d6">-78.2</data>
+      <data key="d7">1542044883.2</data>
+      <data key="d8">&gt; we live in a time and place where and when it’s necessary to take every perceived threat literally.
+
+It's not necessary, but some people *feel* it necessary. Also, it has a lot to do with bureaucratic ass-covering. Schools or police doing a competent job would not need to behave this way.</data>
+      <data key="d9">205.6</data>
+      <data key="d10">4.6192</data>
+      <data key="d11">0.0</data>
+      <data key="d12">73.694</data>
+      <data key="d13">-0.019</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.118</data>
+    </node>
+    <node id="853">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqc3b</data>
+      <data key="d4">e9jrjg5</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">26.6667</data>
+      <data key="d7">1542048741.6667</data>
+      <data key="d8">if bureaucratic ass covering keeps my kid from getting shot at school, im all for it. </data>
+      <data key="d9">263.0</data>
+      <data key="d10">5.0427</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.67</data>
+      <data key="d13">-0.2105</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1426</data>
+    </node>
+    <node id="854">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7158</data>
+      <data key="d4">e9izpa6</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">227.2381</data>
+      <data key="d7">1542044709.5714</data>
+      <data key="d8">Well we are going to take him out of the district after this. I could care less what the school tries to do, and if he's making the report in good faith (talking about guns in school) not much of anything, maybe a fine will happen. If they can't begin seeing how crazy it was, so be it. A few lockdowns and other kids questioned will let them see the insanity of it. If my kid is going to get punished for something every kid talks about in school, let them deal with it.</data>
+      <data key="d9">304.5714</data>
+      <data key="d10">7.8731</data>
+      <data key="d11">0.0221</data>
+      <data key="d12">31.1976</data>
+      <data key="d13">-0.0043</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1207</data>
+    </node>
+    <node id="855">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7158</data>
+      <data key="d4">e9j7158</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">150.35</data>
+      <data key="d7">1542046177.8</data>
+      <data key="d8">The truth is, no it won't help anyone in anyway but I'll feel better watching them dare say me or my child were wrong when THE SAME THING JUST HAPPENED TO US.</data>
+      <data key="d9">316.7</data>
+      <data key="d10">8.0577</data>
+      <data key="d11">0.0232</data>
+      <data key="d12">27.796</data>
+      <data key="d13">-0.0024</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1245</data>
+    </node>
+    <node id="856">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9izpa6</data>
+      <data key="d4">e9jpxdh</data>
+      <data key="d5">IsomDart</data>
+      <data key="d6">170.6667</data>
+      <data key="d7">1542042564.8333</data>
+      <data key="d8">They heard him talking about shooting guns in a context of hunting, not killing students. It's not illegal for kids to hunt, or shoot guns for fun. That is ridiculous to report a kid to the police for a suspected school shooting just because they are "talking about guns". That's something boys just do.</data>
+      <data key="d9">404.8333</data>
+      <data key="d10">5.6097</data>
+      <data key="d11">0.074</data>
+      <data key="d12">77.4233</data>
+      <data key="d13">-0.0703</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.254</data>
+    </node>
+    <node id="857">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7158</data>
+      <data key="d4">e9jlczj</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">144.4615</data>
+      <data key="d7">1542047249.4615</data>
+      <data key="d8">You'll feel better about making some other child and parents suffer the way you did? I understand where you're coming from, and honestly I'd be going scorched earth if I were in your shoes, but I hope you can see why this is a bad idea.
+
+If you're going to teach him anything in preparation, teach him his rights. He doesn't have to answer any questions from police, and he doesn't have to share any passwords. It's sad, but he needs to understand that although the police are important to society, they aren't his friends. If his response to "where are the guns" had been to naively tell the police where you keep your guns, that irrelevant answer could've led to life ruining consequences, or at least unimaginable quantities of red tape.
+
+How is your son handing all this? Hopefully he's blissfully ignorant and just happy to have skipped class. But I could certainly see this being very upsetting for him.</data>
+      <data key="d9">297.6923</data>
+      <data key="d10">9.5478</data>
+      <data key="d11">0.0016</data>
+      <data key="d12">-1.7492</data>
+      <data key="d13">-0.0022</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0743</data>
+    </node>
+    <node id="858">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7158</data>
+      <data key="d4">e9jqc3b</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">-39.6667</data>
+      <data key="d7">1542049248.7778</data>
+      <data key="d8">&gt; we live in a time and place where and when it’s necessary to take every perceived threat literally.
+
+It's not necessary, but some people *feel* it necessary. Also, it has a lot to do with bureaucratic ass-covering. Schools or police doing a competent job would not need to behave this way.</data>
+      <data key="d9">204.0</data>
+      <data key="d10">11.0724</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-35.2756</data>
+      <data key="d13">0.0886</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0655</data>
+    </node>
+    <node id="859">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqc3b</data>
+      <data key="d4">e9jrjg5</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">16.2857</data>
+      <data key="d7">1542052149.7143</data>
+      <data key="d8">if bureaucratic ass covering keeps my kid from getting shot at school, im all for it. </data>
+      <data key="d9">228.1429</data>
+      <data key="d10">13.0977</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-67.2771</data>
+      <data key="d13">0.0373</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0611</data>
+    </node>
+    <node id="860">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jrjg5</data>
+      <data key="d4">e9jrtfw</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">8.0</data>
+      <data key="d7">1542054074.0</data>
+      <data key="d8">It doesn't though.</data>
+      <data key="d9">197.5</data>
+      <data key="d10">14.3513</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-91.1417</data>
+      <data key="d13">0.0497</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0621</data>
+    </node>
+    <node id="861">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jnhkh</data>
+      <data key="d4">e9jqa1t</data>
+      <data key="d5">TheEpicKid000</data>
+      <data key="d6">54.5</data>
+      <data key="d7">1542049419.0</data>
+      <data key="d8">Yeah, at this point if you suspended and questioned every kid about them talking about guns you’d have a back log. One word: Fortnite.</data>
+      <data key="d9">215.0</data>
+      <data key="d10">4.8765</data>
+      <data key="d11">0.0</data>
+      <data key="d12">80.28</data>
+      <data key="d13">-0.1004</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0696</data>
+    </node>
+    <node id="862">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j6ve3</data>
+      <data key="d4">e9jnhkh</data>
+      <data key="d5">cS47f496tmQHavSR</data>
+      <data key="d6">165.6667</data>
+      <data key="d7">1542040371.3333</data>
+      <data key="d8">To be fair, there are lots of valid reasons to call the police for issues you are not directly involved in. The problem with OP's plan is that they're making their kid call the police at the mention of guns, where they should teach the kid to go to a teacher if someone is making him feel unsafe.</data>
+      <data key="d9">225.0</data>
+      <data key="d10">5.0103</data>
+      <data key="d11">0.0</data>
+      <data key="d12">83.3133</data>
+      <data key="d13">-0.211</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0814</data>
+    </node>
+    <node id="863">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jruni</data>
+      <data key="d4">e9jt2su</data>
+      <data key="d5">amunak</data>
+      <data key="d6">332.3333</data>
+      <data key="d7">1542041804.3333</data>
+      <data key="d8">No, guns should totally be something every kid talks about at school. Especially if they're nerf guns, airsoft guns or when they are talking about video games. That is, like, absolutely normal.
+
+What's sad is that your society - when hearing this - immediately thinks the child is a criminal and treats him as such.</data>
+      <data key="d9">290.0</data>
+      <data key="d10">5.0113</data>
+      <data key="d11">0.127</data>
+      <data key="d12">81.26</data>
+      <data key="d13">-0.2356</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.2624</data>
+    </node>
+    <node id="864">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jruni</data>
+      <data key="d4">e9jt2su</data>
+      <data key="d5">amunak</data>
+      <data key="d6">21.5</data>
+      <data key="d7">1542054961.5</data>
+      <data key="d8">No, guns should totally be something every kid talks about at school. Especially if they're nerf guns, airsoft guns or when they are talking about video games. That is, like, absolutely normal.
+
+What's sad is that your society - when hearing this - immediately thinks the child is a criminal and treats him as such.</data>
+      <data key="d9">199.5</data>
+      <data key="d10">4.91</data>
+      <data key="d11">0.1905</data>
+      <data key="d12">78.775</data>
+      <data key="d13">-0.325</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3936</data>
+    </node>
+    <node id="865">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9ixbo0</data>
+      <data key="d4">e9ixbo0</data>
+      <data key="d5">hcpdvice35632</data>
+      <data key="d6">133.5</data>
+      <data key="d7">1542036551.375</data>
+      <data key="d8">Crazy, guess I'll teach my kids to not even say hello to cops then tell him to immediately call 911 in school the moment any kids talk about the new guns in fortnite or call of duty etc. </data>
+      <data key="d9">178.0</data>
+      <data key="d10">4.8471</data>
+      <data key="d11">0.0</data>
+      <data key="d12">76.1362</data>
+      <data key="d13">0.0498</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0539</data>
+    </node>
+    <node id="866">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9ixbo0</data>
+      <data key="d4">e9jn3j8</data>
+      <data key="d5">Moetown84</data>
+      <data key="d6">66.5714</data>
+      <data key="d7">1542039939.7143</data>
+      <data key="d8">Yeah, better be ready for some campaign donations...</data>
+      <data key="d9">166.8571</data>
+      <data key="d10">4.8357</data>
+      <data key="d11">0.0</data>
+      <data key="d12">75.5986</data>
+      <data key="d13">0.0339</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0403</data>
+    </node>
+    <node id="867">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9js1vp</data>
+      <data key="d4">e9jsgez</data>
+      <data key="d5">MostlyBullshitStory</data>
+      <data key="d6">15.5</data>
+      <data key="d7">1542044389.5</data>
+      <data key="d8">The cops planted the bad seeds here. I completely support OP and his right to be angry at them. The parents should have been called. 
+
+OP, I would not let my child go back to that school. They bare 50% of the responsibility here.</data>
+      <data key="d9">203.75</data>
+      <data key="d10">4.6088</data>
+      <data key="d11">0.0</data>
+      <data key="d12">77.925</data>
+      <data key="d13">-0.1439</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0617</data>
+    </node>
+    <node id="868">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9iwjus</data>
+      <data key="d5">Necessary_Leg</data>
+      <data key="d6">129.04</data>
+      <data key="d7">1542036471.64</data>
+      <data key="d8">Pretty much. Police are free to lie and he should be told that sooner than later. He also needs to understand his right to refuse to answer questions. Again, I get that this is a tough one for an 11 year old but the dialogue should start sooner than later.</data>
+      <data key="d9">162.56</data>
+      <data key="d10">5.0066</data>
+      <data key="d11">0.019</data>
+      <data key="d12">74.528</data>
+      <data key="d13">0.0519</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0897</data>
+    </node>
+    <node id="869">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9ixbo0</data>
+      <data key="d5">hcpdvice35632</data>
+      <data key="d6">113.5833</data>
+      <data key="d7">1542037482.2917</data>
+      <data key="d8">Crazy, guess I'll teach my kids to not even say hello to cops then tell him to immediately call 911 in school the moment any kids talk about the new guns in fortnite or call of duty etc. </data>
+      <data key="d9">166.1667</data>
+      <data key="d10">4.969</data>
+      <data key="d11">0.0198</data>
+      <data key="d12">75.4729</data>
+      <data key="d13">0.054</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0898</data>
+    </node>
+    <node id="870">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9ixbo0</data>
+      <data key="d4">e9iz3zi</data>
+      <data key="d5">pgh9fan</data>
+      <data key="d6">132.7778</data>
+      <data key="d7">1542038656.8889</data>
+      <data key="d8">You always have the power to seek redress in the legislature. Contact your state officials and ask them if they'd support changing the law to require parents to be present.</data>
+      <data key="d9">169.2222</data>
+      <data key="d10">4.7592</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.3067</data>
+      <data key="d13">0.1036</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0719</data>
+    </node>
+    <node id="871">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9ixbo0</data>
+      <data key="d4">e9jn3j8</data>
+      <data key="d5">Moetown84</data>
+      <data key="d6">74.125</data>
+      <data key="d7">1542041884.875</data>
+      <data key="d8">Yeah, better be ready for some campaign donations...</data>
+      <data key="d9">158.375</data>
+      <data key="d10">4.7382</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.1075</data>
+      <data key="d13">0.0965</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0623</data>
+    </node>
+    <node id="872">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9js1vp</data>
+      <data key="d4">e9jsgez</data>
+      <data key="d5">MostlyBullshitStory</data>
+      <data key="d6">37.8</data>
+      <data key="d7">1542046611.8</data>
+      <data key="d8">The cops planted the bad seeds here. I completely support OP and his right to be angry at them. The parents should have been called. 
+
+OP, I would not let my child go back to that school. They bare 50% of the responsibility here.</data>
+      <data key="d9">182.8</data>
+      <data key="d10">4.4982</data>
+      <data key="d11">0.0</data>
+      <data key="d12">81.474</data>
+      <data key="d13">-0.0082</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.0926</data>
+    </node>
+    <node id="873">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9j7qgw</data>
+      <data key="d5">orbital_narwhal</data>
+      <data key="d6">77.6364</data>
+      <data key="d7">1542039381.4545</data>
+      <data key="d8">
+Just a clarification question. When you say have the right to lie do you mean legally they can and it is expressed in some legislature, or do you mean they can lie and nobody can really do anything about it?</data>
+      <data key="d9">198.9091</data>
+      <data key="d10">5.4338</data>
+      <data key="d11">0.0432</data>
+      <data key="d12">60.4555</data>
+      <data key="d13">0.0256</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1154</data>
+    </node>
+    <node id="874">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9jlplt</data>
+      <data key="d5">orbital_narwhal</data>
+      <data key="d6">61.4</data>
+      <data key="d7">1542042036.5</data>
+      <data key="d8">An interesting difference between US democracy and European democracy. In Europe, laws are in the negative for citizens and in the positive for government employees. An officer of the government needs legal basis for any act.</data>
+      <data key="d9">212.9</data>
+      <data key="d10">5.631</data>
+      <data key="d11">0.0475</data>
+      <data key="d12">57.289</data>
+      <data key="d13">0.008</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1269</data>
+    </node>
+    <node id="875">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jj3qq</data>
+      <data key="d4">e9jnreb</data>
+      <data key="d5">aosten67</data>
+      <data key="d6">37.5</data>
+      <data key="d7">1542040566.5</data>
+      <data key="d8">IANAL-Can the police lie to you about your rights though? I thought that was a no-go. </data>
+      <data key="d9">227.5</data>
+      <data key="d10">5.273</data>
+      <data key="d11">0.0</data>
+      <data key="d12">67.725</data>
+      <data key="d13">-0.0252</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0976</data>
+    </node>
+    <node id="876">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jlplt</data>
+      <data key="d4">e9jsi4l</data>
+      <data key="d5">orbital_narwhal</data>
+      <data key="d6">82.8</data>
+      <data key="d7">1542046091.8</data>
+      <data key="d8">&gt; An officer of the government needs legal basis for any act.
+
+Not *any* act, but certainly all acts that restricted another’s rights and freedoms.</data>
+      <data key="d9">159.6</data>
+      <data key="d10">5.7454</data>
+      <data key="d11">0.095</data>
+      <data key="d12">49.554</data>
+      <data key="d13">0.0072</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1669</data>
+    </node>
+    <node id="877">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jnreb</data>
+      <data key="d4">e9jrcf6</data>
+      <data key="d5">Smash724</data>
+      <data key="d6">20.3333</data>
+      <data key="d7">1542046377.3333</data>
+      <data key="d8">They 100% lie and its up to you to prove the truth In those situations.  Usually, if you really weren’t doing anything wrong, the effort to right the wrong is so unevenly proportioned to the benefit of “justice for the lie” that there is nothing that makes logical sense to do.  (IE being pulled over illegally, getting arrested w/o being mirandized).  This is my perspective. </data>
+      <data key="d9">234.0</data>
+      <data key="d10">5.134</data>
+      <data key="d11">0.0</data>
+      <data key="d12">67.6</data>
+      <data key="d13">-0.0507</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0953</data>
+    </node>
+    <node id="878">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jr7g0</data>
+      <data key="d4">e9jsldt</data>
+      <data key="d5">orbital_narwhal</data>
+      <data key="d6">43.6667</data>
+      <data key="d7">1542050534.6667</data>
+      <data key="d8">That's nitpicking. It's undeniably clear that most European legislations follow sets of legal principles culture that tend to resemble each other more than they do resemble U. S. legal principles and culture.</data>
+      <data key="d9">157.6667</data>
+      <data key="d10">6.2733</data>
+      <data key="d11">0.1583</data>
+      <data key="d12">37.4167</data>
+      <data key="d13">0.0502</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1448</data>
+    </node>
+    <node id="879">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9j7qgw</data>
+      <data key="d5">TopLadder</data>
+      <data key="d6">102.0667</data>
+      <data key="d7">1542036777.5333</data>
+      <data key="d8">
+Just a clarification question. When you say have the right to lie do you mean legally they can and it is expressed in some legislature, or do you mean they can lie and nobody can really do anything about it?</data>
+      <data key="d9">164.3333</data>
+      <data key="d10">5.0949</data>
+      <data key="d11">0.0317</data>
+      <data key="d12">73.7727</data>
+      <data key="d13">0.0243</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1005</data>
+    </node>
+    <node id="880">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9j8fbb</data>
+      <data key="d5">TopLadder</data>
+      <data key="d6">66.2857</data>
+      <data key="d7">1542038526.7857</data>
+      <data key="d8">There is no prohibition on it. Laws aren't written in the positive, but in the negative. So as long as there is no law forbidding police to lie to anyone they are free to do so. </data>
+      <data key="d9">163.0</data>
+      <data key="d10">5.1316</data>
+      <data key="d11">0.0339</data>
+      <data key="d12">72.8243</data>
+      <data key="d13">0.0495</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1077</data>
+    </node>
+    <node id="881">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9jlplt</data>
+      <data key="d5">nardit</data>
+      <data key="d6">52.9231</data>
+      <data key="d7">1542040503.3846</data>
+      <data key="d8">An interesting difference between US democracy and European democracy. In Europe, laws are in the negative for citizens and in the positive for government employees. An officer of the government needs legal basis for any act.</data>
+      <data key="d9">171.0</data>
+      <data key="d10">5.2601</data>
+      <data key="d11">0.0365</data>
+      <data key="d12">71.34</data>
+      <data key="d13">0.0379</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1159</data>
+    </node>
+    <node id="882">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j7qgw</data>
+      <data key="d4">e9jnreb</data>
+      <data key="d5">aosten67</data>
+      <data key="d6">30.2</data>
+      <data key="d7">1542043369.0</data>
+      <data key="d8">IANAL-Can the police lie to you about your rights though? I thought that was a no-go. </data>
+      <data key="d9">182.8</data>
+      <data key="d10">5.0184</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.424</data>
+      <data key="d13">-0.0201</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0781</data>
+    </node>
+    <node id="883">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9j8fbb</data>
+      <data key="d4">e9jsi4l</data>
+      <data key="d5">orbital_narwhal</data>
+      <data key="d6">73.3333</data>
+      <data key="d7">1542042387.5</data>
+      <data key="d8">&gt; An officer of the government needs legal basis for any act.
+
+Not *any* act, but certainly all acts that restricted another’s rights and freedoms.</data>
+      <data key="d9">134.5</data>
+      <data key="d10">5.4545</data>
+      <data key="d11">0.0792</data>
+      <data key="d12">61.33</data>
+      <data key="d13">0.0662</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.1391</data>
+    </node>
+    <node id="884">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jrtfw</data>
+      <data key="d4">e9jrxzy</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">0.6</data>
+      <data key="d7">1542054512.0</data>
+      <data key="d8">i would love to hear your evidence of that. </data>
+      <data key="d9">178.8</data>
+      <data key="d10">16.1612</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-122.758</data>
+      <data key="d13">0.07</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0148</data>
+    </node>
+    <node id="885">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jrxzy</data>
+      <data key="d4">e9jscek</data>
+      <data key="d5">Anxious_Individual</data>
+      <data key="d6">-0.5</data>
+      <data key="d7">1542054542.0</data>
+      <data key="d8">https://www.nbcnews.com/news/amp/ncna875611
+
+https://www.theatlantic.com/amp/article/567080/
+
+https://www.politico.com/amp/story/2018/03/01/school-shootings-security-guns-431424
+
+https://www.psychologytoday.com/us/blog/finding-new-home/201805/do-current-security-measures-prevent-school-shootings</data>
+      <data key="d9">170.0</data>
+      <data key="d10">31.889</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-404.655</data>
+      <data key="d13">0.3185</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0</data>
+    </node>
+    <node id="886">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jrxzy</data>
+      <data key="d4">e9jscek</data>
+      <data key="d5">Anxious_Individual</data>
+      <data key="d6">8.5</data>
+      <data key="d7">1542054705.75</data>
+      <data key="d8">https://www.nbcnews.com/news/amp/ncna875611
+
+https://www.theatlantic.com/amp/article/567080/
+
+https://www.politico.com/amp/story/2018/03/01/school-shootings-security-guns-431424
+
+https://www.psychologytoday.com/us/blog/finding-new-home/201805/do-current-security-measures-prevent-school-shootings</data>
+      <data key="d9">202.0</data>
+      <data key="d10">19.139</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-171.4875</data>
+      <data key="d13">0.2231</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.0</data>
+    </node>
+    <node id="887">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jscek</data>
+      <data key="d4">e9jsyzn</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">-5.0</data>
+      <data key="d7">1542054906.0</data>
+      <data key="d8">interesting articles, but arent most of these on the business that school safety has created? awareness is what stops school shootings, not money. i digress to my original point, if someone being more aware because of what a student was discussing prevents a shooting, i'm all for it. https://www.google.es/search?q=school+shooting+plot+foiled&amp;rlz=1C1GYPO_enUS750US750&amp;oq=school+shooting+plot+&amp;aqs=chrome.1.69i57j0l5.5106j0j7&amp;sourceid=chrome&amp;ie=UTF-8</data>
+      <data key="d9">263.3333</data>
+      <data key="d10">23.963</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-259.92</data>
+      <data key="d13">0.2975</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0</data>
+    </node>
+    <node id="888">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jscek</data>
+      <data key="d4">e9jsyzn</data>
+      <data key="d5">notnowthankyou2</data>
+      <data key="d6">0.0</data>
+      <data key="d7">1542055222.5</data>
+      <data key="d8">interesting articles, but arent most of these on the business that school safety has created? awareness is what stops school shootings, not money. i digress to my original point, if someone being more aware because of what a student was discussing prevents a shooting, i'm all for it. https://www.google.es/search?q=school+shooting+plot+foiled&amp;rlz=1C1GYPO_enUS750US750&amp;oq=school+shooting+plot+&amp;aqs=chrome.1.69i57j0l5.5106j0j7&amp;sourceid=chrome&amp;ie=UTF-8</data>
+      <data key="d9">373.0</data>
+      <data key="d10">34.0555</data>
+      <data key="d11">0.0</data>
+      <data key="d12">-433.74</data>
+      <data key="d13">0.1278</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0</data>
+    </node>
+    <node id="889">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wf6d4</data>
+      <data key="d3">e9kqp2w</data>
+      <data key="d4">e9ks24e</data>
+      <data key="d5">SirRichardArms</data>
+      <data key="d6">2.6667</data>
+      <data key="d7">1542085183.3333</data>
+      <data key="d8">I'd go through your insurance agent. You'll want to get your policy information now to see exactly what was covered, and you'll want to get there ASAP to see if anything is salvagable. I'd look at the CA Farm Bureau link from the post - they'll have resources for more rural concerns like lost trees.</data>
+      <data key="d9">467.3333</data>
+      <data key="d10">5.3897</data>
+      <data key="d11">0.0</data>
+      <data key="d12">81.7333</data>
+      <data key="d13">0.1361</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.3858</data>
+    </node>
+    <node id="890">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wf6d4</data>
+      <data key="d3">e9kn8qp</data>
+      <data key="d4">e9knmaw</data>
+      <data key="d5">bug-hunter</data>
+      <data key="d6">-1.3333</data>
+      <data key="d7">1542082398.0</data>
+      <data key="d8">First of all, the fires tend to start in rural CA, which is not nearly as affluent. Second, most of the forests in CA are under federal management, meaning that President Trump was wrong.
+
+And there are still important things to do even if you have insurance, like get to a shelter (as noted in the post), get important documents (noted in the post), take evidence of what you had (noted in the post), keep an eye out for scams (noted in the post), and pay attention to official emergency management news (noted in the post).
+
+So unless you have something actually useful to say or ask, GTFO.</data>
+      <data key="d9">446.0</data>
+      <data key="d10">5.6073</data>
+      <data key="d11">0.0</data>
+      <data key="d12">55.27</data>
+      <data key="d13">-0.2267</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3443</data>
+    </node>
+    <node id="891">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kc8wl</data>
+      <data key="d4">e9kttqa</data>
+      <data key="d5">LolthienToo</data>
+      <data key="d6">1360.6667</data>
+      <data key="d7">1542082880.6667</data>
+      <data key="d8">Exactly, this dude is either looking to be feared, or honestly trying to talk himself into killing someone. He needs to see the consequences of this before it's too late. Call now OP, before someone else has to call because he finally convinced himself to kill a person.
+
+You are doing literally everyone involved a favor.</data>
+      <data key="d9">381.0</data>
+      <data key="d10">5.4793</data>
+      <data key="d11">0.0</data>
+      <data key="d12">75.17</data>
+      <data key="d13">-0.2444</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3655</data>
+    </node>
+    <node id="892">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9ku4f1</data>
+      <data key="d4">e9kw0lb</data>
+      <data key="d5">paglababa123</data>
+      <data key="d6">35.6667</data>
+      <data key="d7">1542089506.6667</data>
+      <data key="d8">I've changed my decision of just quitting. I'll be talking to the management about the situation to try to get him fired. Thank you kind stranger!</data>
+      <data key="d9">812.0</data>
+      <data key="d10">6.6453</data>
+      <data key="d11">0.0</data>
+      <data key="d12">76.6333</data>
+      <data key="d13">-0.0118</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.4106</data>
+    </node>
+    <node id="893">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9k89mw</data>
+      <data key="d4">e9klv9i</data>
+      <data key="d5">Gradually_Rocky</data>
+      <data key="d6">80.5</data>
+      <data key="d7">1542075460.0</data>
+      <data key="d8">He should go straight to the police before anything. </data>
+      <data key="d9">126.5</data>
+      <data key="d10">4.7565</data>
+      <data key="d11">0.0</data>
+      <data key="d12">67.76</data>
+      <data key="d13">-0.0076</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.5292</data>
+    </node>
+    <node id="894">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kv19f</data>
+      <data key="d4">e9kvqln</data>
+      <data key="d5">paglababa123</data>
+      <data key="d6">4.5</data>
+      <data key="d7">1542088029.0</data>
+      <data key="d8">I kind of messed up my edit there. I don't have to go back if I want to quit, I can just not go back at all. The GM wanted to have a conversation with me. I'll just let the management know what's going on.
+
+Fixed the edit.</data>
+      <data key="d9">188.0</data>
+      <data key="d10">4.503</data>
+      <data key="d11">0.0</data>
+      <data key="d12">90.63</data>
+      <data key="d13">-0.0897</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.619</data>
+    </node>
+    <node id="895">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kt6wr</data>
+      <data key="d4">e9kwfxl</data>
+      <data key="d5">paglababa123</data>
+      <data key="d6">6.3333</data>
+      <data key="d7">1542088292.6667</data>
+      <data key="d8">I'll go in to let the management know what's going on. I'll make sure the dude isn't there before I walk in. Thank you for your concern!</data>
+      <data key="d9">507.6667</data>
+      <data key="d10">5.585</data>
+      <data key="d11">0.0</data>
+      <data key="d12">81.5167</data>
+      <data key="d13">0.0907</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.3907</data>
+    </node>
+    <node id="896">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wfeen</data>
+      <data key="d3">e9kw4dt</data>
+      <data key="d4">e9kw4dt</data>
+      <data key="d5">DissonantDreamscapes</data>
+      <data key="d6">3.0</data>
+      <data key="d7">1542090162.8</data>
+      <data key="d8">I'll be talking to the management about the situation. Thank you for your concern kind stranger!</data>
+      <data key="d9">254.8</data>
+      <data key="d10">4.9906</data>
+      <data key="d11">0.0</data>
+      <data key="d12">90.274</data>
+      <data key="d13">0.0194</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.2382</data>
+    </node>
+    <node id="897">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9we95t</data>
+      <data key="d3">e9kly7l</data>
+      <data key="d4">e9ksomx</data>
+      <data key="d5">mazetar</data>
+      <data key="d6">3.5</data>
+      <data key="d7">1542083302.5</data>
+      <data key="d8">Not in florida as indicated by comments earlier.</data>
+      <data key="d9">47.5</data>
+      <data key="d10">4.45</data>
+      <data key="d11">0.0</data>
+      <data key="d12">50.67</data>
+      <data key="d13">-0.2553</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.5</data>
+    </node>
+    <node id="898">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9we95t</data>
+      <data key="d3">e9kjevt</data>
+      <data key="d4">e9kp056</data>
+      <data key="d5">AllHarlowsEve</data>
+      <data key="d6">8.0</data>
+      <data key="d7">1542080318.5</data>
+      <data key="d8">Halfway house is used for two different meanings. The first is sober homes, boarding houses essentially for people trying to stay sober, typically after a residential rehab facility but while still doing outpatient treatment or attending Alcoholics Anonymous or Narcotics Anonymous meetings.
+
+Another option is that the halfway house is a true halfway house, as in half way between prison and home. These are boarding houses for people who are on either parole or probation, the first being them released from prison and the second being instead of prison from what I understand, and typically there's firm rules, moreso than in a sober home, requiring you to work and follow every rule of your parole or probation. Many people who violate parole or probation while living in a halfway house will just grab their stuff and go, rather than have a known address for the police to show up and take them to jail/prison.
+
+Occasionally, people not on parole or probation live in halfway houses, especially after getting out of jail or prison, and violating the house rules will make them homeless. They're generally shitty houses and have a lot of petty theft and people treating each other like crap, but they're more for supervision than having a comfortable home.
+
+TL;DR: It's used both for post-rehab housing **and** for housing of criminals who've served their time.</data>
+      <data key="d9">522.0</data>
+      <data key="d10">6.479</data>
+      <data key="d11">0.0231</data>
+      <data key="d12">59.695</data>
+      <data key="d13">-0.0898</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.4151</data>
+    </node>
+    <node id="899">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9jn4lf</data>
+      <data key="d4">e9kdjmz</data>
+      <data key="d5">littlegirlghostship</data>
+      <data key="d6">35.75</data>
+      <data key="d7">1542069673.25</data>
+      <data key="d8">Would OP be able to ask for an emergency custody order from the court, considering the parents "abandoned" the sister and *left her in OP's care*??? </data>
+      <data key="d9">955.25</data>
+      <data key="d10">7.1788</data>
+      <data key="d11">0.0168</data>
+      <data key="d12">57.2425</data>
+      <data key="d13">-0.0725</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.3361</data>
+    </node>
+    <node id="900">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9wcslz</data>
+      <data key="d3">e9kfnd5</data>
+      <data key="d4">e9ksziy</data>
+      <data key="d5">Heidiwearsglasses</data>
+      <data key="d6">11.5</data>
+      <data key="d7">1542081097.0</data>
+      <data key="d8">THIS- I was going to say make sure the company handling the annuity knows that your parents are no longer legally your guardians and therefore are not allowed to make any changes to your account- and get it in writing
+
+Also make sure all new correspondence from the banks is paperless and going to an email address, especially your sister. Good luck girls!</data>
+      <data key="d9">182.5</data>
+      <data key="d10">6.5</data>
+      <data key="d11">0.0</data>
+      <data key="d12">46.52</data>
+      <data key="d13">0.289</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.5</data>
+    </node>
+    <node id="901">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jcudi</data>
+      <data key="d4">e9jlqcn</data>
+      <data key="d5">PerplexityRivet</data>
+      <data key="d6">189.0</data>
+      <data key="d7">1542035951.0</data>
+      <data key="d8">I agree. The questions about the parents medication and whether OP used drugs seem to be an attempt to justify the arrest after they realized there was no legitimate cause. There's no telling what random detail could be twisted into a legal charge.</data>
+      <data key="d9">297.5</data>
+      <data key="d10">5.3735</data>
+      <data key="d11">0.0</data>
+      <data key="d12">60.23</data>
+      <data key="d13">0.1421</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.5</data>
+    </node>
+    <node id="902">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9iz5fc</data>
+      <data key="d4">e9iz5fc</data>
+      <data key="d5">JainotTai</data>
+      <data key="d6">1336.3571</data>
+      <data key="d7">1542035947.4286</data>
+      <data key="d8">It's just insane the cops can do this legally. We already have told him the new policy at school, the moment ANYONE talks about guns, nerf guns, video game guns etc he's going to take out his phone and call 911 and report it. </data>
+      <data key="d9">284.6429</data>
+      <data key="d10">5.0233</data>
+      <data key="d11">0.0</data>
+      <data key="d12">76.4071</data>
+      <data key="d13">-0.1113</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1334</data>
+    </node>
+    <node id="903">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jq9w4</data>
+      <data key="d4">e9jsefp</data>
+      <data key="d5">redpinkflamingo</data>
+      <data key="d6">121.0</data>
+      <data key="d7">1542053845.3333</data>
+      <data key="d8">Yes, I was curious why no other students were involved.  I am a teacher of students around this child's age, and I thought this was very strange.  It is also strange that the school wouldn't have called you to let you know your child was no longer in campus.  
+
+For the school end of things, I would demand a meeting to find out exactly what transpired at school, how it was reported, why no other students were questioned, and why no one informed you that your child had been removed from campus.  I would also be calling the main office in the school district and Lodge a complaint about this so that the school cannot continue to ignore you.</data>
+      <data key="d9">322.6667</data>
+      <data key="d10">5.5147</data>
+      <data key="d11">0.027</data>
+      <data key="d12">67.43</data>
+      <data key="d13">0.0763</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.3821</data>
+    </node>
+    <node id="904">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jmvjg</data>
+      <data key="d4">e9jn8p7</data>
+      <data key="d5">digg_survivor</data>
+      <data key="d6">48.5</data>
+      <data key="d7">1542046104.5</data>
+      <data key="d8">In Texas it's legal to question minors without parental consent and I believe hold them for up to six hours?</data>
+      <data key="d9">167.5</data>
+      <data key="d10">4.468</data>
+      <data key="d11">0.0</data>
+      <data key="d12">71.82</data>
+      <data key="d13">-0.2983</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.5485</data>
+    </node>
+    <node id="905">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqrk4</data>
+      <data key="d4">e9jshgb</data>
+      <data key="d5">Highlander17</data>
+      <data key="d6">25.5</data>
+      <data key="d7">1542053761.0</data>
+      <data key="d8">Cops acted within their authority unfortunately. Doesn’t make it right but it is legal. The school however does possibly have some exposure here though, that would be the route to pursue but it will be an uphill battle there too. They get quite a bit of leeway when acting on a “credible” tip like that.</data>
+      <data key="d9">382.5</data>
+      <data key="d10">5.338</data>
+      <data key="d11">0.0</data>
+      <data key="d12">72.765</data>
+      <data key="d13">-0.0755</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.5519</data>
+    </node>
+    <node id="906">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jrrf9</data>
+      <data key="d4">e9jspnh</data>
+      <data key="d5">Dorfdad</data>
+      <data key="d6">0.5</data>
+      <data key="d7">1542054662.5</data>
+      <data key="d8">1st thing they should have done is called the police. But before anyone talked to the minor his parents should have been called and arrived. Than they could have questioned him in this situation. </data>
+      <data key="d9">520.5</data>
+      <data key="d10">5.9765</data>
+      <data key="d11">0.0</data>
+      <data key="d12">80.6</data>
+      <data key="d13">-0.0148</data>
+      <data key="d14">Neutral</data>
+      <data key="d15">0.6002</data>
+    </node>
+    <node id="907">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jsl4q</data>
+      <data key="d4">e9jssxv</data>
+      <data key="d5">dfhsevd</data>
+      <data key="d6">4.5</data>
+      <data key="d7">1542055268.5</data>
+      <data key="d8">Also I in no way condone violent shootings in any way. I also support the current gun laws we have. Not everyone is fit to have a fire arm. The fast majority if gun crimes are committed with stolen guns.  The majority of areas with the worst gun crimes have the strictest gun laws, that don't make much sense does it? 
+
+An armed society is a polite society. </data>
+      <data key="d9">752.5</data>
+      <data key="d10">6.4335</data>
+      <data key="d11">0.0</data>
+      <data key="d12">78.315</data>
+      <data key="d13">-0.236</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.5213</data>
+    </node>
+    <node id="908">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jk24u</data>
+      <data key="d4">e9jrg3f</data>
+      <data key="d5">netramz</data>
+      <data key="d6">83.5</data>
+      <data key="d7">1542046757.0</data>
+      <data key="d8">Seems like they want to get people to do something about it.</data>
+      <data key="d9">84.5</data>
+      <data key="d10">4.1595</data>
+      <data key="d11">0.0</data>
+      <data key="d12">83.835</data>
+      <data key="d13">-0.0186</data>
+      <data key="d14">Positive</data>
+      <data key="d15">0.0563</data>
+    </node>
+    <node id="909">
+      <data key="d0">comment</data>
+      <data key="d1" />
+      <data key="d2">9w95gi</data>
+      <data key="d3">e9jqlhe</data>
+      <data key="d4">e9js1qf</data>
+      <data key="d5">FocusForASecond</data>
+      <data key="d6">26.0</data>
+      <data key="d7">1542054454.0</data>
+      <data key="d8">Because it's been proven time and time again that the police are not your friends. Many have inadvertently harmed themselves or landed in hot water simply by talking to the police.  </data>
+      <data key="d9">69.7143</data>
+      <data key="d10">4.1611</data>
+      <data key="d11">0.0</data>
+      <data key="d12">87.5529</data>
+      <data key="d13">0.0272</data>
+      <data key="d14">Negative</data>
+      <data key="d15">0.1656</data>
+    </node>
+    <edge source="768" target="769">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c272" target="c273">
+    <edge source="768" target="770">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c272" target="c274">
+    <edge source="771" target="772">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c273" target="c286">
+    <edge source="771" target="773">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c273" target="c274">
+    <edge source="771" target="774">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c273" target="c287">
+    <edge source="772" target="773">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c274" target="c286">
+    <edge source="775" target="776">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c274" target="c287">
+    <edge source="775" target="777">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c275" target="c276">
+    <edge source="775" target="778">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c276" target="c277">
+    <edge source="775" target="779">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c276" target="c278">
+    <edge source="775" target="780">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c277" target="c278">
+    <edge source="776" target="777">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c278" target="c297">
+    <edge source="776" target="778">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c279" target="c280">
+    <edge source="776" target="779">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c279" target="c281">
+    <edge source="776" target="780">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c280" target="c298">
+    <edge source="777" target="778">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c280" target="c281">
+    <edge source="777" target="779">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c281" target="c298">
+    <edge source="777" target="780">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c281" target="c299">
+    <edge source="778" target="779">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c282" target="c283">
+    <edge source="778" target="780">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c283" target="c288">
+    <edge source="779" target="780">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c283" target="c290">
+    <edge source="781" target="782">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c284" target="c285">
+    <edge source="783" target="784">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c286" target="c287">
+    <edge source="783" target="785">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c288" target="c289">
+    <edge source="786" target="787">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c288" target="c290">
+    <edge source="788" target="789">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c288" target="c291">
+    <edge source="788" target="790">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c289" target="c290">
+    <edge source="788" target="791">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c290" target="c291">
+    <edge source="789" target="790">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c292" target="c293">
+    <edge source="789" target="791">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c294" target="c295">
+    <edge source="792" target="793">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c294" target="c296">
+    <edge source="794" target="795">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c295" target="c296">
+    <edge source="794" target="796">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="c298" target="c299">
+    <edge source="795" target="797">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="795" target="796">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="795" target="798">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="796" target="797">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="796" target="798">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="797" target="798">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="799" target="800">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="799" target="801">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="799" target="802">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="799" target="803">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="799" target="804">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="799" target="805">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="799" target="806">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="801">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="802">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="826">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="827">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="803">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="828">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="804">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="805">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="806">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="829">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="830">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="800" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="802">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="826">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="827">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="803">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="828">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="804">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="805">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="806">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="829">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="830">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="801" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="826">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="803">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="804">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="805">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="806">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="829">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="830">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="802" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="803" target="804">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="803" target="805">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="803" target="806">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="803" target="829">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="803" target="830">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="803" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="803" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="804" target="805">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="804" target="806">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="804" target="829">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="804" target="830">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="804" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="804" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="805" target="806">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="805" target="829">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="805" target="830">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="805" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="805" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="806" target="829">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="806" target="830">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="806" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="806" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="807" target="808">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="807" target="809">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="807" target="810">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="808" target="809">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="808" target="810">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="809" target="810">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="811" target="812">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="811" target="813">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="811" target="814">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="811" target="815">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="811" target="816">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="812" target="813">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="812" target="814">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="812" target="815">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="812" target="816">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="812" target="837">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="813" target="815">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="813" target="837">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="814" target="816">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="815" target="837">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="817" target="818">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="817" target="819">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="818" target="819">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="818" target="833">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="818" target="834">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="818" target="835">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="818" target="836">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="819" target="833">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="819" target="834">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="819" target="835">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="819" target="836">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="820" target="821">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="820" target="822">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="820" target="823">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="820" target="824">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="820" target="825">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="821" target="822">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="821" target="823">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="821" target="824">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="821" target="838">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="821" target="825">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="822" target="823">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="822" target="824">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="822" target="838">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="822" target="825">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="823" target="824">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="823" target="838">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="823" target="825">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="824" target="838">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="824" target="825">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="827" target="828">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="829" target="830">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="829" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="829" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="830" target="831">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="830" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="831" target="832">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="833" target="834">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="833" target="835">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="833" target="836">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="834" target="836">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="835" target="836">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="839" target="840">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="839" target="841">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="840" target="841">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="865">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="873">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="866">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="867">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="874">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="875">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="876">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="877">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="878">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="868">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="869">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="870">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="871">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="872">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="841" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="842" target="843">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="843" target="846">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="844" target="845">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="845" target="847">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="849">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="850">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="851">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="852">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="853">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="854">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="855">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="856">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="857">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="858">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="859">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="848" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="849" target="851">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="849" target="854">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="849" target="855">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="849" target="856">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="849" target="863">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="850" target="852">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="850" target="853">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="850" target="854">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="850" target="855">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="850" target="857">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="850" target="858">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="850" target="859">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="850" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="851" target="854">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="851" target="855">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="851" target="856">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="852" target="853">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="852" target="854">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="852" target="855">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="852" target="857">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="852" target="858">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="852" target="859">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="852" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="852" target="884">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="853" target="854">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="853" target="855">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="853" target="857">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="853" target="858">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="853" target="859">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="853" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="853" target="884">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="855">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="856">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="863">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="857">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="858">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="859">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="884">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="886">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="854" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="864">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="885">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="856">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="863">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="857">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="858">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="859">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="884">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="886">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="855" target="888">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="856" target="864">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="856" target="863">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="857" target="885">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="857" target="858">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="857" target="859">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="857" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="857" target="884">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="857" target="886">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="857" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="857" target="888">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="858" target="885">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="858" target="859">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="858" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="858" target="884">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="858" target="886">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="858" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="858" target="888">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="859" target="885">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="859" target="860">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="859" target="884">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="859" target="886">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="859" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="859" target="888">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="860" target="885">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="860" target="884">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="860" target="886">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="860" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="860" target="888">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="861" target="862">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="863" target="864">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="865" target="866">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="865" target="867">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="865" target="868">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="865" target="869">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="865" target="870">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="865" target="871">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="865" target="872">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="866" target="867">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="866" target="868">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="866" target="869">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="866" target="870">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="866" target="871">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="866" target="872">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="867" target="868">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="867" target="869">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="867" target="870">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="867" target="871">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="867" target="872">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="873">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="874">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="875">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="876">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="877">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="878">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="869">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="870">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="871">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="872">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="868" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="873">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="874">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="875">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="876">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="877">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="878">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="870">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="871">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="872">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="869" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="870" target="871">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="870" target="872">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="871" target="872">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="874">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="875">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="876">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="877">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="878">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="873" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="875">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="876">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="877">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="878">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="874" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="875" target="877">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="875" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="875" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="875" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="875" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="876" target="878">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="876" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="876" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="876" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="876" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="877" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="877" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="877" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="877" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="878" target="879">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="878" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="878" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="878" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="879" target="880">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="879" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="879" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="879" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="880" target="881">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="880" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="880" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="881" target="882">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="881" target="883">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="884" target="885">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="884" target="886">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="884" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="884" target="888">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="885" target="886">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="885" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="885" target="888">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="886" target="887">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="886" target="888">
+      <data key="d16">READINGLEVEL</data>
+    </edge>
+    <edge source="887" target="888">
       <data key="d16">READINGLEVEL</data>
     </edge>
   </graph>

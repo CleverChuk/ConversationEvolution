@@ -1,4 +1,4 @@
-sentiment,name
-Positive,Positive
-Negative,Negative
-Neutral,Neutral
+value,type
+Positive,sentiment
+Negative,sentiment
+Neutral,sentiment

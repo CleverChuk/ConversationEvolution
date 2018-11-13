@@ -74,7 +74,6 @@ def numericInterval(epsilon, edges, prop, num_intervals=3):
     if incr_size == 0:
         incr_size = 1
     
-    edges = sorted(edges, key=lambda e: (e[0].__dict__[prop] + e[1].__dict__[prop])/2)
     # create the intervals using prop value to mark the range bounds
     for i in range(0, n, incr_size):
         e = edges[i:i+incr_size]
@@ -84,20 +83,24 @@ def numericInterval(epsilon, edges, prop, num_intervals=3):
     groups = defaultdict(list)  # map to hold groups
     length = len(intervals)
     for i in range(length-1):
+        next = i+1
         minimum = getAverage(intervals[i][0], prop) - epsilon
         maximum = getAverage(intervals[i][-1], prop) + epsilon
 
-        for e in intervals[i+1]:
+        for e in intervals[next]:
             if getAverage(e, prop) <= maximum and e not in intervals[i]:
                 intervals[i].append(e)
 
         groups[(minimum, maximum)] = intervals[i]
 
         # make sure to include the last interval in the group map
-        if(i+1 == length-1):
-            minimum = getAverage(intervals[i+1][0], prop) - epsilon
-            maximum = getAverage(intervals[i+1][-1], prop) + epsilon
-            groups[(minimum,maximum)]= intervals[i+1]
+        if(next == length-1):
+            minimum = getAverage(intervals[next][0], prop) - epsilon
+            maximum = getAverage(intervals[next][-1], prop) + epsilon
+            for e in intervals[i]:
+                if getAverage(e, prop) <= maximum and e not in intervals[next]:
+                    intervals[next].append(e)
+            groups[(minimum,maximum)]= intervals[next]
 
     return groups
 
@@ -168,7 +171,6 @@ def numericIntervalNodes(epsilon, nodes, prop, num_intervals=3):
         incr_size = 1
     
     intervals = []
-    # nodes = sorted(nodes, key=lambda n: n.__dict__[prop])
     # create the intervals using prop value to mark the range bounds
     for i in range(0, n, incr_size):
         n = nodes[i:i+incr_size]
@@ -179,21 +181,26 @@ def numericIntervalNodes(epsilon, nodes, prop, num_intervals=3):
     length = len(intervals)
 
     for i in range(length-1):
+        next = i + 1
         minimum = intervals[i][0].__dict__[prop] - epsilon
         maximum = intervals[i][-1].__dict__[prop] + epsilon
         
         # find overlaps
-        for j in range(i+1,len(nodes)):
+        for j in range(next,len(nodes)):
             if nodes[j].__dict__[prop] <= maximum and nodes[j] not in intervals[i]:
                 intervals[i].append(nodes[j])
 
         groups[(minimum, maximum)] = intervals[i]
         
         # make sure to include the last interval in the group map
-        if(i+1 == length-1):
-            minimum = intervals[i+1][0].__dict__[prop] - epsilon
-            maximum = intervals[i+1][-1].__dict__[prop] + epsilon
-            groups[(minimum,maximum)] = intervals[i+1]
+        if(next == length-1):
+            minimum = intervals[next][0].__dict__[prop] - epsilon
+            maximum = intervals[next][-1].__dict__[prop] + epsilon
+            
+            for n in intervals[i]:
+                if n.__dict__[prop] <= maximum and n not in intervals[next]:
+                    intervals[next].append(n)
+            groups[(minimum,maximum)]= intervals[next]
 
 
     return groups

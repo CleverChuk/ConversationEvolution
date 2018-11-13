@@ -194,7 +194,7 @@ if __name__ == "__main__":
     # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
     bot = GraphBot(subreddit)
-    ids = list(bot.get_hot_submissions_id(2))
+    ids = list(bot.get_hot_submissions_id(5))
     graph = bot.getGraph(*ids)
 
     bot.dump(filename, ids)

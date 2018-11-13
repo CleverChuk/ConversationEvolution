@@ -1,3 +1,6 @@
-id,name,title,view_count,timestamp,isVideo,upvote_ratio
-9w49aa,ar,Police broke into my home because my child cried during the night while I was asleep,0,1541947292.0,False,0.96
-9vzjvh,ar,Woman has stolen my daughter and won't return her. Police refuse to help.,0,1541897150.0,False,0.91
+id,type,title,view_count,timestamp,isVideo,upvote_ratio
+9wf6d4,article,Megathread - California Wildfires,0,1542038246.0,False,0.89
+9wfeen,article,"A coworker said he wants to murder me, what legal actions can I take against him?",0,1542039768.0,False,0.95
+9we95t,article,Unknowingly bought a home that was previously used as a Halfway House. Swat keeps showing up looking for previous tenants.,0,1542031367.0,False,0.97
+9wcslz,article,My parents have been stealing my inheritance for the last 3 years. I am 18 now and would like to cut them off. Also questions regarding a 17 year olds right to leave home and am I kidnapping?,0,1542016855.0,False,0.98
+9w95gi,article,Police took my minor son and questioned him alone for 9 hours and didnt allow us to see him or speak to him,0,1541982989.0,False,0.94

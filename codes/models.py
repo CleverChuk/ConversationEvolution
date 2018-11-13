@@ -61,6 +61,7 @@ class Comment:
         self.sentimentScore = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentimentScore)
         self.replies = [Comment(c) for c in comment.replies]
+
     def __repr__(self):
         return self.body
 
@@ -148,8 +149,8 @@ class Node:
     """
         base class for all nodes
     """
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, _type):
+        self.type = _type
         self.id_0 = ""
 
     def __len__(self):
@@ -157,17 +158,17 @@ class Node:
 
     def __str__(self):
         if self.id_0:
-            return "{0}{1}".format(self.name,self.id_0)
+            return "{0}".format(self.id_0)
 
         self.id_0 = ID.getId()
-        return "{0}{1}".format(self.name,self.id_0)
+        return "{0}".format(self.id_0)
 
     def __repr__(self):
         if self.id_0:
-            return "{0}{1}".format(self.name,self.id_0)
+            return "{0}".format(self.id_0)
 
         self.id_0 = ID.getId()
-        return "{0}{1}".format(self.name,self.id_0)
+        return "{0}".format(self.id_0)
 
 
 class AuthorNode(Node):
@@ -176,7 +177,8 @@ class AuthorNode(Node):
     """
     def __init__(self, author):
         # self.account_created = author.created_utc
-        super().__init__(author)
+        super().__init__("author")
+        self.name = author
 
     def __repr__(self):
         return self.name
@@ -187,7 +189,7 @@ class CommentNode(Node):
         comment nodes
     """
     def __init__(self, aId, comment, meta):
-        super().__init__("c")
+        super().__init__("comment")
         self.article_id = aId
         self.parent_id = comment.parent().id
         self.id = comment.id
@@ -206,11 +208,11 @@ class CommentNode(Node):
 
 class SentimentNode(Node):
     def __init__(self, value):
-        super().__init__(value)
-        self.sentiment = value
+        super().__init__("sentiment")
+        self.value = value
 
     def __repr__(self):
-        return self.name
+        return self.value
 
 
 class ArticleNode(Node):
@@ -218,14 +220,10 @@ class ArticleNode(Node):
         Article node
     """
     def __init__(self, submission):
-        super().__init__("ar")
+        super().__init__("article")
         self.id = submission.id
         self.title = submission.title
         self.view_count = submission.view_count if submission.view_count != None else 0
         self.timestamp = submission.created_utc
         self.isVideo = submission.is_video
         self.upvote_ratio = submission.upvote_ratio
-
-
-
-
