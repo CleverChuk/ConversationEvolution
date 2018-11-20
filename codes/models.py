@@ -178,10 +178,10 @@ class AuthorNode(Node):
     def __init__(self, author):
         # self.account_created = author.created_utc
         super().__init__("author")
-        self.name = author
+        self.id = author
 
     def __repr__(self):
-        return self.name
+        return self.id
 
 
 class CommentNode(Node):
@@ -189,7 +189,6 @@ class CommentNode(Node):
         comment nodes
     """
     def __init__(self, aId, comment, meta):
-        super().__init__("comment")
         self.article_id = aId
         self.parent_id = comment.parent().id
         self.id = comment.id
@@ -203,16 +202,17 @@ class CommentNode(Node):
         self.readingLevel = meta.readingLevel
         self.sentimentScore = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentimentScore)
-        self.similarity = 1.0
+        self.similarity = 1.0        
+        super().__init__("comment")
 
 
 class SentimentNode(Node):
     def __init__(self, value):
         super().__init__("sentiment")
-        self.value = value
+        self.id = value        
 
     def __repr__(self):
-        return self.value
+        return self.id
 
 
 class ArticleNode(Node):
@@ -220,10 +220,10 @@ class ArticleNode(Node):
         Article node
     """
     def __init__(self, submission):
-        super().__init__("article")
-        self.id = submission.id
         self.title = submission.title
         self.view_count = submission.view_count if submission.view_count != None else 0
+        self.id = submission.id
         self.timestamp = submission.created_utc
         self.isVideo = submission.is_video
         self.upvote_ratio = submission.upvote_ratio
+        super().__init__("article")

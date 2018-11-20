@@ -1,0 +1,9 @@
+./bin/neo4j-admin.bat import \
+--nodes "import/raw/comment_data_node_header.csv,import/raw/comment_data.csv" \
+--nodes "import/raw/article_data_node_header.csv,import/raw/article_data.csv" \
+--nodes "import/raw/author_data_node_header.csv,import/raw/author_data.csv" \
+--nodes "import/raw/sentiment_data_node_header.csv,import/raw/sentiment_data.csv" \
+--relationships "import/raw/comment_edge_data_header.csv,import/raw/comment_edge_data.csv" \
+--relationships "import/raw/article_comment_edge_data_header.csv,import/raw/article_comment_edge_data.csv" \
+--relationships "import/raw/author_comment_edge_data_header.csv,import/raw/author_comment_edge_data.csv" \
+--relationships "import/raw/sentiment_comment_edge_data_header.csv,import/raw/sentiment_comment_edge_data.csv"

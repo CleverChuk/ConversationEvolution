@@ -101,18 +101,14 @@ class GraphBot(RedditBot):
                 # populate article/comment edge list
                 for comment in submission.comments.list():
                     commentNode = CommentNode(articleNode.id, comment, CommentMetaAnalysis(comment))
-                    # filter deleted comments
-                    if self.isRemoved(comment):
-                        continue
-
-                    articleCommentEdges.append((commentNode, articleNode, {"type": "article-comment"}))
+                    articleCommentEdges.append((commentNode, articleNode, {"type": "_IN"}))
                     authorNode = AuthorNode(commentNode.author)
-                    authorCommentEdges.append((authorNode, commentNode, {"type": "author-comment"}))
 
+                    authorCommentEdges.append((authorNode, commentNode, {"type": "WROTE"}))
                     nodes.append((authorNode, authorNode.__dict__))
                     nodes.append((commentNode, commentNode.__dict__))
+                    
                     author_data.append(authorNode)
-
                     comment_data.append(commentNode)
                     diGraph.add_nodes_from([(commentNode, commentNode.__dict__)])
 
@@ -123,7 +119,7 @@ class GraphBot(RedditBot):
         # populate sentiment/comment  and comment/comment edge list
         for p_comment, *_ in articleCommentEdges:
             sentimentCommentEdges.append((sentiment[p_comment.sentiment], p_comment, 
-            {"type": "SENTIMENT","score": p_comment.sentimentScore}))
+            {"type": "_IS","score": p_comment.sentimentScore}))
 
             for c_comment, *_ in articleCommentEdges:
                 if c_comment.parent_id == p_comment.id:
@@ -158,30 +154,35 @@ class GraphBot(RedditBot):
         fname = "./raw/comment_data_temp.csv"
         f = "./raw/comment_data.csv"
         with open(fname, "w") as fp:
-            columns = rd.cleanColumns(mp.getProperties(commentCommentEdges[0][0]))
+            columns = rd.cleanColumns(mp.getProperties(comment_data[0]))
             rd.writeNodesToCsv(fp,columns, comment_data)
         rd.cleanCsv(fname, f)
 
         fname = "./raw/article_data_temp.csv"
         f = "./raw/article_data.csv"
         with open(fname, "w") as fp:
-            columns = rd.cleanColumns(mp.getProperties(articleCommentEdges[0][1]))
+            columns = rd.cleanColumns(mp.getProperties(article_data[0]))
             rd.writeNodesToCsv(fp,columns, article_data)
         rd.cleanCsv(fname, f)
         
         fname = "./raw/sentiment_data_temp.csv"
         f = "./raw/sentiment_data.csv"
         with open(fname, "w") as fp:
-            columns = rd.cleanColumns(mp.getProperties(sentimentCommentEdges[0][0]))
+            columns = rd.cleanColumns(mp.getProperties(sentiment_data[0]))
             rd.writeNodesToCsv(fp,columns, sentiment_data)
         rd.cleanCsv(fname, f)
             
         fname = "./raw/author_data_temp.csv"
         f = "./raw/author_data.csv"
         with open(fname, "w") as fp:
-            columns = rd.cleanColumns(mp.getProperties(authorCommentEdges[0][0]))
+            columns = rd.cleanColumns(mp.getProperties(author_data[0]))
             rd.writeNodesToCsv(fp,columns, author_data)
         rd.cleanCsv(fname, f)
+
+        rd.writeEdgesToFile("./raw/comment_edge_data.csv", commentCommentEdges)
+        rd.writeEdgesToFile("./raw/article_comment_edge_data.csv", articleCommentEdges)
+        rd.writeEdgesToFile("./raw/sentiment_comment_edge_data.csv", sentimentCommentEdges)
+        rd.writeEdgesToFile("./raw/author_comment_edge_data.csv", authorCommentEdges)
 
         return graph
 
@@ -194,7 +195,7 @@ if __name__ == "__main__":
     # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
     bot = GraphBot(subreddit)
-    ids = list(bot.get_hot_submissions_id(5))
+    ids = list(bot.get_hot_submissions_id(2))
     graph = bot.getGraph(*ids)
 
     bot.dump(filename, ids)
