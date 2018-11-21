@@ -1,3 +1,4 @@
-Positive,sentiment
-Negative,sentiment
-Neutral,sentiment
+:ID,:LABEL
+Positive,Positive
+Negative,Negative
+Neutral,Neutral

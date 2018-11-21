@@ -1,25 +1,15 @@
-# import json
 from csv import DictWriter
 import os
-# from models import DecodeComment, DecodeSubmission
-
-# data = []
-# with open("./raw/legaladvice.json", "r") as fp:
-#     raw = json.load(fp)
-#     for d in raw:
-#         data.append(DecodeSubmission(d))
-
-def cleanColumns(columns):
-    if len(columns) < 3:
-        return columns
-        
-    temp = columns[2]
-    columns[2] = columns[0]
-    columns[0] = temp
-
-    return columns
 
 def writeEdgeHeaderFile(filename, edgeProperties = []):
+    """
+        writes Neo4j relationship header plus the given
+        edge properties to the given filename
+        creates file if it does not exist otherwise overwrite
+
+        :type filename : str
+        :type edgeProperties: list
+    """
     header = [":START_ID"] + edgeProperties
     header.append(":END_ID")
     header.append(":TYPE")
@@ -37,6 +27,14 @@ def writeEdgeHeaderFile(filename, edgeProperties = []):
     return header
 
 def writeEdgesToFile(filename, data):
+    """
+        writes graph edges to file in the form
+        Neo4j understands to the given filename
+        creates file if it does not exist otherwise overwrite
+
+        :type filename : str
+        :type data: list of tuple
+    """
     if not isinstance(data, list):
         raise TypeError("data must be a list of edges")
     
@@ -54,6 +52,7 @@ def writeEdgesToFile(filename, data):
 
     with open(filename, "w", newline='') as fp:
         dictWriter = DictWriter(fp,header)
+        dictWriter.writeheader()
         for edge in data:
             if len(edge) > 2:
                 node_1 , node_2 , prop = edge
@@ -72,7 +71,14 @@ def writeEdgesToFile(filename, data):
             dictWriter.writerow(d)
 
 def writeNodeHeaderFile(filename, header):
-    h = header[:-2]
+    """
+        writes header to the given filename
+        creates file if it does not exist otherwise overwrite
+
+        :type filename : str
+        :type header: list
+    """
+    h = header[:-2] # remove the type and id_0 column
     h.append(":LABEL")
     if '.' not in filename:
         raise Exception("invalid file name format")
@@ -85,17 +91,31 @@ def writeNodeHeaderFile(filename, header):
     fname = "./raw/temp.csv"
 
     with open(fname,"w") as fp:
-        h[0] = h[0]+":ID"
+        h[0] = ":ID"
         text = ",".join(h)
         fp.write(text)
     
     cleanCsv(fname,filename)
 
+    return h
 
 
-def writeNodesToCsv(file, columns, data):
-    writer = DictWriter(file, fieldnames = columns, restval = "na")
-    writeNodeHeaderFile(file.name,columns)
+
+def writeNodesToCsv(file, header, data):
+    """
+        writes header plus the given nodes data
+        to the given file.
+
+        :type file : file
+        :type header: list
+        :type data : list
+    """
+    print(header)
+    writer = DictWriter(file, fieldnames = header, restval = "na")
+    header = writeNodeHeaderFile(file.name,header)
+
+    file.write(",".join(header))
+    file.write("\n")
     
     for obj in data:
         if "body" in obj.__dict__:
@@ -103,6 +123,13 @@ def writeNodesToCsv(file, columns, data):
         writer.writerow(obj.__dict__)
 
 def cleanCsv(i_stream, o_stream):
+    """
+        removes uunneeded headers and empty column
+        from the csv.
+
+        :type i_stream : str -> file to clean
+        :type o_stream: str -> file to save output
+    """
     with open(i_stream,"r") as fp:
         with open(o_stream,"w") as fp2:
             lines = fp.readlines()

@@ -154,28 +154,28 @@ class GraphBot(RedditBot):
         fname = "./raw/comment_data_temp.csv"
         f = "./raw/comment_data.csv"
         with open(fname, "w") as fp:
-            columns = rd.cleanColumns(mp.getProperties(comment_data[0]))
+            columns = mp.getProperties(comment_data[0])
             rd.writeNodesToCsv(fp,columns, comment_data)
         rd.cleanCsv(fname, f)
 
         fname = "./raw/article_data_temp.csv"
         f = "./raw/article_data.csv"
         with open(fname, "w") as fp:
-            columns = rd.cleanColumns(mp.getProperties(article_data[0]))
+            columns = mp.getProperties(article_data[0])
             rd.writeNodesToCsv(fp,columns, article_data)
         rd.cleanCsv(fname, f)
         
         fname = "./raw/sentiment_data_temp.csv"
         f = "./raw/sentiment_data.csv"
         with open(fname, "w") as fp:
-            columns = rd.cleanColumns(mp.getProperties(sentiment_data[0]))
+            columns = mp.getProperties(sentiment_data[0])
             rd.writeNodesToCsv(fp,columns, sentiment_data)
         rd.cleanCsv(fname, f)
             
         fname = "./raw/author_data_temp.csv"
         f = "./raw/author_data.csv"
         with open(fname, "w") as fp:
-            columns = rd.cleanColumns(mp.getProperties(author_data[0]))
+            columns = mp.getProperties(author_data[0])
             rd.writeNodesToCsv(fp,columns, author_data)
         rd.cleanCsv(fname, f)
 

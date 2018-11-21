@@ -1,1 +1,1 @@
-id:ID,view_count,title,timestamp,isVideo,upvote_ratio,:LABEL
+:ID,title,view_count,timestamp,isVideo,upvote_ratio,:LABEL
