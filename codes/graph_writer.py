@@ -1,7 +1,12 @@
+# Author: Chukwubuikem Ume-Ugwa
+# Purpose: Functions use to write nodes and edges to a csv file
+#          using Neo4j schema specification
+
 from csv import DictWriter
 import os
+from mapper_functions import getProperties
 
-def writeEdgeHeaderFile(filename, edgeProperties = []):
+def writeEdgeHeaderFile(filename, edgeProperties = [], values = []):
     """
         writes Neo4j relationship header plus the given
         edge properties to the given filename
@@ -10,6 +15,15 @@ def writeEdgeHeaderFile(filename, edgeProperties = []):
         :type filename : str
         :type edgeProperties: list
     """
+    header_1 = [":START_ID"] + edgeProperties
+    header_1.append(":END_ID")
+    header_1.append(":TYPE")
+
+    # for i in range(len(edgeProperties)):
+    #     s = "".join(list(str(type(values[i])))[8:][:-2])
+    #     edgeProperties[i] = edgeProperties[i] + ":" + s.upper()
+
+
     header = [":START_ID"] + edgeProperties
     header.append(":END_ID")
     header.append(":TYPE")
@@ -22,11 +36,11 @@ def writeEdgeHeaderFile(filename, edgeProperties = []):
         text = ",".join(header)
         fp.write(text)
     
-    cleanCsv(fname,filename)
+    cleanCsv(fname, filename)
 
-    return header
+    return header_1
 
-def writeEdgesToFile(filename, data):
+def writeEdgesToFile(filename, data, r="NOT SPECIFIED"):
     """
         writes graph edges to file in the form
         Neo4j understands to the given filename
@@ -41,18 +55,22 @@ def writeEdgesToFile(filename, data):
     n = len(data[0])
     if n < 2:
         raise TypeError("each edge must have two nodes and an optional relationship")
-    
-    prop = list(data[0][2].keys())
-    #  remove type from the header because its a duplicate
-    for i in range(len(prop)):
-        if prop[i] == 'type':
-            prop.pop(i)
-            break
-    header = writeEdgeHeaderFile(filename, prop)
+    if n > 2:
+        prop = list(data[0][2].keys())
+        values = list(data[0][2].values())
+        #  remove type from the header because its a duplicate
+        for i in range(len(prop)):
+            if prop[i] == 'type':
+                prop.pop(i)
+                break
+        header = writeEdgeHeaderFile(filename, prop, values)
+    else:
+        header = writeEdgeHeaderFile(filename)
 
     with open(filename, "w", newline='') as fp:
         dictWriter = DictWriter(fp,header)
         dictWriter.writeheader()
+
         for edge in data:
             if len(edge) > 2:
                 node_1 , node_2 , prop = edge
@@ -61,16 +79,16 @@ def writeEdgesToFile(filename, data):
                 d = {":START_ID":node_1.id, ":END_ID":node_2.id}
                 d.update(prop)
                 d[":TYPE"] = relationship
+
             else:
                 node_1 , node_2 = edge
-                relationship = "NOT SPECIFIED"
-
+                relationship = r
                 d = {":START_ID":node_1.id, ":END_ID":node_2.id}
-                d[":TYPE"] = relationship
 
+                d[":TYPE"] = relationship
             dictWriter.writerow(d)
 
-def writeNodeHeaderFile(filename, header):
+def writeNodeHeaderFile(filename, header, values):
     """
         writes header to the given filename
         creates file if it does not exist otherwise overwrite
@@ -79,6 +97,17 @@ def writeNodeHeaderFile(filename, header):
         :type header: list
     """
     h = header[:-2] # remove the type and id_0 column
+    v = values[:-2]
+
+    # for i in range(len(v)):
+    #     s = "".join(list(str(type(v[i])))[8:][:-2])
+    #     if s == "str":
+    #         continue
+    #     if s == "bool":
+    #         s +="ean"
+            
+    #     h[i] = h[i] + ":" + s.upper()
+
     h.append(":LABEL")
     if '.' not in filename:
         raise Exception("invalid file name format")
@@ -86,8 +115,7 @@ def writeNodeHeaderFile(filename, header):
         raise TypeError()
 
     filename = filename.split(".")
-    filename = "."+filename[1][:-4] + "_node_header." + filename[2]
-
+    filename = "." + filename[1][:-4] + "_node_header." + filename[2]
     fname = "./raw/temp.csv"
 
     with open(fname,"w") as fp:
@@ -101,26 +129,31 @@ def writeNodeHeaderFile(filename, header):
 
 
 
-def writeNodesToCsv(file, header, data):
+def writeNodesToCsv(filename, data):
     """
         writes header plus the given nodes data
-        to the given file.
+        to the given filename.
 
-        :type file : file
+        :type filename : str
         :type header: list
         :type data : list
     """
-    print(header)
-    writer = DictWriter(file, fieldnames = header, restval = "na")
-    header = writeNodeHeaderFile(file.name,header)
+    temp = "./raw/temp.csv"
+    header = getProperties(data[0])
+    with open(temp,"w") as file:
+        writer = DictWriter(file, fieldnames = header, restval = "na")
+        v = list(data[0].__dict__.values())
+        header = writeNodeHeaderFile(filename, header, v)
 
-    file.write(",".join(header))
-    file.write("\n")
+        file.write(",".join(header))
+        file.write("\n")
+        
+        for obj in data:
+            if "body" in obj.__dict__:
+                obj.__dict__["body"] = "" # remove the body text for a clean csv
+            writer.writerow(obj.__dict__)
     
-    for obj in data:
-        if "body" in obj.__dict__:
-            obj.__dict__["body"] = "" # remove the body text for a clean csv
-        writer.writerow(obj.__dict__)
+    cleanCsv(temp,filename)
 
 def cleanCsv(i_stream, o_stream):
     """
@@ -148,9 +181,11 @@ def cleanCsv(i_stream, o_stream):
                     line = line[:-2]+ '\n'
                 fp2.write(line)
     
-    os.remove(i_stream)
+    try:
+        os.remove(i_stream)
+    except:
+        pass
 
-    
 
     
     

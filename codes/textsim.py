@@ -1,3 +1,6 @@
+# Author: Chukwubuikem Ume-Ugwa
+# Purpose: Functions use to calculate the similarity between 
+#          two strings
 import nltk, string
 from sklearn.feature_extraction.text import TfidfVectorizer
 

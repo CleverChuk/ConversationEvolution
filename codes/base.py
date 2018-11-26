@@ -1,4 +1,5 @@
-
+# Author: Chukwubuikem Ume-Ugwa
+# Purpose: Class use to pull data from Reddit
 import os
 import json
 from models import Submission, CustomEncoder
@@ -64,11 +65,3 @@ class RedditBot:
 
     def __repr__(self):
         return "RedditBot"
-
-
-# if __name__ == "__main__":
-#     subreddit = "compsci"
-#     filename = "../raw/data.json"
-#     submission_id = "9bdwe3"
-#     bot = RedditBot(subreddit)
-#     bot.dump(submission_id, filename)

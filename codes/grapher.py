@@ -1,10 +1,12 @@
+# Author: Chukwubuikem Ume-Ugwa
+# Purpose: Class use to generate a graph from pulled data
 import networkx as nx
 from analyzers import CommentMetaAnalysis
 from textsim import cosine_sim
 from models import CommentNode, AuthorNode, Node, ArticleNode, SentimentNode
 from base import RedditBot
 import mapper_functions as mp
-import raw_data as rd
+import graph_writer as rd
 
 
 def load_graph(filepath, type):
@@ -12,7 +14,7 @@ def load_graph(filepath, type):
         :type filepath: str
         :rtype Graph
     """
-    return nx.read_graphml(filepath, node_type=type)
+    return nx.read_graphml(filepath, node_type = type)
 
 
 class GraphBot(RedditBot):
@@ -146,38 +148,29 @@ class GraphBot(RedditBot):
         self._comment_graph = diGraph
         self._main_graph = graph
 
-       # high level graphs
-        self.group_graph_nodes = mp.clusterOnNumericPropertyNodes(0.50, _nodes, commentCommentEdges, num_internals=3)
-        self.group_graph_edges = mp.clusterOnNumericProperty(0.50, commentCommentEdges, num_internals=3)
-        
-        # write comments to csv
-        fname = "./raw/comment_data_temp.csv"
-        f = "./raw/comment_data.csv"
-        with open(fname, "w") as fp:
-            columns = mp.getProperties(comment_data[0])
-            rd.writeNodesToCsv(fp,columns, comment_data)
-        rd.cleanCsv(fname, f)
+        # high level graphs
+        self.group_graph_edges = mp.clusterOnNumericProperty(0.50, commentCommentEdges, num_internals = 3)
+        proximate_nodes =  list(self.group_graph_edges.nodes())
+        proximate_edges = list(self.group_graph_edges.edges())
 
-        fname = "./raw/article_data_temp.csv"
+        # write nodes to csv
+        f = "./raw/proxi_comment_data.csv"
+        rd.writeNodesToCsv(f, proximate_nodes)
+
+        f = "./raw/proxi_comment_edge_data.csv"
+        rd.writeEdgesToFile(f, proximate_edges, r="")
+
+        f = "./raw/comment_data.csv"
+        rd.writeNodesToCsv(f, comment_data)
+
         f = "./raw/article_data.csv"
-        with open(fname, "w") as fp:
-            columns = mp.getProperties(article_data[0])
-            rd.writeNodesToCsv(fp,columns, article_data)
-        rd.cleanCsv(fname, f)
+        rd.writeNodesToCsv(f, article_data)
         
-        fname = "./raw/sentiment_data_temp.csv"
         f = "./raw/sentiment_data.csv"
-        with open(fname, "w") as fp:
-            columns = mp.getProperties(sentiment_data[0])
-            rd.writeNodesToCsv(fp,columns, sentiment_data)
-        rd.cleanCsv(fname, f)
+        rd.writeNodesToCsv(f, sentiment_data)
             
-        fname = "./raw/author_data_temp.csv"
         f = "./raw/author_data.csv"
-        with open(fname, "w") as fp:
-            columns = mp.getProperties(author_data[0])
-            rd.writeNodesToCsv(fp,columns, author_data)
-        rd.cleanCsv(fname, f)
+        rd.writeNodesToCsv(f, author_data)
 
         rd.writeEdgesToFile("./raw/comment_edge_data.csv", commentCommentEdges)
         rd.writeEdgesToFile("./raw/article_comment_edge_data.csv", articleCommentEdges)
@@ -201,14 +194,6 @@ if __name__ == "__main__":
     bot.dump(filename, ids)
     nx.write_graphml(graph, "./graphML/reddit_graph_%s.graphml" % subreddit)
     nx.write_graphml(bot.comment_graph,"./graphML/comment_graph_%s.graphml" % subreddit)
-    nx.write_graphml(bot.group_graph_nodes, "./graphML/interval_graph_nodes.graphml")
     nx.write_graphml(bot.group_graph_edges, "./graphML/interval_graph_edges.graphml")
 
-    # data = neonx.get_geoff(graph, "LINKS_TO", CustomEncoder())
-    # nx.write_gexf(graph,"./graphML/neo.gexf")
-    # neonx.write_to_neo("http://localhost:7687",graph,"LINKS_TO", encoder=CustomEncoder())
-    # for g in bot.stream(subreddit):
-    #     print(nx.clustering(g))
-    # nx.draw(graph, with_labels=False, font_weight='bold')
-    # plt.show()
-    # bot.dump_submission_comments(submission_id, filename)
+

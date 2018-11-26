@@ -1,3 +1,6 @@
+# Author: Chukwubuikem Ume-Ugwa
+# Purpose: Functions use to calculate new feature for graph nodes
+
 import nltk
 from textsim import remove_punctuation_map
 from statistics import mean

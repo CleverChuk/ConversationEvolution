@@ -1,9 +1,15 @@
+# Author: Chukwubuikem Ume-Ugwa
+# Purpose: Functions use to create a mapping of the main
+#          to a subgraph that approximates the main graph
+
 from collections import defaultdict, OrderedDict
 from models import Comment, Node
 import networkx as nx
 import random
 from math import ceil, floor
-from raw_data import writeNodesToCsv, cleanCsv
+from statistics import median
+
+NEW_ID = 0
 
 def time(g, edges):
     """
@@ -326,35 +332,51 @@ def clusterAverage(name, cluster, props):
 
         :rtype Node
     """
+    global NEW_ID
     if not isinstance(cluster, list) and not isinstance(props, list):
         raise Exception("cluster and props must be lists")
 
-    rsum = 0
-    n = len(cluster)
+    numerical_variables = []
     clusterNode = Node(name)
-    cat_var = defaultdict(int)
+    category_variable = defaultdict(int)
+
     mode_value = 0
     mode_var = None
 
     for prop in props:
         for node in cluster:
             tp = node.__dict__[prop]
-            if isinstance(tp, str):
-                cat_var[tp] += 1
-                if cat_var[tp] > mode_value:
-                    mode_value = cat_var[tp]
+            if isinstance(tp, str): # use mode for categorical variables
+                category_variable[tp] += 1
+                if category_variable[tp] > mode_value:
+                    mode_value = category_variable[tp]
                     mode_var = tp
             else:
-                rsum += tp
+                numerical_variables.append(tp)
 
-        if rsum != 0 or isinstance(tp,float) or isinstance(tp,int) :
-            clusterNode.__dict__[prop] = float(round(rsum/n,4))
-            rsum = 0
+        if len(numerical_variables) != 0: # use median for numerical variables
+            clusterNode.__dict__[prop] = float(round(median(numerical_variables),4))
+            numerical_variables.clear()
         else:
             clusterNode.__dict__[prop] = str(mode_var)
             mode_value = 0
-            cat_var.clear()
+            category_variable.clear()
+    d = {}
+    tt = "type"
+    dd  = "id_0"
+    clusterNode.id = NEW_ID
+    
+    d["id"] = NEW_ID
+    t = clusterNode.__dict__.pop(tt,"")
+    id_0 = clusterNode.__dict__.pop(dd,"")
 
+    d.update(clusterNode.__dict__)
+    d[tt] = t
+    d[dd] = id_0
+
+    clusterNode.__dict__.clear()
+    clusterNode.__dict__.update(d)
+    NEW_ID += 1
     return clusterNode
 
 

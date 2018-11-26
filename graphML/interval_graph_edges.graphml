@@ -1,2034 +1,697 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
   <key attr.name="name" attr.type="string" for="edge" id="d16" />
-  <key attr.name="similarity" attr.type="double" for="node" id="d15" />
-  <key attr.name="sentiment" attr.type="string" for="node" id="d14" />
-  <key attr.name="sentimentScore" attr.type="double" for="node" id="d13" />
-  <key attr.name="readingLevel" attr.type="double" for="node" id="d12" />
-  <key attr.name="quotedTextPerLength" attr.type="double" for="node" id="d11" />
-  <key attr.name="averageWordLength" attr.type="double" for="node" id="d10" />
-  <key attr.name="length" attr.type="double" for="node" id="d9" />
-  <key attr.name="body" attr.type="string" for="node" id="d8" />
-  <key attr.name="timestamp" attr.type="double" for="node" id="d7" />
-  <key attr.name="score" attr.type="double" for="node" id="d6" />
-  <key attr.name="author" attr.type="string" for="node" id="d5" />
-  <key attr.name="parent_id" attr.type="string" for="node" id="d4" />
-  <key attr.name="article_id" attr.type="string" for="node" id="d3" />
-  <key attr.name="id" attr.type="string" for="node" id="d2" />
-  <key attr.name="id_0" attr.type="string" for="node" id="d1" />
-  <key attr.name="type" attr.type="string" for="node" id="d0" />
+  <key attr.name="id_0" attr.type="string" for="node" id="d15" />
+  <key attr.name="type" attr.type="string" for="node" id="d14" />
+  <key attr.name="similarity" attr.type="double" for="node" id="d13" />
+  <key attr.name="sentiment" attr.type="string" for="node" id="d12" />
+  <key attr.name="sentimentScore" attr.type="double" for="node" id="d11" />
+  <key attr.name="readingLevel" attr.type="double" for="node" id="d10" />
+  <key attr.name="quotedTextPerLength" attr.type="double" for="node" id="d9" />
+  <key attr.name="averageWordLength" attr.type="double" for="node" id="d8" />
+  <key attr.name="length" attr.type="double" for="node" id="d7" />
+  <key attr.name="body" attr.type="string" for="node" id="d6" />
+  <key attr.name="timestamp" attr.type="double" for="node" id="d5" />
+  <key attr.name="score" attr.type="double" for="node" id="d4" />
+  <key attr.name="author" attr.type="string" for="node" id="d3" />
+  <key attr.name="parent_id" attr.type="string" for="node" id="d2" />
+  <key attr.name="article_id" attr.type="string" for="node" id="d1" />
+  <key attr.name="id" attr.type="long" for="node" id="d0" />
   <graph edgedefault="undirected">
-    <node id="418">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9k8u7e</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9k89mm</data>
-      <data key="d5">PushThroughThePain</data>
-      <data key="d6">14.4444</data>
-      <data key="d7">1542301551.2222</data>
-      <data key="d8">It would depend on the evidence surrounding what started the fire, whether it was intentional, negligent, grossly negligent, accidental, etc. 
+    <node id="157">
+      <data key="d0">0</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9k89mm</data>
+      <data key="d3">bug-hunter</data>
+      <data key="d4">13.0</data>
+      <data key="d5">1542118921.0</data>
+      <data key="d6">It would depend on the evidence surrounding what started the fire, whether it was intentional, negligent, grossly negligent, accidental, etc. 
 
 It is unlikely any responsible party could actually afford to make everyone whole.</data>
-      <data key="d9">174.2222</data>
-      <data key="d10">5.0724</data>
+      <data key="d7">231.0</data>
+      <data key="d8">5.696</data>
+      <data key="d9">0.0</data>
+      <data key="d10">51.18</data>
       <data key="d11">0.0</data>
-      <data key="d12">61.6794</data>
-      <data key="d13">-0.054</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.1462</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0325</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="419">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9oxu7a</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9k89mm</data>
-      <data key="d5">PushThroughThePain</data>
-      <data key="d6">8.7143</data>
-      <data key="d7">1542302063.5714</data>
-      <data key="d8">I know with last year's fire they got the CA General Assembly to pass a bill that would allow the state to help pay for part of the damages to ensure that PG&amp;E remain solvent. </data>
-      <data key="d9">221.4286</data>
-      <data key="d10">4.9056</data>
+    <node id="158">
+      <data key="d0">13</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9lrn03</data>
+      <data key="d3">aurora-_</data>
+      <data key="d4">12.0</data>
+      <data key="d5">1542227511.0</data>
+      <data key="d6">What if Warren Buffet did it, say with a campfire. Would he be responsible?</data>
+      <data key="d7">152.0</data>
+      <data key="d8">5.0705</data>
+      <data key="d9">0.0</data>
+      <data key="d10">58.285</data>
+      <data key="d11">0.0138</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0789</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="159">
+      <data key="d0">14</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9kb2r8</data>
+      <data key="d3">NC_Sexy</data>
+      <data key="d4">8.5</data>
+      <data key="d5">1542159271.0</data>
+      <data key="d6">I know with last year's fire they got the CA General Assembly to pass a bill that would allow the state to help pay for part of the damages to ensure that PG&amp;E remain solvent. </data>
+      <data key="d7">222.0</data>
+      <data key="d8">4.6295</data>
+      <data key="d9">0.0</data>
+      <data key="d10">76.32</data>
+      <data key="d11">0.1145</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0566</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="160">
+      <data key="d0">15</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9wfjfn</data>
+      <data key="d3">PushThroughThePain</data>
+      <data key="d4">-0.5</data>
+      <data key="d5">1542509230.5</data>
+      <data key="d6">Wut?</data>
+      <data key="d7">17.0</data>
+      <data key="d8">3.5</data>
+      <data key="d9">0.0</data>
+      <data key="d10">97.535</data>
       <data key="d11">0.0</data>
-      <data key="d12">71.51</data>
-      <data key="d13">-0.0349</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.2489</data>
-    </node>
-    <node id="420">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9wg7nl</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9wfjfn</data>
-      <data key="d5">PushThroughThePain</data>
-      <data key="d6">12.3333</data>
-      <data key="d7">1542362908.6667</data>
-      <data key="d8">Wut?</data>
-      <data key="d9">64.3333</data>
-      <data key="d10">4.232</data>
-      <data key="d11">0.0</data>
-      <data key="d12">77.57</data>
-      <data key="d13">-0.1405</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.3333</data>
-    </node>
-    <node id="421">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9ke5qk</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9lrn03</data>
-      <data key="d5">Raven_skies</data>
-      <data key="d6">18.0909</data>
-      <data key="d7">1542301225.1818</data>
-      <data key="d8">I doubt even Warren Buffet could afford this level of damage. Billions and billions of dollars worth of property, infrastructure, possessions, cars. </data>
-      <data key="d9">144.1818</data>
-      <data key="d10">5.1785</data>
-      <data key="d11">0.0</data>
-      <data key="d12">55.4236</data>
-      <data key="d13">-0.0662</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0809</data>
-    </node>
-    <node id="422">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9nesr1</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9lrn03</data>
-      <data key="d5">ImVeryBadWithNames</data>
-      <data key="d6">15.4</data>
-      <data key="d7">1542383265.6</data>
-      <data key="d8">And PG&amp;E has been responsible for several past fires, so people are making the assumption it was their fault this time, too.</data>
-      <data key="d9">188.8</data>
-      <data key="d10">5.2356</data>
-      <data key="d11">0.0</data>
-      <data key="d12">57.2</data>
-      <data key="d13">-0.041</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0634</data>
-    </node>
-    <node id="423">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9ladho</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9kb828</data>
-      <data key="d5">C6H12O4</data>
-      <data key="d6">20.3333</data>
-      <data key="d7">1542232858.1667</data>
-      <data key="d8">Maybe if Bill Gates, Warren Buffet, and Jeff Bezos went camping.</data>
-      <data key="d9">107.0</data>
-      <data key="d10">5.131</data>
-      <data key="d11">0.0</data>
-      <data key="d12">53.9433</data>
-      <data key="d13">-0.0872</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0955</data>
-    </node>
-    <node id="424">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9v3f58</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9l8m3k</data>
-      <data key="d5">Raeliya</data>
-      <data key="d6">9.0</data>
-      <data key="d7">1542305302.0</data>
-      <data key="d8">He may or may not. At a certain point of wealth, insurance doesn’t make sense. You have so much money that you can essentially self-insure.</data>
-      <data key="d9">107.25</data>
-      <data key="d10">4.9322</data>
-      <data key="d11">0.0</data>
-      <data key="d12">48.645</data>
-      <data key="d13">-0.0728</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.0912</data>
-    </node>
-    <node id="425">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9z2ktp</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9l8m3k</data>
-      <data key="d5">King_Neptune07</data>
-      <data key="d6">5.0</data>
-      <data key="d7">1542344215.5</data>
-      <data key="d8">The insurance company probably couldn't afford it </data>
-      <data key="d9">107.5</data>
-      <data key="d10">5.5575</data>
-      <data key="d11">0.0</data>
-      <data key="d12">16.66</data>
-      <data key="d13">-0.3332</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.1383</data>
-    </node>
-    <node id="426">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9mtbju</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9kqp2w</data>
-      <data key="d5">SirRichardArms</data>
-      <data key="d6">15.2</data>
-      <data key="d7">1542135960.8</data>
-      <data key="d8">Off topic: I also think you are ignorant of how much land 20 acres is. There is way more than 100 trees in 20 acres of forest. You're off by a factor of 10 or maybe even 100. </data>
-      <data key="d9">371.4</data>
-      <data key="d10">5.2204</data>
-      <data key="d11">0.0</data>
-      <data key="d12">83.504</data>
-      <data key="d13">0.1295</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.304</data>
-    </node>
-    <node id="427">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9kslhk</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9kqp2w</data>
-      <data key="d5">SirRichardArms</data>
-      <data key="d6">15.0</data>
-      <data key="d7">1542128742.5</data>
-      <data key="d8">I knew I missed something in the post. Looks like I got some reading to do. Thank you kindly.</data>
-      <data key="d9">420.5</data>
-      <data key="d10">5.461</data>
-      <data key="d11">0.0</data>
-      <data key="d12">81.275</data>
-      <data key="d13">0.1847</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.3159</data>
-    </node>
-    <node id="428">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9r6oc3</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9q3buv</data>
-      <data key="d5">KingYodel</data>
-      <data key="d6">2.25</data>
-      <data key="d7">1542321741.5</data>
-      <data key="d8">If there is no power or water, it may be considered uninhabitable, which would allow you to  break the lease. You might reach out to local legal aid or the [Peppedine Legal Clinic](https://lawprofessors.typepad.com/clinic_prof/2018/11/help-needed-from-volunteer-lawyers-the-pepperdine-disaster-relief-clinic-and-the-woolsey-fire.html) if your LL doesn't let you break the lease. </data>
-      <data key="d9">668.75</data>
-      <data key="d10">6.8617</data>
-      <data key="d11">0.0</data>
-      <data key="d12">60.6525</data>
-      <data key="d13">-0.0677</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.3005</data>
-    </node>
-    <node id="429">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9s0kfa</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9r6t68</data>
-      <data key="d5">Eeech</data>
-      <data key="d6">2.0</data>
-      <data key="d7">1542335455.6667</data>
-      <data key="d8">Sorry the late reply; someone messaged me and asked me to look at this question. 
-
-Unfortunately, unless your landlord is willing to re-let to you when the repairs are done, the only legal options are for you to break the lease or the landlord be allowed to break your lease. The two of you are certainly able to come to an agreement on what to do when it is repaired, but if the unit is damaged and repairs require the tenant vacate, the lease is considered broken by merit of the landlord being literally unable to uphold their end of it by no fault of theirs. This inalidates any lease that does not have a specific clause that describes what temporary accommodation or adjustment is made in the event the unit is rendered uninhabitable AND in need to major repair. I have never seen such a clause in 22 years of practicing housing/tenancy law.  
-
-The landlord can not charge you contuned rent from the day the unit is unlivable, and must return your deposit and prorated rent within 21 days. But you are powerless to tell them that you do not want to break the lease. It was broken when the property was destroyed and the landlord lost their ability to provide a habitable premises. 
-
-I'm sorry to be the bearer of lousy news, and this is actually a common desire when rented homes are damaged like this. People tend to like their home and want to return to it when repaired. Unfortunately, you and your landlord must *mutually* agree to suspend the contract/extend the right of first refusal to you to relet. But without knowing the extent of damage or repair timeline, any contract promising to let you return, especially with a timeline, is not prudent for the landlord to make and their lawyer (or common sense) will advise against it.  
-
-Best of luck, and I am very sorry to learn you've been impacted in this way. </data>
-      <data key="d9">783.0</data>
-      <data key="d10">7.3193</data>
-      <data key="d11">0.0</data>
-      <data key="d12">55.79</data>
-      <data key="d13">-0.0902</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0674</data>
-    </node>
-    <node id="430">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9s1o4i</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9s0kfa</data>
-      <data key="d5">Eeech</data>
-      <data key="d6">1.6667</data>
-      <data key="d7">1542351588.6667</data>
-      <data key="d8">I’m sorry there might be some confusion. My house is actually to the extent of my knowledge undamaged, but the town around my neighborhood has lost all power and water infrastructure and we are unable to return to the house for an Indeterminate period of time. So I’m wondering if I am still required to pay rent during the months that I am unable to reside there? I definitely want to return to my home, but I cannot afford to pay rent on two houses. 
-
-And thank you for the replies</data>
-      <data key="d9">1412.6667</data>
-      <data key="d10">7.58</data>
-      <data key="d11">0.0021</data>
-      <data key="d12">70.17</data>
-      <data key="d13">0.0158</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.0969</data>
-    </node>
-    <node id="431">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9u8vbf</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9u81q6</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">1.25</data>
-      <data key="d7">1542431096.5</data>
-      <data key="d8">[deleted]</data>
-      <data key="d9">89.75</data>
-      <data key="d10">36.7767</data>
-      <data key="d11">0.0</data>
-      <data key="d12">-290.8675</data>
-      <data key="d13">-0.0059</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.25</data>
-    </node>
-    <node id="432">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9u94ny</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9u8xv8</data>
-      <data key="d5">grasshoppa1</data>
-      <data key="d6">2.0</data>
-      <data key="d7">1542431287.6667</data>
-      <data key="d8">[Me_IRL](https://www.premiereonboard.com/wp-content/uploads/2018/06/F291ccac95eec1942535475f65909a52_-i-should-laugh-or-facepalm-facepalm-meme_604-453.jpg)</data>
-      <data key="d9">116.6667</data>
-      <data key="d10">46.7023</data>
-      <data key="d11">0.0</data>
-      <data key="d12">-400.03</data>
-      <data key="d13">-0.0078</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.0</data>
-    </node>
-    <node id="433">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9puhcu</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9nesr1</data>
-      <data key="d5">Staindrain</data>
-      <data key="d6">11.5</data>
-      <data key="d7">1542227511.0</data>
-      <data key="d8">It's more than an assumption. A woman who lived right at the spark point had reported malfunctioning PG&amp;E equipment prior to the fire that took out Paradise. PG&amp;E themselves basically said "we thought something like that was likely but we decided not to shut the power off regardless"
-
-And over the last decade PG&amp;E has been *found* responsible for fires resulting in multiple millions of property damage, countless injuries, and somewhere in the vicinity of five dozen deaths (probably much higher, I'm basing this on vague memory)</data>
-      <data key="d9">328.0</data>
-      <data key="d10">5.11</data>
-      <data key="d11">0.0883</data>
-      <data key="d12">58.285</data>
-      <data key="d13">-0.0054</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.1311</data>
-    </node>
-    <node id="434">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9z2hfq</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9ladho</data>
-      <data key="d5">King_Neptune07</data>
-      <data key="d6">32.0</data>
-      <data key="d7">1542344981.5</data>
-      <data key="d8">Sounds like the set up to a joke</data>
-      <data key="d9">48.0</data>
-      <data key="d10">3.8805</data>
-      <data key="d11">0.0</data>
-      <data key="d12">95.675</data>
-      <data key="d13">0.2859</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.0478</data>
-    </node>
-    <node id="435">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6h2nn</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5vjdn</data>
-      <data key="d5">BenInIndy</data>
-      <data key="d6">409.0</data>
-      <data key="d7">1542843036.5</data>
-      <data key="d8">if he sues, contact your homeowners insurance company.</data>
-      <data key="d9">128.0</data>
-      <data key="d10">5.345</data>
-      <data key="d11">0.0</data>
-      <data key="d12">52.51</data>
-      <data key="d13">-0.0814</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5313</data>
-    </node>
-    <node id="436">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6h2nn</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5vjdn</data>
-      <data key="d5">BenInIndy</data>
-      <data key="d6">281.0</data>
-      <data key="d7">1542849513.3333</data>
-      <data key="d8">if he sues, contact your homeowners insurance company.</data>
-      <data key="d9">134.0</data>
-      <data key="d10">5.0833</data>
-      <data key="d11">0.0913</data>
-      <data key="d12">59.9033</data>
-      <data key="d13">-0.0147</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.3679</data>
-    </node>
-    <node id="437">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6e78g</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea61h2c</data>
-      <data key="d5">NotYetGroot</data>
-      <data key="d6">131.5</data>
-      <data key="d7">1542844961.5</data>
-      <data key="d8">&gt; file a complaint with the neighbor’s bar associatio
-
-out of curiosity, what's the likely outcome of such a complaint? </data>
-      <data key="d9">238.0</data>
-      <data key="d10">5.957</data>
-      <data key="d11">0.0</data>
-      <data key="d12">51.325</data>
-      <data key="d13">-0.4546</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.6744</data>
-    </node>
-    <node id="438">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6e78g</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea61h2c</data>
-      <data key="d5">NotYetGroot</data>
-      <data key="d6">69.75</data>
-      <data key="d7">1542854496.5</data>
-      <data key="d8">&gt; file a complaint with the neighbor’s bar associatio
-
-out of curiosity, what's the likely outcome of such a complaint? </data>
-      <data key="d9">340.5</data>
-      <data key="d10">6.0905</data>
-      <data key="d11">0.0</data>
-      <data key="d12">52.35</data>
-      <data key="d13">-0.2249</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.4145</data>
-    </node>
-    <node id="439">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6gih4</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6e78g</data>
-      <data key="d5">Garbad_the_Weak</data>
-      <data key="d6">24.6667</data>
-      <data key="d7">1542859245.6667</data>
-      <data key="d8">Realistically, nothing.  But its a good threat because it COULD result in a public censure or even loss of licence.  No lawyer wants to risk that.</data>
-      <data key="d9">239.0</data>
-      <data key="d10">5.0753</data>
-      <data key="d11">0.0</data>
-      <data key="d12">60.025</data>
-      <data key="d13">-0.1092</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0682</data>
-    </node>
-    <node id="440">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6vje0</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6st1n</data>
-      <data key="d5">Jurisprudenced</data>
-      <data key="d6">20.6667</data>
-      <data key="d7">1542858295.0</data>
-      <data key="d8">I was basically going to say this. Another important reason to report this to the state bar is he may do this all the time.
-
-Outside of some circumstance where the view of the dead trees, or the shade they provided benefited him in some way I don't see any actual claim. Most of these types of claims are to make someone cut down a tree that is making solar panels inefficient. This seems strange. </data>
-      <data key="d9">355.0</data>
-      <data key="d10">5.891</data>
-      <data key="d11">0.0</data>
-      <data key="d12">50.6</data>
-      <data key="d13">-0.2024</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.123</data>
-    </node>
-    <node id="441">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6g2j4</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5wb3y</data>
-      <data key="d5">Casual_OCD</data>
-      <data key="d6">74.0</data>
-      <data key="d7">1542843129.5</data>
-      <data key="d8">&gt; Anyone can sue anyone for any reason, right or wrong
-
-Until you get hit with the malicious litigator classification  </data>
-      <data key="d9">258.5</data>
-      <data key="d10">5.716</data>
-      <data key="d11">0.0</data>
-      <data key="d12">46.44</data>
-      <data key="d13">-0.5225</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.6421</data>
-    </node>
-    <node id="442">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6fvzj</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5wb3y</data>
-      <data key="d5">god__of__reddit</data>
-      <data key="d6">37.6667</data>
-      <data key="d7">1542852934.5</data>
-      <data key="d8">Law suits are slow by design.  If he serves you with something official, that's when I'd start spending money.  Surveys can range between $200 and $500.  That's not oodles, but it's more than I'm going to waste on a 'just in case' when there's absolutely no penalty to waiting to see if he's all talk. </data>
-      <data key="d9">281.5</data>
-      <data key="d10">5.025</data>
-      <data key="d11">0.0</data>
-      <data key="d12">66.4717</data>
-      <data key="d13">-0.1251</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.2678</data>
-    </node>
-    <node id="443">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea60i66</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5wl6r</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">25.0</data>
-      <data key="d7">1542837171.0</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">263.5</data>
-      <data key="d10">6.6665</data>
-      <data key="d11">0.0</data>
-      <data key="d12">43.135</data>
-      <data key="d13">-0.0906</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5</data>
-    </node>
-    <node id="444">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea60i66</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea64wn5</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">9.8333</data>
-      <data key="d7">1542843914.3333</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">93.8333</data>
-      <data key="d10">6.8888</data>
-      <data key="d11">0.0</data>
-      <data key="d12">38.7917</data>
-      <data key="d13">-0.0302</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.8333</data>
-    </node>
-    <node id="445">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea65id5</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea64wn5</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">4.2</data>
-      <data key="d7">1542845653.6</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">9.0</data>
-      <data key="d10">7.0</data>
-      <data key="d11">0.0</data>
-      <data key="d12">36.62</data>
+      <data key="d12">Neutral</data>
       <data key="d13">0.0</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.8</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="446">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea64wn5</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea64wn5</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">3.6667</data>
-      <data key="d7">1542846757.0</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">9.0</data>
-      <data key="d10">7.0</data>
-      <data key="d11">0.0</data>
-      <data key="d12">36.62</data>
-      <data key="d13">0.0</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.8333</data>
+    <node id="161">
+      <data key="d0">20</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9lrn03</data>
+      <data key="d3">ImVeryBadWithNames</data>
+      <data key="d4">13.5</data>
+      <data key="d5">1542227511.0</data>
+      <data key="d6">And PG&amp;E has been responsible for several past fires, so people are making the assumption it was their fault this time, too.</data>
+      <data key="d7">228.5</data>
+      <data key="d8">5.373</data>
+      <data key="d9">0.0</data>
+      <data key="d10">58.285</data>
+      <data key="d11">-0.0119</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0789</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="447">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6nsym</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea66wru</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">6.0</data>
-      <data key="d7">1542850953.0</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">81.0</data>
-      <data key="d10">5.84</data>
-      <data key="d11">0.0</data>
-      <data key="d12">50.41</data>
-      <data key="d13">-0.18</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5</data>
+    <node id="162">
+      <data key="d0">2</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9kqp2w</data>
+      <data key="d3">BoulderCAST</data>
+      <data key="d4">23.0</data>
+      <data key="d5">1542125118.5</data>
+      <data key="d6">Off topic: I also think you are ignorant of how much land 20 acres is. There is way more than 100 trees in 20 acres of forest. You're off by a factor of 10 or maybe even 100. </data>
+      <data key="d7">290.0</data>
+      <data key="d8">5.5195</data>
+      <data key="d9">0.0</data>
+      <data key="d10">79.245</data>
+      <data key="d11">0.0781</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1814</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="448">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6nsym</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea66wru</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">4.0</data>
-      <data key="d7">1542853561.0</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">633.3333</data>
-      <data key="d10">9.9847</data>
-      <data key="d11">0.0</data>
-      <data key="d12">2.1133</data>
-      <data key="d13">-0.1143</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.381</data>
+    <node id="163">
+      <data key="d0">16</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9ks24e</data>
+      <data key="d3">SirRichardArms</data>
+      <data key="d4">14.5</data>
+      <data key="d5">1542085612.5</data>
+      <data key="d6">I knew I missed something in the post. Looks like I got some reading to do. Thank you kindly.</data>
+      <data key="d7">196.5</data>
+      <data key="d8">4.7995</data>
+      <data key="d9">0.0</data>
+      <data key="d10">88.755</data>
+      <data key="d11">0.1714</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0787</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="449">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6pjyj</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6nsym</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">1.5</data>
-      <data key="d7">1542858090.0</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">873.5</data>
-      <data key="d10">12.637</data>
-      <data key="d11">0.0</data>
-      <data key="d12">-28.93</data>
-      <data key="d13">0.0086</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.0715</data>
+    <node id="164">
+      <data key="d0">3</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9oravk</data>
+      <data key="d3">Tauzant</data>
+      <data key="d4">7.0</data>
+      <data key="d5">1542420209.0</data>
+      <data key="d6">Has anyone noticed the fires in N. CA are getting much less attention than those in S. Cal? The fires in N. CA are much more devastating but news seems a bit dismissive. Maybe I’m watching the wrong channel?</data>
+      <data key="d7">436.5</data>
+      <data key="d8">6.158</data>
+      <data key="d9">0.0</data>
+      <data key="d10">77.28</data>
+      <data key="d11">-0.1792</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.5237</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="450">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6wdgh</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea67cxe</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">201.5</data>
-      <data key="d7">1542854549.0</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">500.5</data>
-      <data key="d10">6.825</data>
-      <data key="d11">0.0</data>
-      <data key="d12">53.12</data>
-      <data key="d13">-0.1001</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.1941</data>
-    </node>
-    <node id="451">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea67cxe</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5xcm0</data>
-      <data key="d5">pissdrunkasshole</data>
-      <data key="d6">208.8571</data>
-      <data key="d7">1542856688.7857</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">527.3571</data>
-      <data key="d10">7.4871</data>
-      <data key="d11">0.0175</data>
-      <data key="d12">53.5371</data>
-      <data key="d13">-0.0841</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.1881</data>
-    </node>
-    <node id="452">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6xehp</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6wdgh</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">134.6667</data>
-      <data key="d7">1542858076.0</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">913.0</data>
-      <data key="d10">10.6413</data>
-      <data key="d11">0.0</data>
-      <data key="d12">3.92</data>
-      <data key="d13">-0.061</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.177</data>
-    </node>
-    <node id="453">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6xehp</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6wdgh</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">-2.0</data>
-      <data key="d7">1542864698.0</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">873.5</data>
-      <data key="d10">12.637</data>
-      <data key="d11">0.0</data>
-      <data key="d12">-28.93</data>
-      <data key="d13">0.0086</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.1225</data>
-    </node>
-    <node id="454">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6snjt</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5xcm0</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">317.0</data>
-      <data key="d7">1542855814.4286</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">446.2857</data>
-      <data key="d10">7.3536</data>
-      <data key="d11">0.0228</data>
-      <data key="d12">50.7029</data>
-      <data key="d13">-0.0944</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.2393</data>
-    </node>
-    <node id="455">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6tjes</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6snjt</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">156.0</data>
-      <data key="d7">1542854341.3333</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further.
-
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">705.3333</data>
-      <data key="d10">10.7213</data>
-      <data key="d11">0.0</data>
-      <data key="d12">3.74</data>
-      <data key="d13">0.0756</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.059</data>
-    </node>
-    <node id="456">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea61gv1</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea61a08</data>
-      <data key="d5">Bakugan2556</data>
-      <data key="d6">66.6364</data>
-      <data key="d7">1542856502.6364</data>
-      <data key="d8">NAL, but that wouldn't be a bad idea.
-Granted it might not be necissary( a few pictures of the yard would do in a pinch) but it would make it less likely that OP's neighbor actually wins the suit(unlikely, but not impossible)</data>
-      <data key="d9">342.0</data>
-      <data key="d10">6.553</data>
-      <data key="d11">0.0</data>
-      <data key="d12">56.6173</data>
-      <data key="d13">0.2301</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.1061</data>
-    </node>
-    <node id="457">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6rs2w</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea638qf</data>
-      <data key="d5">pissdrunkasshole</data>
-      <data key="d6">51.0</data>
-      <data key="d7">1542853055.0</data>
-      <data key="d8">He has not given it to me. Good reason why. Because it shows exactly what I measured, see and what I see in every GIS app and map and the plat.</data>
-      <data key="d9">169.3333</data>
-      <data key="d10">4.7297</data>
-      <data key="d11">0.0</data>
-      <data key="d12">83.6933</data>
-      <data key="d13">0.0972</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.359</data>
-    </node>
-    <node id="458">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6wa7u</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6rs2w</data>
-      <data key="d5">BullsLawDan</data>
-      <data key="d6">28.0</data>
-      <data key="d7">1542863704.0</data>
-      <data key="d8">Well if he does sue you, it's discoverable. That's good, because it can turn his lawsuit from a bad one to a *frivolous* one. That might help you with your legal fees, depending on your state's rules.</data>
-      <data key="d9">145.6667</data>
-      <data key="d10">4.43</data>
-      <data key="d11">0.0</data>
-      <data key="d12">85.94</data>
-      <data key="d13">0.104</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.0251</data>
-    </node>
-    <node id="459">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6rxmc</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6kuqz</data>
-      <data key="d5">pissdrunkasshole</data>
-      <data key="d6">14.0</data>
-      <data key="d7">1542861450.0</data>
-      <data key="d8">Because he is bored. Knows the system and the circuit judges and has an axe to grind because he is the god damn Lorax. He is not exactly above lying as I was able to get him to verbally admit that the trees were mine before he back-peddled. Did this a few times.</data>
-      <data key="d9">541.0</data>
-      <data key="d10">8.7168</data>
-      <data key="d11">0.0</data>
-      <data key="d12">25.345</data>
-      <data key="d13">0.0062</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.085</data>
-    </node>
-    <node id="460">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6y3dc</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6t9td</data>
-      <data key="d5">ReallyCoolNickname</data>
-      <data key="d6">2.5</data>
-      <data key="d7">1542863727.5</data>
-      <data key="d8">Worth noting that those online GIS maps are very much unofficial (there is usually a disclaimer stating as much) and that OP definitely should get a professional survey done if actually sued.</data>
-      <data key="d9">427.0</data>
-      <data key="d10">5.5495</data>
-      <data key="d11">0.0</data>
-      <data key="d12">62.445</data>
-      <data key="d13">0.2758</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.0745</data>
-    </node>
-    <node id="461">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6g8nu</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6g0c4</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">0.6667</data>
-      <data key="d7">1542848575.0</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">9.0</data>
-      <data key="d10">7.0</data>
-      <data key="d11">0.0</data>
-      <data key="d12">36.62</data>
-      <data key="d13">0.0</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">1.0</data>
-    </node>
-    <node id="462">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6g8nu</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6g0c4</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">0.75</data>
-      <data key="d7">1542849499.75</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">9.0</data>
-      <data key="d10">7.0</data>
-      <data key="d11">0.0</data>
-      <data key="d12">36.62</data>
-      <data key="d13">0.0</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">1.0</data>
-    </node>
-    <node id="463">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6h8pi</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6g8nu</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">1.0</data>
-      <data key="d7">1542851694.6667</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">9.0</data>
-      <data key="d10">7.0</data>
-      <data key="d11">0.0</data>
-      <data key="d12">36.62</data>
-      <data key="d13">0.0</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">1.0</data>
-    </node>
-    <node id="464">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6ge9o</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6280l</data>
-      <data key="d5">god__of__reddit</data>
-      <data key="d6">11.5</data>
-      <data key="d7">1542846132.5</data>
-      <data key="d8">&gt;I don't think "but the trees were a hazard to my house" is justification to cut your neighbor's trees down, 
-
-It's not, if it turns out that was the case here. But you should inform your insurance about them and send a certified letter stating you concerns about the risk.  Doing those things helps shift the responsibility from you and your insurance to them and theirs. </data>
-      <data key="d9">1339.0</data>
-      <data key="d10">7.6465</data>
-      <data key="d11">0.0651</data>
-      <data key="d12">60.975</data>
-      <data key="d13">-0.0456</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.6045</data>
-    </node>
-    <node id="465">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6sd2f</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6ge9o</data>
-      <data key="d5">pissdrunkasshole</data>
-      <data key="d6">6.0</data>
-      <data key="d7">1542856317.0</data>
-      <data key="d8">If they were not on my property I obviously would have had to take a more formal legal approach. This is actually his core issue. I did not kiss his ring because I knew they were on my property. He said he would never have granted them to be cut let alone paid for it.. For perspective on monday a neighbor about 1/4 mile away had my tree company out for an estimate and to do some trimming. He came onto their property and ranted/raved like a lunatic that they are not allowed to cut , some claim to a non existent HAO bylaw (HOA was kicked out in 89) and that the tree company only wants to take all the trees for wood and profit. This kicked it off. he walked back and found my wife and one kid waiting for the other to get off the bus and began accosting her. Threatened to sue. One of the trees was a dead tripple trunk chest nut oak that had about 10ft of limbs over my roof and leaned towards my master bedroom. The other was a smaller equally dead 70ft oak with mushrooms at the base leaning towards my daughter's room. Let's see I make some tard happy or risk my daughter dying in the middle of the night in the next storm so I can sue him later?</data>
-      <data key="d9">764.0</data>
-      <data key="d10">6.18</data>
-      <data key="d11">0.0536</data>
-      <data key="d12">71.77</data>
-      <data key="d13">-0.1689</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.1698</data>
-    </node>
-    <node id="466">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6gsdi</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea68666</data>
-      <data key="d5">god__of__reddit</data>
-      <data key="d6">7.5</data>
-      <data key="d7">1542848671.0</data>
-      <data key="d8">Assholes sometimes take C&amp;Ds as "laugh and persist" letters.  You have nothing to gain from the letter, and if he is a lawyer he knows its toothless.  So you either accomplish nothing, or piss him off and make him more likely to actually sue.
-
-I don't see the upside to anything other than 'being the adult' and just ignoring his tantrum until something more comes of it, then handing it to your lawyer? </data>
-      <data key="d9">245.0</data>
-      <data key="d10">4.8405</data>
-      <data key="d11">0.0223</data>
-      <data key="d12">77.925</data>
-      <data key="d13">-0.3593</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.5</data>
-    </node>
-    <node id="467">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6owb3</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6gsdi</data>
-      <data key="d5">god__of__reddit</data>
-      <data key="d6">2.0</data>
-      <data key="d7">1542859525.4</data>
-      <data key="d8">&gt; I don't see the upside to anything other than 'being the adult' and just ignoring his tantrum
-
-If he is a lawyer, he faces ethical prohibitions against speaking to represented parties without their lawyer present.
-
-A cease and desist letter maybe isn’t necessary, as even a simple phone call from a lawyer OP hired to represent them would work. But in either case, neighbor would be informed OP is represented in the dispute, and would now face potential bar discipline if he harassed them further.</data>
-      <data key="d9">400.8</data>
-      <data key="d10">5.4336</data>
-      <data key="d11">0.0089</data>
-      <data key="d12">69.672</data>
-      <data key="d13">-0.0262</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0825</data>
-    </node>
-    <node id="468">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6owb3</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6gsdi</data>
-      <data key="d5">god__of__reddit</data>
-      <data key="d6">2.3333</data>
-      <data key="d7">1542856428.0</data>
-      <data key="d8">&gt; I don't see the upside to anything other than 'being the adult' and just ignoring his tantrum
-
-If he is a lawyer, he faces ethical prohibitions against speaking to represented parties without their lawyer present.
-
-A cease and desist letter maybe isn’t necessary, as even a simple phone call from a lawyer OP hired to represent them would work. But in either case, neighbor would be informed OP is represented in the dispute, and would now face potential bar discipline if he harassed them further.</data>
-      <data key="d9">502.6667</data>
-      <data key="d10">5.7227</data>
-      <data key="d11">0.0149</data>
-      <data key="d12">64.2933</data>
-      <data key="d13">-0.0914</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.1203</data>
-    </node>
-    <node id="469">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea5wbtp</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5ttsf</data>
-      <data key="d5">pissdrunkasshole</data>
-      <data key="d6">3.25</data>
-      <data key="d7">1542832543.25</data>
-      <data key="d8">He did not respond to messages regarding notice of the tree work coming. Other neighbors were notified and gave the thumbs up. This is a rural area so its not really even normal to bother your neighbors about what you are doing on your own land. He stated when threatening the suit that he would not have agreed to it and I would have had to take him to court to have them removed. Which is irrelevant because they are on my property. </data>
-      <data key="d9">563.5</data>
-      <data key="d10">8.6955</data>
-      <data key="d11">0.0</data>
-      <data key="d12">24.085</data>
-      <data key="d13">-0.0766</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.3032</data>
-    </node>
-    <node id="470">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea5u7sp</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5tw4t</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">-2.0</data>
-      <data key="d7">1542831750.3333</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">606.3333</data>
-      <data key="d10">9.758</data>
-      <data key="d11">0.0</data>
-      <data key="d12">5.4433</data>
-      <data key="d13">-0.0369</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.381</data>
-    </node>
-    <node id="471">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea5yi2p</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5wbtp</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">12.5</data>
-      <data key="d7">1542836066.5</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">222.0</data>
-      <data key="d10">6.254</data>
-      <data key="d11">0.0</data>
-      <data key="d12">58.315</data>
-      <data key="d13">-0.0979</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.0993</data>
-    </node>
-    <node id="472">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea5u7sp</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5tw4t</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">3.0</data>
-      <data key="d7">1542831865.0</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">873.5</data>
-      <data key="d10">12.637</data>
-      <data key="d11">0.0</data>
-      <data key="d12">-28.93</data>
-      <data key="d13">0.0086</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.0715</data>
-    </node>
-    <node id="473">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6vmqo</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6r8er</data>
-      <data key="d5">Dawg1shly</data>
-      <data key="d6">32.0</data>
-      <data key="d7">1542861883.5</data>
-      <data key="d8">Has the neighbor harassed or threatened you in writing or has it all been verbal? Did the tree company catch any of his harassment on video tape?
-
-Is so, that would be great evidence to provide to his bar association. </data>
-      <data key="d9">427.0</data>
-      <data key="d10">5.39</data>
-      <data key="d11">0.004</data>
-      <data key="d12">75.86</data>
-      <data key="d13">-0.1746</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.0835</data>
-    </node>
-    <node id="474">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6z49k</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6ypz9</data>
-      <data key="d5">jonblaze32</data>
-      <data key="d6">1.5</data>
-      <data key="d7">1542866410.5</data>
-      <data key="d8">Probably in assessing damages. A dead tree is worth less than a live one, presumably.</data>
-      <data key="d9">68.0</data>
-      <data key="d10">4.201</data>
-      <data key="d11">0.0</data>
-      <data key="d12">83.235</data>
-      <data key="d13">-0.4326</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.1776</data>
-    </node>
-    <node id="475">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6yt7d</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6xlbg</data>
-      <data key="d5">TitaniumDreads</data>
-      <data key="d6">2.6667</data>
-      <data key="d7">1542866020.6667</data>
-      <data key="d8">he has threatened the tree company too. They have the signed contract that documents the condition of the tree. They took extensive photos and video of the operation. Its both for promotional purposes and they document for insurance. He is a known hazard to the area and harasses them and other tree companies. I left that part out of the original post.</data>
-      <data key="d9">166.6667</data>
-      <data key="d10">5.123</data>
-      <data key="d11">0.0507</data>
-      <data key="d12">82.4867</data>
-      <data key="d13">-0.1425</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.1067</data>
-    </node>
-    <node id="476">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6yt7d</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6xlbg</data>
-      <data key="d5">pissdrunkasshole</data>
-      <data key="d6">3.5</data>
-      <data key="d7">1542865803.0</data>
-      <data key="d8">he has threatened the tree company too. They have the signed contract that documents the condition of the tree. They took extensive photos and video of the operation. Its both for promotional purposes and they document for insurance. He is a known hazard to the area and harasses them and other tree companies. I left that part out of the original post.</data>
-      <data key="d9">239.0</data>
-      <data key="d10">5.5595</data>
-      <data key="d11">0.076</data>
-      <data key="d12">77.33</data>
-      <data key="d13">-0.1288</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.16</data>
-    </node>
-    <node id="477">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6e59h</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea69364</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">24.0</data>
-      <data key="d7">1542847997.5</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">9.0</data>
-      <data key="d10">7.0</data>
-      <data key="d11">0.0</data>
-      <data key="d12">36.62</data>
-      <data key="d13">0.0</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5</data>
-    </node>
-    <node id="478">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea69364</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea67qs6</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">82.75</data>
-      <data key="d7">1542847033.75</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">42.25</data>
-      <data key="d10">6.4348</data>
-      <data key="d11">0.0211</data>
-      <data key="d12">48.1275</data>
-      <data key="d13">0.0341</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.3201</data>
-    </node>
-    <node id="479">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6xl34</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6wyc2</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">3.0</data>
-      <data key="d7">1542865017.5</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">873.5</data>
-      <data key="d10">12.637</data>
-      <data key="d11">0.0</data>
-      <data key="d12">-28.93</data>
-      <data key="d13">0.0086</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.0715</data>
-    </node>
-    <node id="480">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6xl34</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6wyc2</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">14.0</data>
-      <data key="d7">1542863570.3333</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">669.6667</data>
-      <data key="d10">10.0913</data>
-      <data key="d11">0.0</data>
-      <data key="d12">11.32</data>
-      <data key="d13">0.0083</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.0723</data>
-    </node>
-    <node id="481">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6swbc</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6pz00</data>
-      <data key="d5">pissdrunkasshole</data>
-      <data key="d6">1.0</data>
-      <data key="d7">1542861426.5</data>
-      <data key="d8">I called him and was very calm. He went off like a psychotic person. A 20 minute rant about how I don't belong living there and I'm some kind of fing millennial (in my 40s). Guy has serious damage. How he has a law degree is anybody's guess. I did not record it as I wasnt going to get into that level of fcktardery. Very calm call to try and de-escalate and find out what happened with my wife who was in tears and I was met with pure psyhco rage.</data>
-      <data key="d9">400.0</data>
-      <data key="d10">5.4343</data>
-      <data key="d11">0.0</data>
-      <data key="d12">69.635</data>
-      <data key="d13">0.0113</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.1031</data>
-    </node>
-    <node id="482">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6zh87</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6swbc</data>
-      <data key="d5">bobs78</data>
-      <data key="d6">0.6667</data>
-      <data key="d7">1542862481.6667</data>
-      <data key="d8">Might be worth looking into a restraining order.</data>
-      <data key="d9">366.6667</data>
-      <data key="d10">5.2153</data>
-      <data key="d11">0.0</data>
-      <data key="d12">75.7767</data>
-      <data key="d13">0.0955</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.0668</data>
-    </node>
-    <node id="483">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6zh87</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6swbc</data>
-      <data key="d5">bobs78</data>
-      <data key="d6">1.5</data>
-      <data key="d7">1542864171.5</data>
-      <data key="d8">Might be worth looking into a restraining order.</data>
-      <data key="d9">248.0</data>
-      <data key="d10">5.0</data>
-      <data key="d11">0.0</data>
-      <data key="d12">77.74</data>
-      <data key="d13">0.0716</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.0259</data>
-    </node>
-    <node id="484">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9mxh7b</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9mwc2v</data>
-      <data key="d5">bug-hunter</data>
-      <data key="d6">11.0</data>
-      <data key="d7">1542169506.3333</data>
-      <data key="d8">As a note - for CA Residents unhappy about this, bring it up to your state legislators. If you hear of someone that got cancelled or a policy won't cover them, tell them to complain.</data>
-      <data key="d9">741.3333</data>
-      <data key="d10">6.5423</data>
-      <data key="d11">0.0378</data>
-      <data key="d12">58.5067</data>
-      <data key="d13">-0.1634</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.4232</data>
-    </node>
-    <node id="485">
-      <data key="d0">comment</data>
-      <data key="d1" />
+    <node id="165">
+      <data key="d0">17</data>
+      <data key="d1">9wf6d4</data>
       <data key="d2">e9zl5fi</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9oravk</data>
-      <data key="d5">nutraxfornerves</data>
-      <data key="d6">4.6667</data>
-      <data key="d7">1542480685.3333</data>
-      <data key="d8">Has anyone noticed the fires in N. CA are getting much less attention than those in S. Cal? The fires in N. CA are much more devastating but news seems a bit dismissive. Maybe I’m watching the wrong channel?</data>
-      <data key="d9">713.6667</data>
-      <data key="d10">6.4577</data>
-      <data key="d11">0.0066</data>
-      <data key="d12">75.7067</data>
-      <data key="d13">-0.0993</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.3582</data>
+      <data key="d3">nutraxfornerves</data>
+      <data key="d4">5.0</data>
+      <data key="d5">1542600529.5</data>
+      <data key="d6">The views and opinions expressed here are strictly those of the poster and do not necessarily reflect those of the thread OP, r/legaladvice, or any government agency, NGO or private business. 
+
+I guess it depends on where you are. I live in Northern California and the SoCal fires barely get mentioned here. Of course, the fact that the Camp Fire has us choking for breath may make it more newsworthy here. Not to mention the local appeals for evacuee and animal rescue help. And many, many "have you seen my mother?" requests. 
+
+One big thing in terms of coverage is the cachet of Malibu and the fact that (gasp!) celebrities live there. The TV stations in the LA area are for the most part well-funded and those news helicopters can provide a lot of footage. 
+
+The main coverage of the Camp Fire has been a local newspaper and two small TV stations--all of which have done heroic jobs in the face of small staff, lousy budgets, and their own staff loss of homes &amp; loved ones. 
+
+The median household income in Paradise is something like $47,000. A quarter of the residents were over age 65 (statewide, it's 10%). The median household income in Malibu is $116,000. 
+
+What's more telegenic--a Kardashian mansion with flames creeping toward it, or a burning trailerpark?</data>
+      <data key="d7">737.5</data>
+      <data key="d8">6.0755</data>
+      <data key="d9">0.0098</data>
+      <data key="d10">80.75</data>
+      <data key="d11">-0.1194</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0372</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="486">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9nfa9l</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9ndiqj</data>
-      <data key="d5">bug-hunter</data>
-      <data key="d6">3.5</data>
-      <data key="d7">1542182106.0</data>
-      <data key="d8">I've added your resources to the post, thank you very much!</data>
-      <data key="d9">433.0</data>
-      <data key="d10">7.255</data>
-      <data key="d11">0.2119</data>
-      <data key="d12">77.435</data>
-      <data key="d13">0.1775</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.5</data>
-    </node>
-    <node id="487">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9losw5</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9losw5</data>
-      <data key="d5">nutraxfornerves</data>
-      <data key="d6">8.0</data>
-      <data key="d7">1542129158.0</data>
-      <data key="d8">Of the 42 confirmed fatalities, only 4 have been identified. The families of three have been notified and those names have been released. 
+    <node id="166">
+      <data key="d0">5</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9lfvf6</data>
+      <data key="d3">nutraxfornerves</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1542110565.5</data>
+      <data key="d6">Of the 42 confirmed fatalities, only 4 have been identified. The families of three have been notified and those names have been released. 
 
 Jesus  “Zeus” Fernandez, 48, of Concow; Carl Wiley, 77, of Magalia; and Ernest Foss, 65, of Paradise.
 
 The Sheriff has received over 1500 reports of missing persons (many are duplicates) and had cleared more than 200 of them. </data>
-      <data key="d9">233.0</data>
-      <data key="d10">5.7407</data>
-      <data key="d11">0.0</data>
-      <data key="d12">62.325</data>
-      <data key="d13">-0.1361</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.2907</data>
+      <data key="d7">187.5</data>
+      <data key="d8">6.4185</data>
+      <data key="d9">0.0</data>
+      <data key="d10">50.515</data>
+      <data key="d11">-0.0206</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.5</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="488">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9r6jbf</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9ptqoh</data>
-      <data key="d5">bug-hunter</data>
-      <data key="d6">3.5</data>
-      <data key="d7">1542299897.5</data>
-      <data key="d8">It's the least we can do - we know that this is a super stressful time, and it's something those of us who are safe can do to help. </data>
-      <data key="d9">72.0</data>
-      <data key="d10">3.5415</data>
-      <data key="d11">0.0</data>
-      <data key="d12">98.045</data>
-      <data key="d13">0.4725</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.5</data>
+    <node id="167">
+      <data key="d0">18</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9losw5</data>
+      <data key="d3">princesspoohs</data>
+      <data key="d4">11.0</data>
+      <data key="d5">1542140013.0</data>
+      <data key="d6">:’( so awful. I saw the daughter of Ernest Foss looking for him on the comments of that guy’s video of the Paradise aftermath on YouTube. There were a few locals in the comments and so she was asking if anyone had heard anything about Ernie Foss, her dad, because she couldn’t get in touch with him and he was disabled/mostly bedridden in his house. So sad that he didn’t make it.  What a terrible way to go. </data>
+      <data key="d7">366.0</data>
+      <data key="d8">5.246</data>
+      <data key="d9">0.0</data>
+      <data key="d10">67.25</data>
+      <data key="d11">-0.175</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0455</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="489">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9r5s0y</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9r4b6i</data>
-      <data key="d5">bug-hunter</data>
-      <data key="d6">3.0</data>
-      <data key="d7">1542326765.0</data>
-      <data key="d8">You call the cops.</data>
-      <data key="d9">70.5</data>
-      <data key="d10">4.107</data>
-      <data key="d11">0.0</data>
-      <data key="d12">97.45</data>
-      <data key="d13">0.0</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5</data>
+    <node id="168">
+      <data key="d0">7</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9q3buv</data>
+      <data key="d3">bug-hunter</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1542304314.0</data>
+      <data key="d6">If there is no power or water, it may be considered uninhabitable, which would allow you to  break the lease. You might reach out to local legal aid or the [Peppedine Legal Clinic](https://lawprofessors.typepad.com/clinic_prof/2018/11/help-needed-from-volunteer-lawyers-the-pepperdine-disaster-relief-clinic-and-the-woolsey-fire.html) if your LL doesn't let you break the lease. </data>
+      <data key="d7">352.5</data>
+      <data key="d8">7.479</data>
+      <data key="d9">0.0</data>
+      <data key="d10">45.105</data>
+      <data key="d11">0.049</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.5246</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="490">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9w0yu3</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9w0vr9</data>
-      <data key="d5">bug-hunter</data>
-      <data key="d6">3.5</data>
-      <data key="d7">1542498112.5</data>
-      <data key="d8">Hey look, a Sears store actually being useful!</data>
-      <data key="d9">152.0</data>
-      <data key="d10">5.2095</data>
-      <data key="d11">0.0</data>
-      <data key="d12">65.2</data>
-      <data key="d13">-0.1777</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.5357</data>
+    <node id="169">
+      <data key="d0">19</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9r6oc3</data>
+      <data key="d3">KingYodel</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1542328081.0</data>
+      <data key="d6">I’m not actually sure I want to break my lease yet. I’m just wondering if I still have to pay $850 a month while I can’t live or even visit there?</data>
+      <data key="d7">262.5</data>
+      <data key="d8">6.683</data>
+      <data key="d9">0.0</data>
+      <data key="d10">52.275</data>
+      <data key="d11">-0.0498</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0688</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="491">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">e9lxcnu</data>
-      <data key="d3">9wf6d4</data>
-      <data key="d4">e9kn8qp</data>
-      <data key="d5">NotAHost</data>
-      <data key="d6">3.0</data>
-      <data key="d7">1542103327.8</data>
-      <data key="d8">We get it man, you hate California and love Trump. And while I dislike interacting with homeless, great job pulling a biased theory out your ass when current evidence may suggest it was due to a power line. 
+    <node id="170">
+      <data key="d0">25</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9r6oc3</data>
+      <data key="d3">KingYodel</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1542350205.0</data>
+      <data key="d6">I’m not actually sure I want to break my lease yet. I’m just wondering if I still have to pay $850 a month while I can’t live or even visit there?</data>
+      <data key="d7">483.0</data>
+      <data key="d8">8.037</data>
+      <data key="d9">0.0</data>
+      <data key="d10">69.92</data>
+      <data key="d11">-0.0406</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0883</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="171">
+      <data key="d0">8</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9kn8qp</data>
+      <data key="d3">theneedfull</data>
+      <data key="d4">-17.5</data>
+      <data key="d5">1542082633.5</data>
+      <data key="d6">You’re in the legal advice subreddit, dumbass. </data>
+      <data key="d7">28.0</data>
+      <data key="d8">5.611</data>
+      <data key="d9">0.0</data>
+      <data key="d10">33.575</data>
+      <data key="d11">-0.2384</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.5</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="172">
+      <data key="d0">12</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9kn8qp</data>
+      <data key="d3">NotAHost</data>
+      <data key="d4">9.0</data>
+      <data key="d5">1542083635.0</data>
+      <data key="d6">We get it man, you hate California and love Trump. And while I dislike interacting with homeless, great job pulling a biased theory out your ass when current evidence may suggest it was due to a power line. 
 
  There is absolutely no need to go into politics in this post. People are dying. Lots of grandparents and elderly are missing. These are your countrymen. </data>
-      <data key="d9">277.6</data>
-      <data key="d10">5.764</data>
+      <data key="d7">363.0</data>
+      <data key="d8">6.08</data>
+      <data key="d9">0.0</data>
+      <data key="d10">60.99</data>
+      <data key="d11">-0.1657</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="173">
+      <data key="d0">11</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9u81q6</data>
+      <data key="d3">Anonymous</data>
+      <data key="d4">0.5</data>
+      <data key="d5">1542431228.0</data>
+      <data key="d6">[deleted]</data>
+      <data key="d7">82.0</data>
+      <data key="d8">7.0</data>
+      <data key="d9">0.0</data>
+      <data key="d10">36.62</data>
       <data key="d11">0.0</data>
-      <data key="d12">53.874</data>
-      <data key="d13">-0.1839</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.2</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="492">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6f13d</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5w55e</data>
-      <data key="d5">Anonymous</data>
-      <data key="d6">40.0</data>
-      <data key="d7">1542842625.5</data>
-      <data key="d8">[removed]</data>
-      <data key="d9">338.0</data>
-      <data key="d10">6.46</data>
-      <data key="d11">0.0338</data>
-      <data key="d12">53.545</data>
-      <data key="d13">0.0231</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5</data>
-    </node>
-    <node id="493">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea5u7hp</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5tw0a</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">2.5</data>
-      <data key="d7">1542831856.5</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">873.5</data>
-      <data key="d10">12.637</data>
+    <node id="174">
+      <data key="d0">21</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9u8xv8</data>
+      <data key="d3">grasshoppa1</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1542431256.0</data>
+      <data key="d6">[Me_IRL](https://www.premiereonboard.com/wp-content/uploads/2018/06/F291ccac95eec1942535475f65909a52_-i-should-laugh-or-facepalm-facepalm-meme_604-453.jpg)</data>
+      <data key="d7">155.0</data>
+      <data key="d8">7.0</data>
+      <data key="d9">0.0</data>
+      <data key="d10">36.62</data>
       <data key="d11">0.0</data>
-      <data key="d12">-28.93</data>
-      <data key="d13">0.0086</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5715</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="494">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea5vn3z</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea5vm0p</data>
-      <data key="d5">thepatman</data>
-      <data key="d6">0.5</data>
-      <data key="d7">1542834049.0</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
+    <node id="175">
+      <data key="d0">23</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9l8m3k</data>
+      <data key="d3">Raeliya</data>
+      <data key="d4">11.0</data>
+      <data key="d5">1542279787.5</data>
+      <data key="d6">He may or may not. At a certain point of wealth, insurance doesn’t make sense. You have so much money that you can essentially self-insure.</data>
+      <data key="d7">107.0</data>
+      <data key="d8">4.7575</data>
+      <data key="d9">0.0</data>
+      <data key="d10">54.07</data>
+      <data key="d11">0.0795</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0848</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="176">
+      <data key="d0">24</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9lrn03</data>
+      <data key="d3">Staindrain</data>
+      <data key="d4">10.0</data>
+      <data key="d5">1542272551.0</data>
+      <data key="d6">It's more than an assumption. A woman who lived right at the spark point had reported malfunctioning PG&amp;E equipment prior to the fire that took out Paradise. PG&amp;E themselves basically said "we thought something like that was likely but we decided not to shut the power off regardless"
 
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">873.5</data>
-      <data key="d10">12.637</data>
+And over the last decade PG&amp;E has been *found* responsible for fires resulting in multiple millions of property damage, countless injuries, and somewhere in the vicinity of five dozen deaths (probably much higher, I'm basing this on vague memory)</data>
+      <data key="d7">231.0</data>
+      <data key="d8">5.026</data>
+      <data key="d9">0.0</data>
+      <data key="d10">66.07</data>
+      <data key="d11">-0.0513</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0877</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="177">
+      <data key="d0">26</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9kb828</data>
+      <data key="d3">King_Neptune07</data>
+      <data key="d4">14.0</data>
+      <data key="d5">1542101011.0</data>
+      <data key="d6">I doubt even Warren Buffet could afford this level of damage. Billions and billions of dollars worth of property, infrastructure, possessions, cars. </data>
+      <data key="d7">75.0</data>
+      <data key="d8">4.636</data>
+      <data key="d9">0.0</data>
+      <data key="d10">77.23</data>
       <data key="d11">0.0</data>
-      <data key="d12">-28.93</data>
-      <data key="d13">0.0086</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5715</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0955</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="495">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6kkf5</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6k6zr</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">0.5</data>
-      <data key="d7">1542854716.0</data>
-      <data key="d8">Do not make useless comments in this sub.  Removed.  </data>
-      <data key="d9">31.0</data>
-      <data key="d10">5.722</data>
+    <node id="178">
+      <data key="d0">30</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9kb828</data>
+      <data key="d3">Raven_skies</data>
+      <data key="d4">19.0</data>
+      <data key="d5">1542100223.5</data>
+      <data key="d6">I doubt even Warren Buffet could afford this level of damage. Billions and billions of dollars worth of property, infrastructure, possessions, cars. </data>
+      <data key="d7">107.0</data>
+      <data key="d8">4.8755</data>
+      <data key="d9">0.0</data>
+      <data key="d10">64.54</data>
       <data key="d11">0.0</data>
-      <data key="d12">45.25</data>
-      <data key="d13">0.0813</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.6516</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.1043</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="496">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6lj7z</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6kjbd</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">0.0</data>
-      <data key="d7">1542855230.0</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
+    <node id="179">
+      <data key="d0">27</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9s0kfa</data>
+      <data key="d3">KingYodel</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1542350593.5</data>
+      <data key="d6">I’m sorry there might be some confusion. My house is actually to the extent of my knowledge undamaged, but the town around my neighborhood has lost all power and water infrastructure and we are unable to return to the house for an Indeterminate period of time. So I’m wondering if I am still required to pay rent during the months that I am unable to reside there? I definitely want to return to my home, but I cannot afford to pay rent on two houses. 
 
-**Do not advise posters to call the media or to post on social media**
-
-Do not advise posters to call the media, post on social media, or otherwise publicize their situation.  That creates additional risks and problems, and should only be done, if at all, with the counsel of a local attorney representing OP.  Please review the following rules before commenting further.
-
-* [General Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__advice_to_contact_the_media.2C_post_on_social_media.2C_or_otherwise_publicize_a_legal_problem_will_not_be_tolerated_in_any_circumstance.)
-
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">524.5</data>
-      <data key="d10">8.6075</data>
+And thank you for the replies</data>
+      <data key="d7">1153.5</data>
+      <data key="d8">7.074</data>
+      <data key="d9">0.0</data>
+      <data key="d10">73.845</data>
+      <data key="d11">-0.1058</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0972</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="180">
+      <data key="d0">22</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9ke5qk</data>
+      <data key="d3">C6H12O4</data>
+      <data key="d4">50.0</data>
+      <data key="d5">1542087970.5</data>
+      <data key="d6">Maybe if Bill Gates, Warren Buffet, and Jeff Bezos went camping.</data>
+      <data key="d7">106.5</data>
+      <data key="d8">5.5285</data>
+      <data key="d9">0.0</data>
+      <data key="d10">64.54</data>
+      <data key="d11">-0.1161</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.1043</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="181">
+      <data key="d0">28</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9ladho</data>
+      <data key="d3">King_Neptune07</data>
+      <data key="d4">42.0</data>
+      <data key="d5">1542101011.0</data>
+      <data key="d6">Sounds like the set up to a joke</data>
+      <data key="d7">64.0</data>
+      <data key="d8">4.636</data>
+      <data key="d9">0.0</data>
+      <data key="d10">77.23</data>
       <data key="d11">0.0</data>
-      <data key="d12">24.22</data>
-      <data key="d13">-0.0316</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.5343</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0955</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="497">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6rc8v</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6r3ic</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">0.0</data>
-      <data key="d7">1542860101.0</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
+    <node id="182">
+      <data key="d0">29</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9s1o4i</data>
+      <data key="d3">Eeech</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1542350982.0</data>
+      <data key="d6">Ahhh, my mistake. The link was just to the above reply, which I mistook for a top level comment. I apologize for the confusion.  
 
-**Generally Unhelpful or Off-Topic**
+So, it depends. The landlord is still not at fault for being unable to provide a habitable unit. You can not be required to pay rent during the time the unit is uninhabitable, as well. So it is up to you and the landlord to decide jointly if you want to wait it out and be entitled to refunded rent for days you have no access or if you want to break the lease. The right granted in these circumstances is breaking it (as opposed to forcing the other party to remain bound by the lease) if the repairs can not be done in a reasonable length of time, which will be measured in days and not weeks/months. 
 
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further.
+I would suggest you be very proactive in deciding what you would like to do and reach out to them as soon as possible and stay in daily contact. They can't control the timeline, and since they don't need to do repairs, I would suspect they would be happy to allow you back once functional again. It does not make much sense to me why they would not. They also do not have to/(let you) break the lease immediately. But once the lines are down for about a week or two, either one of you will be able to walk away without penalty or consent of the other.  It's just not possible to put a pin in exactly what day that is; the law does not define such things. The term is "reasonable," which varies by exact circumstance. But for the time you are out, you do not need to pay rent. 
 
-* [Commenting Rule 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.)
-
-* [Commenting Rule 2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.)
-
-* [Commenting Rule 3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Commenting Rule 4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.)
-
-* [Commenting Rule 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.)
-
-* [Commenting Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.)
-
-* [Commenting Rule 9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">924.0</data>
-      <data key="d10">13.054</data>
+I fully appreciate that the daily rent cost tends to be less than it is costs to stay in a hotel or Airbnb or whatever. This is especially true when everything is full. I hope you have been able to secure accommodation, that you and your family and friends are all safe and you had adequate rental insurance or resources to carry you until settled back in your home, or a new one. Stay safe, and I wish you the best. </data>
+      <data key="d7">1824.0</data>
+      <data key="d8">8.037</data>
+      <data key="d9">0.0</data>
+      <data key="d10">69.92</data>
+      <data key="d11">-0.0406</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.106</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="183">
+      <data key="d0">1</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9mwc2v</data>
+      <data key="d3">bug-hunter</data>
+      <data key="d4">14.0</data>
+      <data key="d5">1542168115.0</data>
+      <data key="d6">As a note - for CA Residents unhappy about this, bring it up to your state legislators. If you hear of someone that got cancelled or a policy won't cover them, tell them to complain.</data>
+      <data key="d7">932.0</data>
+      <data key="d8">6.313</data>
+      <data key="d9">0.0</data>
+      <data key="d10">62.41</data>
+      <data key="d11">-0.0749</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.1919</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="184">
+      <data key="d0">4</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9ndiqj</data>
+      <data key="d3">bug-hunter</data>
+      <data key="d4">3.5</data>
+      <data key="d5">1542182106.0</data>
+      <data key="d6">I've added your resources to the post, thank you very much!</data>
+      <data key="d7">433.0</data>
+      <data key="d8">7.255</data>
+      <data key="d9">0.2119</data>
+      <data key="d10">77.435</data>
+      <data key="d11">0.1775</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.5</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="185">
+      <data key="d0">6</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9ptqoh</data>
+      <data key="d3">bug-hunter</data>
+      <data key="d4">3.5</data>
+      <data key="d5">1542299897.5</data>
+      <data key="d6">It's the least we can do - we know that this is a super stressful time, and it's something those of us who are safe can do to help. </data>
+      <data key="d7">72.0</data>
+      <data key="d8">3.5415</data>
+      <data key="d9">0.0</data>
+      <data key="d10">98.045</data>
+      <data key="d11">0.4725</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.5</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="186">
+      <data key="d0">9</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9r4b6i</data>
+      <data key="d3">bug-hunter</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1542326765.0</data>
+      <data key="d6">You call the cops.</data>
+      <data key="d7">70.5</data>
+      <data key="d8">4.107</data>
+      <data key="d9">0.0</data>
+      <data key="d10">97.45</data>
       <data key="d11">0.0</data>
-      <data key="d12">-18.71</data>
-      <data key="d13">0.008</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5445</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.5</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="498">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6xfm5</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6xboz</data>
-      <data key="d5">Biondina</data>
-      <data key="d6">1.0</data>
-      <data key="d7">1542865110.0</data>
-      <data key="d8">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d9">873.5</data>
-      <data key="d10">12.637</data>
-      <data key="d11">0.0</data>
-      <data key="d12">-28.93</data>
-      <data key="d13">0.0086</data>
-      <data key="d14">Neutral</data>
-      <data key="d15">0.5715</data>
+    <node id="187">
+      <data key="d0">10</data>
+      <data key="d1">9wf6d4</data>
+      <data key="d2">e9w0vr9</data>
+      <data key="d3">bug-hunter</data>
+      <data key="d4">4.5</data>
+      <data key="d5">1542498112.5</data>
+      <data key="d6">Hey look, a Sears store actually being useful!</data>
+      <data key="d7">152.0</data>
+      <data key="d8">5.2095</data>
+      <data key="d9">0.0</data>
+      <data key="d10">65.2</data>
+      <data key="d11">-0.1777</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.5357</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
     </node>
-    <node id="499">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6bn61</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea68mus</data>
-      <data key="d5">Seraph062</data>
-      <data key="d6">6.5</data>
-      <data key="d7">1542846879.5</data>
-      <data key="d8">&gt; (3) You can always cut down your own trees as long as you don't damage somebody else's property in doing so.
-
-There are a lot of jurisdictions were this isn't true. Between things like permitting concerns and protected species laws there are a lot of potential ways to get in trouble.  </data>
-      <data key="d9">801.5</data>
-      <data key="d10">6.207</data>
-      <data key="d11">0.0</data>
-      <data key="d12">71.395</data>
-      <data key="d13">0.0923</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.6244</data>
-    </node>
-    <node id="500">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6vwdb</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6gfn8</data>
-      <data key="d5">Sunfried</data>
-      <data key="d6">2.0</data>
-      <data key="d7">1542857759.5</data>
-      <data key="d8">Presumably OP has 3 stumps in his backyard, which are fairly unimpeachable witnesses to the locations of the trees, I think you and a court would agree.</data>
-      <data key="d9">183.5</data>
-      <data key="d10">5.006</data>
-      <data key="d11">0.0</data>
-      <data key="d12">68.265</data>
-      <data key="d13">0.1806</data>
-      <data key="d14">Positive</data>
-      <data key="d15">0.5532</data>
-    </node>
-    <node id="501">
-      <data key="d0">comment</data>
-      <data key="d1" />
-      <data key="d2">ea6xffg</data>
-      <data key="d3">9z2pqa</data>
-      <data key="d4">ea6sbpo</data>
-      <data key="d5">purdueaaron</data>
-      <data key="d6">15.5</data>
-      <data key="d7">1542863070.5</data>
-      <data key="d8">My worst experiences in surveying were over inches that’d determine who’s property a sapling or bush was on. There are always people that will try to ignore monuments that are older than they are based on the roughly pointed arm direction that they remember the realtor making 6 years ago. 
-
-As for OP, if you know what survey company did that work, reach out to them to see if they can provide you a copy for your records, or if they recorded the survey with the county. They may say no, and that they didn’t, but you might get lucky. </data>
-      <data key="d9">932.5</data>
-      <data key="d10">6.4655</data>
-      <data key="d11">0.0</data>
-      <data key="d12">69.18</data>
-      <data key="d13">-0.0576</data>
-      <data key="d14">Negative</data>
-      <data key="d15">0.1225</data>
-    </node>
-    <edge source="418" target="419">
+    <edge source="157" target="158">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="418" target="420">
+    <edge source="157" target="159">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="418" target="421">
+    <edge source="157" target="160">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="418" target="422">
+    <edge source="157" target="161">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="418" target="423">
+    <edge source="158" target="161">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="418" target="424">
+    <edge source="158" target="175">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="418" target="425">
+    <edge source="158" target="176">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="419" target="420">
+    <edge source="158" target="177">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="421" target="422">
+    <edge source="158" target="178">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="421" target="423">
+    <edge source="161" target="176">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="421" target="424">
+    <edge source="162" target="163">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="421" target="425">
+    <edge source="164" target="165">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="422" target="433">
+    <edge source="166" target="167">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="423" target="424">
+    <edge source="168" target="169">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="423" target="425">
+    <edge source="168" target="170">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="423" target="434">
+    <edge source="169" target="170">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="424" target="425">
+    <edge source="169" target="179">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="426" target="427">
+    <edge source="170" target="179">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="428" target="429">
+    <edge source="170" target="182">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="428" target="430">
+    <edge source="171" target="172">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="429" target="430">
+    <edge source="173" target="174">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="431" target="432">
+    <edge source="175" target="177">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="435" target="436">
+    <edge source="175" target="178">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="437" target="438">
+    <edge source="177" target="180">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="437" target="439">
+    <edge source="177" target="181">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="437" target="440">
+    <edge source="177" target="178">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="438" target="439">
+    <edge source="178" target="180">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="438" target="440">
+    <edge source="178" target="181">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="439" target="440">
+    <edge source="179" target="182">
       <data key="d16">READINGLEVEL</data>
     </edge>
-    <edge source="441" target="442">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="442" target="459">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="442" target="460">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="443" target="444">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="443" target="445">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="443" target="446">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="444" target="445">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="444" target="461">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="444" target="446">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="444" target="462">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="444" target="463">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="445" target="461">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="445" target="446">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="445" target="462">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="445" target="463">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="446" target="461">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="446" target="462">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="446" target="463">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="447" target="448">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="447" target="449">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="448" target="449">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="450" target="451">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="450" target="452">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="450" target="453">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="451" target="454">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="451" target="452">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="451" target="455">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="451" target="456">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="451" target="453">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="452" target="453">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="454" target="455">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="454" target="456">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="454" target="473">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="454" target="474">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="454" target="475">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="454" target="476">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="455" target="456">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="457" target="458">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="459" target="479">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="459" target="480">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="461" target="462">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="461" target="463">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="462" target="463">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="464" target="465">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="466" target="467">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="466" target="468">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="467" target="481">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="467" target="482">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="467" target="483">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="467" target="468">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="468" target="481">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="468" target="482">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="469" target="470">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="469" target="471">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="469" target="472">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="470" target="472">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="475" target="476">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="477" target="478">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="479" target="480">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="481" target="482">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="481" target="483">
-      <data key="d16">READINGLEVEL</data>
-    </edge>
-    <edge source="482" target="483">
+    <edge source="180" target="181">
       <data key="d16">READINGLEVEL</data>
     </edge>
   </graph>
