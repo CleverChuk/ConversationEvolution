@@ -118,9 +118,9 @@ Example API request to this endpoint is shown below. The below request will exec
     }
 
 ## Non-standard Python Modules Used in this Project.
-- Networkx
-- Praw
-- NLTK
-- SKLearn
-- Py2Neo
+- [`Networkx`](https://networkx.github.io/documentation/stable/index.html)
+- [`Praw`](https://praw.readthedocs.io/en/latest/index.html)
+- [`NLTK`](https://www.nltk.org/)
+- [`SKLearn`](https://scikit-learn.org/stable/)
+- [`Py2Neo`](https://py2neo.org/v4/)
 
