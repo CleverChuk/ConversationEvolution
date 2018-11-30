@@ -149,16 +149,17 @@ class GraphBot(RedditBot):
         self._main_graph = graph
 
         # high level graphs
-        self.group_graph_edges = mp.clusterOnNumericProperty(0.50, commentCommentEdges, num_internals = 3)
-        proximate_nodes =  list(self.group_graph_edges.nodes())
-        proximate_edges = list(self.group_graph_edges.edges())
+        self.group_graph, proximate_edges =  mp.clusterOnNumericProperty(0.50, commentCommentEdges, num_internals = 3)
+        proximate_nodes =  list(self.group_graph.nodes())
+        
+
 
         # write nodes to csv
         f = "./raw/proxi_comment_data.csv"
         rd.writeNodesToCsv(f, proximate_nodes)
 
         f = "./raw/proxi_comment_edge_data.csv"
-        rd.writeEdgesToFile(f, proximate_edges, r="")
+        rd.writeEdgesToFile(f, proximate_edges, rel="INTERSECT")
 
         f = "./raw/comment_data.csv"
         rd.writeNodesToCsv(f, comment_data)
@@ -172,10 +173,10 @@ class GraphBot(RedditBot):
         f = "./raw/author_data.csv"
         rd.writeNodesToCsv(f, author_data)
 
-        rd.writeEdgesToFile("./raw/comment_edge_data.csv", commentCommentEdges)
-        rd.writeEdgesToFile("./raw/article_comment_edge_data.csv", articleCommentEdges)
-        rd.writeEdgesToFile("./raw/sentiment_comment_edge_data.csv", sentimentCommentEdges)
-        rd.writeEdgesToFile("./raw/author_comment_edge_data.csv", authorCommentEdges)
+        rd.writeEdgesToFile("./raw/comment_edge_data.csv", commentCommentEdges, directed = True)
+        rd.writeEdgesToFile("./raw/article_comment_edge_data.csv", articleCommentEdges, directed = True)
+        rd.writeEdgesToFile("./raw/sentiment_comment_edge_data.csv", sentimentCommentEdges, directed = True)
+        rd.writeEdgesToFile("./raw/author_comment_edge_data.csv", authorCommentEdges, directed = True)
 
         return graph
 
@@ -194,6 +195,6 @@ if __name__ == "__main__":
     bot.dump(filename, ids)
     nx.write_graphml(graph, "./graphML/reddit_graph_%s.graphml" % subreddit)
     nx.write_graphml(bot.comment_graph,"./graphML/comment_graph_%s.graphml" % subreddit)
-    nx.write_graphml(bot.group_graph_edges, "./graphML/interval_graph_edges.graphml")
+    nx.write_graphml(bot.group_graph, "./graphML/interval_graph_edges.graphml")
 
 

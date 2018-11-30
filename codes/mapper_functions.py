@@ -10,6 +10,7 @@ from math import ceil, floor
 from statistics import median
 
 NEW_ID = 0
+ALPHA = 97
 
 def time(g, edges):
     """
@@ -261,12 +262,14 @@ def graphFromCluster(clusters, prop):
         this functions creates a graph from the interval
         clusters.
 
-        :type cluster :dict
+        :type clusters :dict w key = cluster name, value = list of nodes
+        :type prop: list of node field names
 
-        :rtype graph
+        :rtype tuple of graph and list of edges
     """
     g = nx.Graph()
     newNodes = {}
+    edges = []
     JACCARD_THRESH = 0.1
     # create cluster node
     for name, cluster in clusters.items():
@@ -283,16 +286,17 @@ def graphFromCluster(clusters, prop):
         for j in range(i+1,n):
             nextCluster = set(clusters[j])
             # skip this edge if the Jaccard index is less than 10%
-            if jeccardIndex(cluster,nextCluster) < JACCARD_THRESH:
+            j_index = round(jeccardIndex(cluster,nextCluster),2)
+            if j_index < JACCARD_THRESH:
                 continue
                 
             if not cluster.isdisjoint(nextCluster) and newNodes[names[i]] != newNodes[names[j]]:
-                g.add_edge(newNodes[names[i]], newNodes[names[j]], name=prop.upper())
+                edges.append((newNodes[names[i]], newNodes[names[j]], {"type" : j_index}))
 
     for node in newNodes.values():
         g.add_nodes_from([(node, node.__dict__)])
 
-    return g
+    return (g, edges)
 
 def jeccardIndex(A,B):
     """
@@ -332,7 +336,7 @@ def clusterAverage(name, cluster, props):
 
         :rtype Node
     """
-    global NEW_ID
+    global NEW_ID, ALPHA
     if not isinstance(cluster, list) and not isinstance(props, list):
         raise Exception("cluster and props must be lists")
 
@@ -364,9 +368,9 @@ def clusterAverage(name, cluster, props):
     d = {}
     tt = "type"
     dd  = "id_0"
-    clusterNode.id = NEW_ID
+    clusterNode.id = str(NEW_ID) + chr(ALPHA)
     
-    d["id"] = NEW_ID
+    d["id"] = str(NEW_ID) + chr(ALPHA)
     t = clusterNode.__dict__.pop(tt,"")
     id_0 = clusterNode.__dict__.pop(dd,"")
 
@@ -374,9 +378,12 @@ def clusterAverage(name, cluster, props):
     d[tt] = t
     d[dd] = id_0
 
-    clusterNode.__dict__.clear()
-    clusterNode.__dict__.update(d)
+    clusterNode.__dict__ = d
     NEW_ID += 1
+    ALPHA += 1
+    if (ALPHA > 122):
+        ALPHA = 97
+
     return clusterNode
 
 

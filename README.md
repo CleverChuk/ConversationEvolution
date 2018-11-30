@@ -3,11 +3,10 @@ title: "Conversation Evolution"
 author: "Chukwubuikem Ume-Ugwa"
 date: "November 26, 2018"
 output: html_document
-font-size: 20px
 ---
 
 ## Introduction
-This project consists of the backend codes for the Mapper software. There are two components of the project: data gathering, and database integration. Data gathering involves scraping data from Reddit and creating new data from the metadata of the data obtained. The data obtained include submissions, and comments. From these two data, I used the meta information to form the author and sentiment data.These data are represented using Python classes and can be modified to add more properties that will help with the analysis. The Reddit API allows you to access only publicly availlable data. The data integration part of the project involves transforming the raw data into graphs and loading it into a good graph database. The database that is currently being used to explore the data is Neo4j.
+This project consists of the backend codes for the Mapper software. There are two components of the project: **data gathering**, and **database integration**. Data gathering involves scraping data from Reddit and creating new data from the metadata of the data obtained. The data obtained include submissions, and comments. From these two data, I used the meta information to form the author and sentiment data.These data are represented using Python classes and can be modified to add more properties that will help with the analysis. The Reddit API allows you to access only publicly availlable data. The data integration part of the project involves transforming the raw data into graphs and loading it into a good graph database. The database that is currently being used to explore the data is Neo4j.
 
 ## Objectives
 * Create a stable data pipeline for the Mapper software.
@@ -57,6 +56,21 @@ There are two core record types in Neo4j, the node and relationship. The node re
 
 * Cannot create an index and then create a constraint that uses that index. The constraint must be created first which then creates the index.
 
+* If using the import tool:
+
+  
+    -Data must be in CSV format
+    
+    -Each node data import must have a header.
+    
+    -Node header and data file must have the ID field.
+    
+    -Each edge(relationship) data import must also have a header
+    
+    -Edge header and data files must have START_ID,END_ID and TYPE fileds.
+
+Go [here](https://neo4j.com/docs/operations-manual/3.5/tools/import/file-header-format/#import-tool-header-format-nodes) for more details on date import
+
 **Indexes in Neo4j**
 
 - takes up storage space
@@ -93,6 +107,7 @@ There are two core record types in Neo4j, the node and relationship. The node re
 **Some Notes on Cypher**
 
 - node-labels, relationship-types and property-names are case-sensitive in Cypher.
+- all queries must return one or more value
 
 
 ## Neo4j API ENDPOINTS

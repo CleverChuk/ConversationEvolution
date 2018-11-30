@@ -6,19 +6,22 @@ from csv import DictWriter
 import os
 from mapper_functions import getProperties
 
-def writeEdgeHeaderFile(filename, edgeProperties = [], values = []):
+def writeEdgeHeaderFile(filename, hasType = True, edgeProperties = [], values = []):
     """
         writes Neo4j relationship header plus the given
         edge properties to the given filename
         creates file if it does not exist otherwise overwrite
 
         :type filename : str
-        :type edgeProperties: list
+        :type edgeProperties: list, edge properties
+        :type hasType : boolean, say if the relationship is specified
+        :type values: list, used to determine the data type of each edge property
     """
     header_1 = [":START_ID"] + edgeProperties
     header_1.append(":END_ID")
-    header_1.append(":TYPE")
+    
 
+    # add data type to header
     # for i in range(len(edgeProperties)):
     #     s = "".join(list(str(type(values[i])))[8:][:-2])
     #     edgeProperties[i] = edgeProperties[i] + ":" + s.upper()
@@ -26,7 +29,11 @@ def writeEdgeHeaderFile(filename, edgeProperties = [], values = []):
 
     header = [":START_ID"] + edgeProperties
     header.append(":END_ID")
-    header.append(":TYPE")
+    
+    # check if the edge has a type label
+    if hasType:
+        header.append(":TYPE")
+        header_1.append(":TYPE")
 
     filename = filename.split(".")
     filename = "."+filename[1] + "_header." + filename[2]
@@ -40,21 +47,27 @@ def writeEdgeHeaderFile(filename, edgeProperties = [], values = []):
 
     return header_1
 
-def writeEdgesToFile(filename, data, r="NOT SPECIFIED"):
+def writeEdgesToFile(filename, data, rel = None, directed = False):
     """
         writes graph edges to file in the form
         Neo4j understands to the given filename
         creates file if it does not exist otherwise overwrite
 
         :type filename : str
-        :type data: list of tuple
+        :type data: list of edges, 
+        :type rel: str, relationship type
+        :type directed: boolean, specifies whether the edges are directed or not
     """
     if not isinstance(data, list):
         raise TypeError("data must be a list of edges")
     
     n = len(data[0])
     if n < 2:
-        raise TypeError("each edge must have two nodes and an optional relationship")
+        raise TypeError("each edge must have two nodes and a relationship")
+
+    if (n == 2 and rel == None) or (rel != None and rel.isspace()):
+        raise Exception("must rel cannot be None or empty")
+
     if n > 2:
         prop = list(data[0][2].keys())
         values = list(data[0][2].values())
@@ -63,9 +76,9 @@ def writeEdgesToFile(filename, data, r="NOT SPECIFIED"):
             if prop[i] == 'type':
                 prop.pop(i)
                 break
-        header = writeEdgeHeaderFile(filename, prop, values)
+        header = writeEdgeHeaderFile(filename, edgeProperties = prop, values= values)
     else:
-        header = writeEdgeHeaderFile(filename)
+        header = writeEdgeHeaderFile(filename, hasType = rel != None)
 
     with open(filename, "w", newline='') as fp:
         dictWriter = DictWriter(fp,header)
@@ -74,19 +87,27 @@ def writeEdgesToFile(filename, data, r="NOT SPECIFIED"):
         for edge in data:
             if len(edge) > 2:
                 node_1 , node_2 , prop = edge
-                relationship = prop.pop("type","none")
-
+                relationship = prop.pop("type", rel)
+    
                 d = {":START_ID":node_1.id, ":END_ID":node_2.id}
                 d.update(prop)
                 d[":TYPE"] = relationship
 
             else:
                 node_1 , node_2 = edge
-                relationship = r
                 d = {":START_ID":node_1.id, ":END_ID":node_2.id}
-
-                d[":TYPE"] = relationship
-            dictWriter.writerow(d)
+                if rel != None:
+                    d[":TYPE"] = rel
+           
+            if directed:
+                dictWriter.writerow(d)
+            else:
+                dictWriter.writerow(d)
+                temp = d[":START_ID"]
+                d[":START_ID"] = d[":END_ID"]
+                
+                d[":END_ID"] = temp
+                dictWriter.writerow(d)
 
 def writeNodeHeaderFile(filename, header, values):
     """
@@ -97,8 +118,9 @@ def writeNodeHeaderFile(filename, header, values):
         :type header: list
     """
     h = header[:-2] # remove the type and id_0 column
-    v = values[:-2]
 
+    # add data type to header
+    # v = values[:-2]
     # for i in range(len(v)):
     #     s = "".join(list(str(type(v[i])))[8:][:-2])
     #     if s == "str":
