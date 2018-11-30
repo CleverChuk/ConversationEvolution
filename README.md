@@ -59,17 +59,17 @@ There are two core record types in Neo4j, the node and relationship. The node re
 * If using the import tool:
 
   
-    -Data must be in CSV format
+    - Data must be in CSV format
     
-    -Each node data import must have a header.
+    - Each node data import must have a header.
     
-    -Node header and data file must have the ID field.
+    - Node header and data file must have the ID field.
+     
+    - Each edge(relationship) data import must also have a header
     
-    -Each edge(relationship) data import must also have a header
-    
-    -Edge header and data files must have START_ID,END_ID and TYPE fileds.
+    - Edge header and data files must have START_ID,END_ID and TYPE fileds.
 
-Go [here](https://neo4j.com/docs/operations-manual/3.5/tools/import/file-header-format/#import-tool-header-format-nodes) for more details on date import
+Go [here](https://neo4j.com/docs/operations-manual/3.5/tools/import/file-header-format/#import-tool-header-format-nodes) for more details on data import
 
 **Indexes in Neo4j**
 

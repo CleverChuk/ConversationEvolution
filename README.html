@@ -211,7 +211,16 @@ $(document).ready(function () {
 <li><p>Every realtionship in Neo4j is directed.</p></li>
 <li><p>Creating a constraint also creates and index and removing a constraint removes an index created by the constraint.</p></li>
 <li><p>Cannot create an index and then create a constraint that uses that index. The constraint must be created first which then creates the index.</p></li>
+<li><p>If using the import tool:</p>
+<ul>
+<li><p>Data must be in CSV format</p></li>
+<li><p>Each node data import must have a header.</p></li>
+<li><p>Node header and data file must have the ID field.</p></li>
+<li><p>Each edge(relationship) data import must also have a header</p></li>
+<li><p>Edge header and data files must have START_ID,END_ID and TYPE fileds.</p></li>
+</ul></li>
 </ul>
+<p>Go <a href="https://neo4j.com/docs/operations-manual/3.5/tools/import/file-header-format/#import-tool-header-format-nodes">here</a> for more details on data import</p>
 <p><strong>Indexes in Neo4j</strong></p>
 <ul>
 <li><p>takes up storage space</p></li>
@@ -241,6 +250,7 @@ $(document).ready(function () {
 <p><strong>Some Notes on Cypher</strong></p>
 <ul>
 <li>node-labels, relationship-types and property-names are case-sensitive in Cypher.</li>
+<li>all queries must return one or more value</li>
 </ul>
 </div>
 <div id="neo4j-api-endpoints" class="section level2">
