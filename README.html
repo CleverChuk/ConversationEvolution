@@ -128,7 +128,7 @@ $(document).ready(function () {
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This project consists of the backend codes for the Mapper software. There are two components of the project: <strong>data gathering</strong>, and <strong>database integration</strong>. Data gathering involves scraping data from Reddit and creating new data from the metadata of the data obtained. The data obtained include submissions, and comments. From these two data, I used the meta information to form the author and sentiment data.These data are represented using Python classes and can be modified to add more properties that will help with the analysis. The Reddit API allows you to access only publicly availlable data. The data integration part of the project involves transforming the raw data into graphs and loading it into a good graph database. The database that is currently being used to explore the data is Neo4j.</p>
+<p>This project consists of the backend codes for the Mapper software. There are two components of the project: <strong>data gathering</strong>, and <strong>database integration</strong>. Data gathering involves scraping data from Reddit and creating new data from the metadata of the data obtained. The data obtained include submissions, and comments. From these two data, I used the meta information to form the author and sentiment data. These data are represented using Python classes and can be modified to add more properties that will help with the analysis. The Reddit API allows you to access only publicly available data. The data integration part of the project involves transforming the raw data into graphs and loading it into a good graph database. The database that is currently being used to explore the data is Neo4j.</p>
 </div>
 <div id="objectives" class="section level2">
 <h2>Objectives</h2>
@@ -162,7 +162,7 @@ $(document).ready(function () {
 </tr>
 <tr class="odd">
 <td><em>analyzers.py</em></td>
-<td>consists of function used to calculate data fields such as sentiment, number of quoted text per length etc.</td>
+<td>consists of function used to calculate data fields such as sentiment, number of quoted texts per length etc.</td>
 </tr>
 <tr class="even">
 <td><em>textsim.py</em></td>
@@ -186,7 +186,7 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
-<p><strong>Miscelleneous Modules</strong></p>
+<p><strong>Miscellaneous Modules</strong></p>
 <ul>
 <li><p>mp_test.py</p></li>
 <li><p>redditor_attribute.py</p></li>
@@ -200,7 +200,7 @@ $(document).ready(function () {
 </div>
 <div id="graph" class="section level2">
 <h2>Graph</h2>
-<p>Graph generation is done using <a href="https://networkx.github.io/documentation/stable/index.html"><code>Networkx</code></a> APIs. Networkx is used to write graph in graphml format, while CSV graph format is generated using Neo4j schema and is implemeted in <a href="#Introduction">graph_writer.py</a> module.</p>
+<p>Graph generation is done using <a href="https://networkx.github.io/documentation/stable/index.html"><code>Networkx</code></a> APIs. Networkx is used to write graph in graphml format, while CSV graph format is generated using Neo4j schema and is implemented in [graph_writer.py] (#Introduction) module.</p>
 </div>
 <div id="neo4j-database" class="section level2">
 <h2>Neo4j Database</h2>
@@ -208,7 +208,7 @@ $(document).ready(function () {
 <p><strong>Some notes on Neo4j</strong></p>
 <ul>
 <li><p>Neo4j groups nodes and relationship in the database based on an assigned label on creation time.</p></li>
-<li><p>Every realtionship in Neo4j is directed.</p></li>
+<li><p>Every relationship in Neo4j is directed.</p></li>
 <li><p>Creating a constraint also creates and index and removing a constraint removes an index created by the constraint.</p></li>
 <li><p>Cannot create an index and then create a constraint that uses that index. The constraint must be created first which then creates the index.</p></li>
 <li><p>If using the import tool:</p>
@@ -217,7 +217,7 @@ $(document).ready(function () {
 <li><p>Each node data import must have a header.</p></li>
 <li><p>Node header and data file must have the ID field.</p></li>
 <li><p>Each edge(relationship) data import must also have a header</p></li>
-<li><p>Edge header and data files must have START_ID,END_ID and TYPE fileds.</p></li>
+<li><p>Edge header and data files must have START_ID, END_ID and TYPE fields.</p></li>
 </ul></li>
 </ul>
 <p>Go <a href="https://neo4j.com/docs/operations-manual/3.5/tools/import/file-header-format/#import-tool-header-format-nodes">here</a> for more details on data import</p>
@@ -228,8 +228,8 @@ $(document).ready(function () {
 </ul>
 <p><em>Types of Indexes</em></p>
 <ul>
-<li><p>Single-Property index: <code>CREATE INDEX ON :&lt;node label&gt;(&lt;node property&gt;)</code></p></li>
-<li><p>Composite-Property index: <code>CREATE INDEX ON :&lt;node label&gt;(&lt;prop 1, prop2,...&gt;)</code></p></li>
+<li><p>Single-Property index: <code>CREATE INDEX ON :&lt;node label&gt; (&lt;node property&gt;)</code></p></li>
+<li><p>Composite-Property index: <code>CREATE INDEX ON :&lt;node label&gt; (&lt;prop 1, prop2,&gt;)</code></p></li>
 </ul>
 <p><strong>Constraint in Neo4j</strong> A constraint is a specification that a data being added to the database must meet to be considered valid data. In a nutshell, a data filter.</p>
 <p><em>Types of Constraints</em></p>
@@ -240,7 +240,7 @@ $(document).ready(function () {
 </div>
 <div id="neo4j-cypher" class="section level2">
 <h2>Neo4j CYPHER</h2>
-<p><a href="https://neo4j.com/developer/cypher-query-language/">Cypher</a> is the query language for Neo4j graph database.</p>
+<p><a href="https://neo4j.com/developer/cypher-query-language/">Cypher</a> is the query language for Neo4j graph database. <a href="https://neo4j.com/docs/cypher-refcard/current/">Check out</a> the Cypher Reference card for quick references on the Cypher language.</p>
 <p><strong>Key Features</strong></p>
 <ul>
 <li><p>Uses patterns to describe graph data</p></li>
@@ -255,33 +255,47 @@ $(document).ready(function () {
 </div>
 <div id="neo4j-api-endpoints" class="section level2">
 <h2>Neo4j API ENDPOINTS</h2>
-<p>Neo4j database API endpoints follow this format: <http|https>://<host>:<port>/db/data/transaction/[commit]. The commit is optional is optional if you intend to keep the transaction open. The server will return a transaction endpoint in its response if commit is missing and will timeout the after 60 seconds. Transaction timeout can be reset by sending a request with empty statement and the timeout length can be modified in the database config.</p>
-<p>Example API request to this endpoint is shown below. The below request will execute the statements and close the transaction due to having commit in the url. More examples can be found <a href="https://neo4j.com/docs/developer-manual/3.4/http-api/">here</a>.</p>
+<p>Neo4j database API endpoints follow this format: <HTTP HTTPs>://<host>:<port>/db/data/transaction/[commit]. The commit is optional is optional if you intend to keep the transaction open. The server will return a transaction endpoint in its response if commit is missing and will timeout the after 60 seconds. Transaction timeout can be reset by sending a request with empty statement and the timeout length can be modified in the database config.</p>
+<p>Example API request to this endpoint is shown below. The below request will execute the statements and close the transaction due to having commit in the URL. More examples can be found <a href="https://neo4j.com/docs/developer-manual/3.4/http-api/">here</a>.</p>
 <pre><code>POST http://localhost:7474/db/data/transaction/commit
 Accept: application/json; charset=UTF-8
 Content-Type: application/json
 
 {
-  &quot;statements&quot; : [ {
-    &quot;statement&quot; : &quot;CREATE (n) RETURN id(n)&quot;
+  &quot;statements&quot;: [ {
+    &quot;statement&quot;: &quot;CREATE (n) RETURN id(n)&quot;
   }, {
-    &quot;statement&quot; : &quot;CREATE (n {props}) RETURN n&quot;,
-    &quot;parameters&quot; : {
-      &quot;props&quot; : {
-        &quot;name&quot; : &quot;My Node&quot;
+    &quot;statement&quot;: &quot;CREATE (n {props}) RETURN n&quot;,
+    &quot;parameters&quot;: {
+      &quot;props&quot;: {
+        &quot;name&quot;: &quot;My Node&quot;
       }
     }
   } ]
 }</code></pre>
+<p><strong>Interacting with Database with Py2neo</strong></p>
+<p><a href="https://py2neo.org/v4/"><code>Py2neo</code></a> is a Python library for working with Neo4j databases. It wraps the official Neo4j driver and provides a higher-level API for interacting with the database.</p>
+<p><em>Example: interaction</em></p>
+<pre class="python"><code>  from py2neo import *
+  from pandas import DataFrame
+  # get a graph object
+  graph = Graph (&quot;http://localhost:11002&quot;, username=&quot;neo4j&quot;, password=&quot;password&quot;)
+  
+  # get all nodes in db
+  cursor = graph.run(&quot;MATCH(n) RETURN n&quot;)
+  data = cursor.data ()
+  
+  # display data
+  DataFrame(data)</code></pre>
 </div>
 <div id="non-standard-python-modules-used-in-this-project." class="section level2">
 <h2>Non-standard Python Modules Used in this Project.</h2>
 <ul>
-<li><a href="https://networkx.github.io/documentation/stable/index.html"><code>Networkx</code></a></li>
+<li><a href="https://networkx.github.io/documentation/stable/index.html"><code>NetworkX</code></a></li>
 <li><a href="https://praw.readthedocs.io/en/latest/index.html"><code>Praw</code></a></li>
 <li><a href="https://www.nltk.org/"><code>NLTK</code></a></li>
 <li><a href="https://scikit-learn.org/stable/"><code>SKLearn</code></a></li>
-<li><a href="https://py2neo.org/v4/"><code>Py2Neo</code></a></li>
+<li><a href="https://py2neo.org/v4/"><code>Py2neo</code></a></li>
 </ul>
 </div>
 
