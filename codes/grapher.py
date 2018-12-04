@@ -149,7 +149,8 @@ class GraphBot(RedditBot):
         self._main_graph = graph
 
         # high level graphs
-        self.group_graph, proximate_edges =  mp.clusterOnNumericProperty(0.50, commentCommentEdges, num_internals = 3)
+        self.group_graph, proximate_edges =  mp.clusterOnNumericProperty(0.50,
+         commentCommentEdges,prop="sentimentScore", num_internals = 3)
         proximate_nodes =  list(self.group_graph.nodes())
         
 
