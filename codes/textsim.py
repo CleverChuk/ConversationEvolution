@@ -14,6 +14,10 @@ def stem_tokens(tokens):
 def normalize(text):
     '''
         remove punctuation, lowercase, stem
+       
+        @param text
+            :type string
+            :description: text
     '''
     return stem_tokens(word_tokenize(text.lower().translate(remove_punctuation_map)))
 
@@ -22,6 +26,14 @@ def cosine_sim(doc_0, doc_1):
     """
         calculates the cosine similarity of the two documents
 
+        @param doc_0
+            :type string
+            :description: first document 
+
+        @param doc_1
+            :type string
+            :description: second document
+        
         :rtype float :range [0,1]
     """
     tfidf = vectorizer.fit_transform([doc_0, doc_1])

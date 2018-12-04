@@ -2,9 +2,16 @@ from py2neo import (Graph, Node, Relationship)
 import csv
 from models import (CommentNode)
 
-
 class LoadNodes:
+    """
+        Class used to import Node data into an existing database
+    """
     def __init__(self, node_cls):
+        """
+            @param node_cls
+                :type Type
+                :description: a class name
+        """
         self.node_cls = node_cls
         self.node_dict = {}
 
@@ -31,6 +38,11 @@ class LoadNodes:
 
 class LoadRelationships:
     def __init__(self, rel_cls):
+        """
+            @param rel_cls
+                :type Type
+                :description: a class name
+        """
         self.rel_cls = rel_cls
         self.rels = []
 

@@ -2,7 +2,7 @@
 # Purpose: Class use to pull data from Reddit
 import os
 import json
-from models import Submission, CustomEncoder
+from json_models import SubmissionDump, CustomEncoder
 import praw
 
 
@@ -11,6 +11,19 @@ class RedditBot:
     def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
         """ 
             initialize the bot
+
+            @param subreddit
+                :type string
+                :description: the name of the subreddit to get data from
+        
+            @param username
+                :type string
+                :description: Reddit username
+            
+            @param subreddit
+                :type string
+                :description: Reddit password
+
         """
         self._client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
         self._client_id = "n-EWVSgG6cMnRQ"
@@ -30,7 +43,11 @@ class RedditBot:
 
     def get_hot_submissions_id(self, limit=10):
         """
-            :type int:limit number of submissions to get
+            gets hot articles from the subreddit
+            
+            @param limit
+                :type int
+                :description: number of submissions to get
 
             :rtype List: of tuple (title, score).
         """
@@ -39,18 +56,27 @@ class RedditBot:
 
     def get_submission(self, id):
         """
+            @param id
+                :type string
+                :description: Reddit submission id
+
             rtype: Reddit.Submission
         """
         return self.reddit.submission(id=id)
 
     def dump(self, filename, ids):
         """
-            @param submission_id
-
-            @param filename
-            
             write the comments in the submission with the given id
             to filename.
+            
+            @param ids
+                :type list
+                :description: list of Reddit submission ids
+        
+
+            @param filename
+                :type string
+                :description: name of the file to write json data
         """
         with open(filename, "w") as fp:
             data = []
@@ -58,10 +84,9 @@ class RedditBot:
                 submission = self.get_submission(id)
                 submission.comments.replace_more(limit=None)
 
-                data.append(Submission(submission))
+                data.append(SubmissionDump(submission))
 
-            json.dump(data, fp, separators=(',', ':'),
-                    cls=CustomEncoder, sort_keys=False, indent=4)
+            json.dump(data, fp, separators=(',', ':'), cls=CustomEncoder, sort_keys=False, indent=4)
 
     def __repr__(self):
         return "RedditBot"

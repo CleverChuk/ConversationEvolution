@@ -5,9 +5,9 @@
   <key attr.name="similarity" attr.type="double" for="node" id="d13" />
   <key attr.name="sentiment" attr.type="string" for="node" id="d12" />
   <key attr.name="sentimentScore" attr.type="double" for="node" id="d11" />
-  <key attr.name="readingLevel" attr.type="double" for="node" id="d10" />
-  <key attr.name="quotedTextPerLength" attr.type="double" for="node" id="d9" />
-  <key attr.name="averageWordLength" attr.type="double" for="node" id="d8" />
+  <key attr.name="reading_level" attr.type="double" for="node" id="d10" />
+  <key attr.name="quoted_text_per_length" attr.type="double" for="node" id="d9" />
+  <key attr.name="average_word_length" attr.type="double" for="node" id="d8" />
   <key attr.name="length" attr.type="double" for="node" id="d7" />
   <key attr.name="body" attr.type="string" for="node" id="d6" />
   <key attr.name="timestamp" attr.type="double" for="node" id="d5" />
@@ -17,1407 +17,578 @@
   <key attr.name="article_id" attr.type="string" for="node" id="d1" />
   <key attr.name="id" attr.type="string" for="node" id="d0" />
   <graph edgedefault="undirected">
-    <node id="365">
+    <node id="179">
       <data key="d0">0a</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb00pkd</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">62.0</data>
-      <data key="d5">1543877931.5</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">98.0</data>
-      <data key="d8">5.8845</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2x1cg</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">56.0</data>
+      <data key="d5">1543974613.0</data>
+      <data key="d6">I'd also just suggest getting a doctor's note, and going to the school administration to get his phone listed as a medical device to stop any teachers from taking it away. </data>
+      <data key="d7">172.0</data>
+      <data key="d8">5.0</data>
       <data key="d9">0.0</data>
-      <data key="d10">79.65</data>
+      <data key="d10">77.53</data>
       <data key="d11">0.0</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.131</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="366">
+    <node id="180">
       <data key="d0">1b</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eazkk9g</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">58.5</data>
-      <data key="d5">1543877945.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">200.5</data>
-      <data key="d8">5.3665</data>
-      <data key="d9">0.0</data>
-      <data key="d10">70.89</data>
-      <data key="d11">0.038</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0271</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="367">
-      <data key="d0">2c</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04q1w</data>
-      <data key="d3">StockingsBooby</data>
-      <data key="d4">51.0</data>
-      <data key="d5">1543879858.0</data>
-      <data key="d6">Isn’t the polygraph useless in a legal sense?</data>
-      <data key="d7">73.0</data>
-      <data key="d8">4.8405</data>
-      <data key="d9">0.0</data>
-      <data key="d10">73.85</data>
-      <data key="d11">-0.0566</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0378</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="368">
-      <data key="d0">3d</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb015ot</data>
-      <data key="d3">ninjaofslo</data>
-      <data key="d4">240.0</data>
-      <data key="d5">1543878260.0</data>
-      <data key="d6">It’s not too late. Full stop. Whether you can get the video or not is irrelevant. It’s sexual assault, and likely within the statute of limitations. Call RAIN, discuss it with an Attorney. Call the local large law firms in your town and see if they have a any lawyers who are willing to take you on pro-bono. </data>
-      <data key="d7">100.0</data>
-      <data key="d8">4.211</data>
-      <data key="d9">0.0</data>
-      <data key="d10">85.08</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.2577</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="369">
-      <data key="d0">4e</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb01q7b</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">21.0</data>
-      <data key="d5">1543876949.5</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">1.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="370">
-      <data key="d0">5f</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb03lnf</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">-6.0</data>
-      <data key="d5">1543878963.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="371">
-      <data key="d0">6g</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eazxkpb</data>
-      <data key="d3">PertCub</data>
-      <data key="d4">43.0</data>
-      <data key="d5">1543875836.0</data>
-      <data key="d6">Maryland</data>
-      <data key="d7">23.0</data>
-      <data key="d8">5.085</data>
-      <data key="d9">0.0</data>
-      <data key="d10">77.87</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.1437</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="372">
-      <data key="d0">7h</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb01rik</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">2.5</data>
-      <data key="d5">1543876983.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="373">
-      <data key="d0">8i</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb05h3c</data>
-      <data key="d3">csForShort</data>
-      <data key="d4">28.0</data>
-      <data key="d5">1543880304.0</data>
-      <data key="d6">I don't think going to the police is a smart decision- they protect their own to a fault, doesn't matter what they've done. I could see it being somewhat difficult to prove he's the one who filmed, unless there are witnesses</data>
-      <data key="d7">146.5</data>
-      <data key="d8">4.7445</data>
-      <data key="d9">0.0</data>
-      <data key="d10">83.07</data>
-      <data key="d11">-0.175</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0414</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="374">
-      <data key="d0">9j</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb06970</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543880772.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="375">
-      <data key="d0">10k</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb03guu</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">6.0</data>
-      <data key="d5">1543878908.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="376">
-      <data key="d0">11l</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb040l2</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543879402.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.143</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="377">
-      <data key="d0">12m</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb010lz</data>
-      <data key="d3">LunaSzeretlek</data>
-      <data key="d4">9.0</data>
-      <data key="d5">1543876277.0</data>
-      <data key="d6">Thank you! I just started reaching out to some people who may have witnessed it or received the video. </data>
-      <data key="d7">103.0</data>
-      <data key="d8">5.05</data>
-      <data key="d9">0.0</data>
-      <data key="d10">59.8</data>
-      <data key="d11">0.0129</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="378">
-      <data key="d0">13n</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eazyg76</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">-5.5</data>
-      <data key="d5">1543873622.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="379">
-      <data key="d0">14o</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04i73</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">-1.0</data>
-      <data key="d5">1543879335.0</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="380">
-      <data key="d0">15p</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04k40</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">1.5</data>
-      <data key="d5">1543879355.0</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="381">
-      <data key="d0">16q</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04owu</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543879575.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="382">
-      <data key="d0">17r</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04sa5</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543879611.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="383">
-      <data key="d0">18s</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04t32</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">1.5</data>
-      <data key="d5">1543879617.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="384">
-      <data key="d0">19t</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04tau</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">2.5</data>
-      <data key="d5">1543879616.0</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Bad or Illegal Advice**
-
-Your post has been removed for offering poor legal advice.  It is either inapplicable for the jurisdiction under discussion, misunderstands the fundamental legal question, or is advice to commit an illegal act.  Please review the following rules before commenting further:
-
-* [General Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__illegal_advice_is_never_allowed.2C_for_any_reason.2C_in_any_circumstance.)
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.) and [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Reddit Violent Content Rule](https://www.reddithelp.com/en/categories/rules-reporting/account-and-community-restrictions/do-not-post-violent-content)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">694.5</data>
-      <data key="d8">10.4935</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-3.77</data>
-      <data key="d11">-0.1073</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.5678</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="385">
-      <data key="d0">20u</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb05k6a</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543880277.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Bad or Illegal Advice**
-
-Your post has been removed for offering poor legal advice.  It is either inapplicable for the jurisdiction under discussion, misunderstands the fundamental legal question, or is advice to commit an illegal act.  Please review the following rules before commenting further:
-
-* [General Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__illegal_advice_is_never_allowed.2C_for_any_reason.2C_in_any_circumstance.)
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.) and [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Reddit Violent Content Rule](https://www.reddithelp.com/en/categories/rules-reporting/account-and-community-restrictions/do-not-post-violent-content)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">694.5</data>
-      <data key="d8">10.4935</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-3.77</data>
-      <data key="d11">-0.1073</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.5678</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="386">
-      <data key="d0">21v</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb05xr8</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">-2.0</data>
-      <data key="d5">1543880511.0</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="387">
-      <data key="d0">22w</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb065jy</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543880700.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="388">
-      <data key="d0">23x</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb068th</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">1.5</data>
-      <data key="d5">1543880772.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="389">
-      <data key="d0">24y</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb06bsp</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543880841.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="390">
-      <data key="d0">25z</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb06kpx</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">0.5</data>
-      <data key="d5">1543881021.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="391">
-      <data key="d0">26a</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb06qwu</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">-2.0</data>
-      <data key="d5">1543881153.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="392">
-      <data key="d0">27b</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb06tzm</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">0.5</data>
-      <data key="d5">1543881230.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="393">
-      <data key="d0">28c</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb082nz</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">0.5</data>
-      <data key="d5">1543882197.0</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="394">
-      <data key="d0">29d</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb05ybk</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">-7.0</data>
-      <data key="d5">1543880571.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="395">
-      <data key="d0">30e</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb05thz</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">-2.0</data>
-      <data key="d5">1543880761.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.143</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="396">
-      <data key="d0">31f</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb01w2n</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">-1.0</data>
-      <data key="d5">1543877089.0</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">873.5</data>
-      <data key="d8">12.637</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-28.93</data>
-      <data key="d11">0.0086</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.5715</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="397">
-      <data key="d0">32g</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eazyxxw</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">-8.0</data>
-      <data key="d5">1543874440.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">1.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="398">
-      <data key="d0">33h</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb01o08</data>
-      <data key="d3">ryguy354</data>
-      <data key="d4">-15.0</data>
-      <data key="d5">1543877086.0</data>
-      <data key="d6">Sorry but if they are now 20/21 and still have a video of a 14 year old being raped they deserve what they get</data>
-      <data key="d7">131.0</data>
-      <data key="d8">5.081</data>
-      <data key="d9">0.0</data>
-      <data key="d10">79.94</data>
-      <data key="d11">-0.0585</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0634</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="399">
-      <data key="d0">34i</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eazss4r</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543872239.5</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">1.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="400">
-      <data key="d0">35j</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eazzti6</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">71.0</data>
-      <data key="d5">1543877345.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">98.0</data>
-      <data key="d8">6.726</data>
-      <data key="d9">0.0</data>
-      <data key="d10">79.6</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.1332</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="401">
-      <data key="d0">36k</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb039mz</data>
-      <data key="d3">tomyownrhythm</data>
-      <data key="d4">584.0</data>
-      <data key="d5">1543880013.0</data>
-      <data key="d6">Further, if OP was underage at the time of filming, her lawyer should advise on the proper channels for obtaining this evidence in a way that a) allows it to be used as evidence and b) doesn't create unintended additional liability for OP or whomever is cooperating to provide it.</data>
-      <data key="d7">280.0</data>
-      <data key="d8">5.233</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0383</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="402">
-      <data key="d0">37l</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb00pkd</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">54.5</data>
-      <data key="d5">1543878691.0</data>
-      <data key="d6">Why even bring that up?  OP didn't film the video or distribute it, she's clearly a pure victim...</data>
-      <data key="d7">67.5</data>
-      <data key="d8">4.9015</data>
-      <data key="d9">0.0</data>
-      <data key="d10">75.2</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="403">
-      <data key="d0">38m</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb00pkd</data>
-      <data key="d3">McWexler4ever</data>
-      <data key="d4">41.5</data>
-      <data key="d5">1543879415.5</data>
-      <data key="d6">Pretty sure rape is already a felony.</data>
-      <data key="d7">67.5</data>
-      <data key="d8">4.9015</data>
-      <data key="d9">0.0</data>
-      <data key="d10">75.2</data>
-      <data key="d11">-0.193</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="404">
-      <data key="d0">39n</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb02au0</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">10.0</data>
-      <data key="d5">1543877345.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="405">
-      <data key="d0">40o</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eazkk9g</data>
-      <data key="d3">Zapopa</data>
-      <data key="d4">20.0</data>
-      <data key="d5">1543877428.0</data>
-      <data key="d6">Yeah don’t give stupid advice. This is going to be a difficult process emotionally, financially and legally for the victim here. Criminal charges is the goal. Civil action is easier in some respects but even if she is successful some years down the road it’s unlikely a cop in his early 20s is going to have any assets. Flip comments for humor are fine in some situations. This isn’t one of them.</data>
-      <data key="d7">194.0</data>
-      <data key="d8">5.3</data>
-      <data key="d9">0.0</data>
-      <data key="d10">83.36</data>
-      <data key="d11">0.1166</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="406">
-      <data key="d0">41p</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb00pkd</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">31.0</data>
-      <data key="d5">1543879360.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">82.5</data>
-      <data key="d8">6.626</data>
-      <data key="d9">0.0</data>
-      <data key="d10">49.65</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="407">
-      <data key="d0">42q</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eazkk9g</data>
-      <data key="d3">Huckleberry1127</data>
-      <data key="d4">35.5</data>
-      <data key="d5">1543878158.0</data>
-      <data key="d6">I am an attorney and former sex crimes prosecutor. First, get all relevant information. This includes the Twitter shot and the video. Also, try to remember if anyone texted or emailed you anything. Don’t get hung up on this evidence collection process. If you can’t get it right away just move to the next step which is go to the prosecutor’s office. 
-
-Second, I would take the information to the prosecutor’s office and not the police. I’m saying that hoping prosecutor’s office has their own independent detective investigator squad.  Police Internal Affairs Bureau (that’s what it’s called in my area) can sometimes take a dim view on police sexual assault cases. 
-
-Third, act quickly. If he is on probation he will be treated less kindly. 
-
-Fourth, you don’t need a lawyer yet. That’s for when you want to sue which you will shortly but right now just get the criminal investigation going. Once that is going lawyers will be dying to get this case on a contingency.  Only take a contingency lawyer. Any lawyer who is worthwhile won’t need you to pay an hourly rate.  
-
-Fifth, but actually most important, please go for counseling. You sound very strong but this is a profoundly difficult situation that you shouldn’t have to navigate alone. The prosecutors office will probably have counseling referrals. Please don’t turn them down. 
-
-Good luck and remember that you are never alone. Even if eventually you are only hearing from people who support your attacker, you are always supported by plenty of people.  </data>
-      <data key="d7">230.5</data>
-      <data key="d8">5.3665</data>
-      <data key="d9">0.0</data>
-      <data key="d10">74.19</data>
-      <data key="d11">0.0822</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0271</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="408">
-      <data key="d0">43r</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04q1w</data>
-      <data key="d3">StockingsBooby</data>
-      <data key="d4">25.5</data>
-      <data key="d5">1543880177.5</data>
-      <data key="d6">Inadmissible in court but often used for hiring for government jobs,  particularly law enforcement.</data>
-      <data key="d7">143.5</data>
-      <data key="d8">5.5935</data>
-      <data key="d9">0.0</data>
-      <data key="d10">69.38</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0636</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="409">
-      <data key="d0">44s</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb03ehm</data>
-      <data key="d3">ninjaofslo</data>
-      <data key="d4">57.0</data>
-      <data key="d5">1543878808.0</data>
-      <data key="d6">The main reason I said it’s not too late is because I believe the statute of limitations is 7 years.</data>
-      <data key="d7">100.0</data>
-      <data key="d8">4.444</data>
-      <data key="d9">0.0</data>
-      <data key="d10">83.96</data>
-      <data key="d11">-0.1396</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.1485</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="410">
-      <data key="d0">45t</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb00ll8</data>
-      <data key="d3">PertCub</data>
-      <data key="d4">57.5</data>
-      <data key="d5">1543878383.0</data>
-      <data key="d6">Okay. Your in luck, maryland has no statue of limmitation, so its still able to be punished in a court of law. So with the video, it should have enough evidence to convict. Also, dont call not reporting selfishness, you were raped and thats hard for people to come to terms with and report. Thats normal.</data>
-      <data key="d7">156.0</data>
-      <data key="d8">6.5425</data>
-      <data key="d9">0.0</data>
-      <data key="d10">57.245</data>
-      <data key="d11">-0.0648</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0718</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="411">
-      <data key="d0">46u</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb05h3c</data>
-      <data key="d3">WizardofAss95</data>
-      <data key="d4">28.0</data>
-      <data key="d5">1543880521.0</data>
-      <data key="d6">The guy just barely became a cop, he can be fired for any minor thing</data>
-      <data key="d7">69.0</data>
-      <data key="d8">4.6</data>
-      <data key="d9">0.0</data>
-      <data key="d10">76.05</data>
-      <data key="d11">-0.3612</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0222</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="412">
-      <data key="d0">47v</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04n92</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543879784.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">556.0</data>
-      <data key="d8">7.31</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0173</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.143</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="413">
-      <data key="d0">48w</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb0130o</data>
-      <data key="d3">ThesAndman6672</data>
-      <data key="d4">16.5</data>
-      <data key="d5">1543877269.5</data>
-      <data key="d6">Go to the DA. Under 18 the statue of limitations are extremely different and as such can open an investigation to the matter.</data>
-      <data key="d7">114.0</data>
-      <data key="d8">4.683</data>
-      <data key="d9">0.0</data>
-      <data key="d10">68.685</data>
-      <data key="d11">0.162</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="414">
-      <data key="d0">49x</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb06agy</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543881728.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">1445.0</data>
-      <data key="d8">13.023</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-10.12</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.143</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="415">
-      <data key="d0">50y</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb01vbi</data>
-      <data key="d3">Kippingthroughlife</data>
-      <data key="d4">-1.0</data>
-      <data key="d5">1543877515.0</data>
-      <data key="d6">Imma jump on this train a little bit because this hit a little close to home. How often do you actively curate your hard drive? If you did a complete file system listing and sorted it by date, what's the oldest thing you'd find? Would you even know what it was? What if you have a habit of migrating personal data from system to system? I *know* I have files on my current system from before even the Athlon XP days. I have no idea what they are, I just know that they're there because I've been forward migrating for *at least* that long. 
-
-So: While CP remains a strict liability item and a 21-year-old is completely fucked if he's in possession of it, I could understand a situation where he *had* possession of it six or seven years ago and just... forgot it was there. It was a video of someone his age, and if he was raised in an environment where women ain't shit, then the video isn't anything special and is conceivably forgettable. Fast forward a few PCs, and ta-da, he's 21.
-
-I guess my whole point is, where is this dude in life now? (OH EM GEEZ WHAT ABOUT TEH MANZ!?) What was his involvement at that time? If his involvement was "saw a video and did nothing," then there are millions of guilty boys who have grown up to be strong allies of and advocates for \#MeToo and \#BelieveWomen. I am one of them. Two of my brothers are two more. The silent witness is part of human nature, and to punish it is, in my view, a terrible idea. (It is one reason we have legislated the opposite concept - the mandatory reporter.)
-
-#IF HOWEVER
-
-If his involvement was actually being part of what was recorded in that video, then FUCKING BURN HIM.
-
-*(I feel the need to disclaim in the strongest terms any possession of any such hypothetical video. The personal connection here is having witnessed such a video in my youth and not having done anything about what I saw. That video, even now twenty years later, continues to shape my views on consent and rape culture. It is easy for me to project a similarly positive personal growth in a hypothetical manner on other men who display similarly positive attitudes toward consent culture.)*
-
-</data>
-      <data key="d7">227.0</data>
-      <data key="d8">5.056</data>
-      <data key="d9">0.0</data>
-      <data key="d10">82.34</data>
-      <data key="d11">-0.0585</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0634</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="416">
-      <data key="d0">51z</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb00pkd</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">26.0</data>
-      <data key="d5">1543879276.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="417">
-      <data key="d0">52a</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb051py</data>
-      <data key="d3">Bobmcgee</data>
-      <data key="d4">23.0</data>
-      <data key="d5">1543879738.0</data>
-      <data key="d6">I'd love to see a citation to a state where the results of a polygraph are admissible to prove guilt at trial, so that I may laugh at that state.</data>
-      <data key="d7">45.0</data>
-      <data key="d8">4.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">71.82</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0645</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="418">
-      <data key="d0">53b</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb0209o</data>
-      <data key="d3">Kippingthroughlife</data>
-      <data key="d4">32.0</data>
-      <data key="d5">1543877086.0</data>
-      <data key="d6">They should get in trouble for having it regardless of how old they are but I would hope that as an adult they would be more likely to realize that possessing child pornography is wrong.</data>
-      <data key="d7">186.0</data>
-      <data key="d8">4.871</data>
-      <data key="d9">0.0</data>
-      <data key="d10">82.95</data>
-      <data key="d11">-0.2846</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0634</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="419">
-      <data key="d0">54c</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb03rdh</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2x7h6</data>
       <data key="d3">Anonymous</data>
       <data key="d4">11.0</data>
-      <data key="d5">1543879276.0</data>
-      <data key="d6">[deleted]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="420">
-      <data key="d0">55d</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb05kqo</data>
-      <data key="d3">myth0i</data>
-      <data key="d4">35.0</data>
-      <data key="d5">1543880409.0</data>
-      <data key="d6">Short version: No.
-
-Longer version: If they were a private employer, the EPPA probably would prevent them from using a polygraph for employment screening purposes (there are a few notable exceptions, such as security companies or the banking industry, so it's reasonable to expect that a private police force would be exempt from EPPA requirements as well). However, this would be a state-level job, and the EPPA does not cover Federal, state, or local government agencies. There's no protection against polygraphs as an employment requirement for government positions.</data>
-      <data key="d7">270.0</data>
-      <data key="d8">5.78</data>
-      <data key="d9">0.0</data>
-      <data key="d10">66.94</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.1078</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="421">
-      <data key="d0">56e</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb03ehm</data>
-      <data key="d3">ninjaofslo</data>
-      <data key="d4">42.5</data>
-      <data key="d5">1543879210.5</data>
-      <data key="d6">Oh that’s fucking awesome. I did not know that. HELL YEAH. Make the rapists pay.</data>
-      <data key="d7">90.0</data>
-      <data key="d8">4.3275</data>
-      <data key="d9">0.0</data>
-      <data key="d10">80.26</data>
-      <data key="d11">-0.0698</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.1182</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="422">
-      <data key="d0">57f</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04weh</data>
-      <data key="d3">ninjaofslo</data>
-      <data key="d4">23.5</data>
-      <data key="d5">1543879734.0</data>
-      <data key="d6">I decided to educate myself since the earlier comment and found that there is not a federal standard. In fact it’s up to each state and varies greatly. I thought it was 7 years like many other crimes</data>
-      <data key="d7">115.5</data>
-      <data key="d8">4.3275</data>
-      <data key="d9">0.0</data>
-      <data key="d10">80.26</data>
-      <data key="d11">0.0602</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.1182</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="423">
-      <data key="d0">58g</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb03rdh</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">10.0</data>
-      <data key="d5">1543879288.5</data>
+      <data key="d5">1543986596.0</data>
       <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
+      <data key="d7">204.0</data>
+      <data key="d8">4.975</data>
       <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
+      <data key="d10">75.4</data>
       <data key="d11">0.0</data>
       <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
+      <data key="d13">0.0533</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="424">
-      <data key="d0">59h</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb05v2w</data>
-      <data key="d3">Samalam268211</data>
-      <data key="d4">35.0</data>
-      <data key="d5">1543880409.0</data>
-      <data key="d6">I don't know where you're getting that information. Just about every gov/military employee with a clearance that I have had contact with, including myself, has not taken a poly test. I don't work with police, but for the most part thats too much of a blanket statement. </data>
-      <data key="d7">270.0</data>
-      <data key="d8">5.462</data>
+    <node id="181">
+      <data key="d0">2c</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3jm6l</data>
+      <data key="d3">Suicidal_Tony</data>
+      <data key="d4">17.0</data>
+      <data key="d5">1543991773.0</data>
+      <data key="d6">what the hell.</data>
+      <data key="d7">45.0</data>
+      <data key="d8">3.526</data>
       <data key="d9">0.0</data>
-      <data key="d10">72.46</data>
-      <data key="d11">0.1066</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.1113</data>
+      <data key="d10">106.67</data>
+      <data key="d11">-0.1024</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0868</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="425">
-      <data key="d0">60i</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb056s2</data>
-      <data key="d3">EclipsingBinaryBoi</data>
-      <data key="d4">19.0</data>
-      <data key="d5">1543879855.0</data>
-      <data key="d6">Huh, TIL. Thanks.</data>
+    <node id="182">
+      <data key="d0">3d</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb32mt6</data>
+      <data key="d3">csr28</data>
+      <data key="d4">21.0</data>
+      <data key="d5">1543980492.0</data>
+      <data key="d6">He does calibrate it. Not often though. I for the most part have stayed out of his health ever since he got it. DexCom I think. He is very independent and smart. 35 on his act. He checks it when he feels bad and sometimes before class. I think a parent may have complained that “X uses his phone why cant my child” </data>
+      <data key="d7">400.0</data>
+      <data key="d8">5.714</data>
+      <data key="d9">0.0</data>
+      <data key="d10">86.3</data>
+      <data key="d11">-0.0615</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.1244</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="183">
+      <data key="d0">4e</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3702m</data>
+      <data key="d3">esk_209</data>
+      <data key="d4">4.5</data>
+      <data key="d5">1543988580.5</data>
+      <data key="d6">He can also get a 504 (usually much easier/quicker than getting an IEP).  </data>
+      <data key="d7">228.5</data>
+      <data key="d8">4.4765</data>
+      <data key="d9">0.0</data>
+      <data key="d10">69.515</data>
+      <data key="d11">0.0295</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1961</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="184">
+      <data key="d0">5f</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3h3gx</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">4.5</data>
+      <data key="d5">1543989735.5</data>
+      <data key="d6">We have one. It has reasonable accomdations for his diabetes. The school did not consider his iPhone part of the “Continuous Glucose Monitoring System” The nice folks at dexcom sent my wife paperwork stating the iPhone is an integral part. On monday we are going to update his 504 and have the word iPhone added. The people here are really stupid rednecks.</data>
+      <data key="d7">277.0</data>
+      <data key="d8">5.359</data>
+      <data key="d9">0.0126</data>
+      <data key="d10">59.45</data>
+      <data key="d11">-0.0149</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.577</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="185">
+      <data key="d0">6g</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb34ckw</data>
+      <data key="d3">Biondina</data>
+      <data key="d4">-3.5</data>
+      <data key="d5">1543982518.5</data>
+      <data key="d6">*Your post has been removed for the following reason(s):*
+
+**Bad or Illegal Advice**
+
+Your post has been removed for offering poor legal advice.  It is either inapplicable for the jurisdiction under discussion, misunderstands the fundamental legal question, or is advice to commit an illegal act.  Please review the following rules before commenting further:
+
+* [General Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__illegal_advice_is_never_allowed.2C_for_any_reason.2C_in_any_circumstance.)
+
+* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.) and [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
+
+* [Reddit Violent Content Rule](https://www.reddithelp.com/en/categories/rules-reporting/account-and-community-restrictions/do-not-post-violent-content)
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d7">694.5</data>
+      <data key="d8">10.4935</data>
+      <data key="d9">0.0</data>
+      <data key="d10">-3.77</data>
+      <data key="d11">-0.1073</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.5678</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="186">
+      <data key="d0">7h</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3abtc</data>
+      <data key="d3">dtmfadvice</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1543987862.0</data>
+      <data key="d6">Yes! I understand that. The reason I trust him is he rarely is on his phone at home. I know dexcom has a nonphone monitor. </data>
+      <data key="d7">218.0</data>
+      <data key="d8">5.276</data>
+      <data key="d9">0.0</data>
+      <data key="d10">72.97</data>
+      <data key="d11">0.0913</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0709</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="187">
+      <data key="d0">8i</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2x1cg</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">52.0</data>
+      <data key="d5">1543974485.0</data>
+      <data key="d6">I think you would have a very difficult time making a legal case against them. You undoubtedly signed some document saying you agreed with the school's procedures including phone confiscation, and you did not provide them with medical documentation saying he needed his phone.</data>
+      <data key="d7">154.0</data>
+      <data key="d8">5.1485</data>
+      <data key="d9">0.0</data>
+      <data key="d10">79.175</data>
+      <data key="d11">0.024</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.1175</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="188">
+      <data key="d0">9j</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2xbdw</data>
+      <data key="d3">awesomeatony</data>
+      <data key="d4">18.0</data>
+      <data key="d5">1543978114.5</data>
+      <data key="d6">Ye that's pretty much the case unfortunately. I advise arranging a meeting with whoever is in charge of altering his 504 ASAP.</data>
+      <data key="d7">165.0</data>
+      <data key="d8">4.661</data>
+      <data key="d9">0.0</data>
+      <data key="d10">79.885</data>
+      <data key="d11">-0.1073</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.077</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="189">
+      <data key="d0">10k</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3h9yu</data>
+      <data key="d3">dtmfadvice</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1543990899.0</data>
+      <data key="d6">My advice was not legal in nature, so it's reasonable to downvote it I guess. 
+
+The kid should be able to use the device obviously, it's a medical necessity. My wife has t1d and the CGM is absolutely a lifesaver.
+
+ But I can see why a teacher would be suspicious of an app based CGM ... And why it might be easier, next time insurance buys new devices, to just use a different display for the meter.
+
+
+</data>
+      <data key="d7">434.0</data>
+      <data key="d8">5.6615</data>
+      <data key="d9">0.0</data>
+      <data key="d10">67.195</data>
+      <data key="d11">-0.0183</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0506</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="190">
+      <data key="d0">11l</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2x1cg</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">48.0</data>
+      <data key="d5">1543974613.0</data>
+      <data key="d6">What documents would it be in. I would love to see where it shows that. Would his phone be considered part of his “Continuous Glucose Monitoring System” that is in his 540.</data>
+      <data key="d7">136.0</data>
+      <data key="d8">5.0</data>
+      <data key="d9">0.0</data>
+      <data key="d10">77.53</data>
+      <data key="d11">0.0481</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.104</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="191">
+      <data key="d0">12m</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2x7h6</data>
+      <data key="d3">Anonymous</data>
+      <data key="d4">7.0</data>
+      <data key="d5">1543988751.0</data>
+      <data key="d6">[removed]</data>
+      <data key="d7">227.0</data>
+      <data key="d8">5.315</data>
+      <data key="d9">0.0</data>
+      <data key="d10">75.2</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0533</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="192">
+      <data key="d0">13n</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2x7h6</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">7.0</data>
+      <data key="d5">1543988754.0</data>
+      <data key="d6">Yes! I consider it theft. The policy I think was put in place about vapes and other things. Like if they confiscate a vape they cant give it back to the student. Only the parents. So when his phone was confiscated they could only give it to me or my wife?  </data>
+      <data key="d7">257.0</data>
+      <data key="d8">4.975</data>
+      <data key="d9">0.0</data>
+      <data key="d10">80.11</data>
+      <data key="d11">0.0489</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0533</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="193">
+      <data key="d0">14o</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb32mt6</data>
+      <data key="d3">running_sleet</data>
+      <data key="d4">18.0</data>
+      <data key="d5">1543983399.0</data>
+      <data key="d6">It could be the newest G6 dexcom CGM, which requires a bit less calibration. Just had training on it and that was one of the points they brought up with the G6 over the G5.</data>
+      <data key="d7">357.5</data>
+      <data key="d8">5.213</data>
+      <data key="d9">0.0</data>
+      <data key="d10">80.87</data>
+      <data key="d11">-0.0307</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.1238</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="194">
+      <data key="d0">15p</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3jx2s</data>
+      <data key="d3">esk_209</data>
+      <data key="d4">4.0</data>
+      <data key="d5">1543991498.0</data>
+      <data key="d6">Which is why I suggested the 504.  The comment  I responded to brought up the IEP.  Without knowing more, we don’t know if an IEP would be appropriate or not.  This could very well qualify him for an IEP under OHI, but that’s not the point of the OP. 
+</data>
+      <data key="d7">221.0</data>
+      <data key="d8">4.465</data>
+      <data key="d9">0.0</data>
+      <data key="d10">66.03</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1789</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="195">
+      <data key="d0">16q</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3e80a</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1543987273.0</data>
+      <data key="d6">In the past I have checked his screen time. They show it in an app on the iPhone now. Its hardly any. But good idea about the non iphone receiver. In our case it just wasn’t working well. Could have been a faulty unit.</data>
+      <data key="d7">158.0</data>
+      <data key="d8">4.333</data>
+      <data key="d9">0.0</data>
+      <data key="d10">88.43</data>
+      <data key="d11">0.2041</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0879</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="196">
+      <data key="d0">17r</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3kz6k</data>
+      <data key="d3">sgmarshall</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1543992276.0</data>
+      <data key="d6">An educator being uneducated is not a good enough reason for somebody to take on an additional financial burden. The principal is clearly engaging in bullying behavior and needs to be completely shut down.</data>
+      <data key="d7">402.0</data>
+      <data key="d8">5.484</data>
+      <data key="d9">0.0</data>
+      <data key="d10">61.63</data>
+      <data key="d11">0.0263</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0302</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="197">
+      <data key="d0">18s</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2x1cg</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">38.5</data>
+      <data key="d5">1543980730.0</data>
+      <data key="d6">You'd have to pull the 504 and see. That's not a part of the default 504, but you could have made that request. Or, for sure, modify the 504 to have that added verbatim. My wife works with her clients on 504's, she said you'd have to request that to be added.</data>
+      <data key="d7">154.0</data>
+      <data key="d8">5.1485</data>
+      <data key="d9">0.0</data>
+      <data key="d10">73.66</data>
+      <data key="d11">0.0398</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.078</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="198">
+      <data key="d0">19t</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2xbdw</data>
+      <data key="d3">AegonIConqueror</data>
+      <data key="d4">13.0</data>
+      <data key="d5">1543981634.0</data>
+      <data key="d6">Ye that's pretty much the case unfortunately. I advise arranging a meeting with whoever is in charge of altering his 504 ASAP.</data>
+      <data key="d7">126.0</data>
+      <data key="d8">4.636</data>
+      <data key="d9">0.0</data>
+      <data key="d10">84.37</data>
+      <data key="d11">-0.0427</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0389</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="199">
+      <data key="d0">20u</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb32mt6</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">11.5</data>
+      <data key="d5">1543987176.0</data>
+      <data key="d6">Gotcha. I have a Dexcom as well. It requires him to check his blood sugar each time he puts on a new sensor (every 7 days). And then also if/when the connection is lost. Odd that he had to go out and buy one if he is calibrating it regularly. 
+That’s annoying that another parent is complaining about someone else’s kid but also sounds very *high school*. Has your son told administration that that is the only way he can check his blood sugar (even though it’s technically not they likely don’t know that)? He can show them the damn sensor if they really need to. Frustrating situation it sounds like. Sorry </data>
+      <data key="d7">217.5</data>
+      <data key="d8">4.957</data>
+      <data key="d9">0.0</data>
+      <data key="d10">74.545</data>
+      <data key="d11">0.0126</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0823</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="200">
+      <data key="d0">21v</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3dlwd</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1543987926.5</data>
+      <data key="d6">LOL yeah. Personally I would be unable to resist the temptation of the phone. (He says, walking the dog and looking at his phone instead of where he's going).</data>
+      <data key="d7">141.0</data>
+      <data key="d8">4.303</data>
+      <data key="d9">0.0</data>
+      <data key="d10">90.275</data>
+      <data key="d11">0.1652</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0466</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="201">
+      <data key="d0">22w</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2x1cg</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">48.0</data>
+      <data key="d5">1543978598.0</data>
+      <data key="d6">What documents would it be in. I would love to see where it shows that. Would his phone be considered part of his “Continuous Glucose Monitoring System” that is in his 540.</data>
+      <data key="d7">136.0</data>
+      <data key="d8">5.297</data>
+      <data key="d9">0.0</data>
+      <data key="d10">69.79</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.104</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="202">
+      <data key="d0">23x</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2xihm</data>
+      <data key="d3">Anonymous</data>
+      <data key="d4">5.0</data>
+      <data key="d5">1543986586.0</data>
+      <data key="d6">[removed]</data>
+      <data key="d7">133.0</data>
+      <data key="d8">5.586</data>
+      <data key="d9">0.0</data>
+      <data key="d10">56.93</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0431</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="203">
+      <data key="d0">24y</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3duaa</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">9.0</data>
+      <data key="d5">1543991576.0</data>
+      <data key="d6">Yes! I consider it theft. The policy I think was put in place about vapes and other things. Like if they confiscate a vape they cant give it back to the student. Only the parents. So when his phone was confiscated they could only give it to me or my wife?  </data>
+      <data key="d7">313.0</data>
+      <data key="d8">5.359</data>
+      <data key="d9">0.0</data>
+      <data key="d10">65.93</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1008</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="204">
+      <data key="d0">25z</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2xeax</data>
+      <data key="d3">Shanisasha</data>
+      <data key="d4">76.0</data>
+      <data key="d5">1543974613.0</data>
+      <data key="d6">Modify it to say “cgm and associated receiver devices including and not limited to smart phone containing transmitting information”</data>
       <data key="d7">131.0</data>
-      <data key="d8">4.444</data>
+      <data key="d8">5.947</data>
       <data key="d9">0.0</data>
-      <data key="d10">83.96</data>
-      <data key="d11">0.1204</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.088</data>
+      <data key="d10">49.15</data>
+      <data key="d11">-0.0217</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.131</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="426">
-      <data key="d0">61j</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb03rdh</data>
+    <node id="205">
+      <data key="d0">26a</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2y575</data>
+      <data key="d3">awesomeatony</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1543986586.0</data>
+      <data key="d6">[removed]</data>
+      <data key="d7">166.0</data>
+      <data key="d8">5.278</data>
+      <data key="d9">0.0</data>
+      <data key="d10">63.86</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0297</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="206">
+      <data key="d0">27b</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2y575</data>
+      <data key="d3">awesomeatony</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1543986356.0</data>
+      <data key="d6">We’ve tried being sweet. The superintendent is 76 and has hearing loss and the principal is his nephew. Constantly chewing dip. Its really disgusting. Absolute stereotypical souther drawl as well. </data>
+      <data key="d7">166.0</data>
+      <data key="d8">5.154</data>
+      <data key="d9">0.0</data>
+      <data key="d10">66.03</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0247</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="207">
+      <data key="d0">28c</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3cwii</data>
+      <data key="d3">csr28</data>
+      <data key="d4">7.5</data>
+      <data key="d5">1543988042.5</data>
+      <data key="d6">It is the G6. All I know is he rarely has to calibrate it. As long as his A1C is fine, I usually stay out of it. </data>
+      <data key="d7">191.0</data>
+      <data key="d8">4.957</data>
+      <data key="d9">0.0</data>
+      <data key="d10">74.545</data>
+      <data key="d11">0.0337</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0372</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="208">
+      <data key="d0">29d</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3f0bu</data>
+      <data key="d3">dtmfadvice</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1543987991.0</data>
+      <data key="d6">I've heard complaints about the latest ones, so... If the phone based one works that is a very good reason to keep using it.</data>
+      <data key="d7">158.0</data>
+      <data key="d8">4.333</data>
+      <data key="d9">0.0</data>
+      <data key="d10">92.12</data>
+      <data key="d11">0.1263</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0265</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="209">
+      <data key="d0">30e</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3bs6j</data>
       <data key="d3">Anonymous</data>
       <data key="d4">4.5</data>
-      <data key="d5">1543879288.5</data>
+      <data key="d5">1543986149.0</data>
       <data key="d6">[removed]</data>
       <data key="d7">9.0</data>
       <data key="d8">7.0</data>
@@ -1425,382 +596,235 @@ Longer version: If they were a private employer, the EPPA probably would prevent
       <data key="d10">36.62</data>
       <data key="d11">0.0</data>
       <data key="d12">Neutral</data>
-      <data key="d13">0.0678</data>
+      <data key="d13">1.0</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="427">
-      <data key="d0">62k</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04ix8</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">0.0</data>
-      <data key="d5">1543879301.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
+    <node id="210">
+      <data key="d0">31f</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2y575</data>
+      <data key="d3">awesomeatony</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1543986471.0</data>
+      <data key="d6">Legally in Alabama there is no tobacco on school grounds or any school sponsored event. 
+
+Also, ask the principal where he got his medical degree since he is providing medical advice about no sugar.  A lawyer letter should clear this up.</data>
+      <data key="d7">166.0</data>
+      <data key="d8">4.99</data>
       <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
+      <data key="d10">67.91</data>
+      <data key="d11">0.0372</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0272</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="211">
+      <data key="d0">32g</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3duaa</data>
+      <data key="d3">WhatIsTheMeaningOfPi</data>
+      <data key="d4">5.5</data>
+      <data key="d5">1543991999.0</data>
+      <data key="d6">When i was in high school cell phones were really starting to get a lot more popular and when the school started taking them for more than until the end of the day parents would get furious. I remember at least 1 bringing the school the phone bill saying, 'well if yall are going to keep the phone yall can pay the phone bill'. I dont know if that ever came to fruition but really whenever an angry parent came in, the school would just give it back. is it worth the fight.
+
+Oh and people (girls especially) would be super hesitant to give up their phones because they were afraid the admins would look through them for shit. </data>
+      <data key="d7">344.5</data>
+      <data key="d8">5.4115</data>
+      <data key="d9">0.0</data>
+      <data key="d10">68.91</data>
+      <data key="d11">0.0682</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1314</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="212">
+      <data key="d0">33h</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3cwii</data>
+      <data key="d3">ChaoticSquirrel</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1543989599.0</data>
+      <data key="d6">Good for you for raising such an independent young adult! Many teens have a lot of trouble adapting to being in control of their sugars. You're obviously doing something right if he's this good at managing things at his age. </data>
+      <data key="d7">172.0</data>
+      <data key="d8">4.914</data>
+      <data key="d9">0.0</data>
+      <data key="d10">74.9</data>
+      <data key="d11">0.0674</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0329</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="213">
+      <data key="d0">34i</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3f6me</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1543988179.5</data>
+      <data key="d6">Yes! Im glad we were not the only ones with problems with it. </data>
+      <data key="d7">152.5</data>
+      <data key="d8">4.2315</data>
+      <data key="d9">0.0</data>
+      <data key="d10">92.63</data>
+      <data key="d11">0.1088</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0132</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="214">
+      <data key="d0">35j</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2y575</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1543986586.0</data>
+      <data key="d6">He chews his dip in his office according to students and my childrens friends. I personally have seen him chew it in the parking lot. Its disgusting to me personally.</data>
+      <data key="d7">166.0</data>
+      <data key="d8">5.154</data>
+      <data key="d9">0.0</data>
+      <data key="d10">66.03</data>
+      <data key="d11">-0.0167</data>
       <data key="d12">Neutral</data>
-      <data key="d13">0.1357</data>
+      <data key="d13">0.0297</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="428">
-      <data key="d0">63l</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb04ljs</data>
-      <data key="d3">beentheredonethatx2</data>
-      <data key="d4">30.0</data>
-      <data key="d5">1543882082.0</data>
-      <data key="d6">I did not file a legal report but it is in an email I sent to my apartment office. I got informed that I should have contacted the police about a week after the worst incident and now I wonder if its too late to do so.</data>
-      <data key="d7">250.0</data>
-      <data key="d8">5.3685</data>
+    <node id="215">
+      <data key="d0">36k</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2y575</data>
+      <data key="d3">awesomeatony</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1543986586.0</data>
+      <data key="d6">Yeah, now that I know more I agree lol. If both the superintendant and principal are being stupid and ignoring you, I'd say its safe to stop worrying about being nice</data>
+      <data key="d7">166.0</data>
+      <data key="d8">4.826</data>
       <data key="d9">0.0</data>
-      <data key="d10">66.15</data>
-      <data key="d11">-0.1443</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.1205</data>
+      <data key="d10">63.86</data>
+      <data key="d11">0.0911</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0247</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="429">
-      <data key="d0">64m</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb0ak8v</data>
-      <data key="d3">AnnaLemma</data>
-      <data key="d4">5.0</data>
-      <data key="d5">1543884468.0</data>
-      <data key="d6">Someone please correct me if I'm wrong, but afaik service animals are *also* not exempt from the repercussions for unwarranted aggressive behavior. They receive training to prevent it, but that's a separate issue.</data>
-      <data key="d7">185.0</data>
-      <data key="d8">5.406</data>
+    <node id="216">
+      <data key="d0">37l</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3fowr</data>
+      <data key="d3">dtmfadvice</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1543988368.0</data>
+      <data key="d6">Yeah, my wife had the dexcom G5 and it just loses signal for no reason sometimes! Incredibly frustrating. And while she is not brittle and can handle it, it could be very dangerous!</data>
+      <data key="d7">124.0</data>
+      <data key="d8">4.13</data>
       <data key="d9">0.0</data>
-      <data key="d10">69.38</data>
-      <data key="d11">-0.084</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0342</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="430">
-      <data key="d0">65n</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb07mux</data>
-      <data key="d3">tobymustdie</data>
-      <data key="d4">13.0</data>
-      <data key="d5">1543883139.0</data>
-      <data key="d6">Its worse then that. He is aggressive immediately every time they see each other. We could never ride in the same elevator. But the issue is that we live on the same floor, and with letting our dog out four times a day that means there are eight occasions in a day where the elevator doors can open and they will be right there waiting for it and he just immediately lunges in for the attack. </data>
-      <data key="d7">354.0</data>
-      <data key="d8">5.673</data>
-      <data key="d9">0.0</data>
-      <data key="d10">77.57</data>
-      <data key="d11">-0.1531</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.2029</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="431">
-      <data key="d0">66o</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb04hgu</data>
-      <data key="d3">beentheredonethatx2</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543880834.0</data>
-      <data key="d6">For other breeds of dog this might be a good plan.  For a GSD, however this might cause additional aggression.  There is a reason police departments pick this breed.
-
-</data>
-      <data key="d7">67.0</data>
-      <data key="d8">5.696</data>
-      <data key="d9">0.0</data>
-      <data key="d10">70.09</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="432">
-      <data key="d0">67p</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb09gvo</data>
-      <data key="d3">ilikecheeseforreal</data>
-      <data key="d4">7.0</data>
-      <data key="d5">1543883902.0</data>
-      <data key="d6">Any registry claiming to be for "support animals" is a scam.</data>
-      <data key="d7">350.0</data>
-      <data key="d8">5.708</data>
-      <data key="d9">0.0</data>
-      <data key="d10">68.77</data>
-      <data key="d11">0.0298</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.2545</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="433">
-      <data key="d0">68q</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb0945e</data>
-      <data key="d3">profginger</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543884690.0</data>
-      <data key="d6">Dogs are not automatically put down if they bite a person, first of all. 
-
-Second, I highly doubt there are any service dogs that are trained to bite other people or dogs to protect their owner. Part of their training is usually/partly to alert other people to get help, and biting them would kind of defeat the purpose.</data>
-      <data key="d7">320.0</data>
-      <data key="d8">5.644</data>
-      <data key="d9">0.0</data>
-      <data key="d10">68.81</data>
-      <data key="d11">-0.0051</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.3885</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="434">
-      <data key="d0">69r</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb09c70</data>
-      <data key="d3">spoutrage</data>
-      <data key="d4">-5.5</data>
-      <data key="d5">1543884567.0</data>
-      <data key="d6">I agree with the reporting and with notifying the landlord, but I don't agree with moving.  In this case, it seems that the owners are aware of the problem but don't care enough to solve it.
-
-For example, we know they are aware that a muzzle is a solution to the problem, but have opted not to use one.
-
-I don't agree that OP should move.  The dog's right to be violent is not greater than OP's right to security.  If the dog's owners won't manage it, they need to have someone else properly train it (rarely works with bad owners), stop leaving their apartment, move somewhere else, forfeit the dog, or have the dog put down.</data>
-      <data key="d7">490.0</data>
-      <data key="d8">6.052</data>
-      <data key="d9">0.0</data>
-      <data key="d10">78.16</data>
-      <data key="d11">-0.1316</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.5897</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="435">
-      <data key="d0">70s</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb085c9</data>
-      <data key="d3">exadrid</data>
-      <data key="d4">20.0</data>
-      <data key="d5">1543882237.0</data>
-      <data key="d6">Btw you would not be dead in a week from rabies:
-&gt;The incubation period — the period of time between exposure to a disease and the onset of clinical signs — for rabies can vary greatly. The typical incubation period is three to eight weeks, but it can be as little as nine days or as long as several years in some rare cases. The incubation period depends on several factors, including the location of the entry wound, the severity of the wound and the animal’s immune system. In general, the farther the wound is from the brain, the longer the incubation period will be.
-</data>
-      <data key="d7">282.0</data>
-      <data key="d8">5.023</data>
-      <data key="d9">0.0</data>
-      <data key="d10">73.0</data>
-      <data key="d11">-0.1297</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0812</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="436">
-      <data key="d0">71t</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb0bajz</data>
-      <data key="d3">AnnaLemma</data>
-      <data key="d4">4.0</data>
-      <data key="d5">1543884684.0</data>
-      <data key="d6">Oh yeah, absolutely. My point was just that *even if it were an actual service dog* rather than an ESA, there would *still* be repercussions  for the type of behavior that OP described.</data>
-      <data key="d7">185.0</data>
-      <data key="d8">5.406</data>
-      <data key="d9">0.0</data>
-      <data key="d10">46.27</data>
-      <data key="d11">0.0</data>
+      <data key="d10">92.12</data>
+      <data key="d11">0.1263</data>
       <data key="d12">Positive</data>
       <data key="d13">0.0</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="437">
-      <data key="d0">72u</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb0clwp</data>
-      <data key="d3">cynical_bunny_</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543885670.0</data>
-      <data key="d6">Pepper spray in an elevator seems like a terrible idea.  </data>
-      <data key="d7">244.0</data>
+    <node id="217">
+      <data key="d0">38m</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2xeax</data>
+      <data key="d3">Shanisasha</data>
+      <data key="d4">52.5</data>
+      <data key="d5">1543976605.5</data>
+      <data key="d6">Modify it to say “cgm and associated receiver devices including and not limited to smart phone containing transmitting information”</data>
+      <data key="d7">116.5</data>
+      <data key="d8">5.4735</data>
+      <data key="d9">0.0</data>
+      <data key="d10">32.395</data>
+      <data key="d11">-0.0756</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.1846</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="218">
+      <data key="d0">39n</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3igzs</data>
+      <data key="d3">Biondina</data>
+      <data key="d4">1.5</data>
+      <data key="d5">1543990512.5</data>
+      <data key="d6">*Your post has been removed for the following reason(s):*
+
+If you know it's off-topic *DON'T POST IT*.
+
+
+
+*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
+
+*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
+      <data key="d7">252.5</data>
+      <data key="d8">7.25</data>
+      <data key="d9">0.0</data>
+      <data key="d10">37.57</data>
+      <data key="d11">-0.0421</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.5552</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="219">
+      <data key="d0">40o</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2y575</data>
+      <data key="d3">awesomeatony</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1543986586.0</data>
+      <data key="d6">We’ve tried being sweet. The superintendent is 76 and has hearing loss and the principal is his nephew. Constantly chewing dip. Its really disgusting. Absolute stereotypical souther drawl as well. </data>
+      <data key="d7">166.0</data>
+      <data key="d8">5.154</data>
+      <data key="d9">0.0</data>
+      <data key="d10">66.03</data>
+      <data key="d11">0.0386</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0247</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="220">
+      <data key="d0">41p</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb2y575</data>
+      <data key="d3">1DiabetesThrowaway</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1543986733.5</data>
+      <data key="d6">He chews his dip in his office according to students and my childrens friends. I personally have seen him chew it in the parking lot. Its disgusting to me personally.</data>
+      <data key="d7">166.0</data>
       <data key="d8">5.216</data>
       <data key="d9">0.0</data>
-      <data key="d10">72.46</data>
-      <data key="d11">-0.1531</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.2029</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="438">
-      <data key="d0">73v</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb051py</data>
-      <data key="d3">Bobmcgee</data>
-      <data key="d4">14.0</data>
-      <data key="d5">1543879840.5</data>
-      <data key="d6">I'd love to see a citation to a state where the results of a polygraph are admissible to prove guilt at trial, so that I may laugh at that state.</data>
-      <data key="d7">83.0</data>
-      <data key="d8">4.4565</data>
-      <data key="d9">0.0</data>
-      <data key="d10">71.145</data>
-      <data key="d11">0.3942</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.119</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="439">
-      <data key="d0">74w</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb053qe</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">2.5</data>
-      <data key="d5">1543879847.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-I laughed.  It was funny.  It was also off topic.  Take further questions about the removal to modmail.
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">282.5</data>
-      <data key="d8">7.155</data>
-      <data key="d9">0.0</data>
-      <data key="d10">40.31</data>
-      <data key="d11">0.0299</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.1741</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="440">
-      <data key="d0">75x</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb07i8m</data>
-      <data key="d3">Cypher_Blue</data>
-      <data key="d4">1.5</data>
-      <data key="d5">1543881783.0</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Complaint about Comment or Action**
-
-Your post has been removed.  If you have a question or comment about moderation, send a message to the moderators as outlined below.  If you see a comment that is objectionable, use the report button to call it to moderator attention.  Please review the following rules before commenting further
-
-* [General Rules 6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__if_you_see_a_post_or_comment_that_violates_the_rules.2C_please_use_the_.22report.22_button_and_leave_a_reason_for_your_report.__this_is_the_fastest_way_of_getting_the_attention_of_the_moderators.) and [7](https://www.reddit.com/r/legaladvice/wiki/index#wiki_7.__do_not_argue_with_moderator_decisions_in_the_comments.__if_you_believe_an_error_has_been_made.2C_or_you_would_like_to_discuss_further.2C_send_the_moderators_modmail.28not_personal_mail.29)
-
-
-You did, in fact, break one or more of those rules.  Further questions go to modmail.  Further argument here results in a ban.
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">727.0</data>
-      <data key="d8">10.0115</data>
-      <data key="d9">0.0</data>
-      <data key="d10">13.25</data>
-      <data key="d11">-0.0377</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.1332</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="441">
-      <data key="d0">76y</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb04shj</data>
-      <data key="d3">WizardofAss95</data>
-      <data key="d4">-8.0</data>
-      <data key="d5">1543880353.0</data>
-      <data key="d6">Now that you mention it, I probably still have a couple of my ex girlfriends nudes from high school. I really need to get around to deleting them one of these days. I just never did bothered because I have thousands of pictures</data>
-      <data key="d7">1182.5</data>
-      <data key="d8">6.45</data>
-      <data key="d9">0.0068</data>
-      <data key="d10">77.095</data>
-      <data key="d11">0.0392</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0809</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="442">
-      <data key="d0">77z</data>
-      <data key="d1">a2m9gr</data>
-      <data key="d2">eb0209o</data>
-      <data key="d3">Kippingthroughlife</data>
-      <data key="d4">4.0</data>
-      <data key="d5">1543877300.5</data>
-      <data key="d6">They should get in trouble for having it regardless of how old they are but I would hope that as an adult they would be more likely to realize that possessing child pornography is wrong.</data>
-      <data key="d7">208.0</data>
-      <data key="d8">4.976</data>
-      <data key="d9">0.0</data>
-      <data key="d10">72.14</data>
-      <data key="d11">-0.1716</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0413</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="443">
-      <data key="d0">78a</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb0ak8v</data>
-      <data key="d3">AnnaLemma</data>
-      <data key="d4">4.5</data>
-      <data key="d5">1543884576.0</data>
-      <data key="d6">Someone please correct me if I'm wrong, but afaik service animals are *also* not exempt from the repercussions for unwarranted aggressive behavior. They receive training to prevent it, but that's a separate issue.</data>
-      <data key="d7">183.0</data>
-      <data key="d8">5.703</data>
-      <data key="d9">0.0</data>
-      <data key="d10">70.26</data>
-      <data key="d11">-0.042</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0171</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="444">
-      <data key="d0">79b</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb0bajz</data>
-      <data key="d3">AnnaLemma</data>
-      <data key="d4">2.5</data>
-      <data key="d5">1543884738.0</data>
-      <data key="d6">Oh yeah, absolutely. My point was just that *even if it were an actual service dog* rather than an ESA, there would *still* be repercussions  for the type of behavior that OP described.</data>
-      <data key="d7">97.0</data>
-      <data key="d8">5.703</data>
-      <data key="d9">0.0</data>
-      <data key="d10">58.96</data>
-      <data key="d11">0.0</data>
+      <data key="d10">64.945</data>
+      <data key="d11">0.011</data>
       <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
+      <data key="d13">0.0272</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="445">
-      <data key="d0">80c</data>
-      <data key="d1">a2pi65</data>
-      <data key="d2">eb0bfhx</data>
-      <data key="d3">AbShpongled</data>
-      <data key="d4">1.0</data>
-      <data key="d5">1543884792.0</data>
-      <data key="d6">Gotcha</data>
-      <data key="d7">9.0</data>
-      <data key="d8">6.0</data>
+    <node id="221">
+      <data key="d0">42q</data>
+      <data key="d1">a32pfp</data>
+      <data key="d2">eb3dp61</data>
+      <data key="d3">pgh9fan</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1543986881.0</data>
+      <data key="d6">You might want to show him [this.](http://www.adph.org/tpts/assets/sampleschoolpolicy.pdf)</data>
+      <data key="d7">166.0</data>
+      <data key="d8">5.278</data>
       <data key="d9">0.0</data>
-      <data key="d10">71.65</data>
-      <data key="d11">0.0</data>
+      <data key="d10">66.03</data>
+      <data key="d11">-0.0167</data>
       <data key="d12">Neutral</data>
-      <data key="d13">0.0</data>
+      <data key="d13">0.0431</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>

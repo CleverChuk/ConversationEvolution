@@ -6,32 +6,47 @@ from csv import DictWriter
 import os
 from mapper_functions import getProperties
 
-def writeEdgeHeaderFile(filename, hasType = True, edgeProperties = [], values = []):
+"""
+@param 
+    :type
+    :description:
+"""
+def writeEdgeHeaderFile(filename, has_type = True, edge_properties = [], values = []):
     """
-        writes Neo4j relationship header plus the given
-        edge properties to the given filename
+        writes Neo4j relationship header to file
         creates file if it does not exist otherwise overwrite
 
-        :type filename : str
-        :type edgeProperties: list, edge properties
-        :type hasType : boolean, say if the relationship is specified
-        :type values: list, used to determine the data type of each edge property
+        @param filename
+            :type string
+            :description: the name of the file or file path
+
+        @param has_type
+            :type boolean
+            :description: say if the relationship is specified
+
+        @param edge_properties
+            :type list
+            :description: a list of edge properties
+
+        @param values
+            :type list
+            :description: used to determine the data type of each edge property
     """
-    header_1 = [":START_ID"] + edgeProperties
+    header_1 = [":START_ID"] + edge_properties
     header_1.append(":END_ID")
     
 
     # add data type to header
-    # for i in range(len(edgeProperties)):
+    # for i in range(len(edge_properties)):
     #     s = "".join(list(str(type(values[i])))[8:][:-2])
-    #     edgeProperties[i] = edgeProperties[i] + ":" + s.upper()
+    #     edge_properties[i] = edge_properties[i] + ":" + s.upper()
 
 
-    header = [":START_ID"] + edgeProperties
+    header = [":START_ID"] + edge_properties
     header.append(":END_ID")
     
     # check if the edge has a type label
-    if hasType:
+    if has_type:
         header.append(":TYPE")
         header_1.append(":TYPE")
 
@@ -53,10 +68,21 @@ def writeEdgesToFile(filename, data, rel = None, directed = False):
         Neo4j understands to the given filename
         creates file if it does not exist otherwise overwrite
 
-        :type filename : str
-        :type data: list of edges, 
-        :type rel: str, relationship type
-        :type directed: boolean, specifies whether the edges are directed or not
+        @param filename
+            :type string
+            :description: the name of the file or file path
+
+        @param data
+            :type list
+            :description: list of edges, 
+
+        @param rel
+            :type string
+            :description: relationship type
+
+        @param directed
+            :type boolean
+            :description: specifies whether the edges are directed or not
     """
     if not isinstance(data, list):
         raise TypeError("data must be a list of edges")
@@ -76,9 +102,9 @@ def writeEdgesToFile(filename, data, rel = None, directed = False):
             if prop[i] == 'type':
                 prop.pop(i)
                 break
-        header = writeEdgeHeaderFile(filename, edgeProperties = prop, values= values)
+        header = writeEdgeHeaderFile(filename, edge_properties = prop, values= values)
     else:
-        header = writeEdgeHeaderFile(filename, hasType = rel != None)
+        header = writeEdgeHeaderFile(filename, has_type = rel != None)
 
     with open(filename, "w", newline='') as fp:
         dictWriter = DictWriter(fp,header)
@@ -114,8 +140,17 @@ def writeNodeHeaderFile(filename, header, values):
         writes header to the given filename
         creates file if it does not exist otherwise overwrite
 
-        :type filename : str
-        :type header: list
+        @param filename
+            :type string
+            :description: filename of file path
+
+        @param header
+            :type list
+            :description: list of node attributes
+
+        @param values
+            :type list
+            :description: list of node attribute values used to determine their data type
     """
     h = header[:-2] # remove the type and id_0 column
 
@@ -156,9 +191,13 @@ def writeNodesToCsv(filename, data):
         writes header plus the given nodes data
         to the given filename.
 
-        :type filename : str
-        :type header: list
-        :type data : list
+        @param filename
+            :type string
+            :description: filename or file path
+
+        @param data 
+            :type list
+            :description: list of nodes
     """
     temp = "./raw/temp.csv"
     header = getProperties(data[0])
@@ -177,16 +216,21 @@ def writeNodesToCsv(filename, data):
     
     cleanCsv(temp,filename)
 
-def cleanCsv(i_stream, o_stream):
+def cleanCsv(input_fname, out_fname):
     """
         removes uunneeded headers and empty column
         from the csv.
 
-        :type i_stream : str -> file to clean
-        :type o_stream: str -> file to save output
+        @param input_fname
+            :type string
+            :description: name of file to clean
+
+        @param out_fname
+            :type string
+            :description: name of file to save output
     """
-    with open(i_stream,"r") as fp:
-        with open(o_stream,"w") as fp2:
+    with open(input_fname,"r") as fp:
+        with open(out_fname,"w") as fp2:
             lines = fp.readlines()
         
             for line in lines:
@@ -204,7 +248,7 @@ def cleanCsv(i_stream, o_stream):
                 fp2.write(line)
     
     try:
-        os.remove(i_stream)
+        os.remove(input_fname)
     except:
         pass
 

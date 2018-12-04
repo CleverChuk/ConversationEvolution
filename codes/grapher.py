@@ -1,62 +1,96 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Class use to generate a graph from pulled data
-import networkx as nx
-from analyzers import CommentMetaAnalysis
+from networkx import (Graph, DiGraph, read_graphml)
+from analyzers import CommentAnalysis
 from textsim import cosine_sim
 from models import CommentNode, AuthorNode, Node, ArticleNode, SentimentNode
 from base import RedditBot
-import mapper_functions as mp
-import graph_writer as rd
+from mapper_functions import cluster_on_numeric_property
 
 
 def load_graph(filepath, type):
     """
-        :type filepath: str
+        loads graph from a .graphml file
+
+        @param subreddit
+            :type string
+            :description: filepath
+
+        @param subreddit
+            :type class
+            :description: class that specify the node model
+
         :rtype Graph
     """
-    return nx.read_graphml(filepath, node_type = type)
+    return read_graphml(filepath, node_type = type)
 
 
 class GraphBot(RedditBot):
     """
-        builds graph
+        A subclass of RedditBot that can be used to build mapper graph
     """
 
-    @property
-    def main_graph(self):
-        if self._main_graph == None:
-            raise Exception("You have to call getGraph(*ids) first")
+    def __init__(self, subreddit, username = "CleverChuk", password = "BwO9pJdzGaVj2pyhZ4kJ" , prop = "sentimentScore", epsilon = 0.5, intervals = 3):
+        """
+        Builds the GraphBot objects using default or provided configuration
 
-        return self.main_graph
+        @param subreddit
+            :type string
+            :description: the name of the subreddit to get data from
+      
+        @param username
+            :type string
+            :description: Reddit username
+        
+        @param password
+            :type string
+            :description: Reddit password
 
-    @property
-    def comment_graph(self):
-        if self._main_graph == None:
-            raise Exception("You have to call getGraph(*ids) first")
+        @param prop
+            :type string
+            :description: the comment property used to build the mapper graph
 
-        return self._comment_graph
+        @param intervals
+            :type int
+            :description: the number intervals used for the mapper graph
 
-    @main_graph.setter
-    def main_graph(self, value):
-        self._main_graph = value
-
-    @comment_graph.setter
-    def comment_graph(self, value):
-        self._comment_graph = value
-
-    def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
-        self._ids = None
+        @param epsilon
+            :type float
+            :description: how much to shift the prop to create overlap
+        """
         super().__init__(subreddit, username, password)
+        self.prop = prop
+        self.epsilon = epsilon
+        self.intervals = intervals
 
-        self._main_graph = None
-        self._comment_graph = None
+        self.article_comment_edges = []  # article/comment edge
+        self.comment_comment_edges = []  # undirected comment/comment edges
+        self.sentiment_comment_edges = []  # sentiment/comment edges
+        self.author_comment_edges = []  # author/comment edges
+
+        self.nodes = []
+        self.comment_nodes = []
+        self.article_nodes = []
+        self.sentiment_nodes= []
+        self.author_nodes = []
 
     def isRemoved(self, comment):
+        """
+            filters a comment from being added to the graph if it has be removed
+
+            @param comment
+                :type CommentNode
+                :description: comment node object
+        """
         return comment.body == "[removed]" or "*Your post has been removed for the following reason(s):*" in comment.body
 
     def stream(self, subreddit):
         """
             streams graphs from the given subreddit 
+
+            @param: subreddit
+                    :type string
+                    :description: subreddit name
         """
         stream = self.reddit.subreddit(subreddit).stream
         for submission in stream.submissions():
@@ -65,137 +99,97 @@ class GraphBot(RedditBot):
     def getGraph(self, *ids):
         """"
             builds graph from article with submission id
+
+            @param *ids: 
+                :type list
+                description: list of submission ids in the subreddit
+            
+            :rtype Graph
         """
-        self._ids = ids  # save the ids for future queries
+        self.ids = ids  # save the ids for future queries
         sentiment = {"Positive": SentimentNode("Positive"), "Negative": SentimentNode(
             "Negative"), "Neutral": SentimentNode("Neutral")}
-        articleCommentEdges = []  # article/comment edge
-        commentCommentEdges = []  # undirected comment/comment edges
 
-        sentimentCommentEdges = []  # sentiment/comment edges
-        authorCommentEdges = []  # author/comment edges
-        nodes = []
-        comment_data = []
-        article_data = []
-        sentiment_data = []
-        author_data = []
 
 
         # create a digraph for comment/comment edges
-        diGraph = nx.DiGraph()
+        diGraph = DiGraph()
         # create a graph object
-        graph = nx.Graph()
+        graph = Graph()
 
         # add the sentiment nodes to the node list
         for _, v in sentiment.items():
-            sentiment_data.append(v)
-            nodes.append((v, v.__dict__))
+            self.sentiment_nodes.append(v)
+            self.nodes.append((v, v.__dict__))
 
         for id in ids:
             try:
                 submission = self.get_submission(id)
                 submission.comments.replace_more(limit=None)
-                articleNode = ArticleNode(submission)
+                article_node = ArticleNode(submission)
 
-                nodes.append((articleNode, articleNode.__dict__))
-                article_data.append(articleNode)
+                self.nodes.append((article_node, article_node.__dict__))
+                self.article_nodes.append(article_node)
 
                 # populate article/comment edge list
                 for comment in submission.comments.list():
-                    commentNode = CommentNode(articleNode.id, comment, CommentMetaAnalysis(comment))
-                    articleCommentEdges.append((commentNode, articleNode, {"type": "_IN"}))
-                    authorNode = AuthorNode(commentNode.author)
+                    comment_node = CommentNode(article_node.id, comment, CommentAnalysis(comment))
+                    author_node = AuthorNode(comment_node.author)
+                    self.article_comment_edges.append((comment_node, article_node, {"type": "_IN"}))
 
-                    authorCommentEdges.append((authorNode, commentNode, {"type": "WROTE"}))
-                    nodes.append((authorNode, authorNode.__dict__))
-                    nodes.append((commentNode, commentNode.__dict__))
+                    self.author_comment_edges.append((author_node, comment_node, {"type": "WROTE"}))
+                    self.nodes.append((author_node, author_node.__dict__))
+                    self.nodes.append((comment_node, comment_node.__dict__))
                     
-                    author_data.append(authorNode)
-                    comment_data.append(commentNode)
-                    diGraph.add_nodes_from([(commentNode, commentNode.__dict__)])
+                    self.author_nodes.append(author_node)
+                    self.comment_nodes.append(comment_node)
+                    diGraph.add_nodes_from([(comment_node, comment_node.__dict__)])
 
                 
             except Exception as pe:
                 print(pe)
 
         # populate sentiment/comment  and comment/comment edge list
-        for p_comment, *_ in articleCommentEdges:
-            sentimentCommentEdges.append((sentiment[p_comment.sentiment], p_comment, 
+        for p_comment, *_ in self.article_comment_edges:
+            self.sentiment_comment_edges.append((sentiment[p_comment.sentiment], p_comment, 
             {"type": "_IS","score": p_comment.sentimentScore}))
 
-            for c_comment, *_ in articleCommentEdges:
+            for c_comment, *_ in self.article_comment_edges:
                 if c_comment.parent_id == p_comment.id:
                     # nx does not support numpy float
                     c_comment.similarity = round(float(cosine_sim(p_comment.body, c_comment.body)), 4)
-                    commentCommentEdges.append((c_comment, p_comment, {"type": "REPLY_TO", "similarity": c_comment.similarity}))
+                    self.comment_comment_edges.append((c_comment, p_comment, {"type": "REPLY_TO", "similarity": c_comment.similarity}))
 
-        # add nodes for subgraph
+        # add nodes for mapper graph
         _nodes = []
-        for cc, pc, *_ in commentCommentEdges:
+        for cc, pc, *_ in self.comment_comment_edges:
             _nodes.append(cc)
             _nodes.append(pc)
+
         _nodes = list(set(_nodes)) #remove duplicates
 
-        diGraph.add_edges_from(commentCommentEdges)
-        graph.add_edges_from(authorCommentEdges)
-        graph.add_edges_from(commentCommentEdges)
+        # build a digraph from data
+        diGraph.add_edges_from(self.comment_comment_edges)
 
-        graph.add_edges_from(articleCommentEdges)
-        graph.add_edges_from(sentimentCommentEdges)
-        graph.add_nodes_from(nodes)
+        # build an  undirected graph from data
+        graph.add_edges_from(self.author_comment_edges)
+        graph.add_edges_from(self.comment_comment_edges)
+        graph.add_edges_from(self.article_comment_edges)
+
+        graph.add_edges_from(self.sentiment_comment_edges)
+        graph.add_nodes_from(self.nodes)
 
         # full graphs
-        self._comment_graph = diGraph
-        self._main_graph = graph
+        self.comment_graph = diGraph
+        self.main_graph = graph
 
-        # high level graphs
-        self.group_graph, proximate_edges =  mp.clusterOnNumericProperty(0.50,
-         commentCommentEdges,prop="sentimentScore", num_internals = 3)
-        proximate_nodes =  list(self.group_graph.nodes())
+        # mapper graph
+        self.mapper_graph, self.mapper_edges =  cluster_on_numeric_property(self.comment_comment_edges, self.epsilon,
+         prop = self.prop, num_interval = 3)
+        self.mapper_nodes =  list(self.mapper_graph.nodes())
         
-
-
-        # write nodes to csv
-        f = "./raw/proxi_comment_data.csv"
-        rd.writeNodesToCsv(f, proximate_nodes)
-
-        f = "./raw/proxi_comment_edge_data.csv"
-        rd.writeEdgesToFile(f, proximate_edges, rel="INTERSECT")
-
-        f = "./raw/comment_data.csv"
-        rd.writeNodesToCsv(f, comment_data)
-
-        f = "./raw/article_data.csv"
-        rd.writeNodesToCsv(f, article_data)
-        
-        f = "./raw/sentiment_data.csv"
-        rd.writeNodesToCsv(f, sentiment_data)
-            
-        f = "./raw/author_data.csv"
-        rd.writeNodesToCsv(f, author_data)
-
-        rd.writeEdgesToFile("./raw/comment_edge_data.csv", commentCommentEdges, directed = True)
-        rd.writeEdgesToFile("./raw/article_comment_edge_data.csv", articleCommentEdges, directed = True)
-        rd.writeEdgesToFile("./raw/sentiment_comment_edge_data.csv", sentimentCommentEdges, directed = True)
-        rd.writeEdgesToFile("./raw/author_comment_edge_data.csv", authorCommentEdges, directed = True)
-
         return graph
 
-if __name__ == "__main__":
-    import matplotlib.pyplot as plt
-    from models import CustomEncoder
-    subreddit = "legaladvice"
-    filename = "./raw/%s.json" % subreddit
-    # username = input("Enter username:")
-    # password = input("Enter password(Not hidden, so make sure no one is looking):")
 
-    bot = GraphBot(subreddit)
-    ids = list(bot.get_hot_submissions_id(2))
-    graph = bot.getGraph(*ids)
-
-    bot.dump(filename, ids)
-    nx.write_graphml(graph, "./graphML/reddit_graph_%s.graphml" % subreddit)
-    nx.write_graphml(bot.comment_graph,"./graphML/comment_graph_%s.graphml" % subreddit)
-    nx.write_graphml(bot.group_graph, "./graphML/interval_graph_edges.graphml")
 
 

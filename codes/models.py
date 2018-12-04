@@ -2,8 +2,11 @@
 # Purpose: Record models use to create graph nodes
 
 from analyzers import  SentimentAnalysis
-from json import JSONEncoder
 """
+@param 
+    :type
+    :description:
+            
     On second thought, some of the other argument-related annotators I'm working on
     (such as the level of formality, level of charitability, etc.) might be overkill for this first paper.
     Some features that should be relatively easy to implement and add into the graph are:
@@ -16,57 +19,6 @@ from json import JSONEncoder
     how similar it is to the root comment of its thread. The easiest way to do this is by using doc2vec from the genSim library.
 """
 ANONYMOUS_USER = "Anonymous"
-class CustomEncoder(JSONEncoder):
-    """
-        Custom encoder for comment class
-    """
-    def default(self, o):
-        return o.__dict__
-
-    def decode_object(self, o):
-        pass
-
-class Submission:
-    """
-        submission object use to write to json
-    """
-    def __init__(self, submission):
-        self.author_fullname = submission.author_fullname if hasattr(submission,"author_fullname") else "Anonymous"
-        self.id = submission.id
-        self.title = submission.title
-        self.view_count = submission.view_count
-        self.upvote_ratio = submission.upvote_ratio
-        self.ups = submission.ups
-        self.downs = submission.downs
-        self.comments = [Comment(comment) for comment in submission.comments]
-    
-    def __repr__(self):
-        return self.title
-
-class Comment:
-    """
-        comment object used to write to json
-    """
-    def __init__(self, comment):
-        from analyzers import CommentMetaAnalysis
-        metaAnalysis = CommentMetaAnalysis(comment)
-        self.author = "Anonymous" if comment.author == None else comment.author.name
-        self.parent_id = comment.parent().id
-        self.score = comment.score
-        self.timestamp = comment.created
-        self.id = comment.id
-        self.body = comment.body
-        self.length = metaAnalysis.length
-        self.averageWordLength = metaAnalysis.averageWordLength
-        self.quotedTextPerLength = metaAnalysis.quotedTextPerLength
-        self.readingLevel = metaAnalysis.readingLevel
-        self.sentimentScore = SentimentAnalysis.add_sentiment(comment)
-        self.sentiment = SentimentAnalysis.convert_score(self.sentimentScore)
-        self.replies = [Comment(c) for c in comment.replies]
-
-    def __repr__(self):
-        return self.body
-
 class MetaNode(type):
     """
         a metaclass for specifying the node type
@@ -168,9 +120,9 @@ class CommentNode(Node):
         self.timestamp = int(comment.created)
         self.body = comment.body
         self.length = meta.length
-        self.averageWordLength = meta.averageWordLength
-        self.quotedTextPerLength = meta.quotedTextPerLength
-        self.readingLevel = meta.readingLevel
+        self.average_word_length = meta.average_word_length
+        self.quoted_text_per_length = meta.quoted_text_per_length
+        self.reading_level = meta.reading_level
         self.sentimentScore = SentimentAnalysis.add_sentiment(comment)
         self.sentiment = SentimentAnalysis.convert_score(self.sentimentScore)
         self.similarity = 1.0        
