@@ -23,6 +23,10 @@
 
 
 ./bin/neo4j-admin.bat import `
---nodes "import/raw/proxi_comment_node_header.csv,import/raw/proxi_comment_data.csv" `
---relationships "import/raw/proxi_comment_edge_data_header.csv,import/raw/proxi_comment_edge_data.csv" `
+--nodes "import/raw/mapper_comment_node_header.csv,import/raw/mapper_comment_data.csv" `
+--relationships "import/raw/mapper_comment_edge_data_header.csv,import/raw/mapper_comment_edge_data.csv" `
+--ignore-missing-nodes=true --ignore-duplicate-nodes=true
+
+./bin/neo4j-admin.bat import `
+--nodes "import/raw/mapper_comment_node_header.csv,import/raw/mapper_comment_data.csv" `
 --ignore-missing-nodes=true --ignore-duplicate-nodes=true

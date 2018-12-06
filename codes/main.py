@@ -5,16 +5,22 @@ import networkx as nx
 import graph_writer as gw
 
 if __name__ == "__main__":
+    # the subreddit to scrape
     subreddit = "legaladvice"
+    # file name to dumpjson
     filename = "./raw/%s.json" % subreddit
 
+    # create the graphbot that generates both mapper graph and normal graph
     grapher = GraphBot(subreddit)
+    # get data for two hot submissions in the subreddit
     ids = list(grapher.get_hot_submissions_id(2))
+    # the full graph
     graph = grapher.getGraph(*ids)
     
-    # write files
-    grapher.dump(filename, ids)
-        
+    # json dump of the data
+    grapher.dumpjson(filename, ids)
+    
+    # writ the graphs to files
     f = "./raw/mapper_comment_data.csv"
     gw.writeNodesToCsv(f, grapher.mapper_nodes)
 

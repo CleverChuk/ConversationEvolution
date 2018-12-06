@@ -17,814 +17,663 @@
   <key attr.name="article_id" attr.type="string" for="node" id="d1" />
   <key attr.name="id" attr.type="string" for="node" id="d0" />
   <graph edgedefault="undirected">
-    <node id="179">
+    <node id="115">
       <data key="d0">0a</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2x1cg</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">56.0</data>
-      <data key="d5">1543974613.0</data>
-      <data key="d6">I'd also just suggest getting a doctor's note, and going to the school administration to get his phone listed as a medical device to stop any teachers from taking it away. </data>
-      <data key="d7">172.0</data>
-      <data key="d8">5.0</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb7ql07</data>
+      <data key="d3">caustic_banana</data>
+      <data key="d4">123.0</data>
+      <data key="d5">1544139396.5</data>
+      <data key="d6">OK- thanks for the advice. It's definitely not my first choice, but this would be a David vs. Goliath situation that I just wouldn't have the money or time to handle. Booo.</data>
+      <data key="d7">314.0</data>
+      <data key="d8">5.567</data>
       <data key="d9">0.0</data>
-      <data key="d10">77.53</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.131</data>
+      <data key="d10">74.51</data>
+      <data key="d11">0.1772</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.128</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="180">
+    <node id="116">
       <data key="d0">1b</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2x7h6</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">11.0</data>
-      <data key="d5">1543986596.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">204.0</data>
-      <data key="d8">4.975</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb7rjte</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">9.5</data>
+      <data key="d5">1544150450.5</data>
+      <data key="d6">Only problem is, that doesn't stop Bigcorp from pulling Op into court vexatiously, even just for a day, which could wipe them out.</data>
+      <data key="d7">121.5</data>
+      <data key="d8">5.6145</data>
       <data key="d9">0.0</data>
-      <data key="d10">75.4</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0533</data>
+      <data key="d10">53.885</data>
+      <data key="d11">0.1265</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1187</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="181">
+    <node id="117">
       <data key="d0">2c</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3jm6l</data>
-      <data key="d3">Suicidal_Tony</data>
-      <data key="d4">17.0</data>
-      <data key="d5">1543991773.0</data>
-      <data key="d6">what the hell.</data>
-      <data key="d7">45.0</data>
-      <data key="d8">3.526</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb7qegt</data>
+      <data key="d3">Lizard_repositioner</data>
+      <data key="d4">15.5</data>
+      <data key="d5">1544141918.5</data>
+      <data key="d6">Unfortunately not :/</data>
+      <data key="d7">268.0</data>
+      <data key="d8">6.6635</data>
       <data key="d9">0.0</data>
-      <data key="d10">106.67</data>
-      <data key="d11">-0.1024</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0868</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="182">
-      <data key="d0">3d</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb32mt6</data>
-      <data key="d3">csr28</data>
-      <data key="d4">21.0</data>
-      <data key="d5">1543980492.0</data>
-      <data key="d6">He does calibrate it. Not often though. I for the most part have stayed out of his health ever since he got it. DexCom I think. He is very independent and smart. 35 on his act. He checks it when he feels bad and sometimes before class. I think a parent may have complained that “X uses his phone why cant my child” </data>
-      <data key="d7">400.0</data>
-      <data key="d8">5.714</data>
-      <data key="d9">0.0</data>
-      <data key="d10">86.3</data>
-      <data key="d11">-0.0615</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.1244</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="183">
-      <data key="d0">4e</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3702m</data>
-      <data key="d3">esk_209</data>
-      <data key="d4">4.5</data>
-      <data key="d5">1543988580.5</data>
-      <data key="d6">He can also get a 504 (usually much easier/quicker than getting an IEP).  </data>
-      <data key="d7">228.5</data>
-      <data key="d8">4.4765</data>
-      <data key="d9">0.0</data>
-      <data key="d10">69.515</data>
-      <data key="d11">0.0295</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.1961</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="184">
-      <data key="d0">5f</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3h3gx</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">4.5</data>
-      <data key="d5">1543989735.5</data>
-      <data key="d6">We have one. It has reasonable accomdations for his diabetes. The school did not consider his iPhone part of the “Continuous Glucose Monitoring System” The nice folks at dexcom sent my wife paperwork stating the iPhone is an integral part. On monday we are going to update his 504 and have the word iPhone added. The people here are really stupid rednecks.</data>
-      <data key="d7">277.0</data>
-      <data key="d8">5.359</data>
-      <data key="d9">0.0126</data>
-      <data key="d10">59.45</data>
-      <data key="d11">-0.0149</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.577</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="185">
-      <data key="d0">6g</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb34ckw</data>
-      <data key="d3">Biondina</data>
-      <data key="d4">-3.5</data>
-      <data key="d5">1543982518.5</data>
-      <data key="d6">*Your post has been removed for the following reason(s):*
-
-**Bad or Illegal Advice**
-
-Your post has been removed for offering poor legal advice.  It is either inapplicable for the jurisdiction under discussion, misunderstands the fundamental legal question, or is advice to commit an illegal act.  Please review the following rules before commenting further:
-
-* [General Rule 8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__illegal_advice_is_never_allowed.2C_for_any_reason.2C_in_any_circumstance.)
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.) and [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.)
-
-* [Reddit Violent Content Rule](https://www.reddithelp.com/en/categories/rules-reporting/account-and-community-restrictions/do-not-post-violent-content)
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">694.5</data>
-      <data key="d8">10.4935</data>
-      <data key="d9">0.0</data>
-      <data key="d10">-3.77</data>
-      <data key="d11">-0.1073</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.5678</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="186">
-      <data key="d0">7h</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3abtc</data>
-      <data key="d3">dtmfadvice</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543987862.0</data>
-      <data key="d6">Yes! I understand that. The reason I trust him is he rarely is on his phone at home. I know dexcom has a nonphone monitor. </data>
-      <data key="d7">218.0</data>
-      <data key="d8">5.276</data>
-      <data key="d9">0.0</data>
-      <data key="d10">72.97</data>
-      <data key="d11">0.0913</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0709</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="187">
-      <data key="d0">8i</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2x1cg</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">52.0</data>
-      <data key="d5">1543974485.0</data>
-      <data key="d6">I think you would have a very difficult time making a legal case against them. You undoubtedly signed some document saying you agreed with the school's procedures including phone confiscation, and you did not provide them with medical documentation saying he needed his phone.</data>
-      <data key="d7">154.0</data>
-      <data key="d8">5.1485</data>
-      <data key="d9">0.0</data>
-      <data key="d10">79.175</data>
-      <data key="d11">0.024</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.1175</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="188">
-      <data key="d0">9j</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2xbdw</data>
-      <data key="d3">awesomeatony</data>
-      <data key="d4">18.0</data>
-      <data key="d5">1543978114.5</data>
-      <data key="d6">Ye that's pretty much the case unfortunately. I advise arranging a meeting with whoever is in charge of altering his 504 ASAP.</data>
-      <data key="d7">165.0</data>
-      <data key="d8">4.661</data>
-      <data key="d9">0.0</data>
-      <data key="d10">79.885</data>
-      <data key="d11">-0.1073</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.077</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="189">
-      <data key="d0">10k</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3h9yu</data>
-      <data key="d3">dtmfadvice</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543990899.0</data>
-      <data key="d6">My advice was not legal in nature, so it's reasonable to downvote it I guess. 
-
-The kid should be able to use the device obviously, it's a medical necessity. My wife has t1d and the CGM is absolutely a lifesaver.
-
- But I can see why a teacher would be suspicious of an app based CGM ... And why it might be easier, next time insurance buys new devices, to just use a different display for the meter.
-
-
-</data>
-      <data key="d7">434.0</data>
-      <data key="d8">5.6615</data>
-      <data key="d9">0.0</data>
-      <data key="d10">67.195</data>
-      <data key="d11">-0.0183</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0506</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="190">
-      <data key="d0">11l</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2x1cg</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">48.0</data>
-      <data key="d5">1543974613.0</data>
-      <data key="d6">What documents would it be in. I would love to see where it shows that. Would his phone be considered part of his “Continuous Glucose Monitoring System” that is in his 540.</data>
-      <data key="d7">136.0</data>
-      <data key="d8">5.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">77.53</data>
-      <data key="d11">0.0481</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.104</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="191">
-      <data key="d0">12m</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2x7h6</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">7.0</data>
-      <data key="d5">1543988751.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">227.0</data>
-      <data key="d8">5.315</data>
-      <data key="d9">0.0</data>
-      <data key="d10">75.2</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0533</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="192">
-      <data key="d0">13n</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2x7h6</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">7.0</data>
-      <data key="d5">1543988754.0</data>
-      <data key="d6">Yes! I consider it theft. The policy I think was put in place about vapes and other things. Like if they confiscate a vape they cant give it back to the student. Only the parents. So when his phone was confiscated they could only give it to me or my wife?  </data>
-      <data key="d7">257.0</data>
-      <data key="d8">4.975</data>
-      <data key="d9">0.0</data>
-      <data key="d10">80.11</data>
-      <data key="d11">0.0489</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0533</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="193">
-      <data key="d0">14o</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb32mt6</data>
-      <data key="d3">running_sleet</data>
-      <data key="d4">18.0</data>
-      <data key="d5">1543983399.0</data>
-      <data key="d6">It could be the newest G6 dexcom CGM, which requires a bit less calibration. Just had training on it and that was one of the points they brought up with the G6 over the G5.</data>
-      <data key="d7">357.5</data>
-      <data key="d8">5.213</data>
-      <data key="d9">0.0</data>
-      <data key="d10">80.87</data>
-      <data key="d11">-0.0307</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.1238</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="194">
-      <data key="d0">15p</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3jx2s</data>
-      <data key="d3">esk_209</data>
-      <data key="d4">4.0</data>
-      <data key="d5">1543991498.0</data>
-      <data key="d6">Which is why I suggested the 504.  The comment  I responded to brought up the IEP.  Without knowing more, we don’t know if an IEP would be appropriate or not.  This could very well qualify him for an IEP under OHI, but that’s not the point of the OP. 
-</data>
-      <data key="d7">221.0</data>
-      <data key="d8">4.465</data>
-      <data key="d9">0.0</data>
-      <data key="d10">66.03</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.1789</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="195">
-      <data key="d0">16q</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3e80a</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">3.0</data>
-      <data key="d5">1543987273.0</data>
-      <data key="d6">In the past I have checked his screen time. They show it in an app on the iPhone now. Its hardly any. But good idea about the non iphone receiver. In our case it just wasn’t working well. Could have been a faulty unit.</data>
-      <data key="d7">158.0</data>
-      <data key="d8">4.333</data>
-      <data key="d9">0.0</data>
-      <data key="d10">88.43</data>
-      <data key="d11">0.2041</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0879</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="196">
-      <data key="d0">17r</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3kz6k</data>
-      <data key="d3">sgmarshall</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543992276.0</data>
-      <data key="d6">An educator being uneducated is not a good enough reason for somebody to take on an additional financial burden. The principal is clearly engaging in bullying behavior and needs to be completely shut down.</data>
-      <data key="d7">402.0</data>
-      <data key="d8">5.484</data>
-      <data key="d9">0.0</data>
-      <data key="d10">61.63</data>
-      <data key="d11">0.0263</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.0302</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="197">
-      <data key="d0">18s</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2x1cg</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">38.5</data>
-      <data key="d5">1543980730.0</data>
-      <data key="d6">You'd have to pull the 504 and see. That's not a part of the default 504, but you could have made that request. Or, for sure, modify the 504 to have that added verbatim. My wife works with her clients on 504's, she said you'd have to request that to be added.</data>
-      <data key="d7">154.0</data>
-      <data key="d8">5.1485</data>
-      <data key="d9">0.0</data>
-      <data key="d10">73.66</data>
-      <data key="d11">0.0398</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.078</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="198">
-      <data key="d0">19t</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2xbdw</data>
-      <data key="d3">AegonIConqueror</data>
-      <data key="d4">13.0</data>
-      <data key="d5">1543981634.0</data>
-      <data key="d6">Ye that's pretty much the case unfortunately. I advise arranging a meeting with whoever is in charge of altering his 504 ASAP.</data>
-      <data key="d7">126.0</data>
-      <data key="d8">4.636</data>
-      <data key="d9">0.0</data>
-      <data key="d10">84.37</data>
-      <data key="d11">-0.0427</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0389</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="199">
-      <data key="d0">20u</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb32mt6</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">11.5</data>
-      <data key="d5">1543987176.0</data>
-      <data key="d6">Gotcha. I have a Dexcom as well. It requires him to check his blood sugar each time he puts on a new sensor (every 7 days). And then also if/when the connection is lost. Odd that he had to go out and buy one if he is calibrating it regularly. 
-That’s annoying that another parent is complaining about someone else’s kid but also sounds very *high school*. Has your son told administration that that is the only way he can check his blood sugar (even though it’s technically not they likely don’t know that)? He can show them the damn sensor if they really need to. Frustrating situation it sounds like. Sorry </data>
-      <data key="d7">217.5</data>
-      <data key="d8">4.957</data>
-      <data key="d9">0.0</data>
-      <data key="d10">74.545</data>
-      <data key="d11">0.0126</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0823</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="200">
-      <data key="d0">21v</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3dlwd</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543987926.5</data>
-      <data key="d6">LOL yeah. Personally I would be unable to resist the temptation of the phone. (He says, walking the dog and looking at his phone instead of where he's going).</data>
-      <data key="d7">141.0</data>
-      <data key="d8">4.303</data>
-      <data key="d9">0.0</data>
-      <data key="d10">90.275</data>
-      <data key="d11">0.1652</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0466</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="201">
-      <data key="d0">22w</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2x1cg</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">48.0</data>
-      <data key="d5">1543978598.0</data>
-      <data key="d6">What documents would it be in. I would love to see where it shows that. Would his phone be considered part of his “Continuous Glucose Monitoring System” that is in his 540.</data>
-      <data key="d7">136.0</data>
-      <data key="d8">5.297</data>
-      <data key="d9">0.0</data>
-      <data key="d10">69.79</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.104</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="202">
-      <data key="d0">23x</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2xihm</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">5.0</data>
-      <data key="d5">1543986586.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">133.0</data>
-      <data key="d8">5.586</data>
-      <data key="d9">0.0</data>
-      <data key="d10">56.93</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0431</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="203">
-      <data key="d0">24y</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3duaa</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">9.0</data>
-      <data key="d5">1543991576.0</data>
-      <data key="d6">Yes! I consider it theft. The policy I think was put in place about vapes and other things. Like if they confiscate a vape they cant give it back to the student. Only the parents. So when his phone was confiscated they could only give it to me or my wife?  </data>
-      <data key="d7">313.0</data>
-      <data key="d8">5.359</data>
-      <data key="d9">0.0</data>
-      <data key="d10">65.93</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.1008</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="204">
-      <data key="d0">25z</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2xeax</data>
-      <data key="d3">Shanisasha</data>
-      <data key="d4">76.0</data>
-      <data key="d5">1543974613.0</data>
-      <data key="d6">Modify it to say “cgm and associated receiver devices including and not limited to smart phone containing transmitting information”</data>
-      <data key="d7">131.0</data>
-      <data key="d8">5.947</data>
-      <data key="d9">0.0</data>
-      <data key="d10">49.15</data>
-      <data key="d11">-0.0217</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.131</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="205">
-      <data key="d0">26a</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2y575</data>
-      <data key="d3">awesomeatony</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543986586.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">166.0</data>
-      <data key="d8">5.278</data>
-      <data key="d9">0.0</data>
-      <data key="d10">63.86</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0297</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="206">
-      <data key="d0">27b</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2y575</data>
-      <data key="d3">awesomeatony</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543986356.0</data>
-      <data key="d6">We’ve tried being sweet. The superintendent is 76 and has hearing loss and the principal is his nephew. Constantly chewing dip. Its really disgusting. Absolute stereotypical souther drawl as well. </data>
-      <data key="d7">166.0</data>
-      <data key="d8">5.154</data>
-      <data key="d9">0.0</data>
-      <data key="d10">66.03</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0247</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="207">
-      <data key="d0">28c</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3cwii</data>
-      <data key="d3">csr28</data>
-      <data key="d4">7.5</data>
-      <data key="d5">1543988042.5</data>
-      <data key="d6">It is the G6. All I know is he rarely has to calibrate it. As long as his A1C is fine, I usually stay out of it. </data>
-      <data key="d7">191.0</data>
-      <data key="d8">4.957</data>
-      <data key="d9">0.0</data>
-      <data key="d10">74.545</data>
-      <data key="d11">0.0337</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0372</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="208">
-      <data key="d0">29d</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3f0bu</data>
-      <data key="d3">dtmfadvice</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543987991.0</data>
-      <data key="d6">I've heard complaints about the latest ones, so... If the phone based one works that is a very good reason to keep using it.</data>
-      <data key="d7">158.0</data>
-      <data key="d8">4.333</data>
-      <data key="d9">0.0</data>
-      <data key="d10">92.12</data>
-      <data key="d11">0.1263</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0265</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="209">
-      <data key="d0">30e</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3bs6j</data>
-      <data key="d3">Anonymous</data>
-      <data key="d4">4.5</data>
-      <data key="d5">1543986149.0</data>
-      <data key="d6">[removed]</data>
-      <data key="d7">9.0</data>
-      <data key="d8">7.0</data>
-      <data key="d9">0.0</data>
-      <data key="d10">36.62</data>
-      <data key="d11">0.0</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">1.0</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="210">
-      <data key="d0">31f</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2y575</data>
-      <data key="d3">awesomeatony</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543986471.0</data>
-      <data key="d6">Legally in Alabama there is no tobacco on school grounds or any school sponsored event. 
-
-Also, ask the principal where he got his medical degree since he is providing medical advice about no sugar.  A lawyer letter should clear this up.</data>
-      <data key="d7">166.0</data>
-      <data key="d8">4.99</data>
-      <data key="d9">0.0</data>
-      <data key="d10">67.91</data>
-      <data key="d11">0.0372</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0272</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="211">
-      <data key="d0">32g</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3duaa</data>
-      <data key="d3">WhatIsTheMeaningOfPi</data>
-      <data key="d4">5.5</data>
-      <data key="d5">1543991999.0</data>
-      <data key="d6">When i was in high school cell phones were really starting to get a lot more popular and when the school started taking them for more than until the end of the day parents would get furious. I remember at least 1 bringing the school the phone bill saying, 'well if yall are going to keep the phone yall can pay the phone bill'. I dont know if that ever came to fruition but really whenever an angry parent came in, the school would just give it back. is it worth the fight.
-
-Oh and people (girls especially) would be super hesitant to give up their phones because they were afraid the admins would look through them for shit. </data>
-      <data key="d7">344.5</data>
-      <data key="d8">5.4115</data>
-      <data key="d9">0.0</data>
-      <data key="d10">68.91</data>
-      <data key="d11">0.0682</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.1314</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="212">
-      <data key="d0">33h</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3cwii</data>
-      <data key="d3">ChaoticSquirrel</data>
-      <data key="d4">3.0</data>
-      <data key="d5">1543989599.0</data>
-      <data key="d6">Good for you for raising such an independent young adult! Many teens have a lot of trouble adapting to being in control of their sugars. You're obviously doing something right if he's this good at managing things at his age. </data>
-      <data key="d7">172.0</data>
-      <data key="d8">4.914</data>
-      <data key="d9">0.0</data>
-      <data key="d10">74.9</data>
-      <data key="d11">0.0674</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0329</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="213">
-      <data key="d0">34i</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3f6me</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543988179.5</data>
-      <data key="d6">Yes! Im glad we were not the only ones with problems with it. </data>
-      <data key="d7">152.5</data>
-      <data key="d8">4.2315</data>
-      <data key="d9">0.0</data>
-      <data key="d10">92.63</data>
-      <data key="d11">0.1088</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0132</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="214">
-      <data key="d0">35j</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2y575</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543986586.0</data>
-      <data key="d6">He chews his dip in his office according to students and my childrens friends. I personally have seen him chew it in the parking lot. Its disgusting to me personally.</data>
-      <data key="d7">166.0</data>
-      <data key="d8">5.154</data>
-      <data key="d9">0.0</data>
-      <data key="d10">66.03</data>
-      <data key="d11">-0.0167</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0297</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="215">
-      <data key="d0">36k</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2y575</data>
-      <data key="d3">awesomeatony</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543986586.0</data>
-      <data key="d6">Yeah, now that I know more I agree lol. If both the superintendant and principal are being stupid and ignoring you, I'd say its safe to stop worrying about being nice</data>
-      <data key="d7">166.0</data>
-      <data key="d8">4.826</data>
-      <data key="d9">0.0</data>
-      <data key="d10">63.86</data>
-      <data key="d11">0.0911</data>
-      <data key="d12">Positive</data>
-      <data key="d13">0.0247</data>
-      <data key="d14">comment</data>
-      <data key="d15" />
-    </node>
-    <node id="216">
-      <data key="d0">37l</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3fowr</data>
-      <data key="d3">dtmfadvice</data>
-      <data key="d4">2.0</data>
-      <data key="d5">1543988368.0</data>
-      <data key="d6">Yeah, my wife had the dexcom G5 and it just loses signal for no reason sometimes! Incredibly frustrating. And while she is not brittle and can handle it, it could be very dangerous!</data>
-      <data key="d7">124.0</data>
-      <data key="d8">4.13</data>
-      <data key="d9">0.0</data>
-      <data key="d10">92.12</data>
-      <data key="d11">0.1263</data>
+      <data key="d10">47.265</data>
+      <data key="d11">0.1794</data>
       <data key="d12">Positive</data>
       <data key="d13">0.0</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="217">
-      <data key="d0">38m</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2xeax</data>
-      <data key="d3">Shanisasha</data>
-      <data key="d4">52.5</data>
-      <data key="d5">1543976605.5</data>
-      <data key="d6">Modify it to say “cgm and associated receiver devices including and not limited to smart phone containing transmitting information”</data>
-      <data key="d7">116.5</data>
-      <data key="d8">5.4735</data>
+    <node id="118">
+      <data key="d0">3d</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb83e2q</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1544152290.0</data>
+      <data key="d6">This is bad advice.
+
+While OP has a valid claim against the artist, BigCo has a valid claim against OP.</data>
+      <data key="d7">148.5</data>
+      <data key="d8">5.968</data>
       <data key="d9">0.0</data>
-      <data key="d10">32.395</data>
-      <data key="d11">-0.0756</data>
+      <data key="d10">78.265</data>
+      <data key="d11">-0.1629</data>
       <data key="d12">Negative</data>
-      <data key="d13">0.1846</data>
+      <data key="d13">0.2554</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="218">
-      <data key="d0">39n</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3igzs</data>
-      <data key="d3">Biondina</data>
-      <data key="d4">1.5</data>
-      <data key="d5">1543990512.5</data>
+    <node id="119">
+      <data key="d0">4e</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8193z</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">1.0</data>
+      <data key="d5">1544156090.5</data>
+      <data key="d6">Nope.
+
+If I buy an exclusive license, and someone violates it, I have every right to sue them.
+
+If the person selling me that exclusive license didn't have a right to do so, the person I sue can in turn bring in that person.  But OP could easily get dragged into an expensive lawsuit.</data>
+      <data key="d7">230.5</data>
+      <data key="d8">5.4705</data>
+      <data key="d9">0.0</data>
+      <data key="d10">68.69</data>
+      <data key="d11">-0.0432</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.1482</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="120">
+      <data key="d0">5f</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8s4cf</data>
+      <data key="d3">thepatman</data>
+      <data key="d4">1.0</data>
+      <data key="d5">1544161695.0</data>
       <data key="d6">*Your post has been removed for the following reason(s):*
 
-If you know it's off-topic *DON'T POST IT*.
+**Generally Unhelpful or Off-Topic**
+
+Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
+
+* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
 
 
 
 *Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
 
 *Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d7">252.5</data>
-      <data key="d8">7.25</data>
+      <data key="d7">873.5</data>
+      <data key="d8">12.637</data>
       <data key="d9">0.0</data>
-      <data key="d10">37.57</data>
-      <data key="d11">-0.0421</data>
-      <data key="d12">Negative</data>
-      <data key="d13">0.5552</data>
+      <data key="d10">-28.93</data>
+      <data key="d11">0.0086</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.5715</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="219">
-      <data key="d0">40o</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2y575</data>
-      <data key="d3">awesomeatony</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543986586.0</data>
-      <data key="d6">We’ve tried being sweet. The superintendent is 76 and has hearing loss and the principal is his nephew. Constantly chewing dip. Its really disgusting. Absolute stereotypical souther drawl as well. </data>
-      <data key="d7">166.0</data>
-      <data key="d8">5.154</data>
+    <node id="121">
+      <data key="d0">6g</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8ec5u</data>
+      <data key="d3">Nick-Danger</data>
+      <data key="d4">1.0</data>
+      <data key="d5">1544156869.0</data>
+      <data key="d6">&gt; But BigCo has a claim against you because they received an exclusive license.  
+
+NAL.  Couldn't OP argue that BigCo does not have a valid exclusive license because the artist couldn't legally offer one due to OP's license, and therefore BigCo has no standing to sue OP?
+
+</data>
+      <data key="d7">273.0</data>
+      <data key="d8">6.176</data>
       <data key="d9">0.0</data>
-      <data key="d10">66.03</data>
-      <data key="d11">0.0386</data>
+      <data key="d10">60.82</data>
+      <data key="d11">0.015</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.3021</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="122">
+      <data key="d0">7h</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb83cbu</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">6.0</data>
+      <data key="d5">1544145069.0</data>
+      <data key="d6">Copyright attaches automatically to images when they are created.  Prior art is unrelated to copyright.</data>
+      <data key="d7">141.0</data>
+      <data key="d8">6.615</data>
+      <data key="d9">0.0</data>
+      <data key="d10">62.01</data>
+      <data key="d11">0.125</data>
       <data key="d12">Positive</data>
-      <data key="d13">0.0247</data>
+      <data key="d13">0.1011</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="220">
-      <data key="d0">41p</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb2y575</data>
-      <data key="d3">1DiabetesThrowaway</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543986733.5</data>
-      <data key="d6">He chews his dip in his office according to students and my childrens friends. I personally have seen him chew it in the parking lot. Its disgusting to me personally.</data>
-      <data key="d7">166.0</data>
-      <data key="d8">5.216</data>
+    <node id="123">
+      <data key="d0">8i</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb7ql07</data>
+      <data key="d3">thea_perkins</data>
+      <data key="d4">92.0</data>
+      <data key="d5">1544141711.0</data>
+      <data key="d6">This is really the optimal way to handle this situation. Yeah, technically OP would probably be in the right to keep using the image but it'll bankrupt any normal person to fight this. Better to get some quick cash from the big corp to cover the costs of  recall and then some to account for him abandoning the license. Then, if he wants, OP could always sue the original artist for return of whatever they paid for the license too. That could probably be done in small claims without an attorney. </data>
+      <data key="d7">312.0</data>
+      <data key="d8">5.489</data>
       <data key="d9">0.0</data>
-      <data key="d10">64.945</data>
-      <data key="d11">0.011</data>
-      <data key="d12">Neutral</data>
-      <data key="d13">0.0272</data>
+      <data key="d10">76.86</data>
+      <data key="d11">0.1012</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0631</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>
-    <node id="221">
-      <data key="d0">42q</data>
-      <data key="d1">a32pfp</data>
-      <data key="d2">eb3dp61</data>
-      <data key="d3">pgh9fan</data>
-      <data key="d4">8.0</data>
-      <data key="d5">1543986881.0</data>
-      <data key="d6">You might want to show him [this.](http://www.adph.org/tpts/assets/sampleschoolpolicy.pdf)</data>
-      <data key="d7">166.0</data>
-      <data key="d8">5.278</data>
+    <node id="124">
+      <data key="d0">9j</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb82woi</data>
+      <data key="d3">PrettyDecentSort</data>
+      <data key="d4">39.0</data>
+      <data key="d5">1544144762.0</data>
+      <data key="d6">&gt;Big Corp doesn't have any legitimate cause of action
+
+This is no barrier to bankrupting a small proprietor with the strength of their deep pockets. Reality is that even if you win the lawsuit it can cost you money that your business simply can't afford.
+
+</data>
+      <data key="d7">256.0</data>
+      <data key="d8">5.1</data>
       <data key="d9">0.0</data>
-      <data key="d10">66.03</data>
-      <data key="d11">-0.0167</data>
+      <data key="d10">76.86</data>
+      <data key="d11">0.2798</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0631</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="125">
+      <data key="d0">10k</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8dteu</data>
+      <data key="d3">erfling</data>
+      <data key="d4">13.0</data>
+      <data key="d5">1544152071.0</data>
+      <data key="d6">Well, they don't seem to have actually purchased an exclusive license, since another license was already granted.</data>
+      <data key="d7">113.0</data>
+      <data key="d8">5.417</data>
+      <data key="d9">0.0</data>
+      <data key="d10">45.76</data>
+      <data key="d11">0.128</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1363</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="126">
+      <data key="d0">11l</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb7qegt</data>
+      <data key="d3">AngryFlyingCats</data>
+      <data key="d4">15.0</data>
+      <data key="d5">1544143927.0</data>
+      <data key="d6">I'm just going to add that by giving the exclusive use to the national brand, the artist likely breached the agreement with OP too.  The conflicting nature of the clause with other contracts means that OP's legal use of it will land him in hot water regardless.  Take the initiative, talk with a lawyer and ask them to draft a demand letter seeking recovery for restitution damages.  Where OP would be seeking to recover the cost of the agreement and the costs associated with the product production.  You probably want to avoid the lawsuit with the big company.  It will cost more to defend that suit then paying a lawyer now for a demand letter and possibly going into small claims later (depending on juris and the small claims limit).</data>
+      <data key="d7">403.0</data>
+      <data key="d8">7.0</data>
+      <data key="d9">0.0</data>
+      <data key="d10">36.62</data>
+      <data key="d11">0.0</data>
       <data key="d12">Neutral</data>
-      <data key="d13">0.0431</data>
+      <data key="d13">0.0</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="127">
+      <data key="d0">12m</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb81pjo</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">5.0</data>
+      <data key="d5">1544143927.0</data>
+      <data key="d6">&gt; Unless you have a contract that specifies a specific dated time period of exclusivity, or, is not an actual licensing, but a full rights buyout, the artist is free to license his/her work to as many merchandizing companies as they wish.
+&gt; 
+&gt; 
+
+BUT if the artist has an outstanding valid license they are NOT able to provide an exclusive license to another party, without terminating the first license in some way.</data>
+      <data key="d7">20.0</data>
+      <data key="d8">7.0</data>
+      <data key="d9">0.0</data>
+      <data key="d10">35.95</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="128">
+      <data key="d0">13n</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8e9df</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">-2.0</data>
+      <data key="d5">1544152372.0</data>
+      <data key="d6">BigCo has a colorable claim, which they certainly could file a lawsuit over.  They may lose, but BigCo has a valid enough claim for a lawsuit.</data>
+      <data key="d7">142.0</data>
+      <data key="d8">5.714</data>
+      <data key="d9">0.0</data>
+      <data key="d10">83.66</data>
+      <data key="d11">-0.183</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.2128</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="129">
+      <data key="d0">14o</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8ptnt</data>
+      <data key="d3">Randvek</data>
+      <data key="d4">1.0</data>
+      <data key="d5">1544159921.0</data>
+      <data key="d6">I am a lawyer, and at least in my state, it has been interpreted that transfer of exclusive rights *also* transfers standing to sue, as the artist now no longer “owns” anything!</data>
+      <data key="d7">284.0</data>
+      <data key="d8">5.641</data>
+      <data key="d9">0.0</data>
+      <data key="d10">67.25</data>
+      <data key="d11">-0.0445</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0923</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="130">
+      <data key="d0">15p</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb83cbu</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">5.0</data>
+      <data key="d5">1544148595.0</data>
+      <data key="d6">Copyright attaches automatically to images when they are created.  Prior art is unrelated to copyright.</data>
+      <data key="d7">122.0</data>
+      <data key="d8">5.764</data>
+      <data key="d9">0.0</data>
+      <data key="d10">41.785</data>
+      <data key="d11">0.2216</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.083</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="131">
+      <data key="d0">16q</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb7qegt</data>
+      <data key="d3">tattoosnchivalry</data>
+      <data key="d4">10.5</data>
+      <data key="d5">1544144259.5</data>
+      <data key="d6">That doesn’t matter. You need to understand he beached his agreement with the major brand, not yours. If they send you a letter, answer with a copy of your agreement and tell them to pound sand. You did ABSOLUTELY nothing wrong.
+
+Edit: to add to this if they sue you, you cross claim and bring in the artist as a necessary party, and then you force the artist to indemnify you. This is not your problem.</data>
+      <data key="d7">409.0</data>
+      <data key="d8">6.852</data>
+      <data key="d9">0.0</data>
+      <data key="d10">47.265</data>
+      <data key="d11">-0.0126</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="132">
+      <data key="d0">17r</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8e0lj</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1544152566.5</data>
+      <data key="d6">BigCo has no valid claim, their license is predated by another license and they have no proof that OP's license was revoked.
+
+Do not spread misinformation.</data>
+      <data key="d7">148.5</data>
+      <data key="d8">5.968</data>
+      <data key="d9">0.0</data>
+      <data key="d10">75.2</data>
+      <data key="d11">-0.1629</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.2554</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="133">
+      <data key="d0">18s</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8e3ek</data>
+      <data key="d3">borktron</data>
+      <data key="d4">1.0</data>
+      <data key="d5">1544161311.0</data>
+      <data key="d6">NAL, but that doesn't sound right.  OP has no agreement with bigco to violate.  What cause of action would bigco persue?  I would imagine bigco would have to go after the artist who defrauded them by selling them an exclusive license that they couldn't provide due to OP's preexisting license.</data>
+      <data key="d7">201.0</data>
+      <data key="d8">5.641</data>
+      <data key="d9">0.0</data>
+      <data key="d10">66.74</data>
+      <data key="d11">-0.042</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0923</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="134">
+      <data key="d0">19t</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb7rsfu</data>
+      <data key="d3">thea_perkins</data>
+      <data key="d4">92.0</data>
+      <data key="d5">1544141711.0</data>
+      <data key="d6">This is really the optimal way to handle this situation. Yeah, technically OP would probably be in the right to keep using the image but it'll bankrupt any normal person to fight this. Better to get some quick cash from the big corp to cover the costs of  recall and then some to account for him abandoning the license. Then, if he wants, OP could always sue the original artist for return of whatever they paid for the license too. That could probably be done in small claims without an attorney. </data>
+      <data key="d7">316.0</data>
+      <data key="d8">5.489</data>
+      <data key="d9">0.0</data>
+      <data key="d10">73.51</data>
+      <data key="d11">-0.1698</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.0679</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="135">
+      <data key="d0">20u</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8mr7c</data>
+      <data key="d3">JohnDoe_85</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1544159609.5</data>
+      <data key="d6">&gt;Big Corp doesn't have any legitimate cause of action
+
+This is no barrier to bankrupting a small proprietor with the strength of their deep pockets. Reality is that even if you win the lawsuit it can cost you money that your business simply can't afford.
+
+</data>
+      <data key="d7">327.5</data>
+      <data key="d8">5.8525</data>
+      <data key="d9">0.0</data>
+      <data key="d10">67.845</data>
+      <data key="d11">0.0975</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1308</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="136">
+      <data key="d0">21v</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8dteu</data>
+      <data key="d3">erfling</data>
+      <data key="d4">0.5</data>
+      <data key="d5">1544153525.0</data>
+      <data key="d6">Well, they don't seem to have actually purchased an exclusive license, since another license was already granted.</data>
+      <data key="d7">96.5</data>
+      <data key="d8">5.6145</data>
+      <data key="d9">0.0</data>
+      <data key="d10">44.07</data>
+      <data key="d11">0.3427</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.2185</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="137">
+      <data key="d0">22w</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb82nyz</data>
+      <data key="d3">tattoosnchivalry</data>
+      <data key="d4">15.0</data>
+      <data key="d5">1544144592.0</data>
+      <data key="d6">Correct, I guess I misspoke. I meant to say that the breach of contract claim (and all related claims) by the big company would be against the artist themselves, not against OP, and, if she is sued, she would merely have to cross-claim and bring in the artist to indemnify her.
+
+That said, yes, send a letter from an attorney to seek restitution, and threaten a declaratory judgment action for a court to determine if the artist would be required to indemnify OP, as well as bad faith claims (some jurisdictions have double or treble damage statutes for bad faith, and some carry attorney's fees too).</data>
+      <data key="d7">601.0</data>
+      <data key="d8">6.704</data>
+      <data key="d9">0.0</data>
+      <data key="d10">61.03</data>
+      <data key="d11">-0.0252</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.1046</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="138">
+      <data key="d0">23x</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8euam</data>
+      <data key="d3">ThePretzul</data>
+      <data key="d4">8.0</data>
+      <data key="d5">1544152761.0</data>
+      <data key="d6">They can file a lawsuit. I could also file a lawsuit against you for harassment over the internet because you replied to my comment. It doesn't mean either lawsuit has merit or would go beyond the discovery stage.
+
+The lawsuit would be dismissed once evidence was presented showing OP's claim to use of the image predated BigCo's claim to exclusive use of the image and BigCo was unable to present evidence that OP's agreement was rescinded with proper consideration.</data>
+      <data key="d7">155.0</data>
+      <data key="d8">6.222</data>
+      <data key="d9">0.0</data>
+      <data key="d10">66.74</data>
+      <data key="d11">-0.1428</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.2981</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="139">
+      <data key="d0">24y</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8rzkr</data>
+      <data key="d3">borktron</data>
+      <data key="d4">1.0</data>
+      <data key="d5">1544161528.0</data>
+      <data key="d6">Interesting.  Let's assume OP's license was perpetual and irrevocable.  Bigco can sue infringers, but OP isn't infringing - the have a valid license that predates bigco's "exclusive" license after all.</data>
+      <data key="d7">189.0</data>
+      <data key="d8">5.4015</data>
+      <data key="d9">0.0</data>
+      <data key="d10">65.56</data>
+      <data key="d11">0.046</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1482</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="140">
+      <data key="d0">25z</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8qzo0</data>
+      <data key="d3">PrettyDecentSort</data>
+      <data key="d4">1.5</data>
+      <data key="d5">1544160955.5</data>
+      <data key="d6">&gt; They don't care about tiny proprietors
+
+Perhaps the clients you represent don't, but they're unfortunately not the only clients out there.
+
+https://www.techdirt.com/articles/20181130/08501541139/monster-energy-loses-trademark-opposition-against-uk-drink-company-may-have-bullied-it-to-death-anyway.shtml
+
+https://www.techdirt.com/articles/20180823/09352640494/nickelodeon-is-opposing-12-year-old-new-zealand-girls-slime-trademark-some-reason.shtml
+
+https://www.techdirt.com/articles/20180323/10410739489/macys-department-store-chain-forces-tiny-hair-salon-scotland-to-change-name.shtml</data>
+      <data key="d7">380.5</data>
+      <data key="d8">6.4455</data>
+      <data key="d9">0.0</data>
+      <data key="d10">63.865</data>
+      <data key="d11">0.0289</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1933</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="141">
+      <data key="d0">26a</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8sn8x</data>
+      <data key="d3">Randvek</data>
+      <data key="d4">1.0</data>
+      <data key="d5">1544161745.0</data>
+      <data key="d6">OP isn’t infringing but Bigco can’t know that without seeing OP’s contract. Bigco can sue, but it should hopefully be straightened out early in the process.</data>
+      <data key="d7">177.0</data>
+      <data key="d8">5.12</data>
+      <data key="d9">0.0</data>
+      <data key="d10">64.38</data>
+      <data key="d11">0.134</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0923</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="142">
+      <data key="d0">27b</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8rwt5</data>
+      <data key="d3">JohnDoe_85</data>
+      <data key="d4">1.0</data>
+      <data key="d5">1544161247.0</data>
+      <data key="d6">Trademark is totally different from copyright, because if you don't police your rights you lose them. So even if you don't want to sue a 12-year-old girl, you are forced to if you want to maintain your rights. And, importantly, each of those positions you cited were not legally frivolous positions (even if they did ultimately lose).
+
+No one is doing this for copyright, *especially* for a legally frivolous position.</data>
+      <data key="d7">418.0</data>
+      <data key="d8">7.043</data>
+      <data key="d9">0.0</data>
+      <data key="d10">62.17</data>
+      <data key="d11">-0.0361</data>
+      <data key="d12">Negative</data>
+      <data key="d13">0.1937</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="143">
+      <data key="d0">28c</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8mr7c</data>
+      <data key="d3">PrettyDecentSort</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1544158719.0</data>
+      <data key="d6">That sounds like it would be a frivolous lawsuit, which BigCorp would be paying both side's attorney fees.</data>
+      <data key="d7">284.0</data>
+      <data key="d8">5.6115</data>
+      <data key="d9">0.0</data>
+      <data key="d10">71.145</data>
+      <data key="d11">0.1272</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0538</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="144">
+      <data key="d0">29d</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8dz3i</data>
+      <data key="d3">DasKapitalist</data>
+      <data key="d4">3.0</data>
+      <data key="d5">1544152180.0</data>
+      <data key="d6">Exactly.  If BigCorp sues OP, OP can produce their licensing agreement and tell them to pound sand.  Bigcorp will then go sue the idiot who sold them an "exclusive" license that wasnt.</data>
+      <data key="d7">184.0</data>
+      <data key="d8">6.327</data>
+      <data key="d9">0.0</data>
+      <data key="d10">36.62</data>
+      <data key="d11">0.0</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="145">
+      <data key="d0">30e</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8qzo0</data>
+      <data key="d3">JohnDoe_85</data>
+      <data key="d4">2.0</data>
+      <data key="d5">1544160664.0</data>
+      <data key="d6">&gt; They don't care about tiny proprietors
+
+Perhaps the clients you represent don't, but they're unfortunately not the only clients out there.
+
+https://www.techdirt.com/articles/20181130/08501541139/monster-energy-loses-trademark-opposition-against-uk-drink-company-may-have-bullied-it-to-death-anyway.shtml
+
+https://www.techdirt.com/articles/20180823/09352640494/nickelodeon-is-opposing-12-year-old-new-zealand-girls-slime-trademark-some-reason.shtml
+
+https://www.techdirt.com/articles/20180323/10410739489/macys-department-store-chain-forces-tiny-hair-salon-scotland-to-change-name.shtml</data>
+      <data key="d7">343.0</data>
+      <data key="d8">5.857</data>
+      <data key="d9">0.0</data>
+      <data key="d10">65.56</data>
+      <data key="d11">0.0939</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.1928</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="146">
+      <data key="d0">31f</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb8ns6j</data>
+      <data key="d3">termiAurthur</data>
+      <data key="d4">4.0</data>
+      <data key="d5">1544158658.0</data>
+      <data key="d6">Well, in a perfect world that is how it would go.
+
+I do realize that we are not in a perfect world, but still.</data>
+      <data key="d7">106.0</data>
+      <data key="d8">5.125</data>
+      <data key="d9">0.0</data>
+      <data key="d10">72.16</data>
+      <data key="d11">0.2253</data>
+      <data key="d12">Positive</data>
+      <data key="d13">0.0</data>
+      <data key="d14">comment</data>
+      <data key="d15" />
+    </node>
+    <node id="147">
+      <data key="d0">32g</data>
+      <data key="d1">a3oec5</data>
+      <data key="d2">eb81pjo</data>
+      <data key="d3">Hendursag</data>
+      <data key="d4">4.0</data>
+      <data key="d5">1544148053.5</data>
+      <data key="d6">&gt; Unless you have a contract that specifies a specific dated time period of exclusivity, or, is not an actual licensing, but a full rights buyout, the artist is free to license his/her work to as many merchandizing companies as they wish.
+&gt; 
+&gt; 
+
+BUT if the artist has an outstanding valid license they are NOT able to provide an exclusive license to another party, without terminating the first license in some way.</data>
+      <data key="d7">102.0</data>
+      <data key="d8">6.6635</data>
+      <data key="d9">0.0</data>
+      <data key="d10">36.285</data>
+      <data key="d11">-0.0028</data>
+      <data key="d12">Neutral</data>
+      <data key="d13">0.0</data>
       <data key="d14">comment</data>
       <data key="d15" />
     </node>

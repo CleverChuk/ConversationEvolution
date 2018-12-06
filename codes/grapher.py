@@ -30,7 +30,7 @@ class GraphBot(RedditBot):
         A subclass of RedditBot that can be used to build mapper graph
     """
 
-    def __init__(self, subreddit, username = "CleverChuk", password = "BwO9pJdzGaVj2pyhZ4kJ" , prop = "sentimentScore", epsilon = 0.5, intervals = 3):
+    def __init__(self, subreddit, username = "CleverChuk", password = "BwO9pJdzGaVj2pyhZ4kJ" , property_key = "sentimentScore", epsilon = 0.5, intervals = 3, APP_NAME="myapp", VERSION = "1.0.0"):
         """
         Builds the GraphBot objects using default or provided configuration
 
@@ -46,7 +46,7 @@ class GraphBot(RedditBot):
             :type string
             :description: Reddit password
 
-        @param prop
+        @param property_key
             :type string
             :description: the comment property used to build the mapper graph
 
@@ -56,10 +56,10 @@ class GraphBot(RedditBot):
 
         @param epsilon
             :type float
-            :description: how much to shift the prop to create overlap
+            :description: how much to shift the property_key to create overlap
         """
-        super().__init__(subreddit, username, password)
-        self.prop = prop
+        super().__init__(subreddit, username, password,VERSION=VERSION, APP_NAME=APP_NAME)
+        self.property_key = property_key
         self.epsilon = epsilon
         self.intervals = intervals
 
@@ -185,7 +185,7 @@ class GraphBot(RedditBot):
 
         # mapper graph
         self.mapper_graph, self.mapper_edges =  cluster_on_numeric_property(self.comment_comment_edges, self.epsilon,
-         prop = self.prop, num_interval = 3)
+         property_key = self.property_key, num_interval = self.intervals)
         self.mapper_nodes =  list(self.mapper_graph.nodes())
         
         return graph

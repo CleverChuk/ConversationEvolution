@@ -26,6 +26,9 @@ The project is divided into modules and each module consist of functions and/or 
 | *mapper_functions.py* | consist of functions used create mapper graph
 | *models.py* | consist of data models
 | *json_decode.py* | consist of data models used to decode json
+| *dbimport.py* | module used to import data into an existing database.
+| *main.py*| entry point
+
 
 **Miscellaneous Modules**
 
@@ -36,6 +39,32 @@ The project is divided into modules and each module consist of functions and/or 
 - api/*
 
 - neo4j/*
+
+## Setup
+1. Download and [install](https://neo4j.com/download/) Neo4j database
+
+2. Download and install the Python packages in the _Non-standard Python Modules Used in this Project._ section.
+
+3. Create a Reddit account
+
+4. Log into your Reddit account and do the follwoing:
+  
+    1. Click on your username
+    
+    2. In the dropdown menu click on _User Settings_
+    
+    3. On the new page, click on _Privacy & Security_
+    
+    4. On the new page, Click on _App Authorization_
+    
+    5. Click on _create App_ or _Create Another App_ if you already have one. 
+    
+    6. Note the app secret and client id.
+  
+5. In main.py module, provide the GraphBot constructor with the required input
+
+6. Execute main.py
+    
 
 ## Data Collection
 Data collection is done using APIs found in Praw. [`Praw`](https://praw.readthedocs.io/en/latest/index.html) is a Reddit API wrapper that can be used to scrape data from Reddit. Reddit API rules can be found [here](https://github.com/reddit-archive/reddit/wiki/API).
@@ -150,7 +179,26 @@ Example API request to this endpoint is shown below. The below request will exec
   # display data
   DataFrame(data)
 ```
+**Loading data into an existing db**
 
+Use the Loader class in dbimport.py
+ 
+```Python
+# create the loader class
+ln = Loader(url="http://localhost:11002/", username="neo4j", password="chubi93")
+# node csv header with mandatory ":ID" filed
+node_header = [":ID","author", "score", "timestamp", "length", "sentiment", ":LABEL"]
+
+# edge csv header with mandatory fields
+rel_header = [":START_ID",":END_ID",":TYPE"]
+
+with open("raw/mapper_comment_data.csv", mode="r", newline="") as fp:        
+    with open("raw/mapper_comment_edge_data.csv", mode="r", newline="") as fp0:
+        ln.load_nodes(fp,node_header)
+        ln.load_edges(fp0, rel_header)  
+        ln.writeToDb()
+
+```
 
 ## Non-standard Python Modules Used in this Project.
 - [`NetworkX`](https://networkx.github.io/documentation/stable/index.html)

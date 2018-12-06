@@ -8,7 +8,7 @@ import praw
 
 
 class RedditBot:
-    def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ"):
+    def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ", APP_NAME="myapp", VERSION = "1.0.0"):
         """ 
             initialize the bot
 
@@ -27,7 +27,7 @@ class RedditBot:
         """
         self._client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
         self._client_id = "n-EWVSgG6cMnRQ"
-        self.user_agent = "python:evolutionconvo:v1.0.0 (by /u/%s)" % username
+        self.user_agent = "python:%s:v%s (by /u/%s)" % (APP_NAME,VERSION,username)
 
         self.reddit = praw.Reddit(client_id=self._client_id, client_secret=self._client_secret,
                                   password=password, user_agent=self.user_agent, username=username)
@@ -64,7 +64,7 @@ class RedditBot:
         """
         return self.reddit.submission(id=id)
 
-    def dump(self, filename, ids):
+    def dumpjson(self, filename, ids):
         """
             write the comments in the submission with the given id
             to filename.

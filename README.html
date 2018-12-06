@@ -184,6 +184,14 @@ $(document).ready(function () {
 <td><em>json_decode.py</em></td>
 <td>consist of data models used to decode json</td>
 </tr>
+<tr class="odd">
+<td><em>dbimport.py</em></td>
+<td>module used to import data into an existing database.</td>
+</tr>
+<tr class="even">
+<td><em>main.py</em></td>
+<td>entry point</td>
+</tr>
 </tbody>
 </table>
 <p><strong>Miscellaneous Modules</strong></p>
@@ -193,6 +201,25 @@ $(document).ready(function () {
 <li><p>api/*</p></li>
 <li><p>neo4j/*</p></li>
 </ul>
+</div>
+<div id="setup" class="section level2">
+<h2>Setup</h2>
+<ol style="list-style-type: decimal">
+<li><p>Download and <a href="https://neo4j.com/download/">install</a> Neo4j database</p></li>
+<li><p>Download and install the Python packages in the <em>Non-standard Python Modules Used in this Project.</em> section.</p></li>
+<li><p>Create a Reddit account</p></li>
+<li><p>Log into your Reddit account and do the follwoing:</p>
+<ol style="list-style-type: decimal">
+<li><p>Click on your username</p></li>
+<li><p>In the dropdown menu click on <em>User Settings</em></p></li>
+<li><p>On the new page, click on <em>Privacy &amp; Security</em></p></li>
+<li><p>On the new page, Click on <em>App Authorization</em></p></li>
+<li><p>Click on <em>create App</em> or <em>Create Another App</em> if you already have one.</p></li>
+<li><p>Note the app secret and client id.</p></li>
+</ol></li>
+<li><p>In main.py module, provide the GraphBot constructor with the required input</p></li>
+<li><p>Execute main.py</p></li>
+</ol>
 </div>
 <div id="data-collection" class="section level2">
 <h2>Data Collection</h2>
@@ -287,6 +314,22 @@ Content-Type: application/json
   
   # display data
   DataFrame(data)</code></pre>
+<p><strong>Loading data into an existing db</strong></p>
+<p>Use the Loader class in dbimport.py</p>
+<pre class="python"><code># create the loader class
+ln = Loader(url=&quot;http://localhost:11002/&quot;, username=&quot;neo4j&quot;, password=&quot;chubi93&quot;)
+# node csv header with mandatory &quot;:ID&quot; filed
+node_header = [&quot;:ID&quot;,&quot;author&quot;, &quot;score&quot;, &quot;timestamp&quot;, &quot;length&quot;, &quot;sentiment&quot;, &quot;:LABEL&quot;]
+
+# edge csv header with mandatory fields
+rel_header = [&quot;:START_ID&quot;,&quot;:END_ID&quot;,&quot;:TYPE&quot;]
+
+with open(&quot;raw/mapper_comment_data.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp:        
+    with open(&quot;raw/mapper_comment_edge_data.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp0:
+        ln.load_nodes(fp,node_header)
+        ln.load_edges(fp0, rel_header)  
+        ln.writeToDb()
+</code></pre>
 </div>
 <div id="non-standard-python-modules-used-in-this-project." class="section level2">
 <h2>Non-standard Python Modules Used in this Project.</h2>

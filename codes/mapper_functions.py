@@ -18,29 +18,29 @@ ALPHA = 97
 """
 
 
-def cluster_on_numeric_property(edges, epsilon=0.5, prop="readingLevel", num_interval=3):
+def cluster_on_numeric_property(edges, epsilon=0.5, property_key="readingLevel", num_interval=3):
     """
         wrapper function
     """
-    groups = numeric_interval(epsilon, edges, prop, num_interval)
+    groups = numeric_interval(epsilon, edges, property_key, num_interval)
     cluster = clusterInterval(groups)
 
-    return graphFromCluster(cluster, prop)
+    return graphFromCluster(cluster, property_key)
 
 
-def cluster_on_numeric_property_nodes(nodes, edges, epsilon, prop="readingLevel", num_interval=3):
+def cluster_on_numeric_property_nodes(nodes, edges, epsilon, property_key="readingLevel", num_interval=3):
     """
         wrapper function
     """
-    groups = numeric_interval_nodes(epsilon, nodes, prop, num_interval)
+    groups = numeric_interval_nodes(epsilon, nodes, property_key, num_interval)
     cluster = cluster_interval_nodes(groups, edges)
 
-    return graphFromCluster(cluster, prop)
+    return graphFromCluster(cluster, property_key)
 
 
-def numeric_interval(epsilon, edges, prop, num_intervals=3):
+def numeric_interval(epsilon, edges, property_key, num_intervals=3):
     """
-        splits the edges into intervals based on prop
+        splits the edges into intervals based on property_key
 
         @param epsilon
             :type float
@@ -50,7 +50,7 @@ def numeric_interval(epsilon, edges, prop, num_intervals=3):
             :type list
             :description: list of edges
 
-        @param prop
+        @param property_key
             :type string
             :description: the node property used to create interval
 
@@ -67,7 +67,7 @@ def numeric_interval(epsilon, edges, prop, num_intervals=3):
     if incr_size == 0:
         incr_size = 1
 
-    # create the intervals using prop value to mark the range bounds
+    # create the intervals using property value to mark the range bounds
     for i in range(0, n, incr_size):
         e = edges[i:i+incr_size]
         intervals.append(e)
@@ -76,21 +76,21 @@ def numeric_interval(epsilon, edges, prop, num_intervals=3):
     length = len(intervals)
     for i in range(length-1):
         next = i+1
-        minimum = getAverage(intervals[i][0], prop) - epsilon
-        maximum = getAverage(intervals[i][-1], prop) + epsilon
+        minimum = getAverage(intervals[i][0], property_key) - epsilon
+        maximum = getAverage(intervals[i][-1], property_key) + epsilon
 
         for e in intervals[next]:
-            if getAverage(e, prop) <= maximum and e not in intervals[i]:
+            if getAverage(e, property_key) <= maximum and e not in intervals[i]:
                 intervals[i].append(e)
 
         groups[(minimum, maximum)] = intervals[i]
 
         # make sure to include the last interval in the group map
         if(next == length-1):
-            minimum = getAverage(intervals[next][0], prop) - epsilon
-            maximum = getAverage(intervals[next][-1], prop) + epsilon
+            minimum = getAverage(intervals[next][0], property_key) - epsilon
+            maximum = getAverage(intervals[next][-1], property_key) + epsilon
             for e in intervals[i]:
-                if getAverage(e, prop) <= maximum and e not in intervals[next]:
+                if getAverage(e, property_key) <= maximum and e not in intervals[next]:
                     intervals[next].append(e)
             groups[(minimum, maximum)] = intervals[next]
 
@@ -146,9 +146,9 @@ def clusterInterval(groups):
     return clusters
 
 
-def numeric_interval_nodes(epsilon, nodes, prop, num_intervals=3):
+def numeric_interval_nodes(epsilon, nodes, property_key, num_intervals=3):
     """
-        splits the edges into intervals based on prop
+        splits the edges into intervals based on property_key
 
         @param epsilon
             :type float
@@ -158,7 +158,7 @@ def numeric_interval_nodes(epsilon, nodes, prop, num_intervals=3):
             :type list
             :description: list of edges
 
-        @param prop
+        @param property_key
             :type string
             :description: the node property used to create interval
 
@@ -174,7 +174,7 @@ def numeric_interval_nodes(epsilon, nodes, prop, num_intervals=3):
         incr_size = 1
 
     intervals = []
-    # create the intervals using prop value to mark the range bounds
+    # create the intervals using property_key value to mark the range bounds
     for i in range(0, n, incr_size):
         n = nodes[i:i+incr_size]
         intervals.append(n)
@@ -184,23 +184,23 @@ def numeric_interval_nodes(epsilon, nodes, prop, num_intervals=3):
 
     for i in range(length-1):
         next = i + 1
-        minimum = intervals[i][0].__dict__[prop] - epsilon
-        maximum = intervals[i][-1].__dict__[prop] + epsilon
+        minimum = intervals[i][0].__dict__[property_key] - epsilon
+        maximum = intervals[i][-1].__dict__[property_key] + epsilon
 
         # find overlaps
         for j in range(next, len(nodes)):
-            if nodes[j].__dict__[prop] <= maximum and nodes[j] not in intervals[i]:
+            if nodes[j].__dict__[property_key] <= maximum and nodes[j] not in intervals[i]:
                 intervals[i].append(nodes[j])
 
         groups[(minimum, maximum)] = intervals[i]
 
         # make sure to include the last interval in the group map
         if(next == length-1):
-            minimum = intervals[next][0].__dict__[prop] - epsilon
-            maximum = intervals[next][-1].__dict__[prop] + epsilon
+            minimum = intervals[next][0].__dict__[property_key] - epsilon
+            maximum = intervals[next][-1].__dict__[property_key] + epsilon
 
             for n in intervals[i]:
-                if n.__dict__[prop] <= maximum and n not in intervals[next]:
+                if n.__dict__[property_key] <= maximum and n not in intervals[next]:
                     intervals[next].append(n)
             groups[(minimum, maximum)] = intervals[next]
 
@@ -254,7 +254,7 @@ def cluster_interval_nodes(groups, edges):
     return clusters
 
 
-def graphFromCluster(clusters, prop):
+def graphFromCluster(clusters, property_key):
     """
         creates a graph from the interval clusters
         Nodes are connected if their Jaccard is > 0.1
@@ -263,7 +263,7 @@ def graphFromCluster(clusters, prop):
             :type dict
             :description: a dict w/ key = cluster name and value = list of nodes
 
-        @param prop
+        @param property_key
             :type list
             :description: list of node field names
 
@@ -337,7 +337,7 @@ def getProperties(obj):
 
 def clusterAverage(name, cluster, props):
     """
-        calculates the average of all the properties in prop for
+        calculates the average of all the properties in property_key for
         all the clusters in cluster
         creates a node with the average(numeric) or mode(string) attribute for a cluster
 
@@ -366,9 +366,9 @@ def clusterAverage(name, cluster, props):
     mode_value = 0
     mode_var = None
 
-    for prop in props:
+    for property_key in props:
         for node in cluster:
-            tp = node.__dict__[prop]
+            tp = node.__dict__[property_key]
             if isinstance(tp, str):  # use mode for categorical variables
                 category_variable[tp] += 1
                 if category_variable[tp] > mode_value:
@@ -378,11 +378,11 @@ def clusterAverage(name, cluster, props):
                 numerical_variables.append(tp)
 
         if len(numerical_variables) != 0:  # use median for numerical variables
-            clusterNode.__dict__[prop] = float(
+            clusterNode.__dict__[property_key] = float(
                 round(median(numerical_variables), 4))
             numerical_variables.clear()
         else:
-            clusterNode.__dict__[prop] = str(mode_var)
+            clusterNode.__dict__[property_key] = str(mode_var)
             mode_value = 0
             category_variable.clear()
 
@@ -412,7 +412,7 @@ def clusterAverage(name, cluster, props):
     return clusterNode
 
 
-def getAverage(edge, prop):
+def getAverage(edge, property_key):
     """
         calculates the average property of a given edge
 
@@ -420,18 +420,21 @@ def getAverage(edge, prop):
             :type tuple
             :description: graph edge
 
-        @param prop
+        @param property_key
             :type string
             :description: the node attribute to average
 
-        :rtype mean(prop)
+        :rtype mean(property_key)
     """
 
     if len(edge) < 2 or not hasattr(edge, "__iter__"):
         raise Exception("edge must have at least two nodes")
 
-    p1 = edge[0].__dict__[prop]
-    p2 = edge[1].__dict__[prop]
+    p1 = edge[0].__dict__[property_key]
+    p2 = edge[1].__dict__[property_key]
+
+    if isinstance(p1,str) or isinstance(p2,str):
+        raise Exception("Property_key value must be numeric")
 
     # print("Edge:%s val:%d|Edge:%s val:%d"%(edge[0],p1,edge[1],p2))
 

@@ -11,7 +11,7 @@ from mapper_functions import getProperties
     :type
     :description:
 """
-def writeEdgeHeaderFile(filename, has_type = True, edge_properties = [], values = []):
+def writeEdgeHeaderFile(filename, has_type = True, property_keys = [], property_values = []):
     """
         writes Neo4j relationship header to file
         creates file if it does not exist otherwise overwrite
@@ -24,25 +24,25 @@ def writeEdgeHeaderFile(filename, has_type = True, edge_properties = [], values 
             :type boolean
             :description: say if the relationship is specified
 
-        @param edge_properties
+        @param property_keys
             :type list
             :description: a list of edge properties
 
-        @param values
+        @param property_values
             :type list
             :description: used to determine the data type of each edge property
     """
-    header_1 = [":START_ID"] + edge_properties
+    header_1 = [":START_ID"] + property_keys
     header_1.append(":END_ID")
     
 
     # add data type to header
-    # for i in range(len(edge_properties)):
-    #     s = "".join(list(str(type(values[i])))[8:][:-2])
-    #     edge_properties[i] = edge_properties[i] + ":" + s.upper()
+    # for i in range(len(property_keys)):
+    #     s = "".join(list(str(type(property_values[i])))[8:][:-2])
+    #     property_keys[i] = property_keys[i] + ":" + s.upper()
 
 
-    header = [":START_ID"] + edge_properties
+    header = [":START_ID"] + property_keys
     header.append(":END_ID")
     
     # check if the edge has a type label
@@ -95,14 +95,14 @@ def writeEdgesToFile(filename, data, rel = None, directed = False):
         raise Exception("must rel cannot be None or empty")
 
     if n > 2:
-        prop = list(data[0][2].keys())
-        values = list(data[0][2].values())
+        property_keys = list(data[0][2].keys())
+        property_values = list(data[0][2].values())
         #  remove type from the header because its a duplicate
-        for i in range(len(prop)):
-            if prop[i] == 'type':
-                prop.pop(i)
+        for i in range(len(property_keys)):
+            if property_keys[i] == 'type':
+                property_keys.pop(i)
                 break
-        header = writeEdgeHeaderFile(filename, edge_properties = prop, values= values)
+        header = writeEdgeHeaderFile(filename, property_keys = property_keys, property_values= property_values)
     else:
         header = writeEdgeHeaderFile(filename, has_type = rel != None)
 
@@ -112,11 +112,11 @@ def writeEdgesToFile(filename, data, rel = None, directed = False):
 
         for edge in data:
             if len(edge) > 2:
-                node_1 , node_2 , prop = edge
-                relationship = prop.pop("type", rel)
+                node_1 , node_2 , property_keys = edge
+                relationship = property_keys.pop("type", rel)
     
                 d = {":START_ID":node_1.id, ":END_ID":node_2.id}
-                d.update(prop)
+                d.update(property_keys)
                 d[":TYPE"] = relationship
 
             else:
@@ -135,7 +135,7 @@ def writeEdgesToFile(filename, data, rel = None, directed = False):
                 d[":END_ID"] = temp
                 dictWriter.writerow(d)
 
-def writeNodeHeaderFile(filename, header, values):
+def writeNodeHeaderFile(filename, header, property_values):
     """
         writes header to the given filename
         creates file if it does not exist otherwise overwrite
@@ -148,14 +148,14 @@ def writeNodeHeaderFile(filename, header, values):
             :type list
             :description: list of node attributes
 
-        @param values
+        @param property_values
             :type list
-            :description: list of node attribute values used to determine their data type
+            :description: list of node attribute property_values used to determine their data type
     """
     h = header[:-2] # remove the type and id_0 column
 
     # add data type to header
-    # v = values[:-2]
+    # v = property_values[:-2]
     # for i in range(len(v)):
     #     s = "".join(list(str(type(v[i])))[8:][:-2])
     #     if s == "str":
