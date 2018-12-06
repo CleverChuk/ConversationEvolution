@@ -126,28 +126,3 @@ class Loader:
 
         for rel in self.rels:
             self.graph.create(rel)
-        
-
-
-   
-
-
-
-      
-
-    
-# test
-if __name__ == "__main__":
-    ln = Loader()
-    header = [":ID", "article_id", "parent_id", "author", "score", "timestamp", "length",
-              "averageWordLength", "quotedTextPerLength", "readingLevel", "sentimentScore", "sentiment", "similarity", ":LABEL"]
-    rel_header = [":START_ID",":END_ID",":TYPE"]
-
-    with open("raw/mapper_comment_data.csv", mode="r", newline="") as fp:        
-        with open("raw/mapper_comment_edge_data.csv", mode="r", newline="") as fp0:
-            ln.load_nodes(fp,header)
-            ln.load_edges(fp0, rel_header)  
-            ln.writeToDb()
-
-    node = Node("Person", name="Chubi")
-    ln.graph.merge(node,"Person","name")
