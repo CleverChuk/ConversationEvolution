@@ -19,9 +19,9 @@ The project is divided into modules and each module consist of functions and/or 
 | Module | Purpose                                                                                                                      |
 | ------ | -----------------------------------------------------------------------------------------------------------------------------|
 | *base.py* | contains the base class used to retrieve data from Reddit |
-| *grapher.py* | extends base.py|
-| *analyzers.py* | consists of function used to calculate data fields such as sentiment, number of quoted texts per length etc. |
-| *textsim.py* | consist of function for document analysis like similarity calculation |
+| *grapher.py* | contains the class that extends RedditBot|
+| *analyzers.py* | consists of functions used to calculate data fields such as sentiment, number of quoted texts per length etc. |
+| *textsim.py* | consist of functions for document analysis like similarity calculation |
 | *graph_writer.py* | consist of functions that write graph to csv using Neo4j schema
 | *mapper_functions.py* | consist of functions used create mapper graph
 | *models.py* | consist of data models
@@ -47,7 +47,7 @@ The project is divided into modules and each module consist of functions and/or 
 
 3. Create a Reddit account
 
-4. Log into your Reddit account and do the follwoing:
+4. Log into your Reddit account and do the following:
   
     1. Click on your username
     
@@ -185,8 +185,8 @@ Use the Loader class in dbimport.py
  
 ```Python
 # create the loader class
-ln = Loader(url="http://localhost:11002/", username="neo4j", password="chubi93")
-# node csv header with mandatory ":ID" filed
+ln = Loader(url="http://localhost:11002/", username="neo4j", password="password")
+# node csv header with mandatory ":ID" field
 node_header = [":ID","author", "score", "timestamp", "length", "sentiment", ":LABEL"]
 
 # edge csv header with mandatory fields

@@ -38,7 +38,7 @@ class Comment:
         self.average_word_length =  obj.pop("average_word_length","na")
         self.quoted_text_per_length =  obj.pop("quoted_text_per_length","na")
         self.reading_level =  obj.pop("reading_level","na")
-        self.sentimentScore =  obj.pop("sentimentScore","na")
+        self.sentiment_score =  obj.pop("sentiment_score","na")
         self.sentiment =  obj.pop("sentiment","na")
         self.replies = [Comment(c) for c in  obj.pop("replies",[])]
 
@@ -68,19 +68,19 @@ class CommentDump:
     """
     def __init__(self, comment):
         from analyzers import CommentAnalysis
-        metaAnalysis = CommentAnalysis(comment)
+        meta_analyzer = CommentAnalysis(comment)
         self.author = "Anonymous" if comment.author == None else comment.author.name
         self.parent_id = comment.parent().id
         self.score = comment.score
         self.timestamp = comment.created
         self.id = comment.id
         self.body = comment.body
-        self.length = metaAnalysis.length
-        self.average_word_length = metaAnalysis.average_word_length
-        self.quoted_text_per_length = metaAnalysis.quoted_text_per_length
-        self.reading_level = metaAnalysis.reading_level
-        self.sentimentScore = SentimentAnalysis.add_sentiment(comment)
-        self.sentiment = SentimentAnalysis.convert_score(self.sentimentScore)
+        self.length = meta_analyzer.length
+        self.average_word_length = meta_analyzer.average_word_length
+        self.quoted_text_per_length = meta_analyzer.quoted_text_per_length
+        self.reading_level = meta_analyzer.reading_level
+        self.sentiment_score = SentimentAnalysis.get_sentiment(comment)
+        self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
         self.replies = [CommentDump(c) for c in comment.replies]
 
     def __repr__(self):

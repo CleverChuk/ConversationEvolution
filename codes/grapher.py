@@ -30,7 +30,7 @@ class GraphBot(RedditBot):
         A subclass of RedditBot that can be used to build mapper graph
     """
 
-    def __init__(self, subreddit, username = "CleverChuk", password = "BwO9pJdzGaVj2pyhZ4kJ" , property_key = "sentimentScore", epsilon = 0.5, intervals = 3, APP_NAME="myapp", VERSION = "1.0.0"):
+    def __init__(self, subreddit, username = "CleverChuk", password = "BwO9pJdzGaVj2pyhZ4kJ" , property_key = "sentiment_score", epsilon = 0.5, intervals = 3, APP_NAME="myapp", VERSION = "1.0.0"):
         """
         Builds the GraphBot objects using default or provided configuration
 
@@ -152,7 +152,7 @@ class GraphBot(RedditBot):
         # populate sentiment/comment  and comment/comment edge list
         for p_comment, *_ in self.article_comment_edges:
             self.sentiment_comment_edges.append((sentiment[p_comment.sentiment], p_comment, 
-            {"type": "_IS","score": p_comment.sentimentScore}))
+            {"type": "_IS","score": p_comment.sentiment_score}))
 
             for c_comment, *_ in self.article_comment_edges:
                 if c_comment.parent_id == p_comment.id:

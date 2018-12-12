@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
-  <key attr.name="similarity" attr.type="double" for="edge" id="d23" />
-  <key attr.name="score" attr.type="double" for="edge" id="d22" />
+  <key attr.name="score" attr.type="double" for="edge" id="d23" />
+  <key attr.name="similarity" attr.type="double" for="edge" id="d22" />
   <key attr.name="type" attr.type="string" for="edge" id="d21" />
   <key attr.name="upvote_ratio" attr.type="double" for="node" id="d20" />
   <key attr.name="isVideo" attr.type="boolean" for="node" id="d19" />
@@ -26,261 +26,256 @@
   <key attr.name="id" attr.type="string" for="node" id="d0" />
   <graph edgedefault="undirected">
     <node id="0">
-      <data key="d0">AutoModerator</data>
-      <data key="d1">AutoModerator</data>
+      <data key="d0">derspiny</data>
+      <data key="d1">derspiny</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="1">
-      <data key="d0">eb8np9j</data>
-      <data key="d4">a3s7ja</data>
-      <data key="d5">a3s7ja</data>
-      <data key="d6">AutoModerator</data>
-      <data key="d7">1</data>
-      <data key="d8">1544158608</data>
-      <data key="d9">Please review the [Landlord Tenant Questions](https://www.reddit.com/r/legaladvice/wiki/landlord) section of the /r/LegalAdvice Wiki for common questions and answers regarding landlord tenant issues.  If this does not apply to your question, please disregard.
+      <data key="d0">ebkq1jb</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">a591uf</data>
+      <data key="d6">derspiny</data>
+      <data key="d7">46</data>
+      <data key="d8">1544579327</data>
+      <data key="d9">Fantastic rundown of the situation and options. Thanks for posting this.
 
-*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/legaladvice) if you have any questions or concerns.*</data>
-      <data key="d10">445</data>
-      <data key="d11">8.476</data>
-      <data key="d12">0.0</data>
-      <data key="d13">28.5</data>
-      <data key="d14">0.1376</data>
+&gt; That does not mean you can't individually attempt to transfer to a new school.
+
+Consider changing this to "Students can still attempt to transfer to a new school on their own." for clarity? The double negative sticks out.</data>
+      <data key="d10">297</data>
+      <data key="d11">6.378</data>
+      <data key="d12">0.2323</data>
+      <data key="d13">69.99</data>
+      <data key="d14">0.138</data>
       <data key="d15">Positive</data>
       <data key="d16">1.0</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="2">
-      <data key="d0">AutoModerator</data>
-      <data key="d1">AutoModerator</data>
+      <data key="d0">Neekosmith</data>
+      <data key="d1">Neekosmith</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="3">
-      <data key="d0">eb8np9y</data>
-      <data key="d4">a3s7ja</data>
-      <data key="d5">a3s7ja</data>
-      <data key="d6">AutoModerator</data>
-      <data key="d7">1</data>
-      <data key="d8">1544158608</data>
-      <data key="d9">Thank you for posting an update!  All update posts are automatically locked due to a historical lack of on-topic discussion.  This is a forum for legal advice and if none is sought, none will be offered.   If, however, your post also contains a new question, please [message the moderators](https://www.reddit.com/message/compose/?to=/r/legaladvice&amp;subject=Re-approve%20my%20comment&amp;message=https://www.reddit.com/r/legaladvice/comments/a3s7ja/updateone_last_update_to_my_husband_committing/%20\(please%20leave%20this%20so%20we%20can%20reference%20your%20comment\)) for a review. 
+      <data key="d0">ebkxzwd</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">a591uf</data>
+      <data key="d6">Neekosmith</data>
+      <data key="d7">17</data>
+      <data key="d8">1544585192</data>
+      <data key="d9">&gt;Bear in mind, if you successfully transfer you will not be able to discharge your loan debt.
 
-Feel free to start or join in the conversation about this update in either /r/bestoflegaladvice or /r/legaladviceofftopic.
+&amp;#x200B;
 
-
-*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/legaladvice) if you have any questions or concerns.*</data>
-      <data key="d10">891</data>
-      <data key="d11">10.567</data>
+Not sure this is 100% true.  I was able to discharge $45k in CCi debt years after transferring from there to a state school (and them accepting some of the useless credits).</data>
+      <data key="d10">278</data>
+      <data key="d11">5.095</data>
       <data key="d12">0.0</data>
-      <data key="d13">10.26</data>
-      <data key="d14">0.1921</data>
-      <data key="d15">Positive</data>
+      <data key="d13">88.36</data>
+      <data key="d14">-0.0042</data>
+      <data key="d15">Neutral</data>
       <data key="d16">1.0</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="4">
-      <data key="d0">caustic_banana</data>
-      <data key="d1">caustic_banana</data>
+      <data key="d0">areraswen</data>
+      <data key="d1">areraswen</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="5">
-      <data key="d0">eb7q0yp</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">caustic_banana</data>
-      <data key="d7">500</data>
-      <data key="d8">1544135696</data>
-      <data key="d9">Yes, this is the artist's mistake and not yours.  You were operating in good faith with the understanding you had been granted a legal and legitimate license to use an image.
+      <data key="d0">ebl2zzx</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">a591uf</data>
+      <data key="d6">areraswen</data>
+      <data key="d7">7</data>
+      <data key="d8">1544588800</data>
+      <data key="d9">There were a lot of great resources put together by former students of ITT when this happened to them and I'd recommend seeking some of those out and taking a look. One option open to former students who have already graduated but feel defrauded or misled by the school is called the defense to repayment form, but you should only fill this out if you feel ECA seriously misled or tricked you in some way. You are required to provide as much proof as possible backing up your arguments. after received, your student loans will go in to administrative forbearance while they are reviewed.
 
-At the least, you should reach out to a lawyer.  Depending on the timing, it's entirely possible the artist negotiated in bad faith with either you or the other party that got the exclusive deal.
-
-I would hold up on the mass recall until someone has looked this over.</data>
-      <data key="d10">443</data>
-      <data key="d11">5.645</data>
+Currently people are being placed on 10 year administrative forbearance because it is expected to take years to review all these cases. So be prepared for a long battle.</data>
+      <data key="d10">758</data>
+      <data key="d11">6.16</data>
       <data key="d12">0.0</data>
-      <data key="d13">72.16</data>
-      <data key="d14">0.2532</data>
-      <data key="d15">Positive</data>
+      <data key="d13">57.4</data>
+      <data key="d14">-0.0035</data>
+      <data key="d15">Neutral</data>
       <data key="d16">1.0</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="6">
-      <data key="d0">asscakesguy</data>
-      <data key="d1">asscakesguy</data>
+      <data key="d0">phneri</data>
+      <data key="d1">phneri</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="7">
-      <data key="d0">eb7q8f2</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">asscakesguy</data>
-      <data key="d7">111</data>
-      <data key="d8">1544135871</data>
-      <data key="d9">If you paid to license it why would you be forced to recall your products unless the licensing agreement ran out? If anything I would think the larger company would have grounds to sue for him misrepresenting that they would have sole licensing rights. But NAL so you should talk to one versed in this area of business law. </data>
-      <data key="d10">324</data>
-      <data key="d11">5.574</data>
+      <data key="d0">ebkqasg</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">ebkq1jb</data>
+      <data key="d6">phneri</data>
+      <data key="d7">35</data>
+      <data key="d8">1544579514</data>
+      <data key="d9">...what double negative? I clearly didn't just ninja edit something.</data>
+      <data key="d10">68</data>
+      <data key="d11">5.3</data>
       <data key="d12">0.0</data>
-      <data key="d13">76.86</data>
-      <data key="d14">0.0172</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">1.0</data>
+      <data key="d13">49.48</data>
+      <data key="d14">-0.085</data>
+      <data key="d15">Negative</data>
+      <data key="d16">0.0646</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="8">
-      <data key="d0">beamdriver</data>
-      <data key="d1">beamdriver</data>
+      <data key="d0">Qwerty_Resident</data>
+      <data key="d1">Qwerty_Resident</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="9">
-      <data key="d0">eb7rjte</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">beamdriver</data>
-      <data key="d7">101</data>
-      <data key="d8">1544136899</data>
-      <data key="d9">You have a prior claim on a legitimate license to the image. As long as that is properly documented, I can't see why you'd have to recall your product. 
+      <data key="d0">ebl1rsx</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">ebkxzwd</data>
+      <data key="d6">Qwerty_Resident</data>
+      <data key="d7">11</data>
+      <data key="d8">1544587915</data>
+      <data key="d9">It depends on the program you're using to discharge the debt.
 
-You should definitely speak with an IP lawyer about this. I'm not sure if the big company who purchased exclusive rights to the image would have standing to sue you unless they purchased the copyright to the image outright.  The artist may have to sue you, which would be interesting. 
+I'm going through the borrower's defense forgiveness/discharge program currently, which is for when you graduated but your school made false claims/used high pressure sales tactics to get you to enroll when, had you know the claims were falsified, you would not have enrolled; I don't believe that program disqualifies you if you transferred, but it is also typically harder to do (have to give examples of why you wouldn't go, who told you things, etc, and get it evaluated, versus a more-or-less default judgment in the case of a closed school, from what I heard).
 
-If you have to recall your product, you probably have a good case against the artist for damages. </data>
-      <data key="d10">539</data>
-      <data key="d11">6.855</data>
+Note that I'm not a lawyer, just someone who thought Westwood College sounded like a good idea when I was 19.</data>
+      <data key="d10">740</data>
+      <data key="d11">6.44</data>
       <data key="d12">0.0</data>
-      <data key="d13">71.95</data>
-      <data key="d14">0.1142</data>
-      <data key="d15">Positive</data>
-      <data key="d16">1.0</data>
+      <data key="d13">45.46</data>
+      <data key="d14">-0.1385</data>
+      <data key="d15">Negative</data>
+      <data key="d16">0.1069</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="10">
-      <data key="d0">Bsubrowsing</data>
-      <data key="d1">Bsubrowsing</data>
+      <data key="d0">phneri</data>
+      <data key="d1">phneri</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="11">
-      <data key="d0">eb7q4m4</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">Bsubrowsing</data>
-      <data key="d7">38</data>
-      <data key="d8">1544135785</data>
-      <data key="d9">I’m not a lawyer, but this seems like a shady act by the artist.  Did your licensing agreement not cover this scenario and forbid it?</data>
-      <data key="d10">133</data>
-      <data key="d11">4.375</data>
+      <data key="d0">ebl04a5</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">ebkxzwd</data>
+      <data key="d6">phneri</data>
+      <data key="d7">3</data>
+      <data key="d8">1544586710</data>
+      <data key="d9">It's specifically listed as making one not eligible for discharge under the federal student loan discharge criteria listed [here](https://studentaid.ed.gov/sa/repay-loans/forgiveness-cancellation/closed-school#criteria).</data>
+      <data key="d10">220</data>
+      <data key="d11">10.765</data>
       <data key="d12">0.0</data>
-      <data key="d13">84.17</data>
-      <data key="d14">0.3643</data>
-      <data key="d15">Positive</data>
-      <data key="d16">1.0</data>
+      <data key="d13">-57.8</data>
+      <data key="d14">0.0</data>
+      <data key="d15">Neutral</data>
+      <data key="d16">0.1225</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="12">
-      <data key="d0">adossantos89</data>
-      <data key="d1">adossantos89</data>
+      <data key="d0">phneri</data>
+      <data key="d1">phneri</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="13">
-      <data key="d0">eb83e2q</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">adossantos89</data>
-      <data key="d7">8</data>
-      <data key="d8">1544145101</data>
-      <data key="d9">You shouldn't have to recall your product. The artist couldn't have agreed to the exclusivity if it interferes with the terms of your license. As long as your license is valid and documented, the issue is between the artist and the big company and not you.</data>
-      <data key="d10">256</data>
-      <data key="d11">6.833</data>
+      <data key="d0">ebl3qwa</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">ebl2zzx</data>
+      <data key="d6">phneri</data>
+      <data key="d7">1</data>
+      <data key="d8">1544589344</data>
+      <data key="d9">If you have a link to resources beyond the Dept. of Ed. site I'd be happy to drop them into the post.</data>
+      <data key="d10">101</data>
+      <data key="d11">3.8</data>
       <data key="d12">0.0</data>
-      <data key="d13">72.87</data>
-      <data key="d14">-0.0686</data>
-      <data key="d15">Negative</data>
-      <data key="d16">1.0</data>
+      <data key="d13">94.15</data>
+      <data key="d14">0.1273</data>
+      <data key="d15">Positive</data>
+      <data key="d16">0.041</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="14">
-      <data key="d0">betamaleorderbride</data>
-      <data key="d1">betamaleorderbride</data>
+      <data key="d0">derspiny</data>
+      <data key="d1">derspiny</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="15">
-      <data key="d0">eb88h2s</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">betamaleorderbride</data>
-      <data key="d7">6</data>
-      <data key="d8">1544148434</data>
-      <data key="d9">FYI when asking for legal advice you need to provide the state, not just the country.  State laws vary wildly, and even from county to county.</data>
-      <data key="d10">142</data>
-      <data key="d11">5.091</data>
+      <data key="d0">ebkqdn9</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">ebkqasg</data>
+      <data key="d6">derspiny</data>
+      <data key="d7">14</data>
+      <data key="d8">1544579571</data>
+      <data key="d9">Of course not. :D</data>
+      <data key="d10">17</data>
+      <data key="d11">3.0</data>
       <data key="d12">0.0</data>
-      <data key="d13">83.66</data>
-      <data key="d14">0.1591</data>
+      <data key="d13">118.18</data>
+      <data key="d14">0.2553</data>
       <data key="d15">Positive</data>
-      <data key="d16">1.0</data>
+      <data key="d16">0.0</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="16">
-      <data key="d0">HatsAndTopcoats</data>
-      <data key="d1">HatsAndTopcoats</data>
+      <data key="d0">Neekosmith</data>
+      <data key="d1">Neekosmith</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="17">
-      <data key="d0">eb7w3h9</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">HatsAndTopcoats</data>
-      <data key="d7">16</data>
-      <data key="d8">1544140149</data>
-      <data key="d9">I am not a lawyer. From my perspective I can't see why the onus is on you to do anything at this point. You appear to have a valid license for the design. The fact that the artist lied to someone else about granting them an exclusive license wouldn't seem to impact your license.
-
-Has the artist or the other company even told you that you cannot continue to use the design? You didn't explicitly say that in your post. If they haven't even told you to stop, I wouldn't jump ahead to paying for a lawyer.</data>
-      <data key="d10">504</data>
-      <data key="d11">6.156</data>
+      <data key="d0">ebl8xq8</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">ebl1rsx</data>
+      <data key="d6">Neekosmith</data>
+      <data key="d7">1</data>
+      <data key="d8">1544593105</data>
+      <data key="d9">that makes sense!  I believe I went with the false claims angle when I applied.  I was honestly surprised they approved it.</data>
+      <data key="d10">123</data>
+      <data key="d11">5.105</data>
       <data key="d12">0.0</data>
-      <data key="d13">82.75</data>
-      <data key="d14">-0.0349</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">1.0</data>
+      <data key="d13">80.99</data>
+      <data key="d14">0.2572</data>
+      <data key="d15">Positive</data>
+      <data key="d16">0.077</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="18">
-      <data key="d0">Hendursag</data>
-      <data key="d1">Hendursag</data>
+      <data key="d0">areraswen</data>
+      <data key="d1">areraswen</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="19">
-      <data key="d0">eb8drv5</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">Hendursag</data>
-      <data key="d7">4</data>
-      <data key="d8">1544152042</data>
-      <data key="d9">USA is not a useful location as every state has different laws regarding contracts.
-
-But yes, the artist made the mistake here, and he would need to compensate you for breaching that license.  </data>
-      <data key="d10">193</data>
-      <data key="d11">4.812</data>
-      <data key="d12">0.0</data>
-      <data key="d13">63.19</data>
-      <data key="d14">-0.1129</data>
-      <data key="d15">Negative</data>
-      <data key="d16">1.0</data>
+      <data key="d0">ebl8jb1</data>
+      <data key="d4">a591uf</data>
+      <data key="d5">ebl3qwa</data>
+      <data key="d6">areraswen</data>
+      <data key="d7">2</data>
+      <data key="d8">1544592812</data>
+      <data key="d9">Sure, I think "the debt collective" is a good student run source that has information regarding disputing federal student loans via the DTR at least. [Source](https://tools.debtcollective.org/defense-to-repayment)</data>
+      <data key="d10">213</data>
+      <data key="d11">7.167</data>
+      <data key="d12">0.0939</data>
+      <data key="d13">19.71</data>
+      <data key="d14">0.0</data>
+      <data key="d15">Neutral</data>
+      <data key="d16">0.0</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
@@ -291,1209 +286,105 @@ But yes, the artist made the mistake here, and he would need to compensate you f
       <data key="d3" />
     </node>
     <node id="21">
-      <data key="d0">eb7puqi</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
+      <data key="d0">ebl5y9v</data>
+      <data key="d4">a59vck</data>
+      <data key="d5">a59vck</data>
       <data key="d6">LocationBot</data>
-      <data key="d7">3</data>
-      <data key="d8">1544135556</data>
-      <data key="d9">---
-&gt; http://imgur.com/a/myIAb
+      <data key="d7">1</data>
+      <data key="d8">1544590924</data>
+      <data key="d9">The r/legaladvice community would like to welcome our guests from r/all and/or r/popular. We are glad you are visiting. There are a few things you should know before you post here:
 
----
-*I am a bot whose sole purpose is to improve the timeliness and accuracy of responses in this subreddit.*
+**We lock update posts that do not contain additional questions**. There are two reasons for this. First, this is a forum for legal advice and if none is sought, none will be offered. Second, those posts were moderating nightmares filled with off topic ranting and pointless arguments. We welcome update posts - particularly when a poster reports that they used our advice successfully. Even when they are locked in r/legaladvice there is almost always a discussion of the update in r/bestoflegaladvice for your popcorn needs.
 
----
-**It appears you forgot to include your location in the title or body of your post. Please update the body of your original post to include this information.**
+**Nothing here constitutes the formation of an attorney/client relationship**. This is not a substitute for an informed local attorney. At best, the advice herein assists the posters in taking the first step toward resolving their legal issue.  
 
----
-***Do NOT delete this post - Instead, simply edit the post with the requested information.***
+**We are not a popcorn sub**. We remove posts and ban posters who do not participate in good faith. We lock posts that meander off topic, devolve into pointless bickering, or result in too many reports to the mods. This is not to say that there isn't entertainment to be found here, indeed that is why most of us became involved in the law. It is fun. And when justice results, it is rewarding as well. 
 
----
+**Our rules are in the sidebar to your right**. They are available in detail [here](https://np.reddit.com/r/legaladvice/comments/3jm6u2/the_law_of_the_land_please_read_before/) and our wiki is [here](https://np.reddit.com/r/legaladvice/wiki/index). For those of you who want more popcorn and fewer vegetables we invite you to visit our sister subs /r/bestoflegaladvice and /r/legaladviceofftopic. 
 
-Author: /u/Lizard_repositioner
+**Shitposting and brigading will earn you a permanent ban**. We respond to the situation at hand and the laws that apply.  This is not the place to grind your political axe or talk about what you think the law should be. If you want to change the law, get involved in local politics. 
 
-Title: **An image I licensed from an artist to use for a product has now been licensed EXCLUSIVELY to another brand without my knowledge.**
+**Personal anecdotes are not useful**. This is not the place to talk about how once your sister's roommate got out of a ticket by doing X. The fact that you have an anecdotal counterexample is not proof that the advice offered is wrong. 
 
-Original Post: 
+**This is legal advice, not moral advice**. Sometimes we have posts on hot button issues such as abortion, child custody, rape, racial prejudice, sexism, and so on. People come here to learn about their legal options. Advice relating to their immortal souls can be found elsewhere on reddit, online, and at local mosques, churches, temples, and philosophy departments. Sometimes, however, legal advice is indistinguishable from life advice.
 
-&gt; I paid to license an artist's work for one of my products, which I have produced and made available to purchase. It was brought to my attention that a much larger national brand has started using the image for one of their products. I contacted the artist, and yes- the bigger company paid to get exclusive rights, and I was not informed. I am now in the position of recalling my product. Is the artist in a legal grey area for doing this? Do I have any legal standing to get my money back from him?
-
-
+Thank you for visiting our sub. We hope you enjoy your time here and consider subscribing.
 
 
 ---
 LocationBot 4.31977192 | [Report Issues](https://www.reddit.com/r/locationbot)</data>
-      <data key="d10">1216</data>
-      <data key="d11">8.402</data>
+      <data key="d10">2923</data>
+      <data key="d11">9.624</data>
       <data key="d12">0.0</data>
-      <data key="d13">63.9</data>
-      <data key="d14">0.1763</data>
+      <data key="d13">67.15</data>
+      <data key="d14">0.1184</data>
       <data key="d15">Positive</data>
       <data key="d16">1.0</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="22">
-      <data key="d0">Bobert9333</data>
-      <data key="d1">Bobert9333</data>
+      <data key="d0">AutoModerator</data>
+      <data key="d1">AutoModerator</data>
       <data key="d2">author</data>
       <data key="d3" />
     </node>
     <node id="23">
-      <data key="d0">eb8mg6s</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">Bobert9333</data>
-      <data key="d7">3</data>
-      <data key="d8">1544157775</data>
-      <data key="d9">IANAL. The artist fucked up, not you. Either the other company had their license first and the artist breached the exclusivity term by selling it again to you, or you had it first and the artist did not have any exclusitivy rights to sell. The product cannot be exclusive if mutliple people already had it, so the other company's license would be for something that didn't exist.
+      <data key="d0">ebkwnav</data>
+      <data key="d4">a59vck</data>
+      <data key="d5">a59vck</data>
+      <data key="d6">AutoModerator</data>
+      <data key="d7">1</data>
+      <data key="d8">1544584206</data>
+      <data key="d9">Thank you for posting an update!  All update posts are automatically locked due to a historical lack of on-topic discussion.  This is a forum for legal advice and if none is sought, none will be offered.   If, however, your post also contains a new question, please [message the moderators](https://www.reddit.com/message/compose/?to=/r/legaladvice&amp;subject=Re-approve%20my%20comment&amp;message=https://www.reddit.com/r/legaladvice/comments/a59vck/update_nsw_australia_last_month_a_friend_began_to/%20\(please%20leave%20this%20so%20we%20can%20reference%20your%20comment\)) for a review. 
 
-I would collect your documents and get the dates all sorted out before taking any action. If the other company came first, your license is void and the artist owes you damages for negligent/fraudulent misrepresentation. If you came first, the other company's contract is void and the artist owes them.
+Feel free to start or join in the conversation about this update in either /r/bestoflegaladvice or /r/legaladviceofftopic.
 
-Either way, it is the artist who blundered and they will suffer the most for it. But you want to be the one with the valid license, because the one with a void license will need to have a legal dispute to get the artist to pay.</data>
-      <data key="d10">911</data>
-      <data key="d11">8.541</data>
+
+*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/legaladvice) if you have any questions or concerns.*</data>
+      <data key="d10">894</data>
+      <data key="d11">10.582</data>
       <data key="d12">0.0</data>
-      <data key="d13">67.59</data>
-      <data key="d14">-0.2729</data>
-      <data key="d15">Negative</data>
+      <data key="d13">10.26</data>
+      <data key="d14">0.1921</data>
+      <data key="d15">Positive</data>
       <data key="d16">1.0</data>
       <data key="d2">comment</data>
       <data key="d3" />
     </node>
     <node id="24">
-      <data key="d0">mmmssslll</data>
-      <data key="d1">mmmssslll</data>
-      <data key="d2">author</data>
+      <data key="d0">a591uf</data>
+      <data key="d17">Megathread: ECA schools shutdown</data>
+      <data key="d18">0</data>
+      <data key="d8">1544550353</data>
+      <data key="d19">False</data>
+      <data key="d20">0.95</data>
+      <data key="d2">article</data>
       <data key="d3" />
     </node>
     <node id="25">
-      <data key="d0">eb807ab</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">mmmssslll</data>
-      <data key="d7">4</data>
-      <data key="d8">1544142913</data>
-      <data key="d9">Do not recall your product! You haven’t done anything wrong. </data>
-      <data key="d10">61</data>
-      <data key="d11">4.083</data>
-      <data key="d12">0.0</data>
-      <data key="d13">83.32</data>
-      <data key="d14">-0.2384</data>
-      <data key="d15">Negative</data>
-      <data key="d16">1.0</data>
-      <data key="d2">comment</data>
+      <data key="d0">a59vck</data>
+      <data key="d17">(UPDATE) NSW Australia. Last month a friend began to cross a flooded river in his car with me in it. I jumped out because I'd been caught on a flooded causeway before. I now have a letter from his lawyer asking for damages because the car was washed off the causeway and written off.</data>
+      <data key="d18">0</data>
+      <data key="d8">1544555406</data>
+      <data key="d19">False</data>
+      <data key="d20">0.94</data>
+      <data key="d2">article</data>
       <data key="d3" />
     </node>
     <node id="26">
-      <data key="d0">seanprefect</data>
-      <data key="d1">seanprefect</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="27">
-      <data key="d0">eb8193z</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">seanprefect</data>
-      <data key="d7">3</data>
-      <data key="d8">1544143613</data>
-      <data key="d9">You're fine, the beef is between the national brand and the artist. </data>
-      <data key="d10">68</data>
-      <data key="d11">5.3</data>
-      <data key="d12">0.0</data>
-      <data key="d13">84.68</data>
-      <data key="d14">0.2023</data>
-      <data key="d15">Positive</data>
-      <data key="d16">1.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="28">
-      <data key="d0">pithen</data>
-      <data key="d1">pithen</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="29">
-      <data key="d0">eb8owmy</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">pithen</data>
-      <data key="d7">1</data>
-      <data key="d8">1544159361</data>
-      <data key="d9">It's not clear from your post whether the Bigcorp has contacted you. (You say "it has been brought to my attention", but who did that?).  If they haven't, you don't really have an issue.
-If it was Bigcorp that contacted you, respond with a copy of your license.  If your license allows for sunblicensing or transferring your rights, you can offer to transfer it to them for the amount it would take your to do a recall plus some compensation for your efforts.
-
-Also write to the artist reminding them of the terms of your license and  request that they remedy the situation in a way that acceptable to you.</data>
-      <data key="d10">606</data>
-      <data key="d11">6.884</data>
-      <data key="d12">0.0594</data>
-      <data key="d13">69.82</data>
-      <data key="d14">0.0043</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">1.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="30">
-      <data key="d0">Randvek</data>
-      <data key="d1">Randvek</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="31">
-      <data key="d0">eb8r3io</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">Randvek</data>
-      <data key="d7">1</data>
-      <data key="d8">1544160732</data>
-      <data key="d9">The artist did not defraud you; he/she defrauded the big company. You must have a right before you can transfer that right. Since the artist gave you right to use it, they no longer *had* exclusive rights, so they could not *sell* exclusive rights. The big company is the only party that has been harmed so far; they were defrauded.
-
-You have no claim at the moment because nobody has harmed you. You are within your rights to use the image and any recall on your part is premature.
-
-You can contact the big company if you’d like. How that goes is really going to depend on the company. Their response could vary from reasonable and accommodating to aggressive and stupid. A local IP lawyer could advise.</data>
-      <data key="d10">704</data>
-      <data key="d11">7.234</data>
-      <data key="d12">0.0</data>
-      <data key="d13">75.5</data>
-      <data key="d14">-0.1054</data>
-      <data key="d15">Negative</data>
-      <data key="d16">1.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="32">
-      <data key="d0">Anonymous0</data>
-      <data key="d1">Anonymous0</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="33">
-      <data key="d0">eb8s4cf</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">Anonymous</data>
-      <data key="d7">1</data>
-      <data key="d8">1544161403</data>
-      <data key="d9">[removed]</data>
-      <data key="d10">9</data>
-      <data key="d11">7.0</data>
-      <data key="d12">0.0</data>
-      <data key="d13">36.62</data>
-      <data key="d14">0.0</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">1.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="34">
-      <data key="d0">sweetrobna</data>
-      <data key="d1">sweetrobna</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="35">
-      <data key="d0">eb8sl4l</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">sweetrobna</data>
-      <data key="d7">1</data>
-      <data key="d8">1544161708</data>
-      <data key="d9">Did you receive a non revocable license, or a revocable license? Or did you receive a term license instead of perpetual, and the term has run out? Did you purchase the rights to use this image before the exclusive rights were sold? Are you sure you are working with the actual owner of the image?</data>
-      <data key="d10">296</data>
-      <data key="d11">7.152</data>
-      <data key="d12">0.0</data>
-      <data key="d13">65.93</data>
-      <data key="d14">0.1115</data>
-      <data key="d15">Positive</data>
-      <data key="d16">1.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="36">
-      <data key="d0">Hendursag</data>
-      <data key="d1">Hendursag</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="37">
-      <data key="d0">eb8ec5u</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">a3oec5</data>
-      <data key="d6">Hendursag</data>
-      <data key="d7">-1</data>
-      <data key="d8">1544152423</data>
-      <data key="d9">There are some interesting issues here:
-
-1.  You have a valid license to the copyrighted image which does not have a termination clause or has not been terminated.  That means you have a claim against the artist because he did not have the right to provide an exclusive license to a third party.  But BigCo has a claim against you because they received an exclusive license.
-
-2.  You have been using this image on a particular product for some time, and consumers have come to associate this image with you as the producer of this product.  That is referred to as a common law trademark, and it may give you superior rights over BigCo.
-
-You should contact a copyright &amp; trademark attorney.  Especially with common law trademarks, prompt enforcement is essential.</data>
-      <data key="d10">762</data>
-      <data key="d11">7.709</data>
-      <data key="d12">0.0</data>
-      <data key="d13">63.39</data>
-      <data key="d14">0.2326</data>
-      <data key="d15">Positive</data>
-      <data key="d16">1.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="38">
-      <data key="d0">Lizard_repositioner</data>
-      <data key="d1">Lizard_repositioner</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="39">
-      <data key="d0">eb7ql07</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7q0yp</data>
-      <data key="d6">Lizard_repositioner</data>
-      <data key="d7">154</data>
-      <data key="d8">1544136153</data>
-      <data key="d9">OK- thanks for the advice. It's definitely not my first choice, but this would be a David vs. Goliath situation that I just wouldn't have the money or time to handle. Booo.</data>
-      <data key="d10">172</data>
-      <data key="d11">4.29</data>
-      <data key="d12">0.0</data>
-      <data key="d13">85.99</data>
-      <data key="d14">0.2798</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.0631</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="40">
-      <data key="d0">Alan_Smithee_</data>
-      <data key="d1">Alan_Smithee_</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="41">
-      <data key="d0">eb89298</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7rjte</data>
-      <data key="d6">Alan_Smithee_</data>
-      <data key="d7">13</data>
-      <data key="d8">1544148830</data>
-      <data key="d9">Only problem is, that doesn't stop Bigcorp from pulling Op into court vexatiously, even just for a day, which could wipe them out.</data>
-      <data key="d10">130</data>
-      <data key="d11">4.478</data>
-      <data key="d12">0.0</data>
-      <data key="d13">73.51</data>
-      <data key="d14">-0.2052</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="42">
-      <data key="d0">South_in_AZ</data>
-      <data key="d1">South_in_AZ</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="43">
-      <data key="d0">eb83cbu</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7rjte</data>
-      <data key="d6">South_in_AZ</data>
-      <data key="d7">4</data>
-      <data key="d8">1544145069</data>
-      <data key="d9">I was curious about prior art, as I know a ocmpany with a niche product that relies on that rather than going through the copywrite process. </data>
-      <data key="d10">141</data>
-      <data key="d11">4.913</data>
-      <data key="d12">0.0</data>
-      <data key="d13">62.01</data>
-      <data key="d14">0.3182</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.065</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="44">
-      <data key="d0">Lizard_repositioner</data>
-      <data key="d1">Lizard_repositioner</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="45">
-      <data key="d0">eb7qegt</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7q4m4</data>
-      <data key="d6">Lizard_repositioner</data>
-      <data key="d7">16</data>
-      <data key="d8">1544136007</data>
-      <data key="d9">Unfortunately not :/</data>
-      <data key="d10">20</data>
-      <data key="d11">8.0</data>
-      <data key="d12">0.0</data>
-      <data key="d13">-91.3</data>
-      <data key="d14">-0.0936</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="46">
-      <data key="d0">Hendursag</data>
-      <data key="d1">Hendursag</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="47">
-      <data key="d0">eb8e0lj</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb83e2q</data>
-      <data key="d6">Hendursag</data>
-      <data key="d7">-7</data>
-      <data key="d8">1544152208</data>
-      <data key="d9">This is bad advice.
-
-While OP has a valid claim against the artist, BigCo has a valid claim against OP.</data>
-      <data key="d10">103</data>
-      <data key="d11">5.714</data>
-      <data key="d12">0.0</data>
-      <data key="d13">103.63</data>
-      <data key="d14">-0.2712</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.1093</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="48">
-      <data key="d0">Hendursag</data>
-      <data key="d1">Hendursag</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="49">
-      <data key="d0">eb8e3ek</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8193z</data>
-      <data key="d6">Hendursag</data>
-      <data key="d7">-2</data>
-      <data key="d8">1544152260</data>
-      <data key="d9">Nope.
-
-If I buy an exclusive license, and someone violates it, I have every right to sue them.
-
-If the person selling me that exclusive license didn't have a right to do so, the person I sue can in turn bring in that person.  But OP could easily get dragged into an expensive lawsuit.</data>
-      <data key="d10">284</data>
-      <data key="d11">5.641</data>
-      <data key="d12">0.0</data>
-      <data key="d13">70.13</data>
-      <data key="d14">-0.0445</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="50">
-      <data key="d0">thepatman</data>
-      <data key="d1">thepatman</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="51">
-      <data key="d0">eb8t0v7</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8s4cf</data>
-      <data key="d6">thepatman</data>
-      <data key="d7">1</data>
-      <data key="d8">1544161987</data>
-      <data key="d9">*Your post has been removed for the following reason(s):*
-
-**Generally Unhelpful or Off-Topic**
-
-Your comment has been removed as it is generally unhelpful or off-topic.  It either does not answer the legal question at hand or it is a repeat of an answer already provided  Please review the following rules before commenting further: 
-
-* [Commenting Rules 1](https://www.reddit.com/r/legaladvice/wiki/index#wiki_1.__comments_should_contain_a_legal_answer_or_a_strongly_related_non-legal_answer.), [2](https://www.reddit.com/r/legaladvice/wiki/index#wiki_2.__personal_anecdotes_are_off-topic.), [3](https://www.reddit.com/r/legaladvice/wiki/index#wiki_3.__explanations_of_the_law_in_jurisdictions_other_than_the_one_described_in_the_op_are_off-topic.), [4](https://www.reddit.com/r/legaladvice/wiki/index#wiki_4.__opinions_on_the_law_or_the_application_of_it_are_off-topic.), [6](https://www.reddit.com/r/legaladvice/wiki/index#wiki_6.__expressions_of_sympathy_without_corresponding_legal_help_is_off-topic.), [8](https://www.reddit.com/r/legaladvice/wiki/index#wiki_8.__comments_should_be_reasonably_detailed_and_explanatory.__.22i.27m_a_lawyer_so_listen_to_me.22_isn.27t_an_appropriate_answer.__credential_fights_are_not_appropriate_here.), and [9](https://www.reddit.com/r/legaladvice/wiki/index#wiki_9.__requests_for_updates_are_off-topic.).
-
-
-
-*Please [read our subreddit rules](https://www.reddit.com/r/legaladvice/wiki/index#wiki_general_rules).  If after doing so, you believe this was in error, or you’ve edited your post to comply with the rules, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2FLegalAdvice).*
-
-*Do not reach out to a moderator personally, and do not reply to this message as a comment.*</data>
-      <data key="d10">1738</data>
-      <data key="d11">18.274</data>
-      <data key="d12">0.0</data>
-      <data key="d13">-94.48</data>
-      <data key="d14">0.0173</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.143</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="52">
-      <data key="d0">Nick-Danger</data>
-      <data key="d1">Nick-Danger</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="53">
-      <data key="d0">eb8l1ky</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8ec5u</data>
-      <data key="d6">Nick-Danger</data>
-      <data key="d7">3</data>
-      <data key="d8">1544156869</data>
-      <data key="d9">&gt; But BigCo has a claim against you because they received an exclusive license.  
-
-NAL.  Couldn't OP argue that BigCo does not have a valid exclusive license because the artist couldn't legally offer one due to OP's license, and therefore BigCo has no standing to sue OP?
-
-</data>
-      <data key="d10">273</data>
-      <data key="d11">6.086</data>
-      <data key="d12">0.0</data>
-      <data key="d13">56.59</data>
-      <data key="d14">-0.0065</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.3021</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="54">
-      <data key="d0">pithen</data>
-      <data key="d1">pithen</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="55">
-      <data key="d0">eb8p578</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8ec5u</data>
-      <data key="d6">pithen</data>
-      <data key="d7">1</data>
-      <data key="d8">1544159502</data>
-      <data key="d9">Trademark rights are very unlikely, given that OP didn't have an exclusive right to the image.
-
-BigCo likely has no standing.  Their license would have to be drafted extremely carefully to allow for standing.  Given the sloppiness of the author, that's unlikely.</data>
-      <data key="d10">262</data>
-      <data key="d11">6.176</data>
-      <data key="d12">0.0</data>
-      <data key="d13">60.82</data>
-      <data key="d14">0.015</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.1996</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="56">
-      <data key="d0">caustic_banana</data>
-      <data key="d1">caustic_banana</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="57">
-      <data key="d0">eb7rsfu</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7ql07</data>
-      <data key="d6">caustic_banana</data>
-      <data key="d7">262</data>
-      <data key="d8">1544137082</data>
-      <data key="d9">You can have someone reach out to BigCorp on your behalf and offer to let them pay your recall costs in exchange for abandoning your license, they may be amenable to that.  They don't want to pay to fight this either.
-
-Then, go after the artist for making you do this in the first place.  Likely for your legal fees.</data>
-      <data key="d10">316</data>
-      <data key="d11">5.489</data>
-      <data key="d12">0.0</data>
-      <data key="d13">81.63</data>
-      <data key="d14">-0.1698</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.0495</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="58">
-      <data key="d0">JohnDoe_85</data>
-      <data key="d1">JohnDoe_85</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="59">
-      <data key="d0">eb82woi</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7ql07</data>
-      <data key="d6">JohnDoe_85</data>
-      <data key="d7">39</data>
-      <data key="d8">1544144762</data>
-      <data key="d9">Big Corp doesn't have any legitimate cause of action against you if you had a pre-existing and valid license. Original artist can try to buy you out of your license if they want to make things right, but if Big Corp. takes issues with your use, they are likely going to have to file suit against Artist, not you.</data>
-      <data key="d10">312</data>
-      <data key="d11">5.857</data>
-      <data key="d12">0.0</data>
-      <data key="d13">76.86</data>
-      <data key="d14">0.1012</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="60">
-      <data key="d0">Hendursag</data>
-      <data key="d1">Hendursag</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="61">
-      <data key="d0">eb8dteu</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb89298</data>
-      <data key="d6">Hendursag</data>
-      <data key="d7">-17</data>
-      <data key="d8">1544152071</data>
-      <data key="d9">It's not vexatious by BigCorp to enforce the exclusive license they purchased.  </data>
-      <data key="d10">80</data>
-      <data key="d11">5.417</data>
-      <data key="d12">0.0</data>
-      <data key="d13">42.38</data>
-      <data key="d14">0.128</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.1363</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="62">
-      <data key="d0">Hendursag</data>
-      <data key="d1">Hendursag</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="63">
-      <data key="d0">eb8dw03</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb83cbu</data>
-      <data key="d6">Hendursag</data>
-      <data key="d7">6</data>
-      <data key="d8">1544152121</data>
-      <data key="d9">Copyright attaches automatically to images when they are created.  Prior art is unrelated to copyright.</data>
-      <data key="d10">103</data>
-      <data key="d11">6.615</data>
-      <data key="d12">0.0</data>
-      <data key="d13">21.56</data>
-      <data key="d14">0.125</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.1011</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="64">
-      <data key="d0">tattoosnchivalry</data>
-      <data key="d1">tattoosnchivalry</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="65">
-      <data key="d0">eb7vr9y</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7qegt</data>
-      <data key="d6">tattoosnchivalry</data>
-      <data key="d7">63</data>
-      <data key="d8">1544139910</data>
-      <data key="d9">That doesn’t matter. You need to understand he beached his agreement with the major brand, not yours. If they send you a letter, answer with a copy of your agreement and tell them to pound sand. You did ABSOLUTELY nothing wrong.
-
-Edit: to add to this if they sue you, you cross claim and bring in the artist as a necessary party, and then you force the artist to indemnify you. This is not your problem.</data>
-      <data key="d10">403</data>
-      <data key="d11">5.852</data>
-      <data key="d12">0.0</data>
-      <data key="d13">83.96</data>
-      <data key="d14">0.3587</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="66">
-      <data key="d0">Anonymous1</data>
-      <data key="d1">Anonymous1</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="67">
-      <data key="d0">eb81pjo</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7qegt</data>
-      <data key="d6">Anonymous</data>
-      <data key="d7">3</data>
-      <data key="d8">1544143927</data>
-      <data key="d9">[deleted]</data>
-      <data key="d10">9</data>
-      <data key="d11">7.0</data>
-      <data key="d12">0.0</data>
-      <data key="d13">36.62</data>
-      <data key="d14">0.0</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="68">
-      <data key="d0">ThePretzul</data>
-      <data key="d1">ThePretzul</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="69">
-      <data key="d0">eb8e9df</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8e0lj</data>
-      <data key="d6">ThePretzul</data>
-      <data key="d7">11</data>
-      <data key="d8">1544152372</data>
-      <data key="d9">BigCo has no valid claim, their license is predated by another license and they have no proof that OP's license was revoked.
-
-Do not spread misinformation.</data>
-      <data key="d10">155</data>
-      <data key="d11">5.435</data>
-      <data key="d12">0.0</data>
-      <data key="d13">66.74</data>
-      <data key="d14">-0.1428</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.2981</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="70">
-      <data key="d0">borktron</data>
-      <data key="d1">borktron</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="71">
-      <data key="d0">eb8ptnt</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8e3ek</data>
-      <data key="d6">borktron</data>
-      <data key="d7">1</data>
-      <data key="d8">1544159921</data>
-      <data key="d9">NAL, but that doesn't sound right.  OP has no agreement with bigco to violate.  What cause of action would bigco persue?  I would imagine bigco would have to go after the artist who defrauded them by selling them an exclusive license that they couldn't provide due to OP's preexisting license.</data>
-      <data key="d10">293</data>
-      <data key="d11">5.683</data>
-      <data key="d12">0.0</data>
-      <data key="d13">67.25</data>
-      <data key="d14">-0.042</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.204</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="72">
-      <data key="d0">thea_perkins</data>
-      <data key="d1">thea_perkins</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="73">
-      <data key="d0">eb7ye1u</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7rsfu</data>
-      <data key="d6">thea_perkins</data>
-      <data key="d7">92</data>
-      <data key="d8">1544141711</data>
-      <data key="d9">This is really the optimal way to handle this situation. Yeah, technically OP would probably be in the right to keep using the image but it'll bankrupt any normal person to fight this. Better to get some quick cash from the big corp to cover the costs of  recall and then some to account for him abandoning the license. Then, if he wants, OP could always sue the original artist for return of whatever they paid for the license too. That could probably be done in small claims without an attorney. </data>
-      <data key="d10">498</data>
-      <data key="d11">6.015</data>
-      <data key="d12">0.0</data>
-      <data key="d13">69.92</data>
-      <data key="d14">-0.0029</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.2094</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="74">
-      <data key="d0">PrettyDecentSort</data>
-      <data key="d1">PrettyDecentSort</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="75">
-      <data key="d0">eb8mr7c</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb82woi</data>
-      <data key="d6">PrettyDecentSort</data>
-      <data key="d7">5</data>
-      <data key="d8">1544157978</data>
-      <data key="d9">&gt;Big Corp doesn't have any legitimate cause of action
-
-This is no barrier to bankrupting a small proprietor with the strength of their deep pockets. Reality is that even if you win the lawsuit it can cost you money that your business simply can't afford.
-
-</data>
-      <data key="d10">256</data>
-      <data key="d11">5.1</data>
-      <data key="d12">0.0</data>
-      <data key="d13">65.56</data>
-      <data key="d14">0.2842</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.1928</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="76">
-      <data key="d0">erfling</data>
-      <data key="d1">erfling</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="77">
-      <data key="d0">eb8i6oi</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8dteu</data>
-      <data key="d6">erfling</data>
-      <data key="d7">18</data>
-      <data key="d8">1544154979</data>
-      <data key="d9">Well, they don't seem to have actually purchased an exclusive license, since another license was already granted.</data>
-      <data key="d10">113</data>
-      <data key="d11">5.812</data>
-      <data key="d12">0.0</data>
-      <data key="d13">45.76</data>
-      <data key="d14">0.5574</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.3007</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="78">
-      <data key="d0">AngryFlyingCats</data>
-      <data key="d1">AngryFlyingCats</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="79">
-      <data key="d0">eb82nyz</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7vr9y</data>
-      <data key="d6">AngryFlyingCats</data>
-      <data key="d7">15</data>
-      <data key="d8">1544144592</data>
-      <data key="d9">I'm just going to add that by giving the exclusive use to the national brand, the artist likely breached the agreement with OP too.  The conflicting nature of the clause with other contracts means that OP's legal use of it will land him in hot water regardless.  Take the initiative, talk with a lawyer and ask them to draft a demand letter seeking recovery for restitution damages.  Where OP would be seeking to recover the cost of the agreement and the costs associated with the product production.  You probably want to avoid the lawsuit with the big company.  It will cost more to defend that suit then paying a lawyer now for a demand letter and possibly going into small claims later (depending on juris and the small claims limit).</data>
-      <data key="d10">738</data>
-      <data key="d11">7.048</data>
-      <data key="d12">0.0</data>
-      <data key="d13">57.91</data>
-      <data key="d14">-0.0252</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.1046</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="80">
-      <data key="d0">Hendursag</data>
-      <data key="d1">Hendursag</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="81">
-      <data key="d0">eb8dz3i</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb81pjo</data>
-      <data key="d6">Hendursag</data>
-      <data key="d7">5</data>
-      <data key="d8">1544152180</data>
-      <data key="d9">&gt; Unless you have a contract that specifies a specific dated time period of exclusivity, or, is not an actual licensing, but a full rights buyout, the artist is free to license his/her work to as many merchandizing companies as they wish.
-&gt; 
-&gt; 
-
-BUT if the artist has an outstanding valid license they are NOT able to provide an exclusive license to another party, without terminating the first license in some way.</data>
-      <data key="d10">415</data>
-      <data key="d11">6.327</data>
-      <data key="d12">0.0</data>
-      <data key="d13">35.95</data>
-      <data key="d14">0.8679</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="82">
-      <data key="d0">Hendursag</data>
-      <data key="d1">Hendursag</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="83">
-      <data key="d0">eb8euam</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8e9df</data>
-      <data key="d6">Hendursag</data>
-      <data key="d7">-2</data>
-      <data key="d8">1544152761</data>
-      <data key="d9">BigCo has a colorable claim, which they certainly could file a lawsuit over.  They may lose, but BigCo has a valid enough claim for a lawsuit.</data>
-      <data key="d10">142</data>
-      <data key="d11">6.222</data>
-      <data key="d12">0.0</data>
-      <data key="d13">83.66</data>
-      <data key="d14">-0.183</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.2128</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="84">
-      <data key="d0">Randvek</data>
-      <data key="d1">Randvek</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="85">
-      <data key="d0">eb8rzkr</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8ptnt</data>
-      <data key="d6">Randvek</data>
-      <data key="d7">1</data>
-      <data key="d8">1544161311</data>
-      <data key="d9">I am a lawyer, and at least in my state, it has been interpreted that transfer of exclusive rights *also* transfers standing to sue, as the artist now no longer “owns” anything!</data>
-      <data key="d10">177</data>
-      <data key="d11">4.118</data>
-      <data key="d12">0.0</data>
-      <data key="d13">64.38</data>
-      <data key="d14">-0.2481</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.0923</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="86">
-      <data key="d0">nicklinn</data>
-      <data key="d1">nicklinn</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="87">
-      <data key="d0">eb8okm5</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb7ye1u</data>
-      <data key="d6">nicklinn</data>
-      <data key="d7">2</data>
-      <data key="d8">1544159156</data>
-      <data key="d9">Unless the copyright was sold to bigcorp, they would have no standing to sue the op as they are a merely a licensee. </data>
-      <data key="d10">117</data>
-      <data key="d11">4.842</data>
-      <data key="d12">0.0</data>
-      <data key="d13">73.51</data>
-      <data key="d14">-0.296</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.0679</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="88">
-      <data key="d0">termiAurthur</data>
-      <data key="d1">termiAurthur</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="89">
-      <data key="d0">eb8nm71</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8mr7c</data>
-      <data key="d6">termiAurthur</data>
-      <data key="d7">4</data>
-      <data key="d8">1544158555</data>
-      <data key="d9">That sounds like it would be a frivolous lawsuit, which BigCorp would be paying both side's attorney fees.</data>
-      <data key="d10">106</data>
-      <data key="d11">5.375</data>
-      <data key="d12">0.0</data>
-      <data key="d13">70.13</data>
-      <data key="d14">0.1531</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.0389</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="90">
-      <data key="d0">JohnDoe_85</data>
-      <data key="d1">JohnDoe_85</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="91">
-      <data key="d0">eb8qzo0</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8mr7c</data>
-      <data key="d6">JohnDoe_85</data>
-      <data key="d7">2</data>
-      <data key="d8">1544160664</data>
-      <data key="d9">I represent a lot of "Big Corp"s. They don't care about tiny proprietors that aren't actually affecting their business, especially if they don't have a legitimate case. If they are going to burn legal money on this, it is going to be against the artist, not OP. They aren't going to empty their deep pockets just on the principle of the thing.</data>
-      <data key="d10">343</data>
-      <data key="d11">5.848</data>
-      <data key="d12">0.0262</data>
-      <data key="d13">72.66</data>
-      <data key="d14">-0.0361</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.1979</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="92">
-      <data key="d0">tattoosnchivalry</data>
-      <data key="d1">tattoosnchivalry</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="93">
-      <data key="d0">eb854ts</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb82nyz</data>
-      <data key="d6">tattoosnchivalry</data>
-      <data key="d7">6</data>
-      <data key="d8">1544146216</data>
-      <data key="d9">Correct, I guess I misspoke. I meant to say that the breach of contract claim (and all related claims) by the big company would be against the artist themselves, not against OP, and, if she is sued, she would merely have to cross-claim and bring in the artist to indemnify her.
-
-That said, yes, send a letter from an attorney to seek restitution, and threaten a declaratory judgment action for a court to determine if the artist would be required to indemnify OP, as well as bad faith claims (some jurisdictions have double or treble damage statutes for bad faith, and some carry attorney's fees too).</data>
-      <data key="d10">601</data>
-      <data key="d11">6.704</data>
-      <data key="d12">0.0</data>
-      <data key="d13">61.03</data>
-      <data key="d14">-0.1756</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.183</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="94">
-      <data key="d0">DasKapitalist</data>
-      <data key="d1">DasKapitalist</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="95">
-      <data key="d0">eb8huq9</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8dz3i</data>
-      <data key="d6">DasKapitalist</data>
-      <data key="d7">1</data>
-      <data key="d8">1544154759</data>
-      <data key="d9">Exactly.  If BigCorp sues OP, OP can produce their licensing agreement and tell them to pound sand.  Bigcorp will then go sue the idiot who sold them an "exclusive" license that wasnt.</data>
-      <data key="d10">184</data>
-      <data key="d11">5.0</data>
-      <data key="d12">0.0543</data>
-      <data key="d13">63.7</data>
-      <data key="d14">-0.0056</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.1874</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="96">
-      <data key="d0">ThePretzul</data>
-      <data key="d1">ThePretzul</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="97">
-      <data key="d0">eb8gbg4</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8euam</data>
-      <data key="d6">ThePretzul</data>
-      <data key="d7">8</data>
-      <data key="d8">1544153749</data>
-      <data key="d9">They can file a lawsuit. I could also file a lawsuit against you for harassment over the internet because you replied to my comment. It doesn't mean either lawsuit has merit or would go beyond the discovery stage.
-
-The lawsuit would be dismissed once evidence was presented showing OP's claim to use of the image predated BigCo's claim to exclusive use of the image and BigCo was unable to present evidence that OP's agreement was rescinded with proper consideration.</data>
-      <data key="d10">467</data>
-      <data key="d11">6.667</data>
-      <data key="d12">0.0</data>
-      <data key="d13">59.84</data>
-      <data key="d14">0.0182</data>
-      <data key="d15">Neutral</data>
-      <data key="d16">0.3602</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="98">
-      <data key="d0">borktron</data>
-      <data key="d1">borktron</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="99">
-      <data key="d0">eb8sn8x</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8rzkr</data>
-      <data key="d6">borktron</data>
-      <data key="d7">1</data>
-      <data key="d8">1544161745</data>
-      <data key="d9">Interesting.  Let's assume OP's license was perpetual and irrevocable.  Bigco can sue infringers, but OP isn't infringing - the have a valid license that predates bigco's "exclusive" license after all.</data>
-      <data key="d10">201</data>
-      <data key="d11">5.889</data>
-      <data key="d12">0.0498</data>
-      <data key="d13">31.38</data>
-      <data key="d14">0.134</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.0462</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="100">
-      <data key="d0">PrettyDecentSort</data>
-      <data key="d1">PrettyDecentSort</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="101">
-      <data key="d0">eb8ns6j</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8nm71</data>
-      <data key="d6">PrettyDecentSort</data>
-      <data key="d7">4</data>
-      <data key="d8">1544158658</data>
-      <data key="d9">Your optimism that "should" and "would" are synonymous when dealing with the courts is truly charming.</data>
-      <data key="d10">102</data>
-      <data key="d11">5.125</data>
-      <data key="d12">0.1275</data>
-      <data key="d13">72.16</data>
-      <data key="d14">0.8807</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="102">
-      <data key="d0">PrettyDecentSort</data>
-      <data key="d1">PrettyDecentSort</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="103">
-      <data key="d0">eb8rwt5</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8qzo0</data>
-      <data key="d6">PrettyDecentSort</data>
-      <data key="d7">1</data>
-      <data key="d8">1544161247</data>
-      <data key="d9">&gt; They don't care about tiny proprietors
-
-Perhaps the clients you represent don't, but they're unfortunately not the only clients out there.
-
-https://www.techdirt.com/articles/20181130/08501541139/monster-energy-loses-trademark-opposition-against-uk-drink-company-may-have-bullied-it-to-death-anyway.shtml
-
-https://www.techdirt.com/articles/20180823/09352640494/nickelodeon-is-opposing-12-year-old-new-zealand-girls-slime-trademark-some-reason.shtml
-
-https://www.techdirt.com/articles/20180323/10410739489/macys-department-store-chain-forces-tiny-hair-salon-scotland-to-change-name.shtml</data>
-      <data key="d10">587</data>
-      <data key="d11">23.095</data>
-      <data key="d12">0.0</data>
-      <data key="d13">-155.93</data>
-      <data key="d14">0.0939</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.1937</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="104">
-      <data key="d0">Randvek</data>
-      <data key="d1">Randvek</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="105">
-      <data key="d0">eb8t8lm</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8sn8x</data>
-      <data key="d6">Randvek</data>
-      <data key="d7">1</data>
-      <data key="d8">1544162128</data>
-      <data key="d9">OP isn’t infringing but Bigco can’t know that without seeing OP’s contract. Bigco can sue, but it should hopefully be straightened out early in the process.</data>
-      <data key="d10">156</data>
-      <data key="d11">5.12</data>
-      <data key="d12">0.0</data>
-      <data key="d13">66.74</data>
-      <data key="d14">0.275</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.22</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="106">
-      <data key="d0">termiAurthur</data>
-      <data key="d1">termiAurthur</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="107">
-      <data key="d0">eb8nz6a</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8ns6j</data>
-      <data key="d6">termiAurthur</data>
-      <data key="d7">2</data>
-      <data key="d8">1544158780</data>
-      <data key="d9">Well, in a perfect world that is how it would go.
-
-I do realize that we are not in a perfect world, but still.</data>
-      <data key="d10">110</data>
-      <data key="d11">4.316</data>
-      <data key="d12">0.0</data>
-      <data key="d13">101.6</data>
-      <data key="d14">0.2253</data>
-      <data key="d15">Positive</data>
-      <data key="d16">0.0</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="108">
-      <data key="d0">JohnDoe_85</data>
-      <data key="d1">JohnDoe_85</data>
-      <data key="d2">author</data>
-      <data key="d3" />
-    </node>
-    <node id="109">
-      <data key="d0">eb8smsi</data>
-      <data key="d4">a3oec5</data>
-      <data key="d5">eb8rwt5</data>
-      <data key="d6">JohnDoe_85</data>
-      <data key="d7">1</data>
-      <data key="d8">1544161736</data>
-      <data key="d9">Trademark is totally different from copyright, because if you don't police your rights you lose them. So even if you don't want to sue a 12-year-old girl, you are forced to if you want to maintain your rights. And, importantly, each of those positions you cited were not legally frivolous positions (even if they did ultimately lose).
-
-No one is doing this for copyright, *especially* for a legally frivolous position.</data>
-      <data key="d10">418</data>
-      <data key="d11">7.043</data>
-      <data key="d12">0.0</data>
-      <data key="d13">62.17</data>
-      <data key="d14">-0.2217</data>
-      <data key="d15">Negative</data>
-      <data key="d16">0.0687</data>
-      <data key="d2">comment</data>
-      <data key="d3" />
-    </node>
-    <node id="110">
-      <data key="d0">a3s7ja</data>
-      <data key="d17">[Update]One last update to my husband committing suicide and leaving us in debt</data>
-      <data key="d18">0</data>
-      <data key="d8">1544129807</data>
-      <data key="d19">False</data>
-      <data key="d20">0.97</data>
-      <data key="d2">article</data>
-      <data key="d3" />
-    </node>
-    <node id="111">
-      <data key="d0">a3oec5</data>
-      <data key="d17">An image I licensed from an artist to use for a product has now been licensed EXCLUSIVELY to another brand without my knowledge.</data>
-      <data key="d18">0</data>
-      <data key="d8">1544106691</data>
-      <data key="d19">False</data>
-      <data key="d20">0.97</data>
-      <data key="d2">article</data>
-      <data key="d3" />
-    </node>
-    <node id="112">
       <data key="d0">Positive</data>
       <data key="d1">Positive</data>
       <data key="d2">sentiment</data>
       <data key="d3" />
     </node>
-    <node id="113">
+    <node id="27">
       <data key="d0">Neutral</data>
       <data key="d1">Neutral</data>
       <data key="d2">sentiment</data>
       <data key="d3" />
     </node>
-    <node id="114">
+    <node id="28">
       <data key="d0">Negative</data>
       <data key="d1">Negative</data>
       <data key="d2">sentiment</data>
@@ -1502,696 +393,150 @@ No one is doing this for copyright, *especially* for a legally frivolous positio
     <edge source="0" target="1">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="1" target="110">
+    <edge source="1" target="7">
+      <data key="d21">REPLY_TO</data>
+      <data key="d22">0.0646</data>
+    </edge>
+    <edge source="1" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="1" target="112">
+    <edge source="1" target="26">
       <data key="d21">_IS</data>
-      <data key="d22">0.1376</data>
+      <data key="d23">0.138</data>
     </edge>
     <edge source="2" target="3">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="3" target="110">
+    <edge source="3" target="9">
+      <data key="d21">REPLY_TO</data>
+      <data key="d22">0.1069</data>
+    </edge>
+    <edge source="3" target="11">
+      <data key="d21">REPLY_TO</data>
+      <data key="d22">0.1225</data>
+    </edge>
+    <edge source="3" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="3" target="112">
+    <edge source="3" target="27">
       <data key="d21">_IS</data>
-      <data key="d22">0.1921</data>
+      <data key="d23">-0.0042</data>
     </edge>
     <edge source="4" target="5">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="5" target="39">
+    <edge source="5" target="13">
       <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0631</data>
+      <data key="d22">0.041</data>
     </edge>
-    <edge source="5" target="111">
+    <edge source="5" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="5" target="112">
+    <edge source="5" target="27">
       <data key="d21">_IS</data>
-      <data key="d22">0.2532</data>
+      <data key="d23">-0.0035</data>
     </edge>
     <edge source="6" target="7">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="7" target="111">
+    <edge source="7" target="15">
+      <data key="d21">REPLY_TO</data>
+      <data key="d22">0.0</data>
+    </edge>
+    <edge source="7" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="7" target="113">
+    <edge source="7" target="28">
       <data key="d21">_IS</data>
-      <data key="d22">0.0172</data>
+      <data key="d23">-0.085</data>
     </edge>
     <edge source="8" target="9">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="9" target="41">
+    <edge source="9" target="17">
       <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
+      <data key="d22">0.077</data>
     </edge>
-    <edge source="9" target="43">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.065</data>
-    </edge>
-    <edge source="9" target="111">
+    <edge source="9" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="9" target="112">
+    <edge source="9" target="28">
       <data key="d21">_IS</data>
-      <data key="d22">0.1142</data>
+      <data key="d23">-0.1385</data>
     </edge>
     <edge source="10" target="11">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="11" target="45">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
-    </edge>
-    <edge source="11" target="111">
+    <edge source="11" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="11" target="112">
+    <edge source="11" target="27">
       <data key="d21">_IS</data>
-      <data key="d22">0.3643</data>
+      <data key="d23">0.0</data>
     </edge>
     <edge source="12" target="13">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="13" target="47">
+    <edge source="13" target="19">
       <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1093</data>
+      <data key="d22">0.0</data>
     </edge>
-    <edge source="13" target="111">
+    <edge source="13" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="13" target="114">
+    <edge source="13" target="26">
       <data key="d21">_IS</data>
-      <data key="d22">-0.0686</data>
+      <data key="d23">0.1273</data>
     </edge>
     <edge source="14" target="15">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="15" target="111">
+    <edge source="15" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="15" target="112">
+    <edge source="15" target="26">
       <data key="d21">_IS</data>
-      <data key="d22">0.1591</data>
+      <data key="d23">0.2553</data>
     </edge>
     <edge source="16" target="17">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="17" target="111">
+    <edge source="17" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="17" target="113">
+    <edge source="17" target="26">
       <data key="d21">_IS</data>
-      <data key="d22">-0.0349</data>
+      <data key="d23">0.2572</data>
     </edge>
     <edge source="18" target="19">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="19" target="111">
+    <edge source="19" target="24">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="19" target="114">
+    <edge source="19" target="27">
       <data key="d21">_IS</data>
-      <data key="d22">-0.1129</data>
+      <data key="d23">0.0</data>
     </edge>
     <edge source="20" target="21">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="21" target="111">
+    <edge source="21" target="25">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="21" target="112">
+    <edge source="21" target="26">
       <data key="d21">_IS</data>
-      <data key="d22">0.1763</data>
+      <data key="d23">0.1184</data>
     </edge>
     <edge source="22" target="23">
       <data key="d21">WROTE</data>
     </edge>
-    <edge source="23" target="111">
+    <edge source="23" target="25">
       <data key="d21">_IN</data>
     </edge>
-    <edge source="23" target="114">
+    <edge source="23" target="26">
       <data key="d21">_IS</data>
-      <data key="d22">-0.2729</data>
-    </edge>
-    <edge source="24" target="25">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="25" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="25" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.2384</data>
-    </edge>
-    <edge source="26" target="27">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="27" target="49">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
-    </edge>
-    <edge source="27" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="27" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.2023</data>
-    </edge>
-    <edge source="28" target="29">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="29" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="29" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">0.0043</data>
-    </edge>
-    <edge source="30" target="31">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="31" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="31" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.1054</data>
-    </edge>
-    <edge source="32" target="33">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="33" target="51">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.143</data>
-    </edge>
-    <edge source="33" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="33" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">0.0</data>
-    </edge>
-    <edge source="34" target="35">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="35" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="35" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.1115</data>
-    </edge>
-    <edge source="36" target="37">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="37" target="53">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.3021</data>
-    </edge>
-    <edge source="37" target="55">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1996</data>
-    </edge>
-    <edge source="37" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="37" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.2326</data>
-    </edge>
-    <edge source="38" target="39">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="39" target="57">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0495</data>
-    </edge>
-    <edge source="39" target="59">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
-    </edge>
-    <edge source="39" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="39" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.2798</data>
-    </edge>
-    <edge source="40" target="41">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="41" target="61">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1363</data>
-    </edge>
-    <edge source="41" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="41" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.2052</data>
-    </edge>
-    <edge source="42" target="43">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="43" target="63">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1011</data>
-    </edge>
-    <edge source="43" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="43" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.3182</data>
-    </edge>
-    <edge source="44" target="45">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="45" target="65">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
-    </edge>
-    <edge source="45" target="67">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
-    </edge>
-    <edge source="45" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="45" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.0936</data>
-    </edge>
-    <edge source="46" target="47">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="47" target="69">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.2981</data>
-    </edge>
-    <edge source="47" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="47" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.2712</data>
-    </edge>
-    <edge source="48" target="49">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="49" target="71">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.204</data>
-    </edge>
-    <edge source="49" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="49" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.0445</data>
-    </edge>
-    <edge source="50" target="51">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="51" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="51" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">0.0173</data>
-    </edge>
-    <edge source="52" target="53">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="53" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="53" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.0065</data>
-    </edge>
-    <edge source="54" target="55">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="55" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="55" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">0.015</data>
-    </edge>
-    <edge source="56" target="57">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="57" target="73">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.2094</data>
-    </edge>
-    <edge source="57" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="57" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.1698</data>
-    </edge>
-    <edge source="58" target="59">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="59" target="75">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1928</data>
-    </edge>
-    <edge source="59" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="59" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.1012</data>
-    </edge>
-    <edge source="60" target="61">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="61" target="77">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.3007</data>
-    </edge>
-    <edge source="61" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="61" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.128</data>
-    </edge>
-    <edge source="62" target="63">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="63" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="63" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.125</data>
-    </edge>
-    <edge source="64" target="65">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="65" target="79">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1046</data>
-    </edge>
-    <edge source="65" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="65" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.3587</data>
-    </edge>
-    <edge source="66" target="67">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="67" target="81">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
-    </edge>
-    <edge source="67" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="67" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">0.0</data>
-    </edge>
-    <edge source="68" target="69">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="69" target="83">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.2128</data>
-    </edge>
-    <edge source="69" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="69" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.1428</data>
-    </edge>
-    <edge source="70" target="71">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="71" target="85">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0923</data>
-    </edge>
-    <edge source="71" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="71" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.042</data>
-    </edge>
-    <edge source="72" target="73">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="73" target="87">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0679</data>
-    </edge>
-    <edge source="73" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="73" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.0029</data>
-    </edge>
-    <edge source="74" target="75">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="75" target="89">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0389</data>
-    </edge>
-    <edge source="75" target="91">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1979</data>
-    </edge>
-    <edge source="75" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="75" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.2842</data>
-    </edge>
-    <edge source="76" target="77">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="77" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="77" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.5574</data>
-    </edge>
-    <edge source="78" target="79">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="79" target="93">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.183</data>
-    </edge>
-    <edge source="79" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="79" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.0252</data>
-    </edge>
-    <edge source="80" target="81">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="81" target="95">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1874</data>
-    </edge>
-    <edge source="81" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="81" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.8679</data>
-    </edge>
-    <edge source="82" target="83">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="83" target="97">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.3602</data>
-    </edge>
-    <edge source="83" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="83" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.183</data>
-    </edge>
-    <edge source="84" target="85">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="85" target="99">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0462</data>
-    </edge>
-    <edge source="85" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="85" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.2481</data>
-    </edge>
-    <edge source="86" target="87">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="87" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="87" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.296</data>
-    </edge>
-    <edge source="88" target="89">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="89" target="101">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
-    </edge>
-    <edge source="89" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="89" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.1531</data>
-    </edge>
-    <edge source="90" target="91">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="91" target="103">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.1937</data>
-    </edge>
-    <edge source="91" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="91" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.0361</data>
-    </edge>
-    <edge source="92" target="93">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="93" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="93" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.1756</data>
-    </edge>
-    <edge source="94" target="95">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="95" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="95" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.0056</data>
-    </edge>
-    <edge source="96" target="97">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="97" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="97" target="113">
-      <data key="d21">_IS</data>
-      <data key="d22">0.0182</data>
-    </edge>
-    <edge source="98" target="99">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="99" target="105">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.22</data>
-    </edge>
-    <edge source="99" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="99" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.134</data>
-    </edge>
-    <edge source="100" target="101">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="101" target="107">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0</data>
-    </edge>
-    <edge source="101" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="101" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.8807</data>
-    </edge>
-    <edge source="102" target="103">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="103" target="109">
-      <data key="d21">REPLY_TO</data>
-      <data key="d23">0.0687</data>
-    </edge>
-    <edge source="103" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="103" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.0939</data>
-    </edge>
-    <edge source="104" target="105">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="105" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="105" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.275</data>
-    </edge>
-    <edge source="106" target="107">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="107" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="107" target="112">
-      <data key="d21">_IS</data>
-      <data key="d22">0.2253</data>
-    </edge>
-    <edge source="108" target="109">
-      <data key="d21">WROTE</data>
-    </edge>
-    <edge source="109" target="111">
-      <data key="d21">_IN</data>
-    </edge>
-    <edge source="109" target="114">
-      <data key="d21">_IS</data>
-      <data key="d22">-0.2217</data>
+      <data key="d23">0.1921</data>
     </edge>
   </graph>
 </graphml>

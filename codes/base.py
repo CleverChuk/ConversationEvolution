@@ -1,6 +1,5 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Class use to pull data from Reddit
-import os
 import json
 from json_models import SubmissionDump, CustomEncoder
 import praw
@@ -8,7 +7,7 @@ import praw
 
 
 class RedditBot:
-    def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ", APP_NAME="myapp", VERSION = "1.0.0"):
+    def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ", APP_NAME = "myapp", VERSION = "1.0.0"):
         """ 
             initialize the bot
 

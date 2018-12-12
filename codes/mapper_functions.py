@@ -1,6 +1,7 @@
 # Author: Chukwubuikem Ume-Ugwa
-# Purpose: Functions use to create a mapping of the main
-#          to a subgraph that approximates the main graph
+# Purpose: Functions use to map the main to a subgraph that approximates the main graph.
+#          It is important to know that the mapper functions
+#          assumes that the nodes given to it are of the same Type.
 
 from collections import defaultdict, OrderedDict
 from models import Node
@@ -293,12 +294,12 @@ def graphFromCluster(clusters, property_key):
                 continue
 
             if not cluster.isdisjoint(nextCluster) and newNodes[names[i]] != newNodes[names[j]]:
-                edges.append(
-                    (newNodes[names[i]], newNodes[names[j]], {"type": j_index}))
+                edges.append((newNodes[names[i]], newNodes[names[j]], {"type": j_index}))
 
     for node in newNodes.values():
         g.add_nodes_from([(node, node.__dict__)])
 
+    g.add_edges_from(edges)
     return (g, edges)
 
 
@@ -335,7 +336,7 @@ def getProperties(obj):
     return list(obj.__dict__.keys())
 
 
-def clusterAverage(name, cluster, props):
+def clusterAverage(name, cluster, property_keys):
     """
         calculates the average of all the properties in property_key for
         all the clusters in cluster
@@ -349,15 +350,15 @@ def clusterAverage(name, cluster, props):
             :type list
             :description: list of nodes
 
-        @param props
+        @param property_keys
             :type list
             :description: list of node attributes
 
         :rtype Node
     """
     global NEW_ID, ALPHA
-    if not isinstance(cluster, list) and not isinstance(props, list):
-        raise Exception("cluster and props must be lists")
+    if not isinstance(cluster, list) and not isinstance(property_keys, list):
+        raise Exception("cluster and property_keys must be lists")
 
     numerical_variables = []
     clusterNode = Node(name)
@@ -366,7 +367,7 @@ def clusterAverage(name, cluster, props):
     mode_value = 0
     mode_var = None
 
-    for property_key in props:
+    for property_key in property_keys:
         for node in cluster:
             tp = node.__dict__[property_key]
             if isinstance(tp, str):  # use mode for categorical variables

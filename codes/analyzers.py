@@ -9,8 +9,8 @@ class SentimentAnalysis:
     def __init__(self):
         pass
 
-    @staticmethod
-    def find_sentence(text):
+    @classmethod
+    def find_sentence(cls, text):
         """
             extract the sentences from the text
             @param text
@@ -24,8 +24,8 @@ class SentimentAnalysis:
         result = result if len(result) > 0 else text
         return result
    
-    @staticmethod
-    def convert_score(score):
+    @classmethod
+    def convert_score(cls,score):
         """
             convert the score to a word
             Positive for scores >= 0.05
@@ -48,8 +48,8 @@ class SentimentAnalysis:
         else:
             return "Neutral"
 
-    @staticmethod
-    def add_sentiment(comment):
+    @classmethod
+    def get_sentiment(cls,comment):
         """
             calculates the mean score for all the sentences in 
             a comment.
@@ -61,13 +61,13 @@ class SentimentAnalysis:
             :rtype float
         """
         sentences = SentimentAnalysis.find_sentence(comment.body)
-        scores = [SentimentAnalysis.sentiment(
+        scores = [cls.sentiment(
             sentence) for sentence in sentences]
 
         return round(mean(scores), 4) if len(scores) > 0 else None
 
-    @staticmethod
-    def sentiment(sentence):
+    @classmethod
+    def sentiment(cls,sentence):
         """
             returns a dictionary of the form
             {
