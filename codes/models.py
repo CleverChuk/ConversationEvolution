@@ -68,8 +68,8 @@ class Node:
     """
         base class for all nodes
     """
-    def __init__(self, _type):
-        self.type = _type
+    def __init__(self, type):
+        self.type = type
         self.id_0 = ""
 
     def __len__(self):
@@ -115,6 +115,7 @@ class CommentNode(Node):
         self.id = comment.id
         self.article_id = aId
         self.parent_id = comment.parent().id
+        self.is_root = self.parent_id == self.article_id
         self.author = ANONYMOUS_USER if comment.author == None else comment.author.name
         self.score = comment.score
         self.timestamp = int(comment.created)

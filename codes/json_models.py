@@ -40,6 +40,7 @@ class Comment:
         self.reading_level =  obj.pop("reading_level","na")
         self.sentiment_score =  obj.pop("sentiment_score","na")
         self.sentiment =  obj.pop("sentiment","na")
+        self.is_root = obj.pop("is_root",False)
         self.replies = [Comment(c) for c in  obj.pop("replies",[])]
 
     def __repr__(self):

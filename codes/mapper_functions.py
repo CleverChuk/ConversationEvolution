@@ -270,8 +270,10 @@ def graphFromCluster(clusters, property_key):
 
         :rtype tuple of graph and list of edges
     """
+    id = 0 # edge id
     g = nx.Graph()
     newNodes = {}
+
     edges = []
     JACCARD_THRESH = 0.1
     # create cluster node
@@ -294,7 +296,8 @@ def graphFromCluster(clusters, property_key):
                 continue
 
             if not cluster.isdisjoint(nextCluster) and newNodes[names[i]] != newNodes[names[j]]:
-                edges.append((newNodes[names[i]], newNodes[names[j]], {"type": j_index}))
+                edges.append((newNodes[names[i]], newNodes[names[j]], {"id":id,"type": j_index}))
+                id += 1
 
     for node in newNodes.values():
         g.add_nodes_from([(node, node.__dict__)])
@@ -435,8 +438,6 @@ def getAverage(edge, property_key):
     p2 = edge[1].__dict__[property_key]
 
     if isinstance(p1,str) or isinstance(p2,str):
-        raise Exception("Property_key value must be numeric")
-
-    # print("Edge:%s val:%d|Edge:%s val:%d"%(edge[0],p1,edge[1],p2))
+        raise TypeError("property_key value must be numeric")
 
     return round((p1+p2)/2, 2)

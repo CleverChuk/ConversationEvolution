@@ -172,7 +172,7 @@ def writeNodeHeaderFile(filename, header, property_values):
         raise TypeError()
 
     filename = filename.split(".")
-    filename = "." + filename[1][:-4] + "_node_header." + filename[2]
+    filename = "." + filename[1][:-6] + "_node_header." + filename[2]
     fname = "./raw/temp.csv"
 
     with open(fname,"w") as fp:

@@ -13,10 +13,10 @@ def createNodes(n):
     return nodes
 
 
-def addProperty(prop, nodes):
+def addProperty(property_key, nodes):
     rand.seed(0)
     for i, node in enumerate(nodes):
-        node.__dict__[prop] = rand.random()*100
+        node.__dict__[property_key] = rand.random()*100
 
     for node in nodes:
         node.id_0 = ord(node.name) % 97
@@ -42,8 +42,8 @@ def buildGraph(nodes):
 
 if __name__ == "__main__":
     nodes = createNodes(7)
-    prop = "readingLevel"
-    nodes = addProperty(prop, nodes)
+    property_key = "readingLevel"
+    nodes = addProperty(property_key, nodes)
     g = buildGraph(nodes)
     # nx.write_graphml(g, "./graphML/test-original.graphml")
     edges = list(g.edges())

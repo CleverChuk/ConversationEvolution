@@ -185,19 +185,26 @@ Use the Loader class in dbimport.py
  
 ```Python
 # create the loader class
-ln = Loader(url="http://localhost:11002/", username="neo4j", password="password")
+loader = Loader(url="http://localhost:11002/", username="neo4j", password="password")
+# load from files
 # node csv header with mandatory ":ID" field
-node_header = [":ID","author", "score", "timestamp", "length", "sentiment", ":LABEL"]
-
+node_header = [":ID","article_id","parent_id","is_root","author", "score", "timestamp", "length", "averageWordLength",
+"quotedTextPerLength","readingLevel","sentimentScore","sentiment","similarity"]
 # edge csv header with mandatory fields
-rel_header = [":START_ID",":END_ID",":TYPE"]
+rel_header = [":START_ID","id","similarity",":END_ID",":TYPE"]
+with open("raw/comment_nodes.csv", mode="r", newline="") as fp:        
+    with open("raw/comment_edges.csv", mode="r", newline="") as fp0:
+        loader.load_nodes_from_file(fp,node_header)
+        loader.load_edges_from_file(fp0, rel_header)  
+        loader.writeToDb()
 
-with open("raw/mapper_comment_data.csv", mode="r", newline="") as fp:        
-    with open("raw/mapper_comment_edge_data.csv", mode="r", newline="") as fp0:
-        ln.load_nodes(fp,node_header)
-        ln.load_edges(fp0, rel_header)  
-        ln.writeToDb()
-
+node_header = [":ID","name"]
+rel_header = [":START_ID","id",":END_ID",":TYPE"]
+with open("raw/author_nodes.csv", mode="r", newline="") as fp:        
+    with open("raw/author_comment_edges.csv", mode="r", newline="") as fp0:
+        loader.load_nodes_from_file(fp,node_header)
+        loader.load_edges_from_file(fp0, rel_header, type="WROTE")  
+        loader.writeToDb()
 ```
 
 ## Non-standard Python Modules Used in this Project.

@@ -25,10 +25,11 @@ def load_graph(filepath, type):
     return read_graphml(filepath, node_type = type)
 
 
-class GraphBot(RedditBot):
+class Grapher(RedditBot):
     """
         A subclass of RedditBot that can be used to build mapper graph
     """
+    relationship_id = 0
 
     def __init__(self, subreddit, username = "CleverChuk", password = "BwO9pJdzGaVj2pyhZ4kJ" , property_key = "sentiment_score", epsilon = 0.5, intervals = 3, APP_NAME="myapp", VERSION = "1.0.0"):
         """
@@ -102,7 +103,7 @@ class GraphBot(RedditBot):
 
             @param *ids: 
                 :type list
-                description: list of submission ids in the subreddit
+                :description: list of submission ids in the subreddit
             
             :rtype Graph
         """
@@ -135,16 +136,17 @@ class GraphBot(RedditBot):
                 for comment in submission.comments.list():
                     comment_node = CommentNode(article_node.id, comment, CommentAnalysis(comment))
                     author_node = AuthorNode(comment_node.author)
-                    self.article_comment_edges.append((comment_node, article_node, {"type": "_IN"}))
+                    self.article_comment_edges.append((comment_node, article_node, {"id":Grapher.relationship_id,"type": "_IN"}))
 
-                    self.author_comment_edges.append((author_node, comment_node, {"type": "WROTE"}))
+                    Grapher.relationship_id += 1
+                    self.author_comment_edges.append((author_node, comment_node, {"id":Grapher.relationship_id,"type": "WROTE"}))
                     self.nodes.append((author_node, author_node.__dict__))
                     self.nodes.append((comment_node, comment_node.__dict__))
                     
                     self.author_nodes.append(author_node)
                     self.comment_nodes.append(comment_node)
                     diGraph.add_nodes_from([(comment_node, comment_node.__dict__)])
-
+                    Grapher.relationship_id += 1
                 
             except Exception as pe:
                 print(pe)
@@ -152,14 +154,16 @@ class GraphBot(RedditBot):
         # populate sentiment/comment  and comment/comment edge list
         for p_comment, *_ in self.article_comment_edges:
             self.sentiment_comment_edges.append((sentiment[p_comment.sentiment], p_comment, 
-            {"type": "_IS","score": p_comment.sentiment_score}))
-
+            {"id":Grapher.relationship_id, "type": "_IS","score": p_comment.sentiment_score}))
+            
+            Grapher.relationship_id += 1
             for c_comment, *_ in self.article_comment_edges:
                 if c_comment.parent_id == p_comment.id:
                     # nx does not support numpy float
                     c_comment.similarity = round(float(cosine_sim(p_comment.body, c_comment.body)), 4)
-                    self.comment_comment_edges.append((c_comment, p_comment, {"type": "REPLY_TO", "similarity": c_comment.similarity}))
-
+                    self.comment_comment_edges.append((c_comment, p_comment, {"id":Grapher.relationship_id,"type": "REPLY_TO", "similarity": c_comment.similarity}))
+                    Grapher.relationship_id += 1
+                    
         # add nodes for mapper graph
         _nodes = []
         for cc, pc, *_ in self.comment_comment_edges:
