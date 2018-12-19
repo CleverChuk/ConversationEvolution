@@ -15,14 +15,14 @@ if __name__ == "__main__":
     intervals = 10
     prop = "score"
     epsilon = 0.05
-    grapher = Grapher(subreddit, intervals=intervals, property_key=prop, epsilon=epsilon)
-    # get data for two hot submissions in the subreddit
+    grapher = Grapher(subreddit,"CleverChuk","BwO9pJdzGaVj2pyhZ4kJ", intervals=intervals, property_key=prop, epsilon=epsilon)
+    # get data for two submissions in the subreddit
     ids = ["a55xbm","a57th7"]
     # the full graph
-    graph = grapher.getGraph(*ids)
+    graph = grapher.get_graph(*ids)
 
     # loader
-    loader = dbi.Loader()
+    loader = dbi.Loader("http://localhost:11002/", "neo4j", "chubi93")
 
     # load from list
     loader.write_nodes_from_list(grapher.comment_nodes,"comment")
@@ -51,7 +51,7 @@ if __name__ == "__main__":
                 with open("raw/comment_edges_header.csv") as rel_header:
                     loader.load_nodes_from_file(fp, node_header, label = 'comment')
                     loader.load_edges_from_file(fp0, rel_header, type = "REPLY_TO")  
-                    loader.writeToDb()
+                    loader.write_to_db()
             
 
     # node_header = [":ID","name"]
@@ -62,7 +62,7 @@ if __name__ == "__main__":
                 with open("raw/author_comment_edges_header.csv") as rel_header:
                     loader.load_nodes_from_file(fp,node_header, label = "author")
                     loader.load_edges_from_file(fp0, rel_header, type="WROTE")  
-                    loader.writeToDb()
+                    loader.write_to_db()
 
 
     # json dump of the data

@@ -1,7 +1,7 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Record models use to create graph nodes
 
-from analyzers import  SentimentAnalysis
+from analyzers import  SentimentAnalyzer
 """
 @param 
     :type
@@ -124,8 +124,8 @@ class CommentNode(Node):
         self.average_word_length = meta.average_word_length
         self.quoted_text_per_length = meta.quoted_text_per_length
         self.reading_level = meta.reading_level
-        self.sentiment_score = SentimentAnalysis.get_sentiment(comment)
-        self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
+        self.sentiment_score = SentimentAnalyzer.get_sentiment(comment)
+        self.sentiment = SentimentAnalyzer.convert_score(self.sentiment_score)
         self.similarity = 1.0        
         super().__init__("comment")
 

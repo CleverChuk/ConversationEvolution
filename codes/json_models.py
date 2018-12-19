@@ -1,5 +1,5 @@
 from json import JSONEncoder
-from analyzers import  SentimentAnalysis
+from analyzers import  SentimentAnalyzer
 
 class CustomEncoder(JSONEncoder):
     """
@@ -68,8 +68,8 @@ class CommentDump:
         comment object used to write to json
     """
     def __init__(self, comment):
-        from analyzers import CommentAnalysis
-        meta_analyzer = CommentAnalysis(comment)
+        from analyzers import CommentAnalyzer
+        meta_analyzer = CommentAnalyzer(comment)
         self.author = "Anonymous" if comment.author == None else comment.author.name
         self.parent_id = comment.parent().id
         self.score = comment.score
@@ -80,8 +80,8 @@ class CommentDump:
         self.average_word_length = meta_analyzer.average_word_length
         self.quoted_text_per_length = meta_analyzer.quoted_text_per_length
         self.reading_level = meta_analyzer.reading_level
-        self.sentiment_score = SentimentAnalysis.get_sentiment(comment)
-        self.sentiment = SentimentAnalysis.convert_score(self.sentiment_score)
+        self.sentiment_score = SentimentAnalyzer.get_sentiment(comment)
+        self.sentiment = SentimentAnalyzer.convert_score(self.sentiment_score)
         self.replies = [CommentDump(c) for c in comment.replies]
 
     def __repr__(self):

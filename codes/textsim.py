@@ -21,7 +21,7 @@ def normalize(text):
     '''
     return stem_tokens(word_tokenize(text.lower().translate(remove_punctuation_map)))
 
-vectorizer = TfidfVectorizer(tokenizer=normalize, stop_words='english')
+
 def cosine_sim(doc_0, doc_1):
     """
         calculates the cosine similarity of the two documents
@@ -36,6 +36,7 @@ def cosine_sim(doc_0, doc_1):
         
         :rtype float :range [0,1]
     """
+    vectorizer = TfidfVectorizer(tokenizer=normalize, stop_words='english')
     tfidf = vectorizer.fit_transform([doc_0, doc_1])
     return ((tfidf * tfidf.T).A)[0,1]
 

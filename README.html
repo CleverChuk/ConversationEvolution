@@ -158,15 +158,15 @@ $(document).ready(function () {
 </tr>
 <tr class="even">
 <td><em>grapher.py</em></td>
-<td>extends base.py</td>
+<td>contains the class that extends RedditBot</td>
 </tr>
 <tr class="odd">
 <td><em>analyzers.py</em></td>
-<td>consists of function used to calculate data fields such as sentiment, number of quoted texts per length etc.</td>
+<td>consists of functions used to calculate data fields such as sentiment, number of quoted texts per length etc.</td>
 </tr>
 <tr class="even">
 <td><em>textsim.py</em></td>
-<td>consist of function for document analysis like similarity calculation</td>
+<td>consist of functions for document analysis like similarity calculation</td>
 </tr>
 <tr class="odd">
 <td><em>graph_writer.py</em></td>
@@ -194,6 +194,269 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+</div>
+<div id="classes" class="section level2">
+<h2>Classes</h2>
+<div id="class-redditbot" class="section level4">
+<h4>Class RedditBot</h4>
+<p><strong>Object</strong></p>
+<p><code>Direct Subclass</code></p>
+<p><strong>Grapher</strong></p>
+<p>This class is a wrapper of praw.Reddit. It is used to query the Reddit api for data.</p>
+<p>This example creates a RedditBot object and uses it to get the subbmission ids of 10 hot submissions.</p>
+<pre class="python"><code>bot = RedditBot(&quot;compsci&quot;, &quot;CleverChuk&quot;, &quot;password&quot;)
+
+ids = bot.get_hot_submissions_id(limit = 10)
+
+ids = list(ids)
+
+To dump the threads to json, use the following code:
+
+bot.dumpjson(&quot;compsci.json&quot;, ids)</code></pre>
+<p><strong>Constructor Summary</strong></p>
+<p><code>RedditBot(subreddit, &quot;username&quot;, &quot;password&quot;)</code></p>
+<p>constructs a RedditBot with the given subreddit, username, password and APP_NAME w/ value “myapp” and VERSION w/ value “1.0.0”</p>
+<p><code>RedditBot(subreddit, username, password, APP_NAME)</code></p>
+<p>constructs a RedditBot with the given subreddit, username, password, APP_NAME and VERSION w/ value “1.0.0”</p>
+<p><code>RedditBot(subreddit, username, password, APP_NAME, VERSION)</code></p>
+<p>constructs a RedditBot with the given subreddit, username, password, APP_NAME and VERSION</p>
+<p><strong>Method Summary</strong></p>
+<table>
+<colgroup>
+<col width="4%"></col>
+<col width="95%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Method description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>list</strong></td>
+<td><strong>get_submissions()</strong><br />Returns a list of submission ids in the subreddit.</td>
+</tr>
+<tr class="even">
+<td><strong>Reddit.Submission</strong></td>
+<td><strong>get_submission(id)</strong><br />Returns a submission object.</td>
+</tr>
+<tr class="odd">
+<td><strong>generator</strong></td>
+<td><strong>get_hot_submissions_id(limit=10)</strong><br />Returns a generator that yields 10 submission ids.</td>
+</tr>
+<tr class="even">
+<td><strong>None</strong></td>
+<td><strong>dumpjson(filename, ids)</strong><br /> Dumps submissions with id in ids to json.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="class-grapher" class="section level4">
+<h4>Class Grapher</h4>
+<p><strong>Object</strong></p>
+<p><strong>RedditBot</strong></p>
+<p><code>Direct Subclass</code></p>
+<p>This class is extends the RedditBot class and adds graphing capability by wrapping Networkx.Graph.</p>
+<p>This example creates a Grapher object and uses it to generate a mapper graph and normal of the given subbmission ids.</p>
+<pre class="python"><code>intervals = 10
+
+prop = &quot;score&quot;
+
+epsilon = 0.05
+
+ids = [&quot;a55xbm&quot;,&quot;a57th7&quot;]
+
+subreddit = &quot;programming&quot;
+
+grapher = Grapher(subreddit, &quot;username&quot;, &quot;password&quot;, intervals=intervals, property_key=prop, epsilon=epsilon)
+
+graph = grapher.get_graph(*ids)</code></pre>
+<p><strong>Constructor Summary</strong></p>
+<p><code>Grapher(subreddit, username, password)</code></p>
+<p>constructs a Grapher with the given subreddit, username, password and defaults for intervals, property_key, epsilon,APP_NAME and VERSION</p>
+<p><code>Grapher(subreddit, username, password, intervals=10)</code></p>
+<p>constructs a Grapher with the given subreddit, username, password, and intervals</p>
+<p><code>Grapher(subreddit, username, password, intervals = 10, property_key = &quot;reading_level&quot;, epsilon = 0.5)</code></p>
+<p>constructs a Grapher with the given subreddit, username, password, intervals, property_key and epsilon.</p>
+<p><strong>Method Summary</strong></p>
+<table>
+<colgroup>
+<col width="4%"></col>
+<col width="95%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Method description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>boolean</strong></td>
+<td><strong>is_removed(comment)</strong><br />Returns true if the comment has been removed otherwise false.</td>
+</tr>
+<tr class="even">
+<td><strong>generator</strong></td>
+<td><strong>stream(subreddit)</strong><br />Returns a generator that yields submission graphs from the subreddit.</td>
+</tr>
+<tr class="odd">
+<td><strong>Networkx.Graph</strong></td>
+<td><strong>get_graph(ids)</strong><br />Builds graph from the submission ids.</td>
+</tr>
+<tr class="even">
+<td><strong>Networkx.Graph</strong></td>
+<td><strong>load_graph(filename, node_type)</strong><br />Loads a graph from a .graphml file.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="class-loader" class="section level4">
+<h4>Class Loader</h4>
+<p><strong>Object</strong></p>
+<p><code>Direct Subclass</code></p>
+<p>This class is a wrapper of py2neo.Graph and is used to import Nodes and edges into an existing database.</p>
+<p>This example creates a Loader object and uses it to import nodes and edges from both CSV files and list .</p>
+<pre class="python"><code># loader
+loader = Loader(&quot;url&quot;, &quot;username&quot;&quot;, &quot;password&quot;)
+
+# load from list
+loader.write_nodes_from_list(comment_nodes,&quot;comment&quot;)
+loader.write_edges_from_list(comment_comment_edges,type=&quot;REPLY_TO&quot;)  
+
+# load from files
+with open(&quot;node_data.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp:        
+    with open(&quot;edge_data.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp0:
+        with open(&quot;node_header.csv&quot;) as node_header:
+            with open(&quot;edges_header.csv&quot;) as rel_header:
+                loader.load_nodes_from_file(fp, node_header, label = 'comment')
+                loader.load_edges_from_file(fp0, rel_header, type = &quot;REPLY_TO&quot;)  
+                loader.writeToDb()</code></pre>
+<p><strong>Constructor Summary</strong></p>
+<p><code>Loader(db_url, username, password)</code></p>
+<p>constructs a Loader object with the given database url, username, password.</p>
+<p><strong>Method Summary</strong></p>
+<table>
+<colgroup>
+<col width="4%"></col>
+<col width="95%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Method description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>None</strong></td>
+<td><strong>load_nodes_from_list(nodes, label)</strong><br />Writes the nodes into the database.</td>
+</tr>
+<tr class="even">
+<td><strong>generator</strong></td>
+<td><strong>load_edges_from_list(edges, type = “TO”)</strong><br />Returns a generator that yields py2neo.Relationship objects.</td>
+</tr>
+<tr class="odd">
+<td><strong>None</strong></td>
+<td><strong>load_nodes_from_file(fp, header_file, label = None)</strong><br />Loads the nodes in the given file(fp).</td>
+</tr>
+<tr class="even">
+<td><strong>None</strong></td>
+<td><strong>load_edges_from_file(fp, header_file, type = “TO”)</strong><br />Loads the edges in the given file(fp).</td>
+</tr>
+<tr class="odd">
+<td><strong>None</strong></td>
+<td><strong>write_to_db()</strong><br />writes the loaded nodes and edges to database.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="class-commentanalyzer" class="section level4">
+<h4>Class CommentAnalyzer</h4>
+<p><strong>Object</strong></p>
+<p><code>Direct Subclass</code></p>
+<p>This class is used to calculate derived attributes of a comment.</p>
+<p>This example creates a CommentAnalyzer object and access the value of the derived attributes.</p>
+<pre class="python"><code>comment = &quot;Do you even know what you're talking about?&quot;
+analyzer = CommentAnalyzer(comment)
+length = analyzer.length()
+reading_level = analyzer.reading_level()</code></pre>
+<p><strong>Constructor Summary</strong></p>
+<p><code>CommentAnalyzer(comment)</code></p>
+<p>constructs a CommentAnalyzer object with the given comment.</p>
+<p><strong>Method Summary</strong></p>
+<table>
+<colgroup>
+<col width="4%"></col>
+<col width="95%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Method description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>int</strong></td>
+<td><strong>length()</strong><br />Gets the number of characters in the comment.</td>
+</tr>
+<tr class="even">
+<td><strong>float</strong></td>
+<td><strong>quoted_text_per_length()</strong><br />Calculates the amount of quoted text per length of comment.</td>
+</tr>
+<tr class="odd">
+<td><strong>float</strong></td>
+<td><strong>average_word_length()</strong><br />Calculates the average word length of a comment.</td>
+</tr>
+<tr class="even">
+<td><strong>float</strong></td>
+<td><strong>reading_level()</strong><br />Calculates the reading level of the comment.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="class-sentimentanalyzer" class="section level4">
+<h4>Class SentimentAnalyzer</h4>
+<p><strong>Object</strong></p>
+<p><code>Direct Subclass</code></p>
+<p>This class is used to calculate the sentiment of a given comment using the Vader SentimentIntensityAnalyzer algorithm found in NLTK module.</p>
+<p>This example uses the class method of SentimentAnalyzer to calculate the sentiment of a comment.</p>
+<pre class="python"><code>comment = &quot;Do you even know what you're talking about?&quot;
+sentiment_score = SentimentAnalyzer.get_sentiment(comment)
+sentiment = SentimentAnalyzer.convert_score(sentiment_score)
+print(sentiment)</code></pre>
+<p><strong>Method Summary</strong></p>
+<table>
+<colgroup>
+<col width="4%"></col>
+<col width="95%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Method description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>list</strong></td>
+<td><strong>find_sentence(text)</strong><br />Extract the sentences from the text.</td>
+</tr>
+<tr class="even">
+<td><strong>string</strong></td>
+<td><strong>convert_score(score)</strong><br />Convert numeric sentiment score to a text.</td>
+</tr>
+<tr class="odd">
+<td><strong>float</strong></td>
+<td><strong>get_sentiment(comment)</strong><br />Calculates the mean score for all the sentences in a comment.</td>
+</tr>
+<tr class="even">
+<td><strong>float</strong></td>
+<td><strong>sentiment(sentence)</strong><br />Calculates the sentiment of the given sentence.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Miscellaneous Modules</strong></p>
 <ul>
 <li><p>mp_test.py</p></li>
@@ -202,13 +465,14 @@ $(document).ready(function () {
 <li><p>neo4j/*</p></li>
 </ul>
 </div>
+</div>
 <div id="setup" class="section level2">
 <h2>Setup</h2>
 <ol style="list-style-type: decimal">
 <li><p>Download and <a href="https://neo4j.com/download/">install</a> Neo4j database</p></li>
 <li><p>Download and install the Python packages in the <em>Non-standard Python Modules Used in this Project.</em> section.</p></li>
 <li><p>Create a Reddit account</p></li>
-<li><p>Log into your Reddit account and do the follwoing:</p>
+<li><p>Log into your Reddit account and do the following:</p>
 <ol style="list-style-type: decimal">
 <li><p>Click on your username</p></li>
 <li><p>In the dropdown menu click on <em>User Settings</em></p></li>
@@ -317,19 +581,26 @@ Content-Type: application/json
 <p><strong>Loading data into an existing db</strong></p>
 <p>Use the Loader class in dbimport.py</p>
 <pre class="python"><code># create the loader class
-ln = Loader(url=&quot;http://localhost:11002/&quot;, username=&quot;neo4j&quot;, password=&quot;chubi93&quot;)
-# node csv header with mandatory &quot;:ID&quot; filed
-node_header = [&quot;:ID&quot;,&quot;author&quot;, &quot;score&quot;, &quot;timestamp&quot;, &quot;length&quot;, &quot;sentiment&quot;, &quot;:LABEL&quot;]
-
+loader = Loader(url=&quot;http://localhost:11002/&quot;, username=&quot;neo4j&quot;, password=&quot;password&quot;)
+# load from files
+# node csv header with mandatory &quot;:ID&quot; field
+node_header = [&quot;:ID&quot;,&quot;article_id&quot;,&quot;parent_id&quot;,&quot;is_root&quot;,&quot;author&quot;, &quot;score&quot;, &quot;timestamp&quot;, &quot;length&quot;, &quot;averageWordLength&quot;,
+&quot;quotedTextPerLength&quot;,&quot;readingLevel&quot;,&quot;sentimentScore&quot;,&quot;sentiment&quot;,&quot;similarity&quot;]
 # edge csv header with mandatory fields
-rel_header = [&quot;:START_ID&quot;,&quot;:END_ID&quot;,&quot;:TYPE&quot;]
+rel_header = [&quot;:START_ID&quot;,&quot;id&quot;,&quot;similarity&quot;,&quot;:END_ID&quot;,&quot;:TYPE&quot;]
+with open(&quot;raw/comment_nodes.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp:        
+    with open(&quot;raw/comment_edges.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp0:
+        loader.load_nodes_from_file(fp,node_header)
+        loader.load_edges_from_file(fp0, rel_header)  
+        loader.writeToDb()
 
-with open(&quot;raw/mapper_comment_data.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp:        
-    with open(&quot;raw/mapper_comment_edge_data.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp0:
-        ln.load_nodes(fp,node_header)
-        ln.load_edges(fp0, rel_header)  
-        ln.writeToDb()
-</code></pre>
+node_header = [&quot;:ID&quot;,&quot;name&quot;]
+rel_header = [&quot;:START_ID&quot;,&quot;id&quot;,&quot;:END_ID&quot;,&quot;:TYPE&quot;]
+with open(&quot;raw/author_nodes.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp:        
+    with open(&quot;raw/author_comment_edges.csv&quot;, mode=&quot;r&quot;, newline=&quot;&quot;) as fp0:
+        loader.load_nodes_from_file(fp,node_header)
+        loader.load_edges_from_file(fp0, rel_header, type=&quot;WROTE&quot;)  
+        loader.writeToDb()</code></pre>
 </div>
 <div id="non-standard-python-modules-used-in-this-project." class="section level2">
 <h2>Non-standard Python Modules Used in this Project.</h2>

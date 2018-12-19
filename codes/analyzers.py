@@ -5,7 +5,7 @@ import nltk
 from textsim import remove_punctuation_map
 from statistics import mean
 
-class SentimentAnalysis:
+class SentimentAnalyzer:
     def __init__(self):
         pass
 
@@ -21,7 +21,7 @@ class SentimentAnalysis:
         """
         text = text.lower()
         result = nltk.sent_tokenize(text)
-        result = result if len(result) > 0 else text
+        result = result if len(result) > 0 else [text]
         return result
    
     @classmethod
@@ -60,16 +60,21 @@ class SentimentAnalysis:
             
             :rtype float
         """
-        sentences = SentimentAnalysis.find_sentence(comment.body)
-        scores = [cls.sentiment(
-            sentence) for sentence in sentences]
+        sentences = None
+
+        if isinstance(comment,str):
+            sentences = SentimentAnalyzer.find_sentence(comment)
+        else:
+            sentences = SentimentAnalyzer.find_sentence(comment.body)
+        scores = [cls.sentiment(sentence) for sentence in sentences]
 
         return round(mean(scores), 4) if len(scores) > 0 else None
 
     @classmethod
     def sentiment(cls,sentence):
         """
-            returns a dictionary of the form
+            calculates the sentiment of the given sentence
+            use the compound value returned by polarity_scores
             {
                 'neg': 0.0,
                 'neu': 0.725,
@@ -91,8 +96,7 @@ class SentimentAnalysis:
 
         return score
 
-
-class CommentAnalysis:
+class CommentAnalyzer:
     """
         this class is used to calculate comment features
 
@@ -126,7 +130,7 @@ class CommentAnalysis:
     @property
     def length(self):
         """
-            gets the norm of the comment vector
+            gets the number of characters in the comment
 
             :rtype int
         """
@@ -186,7 +190,7 @@ class CommentAnalysis:
     @property
     def reading_level(self):
         """
-            calculates the reading ea
+            calculates the reading level of the comment
             :rtype float
         """
         if self._reading_level == None:

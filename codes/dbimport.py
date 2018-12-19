@@ -7,12 +7,11 @@ class Loader:
     """
         Class used to import Nodes and edges into an existing database.
     """
-
-    def __init__(self, url="http://localhost:11002/", username="neo4j", password="chubi93"):
+    def __init__(self, db_url, username, password):
         """
-            @param url
+            @param db_url
                 :type String
-                :description: database url
+                :description: database db_url
             
             @param username
                 :type String
@@ -30,7 +29,7 @@ class Loader:
         self.__key = "id"
 
         self.label = None
-        self.graph = Graph(url, username = username, password = password)
+        self.graph = Graph(db_url, username = username, password = password)
 
     def write_nodes_from_list(self, nodes, label = "`Node`", primary_key = None):
         """
@@ -160,8 +159,6 @@ class Loader:
 
             self.node_dict[node[self.__key]] = node
 
-        return self.node_dict.values()
-
     def load_edges_from_file(self, fp, header_file, type = "TO"):
         """
             Loads nodes from file
@@ -216,11 +213,9 @@ class Loader:
                 rel[k] = v
             self.rels.append(rel)
 
-        return self.rels
-
-    def writeToDb(self):
+    def write_to_db(self):
         """
-            writes the loaded information to database
+            writes the loaded nodes and edges to database
         """
         for n in self.node_dict.values():
             self.graph.merge(n, self.label, self.__key)

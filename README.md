@@ -30,6 +30,215 @@ The project is divided into modules and each module consist of functions and/or 
 | *main.py*| entry point
 
 
+## Classes
+####Class RedditBot####
+  
+  **Object**
+  
+  `Direct Subclass`
+  
+  **Grapher**
+  
+This class is a wrapper of praw.Reddit. It is used to query the Reddit api for data.
+
+This example creates a RedditBot object and uses it to get the subbmission ids of 10 hot submissions.
+
+```Python
+bot = RedditBot("compsci", "CleverChuk", "password")
+
+ids = bot.get_hot_submissions_id(limit = 10)
+
+ids = list(ids)
+
+To dump the threads to json, use the following code:
+
+bot.dumpjson("compsci.json", ids)
+```
+
+**Constructor Summary**
+
+`RedditBot(subreddit, "username", "password")`
+
+constructs a RedditBot with the given subreddit, username, password and APP_NAME w/ value "myapp" and VERSION w/ value "1.0.0"
+
+`RedditBot(subreddit, username, password, APP_NAME)`
+
+constructs a RedditBot with the given subreddit, username, password, APP_NAME and VERSION w/ value "1.0.0"
+
+`RedditBot(subreddit, username, password, APP_NAME, VERSION)`
+
+constructs a RedditBot with the given subreddit, username, password, APP_NAME and VERSION
+
+**Method Summary**
+
+Type | Method description
+-----|--------------------------------------------------------------------------------------------------------------------------------
+**list** | **get_submissions()**<br/>Returns a list of submission ids in the subreddit.
+**Reddit.Submission** | **get_submission(id)**<br/>Returns a submission object.
+**generator**|**get_hot_submissions_id(limit=10)**<br/>Returns a generator that yields 10 submission ids.
+**None**|**dumpjson(filename, ids)**<br/> Dumps submissions with id in ids to json.
+
+
+####Class Grapher####
+  
+  **Object**
+  
+  **RedditBot**
+  
+  `Direct Subclass`
+  
+  
+This class is extends the RedditBot class and adds graphing capability by wrapping Networkx.Graph.
+
+This example creates a Grapher object and uses it to generate a mapper graph and normal of the given subbmission ids.
+
+```Python
+intervals = 10
+
+prop = "score"
+
+epsilon = 0.05
+
+ids = ["a55xbm","a57th7"]
+
+subreddit = "programming"
+
+grapher = Grapher(subreddit, "username", "password", intervals=intervals, property_key=prop, epsilon=epsilon)
+
+graph = grapher.get_graph(*ids)
+```
+
+**Constructor Summary**
+
+`Grapher(subreddit, username, password)`
+
+constructs a Grapher with the given subreddit, username, password and defaults for intervals, property_key, epsilon,APP_NAME and VERSION
+
+`Grapher(subreddit, username, password, intervals=10)`
+
+constructs a Grapher with the given subreddit, username, password, and intervals
+
+`Grapher(subreddit, username, password, intervals = 10, property_key = "reading_level", epsilon = 0.5)`
+
+constructs a Grapher with the given subreddit, username, password, intervals, property_key and epsilon.
+
+**Method Summary**
+
+Type | Method description
+-----|--------------------------------------------------------------------------------------------------------------------------------
+**boolean** | **is_removed(comment)**<br/>Returns true if the comment has been removed otherwise false.
+**generator** | **stream(subreddit)**<br/>Returns a generator that yields submission graphs from the subreddit.
+**Networkx.Graph**|**get_graph(ids)**<br/>Builds graph from the submission ids.
+**Networkx.Graph**|**load_graph(filename, node_type)**<br/>Loads a graph from a .graphml file.
+
+
+####Class Loader####
+  
+  **Object**
+  
+  `Direct Subclass`
+  
+  
+This class is a wrapper of py2neo.Graph and is used to import Nodes and edges into an existing database.
+
+This example creates a Loader object and uses it to import nodes and edges from both CSV files and list .
+
+```Python
+# loader
+loader = Loader("url", "username", "password")
+
+# load from list
+loader.write_nodes_from_list(comment_nodes,"comment")
+loader.write_edges_from_list(comment_comment_edges,type="REPLY_TO")  
+
+# load from files
+with open("node_data.csv", mode="r", newline="") as fp:        
+    with open("edge_data.csv", mode="r", newline="") as fp0:
+        with open("node_header.csv") as node_header:
+            with open("edges_header.csv") as rel_header:
+                loader.load_nodes_from_file(fp, node_header, label = 'comment')
+                loader.load_edges_from_file(fp0, rel_header, type = "REPLY_TO")  
+                loader.writeToDb()
+```
+
+**Constructor Summary**
+
+`Loader(db_url, username, password)`
+
+constructs a Loader object with the given database url, username, password.
+
+**Method Summary**
+
+Type | Method description
+-----|--------------------------------------------------------------------------------------------------------------------------------
+**None** | **load_nodes_from_list(nodes, label)**<br/>Writes the nodes into the database.
+**generator** | **load_edges_from_list(edges, type = "TO")**<br/>Returns a generator that yields py2neo.Relationship objects.
+**None**|**load_nodes_from_file(fp, header_file, label = None)**<br/>Loads the nodes in the given file(fp).
+**None**|**load_edges_from_file(fp, header_file, type = "TO")**<br/>Loads the edges in the given file(fp).
+**None**|**write_to_db()**<br/>writes the loaded nodes and edges to database.
+
+
+####Class CommentAnalyzer####
+  
+  **Object**
+  
+  `Direct Subclass`
+  
+  
+This class is used to calculate derived attributes of a comment.
+
+This example creates a CommentAnalyzer object and access the value of the derived attributes.
+
+```Python
+comment = "Do you even know what you're talking about?"
+analyzer = CommentAnalyzer(comment)
+length = analyzer.length()
+reading_level = analyzer.reading_level()
+```
+
+
+**Constructor Summary**
+
+`CommentAnalyzer(comment)`
+
+constructs a CommentAnalyzer object with the given comment.
+
+**Method Summary**
+
+Type | Method description
+-----|--------------------------------------------------------------------------------------------------------------------------------
+**int** | **length()**<br/>Gets the number of characters in the comment.
+**float** | **quoted_text_per_length()**<br/>Calculates the amount of quoted text per length of comment.
+**float**|**average_word_length()**<br/>Calculates the average word length of a comment.
+**float**|**reading_level()**<br/>Calculates the reading level of the comment.
+
+####Class SentimentAnalyzer####
+  
+  **Object**
+  
+  `Direct Subclass`
+  
+  
+This class is used to calculate the sentiment of a given comment using the Vader SentimentIntensityAnalyzer algorithm found in NLTK module.
+
+This example uses the class method of SentimentAnalyzer to calculate the sentiment of a comment.
+
+```Python
+comment = "Do you even know what you're talking about?"
+sentiment_score = SentimentAnalyzer.get_sentiment(comment)
+sentiment = SentimentAnalyzer.convert_score(sentiment_score)
+print(sentiment)
+```
+
+**Method Summary**
+
+Type | Method description
+-----|--------------------------------------------------------------------------------------------------------------------------------
+**list** | **find_sentence(text)**<br/>Extract the sentences from the text.
+**string** | **convert_score(score)**<br/>Convert numeric sentiment score to a text.
+**float**|**get_sentiment(comment)**<br/>Calculates the mean score for all the sentences in a comment.
+**float**|**sentiment(sentence)**<br/>Calculates the sentiment of the given sentence.
+
 **Miscellaneous Modules**
 
 - mp_test.py

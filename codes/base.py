@@ -7,7 +7,7 @@ import praw
 
 
 class RedditBot:
-    def __init__(self, subreddit, username="CleverChuk", password="BwO9pJdzGaVj2pyhZ4kJ", APP_NAME = "myapp", VERSION = "1.0.0"):
+    def __init__(self, subreddit, username, password, APP_NAME = "myapp", VERSION = "1.0.0"):
         """ 
             initialize the bot
 
@@ -48,7 +48,7 @@ class RedditBot:
                 :type int
                 :description: number of submissions to get
 
-            :rtype List: of tuple (title, score).
+            :rtype generator
         """
         for submission in self.subreddit.hot(limit=limit):
              yield submission.id

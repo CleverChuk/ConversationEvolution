@@ -1,28 +1,11 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Class use to generate a graph from pulled data
 from networkx import (Graph, DiGraph, read_graphml)
-from analyzers import CommentAnalysis
+from analyzers import CommentAnalyzer
 from textsim import cosine_sim
 from models import CommentNode, AuthorNode, Node, ArticleNode, SentimentNode
 from base import RedditBot
 from mapper_functions import cluster_on_numeric_property
-
-
-def load_graph(filepath, type):
-    """
-        loads graph from a .graphml file
-
-        @param subreddit
-            :type string
-            :description: filepath
-
-        @param subreddit
-            :type class
-            :description: class that specify the node model
-
-        :rtype Graph
-    """
-    return read_graphml(filepath, node_type = type)
 
 
 class Grapher(RedditBot):
@@ -31,7 +14,7 @@ class Grapher(RedditBot):
     """
     relationship_id = 0
 
-    def __init__(self, subreddit, username = "CleverChuk", password = "BwO9pJdzGaVj2pyhZ4kJ" , property_key = "sentiment_score", epsilon = 0.5, intervals = 3, APP_NAME="myapp", VERSION = "1.0.0"):
+    def __init__(self, subreddit, username , password  , property_key = "sentiment_score", epsilon = 0.5, intervals = 3, APP_NAME="myapp", VERSION = "1.0.0"):
         """
         Builds the GraphBot objects using default or provided configuration
 
@@ -59,7 +42,7 @@ class Grapher(RedditBot):
             :type float
             :description: how much to shift the property_key to create overlap
         """
-        super().__init__(subreddit, username, password,VERSION=VERSION, APP_NAME=APP_NAME)
+        super().__init__(subreddit, username, password, VERSION=VERSION, APP_NAME=APP_NAME)
         self.property_key = property_key
         self.epsilon = epsilon
         self.intervals = intervals
@@ -75,9 +58,9 @@ class Grapher(RedditBot):
         self.sentiment_nodes= []
         self.author_nodes = []
 
-    def isRemoved(self, comment):
+    def is_removed(self, comment):
         """
-            filters a comment from being added to the graph if it has be removed
+            return true if the comment has been removed otherwise false
 
             @param comment
                 :type CommentNode
@@ -95,9 +78,9 @@ class Grapher(RedditBot):
         """
         stream = self.reddit.subreddit(subreddit).stream
         for submission in stream.submissions():
-            yield self.getGraph(submission.id)
+            yield self.get_graph(submission.id)
 
-    def getGraph(self, *ids):
+    def get_graph(self, *ids):
         """"
             builds graph from article with submission id
 
@@ -134,7 +117,7 @@ class Grapher(RedditBot):
 
                 # populate article/comment edge list
                 for comment in submission.comments.list():
-                    comment_node = CommentNode(article_node.id, comment, CommentAnalysis(comment))
+                    comment_node = CommentNode(article_node.id, comment, CommentAnalyzer(comment))
                     author_node = AuthorNode(comment_node.author)
                     self.article_comment_edges.append((comment_node, article_node, {"id":Grapher.relationship_id,"type": "_IN"}))
 
@@ -194,6 +177,20 @@ class Grapher(RedditBot):
         
         return graph
 
+    def load_graph(self,filepath, type):
+        """
+            loads graph from a .graphml file
 
+            @param filepath
+                :type string
+                :description: filepath
+
+            @param type
+                :type class
+                :description: class that specify the node type
+
+            :rtype Graph
+        """
+        return read_graphml(filepath, node_type = type)
 
 
