@@ -50,7 +50,7 @@ ids = bot.get_hot_submissions_id(limit = 10)
 
 ids = list(ids)
 
-To dump the threads to json, use the following code:
+# To dump the threads to json, use the following code:
 
 bot.dumpjson("compsci.json", ids)
 ```
