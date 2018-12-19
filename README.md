@@ -31,7 +31,7 @@ The project is divided into modules and each module consist of functions and/or 
 
 
 ## Classes
-####Class RedditBot####
+#### Class RedditBot
   
   **Object**
   
@@ -79,7 +79,7 @@ Type | Method description
 **None**|**dumpjson(filename, ids)**<br/> Dumps submissions with id in ids to json.
 
 
-####Class Grapher####
+#### Class Grapher
   
   **Object**
   
@@ -132,7 +132,7 @@ Type | Method description
 **Networkx.Graph**|**load_graph(filename, node_type)**<br/>Loads a graph from a .graphml file.
 
 
-####Class Loader####
+#### Class Loader
   
   **Object**
   
@@ -178,7 +178,7 @@ Type | Method description
 **None**|**write_to_db()**<br/>writes the loaded nodes and edges to database.
 
 
-####Class CommentAnalyzer####
+#### Class CommentAnalyzer
   
   **Object**
   
@@ -212,7 +212,7 @@ Type | Method description
 **float**|**average_word_length()**<br/>Calculates the average word length of a comment.
 **float**|**reading_level()**<br/>Calculates the reading level of the comment.
 
-####Class SentimentAnalyzer####
+#### Class SentimentAnalyzer
   
   **Object**
   
