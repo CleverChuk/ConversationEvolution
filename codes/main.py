@@ -39,31 +39,6 @@ if __name__ == "__main__":
     loader.write_nodes_from_list(grapher.mapper_nodes,"comment")
     loader.write_edges_from_list(grapher.mapper_edges,type="REPLY_TO")   
 
-    # load from files
-    # node csv header with mandatory ":ID" field
-    node_header = [":ID","article_id","parent_id","is_root","author", "score", "timestamp", "length", "averageWordLength",
-    "quotedTextPerLength","readingLevel","sentimentScore","sentiment","similarity"]
-    # edge csv header with mandatory fields
-    rel_header = [":START_ID","id","similarity",":END_ID",":TYPE"]
-    with open("raw/comment_nodes.csv", mode="r", newline="") as fp:        
-        with open("raw/comment_edges.csv", mode="r", newline="") as fp0:
-            with open("raw/comment_node_header.csv") as node_header:
-                with open("raw/comment_edges_header.csv") as rel_header:
-                    loader.load_nodes_from_file(fp, node_header, label = 'comment')
-                    loader.load_edges_from_file(fp0, rel_header, type = "REPLY_TO")  
-                    loader.write_to_db()
-            
-
-    # node_header = [":ID","name"]
-    # rel_header = [":START_ID","id",":END_ID",":TYPE"]
-    with open("raw/author_nodes.csv", mode="r", newline="") as fp:        
-        with open("raw/author_comment_edges.csv", mode="r", newline="") as fp0:
-            with open("raw/author_node_header.csv") as node_header:
-                with open("raw/author_comment_edges_header.csv") as rel_header:
-                    loader.load_nodes_from_file(fp,node_header, label = "author")
-                    loader.load_edges_from_file(fp0, rel_header, type="WROTE")  
-                    loader.write_to_db()
-
 
     # json dump of the data
     # grapher.dumpjson(filename, ids)

@@ -2,7 +2,6 @@ from py2neo import (Graph, Node, Relationship)
 import csv
 from models import (CommentNode)
 
-
 class Loader:    
     """
         Class used to import Nodes and edges into an existing database.
