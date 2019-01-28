@@ -10,7 +10,7 @@ class Query:
 
     def all(self):
         """
-            returns py2neo relationshipMatch object
+            returns py2neo relationshipMatch object generator
         """
         data =  list(self.graph.run("MATCH (n1)-[r]->(n2) RETURN r").data())
         return [rels["r"] for rels in data]
@@ -46,8 +46,8 @@ class D3helper:
             # Coerce py2neo to get all the node properties
             n1["name"]
             n2["name"]
-            # properties = rel.properties
-
+           
+            
             if n1 not in d:
                 nodes.append(n1)
                 d[n1] = len(nodes) - 1
@@ -60,7 +60,6 @@ class D3helper:
             links.append({"source": d[n1], "target": d[n2]})
 
         d = {"nodes": nodes, "links": links}
-        # d.update(properties)
 
         return d
 

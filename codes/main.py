@@ -36,8 +36,8 @@ if __name__ == "__main__":
     loader.write_edges_from_list(grapher.sentiment_comment_edges,type="_IS_")
 
     # load mapper edges from list
-    loader.write_nodes_from_list(grapher.mapper_nodes,"comment")
-    loader.write_edges_from_list(grapher.mapper_edges,type="REPLY_TO")   
+    # loader.write_nodes_from_list(grapher.mapper_nodes,"comment")
+    # loader.write_edges_from_list(grapher.mapper_edges,type="REPLY_TO")   
 
 
     # json dump of the data
