@@ -2,10 +2,11 @@ import matplotlib.pyplot as plt
 from json_models import CustomEncoder
 from grapher import (Grapher)
 import networkx as nx
-import graph_writer as gw
-import dbimport as dbi
+import graph_writers as gws
+import db_loaders as dbl
 
 if __name__ == "__main__":
+    gw = gws.Neo4jGrapher()
     # the subreddit to scrape
     subreddit = "programming"
     # file name to dumpjson
@@ -22,7 +23,7 @@ if __name__ == "__main__":
     graph = grapher.get_graph(*ids)
 
     # loader
-    loader = dbi.Loader("http://localhost:11002/", "neo4j", "chubi93")
+    loader = dbl.Neo4jLoader("http://localhost:11002/", "neo4j", "chubi93")
 
     # load from list
     loader.write_nodes_from_list(grapher.comment_nodes,"comment")

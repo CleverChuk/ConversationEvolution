@@ -1,7 +1,7 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Record models use to create graph nodes
 
-from analyzers import  SentimentAnalyzer
+from analyzers import SentimentAnalyzer
 """
 @param 
     :type
@@ -19,6 +19,8 @@ from analyzers import  SentimentAnalyzer
     how similar it is to the root comment of its thread. The easiest way to do this is by using doc2vec from the genSim library.
 """
 ANONYMOUS_USER = "Anonymous"
+
+
 class MetaNode(type):
     """
         a metaclass for specifying the node type
@@ -30,6 +32,7 @@ class MetaNode(type):
         for k, v in kwargs.items():
             namespace.setdefault(k, v)
         return type.__new__(metaclass, name, bases, namespace)
+
 
 class ID:
     """
@@ -64,10 +67,12 @@ class ID:
 
         return str(id)
 
+
 class Node:
     """
         base class for all nodes
     """
+
     def __init__(self, type):
         self.type = type
         self.id_0 = ""
@@ -89,29 +94,33 @@ class Node:
         self.id_0 = ID.getId()
         return "{0}".format(self.id_0)
 
+
 class AuthorNode(Node):
     """
         Author node
     """
     count = 0
+
     def __init__(self, author):
-        # help neo4j distinguish anonymous authors          
+        # help neo4j distinguish anonymous authors
         if(author == ANONYMOUS_USER):
             author += str(AuthorNode.count)
             AuthorNode.count += 1
 
-        self.id = author 
-        self.name = author      
+        self.id = author
+        self.name = author
         super().__init__("author")
 
-    def __repr__(self):        
+    def __repr__(self):
         return self.id
+
 
 class CommentNode(Node):
     """
         comment nodes
     """
-    def __init__(self, aId, comment, meta):        
+
+    def __init__(self, aId, comment, meta):
         self.id = comment.id
         self.article_id = aId
         self.parent_id = comment.parent().id
@@ -126,22 +135,25 @@ class CommentNode(Node):
         self.reading_level = meta.reading_level
         self.sentiment_score = SentimentAnalyzer.get_sentiment(comment)
         self.sentiment = SentimentAnalyzer.convert_score(self.sentiment_score)
-        self.similarity = 1.0        
+        self.similarity = 1.0
         super().__init__("comment")
 
+
 class SentimentNode(Node):
-    def __init__(self, value):        
-        self.id = value   
+    def __init__(self, value):
+        self.id = value
         self.name = value
-        super().__init__("sentiment")     
+        super().__init__("sentiment")
 
     def __repr__(self):
         return self.id
+
 
 class ArticleNode(Node):
     """
         Article node
     """
+
     def __init__(self, submission):
         self.id = submission.id
         self.title = submission.title
@@ -150,3 +162,17 @@ class ArticleNode(Node):
         self.isVideo = submission.is_video
         self.upvote_ratio = submission.upvote_ratio
         super().__init__("article")
+
+
+class Relationship(dict):
+    def __init__(self, start_node, end_node, relationship_type="TO", **properties):
+        self.start_node = start_node
+        self.end_node = end_node
+        self.relationship_type = relationship_type
+        self.update(properties)
+
+    def __getitem__(self, key):
+        return dict.get(self, key)
+
+    def __repr__(self):
+        return "{0}<--{1}-->{2}".format(self.start_node, self.relationship_type, self.end_node)

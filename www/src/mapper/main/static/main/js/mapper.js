@@ -1,4 +1,6 @@
-// This code uses version 3 of d3js
+
+$(function(){
+    // This code uses version 3 of d3js
 // Set margins and sizes
 var margin = {
     top: 20,
@@ -9,11 +11,11 @@ var margin = {
 
 var width = 960 - margin.left - margin.right
 var height = 550 - margin.top - margin.bottom
-var controls_width = 120
-var data = null;
+
 
 //Load Color Scale
 var c10 = d3.scale.category10()
+var sentimentColor  = {"Positive":"#3AE71E", "Negative":"red","Neutral":"blue"}
 
 //Create an SVG element and append it to the DOM
 var svg = d3.select(".graph")
@@ -41,49 +43,60 @@ var mSvg = d3.select(".mgraph")
 
 // Functions
 function render(graph, canvas) {
-    data = graph
     radiusFunc = node => {
-        return node.score / 5 > 10 ? node.score / 5 : 20
+      return 25//node.score / 5 > 10 ? node.score / 5 : 20
     }
 
     //Extract data from graph
     let nodes = graph.nodes,
-        links = graph.links
+      links = graph.links
 
     //Create Force Layout
     var force = d3.layout.force()
-        .size([width, height])
-        .nodes(nodes)
-        .links(links)
-        .gravity(0.05)
-        .charge(-200)
-        .linkDistance(200)
+      .size([width, height])
+      .nodes(nodes)
+      .links(links)
+      .gravity(0.05)
+      .charge(-200)
+      .linkDistance(200)
 
     //Add links to SVG
     var link = canvas.selectAll(".link")
-        .data(links)
+      .data(links)
 
     link.enter().append("line")
-        .attr("stroke-width", "2")
-        .attr("class", "link")
+      .attr("stroke-width", "2")
+      .attr("stroke","#ccc")
+      .attr("class", "link")
     link.exit().remove()
+    
 
     //Add nodes to SVG
     var node = canvas.selectAll(".node")
-        .data(nodes)
+      .data(nodes)
     node.enter().append("g")
-        .attr("class", "node")
-        .call(force.drag)
+      .attr("class", "node")
+      .call(force.drag)
 
     //Add circles to each node
     node.append("circle")
-        .attr("r", radiusFunc)
-        .attr("fill", d => c10(d.type))
+      .attr("r", radiusFunc)
+      .attr("fill", d =>{
+          if(d.type == "sentiment") return sentimentColor[d.name]
+          else if(d.type == "author") return "#f79489"
+          else if(d.type == "comment") return "brown"
+          else return "cyan"
+      })
 
-    node.append('text')
+    node.append("title")
+    .text(d =>{
+      if(d.type == "comment") return d.body
+      else return ""
+    })
+      node.append('text')
         .attr("text-anchor","middle")
         .attr("pointer-events","none")
-        .text(d => getNoddeText(d))
+        .text(d => getNodeText(d))
 
     node.exit().remove()
 
@@ -92,87 +105,77 @@ function render(graph, canvas) {
 
     //This function will be executed once force layout is done with its calculations
     force.on("tick", function () {
-        //Set X and Y of node
-        node
-            .attr("cx", d => d.x)
-            .attr("cy", d => d.y)
-            //Shift node a little
-            .attr("transform", d => "translate(" + d.x + "," + d.y + ")")
+      //Set X and Y of node
+      node
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y)
+        //Shift node a little
+        .attr("transform", d => "translate(" + d.x + "," + d.y + ")")
 
-        //Set X, Y of link
-        link
-            .attr("x1", d => d.source.x)
-            .attr("y1", d => d.source.y)
-            .attr("x2", d => d.target.x)
-            .attr("y2", d => d.target.y)
+      //Set X, Y of link
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y)
 
     })
     //Start the force layout calculation
     force.start()
-}
+  }
+
 
 function addPropertyControl(nodes) {
     let properties = null
     for (var i = 0; i < nodes.length; i++) {
-        if (nodes[i].type == "comment") {
-            properties = Object.getOwnPropertyNames(nodes[i])
-            break;
-        }
+      if (nodes[i].type == "comment") {
+        properties = Object.getOwnPropertyNames(nodes[i])
+        break;
+      }
     }
-    var row = document.createElement("div");
-    row.className = "row";
-    row.style.margin = "10px";
+    var dropDownMenu = document.getElementsByClassName("dropdown-menu")[0];
 
-    var column = document.createElement("div");
-    column.className = "col-12";
-    column.style.display = "flex"
-    column.style.display = "-webkit-flex"
-    column.style.flexWrap = "wrap"
-
-    row.appendChild(column);
     properties.forEach(prop => {
-        var checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.className = "prop-control"
+      var checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.className = "prop-control"
 
-        var label = document.createElement("span");
-        label.innerHTML = prop;
-        label.style.marginLeft = "10px"
-        label.style.marginRight = "10px"
+      var label = document.createElement("a");
+      label.className = "dropdown-item"
+      label.href = "#"
+      label.innerHTML = prop;
+      label.style.marginLeft = "10px"
+      label.style.marginRight = "10px"
 
-        column.appendChild(checkbox);
-        column.appendChild(label);
-    })
 
-    document.getElementsByClassName("container")[0].appendChild(row);
-}
+      var group = document.createElement("div")
+      group.className = "dropdown-item"
+      group.appendChild(checkbox)
+      group.appendChild(label)
 
-function setUpControls() {
-    d3.select('.ctrl1').on("click", () => {
-        var nodes = data.nodes.filter(d => d.type == 'comment')
-        var links = data.links.filter(d => {
-            for (let i = 0; i < nodes.length; i++) {
-                if (nodes[i].index == d.source.index || nodes[i].index == d.target.index)
-                    return true
-            }
-            return false
-        })
-        var graph = {
-            "nodes": nodes,
-            "links": links
-        }
-        render(graph, svg)
-    })
-
-    d3.select('.ctrl2').on("click", () => {
-        render(data, svg)
+      dropDownMenu.appendChild(label)
     })
 }
 
-function getNoddeText(node){
+function getNodeText(node){
     if(node.type == "author") return node["name"]
+    else if(node.type == "sentiment") return node["name"]
     else return node.type
 }
 
-
-export {svg, mSvg, render, addPropertyControl, setUpControls}
+loadGraph()
+function loadGraph(){
+    $.ajax(
+        {
+            url:'api/',
+            type : 'GET',
+            success : function(json){  
+                var data = JSON.parse(json.graph)
+                addPropertyControl(data.nodes)
+                render(data, svg)
+            },
+            error : function(xhr, errormsg, erro){}
+        }
+    );
+}
+})
