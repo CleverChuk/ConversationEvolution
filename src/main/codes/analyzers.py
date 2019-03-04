@@ -42,11 +42,11 @@ class SentimentAnalyzer:
         if score is None:
             return None
         elif score >= UPPER_BOUND:
-            return "Positive"
+            return "positive"
         elif score <= LOWER_BOUND:
-            return "Negative"
+            return "negative"
         else:
-            return "Neutral"
+            return "neutral"
 
     @classmethod
     def get_sentiment(cls,comment):

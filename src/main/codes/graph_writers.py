@@ -4,7 +4,7 @@
 
 from csv import DictWriter
 import os
-from mapper_functions import getProperties
+from mapper import Mapper
 
 """
 @param 
@@ -205,7 +205,7 @@ class Neo4jGrapher:
                 :description: list of nodes
         """
         temp = "./raw/temp.csv"
-        header = getProperties(data[0])
+        header = Mapper().getProperties(data[0])
         with open(temp, "w") as file:
             writer = DictWriter(file, fieldnames=header, restval="na")
             v = list(data[0].__dict__.values())

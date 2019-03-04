@@ -4,6 +4,11 @@ body {
     height: 100%;
     width: 100%;
 }
+p{
+    margin-top: 10px;
+    display: flex;
+    float: inline-end;
+}
 
 .btn {
     margin-top: 10px;
@@ -17,7 +22,19 @@ h3 {
     margin: 0px 10px 0px 10px;
     float: left;
 }
-
+.dropdown-item{
+    width: 200px;
+    place-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    padding: 20px;
+    font-size: 1.3rem;
+    margin: 0;
+    background: white;
+    resize: horizontal;
+}
 .subreddit{
     margin: 0px 10px 0px 10px;
     display: flex;

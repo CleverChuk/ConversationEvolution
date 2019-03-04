@@ -18,7 +18,7 @@ from analyzers import SentimentAnalyzer
     a relationship between them, or perhaps annotating each comment with a value representing
     how similar it is to the root comment of its thread. The easiest way to do this is by using doc2vec from the genSim library.
 """
-ANONYMOUS_USER = "Anonymous"
+ANONYMOUS_USER = "anonymous"
 
 
 class MetaNode(type):
@@ -68,31 +68,34 @@ class ID:
         return str(id)
 
 
-class Node:
+class Node(dict):
     """
         base class for all nodes
     """
 
-    def __init__(self, type):
-        self.type = type
-        self.id_0 = ""
+    def __init__(self, *args, **kwargs):
+        self.update(*args, **kwargs)
+
+    def __getitem__(self, key):
+        val = dict.__getitem__(self, key)
+        return val
+
+    def __setitem__(self, key, val):
+        dict.__setitem__(self, key, val)
+
+    def __repr__(self):
+        dictrepr = dict.__repr__(self)
+        return '%s(%s)' % (type(self).__name__, dictrepr)
+
+    def update(self, *args, **kwargs):
+        for k, v in dict(*args, **kwargs).items():
+            self[k] = v
 
     def __len__(self):
         return len(self.__dict__)
 
     def __str__(self):
-        if self.id_0:
-            return "{0}".format(self.id_0)
-
-        self.id_0 = ID.getId()
-        return "{0}".format(self.id_0)
-
-    def __repr__(self):
-        if self.id_0:
-            return "{0}".format(self.id_0)
-
-        self.id_0 = ID.getId()
-        return "{0}".format(self.id_0)
+        return "{0}".format(self['type'])
 
 
 class AuthorNode(Node):
@@ -101,18 +104,21 @@ class AuthorNode(Node):
     """
     count = 0
 
-    def __init__(self, author):
+    def __init__(self, subreddit, author):
         # help neo4j distinguish anonymous authors
         if(author == ANONYMOUS_USER):
             author += str(AuthorNode.count)
             AuthorNode.count += 1
-
-        self.id = author
-        self.name = author
-        super().__init__("author")
+        d = {
+            'id': author,
+            'name': author,
+            'type': "sentiment",
+            'subreddit': subreddit
+        }
+        super().__init__(d)
 
     def __repr__(self):
-        return self.id
+        return self['id']
 
 
 class CommentNode(Node):
@@ -120,33 +126,40 @@ class CommentNode(Node):
         comment nodes
     """
 
-    def __init__(self, aId, comment, meta):
-        self.id = comment.id
-        self.article_id = aId
-        self.parent_id = comment.parent().id
-        self.is_root = self.parent_id == self.article_id
-        self.author = ANONYMOUS_USER if comment.author == None else comment.author.name
-        self.score = comment.score
-        self.timestamp = int(comment.created)
-        self.body = comment.body
-        self.length = meta.length
-        self.average_word_length = meta.average_word_length
-        self.quoted_text_per_length = meta.quoted_text_per_length
-        self.reading_level = meta.reading_level
-        self.sentiment_score = SentimentAnalyzer.get_sentiment(comment)
-        self.sentiment = SentimentAnalyzer.convert_score(self.sentiment_score)
-        self.similarity = 1.0
-        super().__init__("comment")
+    def __init__(self, subreddit, aId, comment, meta):
+        d = {
+            'id': comment.id,
+            'article_id': aId,
+            'parent_id': comment.parent().id,
+            'is_root': comment.parent().id == aId,
+            'author': ANONYMOUS_USER if comment.author == None else comment.author.name,
+            'score': comment.score,
+            'timestamp': int(comment.created),
+            'body': comment.body,
+            'length': meta.length,
+            'average_word_length': meta.average_word_length,
+            'quoted_text_per_length': meta.quoted_text_per_length,
+            'reading_level': meta.reading_level,
+            'sentiment_score': SentimentAnalyzer.get_sentiment(comment),
+            'sentiment': SentimentAnalyzer.convert_score(SentimentAnalyzer.get_sentiment(comment)),
+            'similarity': 1.0,            
+            'type': "comment",
+            'subreddit': subreddit
+
+        }
+        super().__init__(d)
 
 
 class SentimentNode(Node):
-    def __init__(self, value):
-        self.id = value
-        self.name = value
-        super().__init__("sentiment")
+    def __init__(self, subreddit, value):
 
-    def __repr__(self):
-        return self.id
+        d = {
+            'id': value,
+            'name': value,
+            'type': "sentiment",
+            'subreddit': subreddit
+        }
+        super().__init__(d)
 
 
 class ArticleNode(Node):
@@ -154,14 +167,17 @@ class ArticleNode(Node):
         Article node
     """
 
-    def __init__(self, submission):
-        self.id = submission.id
-        self.title = submission.title
-        self.view_count = submission.view_count if submission.view_count != None else 0
-        self.timestamp = int(submission.created_utc)
-        self.isVideo = submission.is_video
-        self.upvote_ratio = submission.upvote_ratio
-        super().__init__("article")
+    def __init__(self, subreddit, submission):
+        d = {'id': submission.id,
+             'title': submission.title,
+             'view_count': submission.view_count if submission.view_count != None else 0,
+             'timestamp': int(submission.created_utc),
+             'isVideo': submission.is_video,
+             'upvote_ratio': submission.upvote_ratio,
+             'type': 'article',
+             'subreddit': subreddit
+             }
+        super().__init__(d)
 
 
 class Relationship(dict):

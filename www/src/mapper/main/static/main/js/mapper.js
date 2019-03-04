@@ -1,79 +1,102 @@
-
-$(function(){
-    // This code uses version 3 of d3js
-// Set margins and sizes
-var margin = {
+$(function () {
+  // This code uses version 3 of d3js
+  // Set margins and sizes
+  var margin = {
     top: 20,
     bottom: 50,
     right: 30,
     left: 50
-}
+  }
 
-var width = 960 - margin.left - margin.right
-var height = 550 - margin.top - margin.bottom
+  var width = 960 - margin.left - margin.right
+  var height = 550 - margin.top - margin.bottom
 
 
-//Load Color Scale
-var c10 = d3.scale.category10()
-var sentimentColor  = {"Positive":"#3AE71E", "Negative":"red","Neutral":"blue"}
+  //Load Color Scale
+  var c10 = d3.scale.category10()
+  var sentimentColor = {
+    "Positive": "#3AE71E",
+    "Negative": "red",
+    "Neutral": "blue"
+  }
 
-//Create an SVG element and append it to the DOM
-var svg = d3.select(".graph")
+  //Create an SVG element and append it to the DOM
+
+
+  var mSvg = d3.select(".mgraph")
     .append("svg")
     .classed("svg-content-responsive", true)
     .attr("preserveAspectRatio", "xMinYMin meet")
     .attr("viewBox", "0 0 " + (height + margin.top + margin.bottom) + " " + (width + margin.left + margin.right))
     .call(d3.behavior.zoom().on("zoom", function () {
-        svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+      mSvg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
     }))
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
-var mSvg = d3.select(".mgraph")
-    .append("svg")
-    .classed("svg-content-responsive", true)
-    .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 " + (height + margin.top + margin.bottom) + " " + (width + margin.left + margin.right))
-    .call(d3.behavior.zoom().on("zoom", function () {
-        mSvg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
-    }))
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-
-
-// Functions
-function render(graph, canvas) {
+  //---------------------------------------------------Functions-----------------------------------
+  function render(nodes, links) {
     radiusFunc = node => {
-      return 25//node.score / 5 > 10 ? node.score / 5 : 20
+      node.radius = 25
+      return 25 //node.score / 5 > 10 ? node.score / 5 : 20
     }
 
-    //Extract data from graph
-    let nodes = graph.nodes,
-      links = graph.links
+    d3.select(".graph").select('svg').remove()
+    let canvas = d3.select(".graph")
+      .append("svg")
+      .classed("svg-content-responsive", true)
+      .attr("preserveAspectRatio", "xMinYMin meet")
+      .attr("viewBox", "0 0 " + (height + margin.top + margin.bottom) + " " + (width + margin.left + margin.right))
+
+    canvas = canvas
+      .call(d3.behavior.zoom().on("zoom", function () {
+        canvas.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+      }))
+
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
     //Create Force Layout
     var force = d3.layout.force()
       .size([width, height])
       .nodes(nodes)
       .links(links)
+      .on("tick", tick)
       .gravity(0.05)
-      .charge(-200)
+      .charge(-300)
       .linkDistance(200)
 
     //Add links to SVG
-    var link = canvas.selectAll(".link")
-      .data(links)
+    canvas.append("svg:defs").append("svg:marker")
+      .attr("id", "arrow")
+      .attr("viewBox", "0 -5 10 10")
+      .attr('refX', -160)
+      .attr("markerWidth", 5)
+      .attr("markerHeight", 5)
+      .attr("orient", "auto")
+      .append("svg:path")
+      .attr("d", "M0,-5L10,0L0,5");
 
-    link.enter().append("line")
-      .attr("stroke-width", "2")
-      .attr("stroke","#ccc")
+    let edges = canvas.append('g').selectAll("path")
+      .data(force.links())
+
+    edges.exit().remove()
+
+    edges.enter().append("path")
       .attr("class", "link")
-    link.exit().remove()
-    
+      .style("stroke", "#ccc")
+      .attr('marker-start', (d) => "url(#arrow)")
+      .style("stroke-width", 2)
+
 
     //Add nodes to SVG
-    var node = canvas.selectAll(".node")
+    let node = canvas.append('g').selectAll("circle")
       .data(nodes)
+
+    node.exit()
+      .transition().duration(1000)
+      .attr('r', 0).remove()
+
     node.enter().append("g")
       .attr("class", "node")
       .call(force.drag)
@@ -81,51 +104,57 @@ function render(graph, canvas) {
     //Add circles to each node
     node.append("circle")
       .attr("r", radiusFunc)
-      .attr("fill", d =>{
-          if(d.type == "sentiment") return sentimentColor[d.name]
-          else if(d.type == "author") return "#f79489"
-          else if(d.type == "comment") return "brown"
-          else return "cyan"
-      })
+      .attr("fill", d => {
+        if (d.type == "sentiment") return sentimentColor[d.name]
+        else if (d.type == "author") return "#f79489"
+        else if (d.type == "comment") return "brown"
+        else return "cyan"
+      }).on('click', articleClick)
 
     node.append("title")
-    .text(d =>{
-      if(d.type == "comment") return d.body
-      else return ""
-    })
-      node.append('text')
-        .attr("text-anchor","middle")
-        .attr("pointer-events","none")
-        .text(d => getNodeText(d))
+      .text(d => {
+        if (d.type == "comment") return d.body
+        else if (d.type == "article") return d.title
+        else return d.name
+      })
+    node.append('text')
+      .attr("text-anchor", "middle")
+      .attr("pointer-events", "none")
+      .text(d => getNodeText(d))
 
-    node.exit().remove()
+    //Start the force layout calculation
+    force.start()
 
+    function tick() {
+      edges.attr("d", linkArc);
 
-
-
-    //This function will be executed once force layout is done with its calculations
-    force.on("tick", function () {
-      //Set X and Y of node
       node
         .attr("cx", d => d.x)
         .attr("cy", d => d.y)
-        //Shift node a little
-        .attr("transform", d => "translate(" + d.x + "," + d.y + ")")
+        .attr("transform", transform);
+    }
 
-      //Set X, Y of link
-      link
-        .attr("x1", d => d.source.x)
-        .attr("y1", d => d.source.y)
-        .attr("x2", d => d.target.x)
-        .attr("y2", d => d.target.y)
+    function linkArc(d) {
+      // Total difference in x and y from source to target
+      diffX = d.target.x - d.source.x;
+      diffY = d.target.y - d.source.y;
 
-    })
-    //Start the force layout calculation
-    force.start()
+      // Length of path from center of source node to center of target node
+      pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+      // x and y distances from center to outside edge of target node
+      offsetX = (diffX * d.target.radius) / pathLength;
+      offsetY = (diffY * d.target.radius) / pathLength;
+
+      return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
+    }
+
+    function transform(d) {
+      return "translate(" + d.x + "," + d.y + ")";
+    }
   }
 
-
-function addPropertyControl(nodes) {
+  function addPropertyControl(nodes) {
     let properties = null
     for (var i = 0; i < nodes.length; i++) {
       if (nodes[i].type == "comment") {
@@ -133,49 +162,220 @@ function addPropertyControl(nodes) {
         break;
       }
     }
-    var dropDownMenu = document.getElementsByClassName("dropdown-menu")[0];
 
-    properties.forEach(prop => {
-      var checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.className = "prop-control"
+    var filtersEnter = d3.select('.dropdown-menu').selectAll('button')
+      .data(properties).enter();
 
-      var label = document.createElement("a");
-      label.className = "dropdown-item"
-      label.href = "#"
-      label.innerHTML = prop;
-      label.style.marginLeft = "10px"
-      label.style.marginRight = "10px"
+    filtersEnter.append('button')
+      .attr('text-overflow', 'ellipsis')
+      .attr('white-space', 'nowrap')
+      .attr('class', 'dropdown-item')
+      .attr('overflow', 'hidden')
+      .attr('width', '200px')
+      .text(d => d)
+  }
 
-
-      var group = document.createElement("div")
-      group.className = "dropdown-item"
-      group.appendChild(checkbox)
-      group.appendChild(label)
-
-      dropDownMenu.appendChild(label)
-    })
-}
-
-function getNodeText(node){
-    if(node.type == "author") return node["name"]
-    else if(node.type == "sentiment") return node["name"]
+  function getNodeText(node) {
+    if (node.type == "author") return node["name"]
+    else if (node.type == "sentiment") return node["name"]
     else return node.type
-}
+  }
 
-loadGraph()
-function loadGraph(){
-    $.ajax(
-        {
-            url:'api/',
-            type : 'GET',
-            success : function(json){  
-                var data = JSON.parse(json.graph)
-                addPropertyControl(data.nodes)
-                render(data, svg)
-            },
-            error : function(xhr, errormsg, erro){}
+  function articleClick(node) {
+    if (node.type == 'article') {
+      d3.select('.legend')
+        .text(node.title)
+
+      $.ajax({
+        url: 'api/nodes/article/' + node.id,
+        type: 'GET',
+        success: function (json) {
+          addPropertyControl(json.nodes)
+
+          const nodes = json.nodes,
+            links = json.links
+
+          console.log("nodes in article")
+          console.log(json)
+          render(nodes, links)
+          // Load mapper graph
+          loadMapperGraph()
+        },
+        error: function (xhr, errormsg, error) {
+          console.log(error)
         }
-    );
-}
+      });
+    }
+  }
+
+  loadGraph()
+
+  function loadGraph() {
+    $.ajax({
+      url: 'api/nodes/article',
+      type: 'GET',
+      success: function (json) {
+        if (!('links' in json))
+          json['links'] = []
+
+        // var articles = d3.select('.articles').selectAll('button').data(json.nodes)
+        //   .enter()
+        //   .append('button')
+        //   .attr('text-overflow', 'ellipsis')
+        //   .attr('white-space', 'nowrap')
+        //   .attr('class', 'dropdown-item')
+        //   .attr('overflow', 'hidden')
+        //   .attr('width', '200px')
+        //   .on('click', d => articleClick(d))
+        // articles
+        //   .text(d => d.title)
+
+        const nodes = json.nodes,
+          links = json.links
+        console.log("Main")
+        console.log(json)
+        render(nodes, links)
+      },
+      error: function (xhr, errormsg, error) {}
+    });
+  }
+
+  function loadMapperGraph() {
+    $.ajax({
+      url: 'api/mapper',
+      type: 'GET',
+      success: function (json) {
+        if (!('links' in json))
+          json['links'] = []
+
+        const nodes = json.nodes,
+          links = json.links
+        console.log("Mapper")
+        console.log(json)
+        renderMapper(nodes, links)
+      },
+      error: function (xhr, errormsg, error) {
+        console.log(error)
+      }
+    });
+
+    function renderMapper(nodes, links) {
+      radiusFunc = node => {
+        node.radius = 25
+        return 25 //node.score / 5 > 10 ? node.score / 5 : 20
+      }
+
+      d3.select(".mgraph").select('svg').remove()
+      let canvas = d3.select(".mgraph")
+        .append("svg")
+        .classed("svg-content-responsive", true)
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 " + (height + margin.top + margin.bottom) + " " + (width + margin.left + margin.right))
+
+      canvas = canvas
+        .call(d3.behavior.zoom().on("zoom", function () {
+          canvas.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+        }))
+
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+      //Create Force Layout
+      var force = d3.layout.force()
+        .size([width, height])
+        .nodes(nodes)
+        .links(links)
+        .on("tick", tick)
+        .gravity(0.05)
+        .charge(-300)
+        .linkDistance(200)
+
+      //Add links to SVG
+      canvas.append("svg:defs").append("svg:marker")
+        .attr("id", "arrow")
+        .attr("viewBox", "0 -5 10 10")
+        .attr('refX', -160)
+        .attr("markerWidth", 5)
+        .attr("markerHeight", 5)
+        .attr("orient", "auto")
+        .append("svg:path")
+        .attr("d", "M0,-5L10,0L0,5");
+
+      let edges = canvas.append('g').selectAll("path")
+        .data(force.links())
+
+      edges.exit().remove()
+
+      edges.enter().append("path")
+        .attr("class", "link")
+        .style("stroke", "#ccc")
+        .attr('marker-start', (d) => "url(#arrow)")
+        .style("stroke-width", 2)
+
+
+      //Add nodes to SVG
+      let node = canvas.append('g').selectAll("circle")
+        .data(nodes)
+
+      node.exit()
+        .transition().duration(1000)
+        .attr('r', 0).remove()
+
+      node.enter().append("g")
+        .attr("class", "node")
+        .call(force.drag)
+
+      //Add circles to each node
+      node.append("circle")
+        .attr("r", radiusFunc)
+        .attr("fill", d => {
+          if (d.type == "sentiment") return sentimentColor[d.name]
+          else if (d.type == "author") return "#f79489"
+          else if (d.type == "comment") return "brown"
+          else return "cyan"
+        }).on('click', articleClick)
+
+      node.append("title")
+        .text(d => {
+          if (d.type == "comment") return d.body
+          else if (d.type == "article") return d.title
+          else return d.name
+        })
+      node.append('text')
+        .attr("text-anchor", "middle")
+        .attr("pointer-events", "none")
+        .text(d => getNodeText(d))
+
+      //Start the force layout calculation
+      force.start()
+
+      function tick() {
+        edges.attr("d", linkArc);
+
+        node
+          .attr("cx", d => d.x)
+          .attr("cy", d => d.y)
+          .attr("transform", transform);
+      }
+
+      function linkArc(d) {
+        // Total difference in x and y from source to target
+        diffX = d.target.x - d.source.x;
+        diffY = d.target.y - d.source.y;
+
+        // Length of path from center of source node to center of target node
+        pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+        // x and y distances from center to outside edge of target node
+        offsetX = (diffX * d.target.radius) / pathLength;
+        offsetY = (diffY * d.target.radius) / pathLength;
+
+        return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
+      }
+
+      function transform(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+      }
+    }
+  }
 })

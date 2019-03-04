@@ -31,6 +31,7 @@ class RedditBot:
         self.reddit = praw.Reddit(client_id=self._client_id, client_secret=self._client_secret,
                                   password=password, user_agent=self.user_agent, username=username)
         self.subreddit = self.reddit.subreddit(subreddit)
+        self.subreddit_tag = subreddit
 
     def get_submissions(self):
         """
