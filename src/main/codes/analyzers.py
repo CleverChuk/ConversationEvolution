@@ -182,8 +182,8 @@ class CommentAnalyzer:
 
             for token in tokens:
                 tokenDict[token] += len(token)
-
-            self._average_word_length = float(round(mean(tokenDict.values()),3))
+            
+            self._average_word_length = float(round(mean(tokenDict.values()),3)) if len(tokenDict) > 0 else 0
 
         return self._average_word_length
 

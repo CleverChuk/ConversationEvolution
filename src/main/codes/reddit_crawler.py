@@ -4,10 +4,10 @@ from networkx import (Graph, DiGraph, read_graphml)
 from analyzers import CommentAnalyzer
 from textsim import cosine_sim
 from models import CommentNode, AuthorNode, Node, ArticleNode, SentimentNode
-from base import RedditBot
+from base_crawler import RedditBot
 
 
-class Grapher(RedditBot):
+class Crawler(RedditBot):
     """
         A subclass of RedditBot that can be used to build mapper graph
     """
@@ -114,11 +114,11 @@ class Grapher(RedditBot):
                     author_node = AuthorNode(
                         self.subreddit_tag, comment_node['author'])
                     self.article_comment_edges.append(
-                        (comment_node, article_node, {"id": Grapher.relationship_id, "type": "_IN"}))
+                        (comment_node, article_node, {"id": Crawler.relationship_id, "type": "_IN"}))
 
-                    Grapher.relationship_id += 1
+                    Crawler.relationship_id += 1
                     self.author_comment_edges.append(
-                        (author_node, comment_node, {"id": Grapher.relationship_id, "type": "WROTE"}))
+                        (author_node, comment_node, {"id": Crawler.relationship_id, "type": "WROTE"}))
                     self.nodes.append((author_node, author_node))
                     self.nodes.append((comment_node, comment_node))
 
@@ -126,25 +126,25 @@ class Grapher(RedditBot):
                     self.comment_nodes.append(comment_node)
                     # diGraph.add_nodes_from(
                     #     [(comment_node, comment_node)])
-                    Grapher.relationship_id += 1
+                    Crawler.relationship_id += 1
 
             except Exception as pe:
                 print(pe)
 
         # populate sentiment/comment  and comment/comment edge list
         for p_comment, *_ in self.article_comment_edges:
-            self.sentiment_comment_edges.append((sentiment[p_comment['sentiment']], p_comment,
-                                                 {"id": Grapher.relationship_id, "type": "_IS", "score": p_comment['sentiment_score']}))
+            self.sentiment_comment_edges.append(( p_comment, sentiment[p_comment['sentiment']],
+                                                 {"id": Crawler.relationship_id, "type": "_IS", "score": p_comment['sentiment_score']}))
 
-            Grapher.relationship_id += 1
+            Crawler.relationship_id += 1
             for c_comment, *_ in self.article_comment_edges:
                 if c_comment['parent_id'] == p_comment['id']:
                     # nx does not support numpy float
                     c_comment.similarity = round(
                         float(cosine_sim(p_comment['body'], c_comment['body'])), 4)
                     self.comment_comment_edges.append((c_comment, p_comment, {
-                                                      "id": Grapher.relationship_id, "type": "REPLY_TO", "similarity": c_comment['similarity']}))
-                    Grapher.relationship_id += 1
+                                                      "id": Crawler.relationship_id, "type": "REPLY_TO", "similarity": c_comment['similarity']}))
+                    Crawler.relationship_id += 1
 
 
 

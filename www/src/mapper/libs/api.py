@@ -134,8 +134,11 @@ class Neo4jLayer(DatabaseLayer):
         return [node["r"] for node in data]
 
     def get_nodes_in_article(self, id):
-        data = list(self.graph.run(
-            "MATCH (n1)-[r]->(n2) WHERE n1.article_id = \'{0}\' AND n1.type =\'comment\' AND n2.type = \'comment\' RETURN r".format(id)).data())
+        comment_links = "MATCH (n1)-[r]->(n2) WHERE n1.article_id = \'{0}\' RETURN r".format(id)
+        author_links = " UNION MATCH (n1:author)-[r:WROTE]->(n2:comment) WHERE n2.article_id = \'{0}\' RETURN r".format(id)
+                
+        query = comment_links + author_links 
+        data = list(self.graph.run(query).data())
         return [node["r"] for node in data]
 
 
@@ -144,7 +147,6 @@ class Query:
         This class performs database queries without knowing the underlying construction
         of the queries. It uses DatabaseLayer object to achieve this
     """
-
     def __init__(self, db_layer):
         if not issubclass(db_layer.__class__, DatabaseLayer):
             raise TypeError(
@@ -276,3 +278,34 @@ class CustomJSONEncoder(JSONEncoder):
             return dict(node)
         else:
             return JSONEncoder.default(self, node)
+
+
+# test
+class Edge:
+    def __init__(self, src, dest, **properties):
+        self.start_node = src
+        self.end_node = dest
+        self.properties = properties
+
+    @classmethod
+    def cast(cls, py2neo_rel):
+        return cls(py2neo_rel.start_node, py2neo_rel.end_node)
+
+    def __getitem__(self, key):
+        if key == 0:
+            return self.start_node
+        elif key == 1:
+            return self.end_node
+        elif key == 2:
+            return self.properties
+        else:
+            return None
+
+    def __len__(self):
+        return 3
+
+    def __repr__(self):
+        return self.start_node['type'] + "->"+self.end_node['type']
+
+
+    

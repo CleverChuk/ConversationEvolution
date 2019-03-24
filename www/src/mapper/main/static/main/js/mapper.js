@@ -1,6 +1,7 @@
 $(function () {
   // This code uses version 3 of d3js
   // Set margins and sizes
+  const mapperEndpoint = 'api/mapper';
   var margin = {
     top: 20,
     bottom: 50,
@@ -15,9 +16,9 @@ $(function () {
   //Load Color Scale
   var c10 = d3.scale.category10()
   var sentimentColor = {
-    "Positive": "#3AE71E",
-    "Negative": "red",
-    "Neutral": "blue"
+    "positive": "#3AE71E",
+    "negative": "red",
+    "neutral": "blue"
   }
 
   //Create an SVG element and append it to the DOM
@@ -44,6 +45,8 @@ $(function () {
     d3.select(".graph").select('svg').remove()
     let canvas = d3.select(".graph")
       .append("svg")
+      .attr("width", width)
+      .attr("height", height)
       .classed("svg-content-responsive", true)
       .attr("preserveAspectRatio", "xMinYMin meet")
       .attr("viewBox", "0 0 " + (height + margin.top + margin.bottom) + " " + (width + margin.left + margin.right))
@@ -62,19 +65,20 @@ $(function () {
       .nodes(nodes)
       .links(links)
       .on("tick", tick)
-      .gravity(0.05)
-      .charge(-300)
+      .gravity(0.5)
+      .charge(-5000)
       .linkDistance(200)
 
     //Add links to SVG
-    canvas.append("svg:defs").append("svg:marker")
+    canvas.append("defs").append("marker")
       .attr("id", "arrow")
       .attr("viewBox", "0 -5 10 10")
-      .attr('refX', -160)
-      .attr("markerWidth", 5)
-      .attr("markerHeight", 5)
+      .attr('refX', 8)
+      .attr('refY', 0)
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
       .attr("orient", "auto")
-      .append("svg:path")
+      .append("path")
       .attr("d", "M0,-5L10,0L0,5");
 
     let edges = canvas.append('g').selectAll("path")
@@ -82,10 +86,10 @@ $(function () {
 
     edges.exit().remove()
 
-    edges.enter().append("path")
+    path = edges.enter().append("path")
       .attr("class", "link")
       .style("stroke", "#ccc")
-      .attr('marker-start', (d) => "url(#arrow)")
+      .attr('marker-end', (d) => "url(#arrow)")
       .style("stroke-width", 2)
 
 
@@ -105,10 +109,12 @@ $(function () {
     node.append("circle")
       .attr("r", radiusFunc)
       .attr("fill", d => {
-        if (d.type == "sentiment") return sentimentColor[d.name]
-        else if (d.type == "author") return "#f79489"
-        else if (d.type == "comment") return "brown"
-        else return "cyan"
+        if (d.type == "sentiment"){
+          return sentimentColor[d.name]
+        } 
+        else if (d.type == "author"){ return "orange"}
+        else if (d.type == "comment") {return "#5EDA9E"}
+        else {return "cyan"}
       }).on('click', articleClick)
 
     node.append("title")
@@ -126,27 +132,8 @@ $(function () {
     force.start()
 
     function tick() {
-      edges.attr("d", linkArc);
-
-      node
-        .attr("cx", d => d.x)
-        .attr("cy", d => d.y)
-        .attr("transform", transform);
-    }
-
-    function linkArc(d) {
-      // Total difference in x and y from source to target
-      diffX = d.target.x - d.source.x;
-      diffY = d.target.y - d.source.y;
-
-      // Length of path from center of source node to center of target node
-      pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
-
-      // x and y distances from center to outside edge of target node
-      offsetX = (diffX * d.target.radius) / pathLength;
-      offsetY = (diffY * d.target.radius) / pathLength;
-
-      return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
+      path.attr("d", linkArc);
+      node.attr("transform", transform);
     }
 
     function transform(d) {
@@ -194,12 +181,7 @@ $(function () {
 
           const nodes = json.nodes,
             links = json.links
-
-          console.log("nodes in article")
-          console.log(json)
           render(nodes, links)
-          // Load mapper graph
-          loadMapperGraph()
         },
         error: function (xhr, errormsg, error) {
           console.log(error)
@@ -218,18 +200,6 @@ $(function () {
         if (!('links' in json))
           json['links'] = []
 
-        // var articles = d3.select('.articles').selectAll('button').data(json.nodes)
-        //   .enter()
-        //   .append('button')
-        //   .attr('text-overflow', 'ellipsis')
-        //   .attr('white-space', 'nowrap')
-        //   .attr('class', 'dropdown-item')
-        //   .attr('overflow', 'hidden')
-        //   .attr('width', '200px')
-        //   .on('click', d => articleClick(d))
-        // articles
-        //   .text(d => d.title)
-
         const nodes = json.nodes,
           links = json.links
         console.log("Main")
@@ -240,9 +210,9 @@ $(function () {
     });
   }
 
-  function loadMapperGraph() {
+  function loadMapperGraph(url = mapperEndpoint) {
     $.ajax({
-      url: 'api/mapper',
+      url: url,
       type: 'GET',
       success: function (json) {
         if (!('links' in json))
@@ -251,7 +221,7 @@ $(function () {
         const nodes = json.nodes,
           links = json.links
         console.log("Mapper")
-        console.log(json)
+        console.log(nodes)
         renderMapper(nodes, links)
       },
       error: function (xhr, errormsg, error) {
@@ -276,7 +246,6 @@ $(function () {
         .call(d3.behavior.zoom().on("zoom", function () {
           canvas.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
         }))
-
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
@@ -286,19 +255,20 @@ $(function () {
         .nodes(nodes)
         .links(links)
         .on("tick", tick)
-        .gravity(0.05)
-        .charge(-300)
+        .gravity(0.5)
+        .charge(-2000)
         .linkDistance(200)
 
       //Add links to SVG
-      canvas.append("svg:defs").append("svg:marker")
+      canvas.append("defs").append("marker")
         .attr("id", "arrow")
         .attr("viewBox", "0 -5 10 10")
-        .attr('refX', -160)
-        .attr("markerWidth", 5)
-        .attr("markerHeight", 5)
+        .attr('refX', 8)
+        .attr('refY', 0)
+        .attr("markerWidth", 6)
+        .attr("markerHeight", 6)
         .attr("orient", "auto")
-        .append("svg:path")
+        .append("path")
         .attr("d", "M0,-5L10,0L0,5");
 
       let edges = canvas.append('g').selectAll("path")
@@ -306,10 +276,10 @@ $(function () {
 
       edges.exit().remove()
 
-      edges.enter().append("path")
+      let path = edges.enter().append("path")
         .attr("class", "link")
         .style("stroke", "#ccc")
-        .attr('marker-start', (d) => "url(#arrow)")
+        .attr('marker-end', (d) => "url(#arrow)")
         .style("stroke-width", 2)
 
 
@@ -330,9 +300,10 @@ $(function () {
         .attr("r", radiusFunc)
         .attr("fill", d => {
           if (d.type == "sentiment") return sentimentColor[d.name]
-          else if (d.type == "author") return "#f79489"
-          else if (d.type == "comment") return "brown"
+          else if (d.type == "author") return "orange"
+          else if (d.type == "comment") return "#5EDA9E"
           else return "cyan"
+
         }).on('click', articleClick)
 
       node.append("title")
@@ -350,32 +321,47 @@ $(function () {
       force.start()
 
       function tick() {
-        edges.attr("d", linkArc);
-
+        path.attr("d", linkArc)
         node
           .attr("cx", d => d.x)
           .attr("cy", d => d.y)
           .attr("transform", transform);
       }
 
-      function linkArc(d) {
-        // Total difference in x and y from source to target
-        diffX = d.target.x - d.source.x;
-        diffY = d.target.y - d.source.y;
-
-        // Length of path from center of source node to center of target node
-        pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
-
-        // x and y distances from center to outside edge of target node
-        offsetX = (diffX * d.target.radius) / pathLength;
-        offsetY = (diffY * d.target.radius) / pathLength;
-
-        return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
-      }
-
       function transform(d) {
         return "translate(" + d.x + "," + d.y + ")";
       }
     }
+  }
+
+  addRadioListener()
+
+  function addRadioListener() {
+    d3.selectAll('.radio-button')
+      .on('click', function () {
+        loadMapperGraph(mapperEndpoint + '?prop=' + this.value)
+      })
+  }
+
+  // function linkArc(d) {
+  //   var dx = d.target.x - d.source.x,
+  //       dy = d.target.y - d.source.y,
+  //       dr = Math.sqrt(dx * dx + dy * dy);
+  //   return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+  // }
+
+  function linkArc(d) {
+    // Total difference in x and y from source to target
+    diffX = d.target.x - d.source.x;
+    diffY = d.target.y - d.source.y;
+
+    // Length of path from center of source node to center of target node
+    pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+    // x and y distances from center to outside edge of target node
+    offsetX = (diffX * d.target.radius) / pathLength;
+    offsetY = (diffY * d.target.radius) / pathLength;
+
+    return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
   }
 })

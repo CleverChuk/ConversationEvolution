@@ -2,6 +2,7 @@
 # Purpose: Record models use to create graph nodes
 
 from analyzers import SentimentAnalyzer
+
 """
 @param 
     :type
@@ -77,7 +78,7 @@ class Node(dict):
         self.update(*args, **kwargs)
 
     def __getitem__(self, key):
-        val = dict.__getitem__(self, key)
+        val = dict.get(self, key, "")
         return val
 
     def __setitem__(self, key, val):
@@ -112,7 +113,7 @@ class AuthorNode(Node):
         d = {
             'id': author,
             'name': author,
-            'type': "sentiment",
+            'type': "author",
             'subreddit': subreddit
         }
         super().__init__(d)

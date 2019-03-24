@@ -4,16 +4,24 @@ from libs import api
 from .models import *
 from .mapper import EdgeMapper, Edge
 
-context = {}
-mapper_edges = []
-# Create db layer object and pass it query object
+# constants
+ARTICLE_ID = 'article_id'
+# Create db layer object and pass it to the query object
 db_layer = api.Neo4jLayer()
 query = api.Query(db_layer)
+
+# global variables
+context = {}
+mapper_edges = None
+
 
 # Create your views here.
 
 
 def all(request):
+    """
+        reads the how graph from database
+    """
     if(request.method == "GET"):
         data = query.all()
         data = api.D3helper.transform(*data)
@@ -109,24 +117,41 @@ def less_or_equal(request, **param):
 def nodes_in_article(request, **param):
     global mapper_edges
     if(request.method == "GET"):
-        id = param["id"]
-        data = query.get_nodes_in_article(id)
-        mapper_edges = map(Edge.cast, data)
-
+        # add article id to session object
+        request.session[ARTICLE_ID] = param["id"]
+        # NOTE: Saving data in session requires that Egde class be JOSN serializable by
+        # django serializer
+        data = query.get_nodes_in_article(param["id"])
+        mapper_edges = list(map(Edge.cast, data))
         data = api.D3helper.transform(*data)
-        print(data)
+
         return JsonResponse(data)
 
 
 def mapper_graph(request):
     global mapper_edges
     if(request.method == "GET"):
-        data = EdgeMapper(list(mapper_edges)).cluster()
+        # grab the article id from the session object and query db
+        if mapper_edges == None or not len(mapper_edges):
+            data = query.get_nodes_in_article(request.session[ARTICLE_ID])
+            mapper_edges = list(map(Edge.cast, data))
+
+            
+        
+        if request.GET:
+            # extract the property passed in the url
+            prop = request.GET['prop']
+        #     interval = request.GET['interval']
+            data = EdgeMapper(mapper_edges, property_key=prop).cluster()
+        else:
+            data = EdgeMapper(mapper_edges).cluster()
+
         data = api.D3helper.transform(*data)
         return JsonResponse(data)
 
-
 # Helper functions
+
+
 def get_nodes(label):
     data = query.get_nodes_by_label(label)
     context = {"nodes": data}

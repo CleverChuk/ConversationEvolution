@@ -4,10 +4,10 @@
 #          assumes that the nodes given to it are of the same Type.
 
 from collections import defaultdict, OrderedDict
-from .models import Node
 import random
 from math import ceil, floor
 from statistics import median
+from py2neo import (Graph, Relationship)
 
 NEW_ID = 0
 ALPHA = 97
@@ -16,7 +16,39 @@ ALPHA = 97
     :type 
     :description:
 """
+from django.db import models
 
+# Create your models here.
+
+
+class Node(dict):
+    """
+        base class for all nodes
+    """
+
+    def __init__(self, *args, **kwargs):
+        self.update(*args, **kwargs)
+
+    def __getitem__(self, key):
+        val = dict.get(self, key, None)
+        return val
+
+    def __setitem__(self, key, val):
+        dict.__setitem__(self, key, val)
+
+    def __repr__(self):
+        dictrepr = dict.__repr__(self)
+        return '%s(%s)' % (type(self).__name__, dictrepr)
+
+    def update(self, *args, **kwargs):
+        for k, v in dict(*args, **kwargs).items():
+            self[k] = v
+
+    def __len__(self):
+        return len(self)
+
+    def __str__(self):
+        return "{0}".format(self['type'])
 
 class Edge:
     def __init__(self, src, dest, **properties):
@@ -98,7 +130,7 @@ class Mapper:
                                  )
                     id += 1
 
-        # assumes filtered is always of type author and sentiment
+        # assumes filtered is always of type author
         authors = []
         sentiments = []
         for link in self.filtered_in_data:
@@ -125,7 +157,7 @@ class Mapper:
 
         for node in sentiments:
             for i in range(N):
-                # connect this cluster to its overall sentiment
+                # check if the author's comment contributed to this cluster
                 if node['name'] == edges[i][0]['sentiment']:
                     edges.append(Edge(edges[i][0], node))
 
@@ -406,121 +438,28 @@ class EdgeMapper(Mapper):
 
         return clusters
 
+class Neo4jLayer:
+    """
+        This class provides the abstraction for Neo4j database using py2neo Graph object
+    """
 
-class NodeMapper(Mapper):
-    def __init__(self, edges, data, epsilon=0.5, property_key="reading_level", num_interval=3):
-        self.edges = edges
-        super().__init__(data, epsilon, property_key, num_interval)
+    def __init__(self, graph=Graph("http://localhost:11002/", username="neo4j", password="chubi93")):
+        self.graph = graph
 
-    def clusterInterval(self):
-        """
-            wrapper function
-        """
-        groups = self.numeric_interval()
-        cluster = self.cluster(groups)
+    def get_nodes_in_article(self, id):
+        comment_links = "MATCH (n1)-[r]->(n2) WHERE n1.article_id = \'{0}\' RETURN r".format(id)
+        author_links = " UNION MATCH (n1:author)-[r:WROTE]->(n2:comment) WHERE n2.article_id = \'{0}\' RETURN r".format(id)
+                
+        query = comment_links + author_links 
+        data = list(self.graph.run(query).data())
+        return [node["r"] for node in data]
 
-        return self.graphFromCluster(cluster)
 
-    def numeric_interval(self):
-        """
-            splits the edges into intervals based on property_key
 
-            @param epsilon
-                :type float
-                :description: specifies how much to shift the interval to create overlap
+if __name__ =="__main__":
 
-            @param edges
-                :type list
-                :description: list of edges
-
-            @param property_key
-                :type string
-                :description: the node property used to create interval
-
-            @param num_intervals
-                :type int
-                :description: number of intervals to create
-
-            :rtype: dict 
-        """
-        n = len(self.data)
-        incr_size = floor(n/self.num_interval)
-        if incr_size == 0:
-            incr_size = 1
-
-        intervals = []
-        # create the intervals using property_key value to mark the range bounds
-        for i in range(0, n, incr_size):
-            n = self.data[i:i+incr_size]
-            intervals.append(n)
-
-        groups = defaultdict(list)  # map to hold groups
-        length = len(intervals)
-
-        for i in range(length-1):
-            next = i + 1
-            minimum = intervals[i][0][self.property_key] - self.epsilon
-            maximum = intervals[i][-1][self.property_key] + self.epsilon
-
-            # find overlaps
-            for j in range(next, len(self.data)):
-                if self.data[j][self.property_key] <= maximum and self.data[j] not in intervals[i]:
-                    intervals[i].append(self.data[j])
-
-            groups[(minimum, maximum)] = intervals[i]
-
-            # make sure to include the last interval in the group map
-            if(next == length-1):
-                minimum = intervals[next][0][self.property_key] - self.epsilon
-                maximum = intervals[next][-1][self.property_key] + self.epsilon
-
-                for n in intervals[i]:
-                    if n[self.property_key] <= maximum and n not in intervals[next]:
-                        intervals[next].append(n)
-                groups[(minimum, maximum)] = intervals[next]
-
-        return groups
-
-    def cluster(self, groups):
-        """
-            cluster nodes base on their connection with each other
-
-            @param groups
-                :type dict
-                :description: groups generated by numeric_interval method
-
-            :rtype clusters: dict
-        """
-        clusters = OrderedDict()
-        clusterId = 0
-
-        for group in groups.values():
-            for node in group:
-                if clusterId not in clusters:
-                    clusters[clusterId] = []
-                    clusters[clusterId].append(node)
-
-                # add nodes with edges in the same cluster
-                for edge in self.edges:
-                    if edge[0].id_0 == node.id_0 and edge[1] in group and edge[1] not in clusters[clusterId]:
-                        clusters[clusterId].append(edge[1])
-
-                    elif edge[1].id_0 == node.id_0 and edge[0] in group and edge[0] not in clusters[clusterId]:
-                        clusters[clusterId].append(edge[0])
-
-                clusterId += 1
-
-        temp = list(clusters.keys())
-        indices = []
-        # find the index duplicate clusters
-        for i in temp:
-            s1 = set(clusters[i])
-            for j in temp[i+1:]:
-                s2 = set(clusters[j])
-                if s2 == s1:
-                    indices.append(j)
-
-        # remove duplicate clusters
-        for i in indices:
-            clusters.pop(i, "d")
-        return clusters
+    db = Neo4jLayer()
+    data = db.get_nodes_in_article('b4m4hq')
+    data = list(map(Edge.cast,data))
+    links=EdgeMapper(data).cluster()
+    print(links)

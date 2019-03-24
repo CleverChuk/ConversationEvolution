@@ -12,7 +12,7 @@ class Node(dict):
         self.update(*args, **kwargs)
 
     def __getitem__(self, key):
-        val = dict.__getitem__(self, key)
+        val = dict.get(self, key, None)
         return val
 
     def __setitem__(self, key, val):

@@ -41,7 +41,7 @@ class RedditBot:
         """
         return list(set(comment.submission.id for comment in self.subreddit.comments()))
 
-    def get_hot_submissions_id(self, limit=10):
+    def get_hot_submissions(self, limit=10):
         """
             gets hot articles from the subreddit
             

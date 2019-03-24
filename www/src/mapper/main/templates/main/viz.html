@@ -3,8 +3,38 @@
 {% block content %}
 <div class="container" id="container">
   <div class="row">
+    <div class="col-2 radio-buttons">
+      <label>
+        <input class="radio-button" type="radio" name="filter" value="reading_level">
+        Reading level
+      </label>
+      <br />
+      <label>
+        <input class="radio-button" type="radio" name="filter" value="score">
+        Score
+      </label>
+      <br />
+      <label>
+        <input class="radio-button" type="radio" name="filter" value="sentiment_score">
+        Sentiment
+      </label>
+      <br />
+      <label>
+        <input class="radio-button" type="radio" name="filter" value="author">
+        Author
+      </label>
+      <br />
+      <label>
+          <input class="radio-button" type="radio" name="filter" value="length">
+          Length
+        </label>
+      <label>
+        <input class="radio-button" type="radio" name="filter" value="average_word_length">
+        Average word length
+      </label>
+    </div>
     <div class="col graph svg-container"></div>
-  <div class="col mgraph svg-container"></div>
+    <div class="col mgraph svg-container"></div>
   </div>
 </div>
 {% endblock %}
