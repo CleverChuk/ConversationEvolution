@@ -109,12 +109,18 @@ $(function () {
     node.append("circle")
       .attr("r", radiusFunc)
       .attr("fill", d => {
-        if (d.type == "sentiment"){
+        if (d.type == "sentiment") {
           return sentimentColor[d.name]
-        } 
-        else if (d.type == "author"){ return "orange"}
-        else if (d.type == "comment") {return "#5EDA9E"}
-        else {return "cyan"}
+        } else if (d.type == "author") {
+          return "orange"
+        } else if (d.type == "comment") {
+          if (d.parent_id == d.article_id) {
+            return "pink"
+          }
+          return "#5EDA9E"
+        } else {
+          return "cyan"
+        }
       }).on('click', articleClick)
 
     node.append("title")
@@ -256,7 +262,7 @@ $(function () {
         .links(links)
         .on("tick", tick)
         .gravity(0.5)
-        .charge(-2000)
+        .charge(-5000)
         .linkDistance(200)
 
       //Add links to SVG
@@ -301,8 +307,12 @@ $(function () {
         .attr("fill", d => {
           if (d.type == "sentiment") return sentimentColor[d.name]
           else if (d.type == "author") return "orange"
-          else if (d.type == "comment") return "#5EDA9E"
-          else return "cyan"
+          else if (d.type == "comment") {
+            if (d.parent_id == d.article_id) {
+              return "pink"
+            }
+            return "#5EDA9E"
+          } else return "cyan"
 
         }).on('click', articleClick)
 

@@ -101,10 +101,11 @@ class Mapper:
         # assumes filtered is always of type author and sentiment
         authors = []
         sentiments = []
+        #TODO: add if statement to ignore or perform this task
         for link in self.filtered_in_data:
             if link[0]['type'] == 'author':
                 authors.append(link[0])
-            
+
             elif link[0]['type'] == 'sentiment':
                 sentiments.append(link[0])
 
@@ -114,15 +115,26 @@ class Mapper:
                 sentiments.append(link[1])
 
         N = len(edges)
-        for node in authors:   
-            for i in range(N):
+        #TODO: add if statement to ignore or perform this task
+        
+        for i in range(N):
+            for node in authors:
                 # check if the author's comment contributed to this cluster
-                if edges[i][0]['authors'] and node['name'] in edges[i][0]['authors']:
-                    edges.append(Edge(node, edges[i][0]))
+                if edges[i][0]['authors']:
+                    a = edges[i][0]['authors'].get(node['name'])
+                    if a != None:
+                        edges.append(Edge(node, edges[i][0]))
+                        # Remove author to avoid creating multiple author edges to all contributing nodes
+                        del edges[i][0]['authors'][a]
 
-                if edges[i][1]['authors'] and node['name'] in edges[i][1]['authors']:
-                    edges.append(Edge(node, edges[i][1]))
+                if edges[i][1]['authors']:
+                    a = edges[i][1]['authors'].get(node['name'])
+                    if a != None:
+                        edges.append(Edge(node, edges[i][1]))
+                        # Remove author to avoid creating multiple author edges to all contributing nodes
+                        del edges[i][1]['authors'][a]
 
+        #TODO: add if statement to ignore or perform this task
         for node in sentiments:
             for i in range(N):
                 # connect this cluster to its overall sentiment
@@ -130,7 +142,7 @@ class Mapper:
                     edges.append(Edge(edges[i][0], node))
 
                 if node['name'] == edges[i][1]['sentiment']:
-                    edges.append(Edge( edges[i][1], node))
+                    edges.append(Edge(edges[i][1], node))
 
         return edges
 
@@ -277,6 +289,8 @@ class Mapper:
 
 class EdgeMapper(Mapper):
     def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
+        edges = sorted(edges, key = lambda link : self.getAverage(link, property_key))
+        
         def filter_out(edge):
             return property_key in dict(edge.start_node) and property_key in dict(edge.end_node)
 

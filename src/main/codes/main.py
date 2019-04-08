@@ -19,7 +19,7 @@ if __name__ == "__main__":
     crawler = Crawler(subreddit,"CleverChuk","BwO9pJdzGaVj2pyhZ4kJ", intervals=intervals, property_key=prop, epsilon=epsilon)
     # get data for two submissions in the subreddit
     ids = crawler.get_submissions()
-    ids = crawler.get_hot_submissions(2)
+    # ids = crawler.get_hot_submissions(2)
     crawler.get_graph(*ids)
 
     # loader
