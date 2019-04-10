@@ -116,7 +116,7 @@ class Mapper:
 
         N = len(edges)
         #TODO: add if statement to ignore or perform this task
-        
+
         for i in range(N):
             for node in authors:
                 # check if the author's comment contributed to this cluster
@@ -280,7 +280,6 @@ class Mapper:
 
         p1 = edge[0][property_key]
         p2 = edge[1][property_key]
-
         if isinstance(p1, str) or isinstance(p2, str):
             raise TypeError("property_key value must be numeric")
 
@@ -289,7 +288,7 @@ class Mapper:
 
 class EdgeMapper(Mapper):
     def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
-        edges = sorted(edges, key = lambda link : self.getAverage(link, property_key))
+        
         
         def filter_out(edge):
             return property_key in dict(edge.start_node) and property_key in dict(edge.end_node)
@@ -298,7 +297,8 @@ class EdgeMapper(Mapper):
             return property_key not in dict(edge.start_node) or property_key not in dict(edge.end_node)
 
         self.filtered_data = list(filter(filter_out, edges))
-
+        self.filtered_data = sorted(self.filtered_data, key = lambda link : self.getAverage(link, property_key))
+        
         super().__init__(self.filtered_data, epsilon, property_key, num_interval)
         self.filtered_in_data = list(filter(filter_in, edges))
 

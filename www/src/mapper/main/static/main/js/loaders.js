@@ -1,4 +1,6 @@
-mapper_module.graph = function () {
+
+
+mapper_module.load_main = function load_main() {
     $.ajax({
       url: 'api/nodes/article',
       type: 'GET',
@@ -10,13 +12,15 @@ mapper_module.graph = function () {
           links = json.links
         console.log("Main")
         console.log(json)
-        mapper_module.render(nodes, links, mapper_module.canvas)
+        mapper_module.render(nodes, links, mapper_module.main_canvas)
       },
-      error: function (xhr, errormsg, error) {}
+      error: function (xhr, errormsg, error) {          
+        console.log(error)
+      }
     });
   }
 
-  mapper_module.mapper =  function (url = mapperEndpoint) {
+  mapper_module.load_mapper =  function load_mapper (url = mapperEndpoint) {
     $.ajax({
       url: url,
       type: 'GET',
@@ -28,7 +32,7 @@ mapper_module.graph = function () {
           links = json.links
         console.log("Mapper")
         console.log(nodes)
-        renderMapper(nodes, links)
+        mapper_module.render(nodes, links, mapper_module.mapper_canvas)
       },
       error: function (xhr, errormsg, error) {
         console.log(error)
