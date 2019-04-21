@@ -17,4 +17,5 @@ urlpatterns = [
     path('nodes/<str:field>/lessor/<str:value>', views.less_or_equal, name='lesser_or_equal'),
 
     path('mapper', views.mapper_graph, name='mapper_graph'),
+    path('subreddit', views.subreddit_graph, name='subreddit'),
 ]

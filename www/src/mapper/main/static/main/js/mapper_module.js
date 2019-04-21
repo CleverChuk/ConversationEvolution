@@ -10,69 +10,66 @@ mapper_module.margin = {
     right: 30,
     left: 50
 }
+mapper_module.x_filter = null
+mapper_module.y_filter = null
 
 mapper_module.width = 960 - mapper_module.margin.left - mapper_module.margin.right
 mapper_module.height = 550 - mapper_module.margin.top - mapper_module.margin.bottom
 
 
 mapper_module.render = function render(nodes, links, canvas) {
+    //set up the simulation and add forces  
+    const body_force = d3.forceManyBody()
+        .strength(-500)
 
-    //Create Force Layout
-    var force = d3.layout.force()
-        .size([mapper_module.width, mapper_module.height])
-        .nodes(nodes)
-        .links(links)
-        .on("tick", tick)
-        .gravity(0.5)
-        .charge(-2500)
-        .linkDistance(200)
+    const link_force = d3.forceLink(links);
+    link_force.distance(250)
 
+    const simulation = d3.forceSimulation(nodes)
+        .force("link", link_force)
+        .force("charge", body_force)
+        .force("center", d3.forceCenter(mapper_module.width / 2, mapper_module.height / 2));
+    //add tick instructions: 
+    simulation.on("tick", tick);
 
-    // render edges
-    links = mapper_module.update_edges(canvas, force.links())
+    //render edges
+    links = mapper_module.update_edges(canvas, links)
 
     // render nodes
-    nodes = mapper_module.update_node(canvas, force)
-
-    //Start the force layout calculation
-    force.start()
-
-    // VERSION 4
-    // render edges
-    // links = mapper_module.update_edges(canvas, links)
-
-    // // render nodes
-    // nodes = mapper_module.update_node(canvas, nodes)
-   
-    // var simulation = d3.forceSimulation(nodes)
-    //     .force("charge", d3.forceManyBody().strength(-1000))
-    //     .force("link", d3.forceLink(links).distance(200))
-    //     .force("x", d3.forceX())
-    //     .force("y", d3.forceY())
-    //     .alphaTarget(1)
-    //     .on("tick", tick);
-
-    // // Update and restart the simulation.
-    // simulation.nodes(nodes);
-    // simulation.force("link").links(links);
-    // simulation.alpha(1).restart();
-
+    nodes = mapper_module.update_nodes(canvas, nodes, simulation)
 
     function tick() {
-        links.attr("d", mapper_module.linkArc);
+        links.attr("d", linkArc);
         nodes.attr("transform", transform);
+    }
+
+    function linkArc(d) {
+        // Total difference in x and y from source to target
+        var diffX = d.target.x - d.source.x;
+        var diffY = d.target.y - d.source.y;
+
+        // Length of path from center of source node to center of target node
+        var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+        // x and y distances from center to outside edge of target node
+        var offsetX = (diffX * d.target.radius) / pathLength;
+        var offsetY = (diffY * d.target.radius) / pathLength;
+
+        return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
     }
 
     function transform(d) {
         return "translate(" + d.x + "," + d.y + ")";
     }
 }
+
 mapper_module.update_edges = function update_edges(canvas, links) {
     let layer = canvas.select('.edge-layer')
     let edges = layer.selectAll(".link").data(links)
 
     // Exit
     edges.exit().transition()
+        .attr('duration', 1000)
         .attr("stroke-opacity", 0)
         .attrTween("x1", function (d) {
             return function () {
@@ -97,8 +94,9 @@ mapper_module.update_edges = function update_edges(canvas, links) {
         .remove();
 
     // Enter
-    edges.enter().append("path")
+    edges = edges.enter().append("path")
         .attr("class", "link")
+        .merge(edges)
 
     // Update
     edges
@@ -109,7 +107,7 @@ mapper_module.update_edges = function update_edges(canvas, links) {
     return edges
 }
 
-mapper_module.update_node = function update_node(canvas, force) {
+mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
     var sentiment_color = {
         "positive": "#3AE71E",
         "negative": "red",
@@ -119,23 +117,56 @@ mapper_module.update_node = function update_node(canvas, force) {
         node.radius = 25
         return 25 //node.score / 5 > 10 ? node.score / 5 : 20
     }
+    //Drag functions 
+    var drag = simulation => {
+
+        function dragstarted(d) {
+            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(d) {
+            d.fx = d3.event.x;
+            d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+            if (!d3.event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+
+        return d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended);
+    }
+
 
     //Add circles to each node
     let layer = canvas.select('.node-layer')
     // Add a class and a unique id for proper update
-    nodes = force.nodes()
     let circles = layer.selectAll('.node').data(nodes, d => d.id)
 
     // Exit
     circles.exit()
         .transition()
-        .attr('duration', 10000)
+        .attr('duration', 1000)
+        .attr('r', 20)
+        .transition()
+        .attr('duration', 1500)
+        .attr('r', 10)
+        .transition()
+        .attr('duration', 1500)
         .attr('r', 0)
         .remove()
     // Enter
-    circles.enter().append('g')
+    circles = circles.enter().append('g')
         .attr('class', 'node')
-        .call(force.drag)
+        .merge(circles)
+        .call(drag(simulation))
+
 
     // Update
     circles.append('circle')
@@ -152,6 +183,9 @@ mapper_module.update_node = function update_node(canvas, force) {
                     return "pink"
                 }
                 return "#5EDA9E"
+
+            } else if (d.type == "subreddit") {
+                return "violet"
 
             } else {
                 return "cyan"
@@ -171,9 +205,6 @@ mapper_module.update_node = function update_node(canvas, force) {
         .attr("text-anchor", "middle")
         .attr("pointer-events", "none")
         .text(d => mapper_module.get_node_text(d))
-
-    // Version 4
-    // mapper_module.drag_handler(circles)
     return circles
 }
 
@@ -203,54 +234,3 @@ mapper_module.get_node_text = function get_node_text(node) {
     else if (node.type == "sentiment") return node["name"]
     else return node.type
 }
-
-mapper_module.linkArc = function linkArc(d) {
-    // Total difference in x and y from source to target
-    diffX = d.target.x - d.source.x;
-    diffY = d.target.y - d.source.y;
-
-    // Length of path from center of source node to center of target node
-    pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
-
-    // x and y distances from center to outside edge of target node
-    offsetX = (diffX * d.target.radius) / pathLength;
-    offsetY = (diffY * d.target.radius) / pathLength;
-
-    return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
-}
-
-// D3js V4
-//Drag functions 
-// d is the node 
-// mapper_module.drag_start = function drag_start(d) {
-//     if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-//     d.fx = d.x;
-//     d.fy = d.y;
-// }
-
-// // make sure you can't drag the circle outside the box
-// mapper_module.drag = function drag(d) {
-//     d.fx = d3.event.x;
-//     d.fy = d3.event.y;
-// }
-
-// mapper_module.drag_end = function drag_end(d) {
-//     if (!d3.event.active) simulation.alphaTarget(0);
-//     d.fx = null;
-//     d.fy = null;
-// }
-
-// // Zoom functions 
-// mapper_module.zoom = function zoom_actions(g) {
-//     g.attr("transform", d3.event.transform)
-// }
-
-// // add drag capabilities  
-// mapper_module.drag_handler = d3.drag()
-//     .on("start", mapper_module.drag_start)
-//     .on("drag", mapper_module.drag_drag)
-//     .on("end", mapper_module.drag_end);
-
-// // add zoom capabilities 
-// mapper_module.zoom_handler = d3.zoom()
-//     .on("zoom", mapper_module.zoom_actions);

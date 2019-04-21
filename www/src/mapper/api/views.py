@@ -25,7 +25,13 @@ def all(request):
     if(request.method == "GET"):
         data = query.all()
         data = api.D3helper.transform(*data)
+        return JsonResponse(data)
 
+
+def subreddit_graph(request):
+    if(request.method == "GET"):
+        data = query.get_subreddit_graph()
+        data = api.D3helper.transform(*data)
         return JsonResponse(data)
 
 
@@ -136,8 +142,6 @@ def mapper_graph(request):
             data = query.get_nodes_in_article(request.session[ARTICLE_ID])
             mapper_edges = list(map(Edge.cast, data))
 
-            
-        
         if request.GET:
             # extract the property passed in the url
             prop = request.GET['prop']

@@ -1,11 +1,22 @@
 mapper_module.add_radio_listener = function add_radio_listener() {
-    d3.selectAll('.radio-button')
+    d3.selectAll('.x-radio')
+        .on('click', function () {
+            mapper_module.x_filter = this.value
+        })
+
+    d3.selectAll('.y-radio')
+        .on('click', function () {
+            mapper_module.y_filter = this.value
+        })
+
+
+    d3.selectAll('.filter')
         .on('click', function () {
             mapper_module.load_mapper(mapper_module.mapperEndpoint + '?prop=' + this.value)
         })
 }
 
-mapper_module.article_click = function article_click (node) {
+mapper_module.article_click = function article_click(node) {
     if (node.type == 'article') {
         d3.select('.legend')
             .text(node.title)

@@ -30,8 +30,10 @@ if __name__ == "__main__":
     loader.write_nodes_from_list(crawler.author_nodes,"author")
     loader.write_nodes_from_list(crawler.article_nodes,"article")
     loader.write_nodes_from_list(crawler.sentiment_nodes,"sentiment")
+    loader.write_nodes_from_list([crawler.subreddit_node],"subreddit")
 
     loader.write_edges_from_list(crawler.comment_comment_edges,type="REPLY_TO")
     loader.write_edges_from_list(crawler.article_comment_edges,type="COMMENTED_IN")
     loader.write_edges_from_list(crawler.author_comment_edges,type="WROTE")
     loader.write_edges_from_list(crawler.sentiment_comment_edges,type="_IS_")
+    loader.write_edges_from_list(crawler.article_subreddit_edges,type="_IN_")

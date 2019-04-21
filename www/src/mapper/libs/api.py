@@ -46,6 +46,9 @@ class DatabaseLayer:
 
     def get_less_or_equal(self, field, value):
         raise NotImplementedError
+    
+    def get_subreddit_graph(self,subreddit = None):        
+        raise NotImplementedError
 
     def get_nodes_in_article(self, id):
         raise NotImplementedError
@@ -141,6 +144,10 @@ class Neo4jLayer(DatabaseLayer):
         data = list(self.graph.run(query).data())
         return [node["r"] for node in data]
 
+    def get_subreddit_graph(self,subreddit = None):
+        data = list(self.graph.run( "MATCH (n1)-[r:_IN_]->(n2) RETURN r").data())
+        return [node["r"] for node in data]
+
 
 class Query:
     """
@@ -189,6 +196,9 @@ class Query:
 
     def get_nodes_in_article(self, id):
         return self.db_layer.get_nodes_in_article(id)
+
+    def get_subreddit_graph(self,subreddit = None):
+        return self.db_layer.get_subreddit_graph(subreddit)
 
     # Write
     def insert_node(self, node):

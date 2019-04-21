@@ -2,42 +2,98 @@
 
 {% block content %}
 <div class="container" id="container">
+  <!-- row 1 -->
   <div class="row">
-    <div class="col-2 radio-buttons">
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="reading_level">
-        Reading level
-      </label>
-      <br />
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="score">
-        Score
-      </label>
-      <br />
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="sentiment_score">
-        Sentiment
-      </label>
-      <br />
-      <!-- <label>
-        <input class="radio-button" type="radio" name="filter" value="author">
-        Author
-      </label>
-      <br /> -->
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="length">
-        Length
-      </label>
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="average_word_length">
-        Average word length
-      </label>
+    <div class="col">
+      <h4>Main Graph</h4>
     </div>
+    <div class="col">
+      <h4>Mapper Graph</h4>
+    </div>
+  </div>
+  <!-- row 2 -->
+  <div class="row">
     <div class="col graph svg-container">
       <svg></svg>
     </div>
+
     <div class="col mgraph svg-container">
       <svg></svg>
+    </div>
+  </div>
+  <!-- row 3 -->
+  <div class="row checkboxes">
+    <div class="col"></div>
+    <div class="col">
+        <h6>Filters</h6>
+        <label>
+           <input class="filter" type="radio" name="filter" value="reading_level">
+           Reading level
+         </label>
+         <label>
+           <input class="filter" type="radio" name="filter" value="score">
+           Score
+         </label>
+         <label>
+           <input class="filter" type="radio" name="filter" value="sentiment_score">
+           Sentiment
+         </label>
+         <label>
+           <input class="filter" type="radio" name="filter" value="length">
+           Length
+         </label>
+   
+         <label>
+           <input class="filter" type="radio" name="filter" value="average_word_length">
+           Average word length
+         </label>
+   
+
+     <h6>y-axis</h6>
+     <label>
+        <input class="y-radio" type="radio" name="y_filter" value="reading_level">
+        Reading level
+      </label>
+      <label>
+        <input class="y-radio" type="radio" name="y_filter" value="score">
+        Score
+      </label>
+      <label>
+        <input class="y-radio" type="radio" name="y_filter" value="sentiment_score">
+        Sentiment
+      </label>
+      <label>
+        <input class="y-radio" type="radio" name="y_filter" value="length">
+        Length
+      </label>
+
+      <label>
+        <input class="y-radio" type="radio" name="y_filter" value="average_word_length">
+        Average word length
+      </label>
+
+      <h6>x-axis</h6>
+      <label>
+         <input class="x-radio" type="radio" name="x_filter" value="reading_level">
+         Reading level
+       </label>
+       <label>
+         <input class="x-radio" type="radio" name="x_filter" value="score">
+         Score
+       </label>
+       <label>
+         <input class="x-radio" type="radio" name="x_filter" value="sentiment_score">
+         Sentiment
+       </label>
+       <label>
+         <input class="x-radio" type="radio" name="x_filter" value="length">
+         Length
+       </label>
+ 
+       <label>
+         <input class="x-radio" type="radio" name="x_filter" value="average_word_length">
+         Average word length
+       </label>
     </div>
   </div>
 </div>

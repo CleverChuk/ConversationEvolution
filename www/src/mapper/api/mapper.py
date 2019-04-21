@@ -101,48 +101,48 @@ class Mapper:
         # assumes filtered is always of type author and sentiment
         authors = []
         sentiments = []
-        #TODO: add if statement to ignore or perform this task
-        for link in self.filtered_in_data:
-            if link[0]['type'] == 'author':
-                authors.append(link[0])
+        # #TODO: add if statement to ignore or perform this task
+        # for link in self.filtered_in_data:
+        #     if link[0]['type'] == 'author':
+        #         authors.append(link[0])
 
-            elif link[0]['type'] == 'sentiment':
-                sentiments.append(link[0])
+        #     elif link[0]['type'] == 'sentiment':
+        #         sentiments.append(link[0])
 
-            if link[1]['type'] == 'author':
-                authors.append(link[1])
-            elif link[1]['type'] == 'sentiment':
-                sentiments.append(link[1])
+        #     if link[1]['type'] == 'author':
+        #         authors.append(link[1])
+        #     elif link[1]['type'] == 'sentiment':
+        #         sentiments.append(link[1])
 
-        N = len(edges)
-        #TODO: add if statement to ignore or perform this task
+        # N = len(edges)
+        # #TODO: add if statement to ignore or perform this task
 
-        for i in range(N):
-            for node in authors:
-                # check if the author's comment contributed to this cluster
-                if edges[i][0]['authors']:
-                    a = edges[i][0]['authors'].get(node['name'])
-                    if a != None:
-                        edges.append(Edge(node, edges[i][0]))
-                        # Remove author to avoid creating multiple author edges to all contributing nodes
-                        del edges[i][0]['authors'][a]
+        # for i in range(N):
+        #     for node in authors:
+        #         # check if the author's comment contributed to this cluster
+        #         if edges[i][0]['authors']:
+        #             a = edges[i][0]['authors'].get(node['name'])
+        #             if a != None:
+        #                 edges.append(Edge(node, edges[i][0]))
+        #                 # Remove author to avoid creating multiple author edges to all contributing nodes
+        #                 del edges[i][0]['authors'][a]
 
-                if edges[i][1]['authors']:
-                    a = edges[i][1]['authors'].get(node['name'])
-                    if a != None:
-                        edges.append(Edge(node, edges[i][1]))
-                        # Remove author to avoid creating multiple author edges to all contributing nodes
-                        del edges[i][1]['authors'][a]
+        #         if edges[i][1]['authors']:
+        #             a = edges[i][1]['authors'].get(node['name'])
+        #             if a != None:
+        #                 edges.append(Edge(node, edges[i][1]))
+        #                 # Remove author to avoid creating multiple author edges to all contributing nodes
+        #                 del edges[i][1]['authors'][a]
 
-        #TODO: add if statement to ignore or perform this task
-        for node in sentiments:
-            for i in range(N):
-                # connect this cluster to its overall sentiment
-                if node['name'] == edges[i][0]['sentiment']:
-                    edges.append(Edge(edges[i][0], node))
+        # #TODO: add if statement to ignore or perform this task
+        # for node in sentiments:
+        #     for i in range(N):
+        #         # connect this cluster to its overall sentiment
+        #         if node['name'] == edges[i][0]['sentiment']:
+        #             edges.append(Edge(edges[i][0], node))
 
-                if node['name'] == edges[i][1]['sentiment']:
-                    edges.append(Edge(edges[i][1], node))
+        #         if node['name'] == edges[i][1]['sentiment']:
+        #             edges.append(Edge(edges[i][1], node))
 
         return edges
 

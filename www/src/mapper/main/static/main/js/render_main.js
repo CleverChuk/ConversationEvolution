@@ -15,9 +15,12 @@ let svg = d3.select(".graph")
 
 let main_canvas = svg.append('g')
   .attr('class', 'canvas')
-  .call(d3.behavior.zoom().on("zoom", function () {
-    main_canvas.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
-  }))
+  svg
+  .call(d3.zoom().on("zoom", zoomed))
+// Zoom functions 
+function zoomed() {
+  main_canvas.attr("transform", d3.event.transform)
+}
 
 main_canvas.append('g')
   .attr('class', 'edge-layer')
@@ -35,8 +38,5 @@ main_canvas.append("defs").append("marker")
   .attr("orient", "auto")
   .append("path")
   .attr("d", "M0,-5L10,0L0,5");
-
-// V4
-// mapper_module.zoom_handler(svg)
 
 mapper_module.main_canvas = main_canvas

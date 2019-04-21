@@ -50,12 +50,14 @@ class Crawler(RedditBot):
         self.comment_comment_edges = []  # undirected comment/comment edges
         self.sentiment_comment_edges = []  # sentiment/comment edges
         self.author_comment_edges = []  # author/comment edges
+        self.article_subreddit_edges = []
 
         self.nodes = []
         self.comment_nodes = []
         self.article_nodes = []
         self.sentiment_nodes = []
         self.author_nodes = []
+        self.subreddit_node = Node({'id':subreddit,"type":"subreddit","name":subreddit})
 
     def is_removed(self, comment):
         """
@@ -103,7 +105,8 @@ class Crawler(RedditBot):
                 submission = self.get_submission(id)
                 submission.comments.replace_more(limit=None)
                 article_node = ArticleNode(self.subreddit_tag, submission)
-
+                
+                self.article_subreddit_edges.append((article_node, self.subreddit_node))
                 self.nodes.append((article_node, article_node))
                 self.article_nodes.append(article_node)
 
