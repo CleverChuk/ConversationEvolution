@@ -16,7 +16,7 @@ mapper_module.load_main = function load_main() {
   });
 }
 
-mapper_module.load_mapper = function load_mapper(url = mapperEndpoint) {
+mapper_module.load_mapper = function load_mapper(url = mapper_module.mapperEndpoint, filter) {
   $.ajax({
     url: url,
     type: 'GET',
@@ -26,8 +26,7 @@ mapper_module.load_mapper = function load_mapper(url = mapperEndpoint) {
 
       const nodes = json.nodes,
         links = json.links
-      mapper_module.render_mapper(nodes, links, mapper_module.mapper_canvas,
-         mapper_module.x_filter, mapper_module.y_filter)
+      mapper_module.render_mapper(nodes, links, mapper_module.mapper_canvas, filter)
     },
     error: function (xhr, errormsg, error) {
       console.log(error)

@@ -7,7 +7,7 @@ from collections import defaultdict, OrderedDict
 from .models import Node
 import random
 from math import ceil, floor
-from statistics import median
+import statistics as stats
 
 NEW_ID = 0
 ALPHA = 97
@@ -55,11 +55,20 @@ class Mapper:
         self.epsilon = epsilon
         self.property_key = property_key
         self.num_interval = num_interval
-
-        # For nodes without property key as field
+        # For nodes without property_key as field
         self.filtered_in_data = []
+        self._average = False # use to determine how to aggregate cluster nodes- mean or median
 
-    def graphFromCluster(self, clusters):
+    @property
+    def average(self):
+        return self._average
+    
+    @average.setter
+    def average(self, value):
+        self._average = value
+
+
+    def graph_cluster(self, clusters):
         """
             creates a graph from the interval clusters
             Nodes are connected if their Jaccard is > 0.1
@@ -70,13 +79,13 @@ class Mapper:
             :rtype tuple of graph and list of edges
         """
         id = 0  # edge id
-        newNodes = {}
+        new_nodes = {}
 
         edges = []
         # create cluster node
         for name, cluster in clusters.items():
-            newNodes[name] = self.clusterAverage(
-                name, cluster, self.getProperties(cluster[0]))
+            new_nodes[name] = self.cluster_nodes(name, cluster, self.attr_list(cluster[0]))
+            new_nodes[name]['radius'] += len(cluster)*5
 
         # connect clusters base on node overlap
         names = list(clusters.keys())
@@ -88,12 +97,12 @@ class Mapper:
             for j in range(i+1, n):
                 nextCluster = set(clusters[j])
                 # skip this edge if the Jaccard index is less than 0.1
-                j_index = round(self.jeccardIndex(cluster, nextCluster), 2)
+                j_index = round(self.jeccard_index(cluster, nextCluster), 2)
                 if j_index < Mapper.JACCARD_THRESH:
                     continue
 
-                if not cluster.isdisjoint(nextCluster) and newNodes[names[i]] != newNodes[names[j]]:
-                    edges.append(Edge(newNodes[names[i]], newNodes[names[j]],
+                if not cluster.isdisjoint(nextCluster) and new_nodes[names[i]] != new_nodes[names[j]]:
+                    edges.append(Edge(new_nodes[names[i]], new_nodes[names[j]],
                                       id=id, type=j_index)
                                  )
                     id += 1
@@ -102,37 +111,37 @@ class Mapper:
         authors = []
         sentiments = []
         # #TODO: add if statement to ignore or perform this task
-        # for link in self.filtered_in_data:
-        #     if link[0]['type'] == 'author':
-        #         authors.append(link[0])
+        for link in self.filtered_in_data:
+            if link[0]['type'] == 'author':
+                authors.append(link[0])
 
         #     elif link[0]['type'] == 'sentiment':
         #         sentiments.append(link[0])
 
-        #     if link[1]['type'] == 'author':
-        #         authors.append(link[1])
+            if link[1]['type'] == 'author':
+                authors.append(link[1])
         #     elif link[1]['type'] == 'sentiment':
         #         sentiments.append(link[1])
 
-        # N = len(edges)
+        N = len(edges)
         # #TODO: add if statement to ignore or perform this task
 
-        # for i in range(N):
-        #     for node in authors:
-        #         # check if the author's comment contributed to this cluster
-        #         if edges[i][0]['authors']:
-        #             a = edges[i][0]['authors'].get(node['name'])
-        #             if a != None:
-        #                 edges.append(Edge(node, edges[i][0]))
-        #                 # Remove author to avoid creating multiple author edges to all contributing nodes
-        #                 del edges[i][0]['authors'][a]
+        for i in range(N):
+            for node in authors:
+                # check if the author's comment contributed to this cluster
+                if edges[i][0]['authors']:
+                    a = edges[i][0]['authors'].get(node['name'])
+                    if a != None:
+                        edges.append(Edge(node, edges[i][0]))
+                        # Remove author to avoid creating multiple author edges to all contributing nodes
+                        del edges[i][0]['authors'][a]
 
-        #         if edges[i][1]['authors']:
-        #             a = edges[i][1]['authors'].get(node['name'])
-        #             if a != None:
-        #                 edges.append(Edge(node, edges[i][1]))
-        #                 # Remove author to avoid creating multiple author edges to all contributing nodes
-        #                 del edges[i][1]['authors'][a]
+                if edges[i][1]['authors']:
+                    a = edges[i][1]['authors'].get(node['name'])
+                    if a != None:
+                        edges.append(Edge(node, edges[i][1]))
+                        # Remove author to avoid creating multiple author edges to all contributing nodes
+                        del edges[i][1]['authors'][a]
 
         # #TODO: add if statement to ignore or perform this task
         # for node in sentiments:
@@ -146,7 +155,7 @@ class Mapper:
 
         return edges
 
-    def jeccardIndex(self, A, B):
+    def jeccard_index(self, A, B):
         """
             Calculates the Jaccard index of two sets
 
@@ -165,7 +174,7 @@ class Mapper:
 
         return j
 
-    def getProperties(self, obj):
+    def attr_list(self, obj):
         """
             returns the property list of the obj
 
@@ -177,7 +186,7 @@ class Mapper:
         """
         return list(obj.keys())
 
-    def clusterAverage(self, name, cluster, property_keys):
+    def cluster_nodes(self, name, cluster, property_keys):
         """
             calculates the average of all the properties in property_key for
             all the clusters in cluster
@@ -202,13 +211,11 @@ class Mapper:
             raise Exception("cluster and property_keys must be lists")
 
         numerical_variables = []
-        cluster_node = Node(
-            {'subreddit': cluster[0]['subreddit'], 'name': name})
+        cluster_node = Node({'subreddit': cluster[0]['subreddit'], 'name': name})
         category_variable = defaultdict(int)
 
         mode_value = 0
         mode_var = None
-
         for property_key in property_keys:
             for node in cluster:
                 tp = node[property_key]
@@ -223,13 +230,19 @@ class Mapper:
                 # add authors dictionary to cluster use to form edge
                 if cluster_node['authors']:
                     cluster_node['authors'][node['author']] = node['author']
+
                 else:
                     cluster_node['authors'] = {node['author']: node['author']}
 
             if len(numerical_variables) != 0:  # use median for numerical variables
-                cluster_node[property_key] = float(
-                    round(median(numerical_variables), 4))
-                numerical_variables.clear()
+                if self._average:
+                    cluster_node[property_key] = float(round(stats.mean(numerical_variables), 4))
+                    numerical_variables.clear()
+                else:
+                    numerical_variables = sorted(numerical_variables)
+                    cluster_node[property_key] = float(round(stats.median(numerical_variables), 4))
+                    numerical_variables.clear()
+
             else:
                 cluster_node[property_key] = str(mode_var)
                 mode_value = 0
@@ -260,7 +273,7 @@ class Mapper:
 
         return cluster_node
 
-    def getAverage(self, edge, property_key):
+    def edge_mean(self, edge, property_key):
         """
             calculates the average property of a given edge
 
@@ -287,17 +300,17 @@ class Mapper:
 
 
 class EdgeMapper(Mapper):
-    def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
-        
+    def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):        
         
         def filter_out(edge):
-            return property_key in dict(edge.start_node) and property_key in dict(edge.end_node)
+            return  edge.start_node['type'] == 'comment' and edge.end_node['type'] == 'comment'
 
         def filter_in(edge):
-            return property_key not in dict(edge.start_node) or property_key not in dict(edge.end_node)
+            return  edge.start_node['type'] != 'comment' or edge.end_node['type'] != 'comment'
+
 
         self.filtered_data = list(filter(filter_out, edges))
-        self.filtered_data = sorted(self.filtered_data, key = lambda link : self.getAverage(link, property_key))
+        self.filtered_data = sorted(self.filtered_data, key = lambda link : self.edge_mean(link, property_key))
         
         super().__init__(self.filtered_data, epsilon, property_key, num_interval)
         self.filtered_in_data = list(filter(filter_in, edges))
@@ -306,12 +319,12 @@ class EdgeMapper(Mapper):
         """
             wrapper function
         """
-        groups = self.numeric_interval()
-        cluster = self.clusterInterval(groups)
+        groups = self.create_intervals()
+        cluster = self.cluster_groups(groups)
 
-        return self.graphFromCluster(cluster)
+        return self.graph_cluster(cluster)
 
-    def numeric_interval(self):
+    def create_intervals(self):
         """
             splits the edges into intervals based on property_key
 
@@ -342,44 +355,43 @@ class EdgeMapper(Mapper):
 
         # create the intervals using property value to mark the range bounds
         for i in range(0, n, incr_size):
-            e = self.data[i:i+incr_size]
-            intervals.append(e)
+            intervals.append(self.data[i:i+incr_size])
 
         groups = defaultdict(list)  # map to hold groups
         length = len(intervals)
         for i in range(length-1):
             next = i+1
-            minimum = self.getAverage(
-                intervals[i][0], self.property_key) - self.epsilon
-            maximum = self.getAverage(
-                intervals[i][-1], self.property_key) + self.epsilon
 
+            # adjust the overlap range by epsilon
+            minimum = self.edge_mean(intervals[i][0], self.property_key) - self.epsilon
+            maximum = self.edge_mean(intervals[i][-1], self.property_key) + self.epsilon
+            
+            # create the overlap between interval i and i+1
             for e in intervals[next]:
-                if self.getAverage(e, self.property_key) <= maximum and e not in intervals[i]:
+                if self.edge_mean(e, self.property_key) <= maximum and e not in intervals[i]:
                     intervals[i].append(e)
 
             groups[(minimum, maximum)] = intervals[i]
 
             # make sure to include the last interval in the group map
             if(next == length-1):
-                minimum = self.getAverage(
-                    intervals[next][0], self.property_key) - self.epsilon
-                maximum = self.getAverage(
-                    intervals[next][-1], self.property_key) + self.epsilon
+                minimum = self.edge_mean(intervals[next][0], self.property_key) - self.epsilon
+                maximum = self.edge_mean(intervals[next][-1], self.property_key) + self.epsilon
+                
                 for e in intervals[i]:
-                    if self.getAverage(e, self.property_key) <= maximum and e not in intervals[next]:
+                    if self.edge_mean(e, self.property_key) <= maximum and e not in intervals[next]:
                         intervals[next].append(e)
                 groups[(minimum, maximum)] = intervals[next]
 
         return groups
 
-    def clusterInterval(self, groups):
+    def cluster_groups(self, groups):
         """
             cluster nodes base on their connection with each other
 
             @param groups
                 :type dict
-                :description: groups generated by numeric_interval method
+                :description: groups generated by create_intervals method
 
             :rtype clusters: dict
         """
@@ -420,22 +432,21 @@ class EdgeMapper(Mapper):
 
         return clusters
 
-
 class NodeMapper(Mapper):
     def __init__(self, edges, data, epsilon=0.5, property_key="reading_level", num_interval=3):
         self.edges = edges
         super().__init__(data, epsilon, property_key, num_interval)
 
-    def clusterInterval(self):
+    def cluster_groups(self):
         """
             wrapper function
         """
-        groups = self.numeric_interval()
+        groups = self.create_intervals()
         cluster = self.cluster(groups)
 
-        return self.graphFromCluster(cluster)
+        return self.graph_cluster(cluster)
 
-    def numeric_interval(self):
+    def create_intervals(self):
         """
             splits the edges into intervals based on property_key
 
@@ -501,7 +512,7 @@ class NodeMapper(Mapper):
 
             @param groups
                 :type dict
-                :description: groups generated by numeric_interval method
+                :description: groups generated by create_intervals method
 
             :rtype clusters: dict
         """

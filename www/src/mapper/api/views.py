@@ -141,16 +141,40 @@ def mapper_graph(request):
         if mapper_edges == None or not len(mapper_edges):
             data = query.get_nodes_in_article(request.session[ARTICLE_ID])
             mapper_edges = list(map(Edge.cast, data))
-
+        
         if request.GET:
             # extract the property passed in the url
-            prop = request.GET['prop']
-        #     interval = request.GET['interval']
-            data = EdgeMapper(mapper_edges, property_key=prop).cluster()
+            if 'prop' in request.GET:
+                prop = request.GET['prop']
+            else:
+                prop = 'reading_level'
+
+            if 'interval' in request.GET:
+                interval = int(request.GET['interval'])
+            else:
+                interval = 3
+
+            if 'epsilon' in request.GET:
+                epsilon = float(request.GET['epsilon'])
+            else:
+                epsilon = 0.5
+
+            if 'mode' in request.GET:
+                mode = request.GET['mode']
+            else:
+                mode = 'median'
+
+            mapper = EdgeMapper(mapper_edges, property_key=prop,
+                                epsilon=epsilon, num_interval=interval)
+                                
+            mapper.average = True if mode == 'mean' else False
+            data = mapper.cluster()
         else:
             data = EdgeMapper(mapper_edges).cluster()
 
         data = api.D3helper.transform(*data)
+
+        print([interval, epsilon, mode])
         return JsonResponse(data)
 
 # Helper functions

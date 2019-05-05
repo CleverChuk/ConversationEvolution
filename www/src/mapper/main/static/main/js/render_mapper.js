@@ -42,43 +42,43 @@ mapper_canvas.append("defs").append("marker")
 mapper_module.mapper_canvas = mapper_canvas
 
 
-mapper_module.render_mapper = function render(nodes, links, canvas, x_filter = null, y_filter = null) {
+mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
+  canvas.select('.y-axis').remove()
+  canvas.select('.x-axis').remove()
 
-  if (x_filter != null) {
-    // Create X scale
-    var xscale = d3.scaleLinear()
-      .domain([d3.min(nodes, node => node[x_filter]), d3.max(nodes, node => node[x_filter])])
-      .range([0, mapper_module.width - 50]);
+  // Create X scale
+  var xscale = d3.scaleLinear()
+    .domain([d3.min(nodes, node => node[filter]), d3.max(nodes, node => node[filter])])
+    .range([0, mapper_module.width]);
+  if ($('#x').is(":checked")) {
 
     // Add scales to axis
     var x_axis = d3.axisBottom()
       .scale(xscale);
 
     //Append group and insert axis
-    canvas.select('.x-axis').remove()
     canvas.append("g")
       .attr('class', 'x-axis')
-      .attr('transform', 'translate(0,' + (mapper_module.height - mapper_module.margin.bottom) + ')')
+      .attr('transform', 'translate(0,' + mapper_module.height + ')')
       .call(x_axis);
   }
 
-  if (y_filter != null) {
-    // Create X scale
-    var yscale = d3.scaleLinear()
-      .domain([d3.min(nodes, node => node[y_filter]), d3.max(nodes, node => node[y_filter])])
-      .range([0, mapper_module.width - 50]);
 
+  // Create X scale
+  var yscale = d3.scaleLinear()
+    .domain([d3.min(nodes, node => node[filter]), d3.max(nodes, node => node[filter])])
+    .range([1000, 0]);
+
+  if ($('#y').is(":checked")) {
     // Add scales to axis
     var y_axis = d3.axisLeft()
       .scale(yscale);
 
     //Append group and insert axis
-    canvas.select('.y-axis').remove()
     canvas.append("g")
       .attr('class', 'y-axis')
       .call(y_axis);
   }
-
 
   //set up the simulation and add forces  
   const body_force = d3.forceManyBody()
@@ -107,23 +107,9 @@ mapper_module.render_mapper = function render(nodes, links, canvas, x_filter = n
 
   function linkArc(d) {
     // Total difference in x and y from source to target
-    if (d.source.type == 'comment') {
-      // if (x_filter != null && y_filter != null) {
-      //   var diffX = d.target[x_filter] - d.source[x_filter];
-      //   var diffY = d.target[y_filter] - d.source[y_filter];
-
-      //   // Length of path from center of source node to center of target node
-      //   var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
-
-      //   // x and y distances from center to outside edge of target node
-      //   var offsetX = (diffX * d.target.radius) / pathLength;
-      //   var offsetY = (diffY * d.target.radius) / pathLength;
-
-      //   return "M" + d.source[x_filter] + "," + d.source[y_filter] + "L" + (d.target[x_filter] - offsetX) + "," + (d.target[y_filter] - offsetY)
-
-      // }
-      if (x_filter != null && y_filter == null) {
-        var diffX = d.target[x_filter] - d.source[x_filter];
+    if (d.source.type == 'comment' && d.target.type == 'comment') {
+      if ($('#x').is(":checked")) {
+        var diffX = xscale(d.target[filter]) - xscale(d.source[filter]);
         var diffY = d.target.y - d.source.y;
 
         // Length of path from center of source node to center of target node
@@ -133,12 +119,13 @@ mapper_module.render_mapper = function render(nodes, links, canvas, x_filter = n
         var offsetX = (diffX * d.target.radius) / pathLength;
         var offsetY = (diffY * d.target.radius) / pathLength;
 
-        return "M" + d.source[x_filter] + "," + d.source.y + "L" + (d.target[x_filter] - offsetX) + "," + (d.target.y - offsetY)
+        return "M" + xscale(d.source[filter]) + "," + d.source.y + "L" + (xscale(d.target[filter]) - offsetX) + "," + (d.target.y - offsetY)
 
       }
-      if (x_filter == null && y_filter != null) {
+
+      if ($('#y').is(":checked")) {
         var diffX = d.target.x - d.source.x;
-        var diffY = d.target[y_filter] - d.source[y_filter];
+        var diffY = yscale(d.target[filter]) - yscale(d.source[filter]);
 
         // Length of path from center of source node to center of target node
         var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
@@ -147,36 +134,98 @@ mapper_module.render_mapper = function render(nodes, links, canvas, x_filter = n
         var offsetX = (diffX * d.target.radius) / pathLength;
         var offsetY = (diffY * d.target.radius) / pathLength;
 
-        return "M" + d.source.x + "," + d.source[y_filter] + "L" + (d.target.x - offsetX) + "," + (d.target[y_filter] - offsetY)
+        return "M" + d.source.x + "," + yscale(d.source[filter]) + "L" + (d.target.x - offsetX) + "," + (yscale(d.target[filter]) - offsetY)
 
       }
-    } else {
-      var diffX = d.target.x - d.source.x;
-      var diffY = d.target.y - d.source.y;
-
-      // Length of path from center of source node to center of target node
-      var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
-
-      // x and y distances from center to outside edge of target node
-      var offsetX = (diffX * d.target.radius) / pathLength;
-      var offsetY = (diffY * d.target.radius) / pathLength;
-
-      return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
     }
+
+    if (d.target.type == 'comment') {
+      if ($('#x').is(":checked")) {
+        var diffX = xscale(d.target[filter]) - d.source.x;
+        var diffY = d.target.y - d.source.y;
+
+        // Length of path from center of source node to center of target node
+        var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+        // x and y distances from center to outside edge of target node
+        var offsetX = (diffX * d.target.radius) / pathLength;
+        var offsetY = (diffY * d.target.radius) / pathLength;
+
+        return "M" + d.source.x + "," + d.source.y + "L" + (xscale(d.target[filter]) - offsetX) + "," + (d.target.y - offsetY)
+
+      }
+
+      if ($('#y').is(":checked")) {
+        var diffX = d.target.x - d.source.x;
+        var diffY = yscale(d.target[filter]) - d.source.y
+
+        // Length of path from center of source node to center of target node
+        var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+        // x and y distances from center to outside edge of target node
+        var offsetX = (diffX * d.target.radius) / pathLength;
+        var offsetY = (diffY * d.target.radius) / pathLength;
+
+        return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (yscale(d.target[filter]) - offsetY)
+
+      }
+    }
+    if (d.source.type == 'comment') {
+      if ($('#x').is(":checked")) {
+        var diffX = d.target.x - xscale(d.source[filter]);
+        var diffY = d.target.y - d.source.y;
+
+        // Length of path from center of source node to center of target node
+        var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+        // x and y distances from center to outside edge of target node
+        var offsetX = (diffX * d.target.radius) / pathLength;
+        var offsetY = (diffY * d.target.radius) / pathLength;
+
+        return "M" + xscale(d.source[filter]) + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
+
+      }
+
+      if ($('#y').is(":checked")) {
+        var diffX = d.target.x - d.source.x;
+        var diffY = d.target.y - yscale(d.source[filter]);
+
+        // Length of path from center of source node to center of target node
+        var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+        // x and y distances from center to outside edge of target node
+        var offsetX = (diffX * d.target.radius) / pathLength;
+        var offsetY = (diffY * d.target.radius) / pathLength;
+
+        return "M" + d.source.x + "," + yscale(d.source[filter]) + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
+
+      }
+    }
+
+    var diffX = d.target.x - d.source.x;
+    var diffY = d.target.y - d.source.y;
+
+    // Length of path from center of source node to center of target node
+    var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
+
+    // x and y distances from center to outside edge of target node
+    var offsetX = (diffX * d.target.radius) / pathLength;
+    var offsetY = (diffY * d.target.radius) / pathLength;
+
+    return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
+
   }
 
   function transform(d) {
     if (d.type == 'comment') {
-      if (x_filter != null && y_filter == null)
-        return "translate(" + d[x_filter] + "," + d.y + ")";
+      if ($('#x').is(":checked"))
+        return "translate(" + xscale(d[filter]) + "," + d.y + ")";
 
-      if (y_filter != null && x_filter == null)
-        return "translate(" + d.x + "," + d[y_filter] + ")";
+      if ($('#y').is(":checked"))
+        return "translate(" + d.x + "," + yscale(d[filter]) + ")";
 
+    }
 
-      return "translate(" + d[x_filter] + "," + d[y_filter] + ")";
-
-    } else
-      return "translate(" + d.x + "," + d.y + ")";
+    return "translate(" + d.x + "," + d.y + ")";
   }
 }

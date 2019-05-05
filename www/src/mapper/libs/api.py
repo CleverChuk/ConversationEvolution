@@ -152,15 +152,18 @@ class Neo4jLayer(DatabaseLayer):
 class Query:
     """
         This class performs database queries without knowing the underlying construction
-        of the queries. It uses DatabaseLayer object to achieve this
+        of the queries. 
+        It uses DatabaseLayer object to achieve this
     """
     def __init__(self, db_layer):
+        # db_layer must implement DatabaseLayer
         if not issubclass(db_layer.__class__, DatabaseLayer):
             raise TypeError(
                 "{0} must be a subclass of DatabaseLayer".format(db_layer.__class__))
 
         self.db_layer = db_layer
-
+    
+    # read methods
     def all(self):
         return self.db_layer.all()
 
@@ -200,7 +203,7 @@ class Query:
     def get_subreddit_graph(self,subreddit = None):
         return self.db_layer.get_subreddit_graph(subreddit)
 
-    # Write
+    # Write methods
     def insert_node(self, node):
         return self.db_layer.insert_relationship(node)
 
@@ -256,16 +259,20 @@ class D3helper:
             n1['name']
             n2['name']
             if n1['id'] not in d:
+                # add node to list
                 nodes.append(n1)
+                # add node index to index dictionary
                 d[n1['id']] = len(nodes) - 1
 
             if n2['id'] not in d:
                 nodes.append(n2)
                 d[n2['id']] = len(nodes) - 1
 
-            # create a simple record type for links
+            # create a simple record type for D3 links using the
+            # indices in the index dictionary
             links.append({"source": d[n1['id']], "target": d[n2['id']]})
 
+        # create a dictionary containing D3 formatter nodes and links
         d = {"nodes": nodes, "links": links}
 
         return d
@@ -292,6 +299,9 @@ class CustomJSONEncoder(JSONEncoder):
 
 # test
 class Edge:
+    """
+        A class used to represent a link between two nodes.
+    """
     def __init__(self, src, dest, **properties):
         self.start_node = src
         self.end_node = dest
@@ -299,9 +309,15 @@ class Edge:
 
     @classmethod
     def cast(cls, py2neo_rel):
+        """
+            method to cast py2neo relationship to Edge used by mapper
+        """
         return cls(py2neo_rel.start_node, py2neo_rel.end_node)
 
     def __getitem__(self, key):
+        """
+            allows edge to be indexable
+        """
         if key == 0:
             return self.start_node
         elif key == 1:

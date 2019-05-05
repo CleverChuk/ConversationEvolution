@@ -10,8 +10,6 @@ mapper_module.margin = {
     right: 30,
     left: 50
 }
-mapper_module.x_filter = null
-mapper_module.y_filter = null
 
 mapper_module.width = 960 - mapper_module.margin.left - mapper_module.margin.right
 mapper_module.height = 550 - mapper_module.margin.top - mapper_module.margin.bottom
@@ -68,8 +66,7 @@ mapper_module.update_edges = function update_edges(canvas, links) {
     let edges = layer.selectAll(".link").data(links)
 
     // Exit
-    edges.exit().transition()
-        .attr('duration', 1000)
+    edges.exit().transition().duration(1000)
         .attr("stroke-opacity", 0)
         .attrTween("x1", function (d) {
             return function () {
@@ -113,9 +110,12 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
         "negative": "red",
         "neutral": "blue"
     }
-    var radiusFunc = node => {
-        node.radius = 25
-        return 25 //node.score / 5 > 10 ? node.score / 5 : 20
+    nodes.forEach(n => {
+        n.radius = +n.radius
+    });
+
+    function radiusFunc(node)  {
+        return node.radius * 1.5
     }
     //Drag functions 
     var drag = simulation => {
@@ -151,14 +151,7 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
 
     // Exit
     circles.exit()
-        .transition()
-        .attr('duration', 1000)
-        .attr('r', 20)
-        .transition()
-        .attr('duration', 1500)
-        .attr('r', 10)
-        .transition()
-        .attr('duration', 1500)
+        .transition().duration(1000)
         .attr('r', 0)
         .remove()
     // Enter
@@ -176,19 +169,19 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
                 return sentiment_color[d.name]
 
             } else if (d.type == "author") {
-                return "orange"
+                return $("#author_color").val()
 
             } else if (d.type == "comment") {
                 if (d.parent_id == d.article_id) {
-                    return "pink"
+                    return $("#root_comment_color").val()
                 }
-                return "#5EDA9E"
+                return $("#comment_color").val()
 
             } else if (d.type == "subreddit") {
-                return "violet"
+                return $("#subreddit_color").val()
 
             } else {
-                return "cyan"
+                return $("#article_color").val()
             }
 
         }).on('click', mapper_module.article_click)

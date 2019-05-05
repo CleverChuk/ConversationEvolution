@@ -76,6 +76,7 @@ class Node(dict):
 
     def __init__(self, *args, **kwargs):
         self.update(*args, **kwargs)
+        self['radius'] = 25
 
     def __getitem__(self, key):
         val = dict.get(self, key, "")
