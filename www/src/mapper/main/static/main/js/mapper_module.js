@@ -114,8 +114,8 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
         n.radius = +n.radius
     });
 
-    function radiusFunc(node)  {
-        return node.radius * 1.5
+    function radiusFunc(node) {
+        return Math.PI * Math.pow(node.radius / 2, 2) * 0.05
     }
     //Drag functions 
     var drag = simulation => {
@@ -160,7 +160,6 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
         .merge(circles)
         .call(drag(simulation))
 
-
     // Update
     circles.append('circle')
         .attr("r", radiusFunc)
@@ -186,6 +185,7 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
 
         }).on('click', mapper_module.article_click)
 
+    // Set the title attribute
     circles
         .append("title")
         .text(d => {
@@ -193,6 +193,7 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
             else if (d.type == "article") return d.title
             else return d.name
         })
+    // Set the text attribute
     circles
         .append('text')
         .attr("text-anchor", "middle")
@@ -201,26 +202,6 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
     return circles
 }
 
-mapper_module.add_property_control = function add_property_control(nodes) {
-    let properties = null
-    for (var i = 0; i < nodes.length; i++) {
-        if (nodes[i].type == "comment") {
-            properties = Object.getOwnPropertyNames(nodes[i])
-            break;
-        }
-    }
-
-    var filtersEnter = d3.select('.dropdown-menu').selectAll('button')
-        .data(properties).enter();
-
-    filtersEnter.append('button')
-        .attr('text-overflow', 'ellipsis')
-        .attr('white-space', 'nowrap')
-        .attr('class', 'dropdown-item')
-        .attr('overflow', 'hidden')
-        .attr('width', '200px')
-        .text(d => d)
-}
 
 mapper_module.get_node_text = function get_node_text(node) {
     if (node.type == "author") return node["name"]

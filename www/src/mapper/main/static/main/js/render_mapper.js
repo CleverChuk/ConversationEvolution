@@ -45,11 +45,25 @@ mapper_module.mapper_canvas = mapper_canvas
 mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
   canvas.select('.y-axis').remove()
   canvas.select('.x-axis').remove()
+  console.log(filter)
+  // find maximum property value
+  let max = d3.max(nodes.filter(d=> d.type == "comment"), n => {
+    return +n[filter]
+  })
+  // find minimum property value
+  let min = d3.min(nodes.filter(d=> d.type == "comment"), n => {
+    return +n[filter]
+  })
 
+  // Create a color scale with minimum and maximum values
+  let color_scale = d3.scaleLinear()
+    .range([0, 1])
+    .domain([min, max])
   // Create X scale
-  var xscale = d3.scaleLinear()
-    .domain([d3.min(nodes, node => node[filter]), d3.max(nodes, node => node[filter])])
+  let xscale = d3.scaleLinear()
+    .domain([min, max])
     .range([0, mapper_module.width]);
+
   if ($('#x').is(":checked")) {
 
     // Add scales to axis
@@ -99,6 +113,16 @@ mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
 
   // render nodes
   nodes = mapper_module.update_nodes(canvas, nodes, simulation)
+
+  nodes.selectAll("circle")
+    .attr("fill", d => {
+      if (d.type == "comment") {
+        let t = color_scale(d[filter])
+        return d3.interpolateBlues(t)
+      }else{
+        return $("#author_color").val()
+      }
+    })
 
   function tick() {
     links.attr("d", linkArc);
