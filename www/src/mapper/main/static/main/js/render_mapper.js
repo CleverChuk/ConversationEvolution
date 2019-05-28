@@ -1,6 +1,6 @@
-var height = mapper_module.height
-var width = mapper_module.width
-var margin = mapper_module.margin
+height = mapper_module.height
+width = mapper_module.width
+margin = mapper_module.margin
 
 
 let msvg = d3.select(".mgraph")
@@ -45,13 +45,13 @@ mapper_module.mapper_canvas = mapper_canvas
 mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
   canvas.select('.y-axis').remove()
   canvas.select('.x-axis').remove()
-  console.log(filter)
+
   // find maximum property value
-  let max = d3.max(nodes.filter(d=> d.type == "comment"), n => {
+  let max = d3.max(nodes.filter(d => d.type == "comment"), n => {
     return +n[filter]
   })
   // find minimum property value
-  let min = d3.min(nodes.filter(d=> d.type == "comment"), n => {
+  let min = d3.min(nodes.filter(d => d.type == "comment"), n => {
     return +n[filter]
   })
 
@@ -62,7 +62,7 @@ mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
   // Create X scale
   let xscale = d3.scaleLinear()
     .domain([min, max])
-    .range([0, mapper_module.width]);
+    .range([0, width]);
 
   if ($('#x').is(":checked")) {
 
@@ -73,12 +73,12 @@ mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
     //Append group and insert axis
     canvas.append("g")
       .attr('class', 'x-axis')
-      .attr('transform', 'translate(0,' + mapper_module.height + ')')
+      .attr('transform', 'translate(0,' + height + ')')
       .call(x_axis);
   }
 
 
-  // Create X scale
+  // Create Y scale
   var yscale = d3.scaleLinear()
     .domain([d3.min(nodes, node => node[filter]), d3.max(nodes, node => node[filter])])
     .range([1000, 0]);
@@ -104,7 +104,7 @@ mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
   const simulation = d3.forceSimulation(nodes)
     .force("link", link_force)
     .force("charge", body_force)
-    .force("center", d3.forceCenter(mapper_module.width / 2, mapper_module.height / 2));
+    .force("center", d3.forceCenter(width / 2, height / 2));
   //add tick instructions: 
   simulation.on("tick", tick);
 
@@ -119,7 +119,7 @@ mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
       if (d.type == "comment") {
         let t = color_scale(d[filter])
         return d3.interpolateBlues(t)
-      }else{
+      } else {
         return $("#author_color").val()
       }
     })
@@ -252,4 +252,111 @@ mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
 
     return "translate(" + d.x + "," + d.y + ")";
   }
+}
+
+mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, filter) {
+  canvas.select('.y-axis').remove()
+  canvas.select('.x-axis').remove()
+  nodes = nodes.filter(n => n.type == "comment")
+  // find maximum property value
+  let max = d3.max(nodes.filter(d => d.type == "comment"), n => {
+    return +n[filter]
+  })
+  // find minimum property value
+  let min = d3.min(nodes.filter(d => d.type == "comment"), n => {
+    return +n[filter]
+  })
+
+
+  // find maximum time stamp
+  let max_time = d3.max(nodes.filter(d => d.type == "comment"), n => {
+    return +n["timestamp"]
+  })
+  // find minimum time stamp
+  let min_time = d3.min(nodes.filter(d => d.type == "comment"), n => {
+    return +n["timestamp"]
+  })
+
+  // Create a color scale with minimum and maximum values
+  let color_scale = d3.scaleLinear()
+    .range([0, 1])
+    .domain([min, max])
+
+  // Create X scale
+  let xscale = d3.scaleLinear()
+    .domain([min_time, max_time])
+    .range([0, width]);
+
+  // Add scales to x axis
+  var x_axis = d3.axisBottom()
+    .scale(xscale);
+
+  //Append x axis
+  canvas.append("g")
+    .attr('class', 'x-axis')
+    .attr('transform', 'translate(0,' + (height) + ')')
+    .call(x_axis)
+    .append("text")
+    .attr("class", "label")
+    .attr("x", width / 2)
+    .attr("y", height + 6)
+    .style("text-anchor", "end")
+    .text("Timestamp");
+
+  // Create Y scale
+  var yscale = d3.scaleLinear()
+    .domain([min, max])
+    .range([height, 0]);
+
+  // Add scales to axis
+  var y_axis = d3.axisLeft()
+    .scale(yscale);
+
+  //Append group and insert axis
+  canvas.append("g")
+    .attr('class', 'y-axis')
+    .call(y_axis)
+    .append("text")
+    .attr("class", "label")
+    .attr("transform", "rotate(-90)")
+    .attr("y", height / 2)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .text(filter);
+
+  // Update selection
+  const update = canvas.selectAll("rect")
+    .data(nodes)
+  update
+    .attr("x", d => xscale(+d.timestamp))
+    .attr("y", d => yscale(+d[filter]))
+
+  // Enter selection
+  const enter = update.enter()
+  enter.append("rect")
+    .attr("x", d => xscale(+d.timestamp))
+    .attr("y", d => yscale(+d[filter]))
+    .attr("height", 20)
+    .attr("width", d => d.radius)
+    .attr("fill", d => {
+      if (d.type == "comment") {
+        let t = color_scale(d[filter])
+        return d3.interpolateBlues(t)
+      } else {
+        return $("#author_color").val()
+      }
+    })
+
+  // Exit selection
+  update.exit()
+    .remove()
+
+}
+
+function handle_mouse_over(d, i){
+  console.log(d)
+}
+
+function handle_mouse_out(d, i){
+  console.log(d)
 }

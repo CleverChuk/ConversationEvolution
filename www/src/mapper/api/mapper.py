@@ -218,6 +218,14 @@ class Mapper:
         mode_var = None
         for property_key in property_keys:
             for node in cluster:
+                # Node composition of this cluster node used to highlighted nodes in the 
+                # front-end visualization
+                if cluster_node['composition']:
+                    cluster_node['composition'][node['id']] = node['id']
+
+                else:
+                    cluster_node['composition'] = {node['id']: node['id']}
+                    
                 tp = node[property_key]
                 if isinstance(tp, str):  # use mode for categorical variables
                     category_variable[tp] += 1
