@@ -115,7 +115,7 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
     });
 
     function radiusFunc(node) {
-        return Math.PI * Math.pow(node.radius / 2, 2) * 0.05
+        return Math.PI * Math.pow(node.radius, 2)
     }
     //Drag functions 
     var drag = simulation => {
@@ -147,7 +147,7 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
     //Add circles to each node
     let layer = canvas.select('.node-layer')
     // Add a class and a unique id for proper update
-    let circles = layer.selectAll('.node').data(nodes, (d,i) => i)
+    let circles = layer.selectAll('.node').data(nodes, d => d.id)
 
     // Exit
     circles.exit()
@@ -163,7 +163,7 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
     // Update
     circles.append('circle')
         .attr("r", radiusFunc)
-        .attr("r", d => d.id)
+        .attr("id", d => d.id)
         .attr("fill", d => {
             if (d.type == "sentiment") {
                 return sentiment_color[d.name]

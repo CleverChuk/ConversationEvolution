@@ -9,7 +9,6 @@ mapper_module.load_main = function load_main() {
       const nodes = json.nodes,
         links = json.links
       mapper_module.render(nodes, links, mapper_module.main_canvas)
-      console.log(nodes)
     },
     error: function (xhr, errormsg, error) {
       console.log(error)
@@ -27,8 +26,8 @@ mapper_module.load_mapper = function load_mapper(url = mapper_module.mapperEndpo
 
       const nodes = json.nodes,
         links = json.links
-      // mapper_module.render_mapper(nodes, links, mapper_module.mapper_canvas, filter)
-      mapper_module.render_mapper_as_scatter_plot(nodes, mapper_module.mapper_canvas, filter)
+      mapper_module.render_mapper(nodes, links, mapper_module.mapper_canvas, filter)
+      // mapper_module.render_mapper_as_scatter_plot(nodes, mapper_module.mapper_canvas, filter)
     },
     error: function (xhr, errormsg, error) {
       console.log(error)

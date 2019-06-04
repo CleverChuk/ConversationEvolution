@@ -18,4 +18,7 @@ urlpatterns = [
 
     path('mapper', views.mapper_graph, name='mapper_graph'),
     path('subreddit', views.subreddit_graph, name='subreddit'),
+    
+    # Tree endpoints
+    path("tree", views.tree, name="tree"),
 ]

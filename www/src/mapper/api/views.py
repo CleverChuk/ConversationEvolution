@@ -127,7 +127,7 @@ def nodes_in_article(request, **param):
         request.session[ARTICLE_ID] = param["id"]
         # NOTE: Saving data in session requires that Egde class be JOSN serializable by
         # django serializer
-        data = query.get_nodes_in_article(param["id"])
+        data = query.get_comments_in_article(param["id"])
         mapper_edges = list(map(Edge.cast, data))
         data = api.D3helper.transform(*data)
 
@@ -139,7 +139,7 @@ def mapper_graph(request):
     if(request.method == "GET"):
         # grab the article id from the session object and query db
         if mapper_edges == None or not len(mapper_edges):
-            data = query.get_nodes_in_article(request.session[ARTICLE_ID])
+            data = query.get_comments_in_article(request.session[ARTICLE_ID])
             mapper_edges = list(map(Edge.cast, data))
         
         if request.GET:
@@ -176,10 +176,18 @@ def mapper_graph(request):
 
         print([interval, epsilon, mode])
         return JsonResponse(data)
+    
+def tree(request):
+    if(request.method == "GET"):
+        article_id = request.GET["id"]
+        data = query.get_comments_in_article(article_id)
+        edges =  list(map(Edge.cast, data))
+        hierarchy = TreeNode(article_id, edges,found = defaultdict(int))
 
+        return JsonResponse(hierarchy)
+        
+        
 # Helper functions
-
-
 def get_nodes(label):
     data = query.get_nodes_by_label(label)
     context = {"nodes": data}

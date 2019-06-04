@@ -57,7 +57,8 @@ class Crawler(RedditBot):
         self.article_nodes = []
         self.sentiment_nodes = []
         self.author_nodes = []
-        self.subreddit_node = Node({'id':subreddit,"type":"subreddit","name":subreddit})
+        self.subreddit_node = Node(
+            {'id': subreddit, "type": "subreddit", "name": subreddit})
 
     def is_removed(self, comment):
         """
@@ -92,8 +93,11 @@ class Crawler(RedditBot):
             :rtype Graph
         """
         self.ids = ids  # save the ids for future queries
-        sentiment = {"positive": SentimentNode(self.subreddit_tag, "positive"), "negative": SentimentNode(self.subreddit_tag,
-                                                                                                          "negative"), "neutral": SentimentNode(self.subreddit_tag, "neutral")}
+        sentiment = {
+            "positive": SentimentNode(self.subreddit_tag, "positive"),
+            "negative": SentimentNode(self.subreddit_tag, "negative"),
+            "neutral": SentimentNode(self.subreddit_tag, "neutral")
+        }
 
         # add the sentiment nodes to the node list
         for _, v in sentiment.items():
@@ -105,8 +109,9 @@ class Crawler(RedditBot):
                 submission = self.get_submission(id)
                 submission.comments.replace_more(limit=None)
                 article_node = ArticleNode(self.subreddit_tag, submission)
-                
-                self.article_subreddit_edges.append((article_node, self.subreddit_node))
+
+                self.article_subreddit_edges.append(
+                    (article_node, self.subreddit_node))
                 self.nodes.append((article_node, article_node))
                 self.article_nodes.append(article_node)
 
@@ -116,12 +121,14 @@ class Crawler(RedditBot):
                         self.subreddit_tag, article_node['id'], comment, CommentAnalyzer(comment))
                     author_node = AuthorNode(
                         self.subreddit_tag, comment_node['author'])
+
                     self.article_comment_edges.append(
                         (comment_node, article_node, {"id": Crawler.relationship_id, "type": "_IN"}))
 
                     Crawler.relationship_id += 1
                     self.author_comment_edges.append(
                         (author_node, comment_node, {"id": Crawler.relationship_id, "type": "WROTE"}))
+
                     self.nodes.append((author_node, author_node))
                     self.nodes.append((comment_node, comment_node))
 
@@ -136,7 +143,7 @@ class Crawler(RedditBot):
 
         # populate sentiment/comment  and comment/comment edge list
         for p_comment, *_ in self.article_comment_edges:
-            self.sentiment_comment_edges.append(( p_comment, sentiment[p_comment['sentiment']],
+            self.sentiment_comment_edges.append((p_comment, sentiment[p_comment['sentiment']],
                                                  {"id": Crawler.relationship_id, "type": "_IS", "score": p_comment['sentiment_score']}))
 
             Crawler.relationship_id += 1
@@ -148,8 +155,6 @@ class Crawler(RedditBot):
                     self.comment_comment_edges.append((c_comment, p_comment, {
                                                       "id": Crawler.relationship_id, "type": "REPLY_TO", "similarity": c_comment['similarity']}))
                     Crawler.relationship_id += 1
-
-
 
     def load_graph(self, filepath, type):
         """

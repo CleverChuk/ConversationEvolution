@@ -52,6 +52,9 @@ class DatabaseLayer:
 
     def get_nodes_in_article(self, id):
         raise NotImplementedError
+    
+    def get_comments_in_article(self, id):
+        raise NotImplementedError
 
     # Write api
     def insert_node(self, node):
@@ -143,6 +146,12 @@ class Neo4jLayer(DatabaseLayer):
         query = comment_links + author_links 
         data = list(self.graph.run(query).data())
         return [node["r"] for node in data]
+    
+    def get_comments_in_article(self, id):
+        comment_links = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(id)           
+        query = comment_links
+        data = list(self.graph.run(query).data())
+        return [node["r"] for node in data]
 
     def get_subreddit_graph(self,subreddit = None):
         data = list(self.graph.run( "MATCH (n1)-[r:_IN_]->(n2) RETURN r").data())
@@ -200,6 +209,9 @@ class Query:
     def get_nodes_in_article(self, id):
         return self.db_layer.get_nodes_in_article(id)
 
+    def get_comments_in_article(self, id):
+        return self.db_layer.get_comments_in_article(id)
+    
     def get_subreddit_graph(self,subreddit = None):
         return self.db_layer.get_subreddit_graph(subreddit)
 

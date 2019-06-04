@@ -1,5 +1,5 @@
 height = mapper_module.height
-width = mapper_module.width
+width = mapper_module.width 
 margin = mapper_module.margin
 
 
@@ -123,6 +123,8 @@ mapper_module.render_mapper = function render(nodes, links, canvas, filter) {
         return $("#author_color").val()
       }
     })
+    .on("mouseover", handle_mouse_over)
+    .on("mouseout", handle_mouse_out);
 
   function tick() {
     links.attr("d", linkArc);
@@ -267,24 +269,22 @@ mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, fil
     return +n[filter]
   })
 
+  // Convert timestamp to date objects
+  nodes.forEach(element => {
+    let d = new Date(1970,0,1)
+    d.setSeconds(+element['timestamp'])
+    element['timestamp'] = d
+  });
 
-  // find maximum time stamp
-  let max_time = d3.max(nodes.filter(d => d.type == "comment"), n => {
-    return +n["timestamp"]
-  })
-  // find minimum time stamp
-  let min_time = d3.min(nodes.filter(d => d.type == "comment"), n => {
-    return +n["timestamp"]
-  })
-
+  
   // Create a color scale with minimum and maximum values
   let color_scale = d3.scaleLinear()
     .range([0, 1])
     .domain([min, max])
-
+ 
   // Create X scale
-  let xscale = d3.scaleLinear()
-    .domain([min_time, max_time])
+  let xscale = d3.scaleTime()
+    .domain(d3.extent(nodes, d => d.timestamp))
     .range([0, width]);
 
   // Add scales to x axis
@@ -294,19 +294,21 @@ mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, fil
   //Append x axis
   canvas.append("g")
     .attr('class', 'x-axis')
-    .attr('transform', 'translate(0,' + (height) + ')')
+    .attr('transform', 'translate(0,' + (height+10) + ')')
     .call(x_axis)
+  canvas
     .append("text")
     .attr("class", "label")
     .attr("x", width / 2)
-    .attr("y", height + 6)
+    .attr("y", height)
+    .attr("dy","5em")
     .style("text-anchor", "end")
-    .text("Timestamp");
+    .text("Time");
 
   // Create Y scale
   var yscale = d3.scaleLinear()
     .domain([min, max])
-    .range([height, 0]);
+    .range([height, min*0.5]);
 
   // Add scales to axis
   var y_axis = d3.axisLeft()
@@ -316,11 +318,13 @@ mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, fil
   canvas.append("g")
     .attr('class', 'y-axis')
     .call(y_axis)
+  canvas
     .append("text")
     .attr("class", "label")
     .attr("transform", "rotate(-90)")
     .attr("y", height / 2)
-    .attr("dy", ".71em")
+    .attr("dx", "-10em")
+    .attr("dy", "-18em")
     .style("text-anchor", "end")
     .text(filter);
 
@@ -346,6 +350,8 @@ mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, fil
         return $("#author_color").val()
       }
     })
+    .on("mouseover", handle_mouse_over)
+    .on("mouseout", handle_mouse_out);
 
   // Exit selection
   update.exit()
@@ -353,10 +359,38 @@ mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, fil
 
 }
 
-function handle_mouse_over(d, i){
-  console.log(d)
+function handle_mouse_over(d, i) {
+  let composition = d.composition
+  let nodes = d3.select(".graph")
+    .select("svg")
+    .select(".node-layer")
+    .selectAll(".node")
+
+  d3.select(".graph")
+    .select("svg")
+    .select(".edge-layer")
+    .attr('opacity', 0)
+
+  nodes.attr("opacity", function (data) {
+    if (typeof (composition[data.id]) == "undefined")
+      return 0
+  })
 }
 
-function handle_mouse_out(d, i){
-  console.log(d)
+function handle_mouse_out(d, i) {
+  let composition = d.composition
+  let nodes = d3.select(".graph")
+    .select("svg")
+    .select(".node-layer")
+    .selectAll(".node")
+
+  d3.select(".graph")
+    .select("svg")
+    .select(".edge-layer")
+    .attr('opacity', 1)
+
+  nodes.attr("opacity", function (data) {
+    if (typeof (composition[data.id]) == "undefined")
+      return 1
+  })
 }

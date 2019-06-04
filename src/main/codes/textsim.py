@@ -37,7 +37,10 @@ def cosine_sim(doc_0, doc_1):
         :rtype float :range [0,1]
     """
     vectorizer = TfidfVectorizer(tokenizer=normalize, stop_words='english')
-    tfidf = vectorizer.fit_transform([doc_0, doc_1])
-    return ((tfidf * tfidf.T).A)[0,1]
+    try:
+        tfidf = vectorizer.fit_transform([doc_0, doc_1])
+        return ((tfidf * tfidf.T).A)[0,1]
+    except Exception as e:
+        return 0
 
 

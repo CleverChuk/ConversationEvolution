@@ -25,6 +25,7 @@ class Edge:
         self.start_node = src
         self.end_node = dest
         self.properties = properties
+        self._index = -1
 
     @classmethod
     def cast(cls, py2neo_rel):
@@ -45,6 +46,9 @@ class Edge:
 
     def __repr__(self):
         return self.start_node['type'] + "->"+self.end_node['type']
+
+
+        
 
 
 class Mapper:
@@ -85,7 +89,7 @@ class Mapper:
         # create cluster node
         for name, cluster in clusters.items():
             new_nodes[name] = self.cluster_nodes(name, cluster, self.attr_list(cluster[0]))
-            new_nodes[name]['radius'] += len(cluster)*5
+            new_nodes[name]['radius'] += len(cluster) // 2
 
         # connect clusters base on node overlap
         names = list(clusters.keys())
@@ -318,6 +322,7 @@ class EdgeMapper(Mapper):
 
 
         self.filtered_data = list(filter(filter_out, edges))
+        # Sort the edges based on the property of interest
         self.filtered_data = sorted(self.filtered_data, key = lambda link : self.edge_mean(link, property_key))
         
         super().__init__(self.filtered_data, epsilon, property_key, num_interval)
@@ -557,3 +562,7 @@ class NodeMapper(Mapper):
         for i in indices:
             clusters.pop(i, "d")
         return clusters
+
+class TreeMapper:
+    pass
+    
