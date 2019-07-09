@@ -3,12 +3,12 @@
 #          It is important to know that the mapper functions
 #          assumes that the nodes given to it are of the same Type.
 
-from collections import defaultdict, OrderedDict
-from .models import Node
-import random
-from math import ceil, floor
 import statistics as stats
-
+from collections import defaultdict, OrderedDict, deque
+from math import floor
+from libs.codes.analyzers import SentimentAnalyzer as sa
+from .models import Node
+from uuid import uuid4
 NEW_ID = 0
 ALPHA = 97
 """
@@ -45,10 +45,7 @@ class Edge:
         return 3
 
     def __repr__(self):
-        return self.start_node['type'] + "->"+self.end_node['type']
-
-
-        
+        return self.start_node['type'] + "->" + self.end_node['type']
 
 
 class Mapper:
@@ -61,16 +58,15 @@ class Mapper:
         self.num_interval = num_interval
         # For nodes without property_key as field
         self.filtered_in_data = []
-        self._average = False # use to determine how to aggregate cluster nodes- mean or median
+        self._average = False  # use to determine how to aggregate cluster nodes- mean or median
 
     @property
     def average(self):
         return self._average
-    
+
     @average.setter
     def average(self, value):
         self._average = value
-
 
     def graph_cluster(self, clusters):
         """
@@ -88,7 +84,8 @@ class Mapper:
         edges = []
         # create cluster node
         for name, cluster in clusters.items():
-            new_nodes[name] = self.cluster_nodes(name, cluster, self.attr_list(cluster[0]))
+            new_nodes[name] = self.create_cluster_node(
+                name, cluster, self.attr_list(cluster[0]))
             new_nodes[name]['radius'] += len(cluster) // 2
 
         # connect clusters base on node overlap
@@ -98,7 +95,7 @@ class Mapper:
 
         for i in range(n):
             cluster = set(clusters[i])
-            for j in range(i+1, n):
+            for j in range(i + 1, n):
                 nextCluster = set(clusters[j])
                 # skip this edge if the Jaccard index is less than 0.1
                 j_index = round(self.jeccard_index(cluster, nextCluster), 2)
@@ -119,8 +116,8 @@ class Mapper:
             if link[0]['type'] == 'author':
                 authors.append(link[0])
 
-        #     elif link[0]['type'] == 'sentiment':
-        #         sentiments.append(link[0])
+            #     elif link[0]['type'] == 'sentiment':
+            #         sentiments.append(link[0])
 
             if link[1]['type'] == 'author':
                 authors.append(link[1])
@@ -190,7 +187,7 @@ class Mapper:
         """
         return list(obj.keys())
 
-    def cluster_nodes(self, name, cluster, property_keys):
+    def create_cluster_node(self, name, cluster, property_keys):
         """
             calculates the average of all the properties in property_key for
             all the clusters in cluster
@@ -215,21 +212,22 @@ class Mapper:
             raise Exception("cluster and property_keys must be lists")
 
         numerical_variables = []
-        cluster_node = Node({'subreddit': cluster[0]['subreddit'], 'name': name})
+        cluster_node = Node(
+            {'subreddit': cluster[0]['subreddit'], 'name': name})
         category_variable = defaultdict(int)
 
         mode_value = 0
         mode_var = None
         for property_key in property_keys:
             for node in cluster:
-                # Node composition of this cluster node used to highlighted nodes in the 
+                # Node composition of this cluster node used to highlighted nodes in the
                 # front-end visualization
                 if cluster_node['composition']:
                     cluster_node['composition'][node['id']] = node['id']
 
                 else:
                     cluster_node['composition'] = {node['id']: node['id']}
-                    
+
                 tp = node[property_key]
                 if isinstance(tp, str):  # use mode for categorical variables
                     category_variable[tp] += 1
@@ -248,11 +246,13 @@ class Mapper:
 
             if len(numerical_variables) != 0:  # use median for numerical variables
                 if self._average:
-                    cluster_node[property_key] = float(round(stats.mean(numerical_variables), 4))
+                    cluster_node[property_key] = float(
+                        round(stats.mean(numerical_variables), 4))
                     numerical_variables.clear()
                 else:
                     numerical_variables = sorted(numerical_variables)
-                    cluster_node[property_key] = float(round(stats.median(numerical_variables), 4))
+                    cluster_node[property_key] = float(
+                        round(stats.median(numerical_variables), 4))
                     numerical_variables.clear()
 
             else:
@@ -308,23 +308,23 @@ class Mapper:
         if isinstance(p1, str) or isinstance(p2, str):
             raise TypeError("property_key value must be numeric")
 
-        return round((p1+p2)/2, 2)
+        return round((p1 + p2) / 2, 2)
 
 
 class EdgeMapper(Mapper):
-    def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):        
-        
+    def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
+
         def filter_out(edge):
-            return  edge.start_node['type'] == 'comment' and edge.end_node['type'] == 'comment'
+            return edge.start_node['type'] == 'comment' and edge.end_node['type'] == 'comment'
 
         def filter_in(edge):
-            return  edge.start_node['type'] != 'comment' or edge.end_node['type'] != 'comment'
-
+            return edge.start_node['type'] != 'comment' or edge.end_node['type'] != 'comment'
 
         self.filtered_data = list(filter(filter_out, edges))
         # Sort the edges based on the property of interest
-        self.filtered_data = sorted(self.filtered_data, key = lambda link : self.edge_mean(link, property_key))
-        
+        self.filtered_data = sorted(
+            self.filtered_data, key=lambda link: self.edge_mean(link, property_key))
+
         super().__init__(self.filtered_data, epsilon, property_key, num_interval)
         self.filtered_in_data = list(filter(filter_in, edges))
 
@@ -361,24 +361,26 @@ class EdgeMapper(Mapper):
         """
         n = len(self.data)
         intervals = []
-        incr_size = floor(n/self.num_interval)
+        incr_size = floor(n / self.num_interval)
 
         if incr_size == 0:
             incr_size = 1
 
         # create the intervals using property value to mark the range bounds
         for i in range(0, n, incr_size):
-            intervals.append(self.data[i:i+incr_size])
+            intervals.append(self.data[i:i + incr_size])
 
         groups = defaultdict(list)  # map to hold groups
         length = len(intervals)
-        for i in range(length-1):
-            next = i+1
+        for i in range(length - 1):
+            next = i + 1
 
             # adjust the overlap range by epsilon
-            minimum = self.edge_mean(intervals[i][0], self.property_key) - self.epsilon
-            maximum = self.edge_mean(intervals[i][-1], self.property_key) + self.epsilon
-            
+            minimum = self.edge_mean(
+                intervals[i][0], self.property_key) - self.epsilon
+            maximum = self.edge_mean(
+                intervals[i][-1], self.property_key) + self.epsilon
+
             # create the overlap between interval i and i+1
             for e in intervals[next]:
                 if self.edge_mean(e, self.property_key) <= maximum and e not in intervals[i]:
@@ -387,10 +389,12 @@ class EdgeMapper(Mapper):
             groups[(minimum, maximum)] = intervals[i]
 
             # make sure to include the last interval in the group map
-            if(next == length-1):
-                minimum = self.edge_mean(intervals[next][0], self.property_key) - self.epsilon
-                maximum = self.edge_mean(intervals[next][-1], self.property_key) + self.epsilon
-                
+            if (next == length - 1):
+                minimum = self.edge_mean(
+                    intervals[next][0], self.property_key) - self.epsilon
+                maximum = self.edge_mean(
+                    intervals[next][-1], self.property_key) + self.epsilon
+
                 for e in intervals[i]:
                     if self.edge_mean(e, self.property_key) <= maximum and e not in intervals[next]:
                         intervals[next].append(e)
@@ -434,7 +438,7 @@ class EdgeMapper(Mapper):
         # find the index duplicate clusters
         for i in temp:
             s1 = set(clusters[i])
-            for j in temp[i+1:]:
+            for j in temp[i + 1:]:
                 s2 = set(clusters[j])
                 if s2 == s1:
                     indices.append(j)
@@ -444,6 +448,7 @@ class EdgeMapper(Mapper):
             clusters.pop(i, "d")
 
         return clusters
+
 
 class NodeMapper(Mapper):
     def __init__(self, edges, data, epsilon=0.5, property_key="reading_level", num_interval=3):
@@ -461,7 +466,7 @@ class NodeMapper(Mapper):
 
     def create_intervals(self):
         """
-            splits the edges into intervals based on property_key
+            splits the nodes into intervals based on property_key
 
             @param epsilon
                 :type float
@@ -482,20 +487,20 @@ class NodeMapper(Mapper):
             :rtype: dict 
         """
         n = len(self.data)
-        incr_size = floor(n/self.num_interval)
+        incr_size = floor(n / self.num_interval)
         if incr_size == 0:
             incr_size = 1
 
         intervals = []
         # create the intervals using property_key value to mark the range bounds
         for i in range(0, n, incr_size):
-            n = self.data[i:i+incr_size]
+            n = self.data[i:i + incr_size]
             intervals.append(n)
 
         groups = defaultdict(list)  # map to hold groups
         length = len(intervals)
 
-        for i in range(length-1):
+        for i in range(length - 1):
             next = i + 1
             minimum = intervals[i][0][self.property_key] - self.epsilon
             maximum = intervals[i][-1][self.property_key] + self.epsilon
@@ -508,7 +513,7 @@ class NodeMapper(Mapper):
             groups[(minimum, maximum)] = intervals[i]
 
             # make sure to include the last interval in the group map
-            if(next == length-1):
+            if next == length - 1:
                 minimum = intervals[next][0][self.property_key] - self.epsilon
                 maximum = intervals[next][-1][self.property_key] + self.epsilon
 
@@ -553,7 +558,7 @@ class NodeMapper(Mapper):
         # find the index duplicate clusters
         for i in temp:
             s1 = set(clusters[i])
-            for j in temp[i+1:]:
+            for j in temp[i + 1:]:
                 s2 = set(clusters[j])
                 if s2 == s1:
                     indices.append(j)
@@ -563,6 +568,67 @@ class NodeMapper(Mapper):
             clusters.pop(i, "d")
         return clusters
 
+
 class TreeMapper:
-    pass
-    
+    def __init__(self, root):
+        """
+            Initializes the TreeMapper object with tree root and filter function
+        :param root:
+        :param filter_function: Must accept a dictionary object and return a value.
+        """
+        self.root = root
+        self.queue = deque()
+        self._cluster = []
+
+    def get_cluster(self):
+        return self._cluster
+
+    def _map(self, parent_id, children, filter_function):
+        """
+            Map the children of a node using the filter function.
+            Cluster them based on the mapped value
+        :param parent_id:
+        :param children:
+        :return:
+        """
+
+        cluster = defaultdict(list)
+
+        # Use the filter function to calculate a mapping for the children
+        for child in children:
+            value = filter_function(child)
+            cluster[value].append(child)
+
+        # Cluster the nodes based on their filter function value
+        for value, array in cluster.items():
+            node = Node()
+            node["composition"] = []
+            node["parent_id"] = parent_id
+            node["value"] = value
+            node["type"] = "mapper"
+            node["id"] = uuid4()
+
+            for child in array:
+                node["composition"].append(child["id"])
+
+            self._cluster.append(node)
+
+    def bfs(self, filter_function=lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
+        """
+            Use BFS to visit all nodes in the tree in level order traversal
+        :return:
+        """
+        self.queue.append(self.root)
+
+        while self.queue:
+            root = self.queue.popleft()
+            if root["children"] is None:
+                continue
+            # can map level by level by storing children list then mapping the whole level
+            # instead of doing children mapping
+            self._map(root["id"], root["children"], filter_function)
+            for child in root["children"]:
+                self.queue.append(child)
+
+    # properties
+    cluster = property(get_cluster)

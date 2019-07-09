@@ -1,5 +1,5 @@
 height = mapper_module.height
-width = mapper_module.width 
+width = mapper_module.width
 margin = mapper_module.margin
 
 
@@ -28,16 +28,16 @@ mapper_canvas.append('g')
 mapper_canvas.append('g')
   .attr('class', 'node-layer')
 
-mapper_canvas.append("defs").append("marker")
-  .attr("id", "arrow")
-  .attr("viewBox", "0 -5 10 10")
-  .attr('refX', 8)
-  .attr('refY', 0)
-  .attr("markerWidth", 6)
-  .attr("markerHeight", 6)
-  .attr("orient", "auto")
-  .append("path")
-  .attr("d", "M0,-5L10,0L0,5");
+// mapper_canvas.append("defs").append("marker")
+//   .attr("id", "arrow")
+//   .attr("viewBox", "0 -5 10 10")
+//   .attr('refX', 8)
+//   .attr('refY', 0)
+//   .attr("markerWidth", 6)
+//   .attr("markerHeight", 6)
+//   .attr("orient", "auto")
+//   .append("path")
+//   .attr("d", "M0,-5L10,0L0,5");
 
 mapper_module.mapper_canvas = mapper_canvas
 
@@ -271,17 +271,17 @@ mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, fil
 
   // Convert timestamp to date objects
   nodes.forEach(element => {
-    let d = new Date(1970,0,1)
+    let d = new Date(1970, 0, 1)
     d.setSeconds(+element['timestamp'])
     element['timestamp'] = d
   });
 
-  
+
   // Create a color scale with minimum and maximum values
   let color_scale = d3.scaleLinear()
     .range([0, 1])
     .domain([min, max])
- 
+
   // Create X scale
   let xscale = d3.scaleTime()
     .domain(d3.extent(nodes, d => d.timestamp))
@@ -294,21 +294,21 @@ mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, fil
   //Append x axis
   canvas.append("g")
     .attr('class', 'x-axis')
-    .attr('transform', 'translate(0,' + (height+10) + ')')
+    .attr('transform', 'translate(0,' + (height + 10) + ')')
     .call(x_axis)
   canvas
     .append("text")
     .attr("class", "label")
     .attr("x", width / 2)
     .attr("y", height)
-    .attr("dy","5em")
+    .attr("dy", "5em")
     .style("text-anchor", "end")
     .text("Time");
 
   // Create Y scale
   var yscale = d3.scaleLinear()
     .domain([min, max])
-    .range([height, min*0.5]);
+    .range([height, min * 0.5]);
 
   // Add scales to axis
   var y_axis = d3.axisLeft()
@@ -357,6 +357,94 @@ mapper_module.render_mapper_as_scatter_plot = function render(nodes, canvas, fil
   update.exit()
     .remove()
 
+}
+
+mapper_module.render_tree = function render(root, canvas, filter) {
+  let get_tree = function (data) {
+    const root = d3.hierarchy(data)
+      .sort((a, b) => (a.height - b.height) || a.data.type.localeCompare(b.data.type));
+    root.dx = 10;
+    root.dy = width / (root.height + 1);
+    return d3.cluster().nodeSize([root.dx, root.dy])(root);
+  }
+
+  // Create hierarchy
+  root = get_tree(root)
+  console.log("Tree", root)
+  // find maximum property value
+  let maximum = -Infinity
+  // find minimum property value
+  let minimum = Infinity
+  // Calculate bounding box dimensions
+  let x0 = Infinity;
+  let x1 = -x0;
+
+  let colors = {
+    "positive": "green",
+    "negative": "red",
+    "neutral": "blue"
+  }
+
+  root.each(d => {
+    if (d.x > x1) x1 = d.x;
+    if (d.x < x0) x0 = d.x;
+
+    if (maximum < d.data.value) maximum = d.data.value
+    if (minimum > d.data.value) minimum = d.data.value
+  });
+  // Create a color scale with minimum and maximum values
+  let color_scale = d3.scaleLinear()
+    .range([0, 1])
+    .domain([minimum, maximum])
+
+  canvas.attr("viewBox", [0, 0, width, x1 - x0 + root.dx * 2]);
+  canvas.attr("transform", `translate(${root.dy / 3},${root.dx - x0})`);
+
+  // Bind data to the UI
+  let node_layer = canvas.select(".node-layer")
+  let node = node_layer.attr("stroke-linejoin", "round")
+    .attr("stroke-width", 3)
+    .selectAll("g")
+    .data(root.descendants().reverse())
+    .join("g")
+    .attr("transform", d => `translate(${d.y},${d.x})`);
+
+  node.append("circle")
+    .attr("fill", d => {
+      if (typeof (d.data.value) == "string")
+        return colors[d.data.value]
+
+      let t = color_scale(d.data[filter])
+      return d3.interpolateBlues(t)
+    })
+    .attr("r", 5);
+
+  node.append("title")
+    .attr("dy", "0.31em")
+    .attr("x", d => d.children ? -6 : 6)
+    .text(d => {
+      if (d.data.body) return d.data.body
+      return d.data.type
+    })
+    .filter(d => d.children)
+    .attr("text-anchor", "end")
+    .clone(true).lower()
+    .attr("stroke", "white");
+
+  let edge_layer = canvas.select(".edge-layer")
+  edge_layer.attr("fill", "none")
+    .attr("stroke", "#555")
+    .attr("stroke-opacity", 0.4)
+    .attr("stroke-width", 1.5)
+    .selectAll("path")
+    .data(root.links())
+    .join("path")
+    .attr("d", d => `
+      M${d.target.y},${d.target.x}
+      C${d.source.y + root.dy / 2},${d.target.x}
+       ${d.source.y + root.dy / 2},${d.source.x}
+       ${d.source.y},${d.source.x}
+    `);
 }
 
 function handle_mouse_over(d, i) {

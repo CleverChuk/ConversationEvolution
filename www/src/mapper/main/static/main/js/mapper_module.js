@@ -203,7 +203,6 @@ mapper_module.update_nodes = function update_nodes(canvas, nodes, simulation) {
     return circles
 }
 
-
 mapper_module.get_node_text = function get_node_text(node) {
     if (node.type == "author") return node["name"]
     else if (node.type == "sentiment") return node["name"]

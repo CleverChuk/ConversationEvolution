@@ -148,8 +148,7 @@ class Neo4jLayer(DatabaseLayer):
         return [node["r"] for node in data]
     
     def get_comments_in_article(self, id):
-        comment_links = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(id)           
-        query = comment_links
+        query = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(id)           
         data = list(self.graph.run(query).data())
         return [node["r"] for node in data]
 

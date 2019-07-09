@@ -1,9 +1,6 @@
-import matplotlib.pyplot as plt
-from json_models import CustomEncoder
-from reddit_crawler import (Crawler)
-import networkx as nx
-import graph_writers as gws
 import db_loaders as dbl
+import graph_writers as gws
+from reddit_crawler import (Crawler)
 
 if __name__ == "__main__":
     gw = gws.Neo4jGrapher()

@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     path('all', views.all, name='all'),
     path('rels/<str:type>', views.relationship, name='rels'),
-    path('nodes', views.nodes, name='nodes'),
+    path('nodes', views.get_nodes, name='nodes'),
     path('nodes/<str:label>', views.node_label, name='node_label'),    
     path('nodes/article/<str:id>', views.nodes_in_article, name='nodes_in_article'),
 
@@ -20,5 +20,5 @@ urlpatterns = [
     path('subreddit', views.subreddit_graph, name='subreddit'),
     
     # Tree endpoints
-    path("tree", views.tree, name="tree"),
+    path("tree/<str:id>", views.tree_map, name="tree"),
 ]

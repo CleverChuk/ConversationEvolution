@@ -2,8 +2,9 @@
 # Purpose: Functions use to calculate new feature for graph nodes
 
 import nltk
-from textsim import remove_punctuation_map
+from libs.codes.textsim import remove_punctuation_map
 from statistics import mean
+
 
 class SentimentAnalyzer:
     def __init__(self):
@@ -23,9 +24,9 @@ class SentimentAnalyzer:
         result = nltk.sent_tokenize(text)
         result = result if len(result) > 0 else [text]
         return result
-   
+
     @classmethod
-    def convert_score(cls,score):
+    def convert_score(cls, score):
         """
             convert the score to a word
             Positive for scores >= 0.05
@@ -49,7 +50,7 @@ class SentimentAnalyzer:
             return "neutral"
 
     @classmethod
-    def get_sentiment(cls,comment):
+    def get_sentiment(cls, comment):
         """
             calculates the mean score for all the sentences in 
             a comment.
@@ -62,7 +63,7 @@ class SentimentAnalyzer:
         """
         sentences = None
 
-        if isinstance(comment,str):
+        if isinstance(comment, str):
             sentences = SentimentAnalyzer.find_sentence(comment)
         else:
             sentences = SentimentAnalyzer.find_sentence(comment.body)
@@ -71,7 +72,7 @@ class SentimentAnalyzer:
         return round(mean(scores), 4) if len(scores) > 0 else None
 
     @classmethod
-    def sentiment(cls,sentence):
+    def sentiment(cls, sentence):
         """
             calculates the sentiment of the given sentence
             use the compound value returned by polarity_scores
@@ -95,6 +96,7 @@ class SentimentAnalyzer:
         score = nltk_sentiment.polarity_scores(sentence)['compound']
 
         return score
+
 
 class CommentAnalyzer:
     """
@@ -150,18 +152,18 @@ class CommentAnalyzer:
         startCounting = False
         if self._quoted_text_per_length == None:
             for c in self._body:
-                if(startCounting):
+                if (startCounting):
                     count += 1
 
                 if c == '\"':
                     stack.append(c)
                     startCounting = True
 
-                if(len(stack) == 2):
+                if (len(stack) == 2):
                     startCounting = False
                     del stack[:]
 
-            self._quoted_text_per_length = float(round(count/self._length, 4))
+            self._quoted_text_per_length = float(round(count / self._length, 4))
 
         return self._quoted_text_per_length
 
@@ -182,8 +184,8 @@ class CommentAnalyzer:
 
             for token in tokens:
                 tokenDict[token] += len(token)
-            
-            self._average_word_length = float(round(mean(tokenDict.values()),3)) if len(tokenDict) > 0 else 0
+
+            self._average_word_length = float(round(mean(tokenDict.values()), 3)) if len(tokenDict) > 0 else 0
 
         return self._average_word_length
 
@@ -195,7 +197,6 @@ class CommentAnalyzer:
         """
         if self._reading_level == None:
             from textstat.textstat import textstat
-            self._reading_level = round(float(textstat.flesch_reading_ease(self._body)),4)
+            self._reading_level = round(float(textstat.flesch_reading_ease(self._body)), 4)
 
         return self._reading_level
-

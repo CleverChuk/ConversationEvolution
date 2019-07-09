@@ -35,3 +35,19 @@ mapper_module.load_mapper = function load_mapper(url = mapper_module.mapperEndpo
   });
 
 }
+
+mapper_module.load_tree_map = function load_tree_map(url = mapper_module.mapperEndpoint, filter) {
+
+  // Make asynchornous query
+  $.ajax({
+    url: url,
+    type: 'GET',
+    success: function (json) {
+      mapper_module.render_tree(json, mapper_module.mapper_canvas, filter)
+    },
+    error: function (xhr, errormsg, error) {
+      console.log(error)
+    }
+  });
+
+}

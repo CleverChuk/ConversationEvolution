@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -33,29 +34,28 @@ class Node(dict):
     def __str__(self):
         return "{0}".format(self['type'])
 
-from collections import defaultdict
-class TreeNode(Node):
-    def __init__(self, id, edges=[], found = defaultdict(int)):
-        self.found = found
-        self["id"] = id
-        self["children"] = [
-            TreeNode(node["id"], edges, found)
-            for node in self.nodes(edges)            
-            if node != None and node["parent_id"] == id
-        ]
 
-    def nodes(self, edges):        
-        for edge in edges:
-            start = edge.start_node
-            end = edge.end_node
-            print(self.found)
-            if not self.found[start["id"]]:
-                if start["type"] == "comment":
-                    self.found[start["id"]] = 1
-                    yield start
-                    
-            if not self.found[end["id"]]:  
-                if end["type"] == "comment":
-                    self.found[end["id"]] = 1
-                    yield end
-                
+class TreeNode(Node):
+    def __init__(self, id, type="article", *args, **kwargs):
+        super(TreeNode, self).__init__(*args, **kwargs)
+        self["id"] = id
+        self["type"] = type
+        self["children"] = []
+
+    def add_child(self, child):
+        self["children"].append(child)
+
+    @classmethod
+    def make_tree(cls, root, nodes, visited=[]):
+        for child in nodes:
+            if child["parent_id"] == root["id"] or (root["composition"] is not None and child["parent_id"] in root["composition"]):
+                if "children" in root:
+                    root["children"].append(child)
+                else:
+                    root["children"] = [child]
+
+                if child not in visited:
+                    visited.append(child)
+                    cls.make_tree(child, nodes, visited)
+
+        return root
