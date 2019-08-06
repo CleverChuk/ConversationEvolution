@@ -28,9 +28,9 @@ class Node(dict):
         for k, v in dict(*args, **kwargs).items():
             self[k] = v
 
-    def __len__(self):
-        return len(self)
-
+    def __hash__(self):
+        return hash(self["id"])
+    
     def __str__(self):
         return "{0}".format(self['type'])
 
@@ -45,17 +45,6 @@ class TreeNode(Node):
     def add_child(self, child):
         self["children"].append(child)
 
-    @classmethod
-    def make_tree(cls, root, nodes, visited=[]):
-        for child in nodes:
-            if child["parent_id"] == root["id"] or (root["composition"] is not None and child["parent_id"] in root["composition"]):
-                if "children" in root:
-                    root["children"].append(child)
-                else:
-                    root["children"] = [child]
-
-                if child not in visited:
-                    visited.append(child)
-                    cls.make_tree(child, nodes, visited)
-
-        return root
+    
+        
+        

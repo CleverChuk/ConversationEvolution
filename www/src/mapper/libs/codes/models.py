@@ -92,6 +92,10 @@ class Node(dict):
     def update(self, *args, **kwargs):
         for k, v in dict(*args, **kwargs).items():
             self[k] = v
+            
+    
+    def __hash__(self):
+        return hash(self["id"])
 
     def __len__(self):
         return len(self.__dict__)

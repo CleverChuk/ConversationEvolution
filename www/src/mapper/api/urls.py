@@ -20,5 +20,5 @@ urlpatterns = [
     path('subreddit', views.subreddit_graph, name='subreddit'),
     
     # Tree endpoints
-    path("tree/<str:id>", views.tree_map, name="tree"),
+    path("tree/<str:id>", views.tree_map_with_edgemapper, name="tree"),
 ]

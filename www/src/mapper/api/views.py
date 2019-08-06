@@ -144,35 +144,18 @@ def mapper_graph(request):
             data = query.get_comments_in_article(request.session[ARTICLE_ID])
             mapper_edges = list(map(Edge.cast, data))
 
-        if request.GET:
-            # extract the property passed in the url
-            if 'prop' in request.GET:
-                prop = request.GET['prop']
-            else:
-                prop = 'reading_level'
+        # extract the property passed in the url
+        prop = 'reading_level' if 'prop' not in request.GET else request.GET['prop']            
 
-            if 'interval' in request.GET:
-                interval = int(request.GET['interval'])
-            else:
-                interval = 3
+        interval = 3 if 'interval' not in request.GET else int(request.GET['interval'])
+    
+        epsilon = 0.5  if 'epsilon' not in request.GET else float(request.GET['epsilon'])
+            
+        mode = 'median'  if 'mode' not in request.GET else request.GET['mode']
 
-            if 'epsilon' in request.GET:
-                epsilon = float(request.GET['epsilon'])
-            else:
-                epsilon = 0.5
-
-            if 'mode' in request.GET:
-                mode = request.GET['mode']
-            else:
-                mode = 'median'
-
-            mapper = EdgeMapper(mapper_edges, property_key=prop,
-                                epsilon=epsilon, num_interval=interval)
-
-            mapper.average = True if mode == 'mean' else False
-            data = mapper.cluster()
-        else:
-            data = EdgeMapper(mapper_edges).cluster()
+        mapper = EdgeMapper(mapper_edges, property_key=prop, epsilon=epsilon, num_interval=interval)
+        mapper.average = True if mode == 'mean' else False
+        data = mapper.cluster
 
         data = database_api.D3helper.transform(*data)
 
@@ -189,7 +172,8 @@ def tree(request, **params):
         nodes = set(itertools.chain(*nodes))
         root = TreeNode(article_id)
 
-        hierarchy = root.make_tree(root, nodes)
+        
+        hierarchy = TreeMapper().makeTree(root, nodes)
         return JsonResponse(hierarchy)
     else:
         return HttpResponse(status=404)
@@ -205,25 +189,70 @@ def tree_map(request, **params):
         nodes = map(lambda py2neo_rel: (py2neo_rel.start_node, py2neo_rel.end_node), data)
         nodes = set(itertools.chain(*nodes))
 
-        # Make a tree, using the article node as the root        
+        treeMapper = TreeMapper()
+        # Make a tree, using the article node as the root
         root = TreeNode(article_id)
-        hierarchy = TreeNode.make_tree(root, nodes)
-        
+        hierarchy = treeMapper.makeTree(root, nodes)
+
         # Run tree mapper on the tree
-        tree_mapper = TreeMapper(hierarchy)
-        tree_mapper.bfs()
-        
+        treeMapper.root = hierarchy
+        treeMapper.bfs()
+
         # Make tree from mapper nodes
         root = TreeNode(article_id)
-        hierarchy = TreeNode.make_tree(root, tree_mapper.cluster)
-        
+        hierarchy = treeMapper.makeTree(root, treeMapper.cluster)
+
         # Remap mapper nodes x times
-        new_hierarchy = map_x_times(article_id, hierarchy, times = 10)
-        
-        return JsonResponse(new_hierarchy)
-    
+        # new_hierarchy = map_x_times(article_id, hierarchy, times=10)
+        return JsonResponse(hierarchy)
+
     else:
         return HttpResponse(status=404)
+
+
+def tree_map_with_edgemapper(request, **params):
+    if (request.method == "GET") and "id" in params:
+        article_id = params["id"]
+        # grab the article id from the session object and query db
+        data = query.get_comments_in_article(article_id)        
+        
+        # extract the property passed in the url
+        prop = 'sentiment_score' if 'prop' not in request.GET else request.GET['prop']            
+
+        interval = 6 if 'interval' not in request.GET else int(request.GET['interval'])
+    
+        epsilon = 0.0  if 'epsilon' not in request.GET else float(request.GET['epsilon'])
+            
+        mode = 'median'  if 'mode' not in request.GET else request.GET['mode']
+        
+        # mapper = EdgeMapper(data, property_key=prop, epsilon=epsilon, num_interval=interval)
+        # mapper.average = True if mode == 'mean' else False
+        # data = mapper.graph()
+        # print("Before flattening")
+        # print(data)
+        # Make a tree, using the article node as the root
+        root = TreeNode(article_id)
+        nodes = edges_to_nodes(data)  
+        print("After flattening") 
+        # print(nodes)
+        treeMapper = TreeMapper()
+        # make tree from edges
+        hierarchy = treeMapper.makeTree(root, nodes)  
+        # map the edges using default filter function      
+        treeMapper.createIntervalsAndCluster(hierarchy, 3000000000000000)
+        
+        print("Cluster: {0}".format(treeMapper.cluster))
+        # make tree from mapper nodes
+        root = TreeNode(article_id)
+        hierarchy = treeMapper.makeTree(root, treeMapper.cluster) 
+        print("Height: {0}".format(treeMapper.treeHeight(hierarchy)))
+        print("Done making tree")
+        # print(hierarchy is None)
+        # print(type(hierarchy))
+        # print({"data":hierarchy})
+        # print(JsonResponse(hierarchy))
+        # print("After print children")
+        return JsonResponse(hierarchy)
 
 
 # Helper functions
@@ -231,12 +260,27 @@ def get_equal(field, value):
     data = query.get_equal(field, value)
     return data
 
-def map_x_times(root_id, hierarchy, times = 1, function= lambda node: node["value"]):
+
+def map_x_times(root_id, hierarchy, times=1, function=lambda node: node["value"]):
     for _ in range(times):
         root = TreeNode(root_id)
-        tree_mapper = TreeMapper(hierarchy)
-        tree_mapper.bfs(filter_function = function)
-        hierarchy = TreeNode.make_tree(root, tree_mapper.cluster)
-      
+        treeMapper = TreeMapper()
+        treeMapper.root = hierarchy
+        treeMapper.bfs(filter_function=function)
+        hierarchy = treeMapper.makeTree(root, treeMapper.cluster)
 
     return hierarchy
+
+
+def edges_to_nodes(edges):    
+    from collections import defaultdict
+    # Convert edges to a set of nodes
+    nodes = list(map(lambda edge: (edge.start_node, edge.end_node), edges))
+    out = defaultdict()
+    for s, e in nodes:
+        s['parent_id'] = e['id']
+        out[s] = s
+        out[e] = e
+
+    return out.keys()
+

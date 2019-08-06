@@ -9,6 +9,7 @@ mapper_module.article_click = function (node) {
             var checked = $("#treemap").is(':checked');
             if (checked) {                
                 $.each($(".filter").filter(":checked"), function () {
+                    console.log(`Sending request to endpoint: api/tree/${node.id}`)
                     mapper_module.load_tree_map(`api/tree/${node.id}`, this.value)
                 })
             } else {

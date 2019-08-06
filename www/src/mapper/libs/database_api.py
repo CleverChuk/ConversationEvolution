@@ -283,7 +283,7 @@ class D3helper:
             # indices in the index dictionary
             links.append({"source": d[n1['id']], "target": d[n2['id']]})
 
-        # create a dictionary containing D3 formatter nodes and links
+        # create a dictionary containing D3 formatted nodes and links
         d = {"nodes": nodes, "links": links}
 
         return d

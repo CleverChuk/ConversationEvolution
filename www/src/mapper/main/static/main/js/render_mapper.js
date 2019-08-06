@@ -368,7 +368,9 @@ mapper_module.render_tree = function render(root, canvas, filter) {
     return d3.cluster().nodeSize([root.dx, root.dy])(root);
   }
 
+
   // Create hierarchy
+  console.log("before")
   root = get_tree(root)
   console.log("Tree", root)
   // find maximum property value
@@ -388,9 +390,13 @@ mapper_module.render_tree = function render(root, canvas, filter) {
   root.each(d => {
     if (d.x > x1) x1 = d.x;
     if (d.x < x0) x0 = d.x;
-
-    if (maximum < d.data.value) maximum = d.data.value
-    if (minimum > d.data.value) minimum = d.data.value
+    if (typeof (d.data.value) != "string") {
+      if (maximum < d.data.value) maximum = d.data.value
+      if (minimum > d.data.value) minimum = d.data.value
+    } else {
+      if (maximum < d.data[filter]) maximum = d.data[filter]
+      if (minimum > d.data[filter]) minimum = d.data[filter]
+    }
   });
   // Create a color scale with minimum and maximum values
   let color_scale = d3.scaleLinear()
@@ -411,11 +417,13 @@ mapper_module.render_tree = function render(root, canvas, filter) {
 
   node.append("circle")
     .attr("fill", d => {
+
       if (typeof (d.data.value) == "string")
         return colors[d.data.value]
 
       let t = color_scale(d.data[filter])
-      return d3.interpolateBlues(t)
+      // return d3.interpolateBlues(t)
+      return colors[d.data.sentiment]
     })
     .attr("r", 5);
 

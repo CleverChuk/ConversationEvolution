@@ -2,47 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c9666b3-eb51-49a4-bf1e-8534a56baff3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/mapper.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/manage.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/analyzers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/api/demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/base_crawler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/db_loaders.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/graph_writers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/json_models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/mapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/mp_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/neo4j/import command.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/neo4j/neo4j.cql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/neo4j/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/reddit_crawler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/redditor_attributes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/textsim.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/visualization/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/visualization/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/visualization/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/visualization/mapper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/visualization/mdata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../src/main/codes/visualization/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/mapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/database_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/js/event_handlers.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/js/event_handlers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/js/loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/js/loaders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/js/mapper_module.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/js/mapper_module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/js/render_mapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/js/render_mapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/main/viz.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/viz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/database_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/database_api.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3604">
-              <caret line="216" column="19" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="19" />
+            <state relative-caret-position="3638">
+              <caret line="218" column="19" selection-start-line="218" selection-start-column="19" selection-end-line="218" selection-end-column="19" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -92,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/mapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7701">
-              <caret line="453" column="25" lean-forward="true" selection-start-line="453" selection-start-column="25" selection-end-line="453" selection-end-column="25" />
+            <state relative-caret-position="265">
+              <caret line="472" lean-forward="true" selection-start-line="472" selection-end-line="472" />
               <folding>
                 <element signature="e#251#277#0" expanded="true" />
               </folding>
@@ -104,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/codes/analyzers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="238">
               <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
                 <element signature="e#99#110#0" expanded="true" />
@@ -154,6 +118,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,7 +151,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -274,7 +238,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4965035" visible="true" weight="0.2340081" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4965035" visible="true" weight="0.23805667" />
       <window_info id="Structure" order="1" sideWeight="0.5034965" side_tool="true" weight="0.26153848" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -290,7 +254,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.55944055" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -300,6 +264,16 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -376,8 +350,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3604">
-          <caret line="216" column="19" selection-start-line="216" selection-start-column="19" selection-end-line="216" selection-end-column="19" />
+        <state relative-caret-position="3638">
+          <caret line="218" column="19" selection-start-line="218" selection-start-column="19" selection-end-line="218" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -393,7 +367,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/codes/analyzers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="238">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding>
             <element signature="e#99#110#0" expanded="true" />
@@ -403,8 +377,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/mapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7701">
-          <caret line="453" column="25" lean-forward="true" selection-start-line="453" selection-start-column="25" selection-end-line="453" selection-end-column="25" />
+        <state relative-caret-position="265">
+          <caret line="472" lean-forward="true" selection-start-line="472" selection-end-line="472" />
           <folding>
             <element signature="e#251#277#0" expanded="true" />
           </folding>

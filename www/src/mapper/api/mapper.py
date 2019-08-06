@@ -9,8 +9,7 @@ from math import floor
 from libs.codes.analyzers import SentimentAnalyzer as sa
 from .models import Node
 from uuid import uuid4
-NEW_ID = 0
-ALPHA = 97
+
 """
 @param 
     :type 
@@ -28,8 +27,8 @@ class Edge:
         self._index = -1
 
     @classmethod
-    def cast(cls, py2neo_rel):
-        return cls(py2neo_rel.start_node, py2neo_rel.end_node)
+    def cast(self, py2neo_rel):
+        return self(py2neo_rel.start_node, py2neo_rel.end_node)
 
     def __getitem__(self, key):
         if key == 0:
@@ -84,8 +83,7 @@ class Mapper:
         edges = []
         # create cluster node
         for name, cluster in clusters.items():
-            new_nodes[name] = self.create_cluster_node(
-                name, cluster, self.attr_list(cluster[0]))
+            new_nodes[name] = self.create_cluster_node(name, cluster, self.attr_list(cluster[0]))
             new_nodes[name]['radius'] += len(cluster) // 2
 
         # connect clusters base on node overlap
@@ -103,46 +101,44 @@ class Mapper:
                     continue
 
                 if not cluster.isdisjoint(nextCluster) and new_nodes[names[i]] != new_nodes[names[j]]:
-                    edges.append(Edge(new_nodes[names[i]], new_nodes[names[j]],
-                                      id=id, type=j_index)
-                                 )
+                    edges.append(Edge(new_nodes[names[i]], new_nodes[names[j]], id=id, type=j_index)) 
                     id += 1
 
         # assumes filtered is always of type author and sentiment
-        authors = []
-        sentiments = []
-        # #TODO: add if statement to ignore or perform this task
-        for link in self.filtered_in_data:
-            if link[0]['type'] == 'author':
-                authors.append(link[0])
+        # authors = []
+        # sentiments = []
+        # # #TODO: add if statement to ignore or perform this task
+        # for link in self.filtered_in_data:
+        #     if link[0]['type'] == 'author':
+        #         authors.append(link[0])
 
-            #     elif link[0]['type'] == 'sentiment':
-            #         sentiments.append(link[0])
+        #     #     elif link[0]['type'] == 'sentiment':
+        #     #         sentiments.append(link[0])
 
-            if link[1]['type'] == 'author':
-                authors.append(link[1])
+        #     if link[1]['type'] == 'author':
+        #         authors.append(link[1])
         #     elif link[1]['type'] == 'sentiment':
         #         sentiments.append(link[1])
 
-        N = len(edges)
+        # N = len(edges)
         # #TODO: add if statement to ignore or perform this task
 
-        for i in range(N):
-            for node in authors:
-                # check if the author's comment contributed to this cluster
-                if edges[i][0]['authors']:
-                    a = edges[i][0]['authors'].get(node['name'])
-                    if a != None:
-                        edges.append(Edge(node, edges[i][0]))
-                        # Remove author to avoid creating multiple author edges to all contributing nodes
-                        del edges[i][0]['authors'][a]
+        # for i in range(N):
+        #     for node in authors:
+        #         # check if the author's comment contributed to this cluster
+        #         if edges[i][0]['authors']:
+        #             a = edges[i][0]['authors'].get(node['name'])
+        #             if a != None:
+        #                 edges.append(Edge(node, edges[i][0]))
+        #                 # Remove author to avoid creating multiple author edges to all contributing nodes
+        #                 del edges[i][0]['authors'][a]
 
-                if edges[i][1]['authors']:
-                    a = edges[i][1]['authors'].get(node['name'])
-                    if a != None:
-                        edges.append(Edge(node, edges[i][1]))
-                        # Remove author to avoid creating multiple author edges to all contributing nodes
-                        del edges[i][1]['authors'][a]
+        #         if edges[i][1]['authors']:
+        #             a = edges[i][1]['authors'].get(node['name'])
+        #             if a != None:
+        #                 edges.append(Edge(node, edges[i][1]))
+        #                 # Remove author to avoid creating multiple author edges to all contributing nodes
+        #                 del edges[i][1]['authors'][a]
 
         # #TODO: add if statement to ignore or perform this task
         # for node in sentiments:
@@ -207,27 +203,38 @@ class Mapper:
 
             :rtype Node
         """
-        global NEW_ID, ALPHA
+        def create_compositions(cluster_node, node):
+            # Node composition of this cluster node used to highlighted nodes in the
+            # front-end visualization
+            if cluster_node['composition'] and node["id"] in cluster_node['composition']:
+                return
+            
+            if cluster_node['composition']:
+                cluster_node['composition'].append(node['id'])
+
+            else:
+                cluster_node['composition'] = [node['id']]
+
+            # add authors dictionary to cluster use to form edge
+            # if cluster_node['authors']:
+            #     cluster_node['authors'].append(node['author'])
+
+            # else:
+            #     cluster_node['authors'] = [node['author']]
+                
+                    
         if not isinstance(cluster, list) and not isinstance(property_keys, list):
             raise Exception("cluster and property_keys must be lists")
 
         numerical_variables = []
-        cluster_node = Node(
-            {'subreddit': cluster[0]['subreddit'], 'name': name})
+        cluster_node = Node({'name': name})
         category_variable = defaultdict(int)
 
         mode_value = 0
         mode_var = None
         for property_key in property_keys:
-            for node in cluster:
-                # Node composition of this cluster node used to highlighted nodes in the
-                # front-end visualization
-                if cluster_node['composition']:
-                    cluster_node['composition'][node['id']] = node['id']
-
-                else:
-                    cluster_node['composition'] = {node['id']: node['id']}
-
+            for node in cluster:    
+                create_compositions(cluster_node, node)            
                 tp = node[property_key]
                 if isinstance(tp, str):  # use mode for categorical variables
                     category_variable[tp] += 1
@@ -236,13 +243,6 @@ class Mapper:
                         mode_var = tp
                 else:
                     numerical_variables.append(tp)
-
-                # add authors dictionary to cluster use to form edge
-                if cluster_node['authors']:
-                    cluster_node['authors'][node['author']] = node['author']
-
-                else:
-                    cluster_node['authors'] = {node['author']: node['author']}
 
             if len(numerical_variables) != 0:  # use median for numerical variables
                 if self._average:
@@ -260,29 +260,8 @@ class Mapper:
                 mode_value = 0
                 category_variable.clear()
 
-        d = {}
-        tt = "type"
-        dd = "id_0"
-        cluster_node.id = str(NEW_ID) + chr(ALPHA)
-
-        d["id"] = str(NEW_ID) + chr(ALPHA)
-        t = cluster_node.pop(tt, "")
-        id_0 = cluster_node.pop(dd, "")
-
-        d.update(cluster_node)
-        d[tt] = t
-        d[dd] = id_0
-
-        # updates the underlying node dictionary so it is easy to
-        # write to csv
-        cluster_node = d
-
-        # unique ids for the nodes
-        NEW_ID += 1
-        ALPHA += 1
-        if (ALPHA > 122):
-            ALPHA = 97
-
+        cluster_node["id"] = uuid4()
+        
         return cluster_node
 
     def edge_mean(self, edge, property_key):
@@ -303,17 +282,17 @@ class Mapper:
         if len(edge) < 2:
             raise Exception("edge must have at least two nodes")
 
-        p1 = edge[0][property_key]
-        p2 = edge[1][property_key]
+        p1 = edge.start_node[property_key]
+        p2 = edge.end_node[property_key]
+        
         if isinstance(p1, str) or isinstance(p2, str):
             raise TypeError("property_key value must be numeric")
 
         return round((p1 + p2) / 2, 2)
 
-
 class EdgeMapper(Mapper):
     def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
-
+        self._cluster = None
         def filter_out(edge):
             return edge.start_node['type'] == 'comment' and edge.end_node['type'] == 'comment'
 
@@ -322,20 +301,20 @@ class EdgeMapper(Mapper):
 
         self.filtered_data = list(filter(filter_out, edges))
         # Sort the edges based on the property of interest
-        self.filtered_data = sorted(
-            self.filtered_data, key=lambda link: self.edge_mean(link, property_key))
+        self.filtered_data = sorted(self.filtered_data, key=lambda link: self.edge_mean(link, property_key))
 
         super().__init__(self.filtered_data, epsilon, property_key, num_interval)
         self.filtered_in_data = list(filter(filter_in, edges))
 
-    def cluster(self):
+    def graph(self):
         """
             wrapper function
         """
         groups = self.create_intervals()
         cluster = self.cluster_groups(groups)
-
-        return self.graph_cluster(cluster)
+        self._cluster = self.graph_cluster(cluster)
+        
+        return self._cluster
 
     def create_intervals(self):
         """
@@ -420,16 +399,16 @@ class EdgeMapper(Mapper):
                 if clusterId not in clusters:
                     clusters[clusterId] = []
 
-                    clusters[clusterId].append(e_List[i][0])
-                    clusters[clusterId].append(e_List[i][1])
+                    clusters[clusterId].append(e_List[i].start_node)
+                    clusters[clusterId].append(e_List[i].end_node)
 
                 # add nodes with edges in the same cluster
                 for edge in e_List:
-                    if edge[0] in clusters[clusterId] and edge[1] not in clusters[clusterId]:
-                        clusters[clusterId].append(edge[1])
+                    if edge.start_node in clusters[clusterId] and edge.end_node not in clusters[clusterId]:
+                        clusters[clusterId].append(edge.end_node)
 
-                    elif edge[1] in clusters[clusterId] and edge[0] not in clusters[clusterId]:
-                        clusters[clusterId].append(edge[0])
+                    elif edge.end_node in clusters[clusterId] and edge.start_node not in clusters[clusterId]:
+                        clusters[clusterId].append(edge.end_node)
 
                 clusterId += 1
 
@@ -448,7 +427,14 @@ class EdgeMapper(Mapper):
             clusters.pop(i, "d")
 
         return clusters
-
+    
+    def get_cluster(self):
+        if not self._cluster:
+            self.graph()
+                        
+        return self._cluster
+        
+    cluster = property(get_cluster)
 
 class NodeMapper(Mapper):
     def __init__(self, edges, data, epsilon=0.5, property_key="reading_level", num_interval=3):
@@ -570,19 +556,33 @@ class NodeMapper(Mapper):
 
 
 class TreeMapper:
-    def __init__(self, root):
+    def __init__(self, intervals = 0):
         """
             Initializes the TreeMapper object with tree root and filter function
-        :param root:
-        :param filter_function: Must accept a dictionary object and return a value.
+            :param root:
+            :param filter_function: Must accept a dictionary object and return a value.
         """
-        self.root = root
+        self._root = None
         self.queue = deque()
         self._cluster = []
+        
+        self.intervals = defaultdict(list)
 
-    def get_cluster(self):
+    @property
+    def cluster(self):
         return self._cluster
-
+    
+    @property
+    def root(self):
+        return self._root
+    
+    @root.setter
+    def root(self, value):
+        if not value:
+            raise ValueError()
+        
+        self._root = value   
+    
     def _map(self, parent_id, children, filter_function):
         """
             Map the children of a node using the filter function.
@@ -591,9 +591,8 @@ class TreeMapper:
         :param children:
         :return:
         """
-
         cluster = defaultdict(list)
-
+            
         # Use the filter function to calculate a mapping for the children
         for child in children:
             value = filter_function(child)
@@ -613,7 +612,7 @@ class TreeMapper:
 
             self._cluster.append(node)
 
-    def bfs(self, filter_function=lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
+    def bfs(self, filter_function = lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
         """
             Use BFS to visit all nodes in the tree in level order traversal
         :return:
@@ -629,6 +628,99 @@ class TreeMapper:
             self._map(root["id"], root["children"], filter_function)
             for child in root["children"]:
                 self.queue.append(child)
+             
+    def makeTree(self, root, nodes, visited = []):
+        for child in nodes:
+            if child["parent_id"] == root["id"] or root["composition"] and child["parent_id"] in root["composition"]:                                  
+                if "children" in root:
+                    root["children"].append(child)
+                else:
+                    root["children"] = [child]
+                    
+                if child not in visited:
+                    visited.append(child)
+                    self.makeTree(child, nodes, visited)
+                
+        return root
+    
+    def map(self, children, filter_function):
+        """
+            Map the children of a node using the filter function.
+            Cluster them based on the mapped value
+        :param parent_id:
+        :param children:
+        :return:
+        """
+        cluster = defaultdict(list)
+            
+        # Use the filter function to calculate a mapping for the children
+        for child in children:
+            value = filter_function(child)
+            cluster[value].append(child)
 
-    # properties
-    cluster = property(get_cluster)
+
+        # Cluster the nodes based on their filter function value
+        for value, array in cluster.items():
+            node = Node()
+            node["composition"] = []
+            node["value"] = value
+            node["type"] = "mapper"
+            node["id"] = uuid4()
+            
+            # use the parent id the node with the minimum depth as parent id for the mapper node
+            minDepth = float('inf')
+            parent_id = None
+            
+            for child in array:
+                node["composition"].append(child["id"])
+                if child['depth'] < minDepth:
+                    minDepth = child['depth']
+                    parent_id = child["parent_id"]
+
+            node["parent_id"] = parent_id
+
+            self._cluster.append(node)
+            
+    def _createIntervals(self, root, count):        
+        # create intervals based on the depth        
+        if root["parent_id"]:
+            depth = root["depth"]
+            self.intervals[depth % count].append(root)
+            
+        if root["children"]:
+            for child in root["children"]:
+                self._createIntervals(child, count)
+
+    def _clusterInterval(self, filterFunction):
+        for nodes in self.intervals.values():
+            self.map(nodes, filterFunction)
+    
+    def createIntervalsAndCluster(self, root, count = 1, filterFunction = lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
+        # add the depth of the nodes as a property
+        self._addDepth(root)
+        # create intervals
+        self._createIntervals(root, count) 
+        # cluster intervals        
+        self._clusterInterval(filterFunction)
+        
+        return self.cluster
+        
+    def treeHeight(self, root):
+        if not root["children"]:
+            return 0
+        
+        height = float('-inf')
+        for child in root["children"]:
+            height = max(height, self.treeHeight(child) + 1)
+        
+        return height
+      
+    def _addDepth(self, root, depth = 0): 
+        # add the depth of the node
+        root["depth"] = depth
+        if root["children"]:
+            for child in root["children"]:
+                self._addDepth(child, depth + 1)
+        
+     
+
