@@ -20,9 +20,6 @@ class Node(dict):
     def __setitem__(self, key, val):
         dict.__setitem__(self, key, val)
 
-    def __repr__(self):
-        dictrepr = dict.__repr__(self)
-        return '%s(%s)' % (type(self).__name__, dictrepr)
 
     def update(self, *args, **kwargs):
         for k, v in dict(*args, **kwargs).items():
@@ -32,7 +29,10 @@ class Node(dict):
         return hash(self["id"])
     
     def __str__(self):
-        return "{0}".format(self['type'])
+        return "{0} : {1}".format(self['type'], self['id'])
+    
+    def __repr__(self):
+        return "{0} : {1}".format(self['type'], self['id'])
 
 
 class TreeNode(Node):
@@ -42,7 +42,8 @@ class TreeNode(Node):
         self["type"] = type
         self["children"] = []
 
-    def add_child(self, child):
+    
+    def addChild(self, child):
         self["children"].append(child)
 
     
