@@ -3,6 +3,7 @@ from json import dump as j_dump
 from json import dumps
 from json import JSONEncoder
 from py2neo import (Graph, Node, Relationship)
+
 """
 def get_nodes_in_article(self, id):
         data = list(self.graph.run("MATCH (n1)-[r]->(n2) WHERE n1.article_id = \'{0}\' RETURN r".format(id)).data())
@@ -15,6 +16,7 @@ class DatabaseLayer:
         This class provides a common interface for queries that will performed on a
         database server
     """
+
     # Read api
 
     def all(self):
@@ -46,13 +48,13 @@ class DatabaseLayer:
 
     def get_less_or_equal(self, field, value):
         raise NotImplementedError
-    
-    def get_subreddit_graph(self,subreddit = None):        
+
+    def get_subreddit_graph(self, subreddit=None):
         raise NotImplementedError
 
     def get_nodes_in_article(self, id):
         raise NotImplementedError
-    
+
     def get_comments_in_article(self, id):
         raise NotImplementedError
 
@@ -141,19 +143,20 @@ class Neo4jLayer(DatabaseLayer):
 
     def get_nodes_in_article(self, id):
         comment_links = "MATCH (n1)-[r]->(n2) WHERE n1.article_id = \'{0}\' RETURN r".format(id)
-        author_links = " UNION MATCH (n1:author)-[r:WROTE]->(n2:comment) WHERE n2.article_id = \'{0}\' RETURN r".format(id)
-                
-        query = comment_links + author_links 
-        data = list(self.graph.run(query).data())
-        return [node["r"] for node in data]
-    
-    def get_comments_in_article(self, id):
-        query = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(id)           
+        author_links = " UNION MATCH (n1:author)-[r:WROTE]->(n2:comment) WHERE n2.article_id = \'{0}\' RETURN r".format(
+            id)
+
+        query = comment_links + author_links
         data = list(self.graph.run(query).data())
         return [node["r"] for node in data]
 
-    def get_subreddit_graph(self,subreddit = None):
-        data = list(self.graph.run( "MATCH (n1)-[r:_IN_]->(n2) RETURN r").data())
+    def get_comments_in_article(self, id):
+        query = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(id)
+        data = list(self.graph.run(query).data())
+        return [node["r"] for node in data]
+
+    def get_subreddit_graph(self, subreddit=None):
+        data = list(self.graph.run("MATCH (n1)-[r:_IN_]->(n2) RETURN r").data())
         return [node["r"] for node in data]
 
 
@@ -163,6 +166,7 @@ class Query:
         of the queries. 
         It uses DatabaseLayer object to achieve this
     """
+
     def __init__(self, db_layer):
         # db_layer must implement DatabaseLayer
         if not issubclass(db_layer.__class__, DatabaseLayer):
@@ -170,7 +174,7 @@ class Query:
                 "{0} must be a subclass of DatabaseLayer".format(db_layer.__class__))
 
         self.db_layer = db_layer
-    
+
     # read methods
     def all(self):
         return self.db_layer.all()
@@ -210,8 +214,8 @@ class Query:
 
     def get_comments_in_article(self, id):
         return self.db_layer.get_comments_in_article(id)
-    
-    def get_subreddit_graph(self,subreddit = None):
+
+    def get_subreddit_graph(self, subreddit=None):
         return self.db_layer.get_subreddit_graph(subreddit)
 
     # Write methods
@@ -313,6 +317,7 @@ class Edge:
     """
         A class used to represent a link between two nodes.
     """
+
     def __init__(self, src, dest, **properties):
         self.start_node = src
         self.end_node = dest
@@ -342,7 +347,4 @@ class Edge:
         return 3
 
     def __repr__(self):
-        return self.start_node['type'] + "->"+self.end_node['type']
-
-
-    
+        return self.start_node['type'] + "->" + self.end_node['type']

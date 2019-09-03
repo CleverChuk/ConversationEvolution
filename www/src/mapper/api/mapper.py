@@ -251,7 +251,7 @@ class Mapper:
                         round(stats.mean(numerical_variables), 4))
                     numerical_variables.clear()
                 else:
-                    numerical_variables = sorted(numerical_variables)
+                    numerical_variables.sort()
                     cluster_node[property_key] = float(
                         round(stats.median(numerical_variables), 4))
                     numerical_variables.clear()
@@ -564,9 +564,10 @@ class TreeMapper:
             :param filter_function: Must accept a dictionary object and return a value.
         """
         self.queue = deque()
-        self._cluster = []
-        
+        self._cluster = []        
         self.intervals = defaultdict(list)
+        
+
 
     @property
     def cluster(self):
@@ -701,6 +702,7 @@ class TreeMapper:
             self.map(nodes, filterFunction)
     
     def execute(self, root, interval = [], filterFunction = lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
+        del self._cluster[:]
         if type(interval) == int:
             interval = self._generateIntervals(self.treeHeight(root), interval)
         # add the depth of the nodes as a property
@@ -711,7 +713,7 @@ class TreeMapper:
         # self._clusterInterval(filterFunction)
         self.ClusterByConnectedness(filterFunction)
         
-        return self.cluster
+        return self._cluster
     
     def _generateIntervals(self, height, count):
         intervals = []
@@ -765,8 +767,8 @@ class TreeMapper:
                         # optimization to stop immediately if there's no path between i and j
                         # this is because the interval is sorted and once a break occurs it is guaranteed that no
                         # path exist between i and subsequent j
-                        if not self.pathExist(interval[i], interval[j]) :
-                            break
+                        # if not self.pathExist(interval[i], interval[j]) :
+                        #     break
                         
             else:
                 cluster[interval[0]].add(interval[0])      

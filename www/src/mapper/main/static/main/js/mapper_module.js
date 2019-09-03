@@ -15,51 +15,7 @@ mapper_module.width = 960 - mapper_module.margin.left - mapper_module.margin.rig
 mapper_module.height = 550 - mapper_module.margin.top - mapper_module.margin.bottom
 
 
-mapper_module.render = function render(nodes, links, canvas) {
-    //set up the simulation and add forces  
-    const body_force = d3.forceManyBody()
-        .strength(-500)
 
-    const link_force = d3.forceLink(links);
-    link_force.distance(250)
-
-    const simulation = d3.forceSimulation(nodes)
-        .force("link", link_force)
-        .force("charge", body_force)
-        .force("center", d3.forceCenter(mapper_module.width / 2, mapper_module.height / 2));
-    //add tick instructions: 
-    simulation.on("tick", tick);
-
-    //render edges
-    links = mapper_module.update_edges(canvas, links)
-
-    // render nodes
-    nodes = mapper_module.update_nodes(canvas, nodes, simulation)
-
-    function tick() {
-        links.attr("d", linkArc);
-        nodes.attr("transform", transform);
-    }
-
-    function linkArc(d) {
-        // Total difference in x and y from source to target
-        var diffX = d.target.x - d.source.x;
-        var diffY = d.target.y - d.source.y;
-
-        // Length of path from center of source node to center of target node
-        var pathLength = Math.sqrt((diffX * diffX) + (diffY * diffY));
-
-        // x and y distances from center to outside edge of target node
-        var offsetX = (diffX * d.target.radius) / pathLength;
-        var offsetY = (diffY * d.target.radius) / pathLength;
-
-        return "M" + d.source.x + "," + d.source.y + "L" + (d.target.x - offsetX) + "," + (d.target.y - offsetY)
-    }
-
-    function transform(d) {
-        return "translate(" + d.x + "," + d.y + ")";
-    }
-}
 
 mapper_module.update_edges = function update_edges(canvas, links) {
     let layer = canvas.select('.edge-layer')

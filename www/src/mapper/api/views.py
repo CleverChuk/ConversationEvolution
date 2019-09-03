@@ -127,13 +127,20 @@ def nodes_in_article(request, **param):
     if request.method == "GET":
         # add article id to session object
         request.session[ARTICLE_ID] = param["id"]
-        # NOTE: Saving data in session requires that Egde class be JOSN serializable by
+        # NOTE: Saving data in session requires that Edge class be JSON serializable by
         # django serializer
         data = query.get_comments_in_article(param["id"])
-        mapper_edges = list(map(Edge.cast, data))
-        data = database_api.D3helper.transform(*data)
+        # mapper_edges = list(map(Edge.cast, data))
+        # data = database_api.D3helper.transform(*data)
 
-        return JsonResponse(data)
+        # Return tree graph
+        nodes = edgesToNodes(data)
+        treeMapper = TreeMapper()
+        root = TreeNode(param["id"])
+
+        # make tree from edges
+        hierarchy = treeMapper.makeTree(root, nodes)
+        return JsonResponse(hierarchy)
 
 
 def mapper_graph(request):
@@ -145,13 +152,13 @@ def mapper_graph(request):
             mapper_edges = list(map(Edge.cast, data))
 
         # extract the property passed in the url
-        prop = 'reading_level' if 'prop' not in request.GET else request.GET['prop']            
+        prop = 'reading_level' if 'prop' not in request.GET else request.GET['prop']
 
         interval = 3 if 'interval' not in request.GET else int(request.GET['interval'])
-    
-        epsilon = 0.5  if 'epsilon' not in request.GET else float(request.GET['epsilon'])
-            
-        mode = 'median'  if 'mode' not in request.GET else request.GET['mode']
+
+        epsilon = 0.5 if 'epsilon' not in request.GET else float(request.GET['epsilon'])
+
+        mode = 'median' if 'mode' not in request.GET else request.GET['mode']
 
         mapper = EdgeMapper(mapper_edges, property_key=prop, epsilon=epsilon, num_interval=interval)
         mapper.average = True if mode == 'mean' else False
@@ -172,7 +179,6 @@ def tree(request, **params):
         nodes = set(itertools.chain(*nodes))
         root = TreeNode(articleId)
 
-        
         hierarchy = TreeMapper().makeTree(root, nodes)
         return JsonResponse(hierarchy)
     else:
@@ -214,40 +220,40 @@ def tree_map_with_edgemapper(request, **params):
     if (request.method == "GET") and "id" in params:
         articleId = params["id"]
         # grab the article id from the session object and query db
-        data = query.get_comments_in_article(articleId)        
-        
+        data = query.get_comments_in_article(articleId)
+
         # extract the property passed in the url
-        prop = 'sentiment_score' if 'prop' not in request.GET else request.GET['prop']            
+        prop = 'sentiment_score' if 'prop' not in request.GET else request.GET['prop']
 
         interval = 6 if 'interval' not in request.GET else int(request.GET['interval'])
-    
-        epsilon = 0.0  if 'epsilon' not in request.GET else float(request.GET['epsilon'])
-            
-        mode = 'median'  if 'mode' not in request.GET else request.GET['mode']
-        
+
+        epsilon = 0.0 if 'epsilon' not in request.GET else float(request.GET['epsilon'])
+
+        mode = 'median' if 'mode' not in request.GET else request.GET['mode']
+
         # mapper = EdgeMapper(data, property_key=prop, epsilon=epsilon, num_interval=interval)
         # mapper.average = True if mode == 'mean' else False
         # data = mapper.graph()
         # print("Before flattening")
         # print(data)
-        
+
         # flatten the edge list to node list
-        nodes = edgesToNodes(data)  
-        treeMapper = TreeMapper()        
-        root = TreeNode(articleId)
-        
-        print("graph node count", len(nodes))
+        nodes = edgesToNodes(data)
+        treeMapper = TreeMapper()
+        print("Input node count", len(nodes))
+
         # make tree from edges
-        hierarchy = treeMapper.makeTree(root, nodes)          
-        print("Height: {0}".format(treeMapper.treeHeight(hierarchy)))
-        
+        hierarchy = treeMapper.makeTree(TreeNode(articleId), nodes)
+        print("Input Height: {0}".format(treeMapper.treeHeight(hierarchy)))
+
         # map the edges using default filter function      
-        treeMapper.execute(hierarchy, 28)
-        print("mapper node count", len(treeMapper.cluster), end="\n\n")
-        # print("Cluster: {0}".format(treeMapper.cluster))
+        cluster = treeMapper.execute(hierarchy, interval)
+        print("Output node count", len(cluster))
+
         # make tree from mapper nodes
-        hierarchy = treeMapper.makeTree(TreeNode(articleId), treeMapper.cluster) 
-        print("New Height: {0}".format(treeMapper.treeHeight(hierarchy)))
+        hierarchy = treeMapper.makeTree(TreeNode(articleId), cluster)
+        print("Output Height: {0}".format(treeMapper.treeHeight(hierarchy)))
+        print("Mapper Interval: ", interval)
 
         return JsonResponse(hierarchy)
 
@@ -269,15 +275,14 @@ def mapXTimes(root_id, hierarchy, times=1, function=lambda node: node["value"]):
     return hierarchy
 
 
-def edgesToNodes(edges):    
+def edgesToNodes(edges):
     from collections import defaultdict
     # Convert edges to a set of nodes
     nodes = list(map(lambda edge: (edge.start_node, edge.end_node), edges))
     out = defaultdict()
     for s, e in nodes:
         s['parent_id'] = e['id']
-        out[s] = s
-        out[e] = e
+        out[s['id']] = s
+        out[e['id']] = e
 
-    return out.keys()
-
+    return out.values()

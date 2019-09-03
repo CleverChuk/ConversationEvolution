@@ -368,11 +368,8 @@ mapper_module.render_tree = function render(root, canvas, filter) {
     return d3.cluster().nodeSize([root.dx, root.dy])(root);
   }
 
-
   // Create hierarchy
-  console.log("before")
-  root = get_tree(root)
-  console.log("Tree", root)
+    root = get_tree(root)
   // find maximum property value
   let maximum = -Infinity
   // find minimum property value
@@ -407,8 +404,8 @@ mapper_module.render_tree = function render(root, canvas, filter) {
   canvas.attr("transform", `translate(${root.dy / 3},${root.dx - x0})`);
 
   // Bind data to the UI
-  let node_layer = canvas.select(".node-layer")
-  let node = node_layer.attr("stroke-linejoin", "round")
+  let nodeLayer = canvas.select(".node-layer")
+  let node = nodeLayer.attr("stroke-linejoin", "round")
     .attr("stroke-width", 3)
     .selectAll("g")
     .data(root.descendants().reverse())
@@ -439,8 +436,8 @@ mapper_module.render_tree = function render(root, canvas, filter) {
     .clone(true).lower()
     .attr("stroke", "white");
 
-  let edge_layer = canvas.select(".edge-layer")
-  edge_layer.attr("fill", "none")
+  let edgeLayer = canvas.select(".edge-layer")
+  edgeLayer.attr("fill", "none")
     .attr("stroke", "#555")
     .attr("stroke-opacity", 0.4)
     .attr("stroke-width", 1.5)
