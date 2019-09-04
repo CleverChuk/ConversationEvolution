@@ -102,7 +102,7 @@ class Mapper:
                     continue
 
                 if not cluster.isdisjoint(nextCluster) and new_nodes[names[i]] != new_nodes[names[j]]:
-                    edges.append(Edge(new_nodes[names[i]], new_nodes[names[j]], id=id, type=j_index)) 
+                    edges.append(Edge(new_nodes[names[i]], new_nodes[names[j]], id=id, type=j_index))
                     id += 1
 
         # assumes filtered is always of type author and sentiment
@@ -204,12 +204,13 @@ class Mapper:
 
             :rtype Node
         """
+
         def create_compositions(cluster_node, node):
             # Node composition of this cluster node used to highlighted nodes in the
             # front-end visualization
             if cluster_node['composition'] and node["id"] in cluster_node['composition']:
                 return
-            
+
             if cluster_node['composition']:
                 cluster_node['composition'].append(node['id'])
 
@@ -222,8 +223,7 @@ class Mapper:
 
             # else:
             #     cluster_node['authors'] = [node['author']]
-                
-                    
+
         if not isinstance(cluster, list) and not isinstance(property_keys, list):
             raise Exception("cluster and property_keys must be lists")
 
@@ -234,8 +234,8 @@ class Mapper:
         mode_value = 0
         mode_var = None
         for property_key in property_keys:
-            for node in cluster:    
-                create_compositions(cluster_node, node)            
+            for node in cluster:
+                create_compositions(cluster_node, node)
                 tp = node[property_key]
                 if isinstance(tp, str):  # use mode for categorical variables
                     category_variable[tp] += 1
@@ -262,7 +262,7 @@ class Mapper:
                 category_variable.clear()
 
         cluster_node["id"] = uuid4()
-        
+
         return cluster_node
 
     def edge_mean(self, edge, property_key):
@@ -285,15 +285,17 @@ class Mapper:
 
         p1 = edge.start_node[property_key]
         p2 = edge.end_node[property_key]
-        
+
         if isinstance(p1, str) or isinstance(p2, str):
             raise TypeError("property_key value must be numeric")
 
         return round((p1 + p2) / 2, 2)
 
+
 class EdgeMapper(Mapper):
     def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
         self._cluster = None
+
         def filter_out(edge):
             return edge.start_node['type'] == 'comment' and edge.end_node['type'] == 'comment'
 
@@ -314,7 +316,7 @@ class EdgeMapper(Mapper):
         groups = self.create_intervals()
         cluster = self.cluster_groups(groups)
         self._cluster = self.graph_cluster(cluster)
-        
+
         return self._cluster
 
     def create_intervals(self):
@@ -428,14 +430,15 @@ class EdgeMapper(Mapper):
             clusters.pop(i, "d")
 
         return clusters
-    
+
     def get_cluster(self):
         if not self._cluster:
             self.graph()
-                        
+
         return self._cluster
-        
+
     cluster = property(get_cluster)
+
 
 class NodeMapper(Mapper):
     def __init__(self, edges, data, epsilon=0.5, property_key="reading_level", num_interval=3):
@@ -563,27 +566,24 @@ class TreeMapper:
             :param root:
             :param filter_function: Must accept a dictionary object and return a value.
         """
-        self.queue = deque()
-        self._cluster = []        
+        self._cluster = []
         self.intervals = defaultdict(list)
-        
-
 
     @property
     def cluster(self):
         return self._cluster
-    
+
     @property
     def root(self):
         return self._root
-    
+
     @root.setter
     def root(self, value):
         if not value:
             raise ValueError()
-        
-        self._root = value   
-    
+
+        self._root = value
+
     def _map(self, parent_id, children, filter_function):
         """
             Map the children of a node using the filter function.
@@ -593,7 +593,7 @@ class TreeMapper:
         :return:
         """
         cluster = defaultdict(list)
-            
+
         # Use the filter function to calculate a mapping for the children
         for child in children:
             value = filter_function(child)
@@ -613,52 +613,53 @@ class TreeMapper:
 
             self._cluster.append(node)
 
-    def bfs(self, filter_function = lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
+    def bfs(self, root, filter_function=lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
         """
             Use BFS to visit all nodes in the tree in level order traversal
         :return:
         """
-        self.queue.append(self.root)
+        queue = deque()
+        queue.append(root)
 
-        while self.queue:
-            root = self.queue.popleft()
+        while queue:
+            root = queue.popleft()
             if root["children"] is None:
                 continue
             # can map level by level by storing children list then mapping the whole level
             # instead of doing children mapping
             self._map(root["id"], root["children"], filter_function)
             for child in root["children"]:
-                self.queue.append(child)
-             
-    def makeTree(self, root, nodes, visited = []):
+                queue.append(child)
+
+    def makeTree(self, root, nodes, visited=[]):
         for child in nodes:
-            if child["parent_id"] == root["id"] or root["composition"] and child["parent_id"] in root["composition"]:                                  
+            if child["parent_id"] == root["id"] or root["composition"] and child["parent_id"] in root["composition"]:
                 if "children" in root:
                     root["children"].append(child)
                 else:
                     root["children"] = [child]
-                    
+
                 if child not in visited:
                     visited.append(child)
+                    # Traverse only if reachable from root
                     self.makeTree(child, nodes, visited)
 
         return root
-    
+
     def map(self, interval, filter_function):
         """
             Map the interval of nodes using the filter function.
             Cluster them based on the mapped value
-        :param parent_id:
+        :param filter_function:
         :param interval:
         :return:
         """
         cluster = defaultdict(list)
-            
+
         # Use the filter function to calculate a mapping for the interval
         for node in interval:
             value = filter_function(node)
             cluster[value].append(node)
-
 
         # Cluster the nodes based on their filter function value
         for value, array in cluster.items():
@@ -667,11 +668,11 @@ class TreeMapper:
             node["value"] = value
             node["type"] = "mapper"
             node["id"] = uuid4()
-            
+
             # use the parent id the node with the minimum depth as parent id for the mapper node
             minDepth = float('inf')
             parent_id = None
-            
+
             for child in array:
                 node["composition"].append(child["id"])
                 if child['depth'] < minDepth:
@@ -681,8 +682,8 @@ class TreeMapper:
             node["parent_id"] = parent_id
 
             self._cluster.append(node)
-            
-    def _populateIntervals(self, root, intervals):        
+
+    def _populateIntervals(self, root, intervals):
         # create intervals based on the depth        
         if root["parent_id"]:
             depth = root["depth"]
@@ -691,8 +692,7 @@ class TreeMapper:
                 if depth >= low and depth <= high:
                     self.intervals[pair].append(root)
                     break
-            
-            
+
         if root["children"]:
             for child in root["children"]:
                 self._populateIntervals(child, intervals)
@@ -700,51 +700,49 @@ class TreeMapper:
     def _clusterInterval(self, filterFunction):
         for nodes in self.intervals.values():
             self.map(nodes, filterFunction)
-    
-    def execute(self, root, interval = [], filterFunction = lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
+
+    def execute(self, root, interval=[], filterFunction=lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
         del self._cluster[:]
         if type(interval) == int:
             interval = self._generateIntervals(self.treeHeight(root), interval)
         # add the depth of the nodes as a property
         self._addDepth(root)
         # create intervals
-        self._populateIntervals(root, interval) 
+        self._populateIntervals(root, interval)
         # cluster intervals        
         # self._clusterInterval(filterFunction)
         self.ClusterByConnectedness(filterFunction)
-        
+
         return self._cluster
-    
+
     def _generateIntervals(self, height, count):
         intervals = []
         N = height // count
-        
+
         i = 1
         while i <= height:
-            intervals.append((i, i+N))
+            intervals.append((i, i + N))
             i = i + N + 1
-            
+
         return intervals
-        
-            
+
     def treeHeight(self, root):
         if not root["children"]:
             return 0
-        
-        height = float('-inf')
+
+        height = 0
         for child in root["children"]:
             height = max(height, self.treeHeight(child) + 1)
-        
+
         return height
-      
-    def _addDepth(self, root, depth = 0): 
+
+    def _addDepth(self, root, depth=0):
         # add the depth of the node
         root["depth"] = depth
         if root["children"]:
             for child in root["children"]:
                 self._addDepth(child, depth + 1)
-                
-                
+
     def ClusterByConnectedness(self, filterFunction):
         mapperNodes = []
         for interval in self.intervals.values():
@@ -752,16 +750,17 @@ class TreeMapper:
             N = len(interval)
             if N > 1:
                 for i in range(N):
-                    for j in range(i+1, N):                    
-                        if self.pathExist(interval[i], interval[j]) and filterFunction(interval[i]) == filterFunction(interval[j]):                          
+                    for j in range(i + 1, N):
+                        if self.pathExist(interval[i], interval[j]) and filterFunction(interval[i]) == filterFunction(
+                                interval[j]):
                             cluster[interval[i]].add(interval[j])
                             interval[j]['touched'] = True
-                            cluster.pop(interval[j],"")
+                            cluster.pop(interval[j], "")
                             # print("first: {0} |  second: {1}".format(interval[i], interval[j]))
                         else:
                             if not interval[j]['touched']:
                                 cluster[interval[j]].add(interval[j])
-                                
+
                             if not interval[i]['touched']:
                                 cluster[interval[i]].add(interval[i])
                         # optimization to stop immediately if there's no path between i and j
@@ -769,48 +768,44 @@ class TreeMapper:
                         # path exist between i and subsequent j
                         # if not self.pathExist(interval[i], interval[j]) :
                         #     break
-                        
-            else:
-                cluster[interval[0]].add(interval[0])      
 
-            mapperNodes.extend(cluster.keys())   
-        
+            else:
+                cluster[interval[0]].add(interval[0])
+
+            mapperNodes.extend(cluster.keys())
+
         # work around for python object reference mess
         for node in mapperNodes:
-            mapperNode = TreeNode(node["id"], type=node["type"])
+            mapperNode = TreeNode(node["id"], type="mapper")
             mapperNode["parent_id"] = node["parent_id"]
             mapperNode['value'] = filterFunction(node)
             self._cluster.append(mapperNode)
-        
+
     def pathExist(self, src, dest):
         queue = deque([src])
         while queue:
             src = queue.popleft()
             if src['id'] == dest['id']:
                 return True
-            
+
             if src["children"]:
                 for node in src["children"]:
                     queue.append(node)
-        
-        return False
-        
 
+        return False
 
     def topSort(self, graph):
         sortedNodes, visited = deque(), set()
         for node in graph:
             self.dfs(graph, node, visited, sortedNodes)
-            
+
         return list(sortedNodes)
-    
+
     def dfs(self, graph, startNode, visited, sortedNodes):
         visited.add(startNode)
         if startNode["children"]:
             neighbors = [child for child in startNode["children"] if child in graph]
             for neighbor in neighbors:
                 if neighbor not in visited:
-                    self.dfs(graph, neighbor, visited, sortedNodes)       
+                    self.dfs(graph, neighbor, visited, sortedNodes)
         sortedNodes.append(startNode)
-     
-

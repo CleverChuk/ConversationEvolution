@@ -139,7 +139,9 @@ def nodes_in_article(request, **param):
         root = TreeNode(param["id"])
 
         # make tree from edges
-        hierarchy = treeMapper.makeTree(root, nodes)
+
+        from .test import root
+        hierarchy = root  # treeMapper.makeTree(root, nodes)
         return JsonResponse(hierarchy)
 
 
@@ -201,8 +203,7 @@ def tree_map(request, **params):
         hierarchy = treeMapper.makeTree(root, nodes)
 
         # Run tree mapper on the tree
-        treeMapper.root = hierarchy
-        treeMapper.bfs()
+        treeMapper.bfs(hierarchy)
 
         # Make tree from mapper nodes
         root = TreeNode(articleId)
@@ -216,7 +217,7 @@ def tree_map(request, **params):
         return HttpResponse(status=404)
 
 
-def tree_map_with_edgemapper(request, **params):
+def tree_mapper(request, **params):
     if (request.method == "GET") and "id" in params:
         articleId = params["id"]
         # grab the article id from the session object and query db
@@ -242,16 +243,17 @@ def tree_map_with_edgemapper(request, **params):
         treeMapper = TreeMapper()
         print("Input node count", len(nodes))
 
+        from .test import root
         # make tree from edges
-        hierarchy = treeMapper.makeTree(TreeNode(articleId), nodes)
+        hierarchy = root  # treeMapper.makeTree(TreeNode(articleId), nodes)
         print("Input Height: {0}".format(treeMapper.treeHeight(hierarchy)))
 
         # map the edges using default filter function      
-        cluster = treeMapper.execute(hierarchy, interval)
+        cluster = treeMapper.execute(hierarchy, interval, filterFunction=lambda node: node["sentiment"])
         print("Output node count", len(cluster))
 
         # make tree from mapper nodes
-        hierarchy = treeMapper.makeTree(TreeNode(articleId), cluster)
+        hierarchy = treeMapper.makeTree(TreeNode("a"), cluster)  # treeMapper.makeTree(TreeNode(articleId), cluster)
         print("Output Height: {0}".format(treeMapper.treeHeight(hierarchy)))
         print("Mapper Interval: ", interval)
 
@@ -268,8 +270,7 @@ def mapXTimes(root_id, hierarchy, times=1, function=lambda node: node["value"]):
     for _ in range(times):
         root = TreeNode(root_id)
         treeMapper = TreeMapper()
-        treeMapper.root = hierarchy
-        treeMapper.bfs(filter_function=function)
+        treeMapper.bfs(hierarchy, filter_function=function)
         hierarchy = treeMapper.makeTree(root, treeMapper.cluster)
 
     return hierarchy
