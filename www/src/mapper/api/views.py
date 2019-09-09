@@ -139,9 +139,7 @@ def nodes_in_article(request, **param):
         root = TreeNode(param["id"])
 
         # make tree from edges
-
-        from .test import root
-        hierarchy = root  # treeMapper.makeTree(root, nodes)
+        hierarchy = treeMapper.makeTree(root, nodes)
         return JsonResponse(hierarchy)
 
 
@@ -243,17 +241,16 @@ def tree_mapper(request, **params):
         treeMapper = TreeMapper()
         print("Input node count", len(nodes))
 
-        from .test import root
         # make tree from edges
-        hierarchy = root  # treeMapper.makeTree(TreeNode(articleId), nodes)
+        hierarchy = treeMapper.makeTree(TreeNode(articleId), nodes)
         print("Input Height: {0}".format(treeMapper.treeHeight(hierarchy)))
 
         # map the edges using default filter function      
-        cluster = treeMapper.execute(hierarchy, interval, filterFunction=lambda node: node["sentiment"])
+        cluster = treeMapper.execute(hierarchy, interval)
         print("Output node count", len(cluster))
 
         # make tree from mapper nodes
-        hierarchy = treeMapper.makeTree(TreeNode("a"), cluster)  # treeMapper.makeTree(TreeNode(articleId), cluster)
+        hierarchy = treeMapper.makeTree(TreeNode(articleId), cluster)
         print("Output Height: {0}".format(treeMapper.treeHeight(hierarchy)))
         print("Mapper Interval: ", interval)
 

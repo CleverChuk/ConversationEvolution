@@ -689,7 +689,7 @@ class TreeMapper:
             depth = root["depth"]
             for pair in intervals:
                 low, high = pair
-                if depth >= low and depth <= high:
+                if low <= depth <= high:
                     self.intervals[pair].append(root)
                     break
 
@@ -746,51 +746,48 @@ class TreeMapper:
     def ClusterByConnectedness(self, filterFunction):
         mapperNodes = []
         for interval in self.intervals.values():
-            cluster = defaultdict(set)
+            cluster = defaultdict(list)
             N = len(interval)
+
             if N > 1:
                 for i in range(N):
-                    for j in range(i + 1, N):
-                        if self.pathExist(interval[i], interval[j]) and filterFunction(interval[i]) == filterFunction(
-                                interval[j]):
-                            cluster[interval[i]].add(interval[j])
-                            interval[j]['touched'] = True
-                            cluster.pop(interval[j], "")
-                            # print("first: {0} |  second: {1}".format(interval[i], interval[j]))
-                        else:
-                            if not interval[j]['touched']:
-                                cluster[interval[j]].add(interval[j])
+                    if not interval[i]['isClustered']:
+                        cluster[interval[i]] = [interval[i]]
+                        for j in range(i + 1, N):
+                            temp = cluster[interval[i]]
+                            if self.isChildOf(cluster[interval[i]][-1], interval[j]) and \
+                                    filterFunction(interval[i]) == filterFunction(interval[j]):
+                                cluster[interval[i]].append(interval[j])
+                                interval[j]['isClustered'] = True
+                                # print("first: {0} |  second: {1}".format(interval[i], interval[j]))
 
-                            if not interval[i]['touched']:
-                                cluster[interval[i]].add(interval[i])
+
                         # optimization to stop immediately if there's no path between i and j
                         # this is because the interval is sorted and once a break occurs it is guaranteed that no
                         # path exist between i and subsequent j
                         # if not self.pathExist(interval[i], interval[j]) :
                         #     break
-
             else:
-                cluster[interval[0]].add(interval[0])
+                cluster[interval[0]].append(interval[0])
 
-            mapperNodes.extend(cluster.keys())
+            # mapperNodes.extend(cluster.keys())
+            for node, nodeSet in cluster.items():
+                node["composition"] = [n["id"] for n in nodeSet if n["id"] != node["id"]]
+                mapperNodes.append(node)
 
         # work around for python object reference mess
         for node in mapperNodes:
             mapperNode = TreeNode(node["id"], type="mapper")
             mapperNode["parent_id"] = node["parent_id"]
             mapperNode['value'] = filterFunction(node)
+            mapperNode['composition'] = node["composition"]
             self._cluster.append(mapperNode)
 
-    def pathExist(self, src, dest):
-        queue = deque([src])
-        while queue:
-            src = queue.popleft()
-            if src['id'] == dest['id']:
-                return True
-
-            if src["children"]:
-                for node in src["children"]:
-                    queue.append(node)
+    def isChildOf(self, parent, child):
+        if parent["children"]:
+            for node in parent["children"]:
+                if node["id"] == child["id"]:
+                    return True
 
         return False
 
