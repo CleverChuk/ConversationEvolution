@@ -52,12 +52,12 @@ mapper_module.add_slider_listeners = function () {
 
     interval.oninput = function () {
         $("#interval-value").text($("#interval-count").val())
-        graph()
+//        graph()
     }
 
     epsilon.oninput = function () {
         $("#epsilon-value").text($("#epsilon-range").val())
-        graph()
+//        graph()
     }
 
 }

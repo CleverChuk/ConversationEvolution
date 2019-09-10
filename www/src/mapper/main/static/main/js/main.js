@@ -1,7 +1,7 @@
 $(
     mapper_module.load_main(),
 
-//    mapper_module.add_slider_listeners(),
+    mapper_module.add_slider_listeners(),
 
     mapper_module.add_button_listener(),
 
