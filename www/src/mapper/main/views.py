@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from libs import api
+from libs import database_api
 
 # Create your views here.
 def index(request):

@@ -1,15 +1,17 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Functions use to calculate the similarity between 
 #          two strings
-from nltk import stem, word_tokenize 
+from nltk import stem, word_tokenize
 from string import punctuation
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 stemmer = stem.porter.PorterStemmer()
 remove_punctuation_map = dict((ord(char), None) for char in punctuation)
 
+
 def stem_tokens(tokens):
     return [stemmer.stem(item) for item in tokens]
+
 
 def normalize(text):
     '''
@@ -37,7 +39,8 @@ def cosine_sim(doc_0, doc_1):
         :rtype float :range [0,1]
     """
     vectorizer = TfidfVectorizer(tokenizer=normalize, stop_words='english')
-    tfidf = vectorizer.fit_transform([doc_0, doc_1])
-    return ((tfidf * tfidf.T).A)[0,1]
-
-
+    try:
+        tfidf = vectorizer.fit_transform([doc_0, doc_1])
+        return ((tfidf * tfidf.T).A)[0, 1]
+    except Exception as e:
+        return 0

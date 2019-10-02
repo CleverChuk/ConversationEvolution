@@ -76,6 +76,7 @@ class Node(dict):
 
     def __init__(self, *args, **kwargs):
         self.update(*args, **kwargs)
+        self['radius'] = 2.8
 
     def __getitem__(self, key):
         val = dict.get(self, key, "")
@@ -91,6 +92,10 @@ class Node(dict):
     def update(self, *args, **kwargs):
         for k, v in dict(*args, **kwargs).items():
             self[k] = v
+            
+    
+    def __hash__(self):
+        return hash(self["id"])
 
     def __len__(self):
         return len(self.__dict__)
