@@ -55,6 +55,12 @@ class DatabaseLayer:
     def get_nodes_in_article(self, id):
         raise NotImplementedError
 
+    def get_all_articles(self):
+        raise NotImplementedError
+
+    def get_articles_in_subreddit(self, subreddit):
+        raise NotImplementedError
+
     def get_comments_in_article(self, id):
         raise NotImplementedError
 
@@ -94,51 +100,49 @@ class Neo4jLayer(DatabaseLayer):
         self.graph = graph
 
     def all(self):
-        data = list(self.graph.run("MATCH (n1)-[r]->(n2) RETURN r").data())
+        data = self.graph.run("MATCH (n1)-[r]->(n2) RETURN r").data()
         return [rels["r"] for rels in data]
 
     def nodes(self):
-        data = list(self.graph.run("MATCH (n) RETURN n").data())
+        data = self.graph.run("MATCH (n) RETURN n").data()
         return [node["n"] for node in data]
 
     def get_relationship_by_type(self, type):
-        data = list(self.graph.run(
-            "MATCH (n1)-[r:{0}]->(n2) RETURN r".format(type.upper())).data())
+        data = self.graph.run("MATCH (n1)-[r:{0}]->(n2) RETURN r".format(type.upper())).data()
         return [rels["r"] for rels in data]
 
     def get_nodes_by_label(self, label):
-        data = list(self.graph.run(
-            "MATCH (n:{0}) RETURN n".format(label)).data())
+        data = self.graph.run("MATCH (n:{0}) RETURN n".format(label)).data()
         return [node["n"] for node in data]
 
     def get_equal_str(self, field, value):
-        data = list(self.graph.run(
-            "MATCH (n1)-[r]->(n2) WHERE n1.{0} = \'{1}\' OR n2.{0} = \'{1}\' RETURN r".format(field, value)).data())
+        data = self.graph.run(
+            "MATCH (n1)-[r]->(n2) WHERE n1.{0} = \'{1}\' OR n2.{0} = \'{1}\' RETURN r".format(field, value)).data()
         return [node["r"] for node in data]
 
     def get_equal(self, field, value):
-        data = list(self.graph.run(
-            "MATCH (n1)-[r]->(n2) WHERE n1.{0} = {1} OR n2.{0} = {1} RETURN r".format(field, value)).data())
+        data = self.graph.run(
+            "MATCH (n1)-[r]->(n2) WHERE n1.{0} = {1} OR n2.{0} = {1} RETURN r".format(field, value)).data()
         return [node["r"] for node in data]
 
     def get_greater(self, field, value):
-        data = list(self.graph.run(
-            "MATCH (n1)-[r]->(n2) WHERE n1.{0} > {1} OR n2.{0} > {1} RETURN r".format(field, value)).data())
+        data = self.graph.run(
+            "MATCH (n1)-[r]->(n2) WHERE n1.{0} > {1} OR n2.{0} > {1} RETURN r".format(field, value)).data()
         return [node["r"] for node in data]
 
     def get_greater_or_equal(self, field, value):
-        data = list(self.graph.run(
-            "MATCH (n1)-[r]->(n2) WHERE n1.{0} >= {1} OR n2.{0} >= {1} RETURN r".format(field, value)).data())
+        data = self.graph.run(
+            "MATCH (n1)-[r]->(n2) WHERE n1.{0} >= {1} OR n2.{0} >= {1} RETURN r".format(field, value)).data()
         return [node["r"] for node in data]
 
     def get_less(self, field, value):
-        data = list(self.graph.run(
-            "MATCH (n1)-[r]->(n2) WHERE n1.{0} < {1} OR n2.{0} < {1} RETURN r".format(field, value)).data())
+        data = self.graph.run(
+            "MATCH (n1)-[r]->(n2) WHERE n1.{0} < {1} OR n2.{0} < {1} RETURN r".format(field, value)).data()
         return [node["r"] for node in data]
 
     def get_less_or_equal(self, field, value):
-        data = list(self.graph.run(
-            "MATCH (n1)-[r]->(n2) WHERE n1.{0} <= {1} OR n2.{0} <= {1} RETURN r".format(field, value)).data())
+        data = self.graph.run(
+            "MATCH (n1)-[r]->(n2) WHERE n1.{0} <= {1} OR n2.{0} <= {1} RETURN r".format(field, value)).data()
         return [node["r"] for node in data]
 
     def get_nodes_in_article(self, id):
@@ -147,16 +151,27 @@ class Neo4jLayer(DatabaseLayer):
             id)
 
         query = comment_links + author_links
-        data = list(self.graph.run(query).data())
+        data = self.graph.run(query).data()
         return [node["r"] for node in data]
+
+    def get_all_articles(self):
+        query = "MATCH (n) WHERE n.type=\'article\' return n"
+        data = self.graph.run(query).data()
+        return [node['n'] for node in data]
+
+    def get_articles_in_subreddit(self, subreddit):
+        query = "MATCH (n:article) WHERE n.subreddit=\'{0}\' RETURN n".format(subreddit)
+        data = self.graph.run(query).data()
+
+        return [node["n"] for node in data]
 
     def get_comments_in_article(self, id):
         query = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(id)
-        data = list(self.graph.run(query).data())
+        data = self.graph.run(query).data()
         return [node["r"] for node in data]
 
     def get_subreddit_graph(self, subreddit=None):
-        data = list(self.graph.run("MATCH (n1)-[r:_IN_]->(n2) RETURN r").data())
+        data = self.graph.run("MATCH (n1)-[r:_IN_]->(n2) RETURN r").data()
         return [node["r"] for node in data]
 
 
@@ -212,6 +227,12 @@ class Query:
     def get_nodes_in_article(self, id):
         return self.db_layer.get_nodes_in_article(id)
 
+    def get_all_articles(self):
+        return self.db_layer.get_all_articles()
+
+    def get_articles_in_subreddit(self, subreddit):
+        return self.db_layer.get_articles_in_subreddit(subreddit)
+
     def get_comments_in_article(self, id):
         return self.db_layer.get_comments_in_article(id)
 
@@ -241,7 +262,7 @@ class Query:
         return self.db_layer.drop()
 
     def run(self, query):
-        return self.db_layer.run()
+        return self.db_layer.run(query)
 
 
 class D3helper:

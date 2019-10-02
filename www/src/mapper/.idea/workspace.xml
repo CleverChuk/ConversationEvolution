@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c9666b3-eb51-49a4-bf1e-8534a56baff3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-12.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-12.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-16.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-16.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-2.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-24.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-24.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-3.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-3.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-32.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-32.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-4.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-4.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-6.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-6.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/09-03-2019-8.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/09-03-2019-8.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../pictures/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pictures/Thumbs.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/mapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/js/event_handlers.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/js/event_handlers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/codes/db_loaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/codes/db_loaders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/codes/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/codes/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/codes/reddit_crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/codes/reddit_crawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/database_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/libs/database_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/main/js/render_mapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/js/render_mapper.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,27 +25,12 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>cluster_nodes</find>
-      <find>property_key</find>
-      <find>comment</find>
-      <find>nodes</find>
-      <find>self.queue</find>
-      <find>s</find>
-      <find>a</find>
-      <find>p</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-      <replace>queue</replace>
-      <replace>sentiment</replace>
-      <replace>root</replace>
-      <replace>negative</replace>
-      <replace>positive</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../../.." value="tree_mapper" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="1QTYTZJYxn3YkGS5SWbzOahFkN9" />
@@ -75,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.manage">
+  <component name="RunManager" selected="Python.main">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mapper" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567996716638</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="contiguous clustering of mapper nodes">
+      <created>1568133255822</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568133255822</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
