@@ -39,11 +39,11 @@ i['parent_id'] = 'f'
 i['sentiment'] = 'negative'
 
 root["children"].extend([b, c, d])
-b.addChild(e)
+b.add_child(e)
 
 c["children"].extend([f, g])
-d.addChild(h)
-f.addChild(i)
+d.add_child(h)
+f.add_child(i)
 
 # tm.execute(root, 2, lambda n: n['sentiment'])
 # print(tm._generateIntervals(28,7))

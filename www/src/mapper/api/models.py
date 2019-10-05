@@ -10,6 +10,7 @@ class Node(dict):
     """
 
     def __init__(self, *args, **kwargs):
+        super().__init__()
         self.update(*args, **kwargs)
         self['radius'] = 2.8
 
@@ -41,5 +42,5 @@ class TreeNode(Node):
         self["type"] = type
         self["children"] = []
 
-    def addChild(self, child):
+    def add_child(self, child):
         self["children"].append(child)

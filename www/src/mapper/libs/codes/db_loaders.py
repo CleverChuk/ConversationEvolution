@@ -146,7 +146,7 @@ class Neo4jLoader:
         for row in reader:
             rows.append(zip(header, row))
 
-        if label == None:
+        if label is None:
             self.label = row[-1]
         else:
             self.label = label
