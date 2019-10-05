@@ -44,7 +44,7 @@ This class is a wrapper of praw.Reddit. It is used to query the Reddit api for d
 This example creates a RedditBot object and uses it to get the subbmission ids of 10 hot submissions.
 
 ```Python
-bot = RedditBot("compsci", "CleverChuk", "password")
+bot = RedditBot("compsci", credential)
 
 ids = bot.get_hot_submissions_id(limit = 10)
 
@@ -57,17 +57,17 @@ bot.dumpjson("compsci.json", ids)
 
 **Constructor Summary**
 
-`RedditBot(subreddit, "username", "password")`
+`RedditBot(subreddit, credential)`
 
-constructs a RedditBot with the given subreddit, username, password and APP_NAME w/ value "myapp" and VERSION w/ value "1.0.0"
+constructs a RedditBot with the given subreddit, credential and app_name w/ value "myapp" and version w/ value "1.0.0"
 
-`RedditBot(subreddit, username, password, APP_NAME)`
+`RedditBot(subreddit, credential, "app name")`
 
-constructs a RedditBot with the given subreddit, username, password, APP_NAME and VERSION w/ value "1.0.0"
+constructs a RedditBot with the given subreddit, credential, app name and version w/ value "1.0.0"
 
-`RedditBot(subreddit, username, password, APP_NAME, VERSION)`
+`RedditBot(subreddit, credential, "app name", "1.0.0")`
 
-constructs a RedditBot with the given subreddit, username, password, APP_NAME and VERSION
+constructs a RedditBot with the given subreddit, credential, "app name", "1.0.0"
 
 **Method Summary**
 
@@ -103,24 +103,24 @@ ids = ["a55xbm","a57th7"]
 
 subreddit = "programming"
 
-grapher = Grapher(subreddit, "username", "password", intervals=intervals, property_key=prop, epsilon=epsilon)
+grapher = Grapher(subreddit, credential, intervals=intervals, property_key=prop, epsilon=epsilon)
 
 graph = grapher.get_graph(*ids)
 ```
 
 **Constructor Summary**
 
-`Grapher(subreddit, username, password)`
+`Grapher(subreddit, credential)`
 
 constructs a Grapher with the given subreddit, username, password and defaults for intervals, property_key, epsilon,APP_NAME and VERSION
 
-`Grapher(subreddit, username, password, intervals=10)`
+`Grapher(subreddit, credential, intervals=10)`
 
-constructs a Grapher with the given subreddit, username, password, and intervals
+constructs a Grapher with the given subreddit, credential, and intervals
 
-`Grapher(subreddit, username, password, intervals = 10, property_key = "reading_level", epsilon = 0.5)`
+`Grapher(subreddit, credential, intervals = 10, property_key = "reading_level", epsilon = 0.5)`
 
-constructs a Grapher with the given subreddit, username, password, intervals, property_key and epsilon.
+constructs a Grapher with the given subreddit, credential, intervals, property_key and epsilon.
 
 **Method Summary**
 
