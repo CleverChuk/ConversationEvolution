@@ -2,42 +2,156 @@
 
 {% block content %}
 <div class="container" id="container">
+  <!-- row 1: heading -->
   <div class="row">
-    <div class="col-2 radio-buttons">
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="reading_level">
-        Reading level
-      </label>
-      <br />
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="score">
-        Score
-      </label>
-      <br />
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="sentiment_score">
-        Sentiment
-      </label>
-      <br />
-      <!-- <label>
-        <input class="radio-button" type="radio" name="filter" value="author">
-        Author
-      </label>
-      <br /> -->
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="length">
-        Length
-      </label>
-      <label>
-        <input class="radio-button" type="radio" name="filter" value="average_word_length">
-        Average word length
-      </label>
+    <div class="col">
+      <h4>Main Graph</h4>
     </div>
+    <div class="col">
+      <h4>Mapper Graph</h4>
+    </div>
+  </div>
+  <!-- row 2: Canvas-->
+  <div class="row">
     <div class="col graph svg-container">
       <svg></svg>
     </div>
+
     <div class="col mgraph svg-container">
       <svg></svg>
+    </div>
+  </div>
+  <!-- row 3-->
+  <div class="row checkboxes">
+    <!-- Node customization -->
+    <div class="col-3">
+      <div class="color-setting">
+        <label class="color-label">
+          Root Comment Node Color
+        </label>
+
+        <label class="color-label">
+          Comment Node Color
+        </label>
+
+        <label class="color-label">
+          Author Node Color
+        </label>
+
+        <label class="color-label">
+          Article Node Color
+        </label>
+
+        <label class="color-label">
+          Subreddit Node Color
+        </label>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="color-setting">
+        <input class="color" type="text" id="root_comment_color" value="pink">
+        <input class="color" type="text" id="comment_color" value="teal">
+        <input class="color" type="text" id="author_color" value="orange">
+        <input class="color" type="text" id="article_color" value="cyan">
+        <input class="color" type="text" id="subreddit_color" value="violet">
+      </div>
+
+      <button type="button" class="btn btn-primary" id="show" style="margin-top:40px;">Show Article graph</button>
+    </div>
+    <!-- Mapper settings -->
+    <div class="col">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <section class="epsilon-slider">
+              <h5>Epsilon</h5>
+              <input class="slider" value="50" type="range" step="0.001" max="100" min="0" id="epsilon-range" />
+              <p>
+                  <strong>value: <span id="epsilon-value"></span></strong>
+              </p>
+            </section>
+
+            <section class="interval-slider">
+              <h5>Number of intervals</h5>
+              <input class="slider" value="3" type="range" max="100" min="2" id="interval-count" />
+              <p>
+                <strong>value: <span id="interval-value"></span></strong>
+              </p>
+            </section>
+
+            <section class="mode">
+              <h5>Aggregation function</h5>
+              <div class="mode-choice">
+                <input type="radio" class="a-method" name="method" value="mean"> Mean
+                <input type="radio" class="a-method" name="method" value="median" checked> Median
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="row">
+          <section>
+            <h4 style="margin-top:20px">Filters</h4>
+            <label class="filter-label">
+              <input class="filter" type="radio" name="filter" value="reading_level" checked>
+              Reading level
+            </label>
+
+            <label class="filter-label">
+              <input class="filter" type="radio" name="filter" value="score">
+              Score
+            </label>
+
+            <label class="filter-label">
+              <input class="filter" type="radio" name="filter" value="sentiment_score">
+              Sentiment
+            </label>
+
+            <label class="filter-label">
+              <input class="filter" type="radio" name="filter" value="length">
+              Length
+            </label>
+
+            <label class="filter-label">
+              <input class="filter" type="radio" name="filter" value="timestamp">
+              Timestamp
+            </label>
+
+            <label class="filter-label">
+              <input class="filter" type="radio" name="filter" value="average_word_length">
+              Average word length
+            </label>
+          </section>
+        </div>
+        <div class="row">
+          <section class="constraint-container">
+            <h4>Constrain</h4>
+            <label class="constraint-label">
+              <input class="constraint" type="radio" id="y" name="constraint" value="y">
+              y-axis
+            </label>
+            <br />
+            <label class="constraint-label">
+              <input class="constraint" type="radio" id="x" name="constraint" value="x">
+              x-axis
+            </label>
+            <br />
+            <label class="constraint-label">
+              <input class="constraint" type="radio" name="constraint" value="none" checked>
+              no constraint
+            </label>
+          </section>
+
+        </div>
+        <div class="row" style="display: inline">
+          <label class="color-label">
+            Tree map        
+          </label>
+          <input class="check-box" type="checkbox" id="treemap" name="map">
+        </div>
+      </div>
+      
+
+      <button type="button" style="padding-left:50px;padding-right:50px; margin-bottom: 20px" id="graph-btn" class="btn btn-primary">Graph</button>
     </div>
   </div>
 </div>
