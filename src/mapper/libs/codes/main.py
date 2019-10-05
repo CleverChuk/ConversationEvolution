@@ -1,6 +1,7 @@
 import db_loaders as dbl
 import graph_writers as gws
 from reddit_crawler import (Crawler)
+import json
 
 if __name__ == "__main__":
     gw = gws.Neo4jGrapher()
@@ -14,14 +15,18 @@ if __name__ == "__main__":
     intervals = 10
     prop = "score"
     epsilon = 0.05
-    crawler = Crawler(subreddit, "CleverChuk", "BwO9pJdzGaVj2pyhZ4kJ", intervals=intervals, property_key=prop,
-                      epsilon=epsilon)
-    # get data for two submissions in the subreddit
-    ids = crawler.get_submissions()[:2]
-    # ids = crawler.get_hot_submissions(2)
-    crawler.get_graph(*ids)
 
-    crawler.writeGraphML()
+    with open("./credential.json", "r") as fp:
+        lines = fp.readlines()
+        credential = json.loads(lines)
+
+        crawler = Crawler(subreddit, credential, intervals=intervals, property_key=prop, epsilon=epsilon)
+        # get data for two submissions in the subreddit
+        ids = crawler.get_submissions()[:2]
+        # ids = crawler.get_hot_submissions(2)
+        crawler.get_graph(*ids)
+
+        crawler.writeGraphML()
 
     # loader
     loader = dbl.Neo4jLoader("http://localhost:11002/", "neo4j", "chubi93")

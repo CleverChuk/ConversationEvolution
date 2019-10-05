@@ -5,9 +5,8 @@ from json_models import SubmissionDump, CustomEncoder
 import praw
 
 
-
 class RedditBot:
-    def __init__(self, subreddit, username, password, APP_NAME = "myapp", VERSION = "1.0.0"):
+    def __init__(self, subreddit, credential, APP_NAME="myapp", VERSION="1.0.0"):
         """ 
             initialize the bot
 
@@ -15,21 +14,26 @@ class RedditBot:
                 :type string
                 :description: the name of the subreddit to get data from
         
-            @param username
-                :type string
-                :description: Reddit username
+            @param credential
+                :type dict
+                :description
+                {
+                  "client_secret":"#####",
+                  "client_id":"###",
+                  "username": "####",
+                  "password":  "#####"
+                }
             
             @param subreddit
                 :type string
                 :description: Reddit password
 
         """
-        self._client_secret = "dcnGfpdIFWH-Zk4Vr6mCypz1dmI"
-        self._client_id = "n-EWVSgG6cMnRQ"
-        self.user_agent = "python:%s:v%s (by /u/%s)" % (APP_NAME,VERSION,username)
 
-        self.reddit = praw.Reddit(client_id=self._client_id, client_secret=self._client_secret,
-                                  password=password, user_agent=self.user_agent, username=username)
+        self.user_agent = "python:%s:v%s (by /u/%s)" % (APP_NAME, VERSION, credential["username"])
+        self.reddit = praw.Reddit(client_id=credential["client_id"], client_secret=credential["client_secret"],
+                                  password=credential["password"], user_agent=self.user_agent,
+                                  username=credential["username"])
         self.subreddit = self.reddit.subreddit(subreddit)
         self.subreddit_tag = subreddit
 
@@ -52,7 +56,7 @@ class RedditBot:
             :rtype generator
         """
         for submission in self.subreddit.hot(limit=limit):
-             yield submission.id
+            yield submission.id
 
     def get_submission(self, id):
         """

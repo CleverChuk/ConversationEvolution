@@ -13,8 +13,8 @@ class Crawler(RedditBot):
     """
     relationship_id = 0
 
-    def __init__(self, subreddit, username, password, property_key="sentiment_score", epsilon=0.5, intervals=3,
-                 APP_NAME="myapp", VERSION="1.0.0"):
+    def __init__(self, subreddit, credentials, property_key="sentiment_score", epsilon=0.5, intervals=3,
+                 app_name="myapp", version="1.0.0"):
         """
         Builds the GraphBot objects using default or provided configuration
 
@@ -42,7 +42,7 @@ class Crawler(RedditBot):
             :type float
             :description: how much to shift the property_key to create overlap
         """
-        super().__init__(subreddit, username, password, VERSION=VERSION, APP_NAME=APP_NAME)
+        super().__init__(subreddit, credentials, VERSION=version, APP_NAME=app_name)
         self.property_key = property_key
         self.epsilon = epsilon
         self.intervals = intervals
