@@ -2,7 +2,7 @@
 # Purpose: Functions use to calculate new feature for graph nodes
 
 import nltk
-from libs.codes.textsim import remove_punctuation_map
+from src.mapper.libs.codes.textsim import remove_punctuation_map
 from statistics import mean
 
 
