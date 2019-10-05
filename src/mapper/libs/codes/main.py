@@ -17,9 +17,8 @@ if __name__ == "__main__":
     epsilon = 0.05
 
     with open("./credential.json", "r") as fp:
-        lines = fp.readlines()
+        lines = "".join(fp.readlines())
         credential = json.loads(lines)
-
         crawler = Crawler(subreddit, credential, intervals=intervals, property_key=prop, epsilon=epsilon)
         # get data for two submissions in the subreddit
         ids = crawler.get_submissions()[:2]
