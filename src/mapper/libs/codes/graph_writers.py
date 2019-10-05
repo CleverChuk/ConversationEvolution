@@ -12,11 +12,13 @@ from mapper import Mapper
     :description:
 """
 
+
 class Neo4jGrapher:
     """
         Class used to write graph in Neo4j graph format
     """
-    def writeEdgeHeaderFile(self, filename, has_type=True, property_keys=[], property_type=[]):
+
+    def write_edge_header_file(self, filename, has_type=True, property_keys=[], property_type=[]):
         """
             writes Neo4j relationship header to file
             creates file if it does not exist otherwise overwrite
@@ -54,19 +56,18 @@ class Neo4jGrapher:
             header_1.append(":TYPE")
 
         filename = filename.split(".")
-        filename = "."+filename[1] + "_header." + filename[2]
+        filename = "." + filename[1] + "_header." + filename[2]
         fname = "./raw/temp.csv"
 
         with open(fname, "w") as fp:
             text = ",".join(header)
             fp.write(text)
 
-        self.cleanCsv(fname, filename)
+        self.clean_csv(fname, filename)
 
         return header_1
 
-
-    def writeEdgesToFile(self, filename, data, rel=None, directed=False):
+    def write_edges_to_file(self, filename, data, rel=None, directed=False):
         """
             writes graph edges to file in the form
             Neo4j understands to the given filename
@@ -95,7 +96,7 @@ class Neo4jGrapher:
         if n < 2:
             raise TypeError("each edge must have two nodes and a relationship")
 
-        if (n == 3 and rel == None) or (rel != None and rel.isspace()):
+        if (n == 3 and rel is None) or (rel is not None and rel.isspace()):
             raise Exception("must rel cannot be None or empty")
 
         if n > 2:
@@ -106,14 +107,14 @@ class Neo4jGrapher:
                 if property_keys[i] == 'type':
                     property_keys.pop(i)
                     break
-            header = self.writeEdgeHeaderFile(
+            header = self.write_edge_header_file(
                 filename, property_keys=property_keys, property_type=property_type)
         else:
-            header = self.writeEdgeHeaderFile(filename, has_type=rel != None)
+            header = self.write_edge_header_file(filename, has_type=rel is not None)
 
         with open(filename, "w", newline='') as fp:
-            dictWriter = DictWriter(fp, header)
-            dictWriter.writeheader()
+            dict_writer = DictWriter(fp, header)
+            dict_writer.writeheader()
 
             for edge in data:
                 if len(edge) > 2:
@@ -127,21 +128,20 @@ class Neo4jGrapher:
                 else:
                     node_1, node_2 = edge
                     d = {":START_ID": node_1.id, ":END_ID": node_2.id}
-                    if rel != None:
+                    if rel is not None:
                         d[":TYPE"] = rel
 
                 if directed:
-                    dictWriter.writerow(d)
+                    dict_writer.writerow(d)
                 else:
-                    dictWriter.writerow(d)
+                    dict_writer.writerow(d)
                     temp = d[":START_ID"]
                     d[":START_ID"] = d[":END_ID"]
 
                     d[":END_ID"] = temp
-                    dictWriter.writerow(d)
+                    dict_writer.writerow(d)
 
-
-    def writeNodeHeaderFile(self, filename, header, property_type):
+    def write_node_header_file(self, filename, header, property_type):
         """
             writes header to the given filename
             creates file if it does not exist otherwise overwrite
@@ -186,12 +186,11 @@ class Neo4jGrapher:
             text = ",".join(h)
             fp.write(text)
 
-        self.cleanCsv(fname, filename)
+        self.clean_csv(fname, filename)
 
         return h
 
-
-    def writeNodesToCsv(self, filename, data):
+    def write_nodes_to_csv(self, filename, data):
         """
             writes header plus the given nodes data
             to the given filename.
@@ -209,7 +208,7 @@ class Neo4jGrapher:
         with open(temp, "w") as file:
             writer = DictWriter(file, fieldnames=header, restval="na")
             v = list(data[0].__dict__.values())
-            header = self.writeNodeHeaderFile(filename, header, v)
+            header = self.write_node_header_file(filename, header, v)
 
             file.write(",".join(header))
             file.write("\n")
@@ -220,10 +219,9 @@ class Neo4jGrapher:
                     obj.__dict__["body"] = ""
                 writer.writerow(obj.__dict__)
 
-        self.cleanCsv(temp, filename)
+        self.clean_csv(temp, filename)
 
-
-    def cleanCsv(self, input_fname, out_fname):
+    def clean_csv(self, input_fname, out_fname):
         """
             removes uunneeded headers and empty column
             from the csv.
@@ -256,5 +254,5 @@ class Neo4jGrapher:
 
         try:
             os.remove(input_fname)
-        except:
+        except IOError as e:
             pass

@@ -5,7 +5,7 @@ from reddit_crawler import (Crawler)
 if __name__ == "__main__":
     gw = gws.Neo4jGrapher()
     # the subreddit to scrape
-    subreddit = "programming"
+    # subreddit = "programming"
     subreddit = "politics"
     # file name to dumpjson
     filename = "./raw/%s.json" % subreddit

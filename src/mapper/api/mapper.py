@@ -631,7 +631,7 @@ class TreeMapper:
             for child in root["children"]:
                 queue.append(child)
 
-    def makeTree(self, root, nodes, visited=[]):
+    def make_tree(self, root, nodes, visited=[]):
         for child in nodes:
             if child["parent_id"] == root["id"] or root["composition"] and child["parent_id"] in root["composition"]:
                 if "children" in root:
@@ -642,7 +642,7 @@ class TreeMapper:
                 if child not in visited:
                     visited.append(child)
                     # Traverse only if reachable from root
-                    self.makeTree(child, nodes, visited)
+                    self.make_tree(child, nodes, visited)
 
         return root
 
@@ -683,7 +683,7 @@ class TreeMapper:
 
             self._cluster.append(node)
 
-    def _populateIntervals(self, root, intervals):
+    def _populate_intervals(self, root, intervals):
         # create intervals based on the depth        
         if root["parent_id"]:
             depth = root["depth"]
@@ -695,27 +695,27 @@ class TreeMapper:
 
         if root["children"]:
             for child in root["children"]:
-                self._populateIntervals(child, intervals)
+                self._populate_intervals(child, intervals)
 
-    def _clusterInterval(self, filterFunction):
+    def _cluster_interval(self, filterFunction):
         for nodes in self.intervals.values():
             self.map(nodes, filterFunction)
 
     def execute(self, root, interval=[], filterFunction=lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
         del self._cluster[:]
         if type(interval) == int:
-            interval = self._generateIntervals(self.treeHeight(root), interval)
+            interval = self._generate_intervals(self.tree_height(root), interval)
         # add the depth of the nodes as a property
-        self._addDepth(root)
+        self._add_depth(root)
         # create intervals
-        self._populateIntervals(root, interval)
+        self._populate_intervals(root, interval)
         # cluster intervals        
         # self._clusterInterval(filterFunction)
-        self.ClusterByConnectedness(filterFunction)
+        self.cluster_by_connectedness(filterFunction)
 
         return self._cluster
 
-    def _generateIntervals(self, height, count):
+    def _generate_intervals(self, height, count):
         intervals = []
         N = height // count
 
@@ -726,25 +726,25 @@ class TreeMapper:
 
         return intervals
 
-    def treeHeight(self, root):
+    def tree_height(self, root):
         if not root["children"]:
             return 0
 
         height = 0
         for child in root["children"]:
-            height = max(height, self.treeHeight(child) + 1)
+            height = max(height, self.tree_height(child) + 1)
 
         return height
 
-    def _addDepth(self, root, depth=0):
+    def _add_depth(self, root, depth=0):
         # add the depth of the node
         root["depth"] = depth
         if root["children"]:
             for child in root["children"]:
-                self._addDepth(child, depth + 1)
+                self._add_depth(child, depth + 1)
 
-    def ClusterByConnectedness(self, filterFunction):
-        mapperNodes = []
+    def cluster_by_connectedness(self, filter_function):
+        mapper_nodes = []
         for interval in self.intervals.values():
             cluster = defaultdict(list)
             N = len(interval)
@@ -755,8 +755,8 @@ class TreeMapper:
                         cluster[interval[i]] = [interval[i]]
                         for j in range(i + 1, N):
                             temp = cluster[interval[i]]
-                            if self.isChildOf(cluster[interval[i]][-1], interval[j]) and \
-                                    filterFunction(interval[i]) == filterFunction(interval[j]):
+                            if self.is_child_of(cluster[interval[i]][-1], interval[j]) and \
+                                    filter_function(interval[i]) == filter_function(interval[j]):
                                 cluster[interval[i]].append(interval[j])
                                 interval[j]['isClustered'] = True
                                 # print("first: {0} |  second: {1}".format(interval[i], interval[j]))
@@ -770,22 +770,22 @@ class TreeMapper:
             else:
                 cluster[interval[0]].append(interval[0])
 
-            # mapperNodes.extend(cluster.keys())
+            # mapper_nodes.extend(cluster.keys())
             for node, nodeSet in cluster.items():
                 node["composition"] = [n["id"] for n in nodeSet if n["id"] != node["id"]]
                 node["radius"] = 3.14*(len(nodeSet)/2 + 1)**2
-                mapperNodes.append(node)
+                mapper_nodes.append(node)
 
         # work around for python object reference mess
-        for node in mapperNodes:
-            mapperNode = TreeNode(node["id"], type="mapper")
-            mapperNode["radius"] = node["radius"]
-            mapperNode["parent_id"] = node["parent_id"]
-            mapperNode['value'] = filterFunction(node)
-            mapperNode['composition'] = node["composition"]
-            self._cluster.append(mapperNode)
+        for node in mapper_nodes:
+            mapper_node = TreeNode(node["id"], type="mapper")
+            mapper_node["radius"] = node["radius"]
+            mapper_node["parent_id"] = node["parent_id"]
+            mapper_node['value'] = filter_function(node)
+            mapper_node['composition'] = node["composition"]
+            self._cluster.append(mapper_node)
 
-    def isChildOf(self, parent, child):
+    def is_child_of(self, parent, child):
         if parent["children"]:
             for node in parent["children"]:
                 if node["id"] == child["id"]:
@@ -793,18 +793,18 @@ class TreeMapper:
 
         return False
 
-    def topSort(self, graph):
-        sortedNodes, visited = deque(), set()
+    def top_sort(self, graph):
+        sorted_nodes, visited = deque(), set()
         for node in graph:
-            self.dfs(graph, node, visited, sortedNodes)
+            self.dfs(graph, node, visited, sorted_nodes)
 
-        return list(sortedNodes)
+        return list(sorted_nodes)
 
-    def dfs(self, graph, startNode, visited, sortedNodes):
-        visited.add(startNode)
-        if startNode["children"]:
-            neighbors = [child for child in startNode["children"] if child in graph]
+    def dfs(self, graph, start_node, visited, sorted_nodes):
+        visited.add(start_node)
+        if start_node["children"]:
+            neighbors = [child for child in start_node["children"] if child in graph]
             for neighbor in neighbors:
                 if neighbor not in visited:
-                    self.dfs(graph, neighbor, visited, sortedNodes)
-        sortedNodes.append(startNode)
+                    self.dfs(graph, neighbor, visited, sorted_nodes)
+        sorted_nodes.append(start_node)

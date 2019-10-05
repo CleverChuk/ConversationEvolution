@@ -5,7 +5,7 @@ from .models import *
 from .mapper import EdgeMapper, Edge, TreeMapper
 
 # constants
-ARTICLE_ID = 'articleId'
+ARTICLE_ID = 'article_id'
 # Create db layer object and pass it to the query object
 db_layer = database_api.Neo4jLayer()
 query = database_api.Query(db_layer)
@@ -18,7 +18,7 @@ mapper_edges = None
 # Create your views here.
 
 
-def all(request):
+def all_nodes(request):
     """
         reads the how graph from database
     """
@@ -156,12 +156,12 @@ def nodes_in_article(request, **param):
         # data = database_api.D3helper.transform(*data)
 
         # Return tree graph
-        nodes = edgesToNodes(data)
-        treeMapper = TreeMapper()
+        nodes = edges_to_nodes(data)
+        tree_mapper = TreeMapper()
         root = TreeNode(param["id"])
 
         # make tree from edges
-        hierarchy = treeMapper.makeTree(root, nodes)
+        hierarchy = tree_mapper.make_tree(root, nodes)
         return JsonResponse(hierarchy)
     else:
         return HttpResponse(status=403)
@@ -217,14 +217,14 @@ def mapper_graph(request):
 def tree(request, **params):
     import itertools
     if (request.method == "GET") and "id" in params:
-        articleId = params["id"]
-        data = query.get_comments_in_article(articleId)
+        article_id = params["id"]
+        data = query.get_comments_in_article(article_id)
 
         nodes = map(lambda py2neo_rel: (py2neo_rel.start_node, py2neo_rel.end_node), data)
         nodes = set(itertools.chain(*nodes))
-        root = TreeNode(articleId)
+        root = TreeNode(article_id)
 
-        hierarchy = TreeMapper().makeTree(root, nodes)
+        hierarchy = TreeMapper().make_tree(root, nodes)
         return JsonResponse(hierarchy)
     else:
         return HttpResponse(status=403)
@@ -233,38 +233,38 @@ def tree(request, **params):
 def tree_map(request, **params):
     import itertools
     if (request.method == "GET") and "id" in params:
-        articleId = params["id"]
-        data = query.get_comments_in_article(articleId)
+        article_id = params["id"]
+        data = query.get_comments_in_article(article_id)
 
         # Convert edges to a set of nodes
         nodes = map(lambda py2neo_rel: (py2neo_rel.start_node, py2neo_rel.end_node), data)
         nodes = set(itertools.chain(*nodes))
 
-        treeMapper = TreeMapper()
+        tree_mapper = TreeMapper()
         # Make a tree, using the article node as the root
-        root = TreeNode(articleId)
-        hierarchy = treeMapper.makeTree(root, nodes)
+        root = TreeNode(article_id)
+        hierarchy = tree_mapper.make_tree(root, nodes)
 
         # Run tree mapper on the tree
-        treeMapper.bfs(hierarchy)
+        tree_mapper.bfs(hierarchy)
 
         # Make tree from mapper nodes
-        root = TreeNode(articleId)
-        hierarchy = treeMapper.makeTree(root, treeMapper.cluster)
+        root = TreeNode(article_id)
+        hierarchy = tree_mapper.make_tree(root, tree_mapper.cluster)
 
         # Remap mapper nodes x times
-        # new_hierarchy = mapXTimes(articleId, hierarchy, times=10)
+        # new_hierarchy = mapXTimes(article_id, hierarchy, times=10)
         return JsonResponse(hierarchy)
 
     else:
         return HttpResponse(status=403)
 
 
-def tree_mapper(request, **params):
+def map_with_tree_mapper(request, **params):
     if (request.method == "GET") and "id" in params:
-        articleId = params["id"]
+        article_id = params["id"]
         # grab the article id from the session object and query db
-        data = query.get_comments_in_article(articleId)
+        data = query.get_comments_in_article(article_id)
 
         # extract the property passed in the url
         prop = 'sentiment_score' if 'prop' not in request.GET else request.GET['prop']
@@ -282,21 +282,21 @@ def tree_mapper(request, **params):
         # print(data)
 
         # flatten the edge list to node list
-        nodes = edgesToNodes(data)
-        treeMapper = TreeMapper()
+        nodes = edges_to_nodes(data)
+        tree_mapper = TreeMapper()
         print("Input node count", len(nodes))
 
         # make tree from edges
-        hierarchy = treeMapper.makeTree(TreeNode(articleId), nodes)
-        print("Input Height: {0}".format(treeMapper.treeHeight(hierarchy)))
+        hierarchy = tree_mapper.make_tree(TreeNode(article_id), nodes)
+        print("Input Height: {0}".format(tree_mapper.tree_height(hierarchy)))
 
         # map the edges using default filter function      
-        cluster = treeMapper.execute(hierarchy, interval)
+        cluster = tree_mapper.execute(hierarchy, interval)
         print("Output node count", len(cluster))
 
         # make tree from mapper nodes
-        hierarchy = treeMapper.makeTree(TreeNode(articleId), cluster)
-        print("Output Height: {0}".format(treeMapper.treeHeight(hierarchy)))
+        hierarchy = tree_mapper.make_tree(TreeNode(article_id), cluster)
+        print("Output Height: {0}".format(tree_mapper.tree_height(hierarchy)))
         print("Mapper Interval: ", interval)
 
         return JsonResponse(hierarchy)
@@ -310,17 +310,17 @@ def get_equal(field, value):
     return data
 
 
-def mapXTimes(root_id, hierarchy, times=1, function=lambda node: node["value"]):
+def map_x_times(root_id, hierarchy, times=1, function=lambda node: node["value"]):
     for _ in range(times):
         root = TreeNode(root_id)
-        treeMapper = TreeMapper()
-        treeMapper.bfs(hierarchy, filter_function=function)
-        hierarchy = treeMapper.makeTree(root, treeMapper.cluster)
+        tree_mapper = TreeMapper()
+        tree_mapper.bfs(hierarchy, filter_function=function)
+        hierarchy = tree_mapper.make_tree(root, tree_mapper.cluster)
 
     return hierarchy
 
 
-def edgesToNodes(edges):
+def edges_to_nodes(edges):
     from collections import defaultdict
     # Convert edges to a set of nodes
     nodes = list(map(lambda edge: (edge.start_node, edge.end_node), edges))

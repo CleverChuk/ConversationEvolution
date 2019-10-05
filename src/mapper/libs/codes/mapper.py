@@ -18,7 +18,7 @@ ALPHA = 97
     :description:
 """
 
-
+@DeprecationWarning
 class Mapper:
     JACCARD_THRESH = 0.1
 
