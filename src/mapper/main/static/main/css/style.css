@@ -1,0 +1,163 @@
+body {
+    font: "consolas"12px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    margin-top: 10px;
+    display: flex;
+    float: left;
+}
+
+h3 {
+    text-align: center;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+.dropdown {
+    margin: 0px 10px 0px 10px;
+    float: left;
+}
+
+.dropdown-item {
+    width: 200px;
+    place-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    padding: 20px;
+    font-size: 1.3rem;
+    margin: 0;
+    background: white;
+    resize: horizontal;
+}
+
+.subreddit {
+    margin: 0px 10px 0px 10px;
+    display: flex;
+}
+
+.mgraph,
+.graph {
+    background-color: gray;
+    margin: 10px
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 45%;
+    /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.filter-label {
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.constraint-container,
+.color-setting {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+
+.constraint-label {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.color-label {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.color{
+    float: left;
+    margin-top: 14px;
+}
+
+/* mapper settings */
+
+
+.slider:hover {
+    opacity: 1;
+    /* Fully shown on mouse-over */
+}
+
+
+
+.epsilon-slider {
+    position: relative;
+}
+
+.interval-slider,
+.mode {
+    margin-top: 50px;
+    position: relative;
+}
+
+span {
+    margin-left: 5px;
+    color: green;
+}
+
+.a-method {
+    margin-left: 20px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: blue;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: blue;
+    cursor: pointer;
+}
+
+
+#treemap {
+    margin-left: 10px;
+    float: left;
+}

@@ -1,0 +1,41 @@
+body {
+    font: "consolas"12px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.link {
+    stroke: #ccc
+}
+
+.mgraph,
+.graph {
+    background-color: gray;
+    margin-left: 10px
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 45%;
+    /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
