@@ -26,6 +26,8 @@ def all_nodes(request):
         data = query.all()
         data = database_api.D3helper.transform(*data)
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def subreddit_graph(request):
@@ -33,6 +35,8 @@ def subreddit_graph(request):
         data = query.get_subreddit_graph()
         data = database_api.D3helper.transform(*data)
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def get_nodes(request):
@@ -45,12 +49,16 @@ def get_nodes(request):
 
         context["graph"] = query.nodes()
         return JsonResponse(context)
+    else:
+        return HttpResponse(status=403)
 
 
 def node_label(request, **param):
-    data = query.get_nodes_by_label(param["label"])
-    context = {"nodes": data}
-    return JsonResponse(context)
+    if request.method == "GET":
+        data = query.get_nodes_by_label(param["label"])
+        return JsonResponse({"nodes": data})
+    else:
+        return HttpResponse(status=403)
 
 
 def relationship(request, **param):
@@ -59,6 +67,8 @@ def relationship(request, **param):
         data = database_api.D3helper.transform(*data)
 
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def equal_str(request, **param):
@@ -70,6 +80,8 @@ def equal_str(request, **param):
         data = database_api.D3helper.transform(*data)
 
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def equal(request, **param):
@@ -80,6 +92,8 @@ def equal(request, **param):
         data = query.get_equal(field, value)
         data = database_api.D3helper.transform(*data)
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def greater(request, **param):
@@ -90,6 +104,8 @@ def greater(request, **param):
         data = query.get_greater(field, value)
         data = database_api.D3helper.transform(*data)
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def greater_or_equal(request, **param):
@@ -100,6 +116,8 @@ def greater_or_equal(request, **param):
         data = query.get_greater_or_equal(field, value)
         data = database_api.D3helper.transform(*data)
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def less(request, **param):
@@ -110,6 +128,8 @@ def less(request, **param):
         data = query.get_less(field, value)
         data = database_api.D3helper.transform(*data)
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def less_or_equal(request, **param):
@@ -120,6 +140,8 @@ def less_or_equal(request, **param):
         data = query.get_less_or_equal(field, value)
         data = database_api.D3helper.transform(*data)
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def nodes_in_article(request, **param):
@@ -141,6 +163,27 @@ def nodes_in_article(request, **param):
         # make tree from edges
         hierarchy = tree_mapper.make_tree(root, nodes)
         return JsonResponse(hierarchy)
+    else:
+        return HttpResponse(status=403)
+
+
+def get_articles(request):
+    if request.method == "GET":
+        data = query.get_all_articles()
+        return JsonResponse({"data": data})
+    return HttpResponse(status=403)
+
+
+def get_articles_in_subreddit(request, **params):
+    if request.method == "GET":
+        subreddit = params["subreddit"]
+        if subreddit:
+            data = query.get_articles_in_subreddit(subreddit)
+            return JsonResponse({"data": data})
+        else:
+            return HttpResponse(status=400)
+
+    return HttpResponse(status=403)
 
 
 def mapper_graph(request):
@@ -167,6 +210,8 @@ def mapper_graph(request):
         data = database_api.D3helper.transform(*data)
 
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=403)
 
 
 def tree(request, **params):
@@ -182,7 +227,7 @@ def tree(request, **params):
         hierarchy = TreeMapper().make_tree(root, nodes)
         return JsonResponse(hierarchy)
     else:
-        return HttpResponse(status=404)
+        return HttpResponse(status=403)
 
 
 def tree_map(request, **params):
@@ -212,7 +257,7 @@ def tree_map(request, **params):
         return JsonResponse(hierarchy)
 
     else:
-        return HttpResponse(status=404)
+        return HttpResponse(status=403)
 
 
 def map_with_tree_mapper(request, **params):
@@ -255,6 +300,8 @@ def map_with_tree_mapper(request, **params):
         print("Mapper Interval: ", interval)
 
         return JsonResponse(hierarchy)
+    else:
+        return HttpResponse(status=403)
 
 
 # Helper functions

@@ -773,11 +773,13 @@ class TreeMapper:
             # mapper_nodes.extend(cluster.keys())
             for node, nodeSet in cluster.items():
                 node["composition"] = [n["id"] for n in nodeSet if n["id"] != node["id"]]
-                mapper_nodes.append(node)
+                node["radius"] = 3.14*(len(nodeSet)/2 + 1)**2
+                mapperNodes.append(node)
 
         # work around for python object reference mess
         for node in mapper_nodes:
             mapper_node = TreeNode(node["id"], type="mapper")
+            mapperNode["radius"] = node["radius"]
             mapper_node["parent_id"] = node["parent_id"]
             mapper_node['value'] = filter_function(node)
             mapper_node['composition'] = node["composition"]

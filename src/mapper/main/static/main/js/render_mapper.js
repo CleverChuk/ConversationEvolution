@@ -422,7 +422,7 @@ mapper_module.render_tree = function render(root, canvas, filter) {
       // return d3.interpolateBlues(t)
       return colors[d.data.sentiment]
     })
-    .attr("r", 5);
+    .attr("r", d => d.data.radius);
 
   node.append("title")
     .attr("dy", "0.31em")

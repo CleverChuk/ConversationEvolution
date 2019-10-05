@@ -41,7 +41,7 @@ class Neo4jLoader:
         self.load_nodes_from_list(nodes, label)
         for node in self.node_dict.values():
             self.graph.merge(
-                node, label, self.__key if primary_key == None else primary_key)
+                node, label, self.__key if primary_key is None else primary_key)
 
     def write_edges_from_list(self, edges, type="TO", primary_key=None):
         """
@@ -51,7 +51,7 @@ class Neo4jLoader:
         """
         for rel in self.load_edges_from_list(edges, type):
             self.graph.merge(
-                rel, type, self.__key if primary_key == None else primary_key)
+                rel, type, self.__key if primary_key is None else primary_key)
 
     def load_nodes_from_list(self, nodes, label):
         """
