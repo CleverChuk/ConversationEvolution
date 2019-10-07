@@ -18,6 +18,8 @@ urlpatterns = [
 
     path("articles", views.get_articles, name='articles'),
     path("articles/<str:subreddit>", views.get_articles_in_subreddit, name='articles'),
+
+    path("subreddit_edges", views.get_edges_in_subreddit, name='subreddit_edges'),
     path('mapper', views.mapper_graph, name='mapper_graph'),
     path('subreddit', views.subreddit_graph, name='subreddit'),
     

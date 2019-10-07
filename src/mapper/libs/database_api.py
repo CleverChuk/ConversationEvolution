@@ -4,6 +4,8 @@ from json import dumps
 from json import JSONEncoder
 from py2neo import (Graph, Node, Relationship)
 
+from src.mapper.api.mapper import TreeMapper
+
 """
 def get_nodes_in_article(self, id):
         data = list(self.graph.run("MATCH (n1)-[r]->(n2) WHERE n1.article_id = \'{0}\' RETURN r".format(id)).data())
@@ -59,6 +61,9 @@ class DatabaseLayer:
         raise NotImplementedError
 
     def get_articles_in_subreddit(self, subreddit):
+        raise NotImplementedError
+
+    def get_edges_in_subreddit(self, subreddit):
         raise NotImplementedError
 
     def get_comments_in_article(self, id):
@@ -165,6 +170,12 @@ class Neo4jLayer(DatabaseLayer):
 
         return [node["n"] for node in data]
 
+    def get_edges_in_subreddit(self, subreddit):
+        query = "MATCH (n0)-[r]->(n1) WHERE n0.subreddit=\'{0}\' OR  n1.subreddit=\'{0}\' RETURN r".format(subreddit)
+        data = self.graph.run(query).data()
+
+        return [node["r"] for node in data]
+
     def get_comments_in_article(self, id):
         query = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(id)
         data = self.graph.run(query).data()
@@ -233,6 +244,9 @@ class Query:
     def get_articles_in_subreddit(self, subreddit):
         return self.db_layer.get_articles_in_subreddit(subreddit)
 
+    def get_edges_in_subreddit(self, subreddit):
+        return self.db_layer.get_edges_in_subreddit(subreddit)
+
     def get_comments_in_article(self, id):
         return self.db_layer.get_comments_in_article(id)
 
@@ -270,7 +284,7 @@ class D3helper:
         pass
 
     @classmethod
-    def transform(cls, *edges):
+    def graph_transform(cls, *edges):
         """
             this function is used to create data structure that will be
             serialized to JSON for visualization
@@ -313,6 +327,11 @@ class D3helper:
 
         return d
 
+    @staticmethod
+    def tree_transform(root, nodes):
+        tree_mapper = TreeMapper()
+        return tree_mapper.make_tree(root, nodes)
+
     @classmethod
     def dumpJSON(cls, filename, data):
         with open(filename, "w") as fp:
@@ -331,4 +350,3 @@ class CustomJSONEncoder(JSONEncoder):
             return dict(node)
         else:
             return JSONEncoder.default(self, node)
-

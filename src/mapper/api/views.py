@@ -24,7 +24,7 @@ def all_nodes(request):
     """
     if request.method == "GET":
         data = query.all()
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
         return HttpResponse(status=403)
@@ -33,7 +33,7 @@ def all_nodes(request):
 def subreddit_graph(request):
     if request.method == "GET":
         data = query.get_subreddit_graph()
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
         return HttpResponse(status=403)
@@ -44,7 +44,7 @@ def get_nodes(request):
         queryset = request.GET
         if queryset:
             for f, v in queryset.items():
-                context[f] = database_api.D3helper.transform(*get_equal(f, v))
+                context[f] = database_api.D3helper.graph_transform(*get_equal(f, v))
             return JsonResponse(context)
 
         context["graph"] = query.nodes()
@@ -54,30 +54,30 @@ def get_nodes(request):
 
 
 def node_label(request, **param):
-    if request.method == "GET":
-        data = query.get_nodes_by_label(param["label"])
+    label = param.get("label", None)
+    if request.method == "GET" and label:
+        data = query.get_nodes_by_label(label)
         return JsonResponse({"nodes": data})
     else:
         return HttpResponse(status=403)
 
 
 def relationship(request, **param):
-    if request.method == "GET":
-        data = query.get_relationship_by_type(param["type"])
-        data = database_api.D3helper.transform(*data)
-
+    _type = param.get("type", None)
+    if request.method == "GET" and _type:
+        data = query.get_relationship_by_type(_type)
+        data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
         return HttpResponse(status=403)
 
 
 def equal_str(request, **param):
-    if request.method == "GET":
-        field = param["field"]
-        value = param["value"]
-
+    field = param.get("field", None)
+    value = param.get("value", None)
+    if request.method == "GET" and field and value:
         data = query.get_equal_str(field, value)
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
 
         return JsonResponse(data)
     else:
@@ -85,60 +85,59 @@ def equal_str(request, **param):
 
 
 def equal(request, **param):
-    if request.method == "GET":
-        field = param["field"]
-        value = param["value"]
+    field = param.get("field", None)
+    value = param.get("value", None)
+    if request.method == "GET" and field and value:
 
         data = query.get_equal(field, value)
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
         return HttpResponse(status=403)
 
 
 def greater(request, **param):
-    if request.method == "GET":
-        field = param["field"]
-        value = param["value"]
+    field = param.get("field", None)
+    value = param.get("value", None)
+    if request.method == "GET" and field and value:
 
         data = query.get_greater(field, value)
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
         return HttpResponse(status=403)
 
 
 def greater_or_equal(request, **param):
-    if request.method == "GET":
-        field = param["field"]
-        value = param["value"]
+    field = param.get("field", None)
+    value = param.get("value", None)
+    if request.method == "GET" and field and value:
 
         data = query.get_greater_or_equal(field, value)
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
         return HttpResponse(status=403)
 
 
 def less(request, **param):
-    if request.method == "GET":
-        field = param["field"]
-        value = param["value"]
-
+    field = param.get("field", None)
+    value = param.get("value", None)
+    if request.method == "GET" and field and value:
         data = query.get_less(field, value)
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
         return HttpResponse(status=403)
 
 
 def less_or_equal(request, **param):
-    if request.method == "GET":
-        field = param["field"]
-        value = param["value"]
+    field = param.get("field", None)
+    value = param.get("value", None)
+    if request.method == "GET" and field and value:
 
         data = query.get_less_or_equal(field, value)
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
         return HttpResponse(status=403)
@@ -146,19 +145,20 @@ def less_or_equal(request, **param):
 
 def nodes_in_article(request, **param):
     global mapper_edges
-    if request.method == "GET":
+    article_id = param.get("id", None)
+    if request.method == "GET" and article_id:
         # add article id to session object
-        request.session[ARTICLE_ID] = param["id"]
+        request.session[ARTICLE_ID] = article_id
         # NOTE: Saving data in session requires that Edge class be JSON serializable by
         # django serializer
-        data = query.get_comments_in_article(param["id"])
+        data = query.get_comments_in_article(article_id)
         # mapper_edges = list(map(Edge.cast, data))
         # data = database_api.D3helper.transform(*data)
 
         # Return tree graph
         nodes = edges_to_nodes(data)
         tree_mapper = TreeMapper()
-        root = TreeNode(param["id"])
+        root = TreeNode(article_id)
 
         # make tree from edges
         hierarchy = tree_mapper.make_tree(root, nodes)
@@ -176,12 +176,35 @@ def get_articles(request):
 
 def get_articles_in_subreddit(request, **params):
     if request.method == "GET":
-        subreddit = params["subreddit"]
+        subreddit = params.get("subreddit", None)
         if subreddit:
             data = query.get_articles_in_subreddit(subreddit)
             return JsonResponse({"data": data})
         else:
             return HttpResponse(status=400)
+
+    return HttpResponse(status=403)
+
+
+def get_edges_in_subreddit(request):
+    if request.method == "GET":
+        subreddit = request.GET.get("subreddit", None)
+        if subreddit:
+            data = query.get_edges_in_subreddit(subreddit)
+            data = database_api.D3helper.graph_transform(*data)
+            response = JsonResponse({"data": data})
+            response["Access-Control-Allow-Origin"] = "*"
+            response["Access-Control-Allow-Methods"] = "*"
+
+            return response
+        else:
+            return HttpResponse(status=400)
+
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "*"
+        return response
 
     return HttpResponse(status=403)
 
@@ -207,7 +230,7 @@ def mapper_graph(request):
         mapper.average = True if mode == 'mean' else False
         data = mapper.cluster
 
-        data = database_api.D3helper.transform(*data)
+        data = database_api.D3helper.graph_transform(*data)
 
         return JsonResponse(data)
     else:
@@ -216,10 +239,9 @@ def mapper_graph(request):
 
 def tree(request, **params):
     import itertools
-    if (request.method == "GET") and "id" in params:
-        article_id = params["id"]
+    article_id = params.get("id", None)
+    if (request.method == "GET") and article_id:
         data = query.get_comments_in_article(article_id)
-
         nodes = map(lambda py2neo_rel: (py2neo_rel.start_node, py2neo_rel.end_node), data)
         nodes = set(itertools.chain(*nodes))
         root = TreeNode(article_id)
@@ -232,8 +254,8 @@ def tree(request, **params):
 
 def tree_map(request, **params):
     import itertools
-    if (request.method == "GET") and "id" in params:
-        article_id = params["id"]
+    article_id = params.get("id", None)
+    if (request.method == "GET") and article_id:
         data = query.get_comments_in_article(article_id)
 
         # Convert edges to a set of nodes
@@ -261,8 +283,8 @@ def tree_map(request, **params):
 
 
 def map_with_tree_mapper(request, **params):
-    if (request.method == "GET") and "id" in params:
-        article_id = params["id"]
+    article_id = params.get("id", None)
+    if (request.method == "GET") and article_id:
         # grab the article id from the session object and query db
         data = query.get_comments_in_article(article_id)
 
