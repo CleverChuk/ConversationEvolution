@@ -1,5 +1,5 @@
 ---
-title: "Conversation Evolution"
+title: "Discussion Mapper"
 author: "Chukwubuikem Ume-Ugwa"
 date: "November 26, 2018"
 output: html_document
