@@ -197,4 +197,4 @@ class Relationship(dict):
         return dict.get(self, key)
 
     def __repr__(self):
-        return "{0}<--{1}-->{2}".format(self.start_node, self.relationship_type, self.end_node)
+        return "{0}--[{1}]-->{2}".format(self.start_node, self.relationship_type, self.end_node)
