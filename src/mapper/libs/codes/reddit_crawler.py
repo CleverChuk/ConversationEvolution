@@ -13,8 +13,7 @@ class Crawler(RedditBot):
     """
     relationship_id = 0
 
-    def __init__(self, subreddit, credentials, property_key="sentiment_score", epsilon=0.5, intervals=3,
-                 app_name="myapp", version="1.0.0"):
+    def __init__(self, subreddit, credentials, app_name="myapp", version="1.0.0"):
         """
         Builds the GraphBot objects using default or provided configuration
 
@@ -29,23 +28,8 @@ class Crawler(RedditBot):
         @param password
             :type string
             :description: Reddit password
-
-        @param property_key
-            :type string
-            :description: the comment property used to build the mapper graph
-
-        @param intervals
-            :type int
-            :description: the number intervals used for the mapper graph
-
-        @param epsilon
-            :type float
-            :description: how much to shift the property_key to create overlap
         """
         super().__init__(subreddit, credentials, VERSION=version, APP_NAME=app_name)
-        self.property_key = property_key
-        self.epsilon = epsilon
-        self.intervals = intervals
 
         self.article_comment_edges = []  # article/comment edge
         self.comment_comment_edges = []  # undirected comment/comment edges

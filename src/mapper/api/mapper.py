@@ -36,7 +36,7 @@ class Edge:
             return self.start_node
         elif key == 1:
             return self.end_node
-        elif key == 2:
+        elif key == 2 or key == -1:
             return self.properties
         else:
             return None
@@ -457,23 +457,6 @@ class NodeMapper(Mapper):
     def create_intervals(self):
         """
             splits the nodes into intervals based on property_key
-
-            @param epsilon
-                :type float
-                :description: specifies how much to shift the interval to create overlap
-
-            @param edges
-                :type list
-                :description: list of edges
-
-            @param property_key
-                :type string
-                :description: the node property used to create interval
-
-            @param num_intervals
-                :type int
-                :description: number of intervals to create
-
             :rtype: dict 
         """
         n = len(self.data)
@@ -563,8 +546,6 @@ class TreeMapper:
     def __init__(self):
         """
             Initializes the TreeMapper object with tree root and filter function
-            :param root:
-            :param filter_function: Must accept a dictionary object and return a value.
         """
         self._cluster = []
         self.intervals = defaultdict(list)
@@ -631,9 +612,14 @@ class TreeMapper:
             for child in root["children"]:
                 queue.append(child)
 
-    def make_tree(self, root, nodes, visited=[]):
+    def make_tree(self, root, nodes, visited=None):
+        if visited is None:
+            visited = []
+
         for child in nodes:
-            if child["parent_id"] == root["id"] or root["composition"] and child["parent_id"] in root["composition"]:
+            if child["parent_id"] == root["id"] or (root["composition"] and child["parent_id"] in root["composition"]) \
+                    or (child['type'] == 'article' and child['subreddit'] == root[
+                'id']):  # added this line in order to be able to create a tree for an entire subreddit
                 if "children" in root:
                     root["children"].append(child)
                 else:
@@ -670,13 +656,13 @@ class TreeMapper:
             node["id"] = uuid4()
 
             # use the parent id the node with the minimum depth as parent id for the mapper node
-            minDepth = float('inf')
+            min_depth = float('inf')
             parent_id = None
 
             for child in array:
                 node["composition"].append(child["id"])
-                if child['depth'] < minDepth:
-                    minDepth = child['depth']
+                if child['depth'] < min_depth:
+                    min_depth = child['depth']
                     parent_id = child["parent_id"]
 
             node["parent_id"] = parent_id
@@ -697,11 +683,11 @@ class TreeMapper:
             for child in root["children"]:
                 self._populate_intervals(child, intervals)
 
-    def _cluster_interval(self, filterFunction):
+    def _cluster_interval(self, filter_function):
         for nodes in self.intervals.values():
-            self.map(nodes, filterFunction)
+            self.map(nodes, filter_function)
 
-    def execute(self, root, interval=[], filterFunction=lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
+    def execute(self, root, interval=[], epsilon=0.001, filter_function=lambda node: sa.get_sentiment(node["body"])):
         del self._cluster[:]
         if type(interval) == int:
             interval = self._generate_intervals(self.tree_height(root), interval)
@@ -711,18 +697,18 @@ class TreeMapper:
         self._populate_intervals(root, interval)
         # cluster intervals        
         # self._clusterInterval(filterFunction)
-        self.cluster_by_connectedness(filterFunction)
+        self.cluster_by_connectedness(epsilon, filter_function)
 
         return self._cluster
 
     def _generate_intervals(self, height, count):
         intervals = []
-        N = height // count
+        n = height // count
 
         i = 1
         while i <= height:
-            intervals.append((i, i + N))
-            i = i + N + 1
+            intervals.append((i, i + n))
+            i = i + n + 1
 
         return intervals
 
@@ -743,24 +729,23 @@ class TreeMapper:
             for child in root["children"]:
                 self._add_depth(child, depth + 1)
 
-    def cluster_by_connectedness(self, filter_function):
+    def cluster_by_connectedness(self, epsilon, filter_function):
         mapper_nodes = []
         for interval in self.intervals.values():
             cluster = defaultdict(list)
-            N = len(interval)
+            n = len(interval)
 
-            if N > 1:
-                for i in range(N):
+            if n > 1:
+                for i in range(n):
                     if not interval[i]['isClustered']:
                         cluster[interval[i]] = [interval[i]]
-                        for j in range(i + 1, N):
+                        for j in range(i + 1, n):
                             temp = cluster[interval[i]]
                             if self.is_child_of(cluster[interval[i]][-1], interval[j]) and \
-                                    filter_function(interval[i]) == filter_function(interval[j]):
+                                    abs(filter_function(interval[i]) - filter_function(interval[j])) <= epsilon:
                                 cluster[interval[i]].append(interval[j])
                                 interval[j]['isClustered'] = True
                                 # print("first: {0} |  second: {1}".format(interval[i], interval[j]))
-
 
                         # optimization to stop immediately if there's no path between i and j
                         # this is because the interval is sorted and once a break occurs it is guaranteed that no
@@ -773,7 +758,7 @@ class TreeMapper:
             # mapper_nodes.extend(cluster.keys())
             for node, nodeSet in cluster.items():
                 node["composition"] = [n["id"] for n in nodeSet if n["id"] != node["id"]]
-                node["radius"] = 3.14*(len(nodeSet)/2 + 1)**2
+                node["radius"] = 3.14 * (len(nodeSet) / 2 + 1) ** 2
                 mapper_nodes.append(node)
 
         # work around for python object reference mess

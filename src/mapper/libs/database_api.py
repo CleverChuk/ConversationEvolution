@@ -69,6 +69,9 @@ class DatabaseLayer:
     def get_comments_in_article(self, id):
         raise NotImplementedError
 
+    def get_topological_lens(self):
+        raise NotImplementedError
+
     # Write api
     def insert_node(self, node):
         raise NotImplementedError
@@ -185,6 +188,23 @@ class Neo4jLayer(DatabaseLayer):
         data = self.graph.run("MATCH (n1)-[r:_IN_]->(n2) RETURN r").data()
         return [node["r"] for node in data]
 
+    def get_topological_lens(self):
+
+        query = "MATCH(n:comment) return n LIMIT 1"
+        node = [dict(node['n']) for node in self.graph.run(query).data()]
+        node = node[0]
+        options = []
+
+        def format_prop(string):
+            tokens = string.split('_')
+            return " ".join(tokens).capitalize()
+
+        for prop, val in node.items():
+            if type(val) is int or type(val) is float:
+                options.append({"value": prop, "label": format_prop(prop)})
+
+        return options
+
 
 class Query:
     """
@@ -252,6 +272,9 @@ class Query:
 
     def get_subreddit_graph(self, subreddit=None):
         return self.db_layer.get_subreddit_graph(subreddit)
+
+    def get_topological_lens(self):
+        return self.db_layer.get_topological_lens()
 
     # Write methods
     def insert_node(self, node):

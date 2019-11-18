@@ -181,7 +181,8 @@ class ArticleNode(Node):
              'isVideo': submission.is_video,
              'upvote_ratio': submission.upvote_ratio,
              'type': 'article',
-             'subreddit': subreddit
+             'subreddit': subreddit,
+             'comment_count':len(submission.comments.list())
              }
         super().__init__(d)
 
@@ -197,4 +198,4 @@ class Relationship(dict):
         return dict.get(self, key)
 
     def __repr__(self):
-        return "{0}<--{1}-->{2}".format(self.start_node, self.relationship_type, self.end_node)
+        return "{0}--[{1}]-->{2}".format(self.start_node, self.relationship_type, self.end_node)

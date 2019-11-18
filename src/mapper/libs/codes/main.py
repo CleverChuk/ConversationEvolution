@@ -2,31 +2,14 @@ import db_loaders as dbl
 import graph_writers as gws
 from reddit_crawler import (Crawler)
 import json
+import threading
 
-if __name__ == "__main__":
-    gw = gws.Neo4jGrapher()
-    # the subreddit to scrape
-    # subreddit = "programming"
-    subreddit = "politics"
-    # file name to dumpjson
-    filename = "./raw/%s.json" % subreddit
 
-    # create the graphbot that generates both mapper graph and normal graph
-    intervals = 10
-    prop = "score"
-    epsilon = 0.05
-
-    with open("./credential.json", "r") as fp:
-        lines = "".join(fp.readlines())
-        credential = json.loads(lines)
-        crawler = Crawler(subreddit, credential, intervals=intervals, property_key=prop, epsilon=epsilon)
-        # get data for two submissions in the subreddit
-        ids = crawler.get_submissions()[:2]
-        # ids = crawler.get_hot_submissions(2)
-        crawler.get_graph(*ids)
-
-        crawler.writeGraphML()
-
+def download_task(*args, **kwargs):
+    crawler = Crawler(subreddit, credential)
+    # get data for two submissions in the subreddit
+    # ids = crawler.get_hot_submissions(2)
+    crawler.get_graph(*args)
     # loader
     loader = dbl.Neo4jLoader("http://localhost:11002/", "neo4j", "chubi93")
 
@@ -44,3 +27,26 @@ if __name__ == "__main__":
     loader.write_edges_from_list(crawler.article_subreddit_edges, type="_IN_")
 
 
+if __name__ == "__main__":
+    # the subreddit to scrape
+    # subreddit = "programming"
+    subreddit = "politics"
+    # file name to dumpjson
+    filename = "./raw/%s.json" % subreddit
+    with open("./credential.json", "r") as fp:
+        lines = "".join(fp.readlines())
+        credential = json.loads(lines)
+        crawler = Crawler(subreddit, credential)
+        # get data for two submissions in the subreddit
+        ids = list(crawler.get_hot_submissions(10))
+
+    n = len(ids)
+    step = n // 3
+    threads = []
+    for i in range(0, n, step):
+        t = threading.Thread(target=download_task, args=ids[i:i + step])
+        t.start()
+        threads.append(t)
+
+    for t in threads:
+        t.join()
