@@ -181,7 +181,8 @@ class ArticleNode(Node):
              'isVideo': submission.is_video,
              'upvote_ratio': submission.upvote_ratio,
              'type': 'article',
-             'subreddit': subreddit
+             'subreddit': subreddit,
+             'comment_count':len(submission.comments.list())
              }
         super().__init__(d)
 

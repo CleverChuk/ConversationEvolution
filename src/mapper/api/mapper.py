@@ -612,11 +612,14 @@ class TreeMapper:
             for child in root["children"]:
                 queue.append(child)
 
-    def make_tree(self, root, nodes, visited=[]):
+    def make_tree(self, root, nodes, visited=None):
+        if visited is None:
+            visited = []
+
         for child in nodes:
             if child["parent_id"] == root["id"] or (root["composition"] and child["parent_id"] in root["composition"]) \
-                    or child['type'] == 'article' and child['subreddit'] == \
-                    root['id']:  # added this line in order to be able to create a tree for an entire subreddit
+                    or (child['type'] == 'article' and child['subreddit'] == root[
+                'id']):  # added this line in order to be able to create a tree for an entire subreddit
                 if "children" in root:
                     root["children"].append(child)
                 else:

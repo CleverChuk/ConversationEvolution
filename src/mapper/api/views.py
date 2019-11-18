@@ -1,3 +1,4 @@
+from collections import defaultdict
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -31,7 +32,7 @@ def all_nodes(request):
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def subreddit_graph(request):
@@ -40,7 +41,7 @@ def subreddit_graph(request):
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def get_nodes(request):
@@ -54,7 +55,7 @@ def get_nodes(request):
         context["graph"] = query.nodes()
         return JsonResponse(context)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def node_label(request, **param):
@@ -63,7 +64,7 @@ def node_label(request, **param):
         data = query.get_nodes_by_label(label)
         return JsonResponse({"nodes": data})
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def relationship(request, **param):
@@ -73,7 +74,7 @@ def relationship(request, **param):
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def equal_str(request, **param):
@@ -85,7 +86,7 @@ def equal_str(request, **param):
 
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def equal(request, **param):
@@ -97,7 +98,7 @@ def equal(request, **param):
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def greater(request, **param):
@@ -109,7 +110,7 @@ def greater(request, **param):
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def greater_or_equal(request, **param):
@@ -121,7 +122,7 @@ def greater_or_equal(request, **param):
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def less(request, **param):
@@ -132,7 +133,7 @@ def less(request, **param):
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def less_or_equal(request, **param):
@@ -144,17 +145,17 @@ def less_or_equal(request, **param):
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 @csrf_exempt  # hack find a better way
 def get_edges_in_article(request):
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
-        response["Content-type"] = 'application/json'
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
         response["Access-Control-Allow-Methods"] = "POST"
         response["Access-Control-Allow-Origin"] = "*"
-        response["Access-Control-Allow-Headers"] = "*"
+
         return response
 
     if request.method == "POST":
@@ -165,7 +166,7 @@ def get_edges_in_article(request):
         is_mapper = body["mapper"]
 
         if ids:
-            data = []
+            data = {}
             threads = []
 
             for id in ids:
@@ -180,60 +181,60 @@ def get_edges_in_article(request):
                 _tree = TreeNode("root", type="root")
                 if is_mapper:
                     for i in range(len(data)):
-                        _tree.add_child(_mapper_hierarchy(data[i], ids[i], "article", **body["m_params"]))
+                        # run mapper on each article graph
+                        _tree.add_child(_mapper_hierarchy(data[ids[i]], ids[i], "article", **body["m_params"]))
                 else:
                     for i in range(len(data)):
-                        _tree.add_child(_hierarchy(data[i], ids[i], "article"))
+                        _tree.add_child(_hierarchy(data[ids[i]], ids[i], "article"))
 
                 response = JsonResponse(_tree)
                 response["Content-type"] = 'application/json'
-                response["Access-Control-Allow-Methods"] = "POST"
                 response["Access-Control-Allow-Origin"] = "*"
-                response["Access-Control-Allow-Headers"] = "*"
                 return response
 
             elif body['layout'] == 'force_directed':
                 if len(data) > 1:
+                    data = list(data.values())
                     temp = data[0]
                     for i in range(1, len(data)):  # flatten the matrix
                         temp.extend(data[i])
 
                     data = temp
                 else:
-                    data = data[0]
+                    data = list(data.values())[0]
+
                 if is_mapper:
                     temp = _mapper_force_directed(data, **body["m_params"])
+
                 else:
                     temp = database_api.D3helper.graph_transform(*data)
+
                 response = JsonResponse(temp)
                 response["Content-type"] = 'application/json'
-                response["Access-Control-Allow-Methods"] = "POST"
                 response["Access-Control-Allow-Origin"] = "*"
-                response["Access-Control-Allow-Headers"] = "*"
                 return response
             else:
                 response = JsonResponse({"unknown layout": body['layout']})
                 response["Content-type"] = 'application/json'
-                response["Access-Control-Allow-Methods"] = "POST"
                 response["Access-Control-Allow-Origin"] = "*"
-                response["Access-Control-Allow-Headers"] = "*"
                 return response
         else:
-            return HttpResponse(status=403)
+            return HttpResponse(status=406)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def get_all_article(request):
     if request.method == "GET":
         data = query.get_all_articles()
         return JsonResponse({"data": data})
-    return HttpResponse(status=403)
+    return HttpResponse(status=406)
 
 
 def get_articles_in_subreddit(request, **params):
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "GET"
         return response
@@ -256,7 +257,7 @@ def get_articles_in_subreddit(request, **params):
             return response
 
     else:
-        response = HttpResponse(status=403)
+        response = HttpResponse(status=406)
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "GET"
         return response
@@ -295,7 +296,7 @@ def get_edges_in_subreddit(request):
             response["Access-Control-Allow-Methods"] = "GET"
             return response
     else:
-        response = HttpResponse(status=403)
+        response = HttpResponse(status=406)
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "GET"
 
@@ -305,6 +306,7 @@ def get_edges_in_subreddit(request):
 def get_topological_lens(request):
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "GET"
 
@@ -312,7 +314,6 @@ def get_topological_lens(request):
 
     response = JsonResponse({"data": db_layer.get_topological_lens()})
     response["Access-Control-Allow-Origin"] = "*"
-    response["Access-Control-Allow-Methods"] = "GET"
     return response
 
 
@@ -366,8 +367,10 @@ def _hierarchy(data, root_id, root_type):
     nodes = edges_to_nodes(data)
     tree_mapper = TreeMapper()
 
+    root = TreeNode(root_id, type=root_type)
+    root["comment_count"] = len(nodes)
     # make tree from edges
-    return tree_mapper.make_tree(TreeNode(root_id, type=root_type), nodes)
+    return tree_mapper.make_tree(root, nodes)
 
 
 def mapper_graph(request):
@@ -425,7 +428,7 @@ def mapper_graph(request):
         return response
 
     else:
-        response = HttpResponse(status=403)
+        response = HttpResponse(status=406)
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "GET"
 
@@ -444,7 +447,7 @@ def tree(request, **params):
         hierarchy = TreeMapper().make_tree(root, nodes)
         return JsonResponse(hierarchy)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def tree_map(request, **params):
@@ -474,7 +477,7 @@ def tree_map(request, **params):
         return JsonResponse(hierarchy)
 
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 def map_with_tree_mapper(request, **params):
@@ -518,7 +521,7 @@ def map_with_tree_mapper(request, **params):
 
         return JsonResponse(hierarchy)
     else:
-        return HttpResponse(status=403)
+        return HttpResponse(status=406)
 
 
 # Helper functions
@@ -547,10 +550,10 @@ def edges_to_nodes(edges):
         out[s['id']] = s
         out[e['id']] = e
 
-    return out.values()
+    return list(out.values())
 
 
 # Thread tasks
 def load_edges_task(*args):
     article_id, out = args
-    out.append(db_layer.get_comments_in_article(article_id))
+    out[article_id] = db_layer.get_comments_in_article(article_id)

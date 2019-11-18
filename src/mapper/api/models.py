@@ -44,3 +44,11 @@ class TreeNode(Node):
 
     def add_child(self, child):
         self["children"].append(child)
+
+    @classmethod
+    def cast(cls, py2neo):
+        field_dict = dict(py2neo)
+        node = TreeNode(field_dict.pop('id'),field_dict.pop('type'))
+        node.update(field_dict)
+
+        return node
