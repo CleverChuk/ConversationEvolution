@@ -6,7 +6,7 @@
 import statistics as stats
 from collections import defaultdict, OrderedDict, deque
 from math import floor
-from libs.codes.analyzers import SentimentAnalyzer as sa
+from libs.analyzers import SentimentAnalyzer as sa
 from api.models import Node
 from uuid import uuid4
 from .models import TreeNode

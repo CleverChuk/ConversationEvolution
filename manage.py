@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 import os
 import sys
-
+import os
+#cur_dir = os.path.dirname(__file__)
+#sys.path.append(cur_dir)
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mapper.settings')
     try:

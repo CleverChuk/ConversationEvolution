@@ -3,6 +3,7 @@ from . import views
 
 # paths in this app
 urlpatterns = [
+    path('', views.all_nodes, name='all'),
     path('all', views.all_nodes, name='all'),
     path('rels/<str:type>', views.relationship, name='rels'),
     path('nodes', views.get_nodes, name='nodes'),

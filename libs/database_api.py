@@ -4,7 +4,12 @@ from json import dumps
 from json import JSONEncoder
 from py2neo import (Graph, Node, Relationship)
 
-from src.mapper.api.mapper import TreeMapper
+from api.mapper import TreeMapper
+import os
+
+NEO4J_URL = os.environ["NEO4J_URL"]
+NEO4J_USERNAME = os.environ["NEO4J_USERNAME"]
+NEO4J_PASSWORD = os.environ["NEO4J_PASSWORD"]
 
 """
 def get_nodes_in_article(self, id):
@@ -104,8 +109,11 @@ class Neo4jLayer(DatabaseLayer):
         This class provides the abstraction for Neo4j database using py2neo Graph object
     """
 
-    def __init__(self, graph=Graph("http://localhost:11002/", username="neo4j", password="chubi93")):
-        self.graph = graph
+    def __init__(self):
+        if  ":" in NEO4J_URL:
+            self.graph = Graph(NEO4J_URL, username=NEO4J_USERNAME, password=NEO4J_PASSWORD)
+        else:
+            self.graph = Graph(host=NEO4J_URL, username=NEO4J_USERNAME, password=NEO4J_PASSWORD)
 
     def all(self):
         data = self.graph.run("MATCH (n1)-[r]->(n2) RETURN r").data()

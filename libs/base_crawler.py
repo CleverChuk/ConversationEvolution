@@ -31,11 +31,14 @@ class RedditBot:
         """
 
         self.user_agent = "python:%s:v%s (by /u/%s)" % (APP_NAME, VERSION, credential["username"])
-        self.reddit = praw.Reddit(client_id=credential["client_id"], client_secret=credential["client_secret"],
+        self.__reddit = praw.Reddit(client_id=credential["client_id"], client_secret=credential["client_secret"],
                                   password=credential["password"], user_agent=self.user_agent,
                                   username=credential["username"])
-        self.subreddit = self.reddit.subreddit(subreddit)
-        self.subreddit_tag = subreddit
+        if subreddit is None:
+            self.subreddit_tag = "not specified"
+        else:
+            self.subreddit_tag = subreddit
+            self.subreddit = self.__reddit.subreddit(subreddit)
 
     def get_submissions(self):
         """
@@ -45,7 +48,7 @@ class RedditBot:
         """
         return list(set(comment.submission.id for comment in self.subreddit.comments()))
 
-    def get_hot_submissions(self, limit=10):
+    def get_hot_submissions(self,sub_red=None, limit=10):
         """
             gets hot articles from the subreddit
             
@@ -55,8 +58,13 @@ class RedditBot:
 
             :rtype generator
         """
-        for submission in self.subreddit.hot(limit=limit):
-            yield submission.id
+        if sub_red is None:
+            for submission in self.subreddit.hot(limit=limit):
+                yield submission.id
+        else:
+            sub_reddit = self.__reddit.subreddit(sub_red)
+            for submission in sub_reddit.hot(limit=limit):
+                yield submission.id
 
     def get_submission(self, id):
         """
@@ -66,7 +74,7 @@ class RedditBot:
 
             rtype: Reddit.Submission
         """
-        return self.reddit.submission(id=id)
+        return self.__reddit.submission(id=id)
 
     def dumpjson(self, filename, ids):
         """

@@ -2,9 +2,9 @@
 # Purpose: Functions use to calculate new feature for graph nodes
 
 import nltk
-from src.mapper.libs.codes.textsim import remove_punctuation_map
 from statistics import mean
-
+from string import punctuation
+remove_punctuation_map = dict((ord(char), None) for char in punctuation)
 
 class SentimentAnalyzer:
     def __init__(self):

@@ -1,5 +1,8 @@
-nltk
-py2neo
+Django>2.0,<3.0
 networkx
-scikit-learn
+numpy
+textstat
 praw
+nltk
+scikit-learn
+py2neo

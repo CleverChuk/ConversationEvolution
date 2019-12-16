@@ -8,7 +8,16 @@ from .mapper import EdgeMapper, Edge, TreeMapper
 import json
 import threading
 import numpy as np
+import os
 
+NEO4J_URL = os.environ["NEO4J_URL"]
+NEO4J_USERNAME = os.environ["NEO4J_USERNAME"]
+NEO4J_PASSWORD = os.environ["NEO4J_PASSWORD"]
+
+
+print("="*100)
+print(f"{NEO4J_URL}, {NEO4J_USERNAME}, {NEO4J_PASSWORD}")   
+print("="*100)
 # constants
 ARTICLE_ID = 'article_id'
 # Create db layer object and pass it to the query object
@@ -27,7 +36,14 @@ def all_nodes(request):
     """
         reads the how graph from database
     """
-    if request.method == "GET":
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
+    elif request.method == "GET":
         data = query.all()
         data = database_api.D3helper.graph_transform(*data)
         return JsonResponse(data)
@@ -45,6 +61,13 @@ def subreddit_graph(request):
 
 
 def get_nodes(request):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     if request.method == "GET":
         queryset = request.GET
         if queryset:
@@ -59,6 +82,13 @@ def get_nodes(request):
 
 
 def node_label(request, **param):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     label = param.get("label", None)
     if request.method == "GET" and label:
         data = query.get_nodes_by_label(label)
@@ -78,6 +108,13 @@ def relationship(request, **param):
 
 
 def equal_str(request, **param):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     field = param.get("field", None)
     value = param.get("value", None)
     if request.method == "GET" and field and value:
@@ -90,6 +127,13 @@ def equal_str(request, **param):
 
 
 def equal(request, **param):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     field = param.get("field", None)
     value = param.get("value", None)
     if request.method == "GET" and field and value:
@@ -102,6 +146,13 @@ def equal(request, **param):
 
 
 def greater(request, **param):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     field = param.get("field", None)
     value = param.get("value", None)
     if request.method == "GET" and field and value:
@@ -114,6 +165,13 @@ def greater(request, **param):
 
 
 def greater_or_equal(request, **param):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     field = param.get("field", None)
     value = param.get("value", None)
     if request.method == "GET" and field and value:
@@ -126,6 +184,13 @@ def greater_or_equal(request, **param):
 
 
 def less(request, **param):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     field = param.get("field", None)
     value = param.get("value", None)
     if request.method == "GET" and field and value:
@@ -137,6 +202,13 @@ def less(request, **param):
 
 
 def less_or_equal(request, **param):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     field = param.get("field", None)
     value = param.get("value", None)
     if request.method == "GET" and field and value:
@@ -225,9 +297,17 @@ def get_edges_in_article(request):
 
 
 def get_all_article(request):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     if request.method == "GET":
         data = query.get_all_articles()
         return JsonResponse({"data": data})
+
     return HttpResponse(status=406)
 
 
@@ -481,6 +561,13 @@ def tree_map(request, **params):
 
 
 def map_with_tree_mapper(request, **params):
+    if request.method == "OPTIONS":
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     article_id = params.get("id", None)
     if (request.method == "GET") and article_id:
         # grab the article id from the session object and query db

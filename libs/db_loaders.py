@@ -30,7 +30,10 @@ class Neo4jLoader:
         self.__key = "id"
 
         self.label = None
-        self.graph = Graph(db_url, username=username, password=password)
+        if  ":" in db_url:
+            self.graph = Graph(db_url, username=username, password=password)
+        else:
+            self.graph = Graph(host=db_url, username=username, password=password)
 
     def write_nodes_from_list(self, nodes, label="`Node`", primary_key=None):
         """
