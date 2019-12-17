@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+        neo4j:
+                image: cleverchuk/mapper:neo4j
+                ports:
+                        - "7474:7474"
+                        - "7687:7687"
+                        - "7473:7473"
+        backend:
+                environment:
+                        - NEO4J_URL=neo4j
+                        - NEO4J_USERNAME=neo4j
+                        - NEO4J_PASSWORD=neo4j2
+                image: cleverchuk/mapper:backend
+                command: python manage.py runserver 0.0.0.0:8000
+                ports:
+                      - "8000:8000"
+                depends_on: 
+                        - neo4j
+        frontend:
+                image: cleverchuk/mapper:frontend
+                ports:
+                        - "3000:3000"
+                depends_on: 
+                        - backend
+
+                        
+
