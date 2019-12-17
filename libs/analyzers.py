@@ -11,14 +11,11 @@ class SentimentAnalyzer:
         pass
 
     @classmethod
-    def find_sentence(cls, text):
+    def extract_sentences(cls, text):
         """
-            extract the sentences from the text
-            @param text
-                :type string
-                :description:
-            
-            :rtype string
+            Extract sentences from text
+            @params:
+                - text: string of text
         """
         text = text.lower()
         result = nltk.sent_tokenize(text)
@@ -28,14 +25,13 @@ class SentimentAnalyzer:
     @classmethod
     def convert_score(cls, score):
         """
-            convert the score to a word
+            map sentiment score to string
             Positive for scores >= 0.05
             Negative for scores <= -0.05
             Neutral for scores that fall in between
 
-            @param score
-                :type int
-                :description: sentiment score
+            @param
+                - score: sentiment score
         """
         UPPER_BOUND = 0.05
         LOWER_BOUND = -0.05
@@ -52,21 +48,16 @@ class SentimentAnalyzer:
     @classmethod
     def get_sentiment(cls, comment):
         """
-            calculates the mean score for all the sentences in 
-            a comment.
-            
-            @param comment
-                :type CommentNode
-                :description: a comment node class object
-            
-            :rtype float
+            Calculate the sentiment of a comment            
+            @param:
+                - comment: CommentNode object
         """
         sentences = None
 
         if isinstance(comment, str):
-            sentences = SentimentAnalyzer.find_sentence(comment)
+            sentences = SentimentAnalyzer.extract_sentences(comment)
         else:
-            sentences = SentimentAnalyzer.find_sentence(comment.body)
+            sentences = SentimentAnalyzer.extract_sentences(comment.body)
         scores = [cls.sentiment(sentence) for sentence in sentences]
 
         return round(mean(scores), 4) if len(scores) > 0 else None
@@ -74,7 +65,7 @@ class SentimentAnalyzer:
     @classmethod
     def sentiment(cls, sentence):
         """
-            calculates the sentiment of the given sentence
+            Calculates the sentiment of the given sentence
             use the compound value returned by polarity_scores
             {
                 'neg': 0.0,
@@ -85,11 +76,8 @@ class SentimentAnalyzer:
             this is a dictionary of sentiment scores
             we're interested in the compound score
 
-            @param sentence
-                :type string
-                :description: sentence to analyze
-
-            :rtype: float
+            @param:
+                - sentence: string of text
         """
         from nltk.sentiment.vader import SentimentIntensityAnalyzer
         nltk_sentiment = SentimentIntensityAnalyzer()
@@ -119,9 +107,8 @@ class CommentAnalyzer:
         """
             Builds the object
 
-            @param comment
-                :type CommentNode
-                :description: comment node class object
+            @param:
+                - comment: comment node class object
         """
         self._body = comment.body
         self._length = None
@@ -132,9 +119,7 @@ class CommentAnalyzer:
     @property
     def length(self):
         """
-            gets the number of characters in the comment
-
-            :rtype int
+            Calculates the number of characters in a comment
         """
         if self._length == None:
             self._length = len(self._body)
@@ -143,9 +128,7 @@ class CommentAnalyzer:
     @property
     def quoted_text_per_length(self):
         """
-            calculates the amount of quoted text per length of comment
-
-            :rtype float
+            Calculates the number of quoted text per length of a comment
         """
         stack = list()
         count = 0
@@ -170,8 +153,7 @@ class CommentAnalyzer:
     @property
     def average_word_length(self):
         """
-            calculates the average word length of a comment
-            :rtype float
+            Calculates the average word length of a comment
         """
 
         if self._average_word_length == None:
@@ -192,8 +174,7 @@ class CommentAnalyzer:
     @property
     def reading_level(self):
         """
-            calculates the reading level of the comment
-            :rtype float
+            Calculates the reading level of a comment
         """
         if self._reading_level == None:
             from textstat.textstat import textstat

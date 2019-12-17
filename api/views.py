@@ -10,6 +10,7 @@ import threading
 import numpy as np
 import os
 
+# neo4j configs
 NEO4J_URL = os.environ["NEO4J_URL"]
 NEO4J_USERNAME = os.environ["NEO4J_USERNAME"]
 NEO4J_PASSWORD = os.environ["NEO4J_PASSWORD"]
@@ -24,19 +25,17 @@ ARTICLE_ID = 'article_id'
 db_layer = database_api.Neo4jLayer()
 query = database_api.Query(db_layer)
 
-# global variables
-context = {}
-mapper_edges = None
-
 
 # Create your views here.
 
 
 def all_nodes(request):
     """
-        reads the how graph from database
+        return the whole graph from database
+        @params:
+            - request: request object(see Django doc)
     """
-    if request.method == "OPTIONS":
+    if request.method == "OPTIONS": # handle prefetch request
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
         response["Access-Control-Allow-Origin"] = "*"
@@ -51,17 +50,13 @@ def all_nodes(request):
         return HttpResponse(status=406)
 
 
-def subreddit_graph(request):
-    if request.method == "GET":
-        data = query.get_subreddit_graph()
-        data = database_api.D3helper.graph_transform(*data)
-        return JsonResponse(data)
-    else:
-        return HttpResponse(status=406)
-
-
 def get_nodes(request):
-    if request.method == "OPTIONS":
+    """
+        return all the nodes in the database
+        @params:
+            - request: request object(see Django doc)
+    """
+    if request.method == "OPTIONS": # handle prefetch request
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
         response["Access-Control-Allow-Origin"] = "*"
@@ -69,20 +64,19 @@ def get_nodes(request):
         return response
 
     if request.method == "GET":
-        queryset = request.GET
-        if queryset:
-            for f, v in queryset.items():
-                context[f] = database_api.D3helper.graph_transform(*get_equal(f, v))
-            return JsonResponse(context)
-
-        context["graph"] = query.nodes()
-        return JsonResponse(context)
+        return JsonResponse({'nodes':query.nodes()})
     else:
         return HttpResponse(status=406)
 
 
-def node_label(request, **param):
-    if request.method == "OPTIONS":
+def get_nodes_by_label(request, **param):
+    """
+        return nodes with given label
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
+    if request.method == "OPTIONS": # handle prefetch request
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
         response["Access-Control-Allow-Origin"] = "*"
@@ -97,7 +91,20 @@ def node_label(request, **param):
         return HttpResponse(status=406)
 
 
-def relationship(request, **param):
+def get_relationship_by_type(request, **param):
+    """
+        return relationship/edges with the given type
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
+    if request.method == "OPTIONS":  # handle prefetch request
+        response = HttpResponse(status=200)
+        response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "GET"
+        return response
+
     _type = param.get("type", None)
     if request.method == "GET" and _type:
         data = query.get_relationship_by_type(_type)
@@ -108,7 +115,13 @@ def relationship(request, **param):
 
 
 def equal_str(request, **param):
-    if request.method == "OPTIONS":
+    """
+        return all nodes where the field value equals the given string value
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
+    if request.method == "OPTIONS": # handle prefetch request
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
         response["Access-Control-Allow-Origin"] = "*"
@@ -127,7 +140,13 @@ def equal_str(request, **param):
 
 
 def equal(request, **param):
-    if request.method == "OPTIONS":
+    """
+        return all nodes where the field value equals the given value
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
+    if request.method == "OPTIONS": # handle prefetch request
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
         response["Access-Control-Allow-Origin"] = "*"
@@ -146,6 +165,12 @@ def equal(request, **param):
 
 
 def greater(request, **param):
+    """
+        return all nodes where the field value is great than the given numeric value
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
@@ -165,6 +190,12 @@ def greater(request, **param):
 
 
 def greater_or_equal(request, **param):
+    """
+        return all nodes where the field value is greater than or equal to the given numeric value
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
@@ -184,6 +215,12 @@ def greater_or_equal(request, **param):
 
 
 def less(request, **param):
+    """
+        return all nodes where the field value is less than the given numeric value
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
@@ -202,6 +239,12 @@ def less(request, **param):
 
 
 def less_or_equal(request, **param):
+    """
+        return all nodes where the field value is less than or equal to the given numeric value
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
@@ -222,6 +265,11 @@ def less_or_equal(request, **param):
 
 @csrf_exempt  # hack find a better way
 def get_edges_in_article(request):
+    """
+        return all edges/relationship in the given article and transform them based on the request params
+        @params:
+            - request: request object(see Django doc)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
@@ -231,9 +279,8 @@ def get_edges_in_article(request):
         return response
 
     if request.method == "POST":
-        # todo Handle empty body and missing param error
+        #TODO Handle empty body and missing param error
         body = json.loads(request.body)
-        print(body)
         ids = body["ids"]
         is_mapper = body["mapper"]
 
@@ -241,7 +288,7 @@ def get_edges_in_article(request):
             data = {}
             threads = []
 
-            for id in ids:
+            for id in ids: # load graph for each of the article with `id`
                 t = threading.Thread(target=load_edges_task, args=(id, data))
                 t.start()
                 threads.append(t)
@@ -249,9 +296,9 @@ def get_edges_in_article(request):
             for t in threads:
                 t.join()
 
-            if body['layout'] == 'hierarchy':
+            if body['layout'] == 'hierarchy': # transform data for hierarchical layout
                 _tree = TreeNode("root", type="root")
-                if is_mapper:
+                if is_mapper: # run mapper if true
                     for i in range(len(data)):
                         # run mapper on each article graph
                         _tree.add_child(_mapper_hierarchy(data[ids[i]], ids[i], "article", **body["m_params"]))
@@ -264,7 +311,7 @@ def get_edges_in_article(request):
                 response["Access-Control-Allow-Origin"] = "*"
                 return response
 
-            elif body['layout'] == 'force_directed':
+            elif body['layout'] == 'force_directed': # transform data for force directed layout
                 if len(data) > 1:
                     data = list(data.values())
                     temp = data[0]
@@ -297,6 +344,11 @@ def get_edges_in_article(request):
 
 
 def get_all_article(request):
+    """
+        return all article nodes in the database
+        @params:
+            - request: request object(see Django doc)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
@@ -312,6 +364,12 @@ def get_all_article(request):
 
 
 def get_articles_in_subreddit(request, **params):
+    """
+        return all article nodes that belong to the given subreddit
+        @params:
+            - request: request object(see Django doc)
+            - params: captured parameters from the request (see urls.py)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
@@ -344,6 +402,11 @@ def get_articles_in_subreddit(request, **params):
 
 
 def get_edges_in_subreddit(request):
+    """
+        return all edges/relationship in the given subreddit
+        @params:
+            - request: request object(see Django doc)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Origin"] = "*"
@@ -384,6 +447,11 @@ def get_edges_in_subreddit(request):
 
 
 def get_topological_lens(request):
+    """
+        return all the available topological lenses
+        @params:
+            - request: request object(see Django doc)
+    """
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
         response["Access-Control-Allow-Headers"] = request.META["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]
@@ -398,6 +466,12 @@ def get_topological_lens(request):
 
 
 def _mapper_force_directed(data, **params):
+    """
+        transform data to a force directed mapper graph
+        @params:
+            - data: nodes
+            - params: mapper parameters
+    """
     # extract the query passed in the url
     lens = 'reading_level' if 'lens' not in params else params['lens']
     interval = 3 if 'interval' not in params else int(params['interval'])
@@ -414,6 +488,14 @@ def _mapper_force_directed(data, **params):
 
 
 def _mapper_hierarchy(data, root_id, root_type, **params):
+    """
+        transform data to a hierarchy mapper graph
+        @params:
+            - data: nodes
+            - root_id: id of root node
+            - root_type: type of root node
+            - params: mapper parameters
+    """
     # extract the query passed in the url
     lens = 'reading_level' if 'lens' not in params else params['lens']
     interval = 3 if 'interval' not in params else int(params['interval'])
@@ -443,6 +525,13 @@ def _mapper_hierarchy(data, root_id, root_type, **params):
 
 
 def _hierarchy(data, root_id, root_type):
+    """
+        create a hierarchy from data root at node with root_id
+        @params:
+            - data: nodes
+            - root_id: id of root node
+            - root_type: type of root node
+    """
     print("Creating hierarchy")
     nodes = edges_to_nodes(data)
     tree_mapper = TreeMapper()
@@ -452,7 +541,7 @@ def _hierarchy(data, root_id, root_type):
     # make tree from edges
     return tree_mapper.make_tree(root, nodes)
 
-
+@DeprecationWarning
 def mapper_graph(request):
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
@@ -514,7 +603,7 @@ def mapper_graph(request):
 
         return response
 
-
+@DeprecationWarning
 def tree(request, **params):
     import itertools
     article_id = params.get("id", None)
@@ -529,7 +618,7 @@ def tree(request, **params):
     else:
         return HttpResponse(status=406)
 
-
+@DeprecationWarning
 def tree_map(request, **params):
     import itertools
     article_id = params.get("id", None)
@@ -559,7 +648,7 @@ def tree_map(request, **params):
     else:
         return HttpResponse(status=406)
 
-
+@DeprecationWarning
 def map_with_tree_mapper(request, **params):
     if request.method == "OPTIONS":
         response = HttpResponse(status=200)
@@ -612,12 +701,16 @@ def map_with_tree_mapper(request, **params):
 
 
 # Helper functions
-def get_equal(field, value):
-    data = query.get_equal(field, value)
-    return data
-
-
 def map_x_times(root_id, hierarchy, times=1, function=lambda node: node["value"]):
+    """
+        run mapper x times on the given hierarchy
+        @params:
+            - root_id: root node id
+            - hierarchy: root
+            - times: number of times to run mapper
+            - function: filter function
+
+    """
     for _ in range(times):
         root = TreeNode(root_id)
         tree_mapper = TreeMapper()
@@ -628,6 +721,9 @@ def map_x_times(root_id, hierarchy, times=1, function=lambda node: node["value"]
 
 
 def edges_to_nodes(edges):
+    """
+        flatten edges to nodes
+    """
     from collections import defaultdict
     # Convert edges to a set of nodes
     nodes = list(map(lambda edge: (edge.start_node, edge.end_node), edges))
@@ -642,5 +738,8 @@ def edges_to_nodes(edges):
 
 # Thread tasks
 def load_edges_task(*args):
+    """
+        thread task for loading article graph edges
+    """
     article_id, out = args
     out[article_id] = db_layer.get_comments_in_article(article_id)

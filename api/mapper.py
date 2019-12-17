@@ -1,7 +1,5 @@
 # Author: Chukwubuikem Ume-Ugwa
-# Purpose: Functions use to map the main to a subgraph that approximates the main graph.
-#          It is important to know that the mapper functions
-#          assumes that the nodes given to it are of the same Type.
+# Purpose: Mapper logic.
 
 import statistics as stats
 from collections import defaultdict, OrderedDict, deque
@@ -11,14 +9,11 @@ from api.models import Node
 from uuid import uuid4
 from .models import TreeNode
 
-"""
-@param 
-    :type 
-    :description:
-"""
-
 
 class Edge:
+    """
+        Representation of an edge in a graph
+    """
     def __init__(self, src, dest, **properties):
         # coarse py2neo to download all fields
         src['name'], dest['name']
@@ -49,6 +44,14 @@ class Edge:
 
 
 class Mapper:
+    """
+        Base class for mapper implementation
+        Attributes:
+            - data: list of graph edges or node
+            - epsilon: sensitivity of overlap between intervals
+            - property_key: lens
+            - num_interval: number of intervals to split data
+    """
     JACCARD_THRESH = 0.1
 
     def __init__(self, data=[], epsilon=0.5, property_key="reading_level", num_interval=3):
@@ -73,10 +76,8 @@ class Mapper:
             creates a graph from the interval clusters
             Nodes are connected if their Jaccard is > 0.1
 
-            @param clusters
-                :type dict
-                :description: a dict w/ key = cluster name and value = list of nodes
-            :rtype tuple of graph and list of edges
+            @param 
+                - clusters: a dict w/ key = cluster name and value = list of nodes
         """
         id = 0  # edge id
         new_nodes = {}
@@ -158,12 +159,8 @@ class Mapper:
             Calculates the Jaccard index of two sets
 
         @param A
-            :type set
-            :description: a set of nodes
-
-        @param B
-            :type set 
-            :description: a set of nodes
+            - A: a set of nodes
+            - B: a set of nodes
         """
         if not isinstance(A, set) or not isinstance(B, set):
             raise TypeError("A and B must sets")
@@ -174,13 +171,10 @@ class Mapper:
 
     def attr_list(self, obj):
         """
-            returns the property list of the obj
+            returns the attribute list of the obj
 
-            @param obj
-                :type type
-                :description: a class object
-
-            :rtype list 
+            @params
+                - obj: a class object
         """
         return list(obj.keys())
 
@@ -190,19 +184,10 @@ class Mapper:
             all the clusters in cluster
             creates a node with the average(numeric) or mode(string) attribute for a cluster
 
-            @param name
-                :type string
-                :description: cluster name
-
-            @param cluster
-                :type list
-                :description: list of nodes
-
-            @param property_keys
-                :type list
-                :description: list of node attributes
-
-            :rtype Node
+            @param
+                - name: cluster name
+                - cluster: list of nodes
+                - property_keys: list of node attribute
         """
 
         def create_compositions(cluster_node, node):
@@ -269,15 +254,9 @@ class Mapper:
         """
             calculates the average property of a given edge
 
-            @param edge
-                :type tuple
-                :description: graph edge
-
-            @param property_key
-                :type string
-                :description: the node attribute to average
-
-            :rtype mean(property_key)
+            @param 
+                - edge: graph edge
+                - property_key: the node attribute to average
         """
 
         if len(edge) < 2:
@@ -293,6 +272,12 @@ class Mapper:
 
 
 class EdgeMapper(Mapper):
+    """
+        Specilization of mapper for working with edge clustering
+
+        Attributes:
+            - _cluster: clusters generated
+    """
     def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
         self._cluster = None
 
@@ -311,7 +296,7 @@ class EdgeMapper(Mapper):
 
     def graph(self):
         """
-            wrapper function
+            helper function
         """
         groups = self.create_intervals()
         cluster = self.cluster_groups(groups)
@@ -321,25 +306,7 @@ class EdgeMapper(Mapper):
 
     def create_intervals(self):
         """
-            splits the edges into intervals based on property_key
-
-            @param epsilon
-                :type float
-                :description: specifies how much to shift the interval to create overlap
-
-            @param edges
-                :type list
-                :description: list of edges
-
-            @param property_key
-                :type string
-                :description: the node property used to create interval
-
-            @param num_intervals
-                :type int
-                :description: number of intervals to create
-
-            :rtype: dict 
+            splits the edges into intervals based on self.property_key
         """
         n = len(self.data)
         intervals = []
@@ -387,14 +354,9 @@ class EdgeMapper(Mapper):
     def cluster_groups(self, groups):
         """
             cluster nodes base on their connection with each other
-
-            @param groups
-                :type dict
-                :description: groups generated by create_intervals method
-
-            :rtype clusters: dict
+            @params:
+                - groups: dict of edges
         """
-
         clusters = {}
         clusterId = 0
         for e_List in groups.values():
@@ -441,13 +403,16 @@ class EdgeMapper(Mapper):
 
 
 class NodeMapper(Mapper):
+    """
+        Specilization of mapper for working with node clustering
+    """
     def __init__(self, edges, data, epsilon=0.5, property_key="reading_level", num_interval=3):
         self.edges = edges
         super().__init__(data, epsilon, property_key, num_interval)
 
     def cluster_groups(self):
         """
-            wrapper function
+            helper function
         """
         groups = self.create_intervals()
         cluster = self.cluster(groups)
@@ -457,7 +422,6 @@ class NodeMapper(Mapper):
     def create_intervals(self):
         """
             splits the nodes into intervals based on property_key
-            :rtype: dict 
         """
         n = len(self.data)
         incr_size = floor(n / self.num_interval)
@@ -500,12 +464,8 @@ class NodeMapper(Mapper):
     def cluster(self, groups):
         """
             cluster nodes base on their connection with each other
-
-            @param groups
-                :type dict
-                :description: groups generated by create_intervals method
-
-            :rtype clusters: dict
+            @params:
+                - groups: dict of edges
         """
         clusters = OrderedDict()
         clusterId = 0
@@ -543,6 +503,12 @@ class NodeMapper(Mapper):
 
 
 class TreeMapper:
+    """
+        A mapper implementation for working with dendogram
+        Attributes:
+            - _cluster: clusters generated
+            - intervals: intervals generated
+    """
     def __init__(self):
         """
             Initializes the TreeMapper object with tree root and filter function
@@ -569,9 +535,10 @@ class TreeMapper:
         """
             Map the children of a node using the filter function.
             Cluster them based on the mapped value
-        :param parent_id:
-        :param children:
-        :return:
+            @params:
+                - parent_id: id of parent node
+                - children: list of child nodes
+                - filter_function: filter function
         """
         cluster = defaultdict(list)
 
@@ -597,7 +564,9 @@ class TreeMapper:
     def bfs(self, root, filter_function=lambda node: sa.convert_score(sa.get_sentiment(node["body"]))):
         """
             Use BFS to visit all nodes in the tree in level order traversal
-        :return:
+            @params:
+                - root: root node
+                -filter_function: filter function
         """
         queue = deque()
         queue.append(root)
@@ -613,6 +582,13 @@ class TreeMapper:
                 queue.append(child)
 
     def make_tree(self, root, nodes, visited=None):
+        """
+            Create a tree rooted at root
+            @params:
+                - root: tree root
+                - nodes: list of nodes
+                - visited: visited list to avoid infinite loop
+        """
         if visited is None:
             visited = []
 
@@ -636,9 +612,9 @@ class TreeMapper:
         """
             Map the interval of nodes using the filter function.
             Cluster them based on the mapped value
-        :param filter_function:
-        :param interval:
-        :return:
+            @params:
+                - interval: list of nodes
+                - filter_function: filter function
         """
         cluster = defaultdict(list)
 
@@ -670,7 +646,12 @@ class TreeMapper:
             self._cluster.append(node)
 
     def _populate_intervals(self, root, intervals):
-        # create intervals based on the depth        
+        """
+            add nodes to intervals based on their depth
+            @params:
+                - root: parent node
+                - interval: list of intervals
+        """
         if root["parent_id"]:
             depth = root["depth"]
             for pair in intervals:
@@ -684,10 +665,21 @@ class TreeMapper:
                 self._populate_intervals(child, intervals)
 
     def _cluster_interval(self, filter_function):
+        """
+            Cluster nodes in each interval using filter_function
+            @param:
+                - filter_functon: filter function
+        """
         for nodes in self.intervals.values():
             self.map(nodes, filter_function)
 
     def execute(self, root, interval=[], epsilon=0.001, filter_function=lambda node: sa.get_sentiment(node["body"])):
+        """
+            Start execution of the algorithm
+            @params:
+                - root: root node
+                - interval: list of intervals. can also be int
+        """
         del self._cluster[:]
         if type(interval) == int:
             interval = self._generate_intervals(self.tree_height(root), interval)
@@ -702,6 +694,12 @@ class TreeMapper:
         return self._cluster
 
     def _generate_intervals(self, height, count):
+        """
+            Create intervals base on tree height
+            @params:
+                - height: height of tree
+                - count: number of intervals
+        """
         intervals = []
         n = height // count
 
@@ -713,6 +711,11 @@ class TreeMapper:
         return intervals
 
     def tree_height(self, root):
+        """
+            Calculate the height of a tree
+            @params:
+                - root: tree root
+        """
         if not root["children"]:
             return 0
 
@@ -723,13 +726,24 @@ class TreeMapper:
         return height
 
     def _add_depth(self, root, depth=0):
-        # add the depth of the node
+        """
+            Label each node with its depth
+            @params:
+                - root: node
+                - depth: depth of root
+        """
         root["depth"] = depth
         if root["children"]:
             for child in root["children"]:
                 self._add_depth(child, depth + 1)
 
     def cluster_by_connectedness(self, epsilon, filter_function):
+        """
+            Cluster nodes based on their connectedness
+            @params:
+                - epsilon: filter_function value threshold
+                - filter_function: filter function/lens
+        """
         mapper_nodes = []
         for interval in self.intervals.values():
             cluster = defaultdict(list)
@@ -771,6 +785,12 @@ class TreeMapper:
             self._cluster.append(mapper_node)
 
     def is_child_of(self, parent, child):
+        """
+            Return whether there is a parent-child relationship
+            @params:
+                - parent: parent node
+                - child: child node
+        """
         if parent["children"]:
             for node in parent["children"]:
                 if node["id"] == child["id"]:
@@ -779,6 +799,11 @@ class TreeMapper:
         return False
 
     def top_sort(self, graph):
+        """
+            Sort nodes in topological order
+            @params:
+                - graph: graph
+        """
         sorted_nodes, visited = deque(), set()
         for node in graph:
             self.dfs(graph, node, visited, sorted_nodes)
@@ -786,6 +811,14 @@ class TreeMapper:
         return list(sorted_nodes)
 
     def dfs(self, graph, start_node, visited, sorted_nodes):
+        """
+            Traverse the graph using dfs used in conjunction with top_sort
+            @params:
+                - graph: graph
+                - start_node: start
+                - visited: visited list
+                - sorted_nodes: result list
+        """
         visited.add(start_node)
         if start_node["children"]:
             neighbors = [child for child in start_node["children"] if child in graph]

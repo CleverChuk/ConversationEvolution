@@ -6,13 +6,6 @@ from csv import DictWriter
 import os
 from mapper import Mapper
 
-"""
-@param 
-    :type
-    :description:
-"""
-
-
 class Neo4jGrapher:
     """
         Class used to write graph in Neo4j graph format

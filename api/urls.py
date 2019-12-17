@@ -3,11 +3,10 @@ from . import views
 
 # paths in this app
 urlpatterns = [
-    path('', views.all_nodes, name='all'),
     path('all', views.all_nodes, name='all'),
-    path('rels/<str:type>', views.relationship, name='rels'),
+    path('rels/<str:type>', views.get_relationship_by_type, name='rels'),
     path('nodes', views.get_nodes, name='nodes'),
-    path('nodes/<str:label>', views.node_label, name='node_label'),
+    path('nodes/<str:label>', views.get_nodes_by_label, name='get_nodes_by_label'),
     path('article/nodes', views.get_edges_in_article, name='nodes_in_article'),
 
     path('nodes/<str:field>/<str:value>', views.equal_str, name='equal_string'),
@@ -22,7 +21,6 @@ urlpatterns = [
 
     path("subreddit", views.get_edges_in_subreddit, name='subreddit'),
     path('mapper', views.mapper_graph, name='mapper_graph'),
-    # path('subreddit', views.subreddit_graph, name='subreddit'),
     path('lenses', views.get_topological_lens, name="lens"),
 
     # Tree endpoints

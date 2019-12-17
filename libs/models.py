@@ -3,24 +3,7 @@
 
 from analyzers import SentimentAnalyzer
 
-"""
-@param 
-    :type
-    :description:
-            
-    On second thought, some of the other argument-related annotators I'm working on
-    (such as the level of formality, level of charitability, etc.) might be overkill for this first paper.
-    Some features that should be relatively easy to implement and add into the graph are:
-    > Length of the comment
-    > average word length
-    > Number of quoted text per comment length:
-    > Flesch-kincaid reading level (there is a python library called "textstat" that implements this)
-    > If there is time, it would be interesting to encode how similar two comments are as
-    a relationship between them, or perhaps annotating each comment with a value representing
-    how similar it is to the root comment of its thread. The easiest way to do this is by using doc2vec from the genSim library.
-"""
 ANONYMOUS_USER = "anonymous"
-
 
 class MetaNode(type):
     """

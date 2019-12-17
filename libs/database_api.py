@@ -99,7 +99,7 @@ class DatabaseLayer:
     def drop(self):
         raise NotImplementedError
 
-    # User defined api
+    # User defined query
     def run(self, query):
         raise NotImplementedError
 
