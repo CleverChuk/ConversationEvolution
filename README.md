@@ -111,6 +111,8 @@ sample: credential.json file content
   "password":  "password"
 }
 ```
-8. run `python3 main.py` to start uploading data from reddit to neo4j
-9. browse to http://localhost:3000
-10. interact with the application
+8. set the following environment variables: NEO4J_URL=0.0.0.0:7474, NEO4J_USERNAME=neo4j,NEO4J_PASSWORD=neo4j2
+9. run `python3 main.py` to start uploading data from reddit to neo4j
+10. browse to http://localhost:3000
+11. interact with the application
+
