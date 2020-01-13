@@ -110,10 +110,12 @@ class Neo4jLayer(DatabaseLayer):
     """
 
     def __init__(self):
-        if  ":" in NEO4J_URL:
-            self.graph = Graph(NEO4J_URL, username=NEO4J_USERNAME, password=NEO4J_PASSWORD)
+        if ":" in NEO4J_URL:
+            self.graph = Graph(
+                NEO4J_URL, username=NEO4J_USERNAME, password=NEO4J_PASSWORD)
         else:
-            self.graph = Graph(host=NEO4J_URL, username=NEO4J_USERNAME, password=NEO4J_PASSWORD)
+            self.graph = Graph(
+                host=NEO4J_URL, username=NEO4J_USERNAME, password=NEO4J_PASSWORD)
 
     def all(self):
         data = self.graph.run("MATCH (n1)-[r]->(n2) RETURN r").data()
@@ -124,7 +126,8 @@ class Neo4jLayer(DatabaseLayer):
         return [node["n"] for node in data]
 
     def get_relationship_by_type(self, type):
-        data = self.graph.run("MATCH (n1)-[r:{0}]->(n2) RETURN r".format(type.upper())).data()
+        data = self.graph.run(
+            "MATCH (n1)-[r:{0}]->(n2) RETURN r".format(type.upper())).data()
         return [rels["r"] for rels in data]
 
     def get_nodes_by_label(self, label):
@@ -162,7 +165,8 @@ class Neo4jLayer(DatabaseLayer):
         return [node["r"] for node in data]
 
     def get_nodes_in_article(self, id):
-        comment_links = "MATCH (n1)-[r]->(n2) WHERE n1.article_id = \'{0}\' RETURN r".format(id)
+        comment_links = "MATCH (n1)-[r]->(n2) WHERE n1.article_id = \'{0}\' RETURN r".format(
+            id)
         author_links = " UNION MATCH (n1:author)-[r:WROTE]->(n2:comment) WHERE n2.article_id = \'{0}\' RETURN r".format(
             id)
 
@@ -176,19 +180,22 @@ class Neo4jLayer(DatabaseLayer):
         return [node['n'] for node in data]
 
     def get_articles_in_subreddit(self, subreddit):
-        query = "MATCH (n:article) WHERE n.subreddit=\'{0}\' RETURN n".format(subreddit)
+        query = "MATCH (n:article) WHERE n.subreddit=\'{0}\' RETURN n".format(
+            subreddit)
         data = self.graph.run(query).data()
 
         return [node["n"] for node in data]
 
     def get_edges_in_subreddit(self, subreddit):
-        query = "MATCH (n0)-[r]->(n1) WHERE n0.subreddit=\'{0}\' OR  n1.subreddit=\'{0}\' RETURN r".format(subreddit)
+        query = "MATCH (n0)-[r]->(n1) WHERE n0.subreddit=\'{0}\' OR  n1.subreddit=\'{0}\' RETURN r".format(
+            subreddit)
         data = self.graph.run(query).data()
 
         return [node["r"] for node in data]
 
     def get_comments_in_article(self, id):
-        query = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(id)
+        query = "MATCH (n1:comment)-[r]->(n2:comment) WHERE n1.article_id = \'{0}\' RETURN r".format(
+            id)
         data = self.graph.run(query).data()
         return [node["r"] for node in data]
 

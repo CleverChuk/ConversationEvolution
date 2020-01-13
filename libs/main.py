@@ -55,6 +55,11 @@ def download_task(*args, **kwargs):
 
 if __name__ == "__main__":
     # the subreddits to scrape
+    import nltk
+    # install nltk packages
+    nltk.download("vader_lexicon")
+    nltk.download("punkt")
+
     subreddits = ["legaladvice", "programming", "politics"]
     with open(f"credential.json", "r") as fp:
         lines = "".join(fp.readlines())
