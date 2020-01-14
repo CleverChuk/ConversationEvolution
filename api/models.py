@@ -1,5 +1,6 @@
 from django.db import models
 
+from libs.models import ID
 
 # Create your models here.
 
@@ -13,6 +14,7 @@ class Node(dict):
         super().__init__()
         self.update(*args, **kwargs)
         self['radius'] = 2.8
+        self['id'] = ID.getId()
 
     def __getitem__(self, key):
         val = dict.get(self, key, None)

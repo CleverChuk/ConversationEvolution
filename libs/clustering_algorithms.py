@@ -1,8 +1,10 @@
 from collections import defaultdict
+from api.mapper import Edge
+from api.models import Node
 
 DEFAULT_MEAN = 0.0
 
-class AdjacencyMAtrixUnDirected:
+class AdjacencyListUnDirected:
     def __init__(self, *edges): # list of edge object with start_node and end_node properties
         self._list = defaultdict(list)
         self.build(edges)
@@ -25,7 +27,17 @@ class AdjacencyMAtrixUnDirected:
         return v
 
 
-
+class ClusterUtil:
+    count = 0
+    @staticmethod
+    def connect_clusters(c1, c2, graph):
+        for n1 in c1.nodes:
+            for n2 in c2.nodes:
+                if graph.is_connected(n1,n2):
+                    node1 = c1.to_node()
+                    node2 = c2.to_node()
+                    return Edge(node1, node2)
+                    
 class Cluster:
     def __init__(self, prop, tol = 0.01): # could use a list for prop to make it general
         self.mean = DEFAULT_MEAN
@@ -81,8 +93,14 @@ class Cluster:
     def is_near(self, node): # check if nide is within cluster distance tolerance
         if self.mean != DEFAULT_MEAN:
             return self._dist_mean(node) <= self.tol
-
         return True
+
+    def __medain(self):
+        vals = [node[self.prop for node in self.nodes]]
+        vals.sort()
+        if self.count % 2 == 0:
+            return (vals[self.count//2]+vals[self.count//2+1])/2
+        return vals[self.count//2]
 
     def dist_from(self, node):
         return self._dist_mean(node)
@@ -93,6 +111,15 @@ class Cluster:
                 if graph.is_connected(n1, n2):
                     return True
         return False
+
+    def to_node(self, aggregate_by='mean'):
+        node = Node(type='cluster_repr')
+        if aggregate_by == 'mean':
+            node[self.prop] = self.mean
+        elif aggregate_by=='median':
+            node[self.prop] = self.__medain()
+
+        return node
 
 # functions
 def score(clusters):
