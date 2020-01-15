@@ -564,7 +564,7 @@ def _cluster_with_kmeans(edges, **params):
     lens = 'reading_level' if 'lens' not in params else params['lens']
     k = 10 if 'k' not in params else int(params['k'])
     epsilon = 0.5 if 'epsilon' not in params else float(params['epsilon'])
-    mode = 'median' if 'mode' not in params else params['mode']
+    mode = 'mean' if 'mode' not in params else params['mode']
 
     graph = AList(*edges)
     clusters = k_means(graph.vertices(), k, iter_tol=0.00001, prop='reading_level', cluster_tol=epsilon)

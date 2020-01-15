@@ -104,7 +104,9 @@ class ClusterUtil:
                 category_variable.clear()
 
         cluster_node["id"] = uuid4()
-
+        cluster_node.pop("body",None)
+        nodes = cluster_node.pop('composition',[])
+        cluster_node['node_count'] = len(nodes)
         return cluster_node
 
     @staticmethod

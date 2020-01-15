@@ -14,7 +14,7 @@ WORKDIR /app
 
 # Copy contents into the container at /app
 COPY api/ ./api
-COPY libs/ ./libs
+COPY libs/*.py ./libs/
 COPY mapper/ ./mapper
 COPY requirements.txt .
 COPY manage.py .
