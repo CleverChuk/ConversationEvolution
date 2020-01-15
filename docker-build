@@ -1,0 +1,2 @@
+clear
+docker image build --no-cache -t cleverchuk/mapper:backend .

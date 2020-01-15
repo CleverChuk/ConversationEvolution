@@ -61,7 +61,7 @@ if __name__ == "__main__":
     nltk.download("punkt")
 
     subreddits = ["legaladvice", "programming", "politics"]
-    with open(f"credential.json", "r") as fp:
+    with open(f"libs/credential.json", "r") as fp:
         lines = "".join(fp.readlines())
         credential = json.loads(lines)
         crawler = Crawler(None, credential)

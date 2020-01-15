@@ -1,7 +1,7 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Record models use to create graph nodes
 
-from analyzers import SentimentAnalyzer
+from libs.analyzers import SentimentAnalyzer
 
 ANONYMOUS_USER = "anonymous"
 

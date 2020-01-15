@@ -321,8 +321,8 @@ class D3helper:
     def __init__(self, *args, **kwargs):
         pass
 
-    @classmethod
-    def graph_transform(cls, *edges):
+    @staticmethod
+    def graph_transform(*edges, vertices=None):
         """
             this function is used to create data structure that will be
             serialized to JSON for visualization
