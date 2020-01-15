@@ -9,7 +9,7 @@ import json
 import threading
 import numpy as np
 import os
-from clustering_algorithm import k_means, AdjacencyListUnDirected as AList, ClusterUtil
+from libs.clustering_algorithms import k_means, AdjacencyListUnDirected as AList, ClusterUtil
 
 # neo4j configs
 NEO4J_URL = os.environ["NEO4J_URL"]
@@ -492,10 +492,14 @@ def _mapper_force_directed(data, **params):
                             epsilon=epsilon, num_interval=interval)
         mapper.average = True if mode == 'mean' else False
         data = mapper.cluster
-        
-    elif algorithm == 'k-means':
-        data = _cluster_with_kmeans(data, params)
-    
+
+    elif algorithm == 'k-means' or algorithm == "kmeans":
+        data, nodes = _cluster_with_kmeans(data, **params)
+        data = database_api.D3helper.graph_transform(*data)
+        data['nodes'].extend(nodes)
+
+        return data
+
     return database_api.D3helper.graph_transform(*data)
 
 
@@ -561,18 +565,19 @@ def _cluster_with_kmeans(edges, **params):
     epsilon = 0.5 if 'epsilon' not in params else float(params['epsilon'])
     mode = 'median' if 'mode' not in params else params['mode']
 
-    graph = AdjacencyListUnDirected(*edges)
+    graph = AList(*edges)
     clusters = k_means(graph.vertices(), k, iter_tol=0.00001, prop='reading_level', cluster_tol=epsilon)
     n = len(clusters)
     edges = []
 
     for i in range(n):
-        for j in range(i, n) :
-            edge = ClusterUtil.connect_clusters(clusters[i], clusters[j])
+        for j in range(i+1, n) :
+            edge = ClusterUtil.connect_clusters(clusters[i], clusters[j], graph)
             if edge:
                 edges.append(edge)
 
-    return edges
+    nodes = [c.to_node() for c in clusters if not c.has_linked]
+    return edges, nodes
 
 
 @DeprecationWarning

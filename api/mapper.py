@@ -230,7 +230,7 @@ class Mapper:
                 else:
                     numerical_variables.append(tp)
 
-            if len(numerical_variables) != 0:  # use median for numerical variables
+            if len(numerical_variables):  # use median for numerical variables
                 if self._average:
                     cluster_node[property_key] = float(
                         round(stats.mean(numerical_variables), 4))
