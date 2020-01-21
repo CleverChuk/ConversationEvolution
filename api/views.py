@@ -3,8 +3,8 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from libs import database_api
-from .models import *
-from .mapper import EdgeMapper, Edge, TreeMapper
+from libs.models import TreeNode
+from libs.mapper import EdgeMapper, Edge, TreeMapper
 import json
 import threading
 import numpy as np

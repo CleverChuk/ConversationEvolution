@@ -4,10 +4,12 @@ from reddit_crawler import (Crawler)
 import json
 import threading
 import os
+
 cur_dir = os.path.dirname(__file__)
 NEO4J_URL = os.environ["NEO4J_URL"]
 NEO4J_USERNAME = os.environ["NEO4J_USERNAME"]
 NEO4J_PASSWORD = os.environ["NEO4J_PASSWORD"]
+
 print("="*100)
 print(f"{NEO4J_URL}, {NEO4J_USERNAME}, {NEO4J_PASSWORD}")   
 print("="*100)
@@ -61,7 +63,7 @@ if __name__ == "__main__":
     nltk.download("punkt")
 
     subreddits = ["legaladvice", "programming", "politics"]
-    with open(f"libs/credential.json", "r") as fp:
+    with open(f"credential.json", "r") as fp:
         lines = "".join(fp.readlines())
         credential = json.loads(lines)
         crawler = Crawler(None, credential)

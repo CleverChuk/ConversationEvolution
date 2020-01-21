@@ -1,6 +1,6 @@
 from collections import defaultdict
-from api.mapper import Edge
-from api.models import Node, ID
+from mapper import Edge
+from models import Node, ID
 import statistics as stats
 from uuid import uuid4
 

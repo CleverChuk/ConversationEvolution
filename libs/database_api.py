@@ -4,7 +4,7 @@ from json import dumps
 from json import JSONEncoder
 from py2neo import (Graph, Node, Relationship)
 
-from api.mapper import TreeMapper
+from mapper import TreeMapper
 import os
 
 NEO4J_URL = os.environ["NEO4J_URL"]
