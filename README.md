@@ -28,7 +28,6 @@ discussion-mapper<br/>
  ┃ ┣ 📄db_loaders.py<br/>
  ┃ ┣ 📄graph_writers.py<br/>
  ┃ ┣ 📄json_models.py<br/>
- ┃ ┣ 📄main.py<br/>
  ┃ ┣ 📄mapper.py<br/>
  ┃ ┣ 📄models.py<br/>
  ┃ ┣ 📄mp_test.py<br/>
@@ -77,11 +76,12 @@ discussion-mapper<br/>
  ┣ 📄README.md<br/>
  ┣ 📄_config.yml<br/>
  ┣ 📄db.sqlite3<br/>
+ ┣ 📄main.py<br/>
  ┣ 📄manage.py<br/>
  ┣ 📄requirements.txt<br/>
  ┗ 📄test.py<br/>
  
-The mapper folder is where the Django project settings files live. There are two applications in the project, api and main. api is the backend support that implements mapper logic and provides endpoints to interact with mapper. main is the old front-end now replaced by [mapper_ui](https://github.com/CleverChuk/mapper_ui). libs/ contains modules used to scrape data from Reddit and load into neo4j
+The mapper folder is where the Django project settings files live. There is one application in the project, api. api is the backend support that implements mapper logic and provides endpoints to interact with mapper. The frontend to interact with mapper is [mapper_ui](https://github.com/CleverChuk/mapper_ui). libs package contains the system modules. 
 
 ### Setup
 #### Build docker image for backend
@@ -112,7 +112,8 @@ sample: credential.json file content
 }
 ```
 8. set the following environment variables: NEO4J_URL=0.0.0.0:7474, NEO4J_USERNAME=neo4j,NEO4J_PASSWORD=neo4j2
-9. run `python3 main.py` to start uploading data from reddit to neo4j
-10. browse to http://localhost:3000
-11. interact with the application
+9. navigate back to repository folder
+10. run `python3 main.py` to start uploading data from reddit to neo4j
+11. browse to http://localhost:3000
+12. interact with the application
 

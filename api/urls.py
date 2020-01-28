@@ -20,9 +20,5 @@ urlpatterns = [
     path("articles/<str:subreddit>", views.get_articles_in_subreddit, name='articles'),
 
     path("subreddit", views.get_edges_in_subreddit, name='subreddit'),
-    # path('mapper', views.mapper_graph, name='mapper_graph'),
     path('lenses', views.get_topological_lens, name="lens"),
-
-    # Tree endpoints
-    # path("tree/<str:id>", views.map_with_tree_mapper, name="tree"),
 ]
