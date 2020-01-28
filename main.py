@@ -1,11 +1,12 @@
-import db_loaders as dbl
-import graph_writers as gws
-from reddit_crawler import (Crawler)
+import os
+from libs.db_loaders import Neo4jLoader
+import libs.graph_writers as gws
+from libs.reddit_crawler import (Crawler)
 import json
 import threading
-import os
 
-cur_dir = os.path.dirname(__file__)
+
+
 NEO4J_URL = os.environ["NEO4J_URL"]
 NEO4J_USERNAME = os.environ["NEO4J_USERNAME"]
 NEO4J_PASSWORD = os.environ["NEO4J_PASSWORD"]
@@ -21,7 +22,7 @@ def download_task(*args, **kwargs):
     # ids = crawler.get_hot_submissions(2)
     crawler.get_graph(*args)
     # loader
-    loader = dbl.Neo4jLoader(NEO4J_URL, NEO4J_USERNAME, NEO4J_PASSWORD)
+    loader = Neo4jLoader(NEO4J_URL, NEO4J_USERNAME, NEO4J_PASSWORD)
 
     # load from list
     loader.write_nodes_from_list(crawler.comment_nodes, "comment")
@@ -63,7 +64,7 @@ if __name__ == "__main__":
     nltk.download("punkt")
 
     subreddits = ["legaladvice", "programming", "politics"]
-    with open(f"credential.json", "r") as fp:
+    with open(f"libs/credential.json", "r") as fp:
         lines = "".join(fp.readlines())
         credential = json.loads(lines)
         crawler = Crawler(None, credential)

@@ -1,10 +1,10 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Class use to generate a graph from pulled data
 from networkx import (Graph, DiGraph, read_graphml)
-from analyzers import CommentAnalyzer
-from textsim import cosine_sim
-from models import CommentNode, AuthorNode, Node, ArticleNode, SentimentNode
-from base_crawler import RedditBot
+from libs.analyzers import CommentAnalyzer
+from libs.textsim import cosine_sim
+from libs.models import CommentNode, AuthorNode, Node, ArticleNode, SentimentNode
+from libs.base_crawler import RedditBot
 
 
 class Crawler(RedditBot):

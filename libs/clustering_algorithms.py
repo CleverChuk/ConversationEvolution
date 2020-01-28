@@ -1,45 +1,53 @@
 from collections import defaultdict
-from mapper import Edge
-from models import Node, ID
+from libs.mapper import Edge
+from libs.models import Node, ID
 import statistics as stats
 from uuid import uuid4
-
-DEFAULT_MEAN = 0.0
+from math import sqrt, ceil
+import random
 
 class AdjacencyListUnDirected:
     def __init__(self, *edges):  # list of edge object with start_node and end_node properties
-        self._list = defaultdict(list)
+        self.__list = defaultdict(list)
         self.build(edges)
+    
+    @property
+    def alist(self):
+        return self.__list
 
     def build(self, edges):
         for edge in edges:
-            self._list[edge.start_node].append(edge.end_node)
-            self._list[edge.end_node].append(edge.start_node)
+            s = edge.start_node
+            d = edge.end_node
+            if  s['id'] != d['id']: # eliminate self loops and force property download from neo4j
+                s = Node(dict(s))
+                d = Node(dict(d))
+                self.__list[s].append(d)
+                self.__list[d].append(s)
 
     def is_connected(self, n1, n2):
-        return n2 in self._list[n1] or n1 in self._list[n2]
+        return n2 in self.__list[n1] or n1 in self.__list[n2]
 
     def neighbors(self, n0):
-        return self._list[n0]
+        return self.__list[n0]
 
     def vertices(self):
-        v = set()
-        for nodes in self._list.values():
-            v.update(nodes)
-        return v
+        return list(self.__list.keys())
+
 
 
 class ClusterUtil:
     count = 0
     @staticmethod
     def connect_clusters(c1, c2, graph):
-        for n1 in c1.nodes:
-            for n2 in c2.nodes:
-                if graph.is_connected(n1, n2):
-                    node1 = c1.to_node()
-                    node2 = c2.to_node()
-                    c1.has_linked = c2.has_linked = True
-                    return Edge(node1, node2)
+        if c1 == c2:
+            for n1 in c1.nodes:
+                for n2 in c2.nodes:
+                    if graph.is_connected(n1,n2):
+                        node1 = c1.to_node()
+                        node2 = c2.to_node()
+                        c1.has_linked = c2.has_linked = True
+                        return Edge(node1, node2)
 
     @staticmethod
     def create_cluster_node(name, agg,  cluster, property_keys):
@@ -115,24 +123,46 @@ class ClusterUtil:
             returns the attribute list of the obj
 
             @params
-                - obj: a class object
+                - obj: dict object
         """
         return list(obj.keys())
 
+    @staticmethod
+    def count_decimal_places(tol):
+        temp = str(tol)
+        return len(temp) - temp.find('.')
+
+    @staticmethod
+    def label_components(graph):
+        visited = set()
+        components = defaultdict(list)
+        def dfs(v, id):
+            if v not in visited:
+                visited.add(v)
+                if v in graph:
+                    for u in graph[v]:
+                        dfs(u, id)
+                components[id].append(v)
+                v["component_id"] = id
+        
+        id = 0
+        for node in graph:
+            dfs(node, id)
+            id += 1
+        
+        return components
+
 
 class Cluster:
-    def __init__(self, prop, tol=0.01):  # could use a list for prop to make it general
-        self.mean = DEFAULT_MEAN
-        self.node = None
+    def __init__(self, prop, n, tol=0.01):  # could use a list for prop to make it general
+        self.mean = n[prop]
+        self.node = None # store node representation of the cluster
         self.has_linked = False
-        self.count = 0
-        self.nodes = []
+        self.count = 1
+        self.nodes = [n]
         self.tol = tol
         self.prop = prop
-
-    def __count_round(self):
-        temp = str(self.tol)
-        return len(temp) - temp.find('.')
+        self.component_id = n['component_id']
 
     def add_to(self, node):
         if not node['grouped']:
@@ -146,16 +176,16 @@ class Cluster:
         for node in self.nodes:
             total += node[self.prop]
 
-        self.mean = round(total/self.count, self.__count_round())
+        self.mean = round(total/self.count, ClusterUtil.count_decimal_places(self.tol))
 
     def re_init(self):  # reinitialize the cluster for repeat computation
         if len(self.nodes):
-            keep = self.nodes.pop(0)  # keep node nearest to mean
-            tol = self._dist_mean(keep)
+            keep = self.nodes.pop(0)  
+            tol = self._distance_metric(keep)
 
             for node in self.nodes:
-                temp = self._dist_mean(node)
-                if temp < tol:
+                temp = self._distance_metric(node)
+                if temp < tol: # keep node nearest to mean
                     keep['grouped'] = False
                     keep = node
                     tol = temp
@@ -167,17 +197,20 @@ class Cluster:
             self.nodes.append(keep)
             self.count = 1
 
-    def _dist_mean(self, node):  # could use euclidean distance for multivariable prop
-        # calculate the linear distance from mean
-        if self.mean == DEFAULT_MEAN:
-            return node[self.prop]
-        return abs(self.mean - node[self.prop])
+    def is_empty(self):
+        return not len(self.nodes)
 
-    def is_near(self, node):  # check if nide is within cluster distance tolerance
-        if self.mean != DEFAULT_MEAN:
-            return self._dist_mean(node) <= self.tol
-        return True
+    def _distance_metric(self, node):  # could use euclidean distance for multivariable prop
+        # calculate the Euclidean distance
+        if self.is_empty():
+            return node[self.prop] # return value for node if cluster is empty
+        return sqrt(pow(self.mean - node[self.prop], 2))
 
+    def is_reachable(self, node):  # check if node is in the same components
+        if self.is_empty():
+            return True
+        return self.component_id == node["component_id"]
+  
     def __medain(self):
         vals = [node[self.prop] for node in self.nodes]
         vals.sort()
@@ -186,7 +219,7 @@ class Cluster:
         return vals[self.count//2]
 
     def dist_from(self, node):
-        return self._dist_mean(node)
+        return self._distance_metric(node)
 
     def is_related(self, cluster, graph):  # connect related clusters
         for n1 in cluster.nodes:
@@ -202,16 +235,20 @@ class Cluster:
 
         return self.node
 
+    def __eq__(self, c):
+        if isinstance(c, Cluster):
+            return self.component_id == c.component_id
+        return False
 # functions
 
 
-def score(clusters):
+def score(clusters, tol):
     total = 0
     n = len(clusters)
     for c in clusters:
         total += c.mean
 
-    return round(total / n, 2)
+    return round(total / n, ClusterUtil.count_decimal_places(tol))
 
 
 def re_init_clusters(clusters):
@@ -221,25 +258,33 @@ def re_init_clusters(clusters):
 
 def k_means(nodes, k, prop='sentiment_score', iter_tol=0.001, cluster_tol=0.001):
     # sensitive to first node picked
-    clusters = [Cluster(prop, tol=cluster_tol) for i in range(k)] # could initialize each cluster with a node
+    N = len(nodes)
+    if k > N:
+        k = ceil(N / 2)
+
+    init_nodes = random.choices(nodes, k=k)
+    for node in init_nodes:
+        node['grouped'] = True
+
+    clusters = [Cluster(prop, init_nodes[i], tol=cluster_tol) for i in range(k)] # could initialize each cluster with a node
     diff = 0
     while True:
-
         for node in nodes:
-            clique = None
+            closest_cluster = None
             dist_score = float('inf')
             for cluster in clusters:
-                temp = cluster.dist_from(node)
+                temp = cluster.dist_from(node)               
                 if temp < dist_score:
-                    clique = cluster
+                    closest_cluster = cluster
                     dist_score = temp
 
-            clique.add_to(node)
+            if closest_cluster.is_reachable(node):
+                closest_cluster.add_to(node)
 
-        if abs(score(clusters) - diff) <= iter_tol:
+        if abs(score(clusters, iter_tol) - diff) <= iter_tol:
             break
         else:
-            diff = score(clusters)
+            diff = score(clusters, iter_tol)
             re_init_clusters(clusters)
 
     return clusters

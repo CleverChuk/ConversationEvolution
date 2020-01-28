@@ -4,7 +4,7 @@
 
 from csv import DictWriter
 import os
-from mapper import Mapper
+from libs.mapper import Mapper
 
 class Neo4jGrapher:
     """

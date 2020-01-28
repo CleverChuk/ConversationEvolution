@@ -567,11 +567,17 @@ def _cluster_with_kmeans(edges, **params):
     mode = 'mean' if 'mode' not in params else params['mode']
 
     graph = AList(*edges)
-    clusters = k_means(graph.vertices(), k, iter_tol=0.00001, prop='reading_level', cluster_tol=epsilon)
+    components = ClusterUtil.label_components(graph.alist)
+    clusters = []
+    for component in components.values():
+        clusters.extend(
+            k_means(component, k, iter_tol=0.00001, prop=lens, cluster_tol=epsilon)
+        )
+    
     n = len(clusters)
     edges = []
 
-    for i in range(n):
+    for i in range(n):        
         for j in range(i+1, n) :
             edge = ClusterUtil.connect_clusters(clusters[i], clusters[j], graph)
             if edge:

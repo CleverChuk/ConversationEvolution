@@ -1,7 +1,7 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Record models use to create graph nodes
 
-from analyzers import SentimentAnalyzer
+from libs.analyzers import SentimentAnalyzer
 
 ANONYMOUS_USER = "anonymous"
 
@@ -60,7 +60,6 @@ class Node(dict):
         super().__init__()
         self.update(*args, **kwargs)
         self['radius'] = 2.8
-        self['id'] = ID.getId()
 
     def __getitem__(self, key):
         val = dict.get(self, key, None)
@@ -95,6 +94,7 @@ class TreeNode(Node):
 
     @classmethod
     def cast(cls, py2neo):
+        py2neo["name"] # force download
         field_dict = dict(py2neo)
         node = TreeNode(field_dict.pop('id'),field_dict.pop('type'))
         node.update(field_dict)
@@ -149,7 +149,6 @@ class CommentNode(Node):
             'similarity': 1.0,            
             'type': "comment",
             'subreddit': subreddit
-
         }
         super().__init__(d)
 

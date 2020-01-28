@@ -1,5 +1,5 @@
 from json import JSONEncoder
-from analyzers import SentimentAnalyzer
+from libs.analyzers import SentimentAnalyzer
 
 
 class CustomEncoder(JSONEncoder):

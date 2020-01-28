@@ -1,6 +1,6 @@
 import mapper_functions as mf
 import networkx as nx
-from models import Node
+from libs.models import Node
 import random as rand
 
 

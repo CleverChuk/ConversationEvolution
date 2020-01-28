@@ -4,8 +4,8 @@
 import statistics as stats
 from collections import defaultdict, OrderedDict, deque
 from math import floor
-from analyzers import SentimentAnalyzer as sa
-from models import (Node, TreeNode)
+from libs.analyzers import SentimentAnalyzer as sa
+from libs.models import (Node, TreeNode)
 from uuid import uuid4
 
 
