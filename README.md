@@ -83,7 +83,13 @@ discussion-mapper<br/>
  
 The mapper folder is where the Django project settings files live. There is one application in the project, api. api is the backend support that implements mapper logic and provides endpoints to interact with mapper. The frontend to interact with mapper is [mapper_ui](https://github.com/CleverChuk/mapper_ui). libs package contains the system modules. 
 
-### Setup
+### Development Setup
+1. clone this repo
+2. cd into the repo folder
+3. run pip3 install -r requirements.txt
+4. you're set for development! cheers!
+
+### Setup For running the system
 #### Build docker image for backend
 1. `Prerequisite`
     - download and install [docker](https://docs.docker.com/install/)

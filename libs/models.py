@@ -196,3 +196,35 @@ class Relationship(dict):
 
     def __repr__(self):
         return "{0}--[{1}]-->{2}".format(self.start_node, self.relationship_type, self.end_node)
+
+class Edge:
+    """
+        Representation of an edge in a graph
+    """
+    def __init__(self, src, dest, **properties):
+        # coarse py2neo to download all fields
+        src['name'], dest['name']
+        self.start_node = src
+        self.end_node = dest
+        self.properties = properties
+        self._index = -1
+
+    @classmethod
+    def cast(self, py2neo_rel):
+        return self(py2neo_rel.start_node, py2neo_rel.end_node)
+
+    def __getitem__(self, key):
+        if key == 0:
+            return self.start_node
+        elif key == 1:
+            return self.end_node
+        elif key == 2 or key == -1:
+            return self.properties
+        else:
+            return None
+
+    def __len__(self):
+        return 3
+
+    def __repr__(self):
+        return self.start_node['type'] + "->" + self.end_node['type']

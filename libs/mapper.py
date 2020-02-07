@@ -5,42 +5,9 @@ import statistics as stats
 from collections import defaultdict, OrderedDict, deque
 from math import floor
 from libs.analyzers import SentimentAnalyzer as sa
-from libs.models import (Node, TreeNode)
+from libs.models import (Node, TreeNode, Edge)
 from uuid import uuid4
-
-
-class Edge:
-    """
-        Representation of an edge in a graph
-    """
-    def __init__(self, src, dest, **properties):
-        # coarse py2neo to download all fields
-        src['name'], dest['name']
-        self.start_node = src
-        self.end_node = dest
-        self.properties = properties
-        self._index = -1
-
-    @classmethod
-    def cast(self, py2neo_rel):
-        return self(py2neo_rel.start_node, py2neo_rel.end_node)
-
-    def __getitem__(self, key):
-        if key == 0:
-            return self.start_node
-        elif key == 1:
-            return self.end_node
-        elif key == 2 or key == -1:
-            return self.properties
-        else:
-            return None
-
-    def __len__(self):
-        return 3
-
-    def __repr__(self):
-        return self.start_node['type'] + "->" + self.end_node['type']
-
+from libs.utils import ClusterUtil
 
 class Mapper:
     """
@@ -84,7 +51,7 @@ class Mapper:
         edges = []
         # create cluster node
         for name, cluster in clusters.items():
-            new_nodes[name] = self.create_cluster_node(name, cluster, self.attr_list(cluster[0]))
+            new_nodes[name] = ClusterUtil.create_cluster_node(name, self.average, cluster, self.attr_list(cluster[0]))
             new_nodes[name]['radius'] += len(cluster) // 2
 
         # connect clusters base on node overlap
@@ -104,52 +71,6 @@ class Mapper:
                 if not cluster.isdisjoint(nextCluster) and new_nodes[names[i]] != new_nodes[names[j]]:
                     edges.append(Edge(new_nodes[names[i]], new_nodes[names[j]], id=id, type=j_index))
                     id += 1
-
-        # assumes filtered is always of type author and sentiment
-        # authors = []
-        # sentiments = []
-        # # #TODO: add if statement to ignore or perform this task
-        # for link in self.filtered_in_data:
-        #     if link[0]['type'] == 'author':
-        #         authors.append(link[0])
-
-        #     #     elif link[0]['type'] == 'sentiment':
-        #     #         sentiments.append(link[0])
-
-        #     if link[1]['type'] == 'author':
-        #         authors.append(link[1])
-        #     elif link[1]['type'] == 'sentiment':
-        #         sentiments.append(link[1])
-
-        # N = len(edges)
-        # #TODO: add if statement to ignore or perform this task
-
-        # for i in range(N):
-        #     for node in authors:
-        #         # check if the author's comment contributed to this cluster
-        #         if edges[i][0]['authors']:
-        #             a = edges[i][0]['authors'].get(node['name'])
-        #             if a != None:
-        #                 edges.append(Edge(node, edges[i][0]))
-        #                 # Remove author to avoid creating multiple author edges to all contributing nodes
-        #                 del edges[i][0]['authors'][a]
-
-        #         if edges[i][1]['authors']:
-        #             a = edges[i][1]['authors'].get(node['name'])
-        #             if a != None:
-        #                 edges.append(Edge(node, edges[i][1]))
-        #                 # Remove author to avoid creating multiple author edges to all contributing nodes
-        #                 del edges[i][1]['authors'][a]
-
-        # #TODO: add if statement to ignore or perform this task
-        # for node in sentiments:
-        #     for i in range(N):
-        #         # connect this cluster to its overall sentiment
-        #         if node['name'] == edges[i][0]['sentiment']:
-        #             edges.append(Edge(edges[i][0], node))
-
-        #         if node['name'] == edges[i][1]['sentiment']:
-        #             edges.append(Edge(edges[i][1], node))
 
         return edges
 
@@ -176,78 +97,6 @@ class Mapper:
                 - obj: a class object
         """
         return list(obj.keys())
-
-    def create_cluster_node(self, name, cluster, property_keys):
-        """
-            calculates the average of all the properties in property_key for
-            all the clusters in cluster
-            creates a node with the average(numeric) or mode(string) attribute for a cluster
-
-            @param
-                - name: cluster name
-                - cluster: list of nodes
-                - property_keys: list of node attribute
-        """
-
-        def create_compositions(cluster_node, node):
-            # Node composition of this cluster node used to highlighted nodes in the
-            # front-end visualization
-            if cluster_node['composition'] and node["id"] in cluster_node['composition']:
-                return
-
-            if cluster_node['composition']:
-                cluster_node['composition'].append(node['id'])
-
-            else:
-                cluster_node['composition'] = [node['id']]
-
-            # add authors dictionary to cluster use to form edge
-            # if cluster_node['authors']:
-            #     cluster_node['authors'].append(node['author'])
-
-            # else:
-            #     cluster_node['authors'] = [node['author']]
-
-        if not isinstance(cluster, list) and not isinstance(property_keys, list):
-            raise Exception("cluster and property_keys must be lists")
-
-        numerical_variables = []
-        cluster_node = Node({'name': name})
-        category_variable = defaultdict(int)
-
-        mode_value = 0
-        mode_var = None
-        for property_key in property_keys:
-            for node in cluster:
-                create_compositions(cluster_node, node)
-                tp = node[property_key]
-                if isinstance(tp, str):  # use mode for categorical variables
-                    category_variable[tp] += 1
-                    if category_variable[tp] > mode_value:
-                        mode_value = category_variable[tp]
-                        mode_var = tp
-                else:
-                    numerical_variables.append(tp)
-
-            if len(numerical_variables):  # use median for numerical variables
-                if self._average:
-                    cluster_node[property_key] = float(
-                        round(stats.mean(numerical_variables), 4))
-                    numerical_variables.clear()
-                else:
-                    numerical_variables.sort()
-                    cluster_node[property_key] = float(
-                        round(stats.median(numerical_variables), 4))
-                    numerical_variables.clear()
-
-            else:
-                cluster_node[property_key] = str(mode_var)
-                mode_value = 0
-                category_variable.clear()
-
-        cluster_node["id"] = uuid4()
-
-        return cluster_node
 
     def edge_mean(self, edge, property_key):
         """

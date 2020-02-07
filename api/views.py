@@ -3,13 +3,14 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from libs import database_api
-from libs.models import TreeNode
-from libs.mapper import EdgeMapper, Edge, TreeMapper
+from libs.models import Edge, TreeNode
+from libs.mapper import EdgeMapper, TreeMapper
 import json
 import threading
 import numpy as np
 import os
-from libs.clustering_algorithms import k_means, AdjacencyListUnDirected as AList, ClusterUtil
+from libs.clustering_algorithms import k_means, AdjacencyListUnDirected as AList
+from libs.utils import ClusterUtil
 
 # neo4j configs
 NEO4J_URL = os.environ["NEO4J_URL"]
@@ -284,7 +285,6 @@ def get_edges_in_article(request):
         body = json.loads(request.body)
         ids = body["ids"]
         is_mapper = body["mapper"]
-
         if ids:
             data = {}
             threads = []
@@ -315,7 +315,7 @@ def get_edges_in_article(request):
                 return response
 
             # transform data for force directed layout
-            elif body['layout'] == 'force_directed':
+            elif body['layout'] == 'force_directed' or body['layout'] == 'timeline':
                 if len(data) > 1:
                     data = list(data.values())
                     temp = data[0]
