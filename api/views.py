@@ -9,7 +9,7 @@ import json
 import threading
 import numpy as np
 import os
-from libs.clustering_algorithms import k_means, AdjacencyListUnDirected as AList
+from libs.clustering_algorithms import k_means, AdjacencyListUnDirected as AList, SKLearnKMeans, Cluster
 from libs.utils import ClusterUtil
 
 # neo4j configs
@@ -567,21 +567,25 @@ def _cluster_with_kmeans(edges, **params):
     mode = 'mean' if 'mode' not in params else params['mode']
 
     graph = AList(*edges)
-    components = ClusterUtil.label_components(graph.alist)
-    clusters = []
-    for component in components.values():
-        clusters.extend(
-            k_means(component, k, iter_tol=0.00001, prop=lens, cluster_tol=epsilon)
-        )
-    
+    nodes = graph.vertices()
+    kmeans = SKLearnKMeans(n_clusters=k)
+    X = kmeans.fit(nodes)
+
+    clusters = defaultdict(Cluster)
+    for node in nodes:
+        prediction = kmeans.predict(kmeans.transform_node(node))
+        clusters[prediction[0]].add_node(node)
+
     n = len(clusters)
     edges = []
-
-    for i in range(n):        
-        for j in range(i+1, n) :
-            edge = ClusterUtil.connect_clusters(clusters[i], clusters[j], graph)
-            if edge:
-                edges.append(edge)
+    clusters = list(clusters.values())
+    for i in range(n):
+        for j in range(i+1, n):
+            if clusters[i] != clusters[j]:
+                edge = ClusterUtil.connect_clusters(
+                    clusters[i], clusters[j], graph)
+                if edge:
+                    edges.append(edge)
 
     nodes = [c.to_node() for c in clusters if not c.has_linked]
     return edges, filter(lambda n: n is not None, nodes)

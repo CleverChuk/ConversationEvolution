@@ -1,9 +1,7 @@
 
-import sys
-sys.path.append("/home/chuk/dev/docker-dev/mapper/discussion_mapper")
-
 from libs.database_api import *
 from libs.clustering_algorithms import *
+from igraph import *
 import unittest
 
 
@@ -14,7 +12,7 @@ query = Query(db_layer)
 
 class TestClusteringImpl(unittest.TestCase):
     def test_k_means(self):
-        data = query.get_comments_in_article('eunf24')
+        data = query.get_comments_in_article('f3ejzj')
         graph = AdjacencyListUnDirected(*data)
         components = ClusterUtil.label_components(graph.alist)
         clusters = []
@@ -32,6 +30,27 @@ class TestClusteringImpl(unittest.TestCase):
                 if edge:
                     edges.append(edge)
         print("Cluster count:  ",len(clusters))
+    
+    def test_sklearn_kmeans(self):
+        data = query.get_comments_in_article('f3ejzj')
+        graph = AdjacencyListUnDirected(*data)
+        nodes = graph.vertices()
+        kmeans = SKLearnKMeans()
+        X = kmeans.fit(nodes)
+
+        clusters = defaultdict(Cluster)
+        for node in nodes:
+            prediction = kmeans.predict(kmeans.transform_node(node))
+            clusters[prediction[0]].add_node(node)
+        print("Cluster count:  ",len(clusters))
+
+    def test_igraph(self):
+        data = query.get_comments_in_article('f3ejzj')
+        graph = IGraph()
+        graph.add_edges(data)
+        layout = graph.layout_sugiyama()
+        json = graph.transform_layout_for_drawing(layout)
+        print(layout)
 
 if __name__ == "__main__":
     unittest.main()

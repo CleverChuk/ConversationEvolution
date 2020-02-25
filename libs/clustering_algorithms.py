@@ -3,6 +3,78 @@ from libs.models import Node, Edge
 from math import sqrt, ceil
 from libs.utils import ClusterUtil
 import random
+from sklearn.cluster import KMeans
+from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.feature_extraction import DictVectorizer
+import igraph
+from py2neo import Relationship
+
+random.seed(0)
+class SKLearnKMeans(KMeans):
+    def __init__(self, n_clusters = 8):
+        self.vect = DictVectorizer()
+        super().__init__(n_clusters=n_clusters)
+        
+    def fit(self, X):
+        _X = self.vect.fit_transform(X)
+        return super().fit(_X)
+
+    def transform_node(self, node):
+        return self.vect.transform(node)
+
+class IGraph(igraph.Graph):
+    def __init__(self):
+        self.mapping = {}
+        super().__init__()
+    
+    def create_mapping(self, edges):
+        temp_set = set()
+        for edge in edges:
+            temp_set.add(edge.start_node)
+            temp_set.add(edge.end_node)
+
+        for i, node in enumerate(temp_set):
+            self.mapping[node] = i
+        
+        return self.mapping
+
+    def transform(self, edges_list, mapping):
+        temp = []
+        for edge in edges_list:
+            start_node, end_node = edge.start_node, edge.end_node
+            temp.append((mapping[start_node], mapping[end_node]))
+
+        return temp
+    
+    def add_edges(self, edge_list):
+        if not isinstance(edge_list, list):
+            raise Exception(f"Expected a list, but got -> {str(edge_list)}")
+
+        if not len(edge_list):
+            raise Exception(f"Expected a non-empty list, but got an empty list")
+
+        if not isinstance(edge_list[0], Relationship):
+            raise Exception(f"Expected a list of {str(Relationship)}, but got a list of {str(edge_list[0])}")
+
+        self.create_mapping(edge_list)
+        self.add_vertices(len(self.mapping))
+        super().add_edges(self.transform(edge_list, self.mapping))
+
+    def transform_layout_for_drawing(self, layout):
+        json = {"coords":layout.coords}
+        links = []
+        
+        for edge in self.es:
+            links.append({"source": edge.source, "target": edge.target})
+        json["links"] = links
+
+        nodes = [None]*len(self.mapping)
+        for node, i in self.mapping.items():
+            nodes[i] = node
+        
+        json["nodes"] = nodes
+
+        return json
 
 
 class AdjacencyListUnDirected:
@@ -35,15 +107,15 @@ class AdjacencyListUnDirected:
 
 
 class Cluster:
-    def __init__(self, prop, n, tol=0.01):  # could use a list for prop to make it general
-        self.mean = n[prop]
+    def __init__(self, prop = "reading_level", node = None, tol=0.01):  # could use a list for prop to make it general
+        self.mean = 0 if node is None else node[prop]
         self.node = None  # store node representation of the cluster
         self.has_linked = False
         self.count = 1
-        self.nodes = [n]
+        self.nodes = [] if node is None else [node]
         self.tol = tol
         self.prop = prop
-        self.component_id = n['component_id']
+        self.component_id = random.randint(0, 400000000) if node is None else node['component_id']
 
     def add_to(self, node):
         if not node['grouped']:
@@ -51,6 +123,9 @@ class Cluster:
             node['grouped'] = True
             self.nodes.append(node)
             self._update_mean()
+
+    def add_node(self, node):
+        self.nodes.append(node)
 
     def _update_mean(self):
         total = 0
@@ -99,6 +174,7 @@ class Cluster:
         vals.sort()
         if self.count % 2 == 0:
             return (vals[self.count//2]+vals[self.count//2+1])/2
+        
         return vals[self.count//2]
 
     def dist_from(self, node):
@@ -122,8 +198,8 @@ class Cluster:
         if isinstance(c, Cluster):
             return self.component_id == c.component_id
         return False
-# functions
 
+# functions
 
 def score(clusters, tol):
     total = 0
