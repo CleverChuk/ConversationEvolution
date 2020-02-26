@@ -11,6 +11,7 @@ import numpy as np
 import os
 from libs.clustering_algorithms import k_means, AdjacencyListUnDirected as AList, SKLearnKMeans, Cluster
 from libs.utils import ClusterUtil
+from libs.layouts import LayoutTransformer
 
 # neo4j configs
 NEO4J_URL = os.environ["NEO4J_URL"]
@@ -265,7 +266,7 @@ def less_or_equal(request, **param):
         return HttpResponse(status=406)
 
 
-@csrf_exempt  # hack find a better way
+@csrf_exempt  # this is a hack find a better way
 def get_edges_in_article(request):
     """
         return all edges/relationship in the given article and transform them based on the request params
@@ -315,7 +316,7 @@ def get_edges_in_article(request):
                 return response
 
             # transform data for force directed layout
-            elif body['layout'] == 'force_directed' or body['layout'] == 'timeline':
+            else:
                 if len(data) > 1:
                     data = list(data.values())
                     temp = data[0]
@@ -327,17 +328,12 @@ def get_edges_in_article(request):
                     data = list(data.values())[0]
 
                 if is_mapper:
-                    temp = _mapper_force_directed(data, **body["m_params"])
+                    temp = _mapper_layout(data, **body["m_params"])
 
                 else:
                     temp = database_api.D3helper.graph_transform(*data)
 
                 response = JsonResponse(temp)
-                response["Content-type"] = 'application/json'
-                response["Access-Control-Allow-Origin"] = "*"
-                return response
-            else:
-                response = JsonResponse({"unknown layout": body['layout']})
                 response["Content-type"] = 'application/json'
                 response["Access-Control-Allow-Origin"] = "*"
                 return response
@@ -470,34 +466,24 @@ def get_topological_lens(request):
     return response
 
 
-def _mapper_force_directed(data, **params):
+def _mapper_layout(data, **params):
     """
         transform data to a force directed mapper graph
         @params:
             - data: nodes
             - params: mapper parameters
     """
-    # extract the query passed in the url
-    lens = 'reading_level' if 'lens' not in params else params['lens']
-    interval = 3 if 'interval' not in params else int(params['interval'])
-    epsilon = 0.5 if 'epsilon' not in params else float(params['epsilon'])
-
-    mode = 'median' if 'mode' not in params else params['mode']
     algorithm = 'cc' if 'clustering_algorithm' not in params else params[
         'clustering_algorithm']  # no implementation for this yet
 
     print("Creating force directed graph")
     if algorithm == 'cc':
-        mapper = EdgeMapper(data, property_key=lens,
-                            epsilon=epsilon, num_interval=interval)
-        mapper.average = True if mode == 'mean' else False
-        data = mapper.cluster
+        data = _cluster_with_cc(data, **params)
 
     elif algorithm == 'k-means' or algorithm == "kmeans":
-        data, nodes = _cluster_with_kmeans(data, **params)
-        data = database_api.D3helper.graph_transform(*data)
-        data['nodes'].extend(nodes)
-
+        # print("Before", data)
+        data = _cluster_with_kmeans(data, **params)
+        # print("After", data)
         return data
 
     return database_api.D3helper.graph_transform(*data)
@@ -519,7 +505,7 @@ def _mapper_hierarchy(data, root_id, root_type, **params):
 
     mode = 'median' if 'mode' not in params else params['mode']
     algorithm = 'cc' if 'clustering_algorithm' not in params else params[
-        'clustering_algorithm']  # no implementation for this yet
+        'clustering_algorithm']  # only cc implemented
 
     print("Creating hierarchy")
     nodes = edges_to_nodes(data)
@@ -559,6 +545,7 @@ def _hierarchy(data, root_id, root_type):
     return tree_mapper.make_tree(root, nodes)
 
 
+@LayoutTransformer
 def _cluster_with_kmeans(edges, **params):
     print("Processing with K-means")
     lens = 'reading_level' if 'lens' not in params else params['lens']
@@ -588,10 +575,28 @@ def _cluster_with_kmeans(edges, **params):
                     edges.append(edge)
 
     nodes = [c.to_node() for c in clusters if not c.has_linked]
+    print("Done Processing with K-means")
+
     return edges, filter(lambda n: n is not None, nodes)
 
+@LayoutTransformer
+def _cluster_with_cc(edges, **params):
+    lens = 'reading_level' if 'lens' not in params else params['lens']
+    interval = 3 if 'interval' not in params else int(params['interval'])
+    epsilon = 0.5 if 'epsilon' not in params else float(params['epsilon'])
+
+    mode = 'median' if 'mode' not in params else params['mode']    
+    print("Clustering with CC")
+    mapper = EdgeMapper(data, property_key=lens,
+                        epsilon=epsilon, num_interval=interval)
+
+    mapper.average = True if mode == 'mean' else False
+
+    return mapper.cluster, []
 
 # Helper functions
+
+
 def map_x_times(root_id, hierarchy, times=1, function=lambda node: node["value"]):
     """
         run mapper x times on the given hierarchy

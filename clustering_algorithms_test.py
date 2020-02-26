@@ -47,10 +47,16 @@ class TestClusteringImpl(unittest.TestCase):
     def test_igraph(self):
         data = query.get_comments_in_article('f3ejzj')
         graph = IGraph()
+        nodes = []
+        
+        for e in data:
+            nodes.append(e.start_node)
+            nodes.append(e.end_node)
+        
+        graph.add_vertices(nodes)
         graph.add_edges(data)
-        layout = graph.layout_sugiyama()
-        json = graph.transform_layout_for_drawing(layout)
-        print(layout)
+        json = graph.transform_layout_for_drawing("sugiyama")
+        print(json)
 
 if __name__ == "__main__":
     unittest.main()

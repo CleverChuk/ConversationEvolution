@@ -37,7 +37,7 @@ class Mapper:
     def average(self, value):
         self._average = value
 
-    def graph_cluster(self, clusters):
+    def connect_cluster(self, clusters):
         """
             creates a graph from the interval clusters
             Nodes are connected if their Jaccard is > 0.1
@@ -148,7 +148,7 @@ class EdgeMapper(Mapper):
         """
         groups = self.create_intervals()
         cluster = self.cluster_groups(groups)
-        self._cluster = self.graph_cluster(cluster)
+        self._cluster = self.connect_cluster(cluster)
 
         return self._cluster
 
@@ -265,7 +265,7 @@ class NodeMapper(Mapper):
         groups = self.create_intervals()
         cluster = self.cluster(groups)
 
-        return self.graph_cluster(cluster)
+        return self.connect_cluster(cluster)
 
     def create_intervals(self):
         """

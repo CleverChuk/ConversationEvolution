@@ -3,7 +3,6 @@ from json import dump as j_dump
 from json import dumps
 from json import JSONEncoder
 from py2neo import (Graph, Node, Relationship)
-
 from libs.mapper import TreeMapper
 import os
 
@@ -322,7 +321,7 @@ class D3helper:
         pass
 
     @staticmethod
-    def graph_transform(*edges, vertices=None):
+    def graph_transform(*edges):
         """
             this function is used to create data structure that will be
             serialized to JSON for visualization
@@ -332,7 +331,7 @@ class D3helper:
                 :description list of Relationship object
         """
         # dictionary to store index
-        d = {}
+        output = {}
         # list to store nodes
         nodes = []
         # list to store the link namedtuples
@@ -346,24 +345,25 @@ class D3helper:
             # Coerce py2neo to get all the node properties
             n1['name']
             n2['name']
-            if n1['id'] not in d:
+            if n1['id'] not in output:
                 # add node to list
                 nodes.append(n1)
                 # add node index to index dictionary
-                d[n1['id']] = len(nodes) - 1
+                output[n1['id']] = len(nodes) - 1
 
-            if n2['id'] not in d:
+            if n2['id'] not in output:
                 nodes.append(n2)
-                d[n2['id']] = len(nodes) - 1
+                output[n2['id']] = len(nodes) - 1
 
             # create a simple record type for D3 links using the
             # indices in the index dictionary
-            links.append({"source": d[n1['id']], "target": d[n2['id']]})
+            links.append({"source": output[n1['id']], "target": output[n2['id']]})
 
         # create a dictionary containing D3 formatted nodes and links
-        d = {"nodes": nodes, "links": links}
+        output = {"nodes": nodes, "links": links}
 
-        return d
+        return output
+
 
     @staticmethod
     def tree_transform(root, nodes):

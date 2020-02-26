@@ -8,14 +8,13 @@ class ClusterUtil:
     count = 0
     @staticmethod
     def connect_clusters(c1, c2, graph):
-        if c1 == c2:
-            for n1 in c1.nodes:
-                for n2 in c2.nodes:
-                    if graph.is_connected(n1,n2):
-                        node1 = c1.to_node()
-                        node2 = c2.to_node()
-                        c1.has_linked = c2.has_linked = True
-                        return Edge(node1, node2)
+        for n1 in c1.nodes:
+            for n2 in c2.nodes:
+                if graph.is_connected(n1,n2):
+                    node1 = c1.to_node()
+                    node2 = c2.to_node()
+                    c1.has_linked = c2.has_linked = True
+                    return Edge(node1, node2)
 
     @staticmethod
     def create_cluster_node(name, agg,  cluster, property_keys):

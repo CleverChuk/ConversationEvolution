@@ -27,16 +27,16 @@ class IGraph(igraph.Graph):
         self.mapping = {}
         super().__init__()
     
-    def create_mapping(self, edges):
-        temp_set = set()
-        for edge in edges:
-            temp_set.add(edge.start_node)
-            temp_set.add(edge.end_node)
-
+    def _create_mapping(self, nodes):
+        temp_set = set(nodes)
         for i, node in enumerate(temp_set):
             self.mapping[node] = i
         
-        return self.mapping
+
+    def add_vertices(self, nodes):
+        self._create_mapping(nodes)
+        super().add_vertices(len(self.mapping))
+
 
     def transform(self, edges_list, mapping):
         temp = []
@@ -47,20 +47,22 @@ class IGraph(igraph.Graph):
         return temp
     
     def add_edges(self, edge_list):
+        if not len(self.mapping):
+            raise RuntimeError("must add vertices first")
+
         if not isinstance(edge_list, list):
-            raise Exception(f"Expected a list, but got -> {str(edge_list)}")
+            raise RuntimeError(f"Expected a list, but got -> {str(edge_list)}")
 
         if not len(edge_list):
-            raise Exception(f"Expected a non-empty list, but got an empty list")
+            raise RuntimeError(f"Expected a non-empty list, but got an empty list")
 
-        if not isinstance(edge_list[0], Relationship):
-            raise Exception(f"Expected a list of {str(Relationship)}, but got a list of {str(edge_list[0])}")
+        if not isinstance(edge_list[0], Relationship) and not isinstance(edge_list[0], Edge):
+            raise RuntimeError(f"Expected a list of {str(Relationship)}, but got a list of {str(edge_list[0])}")
 
-        self.create_mapping(edge_list)
-        self.add_vertices(len(self.mapping))
         super().add_edges(self.transform(edge_list, self.mapping))
 
-    def transform_layout_for_drawing(self, layout):
+    def transform_layout_for_drawing(self, layout_algo):
+        layout = self.layout(layout = layout_algo)
         json = {"coords":layout.coords}
         links = []
         
@@ -198,6 +200,9 @@ class Cluster:
         if isinstance(c, Cluster):
             return self.component_id == c.component_id
         return False
+    
+    def __repr__(self):
+        return f"N = {self.count}, has_linked: {self.has_linked}, component id: {self.component_id}"
 
 # functions
 
