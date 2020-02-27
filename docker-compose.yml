@@ -7,6 +7,8 @@ services:
                         - "7474:7474"
                         - "7687:7687"
                         - "7473:7473"
+                volumes:
+                        - /Users/chubi/neo4j/data:/data
         backend:
                 environment:
                         - NEO4J_URL=neo4j

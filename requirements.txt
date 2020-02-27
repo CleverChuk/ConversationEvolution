@@ -6,3 +6,4 @@ praw
 nltk
 scikit-learn
 py2neo
+python-igraph

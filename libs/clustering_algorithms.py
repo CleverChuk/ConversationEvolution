@@ -10,11 +10,13 @@ import igraph
 from py2neo import Relationship
 
 random.seed(0)
+
+
 class SKLearnKMeans(KMeans):
-    def __init__(self, n_clusters = 8):
+    def __init__(self, n_clusters=8):
         self.vect = DictVectorizer()
         super().__init__(n_clusters=n_clusters)
-        
+
     def fit(self, X):
         _X = self.vect.fit_transform(X)
         return super().fit(_X)
@@ -22,21 +24,20 @@ class SKLearnKMeans(KMeans):
     def transform_node(self, node):
         return self.vect.transform(node)
 
+
 class IGraph(igraph.Graph):
     def __init__(self):
         self.mapping = {}
         super().__init__()
-    
+
     def _create_mapping(self, nodes):
         temp_set = set(nodes)
         for i, node in enumerate(temp_set):
             self.mapping[node] = i
-        
 
     def add_vertices(self, nodes):
         self._create_mapping(nodes)
         super().add_vertices(len(self.mapping))
-
 
     def transform(self, edges_list, mapping):
         temp = []
@@ -45,7 +46,7 @@ class IGraph(igraph.Graph):
             temp.append((mapping[start_node], mapping[end_node]))
 
         return temp
-    
+
     def add_edges(self, edge_list):
         if not len(self.mapping):
             raise RuntimeError("must add vertices first")
@@ -54,27 +55,37 @@ class IGraph(igraph.Graph):
             raise RuntimeError(f"Expected a list, but got -> {str(edge_list)}")
 
         if not len(edge_list):
-            raise RuntimeError(f"Expected a non-empty list, but got an empty list")
+            raise RuntimeError(
+                f"Expected a non-empty list, but got an empty list")
 
         if not isinstance(edge_list[0], Relationship) and not isinstance(edge_list[0], Edge):
-            raise RuntimeError(f"Expected a list of {str(Relationship)}, but got a list of {str(edge_list[0])}")
+            raise RuntimeError(
+                f"Expected a list of {str(Relationship)}, but got a list of {str(edge_list[0])}")
 
         super().add_edges(self.transform(edge_list, self.mapping))
 
     def transform_layout_for_drawing(self, layout_algo):
-        layout = self.layout(layout = layout_algo)
-        json = {"coords":layout.coords}
-        links = []
-        
-        for edge in self.es:
-            links.append({"source": edge.source, "target": edge.target})
-        json["links"] = links
+        layout = self.layout(layout=layout_algo)
+        layout.scale(100)
+        json = {"coords": layout.coords}
 
         nodes = [None]*len(self.mapping)
         for node, i in self.mapping.items():
+            node['x'] = layout.coords[i][0]
+            node['y'] = layout.coords[i][1]
             nodes[i] = node
-        
+
         json["nodes"] = nodes
+
+        links = []
+        for edge in self.es:
+            links.append(
+                {
+                    "source": nodes[edge.source],
+                    "target": nodes[edge.target]
+                }
+            )
+        json["links"] = links
 
         return json
 
@@ -109,7 +120,8 @@ class AdjacencyListUnDirected:
 
 
 class Cluster:
-    def __init__(self, prop = "reading_level", node = None, tol=0.01):  # could use a list for prop to make it general
+    # could use a list for prop to make it general
+    def __init__(self, prop="reading_level", node=None, tol=0.01):
         self.mean = 0 if node is None else node[prop]
         self.node = None  # store node representation of the cluster
         self.has_linked = False
@@ -117,7 +129,8 @@ class Cluster:
         self.nodes = [] if node is None else [node]
         self.tol = tol
         self.prop = prop
-        self.component_id = random.randint(0, 400000000) if node is None else node['component_id']
+        self.component_id = random.randint(
+            0, 400000000) if node is None else node['component_id']
 
     def add_to(self, node):
         if not node['grouped']:
@@ -176,7 +189,7 @@ class Cluster:
         vals.sort()
         if self.count % 2 == 0:
             return (vals[self.count//2]+vals[self.count//2+1])/2
-        
+
         return vals[self.count//2]
 
     def dist_from(self, node):
@@ -200,11 +213,12 @@ class Cluster:
         if isinstance(c, Cluster):
             return self.component_id == c.component_id
         return False
-    
+
     def __repr__(self):
         return f"N = {self.count}, has_linked: {self.has_linked}, component id: {self.component_id}"
 
 # functions
+
 
 def score(clusters, tol):
     total = 0

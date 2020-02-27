@@ -601,18 +601,12 @@ class TreeMapper:
                     if not interval[i]['isClustered']:
                         cluster[interval[i]] = [interval[i]]
                         for j in range(i + 1, n):
-                            temp = cluster[interval[i]]
                             if self.is_child_of(cluster[interval[i]][-1], interval[j]) and \
                                     abs(filter_function(interval[i]) - filter_function(interval[j])) <= epsilon:
                                 cluster[interval[i]].append(interval[j])
                                 interval[j]['isClustered'] = True
                                 # print("first: {0} |  second: {1}".format(interval[i], interval[j]))
 
-                        # optimization to stop immediately if there's no path between i and j
-                        # this is because the interval is sorted and once a break occurs it is guaranteed that no
-                        # path exist between i and subsequent j
-                        # if not self.pathExist(interval[i], interval[j]) :
-                        #     break
             else:
                 cluster[interval[0]].append(interval[0])
 

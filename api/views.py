@@ -18,10 +18,9 @@ NEO4J_URL = os.environ["NEO4J_URL"]
 NEO4J_USERNAME = os.environ["NEO4J_USERNAME"]
 NEO4J_PASSWORD = os.environ["NEO4J_PASSWORD"]
 
-
-print("="*100)
+print("=" * 100)
 print(f"{NEO4J_URL}, {NEO4J_USERNAME}, {NEO4J_PASSWORD}")
-print("="*100)
+print("=" * 100)
 # constants
 ARTICLE_ID = 'article_id'
 # Create db layer object and pass it to the query object
@@ -331,7 +330,7 @@ def get_edges_in_article(request):
                     temp = _mapper_layout(data, **body["m_params"])
 
                 else:
-                    temp = database_api.D3helper.graph_transform(*data)
+                    temp = _layout(data, **body["m_params"])
 
                 response = JsonResponse(temp)
                 response["Content-type"] = 'application/json'
@@ -478,15 +477,23 @@ def _mapper_layout(data, **params):
 
     print("Creating force directed graph")
     if algorithm == 'cc':
-        data = _cluster_with_cc(data, **params)
+        return _cluster_with_cc(data, **params)
 
     elif algorithm == 'k-means' or algorithm == "kmeans":
         # print("Before", data)
-        data = _cluster_with_kmeans(data, **params)
+        return _cluster_with_kmeans(data, **params)
         # print("After", data)
-        return data
 
-    return database_api.D3helper.graph_transform(*data)
+
+@LayoutTransformer
+def _layout(edges, **params):
+    """
+        @params:
+            - edges: edges
+            - params: mapper parameters
+    """
+    edges = list(map(Edge.cast, edges))
+    return edges, []
 
 
 def _mapper_hierarchy(data, root_id, root_type, **params):
@@ -521,7 +528,7 @@ def _mapper_hierarchy(data, root_id, root_type, **params):
 
     # map the edges using default filter function
     cluster = tree_mapper.execute(
-        hierarchy, interval, filter_function=filter_function)
+        hierarchy, interval, epsilon=epsilon, filter_function=filter_function)
 
     # make tree from mapper nodes
     return tree_mapper.make_tree(TreeNode(root_id, type=root_type), cluster)
@@ -567,7 +574,7 @@ def _cluster_with_kmeans(edges, **params):
     edges = []
     clusters = list(clusters.values())
     for i in range(n):
-        for j in range(i+1, n):
+        for j in range(i + 1, n):
             if clusters[i] != clusters[j]:
                 edge = ClusterUtil.connect_clusters(
                     clusters[i], clusters[j], graph)
@@ -579,20 +586,22 @@ def _cluster_with_kmeans(edges, **params):
 
     return edges, filter(lambda n: n is not None, nodes)
 
+
 @LayoutTransformer
 def _cluster_with_cc(edges, **params):
     lens = 'reading_level' if 'lens' not in params else params['lens']
     interval = 3 if 'interval' not in params else int(params['interval'])
     epsilon = 0.5 if 'epsilon' not in params else float(params['epsilon'])
 
-    mode = 'median' if 'mode' not in params else params['mode']    
+    mode = 'median' if 'mode' not in params else params['mode']
     print("Clustering with CC")
-    mapper = EdgeMapper(data, property_key=lens,
+    mapper = EdgeMapper(edges, property_key=lens,
                         epsilon=epsilon, num_interval=interval)
 
     mapper.average = True if mode == 'mean' else False
 
     return mapper.cluster, []
+
 
 # Helper functions
 
