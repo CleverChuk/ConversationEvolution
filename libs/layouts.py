@@ -1,10 +1,12 @@
+import itertools
+from libs.clustering_algorithms import IGraph, NxGraph
+import networkx as nx
 
-import functools
-from libs.clustering_algorithms import IGraph
+
 class LayoutTransformer:
     def __init__(self, clustering_algo):
         self.clustering_algo = clustering_algo
-    
+
     def layout_d3_fd(self, edges, **params):
         """
             this function is used to create data structure that will be
@@ -49,7 +51,7 @@ class LayoutTransformer:
         output["nodes"].extend(vertices)
 
         return output
-    
+
     def layout_igraph(self, edges, **params):
         layout_algo = params['layout']
         if not self.is_layout_algo_available(layout_algo):
@@ -61,33 +63,82 @@ class LayoutTransformer:
         for e in edges:
             nodes.append(e.start_node)
             nodes.append(e.end_node)
-        
+
         nodes.extend(vertices)
         graph = IGraph()
         graph.add_vertices(nodes)
-        
+
         graph.add_edges(edges)
         return graph.transform_layout_for_drawing(layout_algo)
 
     def is_layout_algo_available(self, algo):
         return algo.lower() in \
-        [
-            "auto", "automatic",
-            "bipartite", "circle",
-            "circular", "dh",
-            "davidson_harel", "drl",
-            "fr", "fruchterman_reigold",
-            "grid", "graphopt",
-            "kk", "kamada_kawai",
-            "lgl", "large", "large_graph",
-            "mds", "random", "rt", "tree"
-            "rt_circular", "reingold_tilford",
-            "reingold_tilford_circular", "sphere",
-            "star", "sugiyama"
-        ]
-    
+               [
+                   "auto", "automatic",
+                   "bipartite", "circle",
+                   "circular", "dh",
+                   "davidson_harel", "drl",
+                   "fr", "fruchterman_reigold",
+                   "grid", "graphopt",
+                   "kk", "kamada_kawai",
+                   "lgl", "large", "large_graph",
+                   "mds", "random", "rt", "tree"
+                                          "rt_circular", "reingold_tilford",
+                   "reingold_tilford_circular", "sphere",
+                   "star", "sugiyama"
+               ]
+
     def __call__(self, edges, **params):
         if params['layout'] == 'force_directed' or params['layout'] == 'timeline':
             return self.layout_d3_fd(edges, **params)
-        
+
         return self.layout_igraph(edges, **params)
+
+
+class LayoutAggregator:
+    def __init__(self, layout_func):
+        self.layout_func = layout_func
+        self.json = None
+
+    def aggregate(self, edges, **params):
+        """
+        combines the subgraphs layouts into a single graph layout for display
+        :param edges: list of graph edges
+        :param params: mapper parameter
+        :return: subgraphs layout
+        """
+
+        for subgraph_edges in self.connected_components(edges):
+            e = list(subgraph_edges)  # consume the generator
+            layout = self.layout_func(e, **params)
+            self.extend_layout(layout)
+
+        return self.json
+
+    def extend_layout(self, layout):
+        if self.json is None:
+            self.json = layout
+
+        else:
+            if "coords" in self.json:
+                self.json["coords"].extend(layout["coords"])
+
+            self.json["links"].extend(layout["links"])
+            self.json["nodes"].extend(layout["nodes"])
+
+    def connected_components(self, edges):
+        """
+        creates a subgraph for all the connected components in the graph
+        :param edges: graph edges
+        :return: subgraph generator
+        """
+        graph = NxGraph()
+        graph.add_vertices(set(itertools.chain.from_iterable([e.start_node, e.end_node] for e in edges)))
+        graph.add_edges(edges)
+
+        for component in nx.connected_components(graph):
+            subgraph = graph.subgraph(component).copy()
+            yield graph.retrieve_edges(subgraph.edges)
+
+    def __call__(self, edges, **params):
+        return self.aggregate(edges, **params)

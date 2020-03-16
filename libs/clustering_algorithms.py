@@ -8,24 +8,32 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.feature_extraction import DictVectorizer
 import igraph
 from py2neo import Relationship
+import networkx as nx
 
 random.seed(0)
 
 
 class SKLearnKMeans(KMeans):
-    def __init__(self, n_clusters=8):
+    def __init__(self, n_clusters=8, lens="sentiment"):
         self.vect = DictVectorizer()
+        self.lens = lens
         super().__init__(n_clusters=n_clusters)
 
-    def fit(self, X):
-        _X = self.vect.fit_transform(X)
-        return super().fit(_X)
+    def fit(self, X, y=None, sample_weight=None):
+        x = (self.extract_lens(node) for node in X)
+        _X = self.vect.fit_transform(x)
+        return super().fit(_X, y, sample_weight)
 
     def transform_node(self, node):
-        return self.vect.transform(node)
+        return self.vect.transform(self.extract_lens(node))
+
+    def extract_lens(self, node):
+        return {self.lens: node.get(self.lens, 0)}
 
 
 class IGraph(igraph.Graph):
+    translate_vector = [0, 0, 0]
+
     def __init__(self):
         self.mapping = {}
         super().__init__()
@@ -54,9 +62,8 @@ class IGraph(igraph.Graph):
         if not isinstance(edge_list, list):
             raise RuntimeError(f"Expected a list, but got -> {str(edge_list)}")
 
-        if not len(edge_list):
-            raise RuntimeError(
-                f"Expected a non-empty list, but got an empty list")
+        if not len(edge_list):  # ignore empty list
+            return
 
         if not isinstance(edge_list[0], Relationship) and not isinstance(edge_list[0], Edge):
             raise RuntimeError(
@@ -65,11 +72,14 @@ class IGraph(igraph.Graph):
         super().add_edges(self.transform(edge_list, self.mapping))
 
     def transform_layout_for_drawing(self, layout_algo):
+        IGraph.update_translate_vector()
         layout = self.layout(layout=layout_algo)
         layout.scale(100)
+
+        layout.translate(v=IGraph.translate_vector[:2])
         json = {"coords": layout.coords}
 
-        nodes = [None]*len(self.mapping)
+        nodes = [None] * len(self.mapping)
         for node, i in self.mapping.items():
             node['x'] = layout.coords[i][0]
             node['y'] = layout.coords[i][1]
@@ -88,6 +98,61 @@ class IGraph(igraph.Graph):
         json["links"] = links
 
         return json
+
+    @classmethod
+    def update_translate_vector(cls):
+        if cls.translate_vector[2] == 0:
+            cls.translate_vector[2] += 1
+            return
+
+        print("Translation vector", cls.translate_vector)
+        if cls.translate_vector[2] % 5 == 0:
+            cls.translate_vector[1] += 1000
+            cls.translate_vector[0] = 0
+
+        else:
+            cls.translate_vector[0] += 1000
+
+        cls.translate_vector[2] += 1
+
+
+class NxGraph(nx.Graph):
+    def __init__(self, data=None, **kwargs):
+        self.forward_mapping = {}
+        self.backward_mapping = {}
+        super().__init__(incoming_graph_data=data, **kwargs)
+
+    def add_vertices(self, nodes):
+        for i, node in enumerate(nodes):
+            self.forward_mapping[node] = i
+            self.backward_mapping[i] = node
+        return self.forward_mapping, self.backward_mapping
+
+    def add_edges(self, edges):
+        if not len(self.forward_mapping):
+            raise Exception("Must call 'add_nodes' first")
+
+        _edges = (
+            (self.forward_mapping[e.start_node], self.forward_mapping[e.end_node])
+            for e in edges
+        )
+
+        self.add_edges_from(_edges)
+
+        return _edges
+
+    def retrieve_nodes(self, ids):
+        for i in ids:
+            yield self.backward_mapping[i]
+
+    def retrieve_edges(self, edges):
+        """
+        maps integer based edge to object based edge
+        :param edges: list of integer edges
+        :return: generator of object based edges
+        """
+        for i, j in edges:
+            yield Edge(self.backward_mapping[i], self.backward_mapping[j])
 
 
 class AdjacencyListUnDirected:
@@ -147,7 +212,7 @@ class Cluster:
         for node in self.nodes:
             total += node[self.prop]
 
-        self.mean = round(total/self.count,
+        self.mean = round(total / self.count,
                           ClusterUtil.count_decimal_places(self.tol))
 
     def re_init(self):  # reinitialize the cluster for repeat computation
@@ -188,9 +253,9 @@ class Cluster:
         vals = [node[self.prop] for node in self.nodes]
         vals.sort()
         if self.count % 2 == 0:
-            return (vals[self.count//2]+vals[self.count//2+1])/2
+            return (vals[self.count // 2] + vals[self.count // 2 + 1]) / 2
 
-        return vals[self.count//2]
+        return vals[self.count // 2]
 
     def dist_from(self, node):
         return self._distance_metric(node)
@@ -216,6 +281,7 @@ class Cluster:
 
     def __repr__(self):
         return f"N = {self.count}, has_linked: {self.has_linked}, component id: {self.component_id}"
+
 
 # functions
 

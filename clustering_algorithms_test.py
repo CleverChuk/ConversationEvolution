@@ -1,9 +1,8 @@
-
 from libs.database_api import *
 from libs.clustering_algorithms import *
 from igraph import *
 import unittest
-
+import networkx as nx
 
 # Create db layer object and pass it to the query object
 db_layer = Neo4jLayer()
@@ -25,12 +24,12 @@ class TestClusteringImpl(unittest.TestCase):
         edges = []
 
         for i in range(n):
-            for j in range(i+1, n) :
+            for j in range(i + 1, n):
                 edge = ClusterUtil.connect_clusters(clusters[i], clusters[j], graph)
                 if edge:
                     edges.append(edge)
-        print("Cluster count:  ",len(clusters))
-    
+        # print("Cluster count:  ",len(clusters))
+
     def test_sklearn_kmeans(self):
         data = query.get_comments_in_article('f3ejzj')
         graph = AdjacencyListUnDirected(*data)
@@ -42,21 +41,39 @@ class TestClusteringImpl(unittest.TestCase):
         for node in nodes:
             prediction = kmeans.predict(kmeans.transform_node(node))
             clusters[prediction[0]].add_node(node)
-        print("Cluster count:  ",len(clusters))
+        # print("Cluster count:  ",len(clusters))
 
     def test_igraph(self):
         data = query.get_comments_in_article('f3ejzj')
         graph = IGraph()
-        nodes = []
-        
+        nodes = set()
+
         for e in data:
-            nodes.append(e.start_node)
-            nodes.append(e.end_node)
-        
+            nodes.add(e.start_node)
+            nodes.add(e.end_node)
+
         graph.add_vertices(nodes)
         graph.add_edges(data)
         json = graph.transform_layout_for_drawing("sugiyama")
+        # print(json)
+
+    def test_nx_graph_component(self):
+        data = query.get_comments_in_article('f3ejzj')
+        graph = NxGraph()
+        nodes = set()
+
+        for e in data:
+            nodes.add(e.start_node)
+            nodes.add(e.end_node)
+
+        graph.add_vertices(nodes)
+        graph.add_edges(data)
+        json = [
+            list(graph.retrieve_edges(subg.edges)) for subg in
+            [graph.subgraph(component).copy() for component in nx.connected_components(graph)]
+        ]
         print(json)
+
 
 if __name__ == "__main__":
     unittest.main()

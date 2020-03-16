@@ -8,6 +8,8 @@ from libs.analyzers import SentimentAnalyzer as sa
 from libs.models import (Node, TreeNode, Edge)
 from uuid import uuid4
 from libs.utils import ClusterUtil
+import itertools
+
 
 class Mapper:
     """
@@ -126,8 +128,9 @@ class EdgeMapper(Mapper):
         Attributes:
             - _cluster: clusters generated
     """
+
     def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
-        self._cluster = None
+        self._edges = None
 
         def filter_out(edge):
             return edge.start_node['type'] == 'comment' and edge.end_node['type'] == 'comment'
@@ -148,9 +151,10 @@ class EdgeMapper(Mapper):
         """
         groups = self.create_intervals()
         cluster = self.cluster_groups(groups)
-        self._cluster = self.connect_cluster(cluster)
+        self._edges = self.connect_cluster(cluster)
+        self._edges = self._edges if len(self._edges) else list(itertools.chain.from_iterable(groups.values()))
 
-        return self._cluster
+        return self._edges
 
     def create_intervals(self):
         """
@@ -169,7 +173,7 @@ class EdgeMapper(Mapper):
 
         groups = defaultdict(list)  # map to hold groups
         length = len(intervals)
-        for i in range(length - 1):
+        for i in range(length - 1):  # FIXME fails for single edge graph
             next = i + 1
 
             # adjust the overlap range by epsilon
@@ -186,7 +190,7 @@ class EdgeMapper(Mapper):
             groups[(minimum, maximum)] = intervals[i]
 
             # make sure to include the last interval in the group map
-            if (next == length - 1):
+            if next == length - 1:
                 minimum = self.edge_mean(
                     intervals[next][0], self.property_key) - self.epsilon
                 maximum = self.edge_mean(
@@ -196,6 +200,9 @@ class EdgeMapper(Mapper):
                     if self.edge_mean(e, self.property_key) <= maximum and e not in intervals[next]:
                         intervals[next].append(e)
                 groups[(minimum, maximum)] = intervals[next]
+
+        if not len(groups):
+            groups[0] = intervals[0]
 
         return groups
 
@@ -241,19 +248,19 @@ class EdgeMapper(Mapper):
 
         return clusters
 
-    def get_cluster(self):
-        if not self._cluster:
+    @property
+    def edges(self):
+        if not self._edges:
             self.graph()
 
-        return self._cluster
-
-    cluster = property(get_cluster)
+        return self._edges
 
 
 class NodeMapper(Mapper):
     """
         Specilization of mapper for working with node clustering
     """
+
     def __init__(self, edges, data, epsilon=0.5, property_key="reading_level", num_interval=3):
         self.edges = edges
         super().__init__(data, epsilon, property_key, num_interval)
@@ -357,6 +364,7 @@ class TreeMapper:
             - _cluster: clusters generated
             - intervals: intervals generated
     """
+
     def __init__(self):
         """
             Initializes the TreeMapper object with tree root and filter function
@@ -442,7 +450,8 @@ class TreeMapper:
 
         for child in nodes:
             if child["parent_id"] == root["id"] or (root["composition"] and child["parent_id"] in root["composition"]) \
-                    or (child['type'] == 'article' and child['subreddit'] == root['id']):  # added this line in order to be able to create a tree for an entire subreddit
+                    or (child['type'] == 'article' and child['subreddit'] == root[
+                'id']):  # added this line in order to be able to create a tree for an entire subreddit
                 if "children" in root:
                     root["children"].append(child)
                 else:

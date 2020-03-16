@@ -9,9 +9,12 @@ import json
 import threading
 import numpy as np
 import os
-from libs.clustering_algorithms import k_means, AdjacencyListUnDirected as AList, SKLearnKMeans, Cluster
+from libs.clustering_algorithms import (k_means, AdjacencyListUnDirected as AList, SKLearnKMeans, Cluster,
+                                        IGraph, NxGraph
+                                        )
 from libs.utils import ClusterUtil
-from libs.layouts import LayoutTransformer
+from libs.layouts import LayoutTransformer, LayoutAggregator
+import networkx as nx
 
 # neo4j configs
 NEO4J_URL = os.environ["NEO4J_URL"]
@@ -475,16 +478,18 @@ def _mapper_layout(data, **params):
     algorithm = 'cc' if 'clustering_algorithm' not in params else params[
         'clustering_algorithm']  # no implementation for this yet
 
-    print("Creating force directed graph")
-    if algorithm == 'cc':
-        return _cluster_with_cc(data, **params)
+    print("Creating mapper graph")
+    # if algorithm == 'cc':
+    #     return _cluster_with_cc(data, **params)
+    #
+    # elif algorithm == 'k-means' or algorithm == "kmeans":
+    #     # print("Before", data)
+    #     return _cluster_with_kmeans(data, **params)
+    #     # print("After", data)
+    return connected_components_subgraph(data, **params)
 
-    elif algorithm == 'k-means' or algorithm == "kmeans":
-        # print("Before", data)
-        return _cluster_with_kmeans(data, **params)
-        # print("After", data)
 
-
+@LayoutAggregator
 @LayoutTransformer
 def _layout(edges, **params):
     """
@@ -552,18 +557,17 @@ def _hierarchy(data, root_id, root_type):
     return tree_mapper.make_tree(root, nodes)
 
 
+@LayoutAggregator
 @LayoutTransformer
 def _cluster_with_kmeans(edges, **params):
     print("Processing with K-means")
     lens = 'reading_level' if 'lens' not in params else params['lens']
     k = 10 if 'k' not in params else int(params['k'])
-    epsilon = 0.5 if 'epsilon' not in params else float(params['epsilon'])
-    mode = 'mean' if 'mode' not in params else params['mode']
 
     graph = AList(*edges)
     nodes = graph.vertices()
-    kmeans = SKLearnKMeans(n_clusters=k)
-    X = kmeans.fit(nodes)
+    kmeans = SKLearnKMeans(n_clusters=min([k, len(nodes)]), lens=lens)
+    kmeans.fit(nodes)
 
     clusters = defaultdict(Cluster)
     for node in nodes:
@@ -576,8 +580,7 @@ def _cluster_with_kmeans(edges, **params):
     for i in range(n):
         for j in range(i + 1, n):
             if clusters[i] != clusters[j]:
-                edge = ClusterUtil.connect_clusters(
-                    clusters[i], clusters[j], graph)
+                edge = ClusterUtil.connect_clusters(clusters[i], clusters[j], graph)
                 if edge:
                     edges.append(edge)
 
@@ -587,6 +590,7 @@ def _cluster_with_kmeans(edges, **params):
     return edges, filter(lambda n: n is not None, nodes)
 
 
+@LayoutAggregator
 @LayoutTransformer
 def _cluster_with_cc(edges, **params):
     lens = 'reading_level' if 'lens' not in params else params['lens']
@@ -600,10 +604,67 @@ def _cluster_with_cc(edges, **params):
 
     mapper.average = True if mode == 'mean' else False
 
-    return mapper.cluster, []
+    return mapper.edges, []
 
 
 # Helper functions
+
+
+def subgraph_layout_aggregator(func):
+    """
+    function decorator
+    :param func: function to decorate
+    :return: decorate function
+    """
+
+    def aggregate(edges, **params):
+        """
+        combines the subgraphs layouts into a single graph layout for display
+        :param edges: list of graph edges
+        :param params: mapper parameter
+        :return: subgraphs layout
+        """
+        json = None
+
+        def extend_layout(layout):
+            nonlocal json
+            if json is None:
+                json = layout
+            else:
+                if "coords" in json:
+                    json["coords"].extend(layout["coords"])
+
+                json["links"].extend(layout["links"])
+                json["nodes"].extend(layout["nodes"])
+
+        for subgraph_edges in func(edges):
+            e = list(subgraph_edges)  # consume the generator
+            if params["clustering_algorithm"] == "cc":
+                layout = _cluster_with_cc(e, **params)
+            else:
+                layout = _cluster_with_kmeans(e, **params)
+
+            extend_layout(layout)
+
+        return json
+
+    return aggregate
+
+
+@subgraph_layout_aggregator
+def connected_components_subgraph(edges):
+    """
+    creates a subgraph for all the connected components in the graph
+    :param edges: graph edges
+    :return: subgraph generator
+    """
+    graph = NxGraph()
+    graph.add_vertices(edges_to_nodes(edges))
+    graph.add_edges(edges)
+
+    for component in nx.connected_components(graph):
+        subgraph = graph.subgraph(component).copy()
+        yield graph.retrieve_edges(subgraph.edges)
 
 
 def map_x_times(root_id, hierarchy, times=1, function=lambda node: node["value"]):

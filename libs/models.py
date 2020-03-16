@@ -5,10 +5,12 @@ from libs.analyzers import SentimentAnalyzer
 
 ANONYMOUS_USER = "anonymous"
 
+
 class MetaNode(type):
     """
         a metaclass for specifying the node type
     """
+
     def __init__(metaclass, name, bases, namespace, **kwargs):
         type.__init__(metaclass, name, bases, namespace)
 
@@ -50,6 +52,7 @@ class ID:
             id = cls.id
 
         return str(id)
+
 
 class Node(dict):
     """
@@ -94,9 +97,9 @@ class TreeNode(Node):
 
     @classmethod
     def cast(cls, py2neo):
-        py2neo["name"] # force download
+        py2neo["name"]  # force download
         field_dict = dict(py2neo)
-        node = TreeNode(field_dict.pop('id'),field_dict.pop('type'))
+        node = TreeNode(field_dict.pop('id'), field_dict.pop('type'))
         node.update(field_dict)
 
         return node
@@ -110,7 +113,7 @@ class AuthorNode(Node):
 
     def __init__(self, subreddit, author):
         # help neo4j distinguish anonymous authors
-        if(author == ANONYMOUS_USER):
+        if (author == ANONYMOUS_USER):
             author += str(AuthorNode.count)
             AuthorNode.count += 1
         d = {
@@ -146,7 +149,7 @@ class CommentNode(Node):
             'reading_level': meta.reading_level,
             'sentiment_score': SentimentAnalyzer.get_sentiment(comment),
             'sentiment': SentimentAnalyzer.convert_score(SentimentAnalyzer.get_sentiment(comment)),
-            'similarity': 1.0,            
+            'similarity': 1.0,
             'type': "comment",
             'subreddit': subreddit
         }
@@ -155,7 +158,6 @@ class CommentNode(Node):
 
 class SentimentNode(Node):
     def __init__(self, subreddit, value):
-
         d = {
             'id': value,
             'name': value,
@@ -179,7 +181,7 @@ class ArticleNode(Node):
              'upvote_ratio': submission.upvote_ratio,
              'type': 'article',
              'subreddit': subreddit,
-             'comment_count':len(submission.comments.list())
+             'comment_count': len(submission.comments.list())
              }
         super().__init__(d)
 
@@ -197,10 +199,12 @@ class Relationship(dict):
     def __repr__(self):
         return "{0}--[{1}]-->{2}".format(self.start_node, self.relationship_type, self.end_node)
 
+
 class Edge:
     """
         Representation of an edge in a graph
     """
+
     def __init__(self, src, dest, **properties):
         # coarse py2neo to download all fields
         src['name'], dest['name']
