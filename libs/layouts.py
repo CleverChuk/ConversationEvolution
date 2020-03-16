@@ -96,9 +96,10 @@ class LayoutTransformer:
 
 
 class LayoutAggregator:
+    json = None
+
     def __init__(self, layout_func):
         self.layout_func = layout_func
-        self.json = None
 
     def aggregate(self, edges, **params):
         """
@@ -113,18 +114,18 @@ class LayoutAggregator:
             layout = self.layout_func(e, **params)
             self.extend_layout(layout)
 
-        return self.json
+        return LayoutAggregator.json
 
     def extend_layout(self, layout):
-        if self.json is None:
-            self.json = layout
+        if LayoutAggregator.json is None:
+            LayoutAggregator.json = layout
 
         else:
-            if "coords" in self.json:
-                self.json["coords"].extend(layout["coords"])
+            if "coords" in LayoutAggregator.json:
+                LayoutAggregator.json["coords"].extend(layout["coords"])
 
-            self.json["links"].extend(layout["links"])
-            self.json["nodes"].extend(layout["nodes"])
+            LayoutAggregator.json["links"].extend(layout["links"])
+            LayoutAggregator.json["nodes"].extend(layout["nodes"])
 
     def connected_components(self, edges):
         """
@@ -141,4 +142,5 @@ class LayoutAggregator:
             yield graph.retrieve_edges(subgraph.edges)
 
     def __call__(self, edges, **params):
+        LayoutAggregator.json = None
         return self.aggregate(edges, **params)
