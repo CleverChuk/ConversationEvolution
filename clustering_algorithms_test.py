@@ -1,12 +1,23 @@
-from libs.database_api import *
-from libs.clustering_algorithms import *
-from igraph import *
 import unittest
-import networkx as nx
+
+from igraph import *
+
+from libs.clustering_algorithms import *
+from libs.database_api import *
+from libs.graphs import AdjacencyListUnDirected
 
 # Create db layer object and pass it to the query object
 db_layer = Neo4jLayer()
 query = Query(db_layer)
+
+
+def to_veritces(data):
+    vertices = set()
+
+    for e in data:
+        vertices.add(e.start_node)
+        vertices.add(e.end_node)
+    return list(vertices)
 
 
 class TestClusteringImpl(unittest.TestCase):
@@ -42,37 +53,6 @@ class TestClusteringImpl(unittest.TestCase):
             prediction = kmeans.predict(kmeans.transform_node(node))
             clusters[prediction[0]].add_node(node)
         # print("Cluster count:  ",len(clusters))
-
-    def test_igraph(self):
-        data = query.get_comments_in_article('f3ejzj')
-        graph = IGraph()
-        nodes = set()
-
-        for e in data:
-            nodes.add(e.start_node)
-            nodes.add(e.end_node)
-
-        graph.add_vertices(nodes)
-        graph.add_edges(data)
-        json = graph.transform_layout_for_drawing("sugiyama")
-        # print(json)
-
-    def test_nx_graph_component(self):
-        data = query.get_comments_in_article('f3ejzj')
-        graph = NxGraph()
-        nodes = set()
-
-        for e in data:
-            nodes.add(e.start_node)
-            nodes.add(e.end_node)
-
-        graph.add_vertices(nodes)
-        graph.add_edges(data)
-        json = [
-            list(graph.retrieve_edges(subg.edges)) for subg in
-            [graph.subgraph(component).copy() for component in nx.connected_components(graph)]
-        ]
-        print(json)
 
 
 if __name__ == "__main__":

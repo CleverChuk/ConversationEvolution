@@ -1,20 +1,18 @@
+import json
+import os
+import threading
 from collections import defaultdict
-from django.shortcuts import render
+
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+
 from libs import database_api
-from libs.models import Edge, TreeNode
+from libs.clustering_algorithms import (SKLearnKMeans, Cluster)
+from libs.graphs import AdjacencyListUnDirected as AList
+from libs.layouts import LayoutTransformer, LayoutAggregator, TimeGraphLayout
 from libs.mapper import EdgeMapper, TreeMapper
-import json
-import threading
-import numpy as np
-import os
-from libs.clustering_algorithms import (k_means, AdjacencyListUnDirected as AList, SKLearnKMeans, Cluster,
-                                        IGraph, NxGraph
-                                        )
+from libs.models import Edge, TreeNode
 from libs.utils import ClusterUtil
-from libs.layouts import LayoutTransformer, LayoutAggregator
-import networkx as nx
 
 # neo4j configs
 NEO4J_URL = os.environ["NEO4J_URL"]
@@ -488,9 +486,9 @@ def _mapper_layout(data, **params):
         # print("After", data)
 
 
-
-@LayoutAggregator
-@LayoutTransformer
+# @LayoutAggregator
+# @LayoutTransformer
+@TimeGraphLayout
 def _layout(edges, **params):
     """
         @params:
@@ -557,8 +555,9 @@ def _hierarchy(data, root_id, root_type):
     return tree_mapper.make_tree(root, nodes)
 
 
-@LayoutAggregator
-@LayoutTransformer
+# @LayoutAggregator
+# @LayoutTransformer
+@TimeGraphLayout
 def _cluster_with_kmeans(edges, **params):
     print("Processing with K-means")
     lens = 'reading_level' if 'lens' not in params else params['lens']
@@ -590,8 +589,9 @@ def _cluster_with_kmeans(edges, **params):
     return edges, filter(lambda n: n is not None, nodes)
 
 
-@LayoutAggregator
-@LayoutTransformer
+# @LayoutAggregator
+# @LayoutTransformer
+@TimeGraphLayout
 def _cluster_with_cc(edges, **params):
     lens = 'reading_level' if 'lens' not in params else params['lens']
     interval = 3 if 'interval' not in params else int(params['interval'])

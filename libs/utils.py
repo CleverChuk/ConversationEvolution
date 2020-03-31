@@ -1,23 +1,24 @@
-
 from collections import defaultdict
 import statistics as stats
 from uuid import uuid4
 from libs.models import Edge, Node
 
+
 class ClusterUtil:
     count = 0
+
     @staticmethod
     def connect_clusters(c1, c2, graph):
         for n1 in c1.nodes:
             for n2 in c2.nodes:
-                if graph.is_connected(n1,n2):
+                if graph.is_connected(n1, n2):
                     node1 = c1.to_node()
                     node2 = c2.to_node()
                     c1.has_linked = c2.has_linked = True
                     return Edge(node1, node2)
 
     @staticmethod
-    def create_cluster_node(name, agg,  cluster, property_keys):
+    def create_cluster_node(name, agg, cluster, property_keys):
         """
             calculates the average of all the properties in property_key for
             all the clusters in cluster
@@ -79,8 +80,8 @@ class ClusterUtil:
                 category_variable.clear()
 
         cluster_node["id"] = uuid4()
-        cluster_node.pop("body",None)
-        nodes = cluster_node.pop('composition',[])
+        cluster_node.pop("body", None)
+        nodes = cluster_node.pop('composition', [])
         cluster_node['node_count'] = len(nodes)
         return cluster_node
 
@@ -103,6 +104,7 @@ class ClusterUtil:
     def label_components(graph):
         visited = set()
         components = defaultdict(list)
+
         def dfs(v, id):
             if v not in visited:
                 visited.add(v)
@@ -111,11 +113,10 @@ class ClusterUtil:
                         dfs(u, id)
                 components[id].append(v)
                 v["component_id"] = id
-        
+
         id = 0
         for node in graph:
             dfs(node, id)
             id += 1
-        
-        return components
 
+        return components

@@ -1,10 +1,12 @@
-from collections import namedtuple
+from json import dump as j_dump
+import os
+from json import JSONEncoder
 from json import dump as j_dump
 from json import dumps
-from json import JSONEncoder
-from py2neo import (Graph, Node, Relationship)
+
+from py2neo import (Graph, Node)
+
 from libs.mapper import TreeMapper
-import os
 
 NEO4J_URL = os.environ["NEO4J_URL"]
 NEO4J_USERNAME = os.environ["NEO4J_USERNAME"]

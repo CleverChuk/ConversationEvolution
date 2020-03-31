@@ -1,6 +1,15 @@
 import itertools
-from libs.clustering_algorithms import IGraph, NxGraph
+from libs.graphs import IGraph, NxGraph, TimeGraph
 import networkx as nx
+
+
+def to_vertices(data):
+    vertices = set()
+
+    for e in data:
+        vertices.add(e.start_node)
+        vertices.add(e.end_node)
+    return list(vertices)
 
 
 class LayoutTransformer:
@@ -17,6 +26,10 @@ class LayoutTransformer:
                 :description list of Relationship object
         """
         edges, vertices = self.clustering_algo(edges, **params)
+        return LayoutTransformer.layout_d3_fd_helper(edges, vertices)
+
+    @staticmethod
+    def layout_d3_fd_helper(edges, vertices):
         # dictionary to store index
         output = {}
         # list to store nodes
@@ -71,7 +84,8 @@ class LayoutTransformer:
         graph.add_edges(edges)
         return graph.transform_layout_for_drawing(layout_algo)
 
-    def is_layout_algo_available(self, algo):
+    @staticmethod
+    def is_layout_algo_available(algo):
         return algo.lower() in \
                [
                    "auto", "automatic",
@@ -144,3 +158,37 @@ class LayoutAggregator:
     def __call__(self, edges, **params):
         LayoutAggregator.json = None
         return self.aggregate(edges, **params)
+
+
+class TimeGraphLayout:
+    def __init__(self, clustering_func):
+        self.func = clustering_func
+        self.graph = TimeGraph(time_width_hours=1)
+
+    def layout_d3_fd(self, edges, **params):
+        edges, vertices = self.func(edges, **params)
+        return LayoutTransformer.layout_d3_fd_helper(edges, vertices)
+
+    def layout_igraph(self, edges, **params):
+        layout_algo = params['layout']
+        edges, vertices = self.func(edges, **params)
+        vertices = list(vertices)
+        vertices.extend(to_vertices(edges))
+
+        self.graph.add_edges(edges)
+        self.graph.add_vertices(vertices)
+        bucket_layout = {}
+
+        for idx, bucket in self.graph.buckets:
+            igraph = IGraph()
+            igraph.add_vertices(bucket)
+            bucket_layout[idx] = igraph.transform_layout_for_drawing(layout_algo)
+
+        self.graph.set_bucket_layout(bucket_layout)
+        return self.graph.link_nodes()
+
+    def __call__(self, edges, **params):
+        if params['layout'] == 'force_directed' or params['layout'] == 'timeline':
+            return self.layout_d3_fd(edges, **params)
+
+        return self.layout_igraph(edges, **params)
