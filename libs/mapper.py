@@ -5,6 +5,7 @@ import statistics as stats
 from collections import defaultdict, OrderedDict, deque
 from math import floor
 from libs.analyzers import SentimentAnalyzer as sa
+from libs.graphs import AdjacencyListUnDirected
 from libs.models import (Node, TreeNode, Edge)
 from uuid import uuid4
 from libs.utils import ClusterUtil
@@ -26,9 +27,9 @@ class Mapper:
         self.data = data
         self.epsilon = epsilon
         self.property_key = property_key
-        self.num_interval = num_interval
+        self.number_of_interval = num_interval
         # For nodes without property_key as field
-        self.filtered_in_data = []
+        self.heterogeneous_edges = []
         self._average = False  # use to determine how to aggregate cluster nodes- mean or median
 
     @property
@@ -66,7 +67,7 @@ class Mapper:
             for j in range(i + 1, n):
                 nextCluster = set(clusters[j])
                 # skip this edge if the Jaccard index is less than 0.1
-                j_index = round(self.jeccard_index(cluster, nextCluster), 2)
+                j_index = round(self.jeccard_index(cluster, nextCluster), 16)
                 if j_index < Mapper.JACCARD_THRESH:
                     continue
 
@@ -118,7 +119,7 @@ class Mapper:
         if isinstance(p1, str) or isinstance(p2, str):
             raise TypeError("property_key value must be numeric")
 
-        return round((p1 + p2) / 2, 2)
+        return round((p1 + p2) / 2, 16)
 
 
 class EdgeMapper(Mapper):
@@ -131,19 +132,20 @@ class EdgeMapper(Mapper):
 
     def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
         self._edges = None
+        self.adjacency_list = AdjacencyListUnDirected(*edges)
 
-        def filter_out(edge):
+        def filter_homogeneous_edge(edge):
             return edge.start_node['type'] == 'comment' and edge.end_node['type'] == 'comment'
 
-        def filter_in(edge):
+        def filter_heterogeneous_edge(edge):
             return edge.start_node['type'] != 'comment' or edge.end_node['type'] != 'comment'
 
-        self.filtered_data = list(filter(filter_out, edges))
+        self.homogeneous_edges = list(filter(filter_homogeneous_edge, edges))
         # Sort the edges based on the property of interest
-        self.filtered_data = sorted(self.filtered_data, key=lambda link: self.edge_mean(link, property_key))
+        self.homogeneous_edges = sorted(self.homogeneous_edges, key=lambda link: self.edge_mean(link, property_key))
 
-        super().__init__(self.filtered_data, epsilon, property_key, num_interval)
-        self.filtered_in_data = list(filter(filter_in, edges))
+        super().__init__(self.homogeneous_edges, epsilon, property_key, num_interval)
+        self.heterogeneous_edges = list(filter(filter_heterogeneous_edge, edges))
 
     def graph(self):
         """
@@ -162,14 +164,14 @@ class EdgeMapper(Mapper):
         """
         n = len(self.data)
         intervals = []
-        incr_size = floor(n / self.num_interval)
+        window_size = floor(n / self.number_of_interval)
 
-        if incr_size == 0:
-            incr_size = 1
+        if window_size == 0:
+            window_size = 1
 
         # create the intervals using property value to mark the range bounds
-        for i in range(0, n, incr_size):
-            intervals.append(self.data[i:i + incr_size])
+        for i in range(0, n, window_size):
+            intervals.append(self.data[i:i + window_size])
 
         groups = defaultdict(list)  # map to hold groups
         length = len(intervals)
@@ -213,40 +215,18 @@ class EdgeMapper(Mapper):
                 - groups: dict of edges
         """
         clusters = {}
-        clusterId = 0
-        for e_List in groups.values():
-            for i in range(len(e_List)):
-                if clusterId not in clusters:
-                    clusters[clusterId] = []
-
-                    clusters[clusterId].append(e_List[i].start_node)
-                    clusters[clusterId].append(e_List[i].end_node)
-
+        cluster_id = 0
+        for e_list in groups.values():
+            clusters[cluster_id] = {e_list[0].start_node, e_list[0].end_node}
+            for i in range(len(e_list)):
                 # add nodes with edges in the same cluster
-                for edge in e_List:
-                    if edge.start_node in clusters[clusterId] and edge.end_node not in clusters[clusterId]:
-                        clusters[clusterId].append(edge.end_node)
+                for j in range(i, len(e_list)):
+                    if self.is_connected(e_list[i], e_list[j]):
+                        clusters[cluster_id].update({e_list[j].start_node, e_list[j].end_node})
 
-                    elif edge.end_node in clusters[clusterId] and edge.start_node not in clusters[clusterId]:
-                        clusters[clusterId].append(edge.end_node)
+                cluster_id += 1
 
-                clusterId += 1
-
-        temp = list(clusters.keys())
-        indices = []
-        # find the index duplicate clusters
-        for i in temp:
-            s1 = set(clusters[i])
-            for j in temp[i + 1:]:
-                s2 = set(clusters[j])
-                if s2 == s1:
-                    indices.append(j)
-
-        # remove duplicate clusters
-        for i in indices:
-            clusters.pop(i, "d")
-
-        return clusters
+        return {id_x: list(c) for id_x, c in clusters.items()}
 
     @property
     def edges(self):
@@ -254,6 +234,21 @@ class EdgeMapper(Mapper):
             self.graph()
 
         return self._edges
+
+    def is_connected(self, e1, e2):
+        """
+        check if two edges are connected
+        :param e1:
+        :param e2:
+        :return: boolean
+        """
+        start_n1, start_n2 = e1.start_node, e1.end_node
+        end_n1, end_n2 = e2.start_node, e2.end_node
+
+        return self.adjacency_list.is_connected(start_n1, end_n1) or \
+               self.adjacency_list.is_connected(start_n1, end_n2) or \
+               self.adjacency_list.is_connected(start_n2, end_n1) or \
+               self.adjacency_list.is_connected(start_n2, end_n2)
 
 
 class NodeMapper(Mapper):
@@ -279,7 +274,7 @@ class NodeMapper(Mapper):
             splits the nodes into intervals based on property_key
         """
         n = len(self.data)
-        incr_size = floor(n / self.num_interval)
+        incr_size = floor(n / self.number_of_interval)
         if incr_size == 0:
             incr_size = 1
 

@@ -82,14 +82,12 @@ class IGraph(igraph.Graph):
         super().add_edges(self.transform(edge_list, self.mapping))
 
     def transform_layout_for_drawing(self, layout_algo):
-        IGraph.update_translate_vector()
         layout = self.layout(layout=layout_algo)
         layout.scale(100)
 
-        layout.translate(v=IGraph.translate_vector[:2])
         json = {"coords": layout.coords}
-
         nodes = [None] * len(self.mapping)
+
         for node, i in self.mapping.items():
             node['x'] = layout.coords[i][0]
             node['y'] = layout.coords[i][1]
@@ -116,13 +114,9 @@ class IGraph(igraph.Graph):
             return
 
         print("Translation vector", cls.translate_vector)
-        if cls.translate_vector[2] % 5 == 0:
-            cls.translate_vector[1] += 1000
-            cls.translate_vector[0] = 0
 
-        else:
-            cls.translate_vector[0] += 1000
-
+        cls.translate_vector[0] += 100
+        cls.translate_vector[1] += 100
         cls.translate_vector[2] += 1
 
 
@@ -228,7 +222,11 @@ class TimeGraph(AdjacencyListUnDirected):
         links = []
         nodes = []
         coords = []
+        x_avg, y_avg = None, None
         for idx, layout in self.bucket_layout.items():
+            if x_avg is None:
+                x_avg = sum([n['x'] for n in layout['nodes']]) / len(layout['nodes'])
+                y_avg = sum([n['y'] for n in layout['nodes']]) / len(layout['nodes'])
             nodes.extend(layout["nodes"])
 
         length = len(nodes)
@@ -241,11 +239,18 @@ class TimeGraph(AdjacencyListUnDirected):
                             "target": nodes[j]
                         }
                     )
-
+        t = None
+        incr = 0
         for idx, layout in self.bucket_layout.items():
+            if t is None or idx[0] > t:
+                t = idx[0]
+                incr += x_avg
+
             vertices = layout['nodes']
             for node in vertices:
                 node['time'] = min(idx)  # set time coordinate
+                node['x'] = incr
+                node['y'] += y_avg
 
         return {"nodes": nodes, "links": links, "coords": coords}
 
