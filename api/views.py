@@ -1,7 +1,6 @@
 import json
 import os
 import threading
-from collections import defaultdict
 
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -9,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from libs import database_api
 from libs.clustering_algorithms import SKLearnKMeans, MapperKMeans
 from libs.graphs import AdjacencyListUnDirected as AList
-from libs.layouts import LayoutTransformer, LayoutAggregator, TimeGraphLayout
+from libs.layouts import TimeGraphLayout
 from libs.mapper import EdgeMapper, TreeMapper
 from libs.models import Edge, TreeNode
 from libs.utils import ClusterUtil

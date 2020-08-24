@@ -1,8 +1,9 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Functions use to calculate the similarity between 
 #          two strings
-from nltk import stem, word_tokenize
 from string import punctuation
+
+from nltk import stem, word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 stemmer = stem.porter.PorterStemmer()

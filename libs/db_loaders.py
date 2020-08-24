@@ -1,6 +1,6 @@
-from py2neo import (Graph, Node, Relationship)
 import csv
-from libs.models import (CommentNode)
+
+from py2neo import (Graph, Node, Relationship)
 
 
 class Neo4jLoader:

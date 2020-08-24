@@ -1,6 +1,7 @@
-from collections import defaultdict
 import statistics as stats
+from collections import defaultdict
 from uuid import uuid4
+
 from libs.models import Edge, Node
 
 

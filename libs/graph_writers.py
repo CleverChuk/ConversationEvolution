@@ -2,9 +2,11 @@
 # Purpose: Functions use to write nodes and edges to a csv file
 #          using Neo4j schema specification
 
-from csv import DictWriter
 import os
+from csv import DictWriter
+
 from libs.mapper import Mapper
+
 
 class Neo4jGrapher:
     """

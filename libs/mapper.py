@@ -1,16 +1,14 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Mapper logic.
 
-import statistics as stats
 from collections import defaultdict, OrderedDict, deque
 from math import floor
+from uuid import uuid4
+
 from libs.analyzers import SentimentAnalyzer as sa
 from libs.graphs import AdjacencyListUnDirected
-from libs.models import (Node, TreeNode, Edge, ClusterNode)
-from libs.clustering_algorithms import MapperKMeans
-from uuid import uuid4
+from libs.models import (Node, TreeNode, Edge)
 from libs.utils import ClusterUtil
-import itertools
 
 
 class Mapper:

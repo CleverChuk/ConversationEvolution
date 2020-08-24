@@ -1,8 +1,10 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Class use to pull data from Reddit
 import json
-from libs.json_models import SubmissionDump, CustomEncoder
+
 import praw
+
+from libs.json_models import SubmissionDump, CustomEncoder
 
 
 class RedditBot:

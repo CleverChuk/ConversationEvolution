@@ -1,9 +1,11 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Functions use to calculate new feature for graph nodes
 
-import nltk
 from statistics import mean
 from string import punctuation
+
+import nltk
+
 remove_punctuation_map = dict((ord(char), None) for char in punctuation)
 
 class SentimentAnalyzer:

@@ -1,7 +1,5 @@
 import unittest
 
-from igraph import *
-
 from libs.clustering_algorithms import *
 from libs.database_api import *
 from libs.graphs import AdjacencyListUnDirected
