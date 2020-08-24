@@ -14,31 +14,29 @@ random.seed(0)
 
 class AdjacencyListUnDirected:
     def __init__(self, *edges):  # list of edge object with start_node and end_node properties
-        self.__list = defaultdict(list)
+        self._list = defaultdict(list)
         self.build(edges)
 
     @property
-    def alist(self):
-        return self.__list
+    def list(self):
+        return self._list
 
     def build(self, edges):
         for edge in edges:
             s = edge.start_node
             d = edge.end_node
             if s['id'] != d['id']:  # eliminate self loops and force property download from neo4j
-                s = Node(dict(s))
-                d = Node(dict(d))
-                self.__list[s].append(d)
-                self.__list[d].append(s)
+                self.list[s].append(d)
+                self.list[d].append(s)
 
     def is_connected(self, n1, n2):
-        return n2 in self.__list[n1] or n1 in self.__list[n2]
+        return n2 in self.list[n1] or n1 in self.list[n2]
 
     def neighbors(self, n0):
-        return self.__list[n0]
+        return self.list[n0]
 
     def vertices(self):
-        return list(self.__list.keys())
+        return list(self.list.keys())
 
 
 class IGraph(igraph.Graph):
@@ -165,6 +163,8 @@ class NxGraph(nx.Graph):
 
 
 class TimeGraph(AdjacencyListUnDirected):
+    Y_OFFSET = 100
+
     def __init__(self, time_width_hours: int = 1, *edges):
         super().__init__(*edges)
         self.bucket = defaultdict(list)
@@ -250,7 +250,7 @@ class TimeGraph(AdjacencyListUnDirected):
             for node in vertices:
                 node['time'] = min(idx)  # set time coordinate
                 node['x'] = incr
-                node['y'] += y_avg
+                node['y'] += (y_avg * TimeGraph.Y_OFFSET)
 
         return {"nodes": nodes, "links": links, "coords": coords}
 

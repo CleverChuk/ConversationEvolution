@@ -1,4 +1,5 @@
 import random
+from collections import defaultdict
 from math import sqrt, ceil
 
 from sklearn.cluster import KMeans
@@ -9,11 +10,16 @@ from libs.utils import ClusterUtil
 random.seed(0)
 
 
-class SKLearnKMeans(KMeans):
-    def __init__(self, n_clusters=8, lens="sentiment"):
-        self.vect = DictVectorizer()
+class BaseAlgorithm:
+    def cluster(self, nodes):
+        raise NotImplemented
+
+
+class SKLearnKMeans(BaseAlgorithm, KMeans):
+    def __init__(self, lens, **kwargs):
+        super().__init__(**kwargs)
         self.lens = lens
-        super().__init__(n_clusters=n_clusters)
+        self.vect = DictVectorizer()
 
     def fit(self, X, y=None, sample_weight=None):
         x = (self.extract_lens(node) for node in X)
@@ -25,6 +31,15 @@ class SKLearnKMeans(KMeans):
 
     def extract_lens(self, node):
         return {self.lens: node.get(self.lens, 0)}
+
+    def cluster(self, nodes):
+        self.fit(nodes)
+        clusters = defaultdict(Cluster)
+        for node in nodes:
+            prediction = self.predict(self.transform_node(node))
+            clusters[prediction[0]].add_node(node)
+
+        return list(clusters.values())
 
 
 class Cluster:
@@ -58,7 +73,7 @@ class Cluster:
         self.mean = round(total / self.count,
                           ClusterUtil.count_decimal_places(self.tol))
 
-    def re_init(self):  # reinitialize the cluster for repeat computation
+    def reset(self):  # reset the cluster for repeat computation
         if len(self.nodes):
             keep = self.nodes.pop(0)
             tol = self._distance_metric(keep)
@@ -72,15 +87,14 @@ class Cluster:
                 else:
                     node['grouped'] = False
 
-            # initialize properties
+            # reset properties
             self.nodes.clear()
             self.nodes.append(keep)
             self.count = 1
 
     def is_empty(self):
-        return not len(self.nodes)
+        return len(self.nodes) == 0
 
-    # could use euclidean distance for multivariable prop
     def _distance_metric(self, node):
         # calculate the Euclidean distance
         if self.is_empty():
@@ -92,7 +106,7 @@ class Cluster:
             return True
         return self.component_id == node["component_id"]
 
-    def __medain(self):
+    def __median(self):
         vals = [node[self.prop] for node in self.nodes]
         vals.sort()
         if self.count % 2 == 0:
@@ -103,7 +117,7 @@ class Cluster:
     def dist_from(self, node):
         return self._distance_metric(node)
 
-    def is_related(self, cluster, graph):  # connect related clusters
+    def is_related(self, cluster, graph):
         for n1 in cluster.nodes:
             for n2 in self.nodes:
                 if graph.is_connected(n1, n2):
@@ -126,53 +140,56 @@ class Cluster:
         return f"N = {self.count}, has_linked: {self.has_linked}, component id: {self.component_id}"
 
 
-# functions
+class MapperKMeans(BaseAlgorithm):
+    def __init__(self, n, lens, iter_tol=0.001, cluster_tol=0.001, **kwargs):
+        super().__init__(**kwargs)
+        self.n = n
+        self.lens = lens
+        self.iter_tol = iter_tol
+        self.cluster_tol = cluster_tol
 
+    def score(self, clusters, tol):
+        total = 0
+        n = len(clusters)
+        for c in clusters:
+            total += c.mean
 
-def score(clusters, tol):
-    total = 0
-    n = len(clusters)
-    for c in clusters:
-        total += c.mean
+        return round(total / n, ClusterUtil.count_decimal_places(tol))
 
-    return round(total / n, ClusterUtil.count_decimal_places(tol))
+    def reset_clusters(self, clusters):
+        for c in clusters:
+            c.reset()
 
+    def cluster(self, nodes):
+        # sensitive to first node picked
+        N = len(nodes)
+        if self.n > N:
+            self.n = ceil(N / 2)
 
-def re_init_clusters(clusters):
-    for c in clusters:
-        c.re_init()
+        init_nodes = random.choices(nodes, k=self.n)
+        for node in init_nodes:
+            node['grouped'] = True
 
+        clusters = [Cluster(self.lens, init_nodes[i], tol=self.cluster_tol)
+                    for i in range(self.n)]
+        diff = 0
+        while True:
+            for node in nodes:
+                closest_cluster = None
+                dist_score = float('inf')
+                for cluster in clusters:
+                    temp = cluster.dist_from(node)
+                    if temp < dist_score:
+                        closest_cluster = cluster
+                        dist_score = temp
 
-def k_means(nodes, k, prop='sentiment_score', iter_tol=0.001, cluster_tol=0.001):
-    # sensitive to first node picked
-    N = len(nodes)
-    if k > N:
-        k = ceil(N / 2)
+                if closest_cluster.is_reachable(node):
+                    closest_cluster.add_to(node)
 
-    init_nodes = random.choices(nodes, k=k)
-    for node in init_nodes:
-        node['grouped'] = True
+            if abs(self.score(clusters, self.iter_tol) - diff) <= self.iter_tol:
+                break
+            else:
+                diff = self.score(clusters, self.iter_tol)
+                self.reset_clusters(clusters)
 
-    clusters = [Cluster(prop, init_nodes[i], tol=cluster_tol)
-                for i in range(k)]  # could initialize each cluster with a node
-    diff = 0
-    while True:
-        for node in nodes:
-            closest_cluster = None
-            dist_score = float('inf')
-            for cluster in clusters:
-                temp = cluster.dist_from(node)
-                if temp < dist_score:
-                    closest_cluster = cluster
-                    dist_score = temp
-
-            if closest_cluster.is_reachable(node):
-                closest_cluster.add_to(node)
-
-        if abs(score(clusters, iter_tol) - diff) <= iter_tol:
-            break
-        else:
-            diff = score(clusters, iter_tol)
-            re_init_clusters(clusters)
-
-    return clusters
+        return clusters

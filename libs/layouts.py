@@ -96,8 +96,8 @@ class LayoutTransformer:
                    "grid", "graphopt",
                    "kk", "kamada_kawai",
                    "lgl", "large", "large_graph",
-                   "mds", "random", "rt", "tree"
-                                          "rt_circular", "reingold_tilford",
+                   "mds", "random", "rt", "tree",
+                   "rt_circular", "reingold_tilford",
                    "reingold_tilford_circular", "sphere",
                    "star", "sugiyama"
                ]

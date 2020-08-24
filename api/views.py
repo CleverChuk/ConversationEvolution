@@ -7,7 +7,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from libs import database_api
-from libs.clustering_algorithms import (SKLearnKMeans, Cluster)
+from libs.clustering_algorithms import SKLearnKMeans, MapperKMeans
 from libs.graphs import AdjacencyListUnDirected as AList
 from libs.layouts import LayoutTransformer, LayoutAggregator, TimeGraphLayout
 from libs.mapper import EdgeMapper, TreeMapper
@@ -565,17 +565,12 @@ def _cluster_with_kmeans(edges, **params):
 
     graph = AList(*edges)
     nodes = graph.vertices()
-    kmeans = SKLearnKMeans(n_clusters=min([k, len(nodes)]), lens=lens)
-    kmeans.fit(nodes)
+    k_means = SKLearnKMeans(lens, n_clusters=min([k, len(nodes)]))
 
-    clusters = defaultdict(Cluster)
-    for node in nodes:
-        prediction = kmeans.predict(kmeans.transform_node(node))
-        clusters[prediction[0]].add_node(node)
-
-    n = len(clusters)
     edges = []
-    clusters = list(clusters.values())
+    clusters = k_means.cluster(nodes)
+    n = len(clusters)
+
     for i in range(n):
         for j in range(i + 1, n):
             if clusters[i] != clusters[j]:
@@ -599,8 +594,8 @@ def _cluster_with_cc(edges, **params):
 
     mode = 'median' if 'mode' not in params else params['mode']
     print("Clustering with CC")
-    mapper = EdgeMapper(edges, property_key=lens,
-                        epsilon=epsilon, num_interval=interval)
+    cluster_algo = MapperKMeans(interval, lens, cluster_tol=epsilon)
+    mapper = EdgeMapper(edges, cluster_algo, lens=lens, epsilon=epsilon, num_interval=interval)
 
     mapper.average = True if mode == 'mean' else False
 

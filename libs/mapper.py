@@ -6,7 +6,8 @@ from collections import defaultdict, OrderedDict, deque
 from math import floor
 from libs.analyzers import SentimentAnalyzer as sa
 from libs.graphs import AdjacencyListUnDirected
-from libs.models import (Node, TreeNode, Edge)
+from libs.models import (Node, TreeNode, Edge, ClusterNode)
+from libs.clustering_algorithms import MapperKMeans
 from uuid import uuid4
 from libs.utils import ClusterUtil
 import itertools
@@ -23,10 +24,12 @@ class Mapper:
     """
     JACCARD_THRESH = 0.1
 
-    def __init__(self, data=[], epsilon=0.5, property_key="reading_level", num_interval=3):
+    def __init__(self, data=None, epsilon=0.5, lens="reading_level", num_interval=3):
+        if data is None:
+            data = []
         self.data = data
         self.epsilon = epsilon
-        self.property_key = property_key
+        self.lens = lens
         self.number_of_interval = num_interval
         # For nodes without property_key as field
         self.heterogeneous_edges = []
@@ -45,7 +48,7 @@ class Mapper:
             creates a graph from the interval clusters
             Nodes are connected if their Jaccard is > 0.1
 
-            @param 
+            @param
                 - clusters: a dict w/ key = cluster name and value = list of nodes
         """
         id = 0  # edge id
@@ -130,8 +133,9 @@ class EdgeMapper(Mapper):
             - _cluster: clusters generated
     """
 
-    def __init__(self, edges, epsilon=0.5, property_key="reading_level", num_interval=3):
+    def __init__(self, edges, clustering_algo, epsilon=0.5, lens="reading_level", num_interval=3):
         self._edges = None
+        self.clustering_algo = clustering_algo
         self.adjacency_list = AdjacencyListUnDirected(*edges)
 
         def filter_homogeneous_edge(edge):
@@ -142,26 +146,22 @@ class EdgeMapper(Mapper):
 
         self.homogeneous_edges = list(filter(filter_homogeneous_edge, edges))
         # Sort the edges based on the property of interest
-        self.homogeneous_edges = sorted(self.homogeneous_edges, key=lambda link: self.edge_mean(link, property_key))
+        self.homogeneous_edges = sorted(self.homogeneous_edges, key=lambda link: self.edge_mean(link, lens))
 
-        super().__init__(self.homogeneous_edges, epsilon, property_key, num_interval)
+        super().__init__(self.homogeneous_edges, epsilon, lens, num_interval)
         self.heterogeneous_edges = list(filter(filter_heterogeneous_edge, edges))
 
     def graph(self):
         """
             helper function
         """
-        groups = self.create_intervals()
-        cluster = self.cluster_groups(groups)
-        self._edges = self.connect_cluster(cluster)
-        self._edges = self._edges if len(self._edges) else list(itertools.chain.from_iterable(groups.values()))
+        intervals = self.create_intervals()
+        clusters = self.cluster(intervals)
+        self._edges = self.connect_cluster(clusters)
 
         return self._edges
 
     def create_intervals(self):
-        """
-            splits the edges into intervals based on self.property_key
-        """
         n = len(self.data)
         intervals = []
         window_size = floor(n / self.number_of_interval)
@@ -169,64 +169,33 @@ class EdgeMapper(Mapper):
         if window_size == 0:
             window_size = 1
 
-        # create the intervals using property value to mark the range bounds
         for i in range(0, n, window_size):
             intervals.append(self.data[i:i + window_size])
 
-        groups = defaultdict(list)  # map to hold groups
-        length = len(intervals)
-        for i in range(length - 1):  # FIXME fails for single edge graph
-            next = i + 1
+        return intervals
 
-            # adjust the overlap range by epsilon
-            minimum = self.edge_mean(
-                intervals[i][0], self.property_key) - self.epsilon
-            maximum = self.edge_mean(
-                intervals[i][-1], self.property_key) + self.epsilon
-
-            # create the overlap between interval i and i+1
-            for e in intervals[next]:
-                if self.edge_mean(e, self.property_key) <= maximum and e not in intervals[i]:
-                    intervals[i].append(e)
-
-            groups[(minimum, maximum)] = intervals[i]
-
-            # make sure to include the last interval in the group map
-            if next == length - 1:
-                minimum = self.edge_mean(
-                    intervals[next][0], self.property_key) - self.epsilon
-                maximum = self.edge_mean(
-                    intervals[next][-1], self.property_key) + self.epsilon
-
-                for e in intervals[i]:
-                    if self.edge_mean(e, self.property_key) <= maximum and e not in intervals[next]:
-                        intervals[next].append(e)
-                groups[(minimum, maximum)] = intervals[next]
-
-        if not len(groups):
-            groups[0] = intervals[0]
-
-        return groups
-
-    def cluster_groups(self, groups):
+    def cluster(self, intervals):
         """
-            cluster nodes base on their connection with each other
+            cluster nodes base on lens
             @params:
-                - groups: dict of edges
+                - interval: List[List]
         """
-        clusters = {}
-        cluster_id = 0
-        for e_list in groups.values():
-            clusters[cluster_id] = {e_list[0].start_node, e_list[0].end_node}
-            for i in range(len(e_list)):
-                # add nodes with edges in the same cluster
-                for j in range(i, len(e_list)):
-                    if self.is_connected(e_list[i], e_list[j]):
-                        clusters[cluster_id].update({e_list[j].start_node, e_list[j].end_node})
+        clusters = []
+        for interval in intervals:
+            nodes = ClusterUtil.flatten(interval)
+            clusters.extend(self.clustering_algo.cluster(nodes))  # 2 is number of cluster per interval
 
-                cluster_id += 1
+        return clusters
 
-        return {id_x: list(c) for id_x, c in clusters.items()}
+    def connect_cluster(self, clusters):
+        n = len(clusters)
+        edge_list = []
+        for i in range(n):
+            for j in range(i + 1, n):
+                edge = ClusterUtil.connect_clusters(clusters[i], clusters[j], self.adjacency_list)
+                if edge is not None:
+                    edge_list.append(edge)
+        return edge_list
 
     @property
     def edges(self):
@@ -256,9 +225,9 @@ class NodeMapper(Mapper):
         Specilization of mapper for working with node clustering
     """
 
-    def __init__(self, edges, data, epsilon=0.5, property_key="reading_level", num_interval=3):
+    def __init__(self, edges, data, epsilon=0.5, lens="reading_level", num_interval=3):
         self.edges = edges
-        super().__init__(data, epsilon, property_key, num_interval)
+        super().__init__(data, epsilon, lens, num_interval)
 
     def cluster_groups(self):
         """
@@ -289,23 +258,23 @@ class NodeMapper(Mapper):
 
         for i in range(length - 1):
             next = i + 1
-            minimum = intervals[i][0][self.property_key] - self.epsilon
-            maximum = intervals[i][-1][self.property_key] + self.epsilon
+            minimum = intervals[i][0][self.lens] - self.epsilon
+            maximum = intervals[i][-1][self.lens] + self.epsilon
 
             # find overlaps
             for j in range(next, len(self.data)):
-                if self.data[j][self.property_key] <= maximum and self.data[j] not in intervals[i]:
+                if self.data[j][self.lens] <= maximum and self.data[j] not in intervals[i]:
                     intervals[i].append(self.data[j])
 
             groups[(minimum, maximum)] = intervals[i]
 
             # make sure to include the last interval in the group map
             if next == length - 1:
-                minimum = intervals[next][0][self.property_key] - self.epsilon
-                maximum = intervals[next][-1][self.property_key] + self.epsilon
+                minimum = intervals[next][0][self.lens] - self.epsilon
+                maximum = intervals[next][-1][self.lens] + self.epsilon
 
                 for n in intervals[i]:
-                    if n[self.property_key] <= maximum and n not in intervals[next]:
+                    if n[self.lens] <= maximum and n not in intervals[next]:
                         intervals[next].append(n)
                 groups[(minimum, maximum)] = intervals[next]
 

@@ -43,7 +43,7 @@ class ClusterUtil:
                 cluster_node['composition'] = [node['id']]
 
         if not isinstance(cluster, list) and not isinstance(property_keys, list):
-            raise Exception("cluster and property_keys must be lists")
+            raise Exception("cluster and property_keys must be list")
 
         numerical_variables = []
         cluster_node = Node({'name': name})
@@ -120,3 +120,11 @@ class ClusterUtil:
             id += 1
 
         return components
+
+    @staticmethod
+    def flatten(edges):
+        vertices = set()
+        for edge in edges:
+            vertices.add(edge.start_node)
+            vertices.add(edge.end_node)
+        return list(vertices)
