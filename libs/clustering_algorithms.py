@@ -39,7 +39,7 @@ class SKLearnKMeans(BaseAlgorithm, KMeans):
             prediction = self.predict(self.transform_node(node))
             clusters[prediction[0]].add_node(node)
 
-        return list(clusters.values())
+        return [c.to_node() for c in clusters.values()]
 
 
 class Cluster:
@@ -192,4 +192,4 @@ class MapperKMeans(BaseAlgorithm):
                 diff = self.score(clusters, self.iter_tol)
                 self.reset_clusters(clusters)
 
-        return clusters
+        return [c.to_node() for c in clusters]

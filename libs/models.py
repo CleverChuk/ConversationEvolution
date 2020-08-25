@@ -1,5 +1,6 @@
 # Author: Chukwubuikem Ume-Ugwa
 # Purpose: Record models use to create graph nodes
+from uuid import uuid4
 
 from libs.analyzers import SentimentAnalyzer
 
@@ -207,7 +208,7 @@ class Edge:
 
     def __init__(self, src, dest, **properties):
         # coarse py2neo to download all fields
-        src['name'], dest['name']
+        _ = src['name'], dest['name']
         self.start_node = src
         self.end_node = dest
         self.properties = properties
@@ -232,3 +233,24 @@ class Edge:
 
     def __repr__(self):
         return self.start_node['type'] + "->" + self.end_node['type']
+
+
+class ClusterNode(Node):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__nodes = set()
+        self["id"] = uuid4()
+
+    @property
+    def nodes(self):
+        return set(self.__nodes)
+
+    @nodes.setter
+    def nodes(self, value):
+        self.__nodes = value
+
+    def add_node(self, node_id):
+        self.__nodes.add(node_id)
+
+    def is_member(self, node_id):
+        return node_id in self.__nodes

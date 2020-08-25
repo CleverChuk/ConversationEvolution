@@ -1,8 +1,7 @@
 import statistics as stats
 from collections import defaultdict
-from uuid import uuid4
 
-from libs.models import Edge, Node
+from libs.models import Edge, ClusterNode
 
 
 class ClusterUtil:
@@ -13,10 +12,8 @@ class ClusterUtil:
         for n1 in c1.nodes:
             for n2 in c2.nodes:
                 if graph.is_connected(n1, n2):
-                    node1 = c1.to_node()
-                    node2 = c2.to_node()
                     c1.has_linked = c2.has_linked = True
-                    return Edge(node1, node2)
+                    return Edge(c1, c2)
 
     @staticmethod
     def create_cluster_node(name, agg, cluster, property_keys):
@@ -31,35 +28,23 @@ class ClusterUtil:
                 - property_keys: list of node attribute
         """
 
-        def create_compositions(cluster_node, node):
-            # Node composition of this cluster node used to highlighted nodes in the
-            # front-end visualization
-            if cluster_node['composition'] and node["id"] in cluster_node['composition']:
-                return
-
-            if cluster_node['composition']:
-                cluster_node['composition'].append(node['id'])
-
-            else:
-                cluster_node['composition'] = [node['id']]
-
         if not isinstance(cluster, list) and not isinstance(property_keys, list):
             raise Exception("cluster and property_keys must be list")
 
         numerical_variables = []
-        cluster_node = Node({'name': name})
-        category_variable = defaultdict(int)
+        cluster_node = ClusterNode({'name': name})
+        categorical_variable = defaultdict(int)
 
         mode_value = 0
         mode_var = None
         for property_key in property_keys:
             for node in cluster:
-                create_compositions(cluster_node, node)
+                cluster_node.add_node(node)  # TODO add id instead of whole object
                 tp = node[property_key]
                 if isinstance(tp, str):  # use mode for categorical variables
-                    category_variable[tp] += 1
-                    if category_variable[tp] > mode_value:
-                        mode_value = category_variable[tp]
+                    categorical_variable[tp] += 1
+                    if categorical_variable[tp] > mode_value:
+                        mode_value = categorical_variable[tp]
                         mode_var = tp
                 else:
                     numerical_variables.append(tp)
@@ -78,12 +63,10 @@ class ClusterUtil:
             else:
                 cluster_node[property_key] = str(mode_var)
                 mode_value = 0
-                category_variable.clear()
+                categorical_variable.clear()
 
-        cluster_node["id"] = uuid4()
         cluster_node.pop("body", None)
-        nodes = cluster_node.pop('composition', [])
-        cluster_node['node_count'] = len(nodes)
+        cluster_node['node_count'] = len(cluster_node.nodes)
         return cluster_node
 
     @staticmethod

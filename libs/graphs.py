@@ -25,6 +25,7 @@ class AdjacencyListUnDirected:
         for edge in edges:
             s = edge.start_node
             d = edge.end_node
+            # TODO use id instead of whole object
             if s['id'] != d['id']:  # eliminate self loops and force property download from neo4j
                 self.list[s].append(d)
                 self.list[d].append(s)
